@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav><a href="/blog/">Blog</a> · <a href="/">Portfolio</a></nav>
+        </div>
+      </header>
+      <main class="container blog-content"> {{ content }} </main>
+      <footer class="container blog-footer">
+        <p>© {{ site.time | date: "%Y" }} Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
