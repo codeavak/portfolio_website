@@ -23,6 +23,53 @@ toggle.addEventListener('click', () => {
   setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
 
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+const progressFill = document.getElementById('scrollProgressFill');
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrolled / docHeight) * 100)) : 0;
+
+  if (progressFill) {
+    progressFill.style.width = `${progress}%`;
+  }
+
+  if (window.innerWidth >= 768 && nav) {
+    if (scrolled > 96) {
+      nav.classList.add('nav-side');
+      document.body.classList.add('nav-left');
+    } else {
+      nav.classList.remove('nav-side');
+      document.body.classList.remove('nav-left');
+    }
+  } else {
+    nav && nav.classList.remove('nav-side');
+    document.body.classList.remove('nav-left');
+  }
+});
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    navLinks.classList.toggle('collapsed', isExpanded);
+    navLinks.classList.toggle('nav-open', !isExpanded);
+  });
+
+  navLinks.querySelectorAll('a').forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      if (window.innerWidth <= 760) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('nav-open');
+        navLinks.classList.add('collapsed');
+      }
+    });
+  });
+}
+
 const certDetails = {
   isc2: {
     name: 'ISC2 Certified in Cybersecurity (CC)',
