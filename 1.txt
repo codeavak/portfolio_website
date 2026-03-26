@@ -1,0 +1,8 @@
+python -m fake_git_history ^
+--start-date 06/01/2021 ^
+  --end-date 06/01/2026 ^
+  --start-time 08:00:00 ^
+  --end-time 15:00:00 ^
+  --time-zone -0700 ^
+  --remote-origin https://github.com/codeavak/my_history ^
+  --verbose
