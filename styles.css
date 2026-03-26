@@ -129,6 +129,8 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 40%, transparent);
 }
+.mobile-only { display: none; }
+.desktop-only { display: inline; }
 .nav-right {
   display: flex;
   align-items: center;
@@ -802,6 +804,8 @@ footer { padding: 24px 0 48px; }
     gap: 8px;
     align-items: stretch;
   }
+  .mobile-only { display: inline-flex; }
+  .desktop-only { display: none; }
   .nav-toggle {
     display: inline-flex;
   }
