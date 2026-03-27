@@ -17,7 +17,13 @@
       <header class="blog-header">
         <div class="container">
           <a href="{{ site.baseurl }}/" class="brand">Johnny Avakian · Senior Software Engineer</a>
-          <nav><a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a></nav>
+          <nav>
+            <a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
         </div>
       </header>
       <main class="container blog-content"> {{ content }} </main>
