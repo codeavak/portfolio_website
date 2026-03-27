@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-label="Approval ladder for AI coding tasks">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111b"/>
+      <stop offset="100%" stop-color="#13263e"/>
+    </linearGradient>
+    <linearGradient id="low" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="high" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" rx="34" fill="url(#bg)"/>
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="78" y="94" fill="#e8f1fc" font-size="30" font-weight="700">A practical approval ladder</text>
+    <text x="78" y="132" fill="#98aec8" font-size="18">As consequence grows, autonomy should shrink and controls should grow.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="108" y="580" width="1184" height="120" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <rect x="170" y="612" width="220" height="54" rx="18" fill="url(#low)"/>
+    <text x="280" y="646" text-anchor="middle" fill="#07111c" font-size="18" font-weight="700">Drafting and explanation</text>
+    <text x="428" y="646" fill="#d8ebfd" font-size="17">Normal review is usually enough.</text>
+
+    <rect x="198" y="432" width="1040" height="120" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <rect x="258" y="464" width="220" height="54" rx="18" fill="url(#mid)"/>
+    <text x="368" y="498" text-anchor="middle" fill="#07111c" font-size="18" font-weight="700">Repo edits and PR drafts</text>
+    <text x="516" y="498" fill="#d8ebfd" font-size="17">Scoped branches, CI, and human review before merge.</text>
+
+    <rect x="288" y="284" width="860" height="120" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <rect x="348" y="316" width="220" height="54" rx="18" fill="url(#high)"/>
+    <text x="458" y="350" text-anchor="middle" fill="#07111c" font-size="18" font-weight="700">External tools and MCP</text>
+    <text x="606" y="350" fill="#d8ebfd" font-size="17">Least-privilege scopes, logging, approval for risky actions.</text>
+
+    <rect x="378" y="136" width="680" height="120" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <rect x="438" y="168" width="220" height="54" rx="18" fill="url(#high)"/>
+    <text x="548" y="202" text-anchor="middle" fill="#07111c" font-size="18" font-weight="700">Identity, infra, secrets</text>
+    <text x="696" y="202" fill="#d8ebfd" font-size="17">Human-led changes, isolated environments, strong approvals.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="1088" y="640" fill="#86f0bf" font-size="16" font-weight="700">Lowest consequence</text>
+    <text x="1124" y="492" fill="#f6d48d" font-size="16" font-weight="700">Higher consequence</text>
+    <text x="1112" y="344" fill="#f7b28f" font-size="16" font-weight="700">Expanded exposure</text>
+    <text x="1090" y="196" fill="#f7a3b6" font-size="16" font-weight="700">Highest trust surface</text>
+  </g>
+
+  <g stroke="#6db8ff" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M700 580 V556"/>
+    <path d="M718 432 V408"/>
+    <path d="M736 284 V260"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="108" y="734" width="1184" height="46" rx="16" fill="#101d2f" stroke="#35567d"/>
+    <text x="700" y="763" text-anchor="middle" fill="#dbeafd" font-size="17">Security-minded teams do not ban AI by default. They match autonomy to blast radius.</text>
+  </g>
+</svg>

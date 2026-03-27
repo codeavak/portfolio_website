@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 920" role="img" aria-label="AI coding tools as part of the software supply chain">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08101a"/>
+      <stop offset="55%" stop-color="#102238"/>
+      <stop offset="100%" stop-color="#16324d"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6db8ff"/>
+      <stop offset="100%" stop-color="#4fe1cc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="920" rx="36" fill="url(#bg)"/>
+  <circle cx="1280" cy="140" r="240" fill="#2563eb" opacity="0.12"/>
+  <circle cx="250" cy="790" r="280" fill="#14b8a6" opacity="0.10"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 168 H1600"/>
+    <path d="M0 336 H1600"/>
+    <path d="M0 504 H1600"/>
+    <path d="M0 672 H1600"/>
+    <path d="M300 0 V920"/>
+    <path d="M640 0 V920"/>
+    <path d="M980 0 V920"/>
+    <path d="M1320 0 V920"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="84" y="92" fill="#e9f2fc" font-size="30" font-weight="700">AI coding tools are part of the software supply chain</text>
+    <text x="84" y="130" fill="#97afc8" font-size="18">The fastest way to use them responsibly is to treat them like real dependencies, not magic features.</text>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Inter, Segoe UI, sans-serif">
+    <rect x="104" y="214" width="300" height="432" rx="30" fill="#0f1a2b" stroke="#324e6d"/>
+    <text x="144" y="270" fill="#e7f1fc" font-size="28" font-weight="700">External inputs</text>
+    <rect x="144" y="310" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="254" y="354" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">Model provider</text>
+    <rect x="144" y="404" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="254" y="448" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">Tool server / MCP</text>
+    <rect x="144" y="498" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="254" y="542" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">Docs / tickets / APIs</text>
+    <text x="144" y="618" fill="#97afc8" font-size="17">Each one changes what the tool</text>
+    <text x="144" y="644" fill="#97afc8" font-size="17">can know, do, or leak.</text>
+
+    <rect x="470" y="170" width="660" height="520" rx="34" fill="#0e1725" stroke="#35567d"/>
+    <text x="512" y="238" fill="#e7f1fc" font-size="30" font-weight="700">AI coding tool</text>
+    <text x="512" y="276" fill="#97afc8" font-size="18">Not just an interface. A workflow participant.</text>
+    <rect x="520" y="328" width="560" height="210" rx="26" fill="#102235" stroke="#3b6188"/>
+    <rect x="554" y="366" width="172" height="118" rx="20" fill="#132b44" stroke="#41688f"/>
+    <text x="640" y="420" text-anchor="middle" fill="#eff6ff" font-size="22" font-weight="700">Retrieve</text>
+    <text x="640" y="448" text-anchor="middle" fill="#a4bbd3" font-size="15">repo context</text>
+    <rect x="745" y="366" width="172" height="118" rx="20" fill="#132b44" stroke="#41688f"/>
+    <text x="831" y="420" text-anchor="middle" fill="#eff6ff" font-size="22" font-weight="700">Propose</text>
+    <text x="831" y="448" text-anchor="middle" fill="#a4bbd3" font-size="15">edits and commands</text>
+    <rect x="936" y="366" width="108" height="118" rx="20" fill="#132b44" stroke="#41688f"/>
+    <text x="990" y="420" text-anchor="middle" fill="#eff6ff" font-size="22" font-weight="700">Act</text>
+    <text x="990" y="448" text-anchor="middle" fill="#a4bbd3" font-size="15">within scope</text>
+    <text x="520" y="590" fill="#97afc8" font-size="18">The moment the tool can retrieve, propose, and act, supply-chain questions become engineering questions.</text>
+
+    <rect x="1198" y="214" width="298" height="432" rx="30" fill="#0f1a2b" stroke="#324e6d"/>
+    <text x="1238" y="270" fill="#e7f1fc" font-size="28" font-weight="700">Delivery path</text>
+    <rect x="1238" y="310" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="1348" y="354" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">Repository</text>
+    <rect x="1238" y="404" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="1348" y="448" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">CI and policy gates</text>
+    <rect x="1238" y="498" width="220" height="74" rx="20" fill="#12263d" stroke="#3b6188"/>
+    <text x="1348" y="542" text-anchor="middle" fill="#d9eafb" font-size="20" font-weight="700">Human review</text>
+    <text x="1238" y="618" fill="#97afc8" font-size="17">This is where trust should be</text>
+    <text x="1238" y="644" fill="#97afc8" font-size="17">earned, not assumed.</text>
+  </g>
+
+  <g stroke="url(#flow)" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M404 430 H470"/>
+    <path d="M1130 430 H1198"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif" filter="url(#shadow)">
+    <rect x="430" y="740" width="740" height="104" rx="28" fill="#101d2f" stroke="#3a6188"/>
+    <text x="800" y="785" text-anchor="middle" fill="#eef6ff" font-size="27" font-weight="700">Calm security-minded default</text>
+    <text x="800" y="817" text-anchor="middle" fill="#9fb5cd" font-size="18">Inventory the chain. Narrow permissions. Keep deterministic checks. Preserve human judgment where consequence is high.</text>
+  </g>
+</svg>
