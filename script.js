@@ -82,7 +82,7 @@ const certDetails = {
   'azure-dev': {
     name: 'Microsoft Certified: Azure Developer Associate',
     issuer: 'Microsoft',
-    meta: 'Issued Apr 2024 · Expires Apr 2025 · Credential ID 49B8509E489A7C3E',
+    meta: 'Issued Apr 2024 · Expires Apr 2027 · Credential ID 49B8509E489A7C3E',
     skills: 'Microsoft Azure, Azure compute solutions, app services, CI/CD, security',
     description: 'Hands-on development on Azure platforms, including building compute solutions, APIs, and secure cloud-native services.',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
