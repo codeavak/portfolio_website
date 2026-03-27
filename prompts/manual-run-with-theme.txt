@@ -1,5 +1,0 @@
-Use $blog-package.
-
-Theme: Thinking like a security-minded engineer in the age of AI coding tools.
-
-Create the full package, add it to this Jekyll repo, prepare the images, and stop before commit.

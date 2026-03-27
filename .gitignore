@@ -1,1 +1,7 @@
 rawMaterial
+.agents/
+prompts/
+scripts/
+AGENTS.md
+README.md
+requirements.txt
