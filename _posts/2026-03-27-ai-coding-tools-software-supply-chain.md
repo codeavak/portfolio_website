@@ -13,7 +13,7 @@ tags:
   - AI agents
   - AppSec
 excerpt: "When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever."
-image: "/assets/generated/2026/03/ai-coding-tools-software-supply-chain/hero.svg"
+image: "/assets/generated/2026/03/ai-coding-tools-software-supply-chain/hero.png"
 ---
 
 Many teams still talk about AI coding tools as if they are mostly a better autocomplete box. That description is getting less accurate by the month.
@@ -59,7 +59,7 @@ OpenAI's current [agent safety guidance](https://developers.openai.com/api/docs/
 OWASP's [LLM05 supply-chain guidance](https://genai.owasp.org/llm05/) pushes the point further. It explicitly treats models, training data, and deployment platforms as part of the risk surface, and recommends inventory, signing, monitoring, and supplier review. That is familiar language for engineers who have spent time around application security or software supply chain work.
 
 <figure class="post-figure">
-  <img src="{{ site.baseurl }}/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.svg" alt="Diagram showing AI coding tools sitting between external model and tool providers on one side and repository, CI, and review systems on the other." />
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.png" alt="Diagram showing AI coding tools sitting between external model and tool providers on one side and repository, CI, and review systems on the other." />
   <figcaption>The AI coding tool is no longer just a user interface. It sits inside a chain of external dependencies, permissions, and approvals.</figcaption>
 </figure>
 
@@ -103,7 +103,7 @@ That ladder is more practical than blanket enthusiasm or blanket fear.
 It also reflects the direction the ecosystem is taking. The [OWASP Top 10 for Agentic Applications release on December 9, 2025](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/) is another signal that security thinking is moving from "LLM answers can be wrong" to "agent ecosystems create new operational failure modes." Once AI began taking actions, the security model had to grow up too.
 
 <figure class="post-figure">
-  <img src="{{ site.baseurl }}/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.svg" alt="Diagram showing an approval ladder from low-risk drafting to high-risk infrastructure and identity changes, with stronger controls at each level." />
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.png" alt="Diagram showing an approval ladder from low-risk drafting to high-risk infrastructure and identity changes, with stronger controls at each level." />
   <figcaption>Not every AI-assisted task deserves the same level of autonomy. Matching controls to consequence is where mature teams separate themselves.</figcaption>
 </figure>
 

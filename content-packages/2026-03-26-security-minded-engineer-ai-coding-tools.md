@@ -183,15 +183,15 @@ How is your team drawing the line between useful AI assistance and risky AI auto
 
 ### Prepared asset paths
 
-- Hero image: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/hero.svg`
-- Inline image 1: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.svg`
-- Inline image 2: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.svg`
+- Hero image: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/hero.png`
+- Inline image 1: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.png`
+- Inline image 2: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.png`
 - Regeneration prompts: `/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/prompts.md`
 
 ### Image notes
 
 - Because `OPENAI_API_KEY` was not available in the local environment, the image-generation script could not be used for API-backed bitmap images in this run.
-- To keep the post publishable, the visuals were prepared as authored SVG editorial diagrams that fit the technical tone of the article and render cleanly in Jekyll.
+- The published post now uses generated PNG editorial graphics that fit the technical tone of the article and render consistently across the site.
 - The prompt file includes stronger editorial-image prompts if you want to regenerate the visuals later with the local image script after setting an API key.
 
 ### Alt text

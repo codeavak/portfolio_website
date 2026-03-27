@@ -184,15 +184,15 @@ What part of your AI coding workflow feels most like supply-chain risk right now
 
 ### Prepared asset paths
 
-- Hero image: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/hero.svg`
-- Inline image 1: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.svg`
-- Inline image 2: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.svg`
+- Hero image: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/hero.png`
+- Inline image 1: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.png`
+- Inline image 2: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.png`
 - Regeneration prompts: `/assets/generated/2026/03/ai-coding-tools-software-supply-chain/prompts.md`
 
 ### Image notes
 
 - `OPENAI_API_KEY` was not available in the local environment, so the OpenAI image-generation helper was not used in this run.
-- To keep the package publishable, the post uses authored SVG diagrams that fit the technical tone and render cleanly inside the repo.
+- The published post now uses generated PNG diagrams that fit the technical tone and render consistently across the site.
 - The prompts file contains stronger editorial prompts if you want to regenerate them later with the local image script after setting an API key.
 
 ### Alt text

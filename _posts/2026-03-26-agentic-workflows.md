@@ -2,7 +2,7 @@
 layout: default
 title: "Agentic Workflows Without Chaos"
 description: "A long-form guide to AI and agentic workflows from a senior engineer perspective: where they create real value, where they create risk, and how to design them responsibly."
-image: "/assets/generated/2026/03/agentic-workflows/hero.svg"
+image: "/assets/generated/2026/03/agentic-workflows/hero.png"
 excerpt: "AI adoption is accelerating, but the trust gap is real. This guide explores how to design agentic workflows—AI systems that can retrieve context, use tools, and coordinate steps—with enough judgment to keep systems reliable, secure, and worth trusting."
 ---
 
@@ -20,44 +20,8 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
           </div>
         </div>
         <div class="hero-image">
-  <svg viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic workflow complexity spectrum">
-  <rect x="0" y="0" width="1000" height="350" rx="28" fill="#0f172a"/>
-  <text x="36" y="46" fill="#e2e8f0" font-size="26" font-weight="700">The complexity spectrum</text>
-  <text x="36" y="76" fill="#94a3b8" font-size="15">From simple prompts to multi-agent systems</text>
-  <g font-size="16" font-weight="700" fill="#f8fafc">
-    <rect x="40" y="120" width="180" height="180" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="130" y="170" text-anchor="middle">1. Prompt</text>
-    <text x="130" y="205" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">One request.</text>
-    <text x="130" y="228" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">No tools. No memory.</text>
-
-    <rect x="240" y="105" width="190" height="195" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="335" y="160" text-anchor="middle">2. Workflow</text>
-    <text x="335" y="195" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Fixed steps.</text>
-    <text x="335" y="218" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Predictable orchestration.</text>
-
-    <rect x="450" y="90" width="200" height="210" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="550" y="150" text-anchor="middle">3. Agent</text>
-    <text x="550" y="185" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Plans and uses tools.</text>
-    <text x="550" y="208" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Loops until exit criteria.</text>
-
-    <rect x="670" y="75" width="250" height="225" rx="22" fill="#243554"/>
-    <text x="795" y="140" text-anchor="middle">4. Multi-agent system</text>
-    <text x="795" y="175" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Specialists coordinate.</text>
-    <text x="795" y="198" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">More power. More failure modes.</text>
-  </g>
-  <g stroke="#60a5fa" stroke-width="4" fill="none">
-    <line x1="220" y1="200" x2="240" y2="200"/>
-    <line x1="430" y1="200" x2="450" y2="200"/>
-    <line x1="650" y1="200" x2="670" y2="200"/>
-  </g>
-  <g fill="#94a3b8" font-size="13">
-    <text x="41" y="333">Use when: fast drafting</text>
-    <text x="241" y="333">Use when: steps are known</text>
-    <text x="451" y="333">Use when: dynamic tool use is needed</text>
-    <text x="671" y="333">Use when: specialization clearly pays for complexity</text>
-  </g>
-</svg>
-</div>
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/hero-inline-duplicate.png" alt="Agentic workflow complexity spectrum" />
+        </div>
         </div>
       </div>
     </div>
@@ -86,44 +50,8 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
         <p>That creates leverage. It also creates risk. The complexity spectrum looks like this:</p>
 
         <div class="visual">
-<svg viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic workflow complexity spectrum">
-  <rect x="0" y="0" width="1000" height="350" rx="28" fill="#0f172a"/>
-  <text x="36" y="46" fill="#e2e8f0" font-size="26" font-weight="700">The complexity spectrum</text>
-  <text x="36" y="76" fill="#94a3b8" font-size="15">From simple prompts to multi-agent systems</text>
-  <g font-size="16" font-weight="700" fill="#f8fafc">
-    <rect x="40" y="120" width="180" height="180" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="130" y="170" text-anchor="middle">1. Prompt</text>
-    <text x="130" y="205" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">One request.</text>
-    <text x="130" y="228" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">No tools. No memory.</text>
-
-    <rect x="240" y="105" width="190" height="195" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="335" y="160" text-anchor="middle">2. Workflow</text>
-    <text x="335" y="195" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Fixed steps.</text>
-    <text x="335" y="218" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Predictable orchestration.</text>
-
-    <rect x="450" y="90" width="200" height="210" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="550" y="150" text-anchor="middle">3. Agent</text>
-    <text x="550" y="185" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Plans and uses tools.</text>
-    <text x="550" y="208" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Loops until exit criteria.</text>
-
-    <rect x="670" y="75" width="250" height="225" rx="22" fill="#243554"/>
-    <text x="795" y="140" text-anchor="middle">4. Multi-agent system</text>
-    <text x="795" y="175" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Specialists coordinate.</text>
-    <text x="795" y="198" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">More power. More failure modes.</text>
-  </g>
-  <g stroke="#60a5fa" stroke-width="4" fill="none">
-    <line x1="220" y1="200" x2="240" y2="200"/>
-    <line x1="430" y1="200" x2="450" y2="200"/>
-    <line x1="650" y1="200" x2="670" y2="200"/>
-  </g>
-  <g fill="#94a3b8" font-size="13">
-    <text x="41" y="333">Use when: fast drafting</text>
-    <text x="241" y="333">Use when: steps are known</text>
-    <text x="451" y="333">Use when: dynamic tool use is needed</text>
-    <text x="671" y="333">Use when: specialization clearly pays for complexity</text>
-  </g>
-</svg>
-</div>
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/complexity-spectrum.png" alt="Agentic workflow complexity spectrum" />
+        </div>
 
         <p>Anthropic’s guidance is one of the clearest statements I have seen on this. After working with teams building real systems, they argue that the most successful implementations tend to use simple, composable patterns rather than complex frameworks.<sup><a href="#ref-5">5</a></sup> That feels right. Most workflow problems are not improved by unnecessary autonomy. They are improved by clarity, constraint, and good handoffs.</p>
       </section>
@@ -173,57 +101,8 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
         <p>OpenAI’s current guidance for building agents recommends focusing first on accuracy targets, then optimizing for cost and latency, and keeping prompts and components flexible rather than multiplying complexity too early.<sup><a href="#ref-8">8</a></sup> Teams often do the reverse: they celebrate the initial demo, then discover too late that the workflow is brittle, expensive, and difficult to measure.</p>
 
         <div class="visual">
-<svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Secure agentic workflow architecture">
-  <rect x="0" y="0" width="1000" height="520" rx="28" fill="#0f172a"/>
-  <text x="36" y="46" fill="#e2e8f0" font-size="26" font-weight="700">A security-minded agentic workflow</text>
-  <text x="36" y="76" fill="#94a3b8" font-size="15">Guardrails and observability belong in the design, not the cleanup phase.</text>
-
-  <g>
-    <rect x="52" y="145" width="150" height="74" rx="18" fill="#132238" stroke="#243554"/>
-    <text x="127" y="189" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">User request</text>
-
-    <rect x="250" y="112" width="190" height="74" rx="18" fill="#10273a" stroke="#1f4968"/>
-    <text x="345" y="146" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Policy + routing</text>
-    <text x="345" y="168" fill="#cbd5e1" text-anchor="middle" font-size="13">scope, identity, prompt policy</text>
-
-    <rect x="250" y="224" width="190" height="74" rx="18" fill="#10273a" stroke="#1f4968"/>
-    <text x="345" y="258" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Context layer</text>
-    <text x="345" y="280" fill="#cbd5e1" text-anchor="middle" font-size="13">retrieval, memory, data filters</text>
-
-    <rect x="500" y="168" width="210" height="90" rx="22" fill="#132238" stroke="#243554"/>
-    <text x="605" y="203" fill="#f8fafc" text-anchor="middle" font-size="20" font-weight="700">Agent / workflow</text>
-    <text x="605" y="228" fill="#cbd5e1" text-anchor="middle" font-size="13">planning, tool selection, execution</text>
-
-    <rect x="770" y="88" width="170" height="68" rx="18" fill="#132238" stroke="#243554"/>
-    <text x="855" y="128" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Read tools</text>
-
-    <rect x="770" y="181" width="170" height="68" rx="18" fill="#132238" stroke="#243554"/>
-    <text x="855" y="221" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Write tools</text>
-
-    <rect x="770" y="274" width="170" height="68" rx="18" fill="#132238" stroke="#243554"/>
-    <text x="855" y="314" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">External APIs</text>
-
-    <rect x="500" y="336" width="210" height="74" rx="20" fill="#11253a" stroke="#225b86"/>
-    <text x="605" y="368" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Human approval</text>
-    <text x="605" y="392" fill="#cbd5e1" text-anchor="middle" font-size="13">required for high-impact actions</text>
-
-    <rect x="90" y="360" width="350" height="92" rx="20" fill="#111c33" stroke="#243554"/>
-    <text x="265" y="392" fill="#f8fafc" text-anchor="middle" font-size="18" font-weight="700">Observability and controls</text>
-    <text x="265" y="418" fill="#cbd5e1" text-anchor="middle" font-size="13">audit logs • evals • rate limits • output validation</text>
-  </g>
-
-  <g stroke="#60a5fa" stroke-width="4" fill="none">
-    <line x1="202" y1="182" x2="250" y2="149"/>
-    <line x1="202" y1="182" x2="250" y2="261"/>
-    <line x1="440" y1="149" x2="500" y2="203"/>
-    <line x1="440" y1="261" x2="500" y2="223"/>
-    <line x1="710" y1="203" x2="770" y2="122"/>
-    <line x1="710" y1="213" x2="770" y2="215"/>
-    <line x1="710" y1="223" x2="770" y2="308"/>
-    <line x1="605" y1="258" x2="605" y2="336"/>
-  </g>
-</svg>
-</div>
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/security-minded-workflow.png" alt="Secure agentic workflow architecture" />
+        </div>
 
         <p>Put differently: an agentic system is only as good as the discipline around it. Better prompts help. Better workflow design matters more.</p>
       </section>
@@ -234,32 +113,8 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
         <p>NIST’s Generative AI Profile is useful here because it frames risk management as a set of practical actions organizations can align to their goals and priorities.<sup><a href="#ref-9">9</a></sup> OWASP’s work is equally important because it keeps attention on concrete failure modes in real systems. Their LLM guidance highlights prompt injection, insecure output handling, training data poisoning, model denial of service, and supply-chain vulnerabilities among the leading risks for LLM applications.<sup><a href="#ref-10">10</a></sup></p>
 
         <div class="visual">
-<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI adoption challenges chart">
-  <rect x="0" y="0" width="760" height="420" rx="24" fill="#0f172a"/>
-  <text x="34" y="44" fill="#e2e8f0" font-size="24" font-weight="700">The hard part is not access — it is execution quality</text>
-  <text x="34" y="72" fill="#94a3b8" font-size="15">IBM on common AI adoption challenges</text>
-  <g fill="#cbd5e1" font-size="16">
-    <text x="36" y="140">Accuracy or bias concerns</text>
-    <text x="36" y="220">Not enough proprietary data</text>
-    <text x="36" y="300">Not enough gen AI expertise</text>
-  </g>
-  <g>
-    <rect x="330" y="115" width="340" height="34" rx="17" fill="#152238"/>
-    <rect x="330" y="115" width="153" height="34" rx="17" fill="#38bdf8"/>
-    <text x="496" y="138" fill="#e0f2fe" font-size="17" font-weight="700">45%</text>
-
-    <rect x="330" y="195" width="340" height="34" rx="17" fill="#152238"/>
-    <rect x="330" y="195" width="143" height="34" rx="17" fill="#5eead4"/>
-    <text x="486" y="218" fill="#ecfeff" font-size="17" font-weight="700">42%</text>
-
-    <rect x="330" y="275" width="340" height="34" rx="17" fill="#152238"/>
-    <rect x="330" y="275" width="143" height="34" rx="17" fill="#a78bfa"/>
-    <text x="486" y="298" fill="#f5f3ff" font-size="17" font-weight="700">42%</text>
-  </g>
-  <rect x="40" y="338" width="680" height="48" rx="16" fill="#111c33" stroke="#22314e"/>
-  <text x="60" y="368" fill="#cbd5e1" font-size="14">Translation for engineering teams: guardrails, clean data, and operational discipline matter more than flashy demos.</text>
-</svg>
-</div>
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/adoption-challenges.png" alt="AI adoption challenges chart" />
+        </div>
 
         <p>For working engineers, that translates into a few non-negotiables:</p>
         <div class="bullets">
@@ -320,33 +175,8 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
         <p>Those questions are not glamorous. They are also the difference between something impressive for a week and something valuable for a year.</p>
 
         <div class="visual">
-<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic maturity model">
-  <rect x="0" y="0" width="760" height="420" rx="24" fill="#0f172a"/>
-  <text x="34" y="44" fill="#e2e8f0" font-size="24" font-weight="700">A practical maturity model</text>
-  <text x="34" y="72" fill="#94a3b8" font-size="15">Move right only when the current layer is reliable.</text>
-
-  <g>
-    <rect x="56" y="316" width="648" height="54" rx="16" fill="#152238"/>
-    <text x="80" y="349" fill="#f8fafc" font-size="17" font-weight="700">Level 1 — Assisted drafting</text>
-    <text x="315" y="349" fill="#cbd5e1" font-size="14">Summaries, first drafts, note cleanup</text>
-
-    <rect x="96" y="248" width="568" height="54" rx="16" fill="#10273a"/>
-    <text x="120" y="281" fill="#f8fafc" font-size="17" font-weight="700">Level 2 — Structured workflows</text>
-    <text x="390" y="281" fill="#cbd5e1" font-size="14">Known steps, known inputs, known outputs</text>
-
-    <rect x="136" y="180" width="488" height="54" rx="16" fill="#11253a"/>
-    <text x="160" y="213" fill="#f8fafc" font-size="17" font-weight="700">Level 3 — Tool-using agents</text>
-    <text x="398" y="213" fill="#cbd5e1" font-size="14">Retrieval, APIs, bounded autonomy</text>
-
-    <rect x="176" y="112" width="408" height="54" rx="16" fill="#132238"/>
-    <text x="200" y="145" fill="#f8fafc" font-size="17" font-weight="700">Level 4 — Human-gated actions</text>
-    <text x="427" y="145" fill="#cbd5e1" font-size="14">Review before changes or decisions</text>
-
-    <rect x="216" y="44" width="328" height="54" rx="16" fill="#1e293b"/>
-    <text x="240" y="77" fill="#f8fafc" font-size="17" font-weight="700">Level 5 — Production-grade governance</text>
-  </g>
-</svg>
-</div>
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/maturity-model.png" alt="Agentic maturity model" />
+        </div>
 
         <p>There is also a broader career implication here. Engineers who can connect AI capability to workflow design, system reliability, security boundaries, and business credibility will become much more useful than engineers who only know how to generate clever outputs. The durable skill is judgment.</p>
       </section>

@@ -13,7 +13,7 @@ tags:
   - AI agents
   - developer productivity
 excerpt: "AI coding tools are moving from autocomplete to repo-aware agents that can run checks, propose changes, and open pull requests. A security-minded engineer sees the upside, but also knows the real work is setting the right boundaries around context, permissions, validation, and review."
-image: "/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/hero.svg"
+image: "/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/hero.png"
 ---
 
 A year ago, many teams could still treat AI coding tools as smarter autocomplete. That model is already too small. The newest tools can inspect repositories, follow project instructions, run tests, propose multi-file edits, and open pull requests. That creates real leverage. It also moves the risk from isolated suggestions to trust boundaries, sensitive context, workflow design, and operational control.
@@ -56,7 +56,7 @@ The same GitHub docs also carry a useful warning. GitHub's current [content excl
 Anthropic and OpenAI are publishing the same kind of guidance: read-only defaults, explicit approvals, sandboxing, input sanitization, structured outputs, and trace-level evaluation. The serious conversation is no longer "Can the model write code?" It is "How do we keep the overall system disciplined when the model can see more, do more, and fail in more believable ways?"
 
 <figure class="post-figure">
-  <img src="{{ site.baseurl }}/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.svg" alt="A diagram showing the risk surface expanding as AI coding tools move from autocomplete to chat assistants to coding agents that can open pull requests." />
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.png" alt="A diagram showing the risk surface expanding as AI coding tools move from autocomplete to chat assistants to coding agents that can open pull requests." />
   <figcaption>The jump from suggestion to execution is also a jump in trust boundary design.</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ I do not think the right answer is to avoid these tools. I think the right answe
 In practice, I want read-heavy assistance first, then bounded write access, and only later agentic workflows that can trigger broader downstream actions. That sequence is how teams learn where the model is genuinely useful before the consequences get expensive.
 
 <figure class="post-figure">
-  <img src="{{ site.baseurl }}/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.svg" alt="A workflow diagram showing a safe AI coding loop from request to scoped context, draft changes, automated checks, human review, and merge." />
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.png" alt="A workflow diagram showing a safe AI coding loop from request to scoped context, draft changes, automated checks, human review, and merge." />
   <figcaption>A useful default: let the AI move quickly inside a loop that still preserves checks, evidence, and human judgment.</figcaption>
 </figure>
 

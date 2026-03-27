@@ -5,3 +5,7 @@ scripts/
 AGENTS.md
 README.md
 requirements.txt
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
