@@ -1,0 +1,18 @@
+Use $blog-package.
+
+Pick the strongest theme for this run yourself from my content pillars, with priority on AI, security, or programming topics that fit a senior software engineer and security-minded developer brand.
+
+Research current credible information where freshness matters.
+
+Create the full package and add it to this Jekyll repo:
+- write the blog post to _posts using today’s date and a clean slug
+- write the full supporting package to content-packages
+- generate 1 hero image and 2 inline images if the local image script is available
+- otherwise create strong image prompts and wire the post so I can drop images in later
+
+Important:
+- keep the tone calm, credible, reflective, and practical
+- avoid fake thought leadership
+- distinguish timeless principles from recent developments
+- do not commit anything
+- show me the diff when finished

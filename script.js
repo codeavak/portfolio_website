@@ -6,8 +6,12 @@ const icon = document.getElementById('themeIcon');
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
   const dark = theme === 'dark';
-  label.textContent = dark ? 'Dark mode' : 'Light mode';
-  icon.textContent = dark ? '☾' : '☀';
+  if (label) {
+    label.textContent = dark ? 'Dark mode' : 'Light mode';
+  }
+  if (icon) {
+    icon.textContent = dark ? '☾' : '☀';
+  }
   localStorage.setItem('portfolio-theme', theme);
 };
 
@@ -19,16 +23,18 @@ if (saved === 'light' || saved === 'dark') {
   setTheme('dark');
 }
 
-toggle.addEventListener('click', () => {
-  setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-});
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+}
 
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const progressFill = document.getElementById('scrollProgressFill');
 const nav = document.querySelector('.nav');
 
-window.addEventListener('scroll', () => {
+const updateViewportState = () => {
   const scrolled = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrolled / docHeight) * 100)) : 0;
@@ -49,7 +55,11 @@ window.addEventListener('scroll', () => {
     nav && nav.classList.remove('nav-side');
     document.body.classList.remove('nav-left');
   }
-});
+};
+
+window.addEventListener('scroll', updateViewportState);
+window.addEventListener('resize', updateViewportState);
+updateViewportState();
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', () => {
