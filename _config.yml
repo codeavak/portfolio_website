@@ -2,7 +2,6 @@ title: Johnny Avakian Portfolio
 email: codeavak@gmail.com
 description: "Senior Software Engineer portfolio and technical blog."
 baseurl: "/portfolio_website"
-url: "https://codeavak.github.io"
 markdown: kramdown
 theme: minima
 collections:
