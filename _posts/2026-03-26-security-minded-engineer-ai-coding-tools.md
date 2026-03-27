@@ -13,7 +13,7 @@ tags:
   - AI agents
   - developer productivity
 excerpt: "AI coding tools are moving from autocomplete to repo-aware agents that can run checks, propose changes, and open pull requests. A security-minded engineer sees the upside, but also knows the real work is setting the right boundaries around context, permissions, validation, and review."
-image: "/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/hero.png"
+image: "/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png"
 ---
 
 A year ago, many teams could still treat AI coding tools as smarter autocomplete. That model is already too small. The newest tools can inspect repositories, follow project instructions, run tests, propose multi-file edits, and open pull requests. That creates real leverage. It also moves the risk from isolated suggestions to trust boundaries, sensitive context, workflow design, and operational control.

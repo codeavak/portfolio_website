@@ -13,7 +13,7 @@ tags:
   - AI agents
   - AppSec
 excerpt: "When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever."
-image: "/assets/generated/2026/03/ai-coding-tools-software-supply-chain/hero.png"
+image: "/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png"
 ---
 
 Many teams still talk about AI coding tools as if they are mostly a better autocomplete box. That description is getting less accurate by the month.

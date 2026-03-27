@@ -20,7 +20,7 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
           </div>
         </div>
         <div class="hero-image">
-          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/hero-inline-duplicate.png" alt="Agentic workflow complexity spectrum" />
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/social.png" alt="Agentic workflow complexity spectrum" />
         </div>
         </div>
       </div>
