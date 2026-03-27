@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic workflow complexity spectrum">
+  <rect x="0" y="0" width="1000" height="350" rx="28" fill="#0f172a"/>
+  <text x="36" y="46" fill="#e2e8f0" font-size="26" font-weight="700">The complexity spectrum</text>
+  <text x="36" y="76" fill="#94a3b8" font-size="15">From simple prompts to multi-agent systems</text>
+  <g font-size="16" font-weight="700" fill="#f8fafc">
+    <rect x="40" y="120" width="180" height="180" rx="22" fill="#132238" stroke="#243554"/>
+    <text x="130" y="170" text-anchor="middle">1. Prompt</text>
+    <text x="130" y="205" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">One request.</text>
+    <text x="130" y="228" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">No tools. No memory.</text>
+
+    <rect x="240" y="105" width="190" height="195" rx="22" fill="#132238" stroke="#243554"/>
+    <text x="335" y="160" text-anchor="middle">2. Workflow</text>
+    <text x="335" y="195" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Fixed steps.</text>
+    <text x="335" y="218" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Predictable orchestration.</text>
+
+    <rect x="450" y="90" width="200" height="210" rx="22" fill="#132238" stroke="#243554"/>
+    <text x="550" y="150" text-anchor="middle">3. Agent</text>
+    <text x="550" y="185" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Plans and uses tools.</text>
+    <text x="550" y="208" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Loops until exit criteria.</text>
+
+    <rect x="670" y="75" width="250" height="225" rx="22" fill="#243554"/>
+    <text x="795" y="140" text-anchor="middle">4. Multi-agent system</text>
+    <text x="795" y="175" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">Specialists coordinate.</text>
+    <text x="795" y="198" text-anchor="middle" font-size="14" font-weight="400" fill="#cbd5e1">More power. More failure modes.</text>
+  </g>
+  <g stroke="#60a5fa" stroke-width="4" fill="none">
+    <line x1="220" y1="200" x2="240" y2="200"/>
+    <line x1="430" y1="200" x2="450" y2="200"/>
+    <line x1="650" y1="200" x2="670" y2="200"/>
+  </g>
+  <g fill="#94a3b8" font-size="13">
+    <text x="41" y="333">Use when: fast drafting</text>
+    <text x="241" y="333">Use when: steps are known</text>
+    <text x="451" y="333">Use when: dynamic tool use is needed</text>
+    <text x="671" y="333">Use when: specialization clearly pays for complexity</text>
+  </g>
+</svg>
