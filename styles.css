@@ -129,6 +129,53 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none;
   margin-left: 12px;
 }
+
+.blog-list {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-list li:last-child {
+  border-bottom: none;
+}
+
+.blog-post-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.blog-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.blog-list a:hover {
+  color: var(--accent);
+}
+
+.blog-list small {
+  color: var(--muted);
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.blog-list p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
 .blog-header nav a:hover {
   text-decoration: underline;
 }
