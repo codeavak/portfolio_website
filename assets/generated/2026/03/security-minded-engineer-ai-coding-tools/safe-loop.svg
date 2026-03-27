@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" role="img" aria-label="Safe AI coding loop with scoped context and review">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111c"/>
+      <stop offset="100%" stop-color="#11253a"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6eb7ff"/>
+      <stop offset="100%" stop-color="#4fe1cc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" rx="34" fill="url(#bg)"/>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="78" y="92" fill="#e8f1fb" font-size="30" font-weight="700">A safe AI coding loop</text>
+    <text x="78" y="130" fill="#95abc3" font-size="18">Let the tool move quickly inside a workflow that still preserves evidence and control.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif" filter="url(#none)">
+    <rect x="92" y="246" width="180" height="120" rx="24" fill="#0f1b2d" stroke="#35567d"/>
+    <text x="182" y="304" text-anchor="middle" fill="#edf5ff" font-size="24" font-weight="700">Request</text>
+    <text x="182" y="336" text-anchor="middle" fill="#9eb3c8" font-size="16">A real task with</text>
+    <text x="182" y="358" text-anchor="middle" fill="#9eb3c8" font-size="16">clear intent</text>
+
+    <rect x="330" y="214" width="220" height="184" rx="28" fill="#0f1b2d" stroke="#35567d"/>
+    <text x="440" y="274" text-anchor="middle" fill="#edf5ff" font-size="24" font-weight="700">Scoped context</text>
+    <text x="440" y="314" text-anchor="middle" fill="#9eb3c8" font-size="16">Relevant files</text>
+    <text x="440" y="338" text-anchor="middle" fill="#9eb3c8" font-size="16">Project instructions</text>
+    <text x="440" y="362" text-anchor="middle" fill="#9eb3c8" font-size="16">No unnecessary secrets</text>
+
+    <rect x="608" y="214" width="220" height="184" rx="28" fill="#0f1b2d" stroke="#35567d"/>
+    <text x="718" y="274" text-anchor="middle" fill="#edf5ff" font-size="24" font-weight="700">Draft changes</text>
+    <text x="718" y="314" text-anchor="middle" fill="#9eb3c8" font-size="16">Code edits</text>
+    <text x="718" y="338" text-anchor="middle" fill="#9eb3c8" font-size="16">Suggested commands</text>
+    <text x="718" y="362" text-anchor="middle" fill="#9eb3c8" font-size="16">Written rationale</text>
+
+    <rect x="886" y="214" width="220" height="184" rx="28" fill="#0f1b2d" stroke="#35567d"/>
+    <text x="996" y="274" text-anchor="middle" fill="#edf5ff" font-size="24" font-weight="700">Automated checks</text>
+    <text x="996" y="314" text-anchor="middle" fill="#9eb3c8" font-size="16">Tests</text>
+    <text x="996" y="338" text-anchor="middle" fill="#9eb3c8" font-size="16">Linters</text>
+    <text x="996" y="362" text-anchor="middle" fill="#9eb3c8" font-size="16">Policy and security gates</text>
+
+    <rect x="1148" y="246" width="180" height="120" rx="24" fill="#0f1b2d" stroke="#35567d"/>
+    <text x="1238" y="304" text-anchor="middle" fill="#edf5ff" font-size="24" font-weight="700">Review</text>
+    <text x="1238" y="336" text-anchor="middle" fill="#9eb3c8" font-size="16">Human approval</text>
+    <text x="1238" y="358" text-anchor="middle" fill="#9eb3c8" font-size="16">before merge</text>
+  </g>
+
+  <g stroke="url(#flow)" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M272 306 H330"/>
+    <path d="M550 306 H608"/>
+    <path d="M828 306 H886"/>
+    <path d="M1106 306 H1148"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="206" y="514" width="988" height="228" rx="34" fill="#0d1a2c" stroke="#314c6a"/>
+    <text x="250" y="572" fill="#eef6ff" font-size="26" font-weight="700">Guardrails that keep the loop trustworthy</text>
+
+    <rect x="250" y="608" width="200" height="92" rx="22" fill="#102235" stroke="#35567d"/>
+    <text x="350" y="648" text-anchor="middle" fill="#dfeefd" font-size="20" font-weight="700">Least privilege</text>
+    <text x="350" y="676" text-anchor="middle" fill="#99b0c7" font-size="15">Only grant what the task needs</text>
+
+    <rect x="474" y="608" width="200" height="92" rx="22" fill="#102235" stroke="#35567d"/>
+    <text x="574" y="648" text-anchor="middle" fill="#dfeefd" font-size="20" font-weight="700">Command review</text>
+    <text x="574" y="676" text-anchor="middle" fill="#99b0c7" font-size="15">Check risky actions before running</text>
+
+    <rect x="698" y="608" width="200" height="92" rx="22" fill="#102235" stroke="#35567d"/>
+    <text x="798" y="648" text-anchor="middle" fill="#dfeefd" font-size="20" font-weight="700">Traceability</text>
+    <text x="798" y="676" text-anchor="middle" fill="#99b0c7" font-size="15">Keep logs, diffs, and rationale</text>
+
+    <rect x="922" y="608" width="228" height="92" rx="22" fill="#102235" stroke="#35567d"/>
+    <text x="1036" y="648" text-anchor="middle" fill="#dfeefd" font-size="20" font-weight="700">Rollback plan</text>
+    <text x="1036" y="676" text-anchor="middle" fill="#99b0c7" font-size="15">Assume believable mistakes happen</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="498" y="150" width="410" height="34" rx="17" fill="#0f2236" stroke="#35567d"/>
+    <text x="703" y="173" text-anchor="middle" fill="#c6ddfa" font-size="16" font-weight="700">Fast enough to help, controlled enough to trust</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description }}" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" />
+    <script src="{{ site.baseurl }}/script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="{{ site.baseurl }}/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav><a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a></nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              {% if page.categories and page.categories.size > 0 %}
+                <div class="eyebrow">{{ page.categories | join: " • " }}</div>
+              {% endif %}
+              <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+              <h1 class="post-title">{{ page.title }}</h1>
+              {% if page.excerpt %}
+                <p class="post-dek">{{ page.excerpt }}</p>
+              {% endif %}
+              {% if page.tags and page.tags.size > 0 %}
+                <div class="post-tag-row">
+                  {% for tag in page.tags %}
+                    <span class="chip">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            {% if page.image %}
+              <div class="post-hero-media">
+                <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" />
+              </div>
+            {% endif %}
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            {{ content }}
+          </article>
+        </section>
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© {{ site.time | date: "%Y" }} Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
