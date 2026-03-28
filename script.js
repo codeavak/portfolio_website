@@ -220,7 +220,7 @@ const eduDetails = {
       'Research Internship',
       'Master’s Thesis: The Consistency Between Unified Modeling Language (UML) Class and Objects Diagrams'
     ],
-    logo: 'https://via.placeholder.com/48?text=YSU',
+    logo: 'https://www.ysu.am/themes/custom/ysu_main/images/logo-armenian.svg',
   },
   bachelor: {
     name: 'Bachelor of Science in Applied Mathematics',
@@ -281,7 +281,7 @@ const eduDetails = {
       'State Graduation Examination in General Mathematics',
       'Graduation Project / Thesis'
     ],
-    logo: 'https://via.placeholder.com/48?text=YSU',
+    logo: 'https://www.ysu.am/themes/custom/ysu_main/images/logo-armenian.svg',
   },
 };
 
