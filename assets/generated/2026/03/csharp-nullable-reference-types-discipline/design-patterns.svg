@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Three nullable reference type design patterns</title>
+  <desc id="desc">Dark three-column flat diagram showing constructor injection, factory method, and result type patterns for handling nullable input.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0b0f14; }
+      .panel { fill: #111827; stroke: #223044; stroke-width: 2; }
+      .col { fill: #0f1722; stroke: #243244; stroke-width: 1.5; }
+      .tint { fill: #1e293b; opacity: 0.38; }
+      .title { fill: #e5e7eb; font: 700 40px Inter, Arial, sans-serif; }
+      .subtitle { fill: #94a3b8; font: 500 18px Inter, Arial, sans-serif; }
+      .colTitle { fill: #dbeafe; font: 700 24px Inter, Arial, sans-serif; }
+      .label { fill: #cbd5e1; font: 600 18px Inter, Arial, sans-serif; }
+      .small { fill: #94a3b8; font: 500 15px Inter, Arial, sans-serif; }
+      .code { fill: #cbd5e1; font: 500 20px 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace; }
+      .monoSm { fill: #cbd5e1; font: 500 16px 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace; }
+      .path { stroke: #93c5fd; stroke-width: 3; fill: none; }
+      .box { fill: #0b1220; stroke: #37506d; stroke-width: 1.5; }
+      .ok { fill: #052e16; stroke: #4ade80; stroke-width: 1.5; }
+      .fail { fill: #2a0f12; stroke: #f87171; stroke-width: 1.5; }
+      .neutral { fill: #111827; stroke: #475569; stroke-width: 1.5; }
+      .divider { stroke: #334155; stroke-width: 1.5; }
+      .shadow { filter: drop-shadow(0 14px 24px rgba(0,0,0,0.28)); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd" />
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="900" rx="28" />
+
+  <text x="800" y="84" text-anchor="middle" class="title">Three Patterns for Real Nullability Discipline</text>
+  <text x="800" y="120" text-anchor="middle" class="subtitle">Make uncertainty explicit at the boundary, then narrow it into a trustworthy model.</text>
+
+  <g class="shadow">
+    <rect class="panel" x="70" y="160" width="1460" height="660" rx="28" />
+  </g>
+
+  <line x1="556" y1="190" x2="556" y2="790" class="divider" />
+  <line x1="1044" y1="190" x2="1044" y2="790" class="divider" />
+
+  <!-- Column 1 -->
+  <g>
+    <rect class="col" x="100" y="200" width="420" height="580" rx="24" />
+    <rect class="tint" x="120" y="222" width="380" height="120" rx="18" />
+    <text x="140" y="255" class="colTitle">Constructor Injection</text>
+    <text x="140" y="285" class="small">Validate once at creation time.</text>
+
+    <rect class="neutral" x="145" y="380" width="145" height="62" rx="16" />
+    <text x="218" y="418" text-anchor="middle" class="label">uncertain input</text>
+
+    <path class="path" d="M290 411 H335" marker-end="url(#arrow)" />
+
+    <rect class="box" x="335" y="355" width="135" height="112" rx="18" />
+    <text x="403" y="392" text-anchor="middle" class="label">constructor</text>
+    <text x="403" y="423" text-anchor="middle" class="monoSm">new User(...)</text>
+
+    <path class="path" d="M403 467 V532" marker-end="url(#arrow)" />
+
+    <rect class="ok" x="287" y="532" width="232" height="86" rx="18" />
+    <text x="403" y="568" text-anchor="middle" class="label">guaranteed valid object</text>
+    <text x="403" y="600" text-anchor="middle" class="monoSm">User : Name, Email non-null</text>
+
+    <text x="145" y="690" class="code">public User(string name,</text>
+    <text x="145" y="720" class="code">           string email)</text>
+  </g>
+
+  <!-- Column 2 -->
+  <g>
+    <rect class="col" x="590" y="200" width="420" height="580" rx="24" />
+    <rect class="tint" x="610" y="222" width="380" height="120" rx="18" />
+    <text x="630" y="255" class="colTitle">Factory Method</text>
+    <text x="630" y="285" class="small">Branch before an invalid object can exist.</text>
+
+    <rect class="neutral" x="640" y="382" width="120" height="58" rx="16" />
+    <text x="700" y="418" text-anchor="middle" class="label">input</text>
+
+    <path class="path" d="M760 411 H815" marker-end="url(#arrow)" />
+
+    <rect class="box" x="815" y="354" width="145" height="116" rx="18" />
+    <text x="887" y="392" text-anchor="middle" class="label">static factory</text>
+    <text x="887" y="423" text-anchor="middle" class="monoSm">TryCreate(...)</text>
+
+    <path class="path" d="M887 470 V530" />
+    <path class="path" d="M887 530 H760" marker-end="url(#arrow)" />
+    <path class="path" d="M887 530 H1015" marker-end="url(#arrow)" />
+
+    <rect class="fail" x="625" y="530" width="135" height="82" rx="18" />
+    <text x="692" y="565" text-anchor="middle" class="code">T?</text>
+    <text x="692" y="593" text-anchor="middle" class="small">handle absence</text>
+
+    <rect class="ok" x="1015" y="530" width="120" height="82" rx="18" transform="translate(-125 0)" />
+    <text x="950" y="565" text-anchor="middle" class="code">T</text>
+    <text x="950" y="593" text-anchor="middle" class="small">success</text>
+
+    <text x="630" y="690" class="code">public static User?</text>
+    <text x="630" y="720" class="code">TryCreate(string? raw)</text>
+  </g>
+
+  <!-- Column 3 -->
+  <g>
+    <rect class="col" x="1080" y="200" width="420" height="580" rx="24" />
+    <rect class="tint" x="1100" y="222" width="380" height="120" rx="18" />
+    <text x="1120" y="255" class="colTitle">Result Type</text>
+    <text x="1120" y="285" class="small">Return explicit success or failure metadata.</text>
+
+    <rect class="neutral" x="1128" y="382" width="120" height="58" rx="16" />
+    <text x="1188" y="418" text-anchor="middle" class="label">input</text>
+
+    <path class="path" d="M1248 411 H1302" marker-end="url(#arrow)" />
+
+    <rect class="box" x="1302" y="354" width="150" height="116" rx="18" />
+    <text x="1377" y="392" text-anchor="middle" class="label">method</text>
+    <text x="1377" y="423" text-anchor="middle" class="monoSm">Parse(...)</text>
+
+    <path class="path" d="M1377 470 V528" />
+    <path class="path" d="M1377 528 H1238" marker-end="url(#arrow)" />
+    <path class="path" d="M1377 528 H1516" marker-end="url(#arrow)" />
+
+    <rect class="fail" x="1120" y="528" width="160" height="86" rx="18" />
+    <text x="1200" y="565" text-anchor="middle" class="monoSm">Result.Failure</text>
+    <text x="1200" y="594" text-anchor="middle" class="small">reason preserved</text>
+
+    <rect class="ok" x="1324" y="528" width="160" height="86" rx="18" />
+    <text x="1404" y="565" text-anchor="middle" class="monoSm">Result.Success</text>
+    <text x="1404" y="594" text-anchor="middle" class="small">validated value</text>
+
+    <text x="1120" y="690" class="code">Result&lt;User&gt; Parse(</text>
+    <text x="1120" y="720" class="code">    string? input)</text>
+  </g>
+
+  <rect x="375" y="834" width="850" height="40" rx="14" fill="#0f1722" stroke="#243244" stroke-width="1.5" />
+  <text x="800" y="860" text-anchor="middle" class="subtitle">Constructor injection narrows by throwing, factories narrow by branching, result types narrow by explanation.</text>
+</svg>
