@@ -255,19 +255,6 @@ Teams that apply this find that the feature pays off. Not because null becomes i
 That is what the feature was designed to do. The annotation theater version just makes the warnings go quiet.
 
 ---
-
-*Interested in more posts on writing C# that's honest about its contracts? Follow along — the next few weeks cover async patterns, LINQ discipline, and dependency injection that ages well.*
-
-**Meta description:**
-Most teams enabled nullable reference types and then silenced the warnings with null-forgiving operators. That is annotation theater. This post explains what the feature actually buys you and the patterns — constructor injection, factory methods, Result types — that let you design null out of your domain.
-
-**SEO keyword ideas:**
-1. C# nullable reference types best practices
-2. null forgiving operator antipattern csharp
-3. csharp design null out of domain
-4. nullable reference types discipline dotnet
-5. C# result type option type pattern
-
 ## LinkedIn post
 
 Most teams enabled C# nullable reference types and then spent an afternoon doing this:
