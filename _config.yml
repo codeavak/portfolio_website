@@ -1,6 +1,7 @@
 title: Johnny Avakian Portfolio
 email: codeavak@gmail.com
 description: "Senior Software Engineer portfolio and technical blog."
+url: "https://codeavak.github.io"
 baseurl: "/portfolio_website"
 markdown: kramdown
 theme: minima
@@ -8,7 +9,13 @@ collections:
   posts:
     output: true
 permalink: /blog/:title/
-formspree_endpoint: "https://formspree.io/f/your_form_id"
+author:
+  name: "Johnny Avakian"
+  role: "Senior Software Engineer"
+  same_as:
+    - "https://github.com/codeavak"
+social_image: "/assets/Johnny.png"
+formspree_endpoint: "https://formspree.io/f/xzdkdvpz"
 utterances_repo: "codeavak/portfolio_website"
 utterances_issue_term: "pathname"
 utterances_label: "blog-comment"
