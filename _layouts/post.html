@@ -17,7 +17,13 @@
       <header class="blog-header">
         <div class="container">
           <a href="{{ site.baseurl }}/" class="brand">Johnny Avakian · Senior Software Engineer</a>
-          <nav><a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a></nav>
+          <nav>
+            <a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
         </div>
       </header>
 
@@ -55,6 +61,30 @@
             {{ content }}
           </article>
         </section>
+
+        {% if site.utterances_repo and site.utterances_repo != "" %}
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', '{{ site.utterances_repo }}');
+                script.setAttribute('issue-term', '{{ site.utterances_issue_term | default: "pathname" }}');
+                script.setAttribute('label', '{{ site.utterances_label | default: "blog-comment" }}');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        {% endif %}
       </main>
 
       <footer class="container blog-footer">

@@ -3,6 +3,18 @@ const toggle = document.getElementById('themeToggle');
 const label = document.getElementById('themeLabel');
 const icon = document.getElementById('themeIcon');
 
+const getUtterancesTheme = () => (root.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+
+const syncUtterancesTheme = () => {
+  const utterancesFrame = document.querySelector('iframe.utterances-frame');
+  if (utterancesFrame && utterancesFrame.contentWindow) {
+    utterancesFrame.contentWindow.postMessage(
+      { type: 'set-theme', theme: getUtterancesTheme() },
+      'https://utteranc.es'
+    );
+  }
+};
+
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
   const dark = theme === 'dark';
@@ -13,6 +25,7 @@ const setTheme = (theme) => {
     icon.textContent = dark ? '☾' : '☀';
   }
   localStorage.setItem('portfolio-theme', theme);
+  syncUtterancesTheme();
 };
 
 const saved = localStorage.getItem('portfolio-theme');
@@ -294,6 +307,10 @@ const modalSkills = document.getElementById('certModalSkills');
 const modalLogo = document.getElementById('certModalLogo');
 
 const openCertModal = (certId) => {
+  if (!modal || !modalTitle || !modalIssuer || !modalMeta || !modalDesc || !modalSkills || !modalLogo) {
+    return;
+  }
+
   const cert = certDetails[certId];
   if (!cert) return;
 
@@ -310,6 +327,10 @@ const openCertModal = (certId) => {
 };
 
 const openEduModal = (eduId) => {
+  if (!modal || !modalTitle || !modalIssuer || !modalMeta || !modalDesc || !modalSkills || !modalLogo) {
+    return;
+  }
+
   const edu = eduDetails[eduId];
   if (!edu) return;
 
@@ -326,6 +347,10 @@ const openEduModal = (eduId) => {
 };
 
 const closeCertModal = () => {
+  if (!modal) {
+    return;
+  }
+
   modal.classList.add('hidden');
   modal.setAttribute('aria-hidden', 'true');
 };
@@ -338,6 +363,66 @@ document.querySelectorAll('.edu-card-button').forEach((el) => {
   el.addEventListener('click', () => openEduModal(el.dataset.edu));
 });
 
-modal.querySelectorAll('[data-action="close-modal"]').forEach((el) => {
-  el.addEventListener('click', closeCertModal);
-});
+if (modal) {
+  modal.querySelectorAll('[data-action="close-modal"]').forEach((el) => {
+    el.addEventListener('click', closeCertModal);
+  });
+}
+
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const honeypot = contactForm.querySelector('input[name="_gotcha"]');
+
+    if (honeypot && honeypot.value) {
+      if (contactStatus) {
+        contactStatus.textContent = 'Unable to send this message. Please email directly instead.';
+      }
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    if (contactStatus) {
+      contactStatus.textContent = 'Sending your message...';
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        if (contactStatus) {
+          contactStatus.textContent = 'Thanks. Your message was sent successfully.';
+        }
+      } else {
+        if (contactStatus) {
+          contactStatus.textContent = 'Message could not be sent. Please use the direct email link.';
+        }
+      }
+    } catch (error) {
+      if (contactStatus) {
+        contactStatus.textContent = 'Network error while sending. Please use the direct email link.';
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send message';
+      }
+    }
+  });
+}

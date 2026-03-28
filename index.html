@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -343,16 +345,38 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-card">
-          <div>
-          <h3>Let's talk.</h3>
-          <p>
-            If you're building something extraordinary and need a senior engineer who doesn't just deliver—he transforms—I'm your guy. I turn complex challenges into seamless solutions that make your business thrive. Don't settle for average; let's discuss how I can take your team to the next level.
-          </p>
-          </div>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:codeavak@gmail.com">codeavak@gmail.com</a>
-            <a class="button" href="https://github.com/codeavak" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="button" href="https://www.linkedin.com/in/codeavak" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="contact-layout">
+            <div>
+              <h3>Let's talk.</h3>
+              <p>
+                If you're building something meaningful and need a senior engineer who ships reliably, send a message here. This form uses Formspree endpoint routing, so no API keys are stored in this repo.
+              </p>
+            </div>
+
+            <form id="contactForm" class="contact-form" action="{{ site.formspree_endpoint }}" method="POST" novalidate>
+              <label for="contactName">Name</label>
+              <input id="contactName" name="name" type="text" maxlength="120" required />
+
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" name="email" type="email" maxlength="160" required />
+
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="6" maxlength="2000" required></textarea>
+
+              <input type="hidden" name="_subject" value="Portfolio contact message" />
+              <input class="contact-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+              <div class="contact-form-actions">
+                <button class="button primary" type="submit">Send message</button>
+                <a class="button" href="mailto:codeavak@gmail.com">Email directly</a>
+              </div>
+              <p id="contactStatus" class="contact-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="hero-actions contact-links">
+              <a class="button" href="https://github.com/codeavak" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="button" href="https://www.linkedin.com/in/codeavak" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
           </div>
         </div>
       </div>

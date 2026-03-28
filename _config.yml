@@ -8,3 +8,7 @@ collections:
   posts:
     output: true
 permalink: /blog/:title/
+formspree_endpoint: "https://formspree.io/f/your_form_id"
+utterances_repo: "codeavak/portfolio_website"
+utterances_issue_term: "pathname"
+utterances_label: "blog-comment"
