@@ -2,7 +2,7 @@
 layout: default
 title: "Agentic Workflows Without Chaos"
 description: "A long-form guide to AI and agentic workflows from a senior engineer perspective: where they create real value, where they create risk, and how to design them responsibly."
-image: "/assets/generated/2026/03/agentic-workflows/hero.png"
+image: "/assets/generated/2026/03/agentic-workflows/social.png"
 excerpt: "AI adoption is accelerating, but the trust gap is real. This guide explores how to design agentic workflows—AI systems that can retrieve context, use tools, and coordinate steps—with enough judgment to keep systems reliable, secure, and worth trusting."
 ---
 
@@ -20,7 +20,7 @@ excerpt: "AI adoption is accelerating, but the trust gap is real. This guide exp
           </div>
         </div>
         <div class="hero-image">
-          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/social.png" alt="Agentic workflow complexity spectrum" />
+          <img src="{{ site.baseurl }}/assets/generated/2026/03/agentic-workflows/hero-inline-duplicate.png" alt="Agentic workflow complexity spectrum" />
         </div>
         </div>
       </div>
