@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Developers Get Wrong About ConfigureAwait"
-date: 2026-03-29 06:00:00 -0700
+date: 2026-03-29 00:00:00 -0700
 categories:
   - Software Engineering
   - C#
