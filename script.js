@@ -426,3 +426,200 @@ if (contactForm) {
     }
   });
 }
+
+const initBlogIndex = () => {
+  const postsGrid = document.getElementById('blogPostsGrid');
+  if (!postsGrid) {
+    return;
+  }
+
+  const cards = Array.from(postsGrid.querySelectorAll('.blog-post-card'));
+  if (!cards.length) {
+    return;
+  }
+
+  const keywordList = document.getElementById('blogKeywordList');
+  const dateFromInput = document.getElementById('blogDateFrom');
+  const dateToInput = document.getElementById('blogDateTo');
+  const clearFiltersButton = document.getElementById('blogClearFilters');
+  const resultsMeta = document.getElementById('blogResultsMeta');
+  const prevButton = document.getElementById('blogPrevPage');
+  const nextButton = document.getElementById('blogNextPage');
+  const pageInfo = document.getElementById('blogPageInfo');
+  const pageSize = 6;
+
+  let activeTag = 'all';
+  let currentPage = 1;
+
+  const parseCardTags = (card) => {
+    const raw = (card.dataset.tags || '').trim();
+    return raw ? raw.split('|').filter(Boolean) : [];
+  };
+
+  const allTags = Array.from(
+    new Set(cards.flatMap((card) => parseCardTags(card)))
+  ).sort((a, b) => a.localeCompare(b));
+
+  const buildKeywordChips = () => {
+    if (!keywordList) {
+      return;
+    }
+
+    const tags = ['all', ...allTags];
+    keywordList.innerHTML = '';
+
+    tags.forEach((tag) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = `blog-keyword-chip${tag === activeTag ? ' is-active' : ''}`;
+      chip.dataset.tag = tag;
+      chip.textContent = tag === 'all' ? 'All keywords' : tag;
+      chip.addEventListener('click', () => {
+        activeTag = tag;
+        currentPage = 1;
+        updateView();
+      });
+      keywordList.appendChild(chip);
+    });
+  };
+
+  const withinDateRange = (dateText) => {
+    const postDate = dateText ? new Date(`${dateText}T00:00:00`) : null;
+    if (!postDate || Number.isNaN(postDate.getTime())) {
+      return false;
+    }
+
+    if (dateFromInput && dateFromInput.value) {
+      const fromDate = new Date(`${dateFromInput.value}T00:00:00`);
+      if (postDate < fromDate) {
+        return false;
+      }
+    }
+
+    if (dateToInput && dateToInput.value) {
+      const toDate = new Date(`${dateToInput.value}T23:59:59`);
+      if (postDate > toDate) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const filteredCards = () => cards.filter((card) => {
+    const tags = parseCardTags(card);
+    const tagMatch = activeTag === 'all' || tags.includes(activeTag);
+    const dateMatch = withinDateRange(card.dataset.date || '');
+    return tagMatch && dateMatch;
+  });
+
+  const updateTagButtons = () => {
+    document.querySelectorAll('.blog-keyword-chip').forEach((chip) => {
+      chip.classList.toggle('is-active', chip.dataset.tag === activeTag);
+    });
+  };
+
+  const updateView = () => {
+    const matchedCards = filteredCards();
+    const total = matchedCards.length;
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    currentPage = Math.min(currentPage, totalPages);
+
+    const start = (currentPage - 1) * pageSize;
+    const end = start + pageSize;
+    const pageCards = matchedCards.slice(start, end);
+
+    cards.forEach((card) => {
+      card.hidden = !pageCards.includes(card);
+    });
+
+    if (resultsMeta) {
+      if (!total) {
+        resultsMeta.textContent = 'No posts match the selected filters.';
+      } else {
+        const startIndex = start + 1;
+        const endIndex = Math.min(end, total);
+        resultsMeta.textContent = `Showing ${startIndex}-${endIndex} of ${total} posts`;
+      }
+    }
+
+    if (pageInfo) {
+      pageInfo.textContent = total ? `Page ${currentPage} of ${totalPages}` : 'Page 0 of 0';
+    }
+
+    if (prevButton) {
+      prevButton.disabled = currentPage <= 1 || !total;
+    }
+
+    if (nextButton) {
+      nextButton.disabled = currentPage >= totalPages || !total;
+    }
+
+    updateTagButtons();
+  };
+
+  if (dateFromInput) {
+    dateFromInput.addEventListener('change', () => {
+      currentPage = 1;
+      updateView();
+    });
+  }
+
+  if (dateToInput) {
+    dateToInput.addEventListener('change', () => {
+      currentPage = 1;
+      updateView();
+    });
+  }
+
+  if (clearFiltersButton) {
+    clearFiltersButton.addEventListener('click', () => {
+      activeTag = 'all';
+      currentPage = 1;
+      if (dateFromInput) {
+        dateFromInput.value = '';
+      }
+      if (dateToInput) {
+        dateToInput.value = '';
+      }
+      updateView();
+    });
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        updateView();
+      }
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', () => {
+      currentPage += 1;
+      updateView();
+    });
+  }
+
+  postsGrid.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    if (target.classList.contains('blog-post-tag')) {
+      const tag = target.dataset.tag;
+      if (tag) {
+        activeTag = tag;
+        currentPage = 1;
+        updateView();
+      }
+    }
+  });
+
+  buildKeywordChips();
+  updateView();
+};
+
+initBlogIndex();
