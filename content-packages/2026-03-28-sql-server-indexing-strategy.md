@@ -222,14 +222,3 @@ What is your current process for validating that a new index actually changed an
 - **Hero**: dark-background side-by-side diagram. Left side shows nonclustered index seek with a dashed red arrow looping back to the clustered index (key lookup path, labeled in red). Right side shows covering index with INCLUDE — leaf node satisfies the query, green check, no extra trip.
 - **Index structure diagram**: two B-tree cross-sections. Left shows all four columns propagating through root, non-leaf, and leaf (annotated as "wide key" in red). Right shows two key columns propagating and two INCLUDE columns appearing at the leaf only (annotated as "narrow key + INCLUDE" in green).
 
-### Meta description
-
-SQL Server indexing strategy for backend developers: how the query optimizer chooses indexes, what makes an index covering versus composite, how INCLUDE columns work and what they cannot do, the write cost of over-indexing on high-volume tables, and how to read an execution plan to validate your indexing decisions.
-
-### SEO keywords
-
-1. SQL Server covering index
-2. SQL Server INCLUDE columns index
-3. SQL Server key lookup execution plan
-4. SQL Server composite vs covering index
-5. SQL Server over-indexing write performance

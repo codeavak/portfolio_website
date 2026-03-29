@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="1400" viewBox="0 0 900 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="deadlockTitle deadlockDesc">
+  <title id="deadlockTitle">Classic async deadlock flow</title>
+  <desc id="deadlockDesc">A numbered vertical flowchart showing a context thread blocking on Result, an await capturing SynchronizationContext, a thread-pool completion, and a continuation stuck behind the blocked context leading to deadlock.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #1a1a2e; }
+      .stepBox { fill: #24283b; stroke: #59607b; stroke-width: 2.5; rx: 18; ry: 18; }
+      .accentBox { fill: #26293a; stroke: #d15a63; stroke-width: 3; rx: 18; ry: 18; }
+      .stepNum { fill: #111522; stroke: #9ea7c3; stroke-width: 1.5; }
+      .numText { fill: #eef2fb; font-family: Inter, system-ui, sans-serif; font-size: 26px; font-weight: 800; }
+      .label { fill: #ecf0f8; font-family: Inter, system-ui, sans-serif; font-size: 32px; font-weight: 750; }
+      .detail { fill: #c3cade; font-family: Inter, system-ui, sans-serif; font-size: 22px; font-weight: 500; }
+      .mono { fill: #dfe6f5; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 28px; font-weight: 650; }
+      .arrow { stroke: #8b95b4; stroke-width: 6; fill: none; }
+      .deadArrow { stroke: #d15a63; stroke-width: 6; fill: none; }
+      .deadDash { stroke-dasharray: 14 10; }
+      .blocked { stroke: #9ba3bb; stroke-width: 7; stroke-linecap: round; opacity: 0.85; }
+      .gateBar { fill: #ac424d; }
+      .subtle { opacity: 0.9; }
+      .title { fill: #f2f6ff; font-family: Inter, system-ui, sans-serif; font-size: 40px; font-weight: 800; letter-spacing: 0.4px; }
+    </style>
+
+    <marker id="arrowGray" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#8b95b4"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 z" fill="#d15a63"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="1400"/>
+  <text class="title" x="450" y="76" text-anchor="middle">Classic async deadlock sequence</text>
+
+  <!-- Step 1 -->
+  <circle class="stepNum" cx="110" cy="180" r="34"/>
+  <text class="numText" x="110" y="189" text-anchor="middle">1</text>
+
+  <rect class="stepBox" x="170" y="125" width="560" height="160" rx="18" ry="18"/>
+  <text class="label" x="210" y="178">Context Thread</text>
+  <text class="mono" x="210" y="223">calls .Result</text>
+
+  <line class="blocked" x1="525" y1="191" x2="640" y2="191"/>
+  <line class="blocked" x1="538" y1="210" x2="627" y2="210"/>
+  <line class="blocked" x1="551" y1="229" x2="614" y2="229"/>
+  <text class="detail" x="210" y="257">Blocks here and stops pumping the context thread</text>
+
+  <path class="arrow" d="M450 292 L450 358" marker-end="url(#arrowGray)"/>
+
+  <!-- Step 2 -->
+  <circle class="stepNum" cx="110" cy="438" r="34"/>
+  <text class="numText" x="110" y="447" text-anchor="middle">2</text>
+
+  <rect class="stepBox" x="170" y="375" width="560" height="190" rx="18" ry="18"/>
+  <text class="label" x="210" y="430">Async Method</text>
+  <text class="mono" x="210" y="476">await</text>
+  <text class="detail" x="210" y="516">captures <tspan class="mono">SynchronizationContext</tspan></text>
+
+  <!-- hook/capture icon -->
+  <path d="M612 442
+           c0 -24 18 -42 42 -42
+           c20 0 35 13 35 32
+           c0 19 -15 31 -35 31
+           h-18
+           c-14 0 -26 11 -26 26
+           c0 14 12 26 26 26
+           c14 0 26 -12 26 -26" fill="none" stroke="#8b95b4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="detail subtle" x="590" y="533">capture</text>
+
+  <path class="arrow" d="M450 572 L450 638" marker-end="url(#arrowGray)"/>
+
+  <!-- Step 3 -->
+  <circle class="stepNum" cx="110" cy="718" r="34"/>
+  <text class="numText" x="110" y="727" text-anchor="middle">3</text>
+
+  <rect class="stepBox" x="170" y="655" width="560" height="185" rx="18" ry="18"/>
+  <text class="label" x="210" y="710">Thread Pool</text>
+  <text class="detail" x="210" y="756">Task completes here</text>
+  <text class="detail" x="210" y="795">Continuation tries to route back to the captured context</text>
+
+  <path class="deadArrow" d="M620 765
+                             C720 770, 790 844, 790 920" marker-end="url(#arrowRed)"/>
+
+  <path class="arrow" d="M450 847 L450 913" marker-end="url(#arrowGray)"/>
+
+  <!-- Step 4 -->
+  <circle class="stepNum" cx="110" cy="998" r="34"/>
+  <text class="numText" x="110" y="1007" text-anchor="middle">4</text>
+
+  <rect class="accentBox" x="170" y="935" width="560" height="230" rx="18" ry="18"/>
+  <text class="label" x="210" y="990">Blocked SynchronizationContext</text>
+  <text class="detail" x="210" y="1036">Continuation reaches the gate but cannot enter</text>
+
+  <!-- gate -->
+  <rect class="gateBar" x="575" y="980" width="115" height="18" rx="4" ry="4"/>
+  <rect x="575" y="1008" width="18" height="70" fill="#ac424d"/>
+  <rect x="672" y="1008" width="18" height="70" fill="#ac424d"/>
+  <text class="detail" x="210" y="1086">The original context thread is still blocked on <tspan class="mono">.Result</tspan></text>
+
+  <path class="deadArrow deadDash" d="M792 920
+                                       C792 1110, 700 1240, 450 1240
+                                       C235 1240, 122 1140, 122 1010
+                                       C122 900, 190 835, 285 812" marker-end="url(#arrowRed)"/>
+  <text x="450" y="1305" text-anchor="middle" fill="#ffb0b6" font-family='Inter, system-ui, sans-serif' font-size="38" font-weight="800">Deadlock</text>
+</svg>
