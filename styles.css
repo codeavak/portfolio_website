@@ -152,6 +152,28 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.5rem;
 }
 
+.blog-controls.is-collapsed {
+  display: none;
+}
+
+.blog-filter-toggle {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.blog-filter-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .blog-filter-row {
   display: flex;
   align-items: center;

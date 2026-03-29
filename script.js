@@ -439,6 +439,8 @@ const initBlogIndex = () => {
   }
 
   const keywordList = document.getElementById('blogKeywordList');
+  const filterToggle = document.getElementById('blogFilterToggle');
+  const filterPanel = document.getElementById('blogFilterPanel');
   const dateFromInput = document.getElementById('blogDateFrom');
   const dateToInput = document.getElementById('blogDateTo');
   const clearFiltersButton = document.getElementById('blogClearFilters');
@@ -453,12 +455,27 @@ const initBlogIndex = () => {
 
   const parseCardTags = (card) => {
     const raw = (card.dataset.tags || '').trim();
-    return raw ? raw.split('|').filter(Boolean) : [];
+    return raw
+      ? raw
+          .split('|')
+          .map((tag) => tag.trim().toLowerCase())
+          .filter(Boolean)
+      : [];
   };
 
   const allTags = Array.from(
     new Set(cards.flatMap((card) => parseCardTags(card)))
   ).sort((a, b) => a.localeCompare(b));
+
+  const setFilterPanelState = (expanded) => {
+    if (!filterPanel || !filterToggle) {
+      return;
+    }
+
+    filterPanel.classList.toggle('is-collapsed', !expanded);
+    filterToggle.setAttribute('aria-expanded', String(expanded));
+    filterToggle.textContent = expanded ? 'Hide filters' : 'Filter posts';
+  };
 
   const buildKeywordChips = () => {
     if (!keywordList) {
@@ -602,22 +619,32 @@ const initBlogIndex = () => {
     });
   }
 
+  if (filterToggle) {
+    filterToggle.addEventListener('click', () => {
+      const expanded = filterToggle.getAttribute('aria-expanded') === 'true';
+      setFilterPanelState(!expanded);
+    });
+  }
+
   postsGrid.addEventListener('click', (event) => {
     const target = event.target;
-    if (!(target instanceof HTMLElement)) {
+    if (!(target instanceof Element)) {
       return;
     }
 
-    if (target.classList.contains('blog-post-tag')) {
-      const tag = target.dataset.tag;
+    const tagButton = target.closest('.blog-post-tag');
+    if (tagButton instanceof HTMLElement) {
+      const tag = (tagButton.dataset.tag || '').trim().toLowerCase();
       if (tag) {
         activeTag = tag;
         currentPage = 1;
         updateView();
+        setFilterPanelState(true);
       }
     }
   });
 
+  setFilterPanelState(false);
   buildKeywordChips();
   updateView();
 };

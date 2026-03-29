@@ -9,7 +9,17 @@ title: Blog
       <h1>Blog</h1>
       <p>Technical posts on enterprise engineering, security, and agentic workflows.</p>
     </div>
-    <section class="blog-controls" aria-label="Blog filters">
+    <button
+      id="blogFilterToggle"
+      type="button"
+      class="blog-filter-toggle"
+      aria-expanded="false"
+      aria-controls="blogFilterPanel"
+    >
+      Filter posts
+    </button>
+
+    <section class="blog-controls is-collapsed" id="blogFilterPanel" aria-label="Blog filters">
       <div class="blog-filter-row">
         <label for="blogDateFrom">From</label>
         <input id="blogDateFrom" type="date" />
