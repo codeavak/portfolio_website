@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Python type hints in production</title>
+  <desc id="desc">A comparison between runtime-only failures and static checker feedback using mypy and pyright.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1b2b" />
+      <stop offset="100%" stop-color="#16324a" />
+    </linearGradient>
+    <linearGradient id="panelA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f3a56" />
+      <stop offset="100%" stop-color="#173047" />
+    </linearGradient>
+    <linearGradient id="panelB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#154b3f" />
+      <stop offset="100%" stop-color="#103a32" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="50" y="70" width="1100" height="535" rx="24" fill="#0f2538" opacity="0.8" />
+
+  <text x="72" y="130" fill="#d9e7f3" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700">
+    Python Type Hints in Production
+  </text>
+  <text x="72" y="164" fill="#a9c2d8" font-family="Segoe UI, Arial, sans-serif" font-size="22">
+    What static checkers catch before runtime catches fire
+  </text>
+
+  <rect x="82" y="210" width="500" height="340" rx="18" fill="url(#panelA)" stroke="#406386" />
+  <text x="108" y="258" fill="#d4e4f2" font-family="Consolas, monospace" font-size="24" font-weight="700">Runtime-only path</text>
+  <text x="108" y="302" fill="#f6c7c7" font-family="Consolas, monospace" font-size="19">NoneType has no attribute 'strip'</text>
+  <text x="108" y="336" fill="#f6c7c7" font-family="Consolas, monospace" font-size="19">KeyError: 'customer_id'</text>
+  <text x="108" y="370" fill="#f6c7c7" font-family="Consolas, monospace" font-size="19">ValueError: could not convert</text>
+  <text x="108" y="424" fill="#a7c0d6" font-family="Segoe UI, Arial, sans-serif" font-size="18">Detected late in execution</text>
+
+  <rect x="618" y="210" width="500" height="340" rx="18" fill="url(#panelB)" stroke="#3f8f7d" />
+  <text x="644" y="258" fill="#daf2eb" font-family="Consolas, monospace" font-size="24" font-weight="700">Static checker path</text>
+  <text x="644" y="302" fill="#c5f0e3" font-family="Consolas, monospace" font-size="19">mypy: Incompatible return type</text>
+  <text x="644" y="336" fill="#c5f0e3" font-family="Consolas, monospace" font-size="19">pyright: Optional member access</text>
+  <text x="644" y="370" fill="#c5f0e3" font-family="Consolas, monospace" font-size="19">TypedDict key type mismatch</text>
+  <text x="644" y="424" fill="#9fd8c8" font-family="Segoe UI, Arial, sans-serif" font-size="18">Detected in editor and CI</text>
+
+  <text x="72" y="592" fill="#7ea1bf" font-family="Segoe UI, Arial, sans-serif" font-size="16">
+    Practical outcome: fewer integration failures, safer refactors, clearer module contracts.
+  </text>
+</svg>

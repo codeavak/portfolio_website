@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Before and after typing example</title>
+  <desc id="desc">Comparison of untyped dictionary transformation code and TypedDict-based typed transformation code.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#231f2c" />
+      <stop offset="100%" stop-color="#2f2a3a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <text x="60" y="74" fill="#f1edf8" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">
+    Before vs After: Data Normalization Function
+  </text>
+
+  <rect x="60" y="110" width="515" height="520" rx="16" fill="#3a2530" stroke="#8a5667" />
+  <text x="88" y="152" fill="#ffd6e2" font-family="Consolas, monospace" font-size="24" font-weight="700">Before (untyped)</text>
+  <text x="88" y="194" fill="#f5c1d0" font-family="Consolas, monospace" font-size="18">def normalize_order(row: dict) -&gt; dict:</text>
+  <text x="88" y="230" fill="#f5c1d0" font-family="Consolas, monospace" font-size="18">customer_id = row.get("customer_id")</text>
+  <text x="88" y="266" fill="#f5c1d0" font-family="Consolas, monospace" font-size="18">total = float(row["total"])</text>
+  <text x="88" y="302" fill="#ffb3b3" font-family="Consolas, monospace" font-size="18">customer_id.strip()  # may be None</text>
+  <text x="88" y="352" fill="#ffd6e2" font-family="Segoe UI, Arial, sans-serif" font-size="18">Failures discovered only on bad payloads.</text>
+
+  <rect x="625" y="110" width="515" height="520" rx="16" fill="#1d3a34" stroke="#4e8d7f" />
+  <text x="653" y="152" fill="#d5f7ec" font-family="Consolas, monospace" font-size="24" font-weight="700">After (typed)</text>
+  <text x="653" y="194" fill="#c8f0e4" font-family="Consolas, monospace" font-size="18">class RawOrder(TypedDict): ...</text>
+  <text x="653" y="230" fill="#c8f0e4" font-family="Consolas, monospace" font-size="18">customer_id: str | None</text>
+  <text x="653" y="266" fill="#c8f0e4" font-family="Consolas, monospace" font-size="18">if customer_id is None: raise ValueError</text>
+  <text x="653" y="302" fill="#b2f2de" font-family="Consolas, monospace" font-size="18">normalize_order(row: RawOrder)</text>
+  <text x="653" y="352" fill="#d5f7ec" font-family="Segoe UI, Arial, sans-serif" font-size="18">Type checker catches misuse before deploy.</text>
+
+  <line x1="595" y1="180" x2="595" y2="615" stroke="#a997bd" stroke-dasharray="8 10" />
+  <text x="60" y="652" fill="#c7bad8" font-family="Segoe UI, Arial, sans-serif" font-size="16">
+    Better types do not remove runtime guards. They reduce surprises by making assumptions explicit.
+  </text>
+</svg>
