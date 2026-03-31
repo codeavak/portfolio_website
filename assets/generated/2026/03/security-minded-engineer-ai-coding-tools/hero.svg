@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 950" role="img" aria-label="Editorial illustration for security-minded engineering with AI coding tools">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111d"/>
+      <stop offset="54%" stop-color="#0d1d30"/>
+      <stop offset="100%" stop-color="#132941"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ab6ff"/>
+      <stop offset="65%" stop-color="#4fe1cc"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c3654" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#12253c" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="950" rx="40" fill="url(#bg)"/>
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <path d="M0 154 H1600"/>
+    <path d="M0 308 H1600"/>
+    <path d="M0 462 H1600"/>
+    <path d="M0 616 H1600"/>
+    <path d="M0 770 H1600"/>
+    <path d="M228 0 V950"/>
+    <path d="M492 0 V950"/>
+    <path d="M756 0 V950"/>
+    <path d="M1020 0 V950"/>
+    <path d="M1284 0 V950"/>
+  </g>
+
+  <circle cx="1308" cy="166" r="238" fill="#1d4ed8" opacity="0.14"/>
+  <circle cx="246" cy="810" r="272" fill="#14b8a6" opacity="0.09"/>
+  <circle cx="1230" cy="748" r="150" fill="#f59e0b" opacity="0.08"/>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="84" y="106" fill="#d8e5f3" font-size="30" font-weight="700">Thinking like a security-minded engineer</text>
+    <text x="84" y="146" fill="#90a7c0" font-size="18">Use the speed. Keep the trust boundaries visible.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="298" y="194" width="1004" height="540" rx="38" fill="#0c1727" stroke="#2f4b6a"/>
+    <rect x="340" y="236" width="468" height="456" rx="30" fill="#0e1f32" stroke="#39597d"/>
+    <rect x="840" y="236" width="420" height="268" rx="30" fill="#0e1f32" stroke="#39597d"/>
+    <rect x="840" y="536" width="420" height="156" rx="30" fill="#0e1f32" stroke="#39597d"/>
+  </g>
+
+  <g fill="url(#glass)">
+    <rect x="366" y="264" width="416" height="144" rx="24"/>
+    <rect x="870" y="262" width="360" height="110" rx="24"/>
+    <rect x="870" y="558" width="360" height="108" rx="24"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="110" y="266" width="150" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+    <rect x="110" y="430" width="150" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+    <rect x="110" y="594" width="150" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+
+    <rect x="1340" y="266" width="152" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+    <rect x="1340" y="430" width="152" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+    <rect x="1340" y="594" width="152" height="118" rx="24" fill="#102235" stroke="#39597d"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="146" y="324" fill="#eef6ff" font-size="22" font-weight="700">Context</text>
+    <text x="146" y="352" fill="#9ab0c7" font-size="15">What the tool can see</text>
+
+    <text x="146" y="488" fill="#eef6ff" font-size="22" font-weight="700">Checks</text>
+    <text x="146" y="516" fill="#9ab0c7" font-size="15">What proves it safe</text>
+
+    <text x="146" y="652" fill="#eef6ff" font-size="22" font-weight="700">Review</text>
+    <text x="146" y="680" fill="#9ab0c7" font-size="15">What still needs judgment</text>
+
+    <text x="1368" y="324" fill="#eef6ff" font-size="22" font-weight="700">Read</text>
+    <text x="1368" y="352" fill="#9ab0c7" font-size="15">Inspect</text>
+
+    <text x="1368" y="488" fill="#eef6ff" font-size="22" font-weight="700">Edit</text>
+    <text x="1368" y="516" fill="#9ab0c7" font-size="15">Change</text>
+
+    <text x="1368" y="652" fill="#eef6ff" font-size="22" font-weight="700">Approve</text>
+    <text x="1368" y="680" fill="#9ab0c7" font-size="15">Release</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="380" y="306" fill="#eef6ff" font-size="20" font-weight="700">Scoped engineering workspace</text>
+    <text x="872" y="304" fill="#eef6ff" font-size="20" font-weight="700">Permissioned execution</text>
+    <text x="872" y="598" fill="#eef6ff" font-size="20" font-weight="700">Visible validation loop</text>
+
+    <text x="380" y="470" fill="#dfeefe" font-size="54" font-weight="700">AI coding tools</text>
+    <text x="380" y="526" fill="#a1b6cc" font-size="22">become useful when context, commands, and review all stay inside explicit boundaries.</text>
+
+    <text x="872" y="402" fill="#dfeefe" font-size="28" font-weight="700">Least privilege</text>
+    <text x="872" y="436" fill="#a1b6cc" font-size="17">Differentiate read, write, network, and workflow access.</text>
+
+    <text x="872" y="640" fill="#dfeefe" font-size="28" font-weight="700">Deterministic checks</text>
+    <text x="872" y="674" fill="#a1b6cc" font-size="17">Use tests, policy gates, and human approval where the blast radius grows.</text>
+  </g>
+
+  <g stroke="url(#flow)" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M260 324 H298"/>
+    <path d="M260 488 H298"/>
+    <path d="M260 652 H298"/>
+    <path d="M1302 324 H1340"/>
+    <path d="M1302 488 H1340"/>
+    <path d="M1302 652 H1340"/>
+  </g>
+
+  <g fill="#173252">
+    <rect x="380" y="336" width="226" height="12" rx="6"/>
+    <rect x="380" y="364" width="314" height="12" rx="6"/>
+    <rect x="380" y="392" width="194" height="12" rx="6"/>
+    <rect x="872" y="338" width="182" height="12" rx="6"/>
+    <rect x="872" y="566" width="214" height="12" rx="6"/>
+  </g>
+
+  <g>
+    <rect x="520" y="784" width="560" height="48" rx="24" fill="#0f2236" stroke="#35567d"/>
+    <text x="800" y="816" text-anchor="middle" fill="#c9ddf6" font-size="17" font-family="Inter, Segoe UI, sans-serif" font-weight="700">The model can move fast. The architecture decides whether that speed is safe.</text>
+  </g>
+</svg>

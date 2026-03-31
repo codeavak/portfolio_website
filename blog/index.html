@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Senior Software Engineer portfolio and technical blog." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog" />
+    <meta property="og:description" content="Senior Software Engineer portfolio and technical blog." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog" />
+    <meta name="twitter:description" content="Senior Software Engineer portfolio and technical blog." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="container blog-content"> <section class="section">
+  <div class="container">
+    <div class="blog-header-intro">
+      <h1>Blog</h1>
+      <p>Technical posts on enterprise engineering, security, and agentic workflows.</p>
+    </div>
+    <button
+      id="blogFilterToggle"
+      type="button"
+      class="blog-filter-toggle"
+      aria-expanded="false"
+      aria-controls="blogFilterPanel"
+    >
+      Filter posts
+    </button>
+
+    <section class="blog-controls is-collapsed" id="blogFilterPanel" aria-label="Blog filters">
+      <div class="blog-filter-row">
+        <label for="blogDateFrom">From</label>
+        <input id="blogDateFrom" type="date" />
+        <label for="blogDateTo">To</label>
+        <input id="blogDateTo" type="date" />
+        <button id="blogClearFilters" type="button" class="blog-clear-button">Clear filters</button>
+      </div>
+      <div class="blog-keyword-list" id="blogKeywordList"></div>
+      <p class="blog-results-meta" id="blogResultsMeta" aria-live="polite"></p>
+    </section>
+
+    <div class="blog-posts-grid" id="blogPostsGrid">
+      
+        <article class="blog-post-card" data-tags="hash maps|dictionaries|data structures|python|csharp" data-date="2026-03-31">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" alt="Hash Maps: The Data Structure That's Everywhere Once You Stop Skipping It" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 31, 2026</time>
+            <h2><a href="/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/">Hash Maps: The Data Structure That's Everywhere Once You Stop Skipping It</a></h2>
+            <p class="blog-post-excerpt">Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="hash maps">hash maps</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="dictionaries">dictionaries</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="data structures">data structures</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="python">python</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="csharp">csharp</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="idempotency|distributed systems|retries|api design|reliability" data-date="2026-03-31">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" alt="Idempotency: The Most Underused Pattern in Distributed Systems" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 31, 2026</time>
+            <h2><a href="/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/">Idempotency: The Most Underused Pattern in Distributed Systems</a></h2>
+            <p class="blog-post-excerpt">Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="idempotency">idempotency</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="distributed systems">distributed systems</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="retries">retries</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="api design">api design</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="reliability">reliability</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="python|type hints|mypy|pyright|static typing|engineering discipline" data-date="2026-03-29">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" alt="Python Type Hints in Production: What They Buy You and What They Don't" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 29, 2026</time>
+            <h2><a href="/portfolio_website/blog/python-type-hints-production-codebases/">Python Type Hints in Production: What They Buy You and What They Don't</a></h2>
+            <p class="blog-post-excerpt">Type hints are not magic, and they are not free. But in the right places, mypy and pyright catch bugs before runtime that tests often miss, especially at API boundaries and in data transformation code.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="python">python</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="type hints">type hints</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="mypy">mypy</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="pyright">pyright</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="static typing">static typing</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="engineering discipline">engineering discipline</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/python-type-hints-production-codebases/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="sql injection|owasp|secure coding|database security|orm" data-date="2026-03-29">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" alt="SQL Injection in 2026: Still Real, Just Better Hidden" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 29, 2026</time>
+            <h2><a href="/portfolio_website/blog/sql-injection-2026-hidden-risks/">SQL Injection in 2026: Still Real, Just Better Hidden</a></h2>
+            <p class="blog-post-excerpt">SQL injection did not disappear when teams adopted parameterized queries. It moved into dynamic ORDER BY clauses, dynamic identifiers, ORM interpolation paths, and stored procedures that quietly build dynamic SQL.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="sql injection">sql injection</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="owasp">owasp</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="secure coding">secure coding</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="database security">database security</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="orm">orm</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/sql-injection-2026-hidden-risks/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="csharp|async await|configureawait|synchronization context|dotnet|concurrency" data-date="2026-03-29">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" alt="What Developers Get Wrong About ConfigureAwait" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 29, 2026</time>
+            <h2><a href="/portfolio_website/blog/csharp-async-configureawait/">What Developers Get Wrong About ConfigureAwait</a></h2>
+            <p class="blog-post-excerpt">ConfigureAwait(false) shows up in every async discussion, but most explanations skip the part that makes it click: what a synchronization context is, why ASP.NET Core doesn't have one, and the exact scenario where the deadlock happens.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="csharp">csharp</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="async await">async await</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="configureawait">configureawait</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="synchronization context">synchronization context</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="dotnet">dotnet</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="concurrency">concurrency</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/csharp-async-configureawait/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="sql-server|indexing|query-optimization|execution-plans|database-performance" data-date="2026-03-28">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" alt="SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 28, 2026</time>
+            <h2><a href="/portfolio_website/blog/sql-server-indexing-strategy/">SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop</a></h2>
+            <p class="blog-post-excerpt">Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="sql-server">sql-server</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="indexing">indexing</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="query-optimization">query-optimization</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="execution-plans">execution-plans</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="database-performance">database-performance</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/sql-server-indexing-strategy/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="ai coding tools|software supply chain|secure software development|ai agents|appsec" data-date="2026-03-27">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" alt="AI Coding Tools Are Part of Your Software Supply Chain Now" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 27, 2026</time>
+            <h2><a href="/portfolio_website/blog/ai-coding-tools-software-supply-chain/">AI Coding Tools Are Part of Your Software Supply Chain Now</a></h2>
+            <p class="blog-post-excerpt">When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai coding tools">AI coding tools</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="software supply chain">software supply chain</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="secure software development">secure software development</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai agents">AI agents</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="appsec">AppSec</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/ai-coding-tools-software-supply-chain/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="csharp|nullable reference types|dotnet|code quality|domain design" data-date="2026-03-27">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" alt="C# Nullable Reference Types: Real Discipline vs Annotation Theater" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 27, 2026</time>
+            <h2><a href="/portfolio_website/blog/csharp-nullable-reference-types-discipline/">C# Nullable Reference Types: Real Discipline vs Annotation Theater</a></h2>
+            <p class="blog-post-excerpt">Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="csharp">csharp</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="nullable reference types">nullable reference types</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="dotnet">dotnet</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="code quality">code quality</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="domain design">domain design</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/csharp-nullable-reference-types-discipline/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="ai coding tools|secure software development|engineering judgment|ai agents|appsec" data-date="2026-03-27">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" alt="How Security-Minded Engineers Evaluate AI Coding Tools" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 27, 2026</time>
+            <h2><a href="/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/">How Security-Minded Engineers Evaluate AI Coding Tools</a></h2>
+            <p class="blog-post-excerpt">Security-minded engineers do not judge AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that modern coding agents can read repositories, call tools, and open pull requests.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai coding tools">AI coding tools</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="secure software development">secure software development</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="engineering judgment">engineering judgment</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai agents">AI agents</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="appsec">AppSec</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="ai coding tools|secure software development|engineering judgment|ai agents|developer productivity" data-date="2026-03-26">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png" alt="Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 26, 2026</time>
+            <h2><a href="/portfolio_website/blog/security-minded-engineer-ai-coding-tools/">Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools</a></h2>
+            <p class="blog-post-excerpt">AI coding tools are moving from autocomplete to repo-aware agents that can run checks, propose changes, and open pull requests. A security-minded engineer sees the upside, but also knows the real work is setting the right boundaries around context, permissions, validation, and review.</p>
+            
+              <div class="blog-post-tag-row">
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai coding tools">AI coding tools</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="secure software development">secure software development</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="engineering judgment">engineering judgment</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="ai agents">AI agents</button>
+                
+                  <button class="blog-post-tag" type="button" data-tag="developer productivity">developer productivity</button>
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/security-minded-engineer-ai-coding-tools/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+        <article class="blog-post-card" data-tags="" data-date="2026-03-26">
+          
+            <div class="blog-post-image-container">
+              <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/social.png" alt="Agentic Workflows Without Chaos" class="blog-post-image" />
+            </div>
+          
+          <div class="blog-post-content">
+            <time class="blog-post-date">Published by Johnny on March 26, 2026</time>
+            <h2><a href="/portfolio_website/blog/agentic-workflows/">Agentic Workflows Without Chaos</a></h2>
+            <p class="blog-post-excerpt">AI adoption is accelerating, but the trust gap is real. This guide explores how to design agentic workflows—AI systems that can retrieve context, use tools, and coordinate steps—with enough judgment to keep systems reliable, secure, and worth trusting.</p>
+            
+              <div class="blog-post-tag-row">
+                
+              </div>
+            
+            <a href="/portfolio_website/blog/agentic-workflows/" class="blog-read-more">Read full article →</a>
+          </div>
+        </article>
+      
+    </div>
+
+    <nav class="blog-pagination" id="blogPagination" aria-label="Blog pagination">
+      <button id="blogPrevPage" type="button" class="blog-page-button">Previous</button>
+      <span id="blogPageInfo" class="blog-page-info">Page 1 of 1</span>
+      <button id="blogNextPage" type="button" class="blog-page-button">Next</button>
+    </nav>
+  </div>
+</section>
+ </main>
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

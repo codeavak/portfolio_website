@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-03-28T13:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="sql-server" />
+      
+        <meta property="article:tag" content="indexing" />
+      
+        <meta property="article:tag" content="query-optimization" />
+      
+        <meta property="article:tag" content="execution-plans" />
+      
+        <meta property="article:tag" content="database-performance" />
+      
+    
+    <meta property="og:title" content="SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop" />
+    <meta property="og:description" content="Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop" />
+    <meta name="twitter:description" content="Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop",
+        "description": "Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-03-28T13:00:00+00:00",
+        "dateModified": "2026-03-28T13:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">Software Engineering • SQL • Database</div>
+              
+              <time class="post-date" datetime="2026-03-28T13:00:00+00:00">March 28, 2026</time>
+              <h1 class="post-title">SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop</h1>
+              
+                <p class="post-dek">Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">sql-server</span>
+                  
+                    <span class="chip">indexing</span>
+                  
+                    <span class="chip">query-optimization</span>
+                  
+                    <span class="chip">execution-plans</span>
+                  
+                    <span class="chip">database-performance</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>The reflex is familiar. A query is slow. You add an index. The query gets faster. You move on.</p>
+
+<p>That cycle is productive until it stops working — when the table is write-heavy and inserts start lagging, when you have a dozen indexes and the optimizer still chooses a scan, when a junior developer asks why adding an index made things slower. At that point, reactive indexing has hit its limit.</p>
+
+<p>The developers who handle those scenarios well are not the ones who memorized the most index types. They are the ones who understand what the optimizer is trying to do, can read an execution plan, and treat each index as a deliberate design decision with a real cost on both sides of the tradeoff.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" alt="Side-by-side diagram showing an index that causes a key lookup versus a covering index with included columns that eliminates it." />
+  <figcaption>A key lookup in your execution plan is not a failure — it is a signal that you have a covering index opportunity.</figcaption>
+</figure>
+
+<h2 id="how-the-optimizer-decides">How SQL Server chooses an index</h2>
+
+<p>SQL Server’s query optimizer is cost-based. When a query arrives, it generates candidate execution plans and selects the one with the lowest estimated cost, measured in I/O and CPU. To estimate that cost, it relies on statistics — histograms maintained per column that track value distribution across the table.</p>
+
+<p>The optimizer’s central concern is selectivity: what fraction of rows does a given predicate match? A predicate with high selectivity — <code class="language-plaintext highlighter-rouge">WHERE CustomerId = 42</code> on a table with a million orders spread across many customers — matches a small set of rows. An index seek, which navigates the B-tree directly to those rows, is efficient. A predicate with low selectivity — <code class="language-plaintext highlighter-rouge">WHERE Status = 'Active'</code> when 90% of rows are active — matches most of the table. At that point, a full scan is often cheaper than navigating the B-tree and performing hundreds of thousands of lookups.</p>
+
+<p>This is why adding an index on a low-selectivity column rarely helps. The optimizer calculates the estimated cost of using it, decides the scan is cheaper, and ignores the index entirely. The index still extracts its write cost on every mutation. You get the penalty without the benefit.</p>
+
+<p>Statistics need to be reasonably current for the optimizer to make good decisions. Stale statistics produce row count estimates that no longer reflect reality, leading to plan choices that were optimal for old data and are now wrong for the data you have.</p>
+
+<h2 id="composite-indexes">Composite indexes and the leftmost prefix rule</h2>
+
+<p>A composite index has multiple columns in its key. The order of those columns determines which queries the index can support.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- The table used in all examples below</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Orders</span> <span class="p">(</span>
+    <span class="n">OrderId</span>      <span class="nb">INT</span>           <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">IDENTITY</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">CustomerId</span>   <span class="nb">INT</span>           <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">OrderDate</span>    <span class="nb">DATETIME</span>      <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Status</span>       <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>   <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">TotalAmount</span>  <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Given this index:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_customer_date</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The B-tree is sorted first by <code class="language-plaintext highlighter-rouge">CustomerId</code>, then within each customer by <code class="language-plaintext highlighter-rouge">OrderDate</code>. This means:</p>
+
+<ul>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">CustomerId = 42</code> alone can seek directly to that customer’s rows.</li>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">CustomerId = 42 AND OrderDate &gt; '2025-01-01'</code> can seek to exactly the right range.</li>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">OrderDate &gt; '2025-01-01'</code> with no <code class="language-plaintext highlighter-rouge">CustomerId</code> predicate cannot use this index for a selective seek. Every customer’s date range is interleaved throughout the B-tree; the optimizer would have to scan the whole thing.</li>
+</ul>
+
+<p>This is the <strong>leftmost prefix rule</strong>: a composite index on <code class="language-plaintext highlighter-rouge">(A, B, C)</code> supports seeks on <code class="language-plaintext highlighter-rouge">A</code>, on <code class="language-plaintext highlighter-rouge">(A, B)</code>, and on <code class="language-plaintext highlighter-rouge">(A, B, C)</code>. A predicate that skips the leading column cannot benefit from the index’s sort order.</p>
+
+<p>Column order is a design decision, not a formality. It should reflect your most common and most performance-critical access patterns.</p>
+
+<h2 id="covering-indexes">Covering indexes: eliminating the key lookup</h2>
+
+<p>When a query uses a nonclustered index, SQL Server may still need to retrieve columns that are not stored in that index. To get them, it goes back to the clustered index — the base table — for each matching row. That extra trip is a <strong>key lookup</strong>.</p>
+
+<p>Consider this query:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">OrderId</span><span class="p">,</span> <span class="n">OrderDate</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span>
+<span class="k">FROM</span> <span class="n">Orders</span>
+<span class="k">WHERE</span> <span class="n">CustomerId</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>With only <code class="language-plaintext highlighter-rouge">ix_orders_customer_date</code> (keyed on <code class="language-plaintext highlighter-rouge">CustomerId, OrderDate</code>), the optimizer seeks on the nonclustered index to find the matching rows. But <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> are not in the index. For each matching row — say 500 orders for this customer — it must perform a separate lookup into the clustered index to retrieve those columns. Five hundred lookups per query execution, on a hot path.</p>
+
+<p>An execution plan will show this explicitly: an <code class="language-plaintext highlighter-rouge">Index Seek</code> connected by a <code class="language-plaintext highlighter-rouge">Nested Loops</code> join to a <code class="language-plaintext highlighter-rouge">Key Lookup (Clustered)</code>. Any time you see that pattern on a query that matters, you are looking at a covering index opportunity.</p>
+
+<p>A <strong>covering index</strong> satisfies all the columns a query needs entirely from the index, without touching the clustered index. You have two ways to achieve this.</p>
+
+<p><strong>Option A — add the extra columns to the key:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_cover_key</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This works. But <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> are now key columns, which means they propagate to every level of the B-tree. Non-leaf pages carry four key columns instead of two. The index is wider, heavier, and takes up more space in the buffer pool.</p>
+
+<p><strong>Option B — use INCLUDE columns:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_cover_include</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">)</span>
+<span class="n">INCLUDE</span> <span class="p">(</span><span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The key stays narrow: just <code class="language-plaintext highlighter-rouge">CustomerId</code> and <code class="language-plaintext highlighter-rouge">OrderDate</code>. SQL Server stores <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> at the leaf level only. The query’s SELECT list is satisfied without a key lookup, and the B-tree stays lean.</p>
+
+<p>This is what <code class="language-plaintext highlighter-rouge">INCLUDE</code> was designed for.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/index-structure.svg" alt="Diagram comparing a four-column key index against a two-column key with two INCLUDE columns, showing that INCLUDE columns appear only at the leaf level." />
+  <figcaption>INCLUDE columns do not appear in non-leaf nodes. They keep the sort key narrow without sacrificing coverage at the leaf level.</figcaption>
+</figure>
+
+<h2 id="included-columns">What included columns do — and what they cannot</h2>
+
+<p>Included columns live at the leaf level of the index B-tree only. They are not part of the sort structure. This distinction has real implications:</p>
+
+<ul>
+  <li>They <strong>cannot</strong> narrow a seek. If your query filters on <code class="language-plaintext highlighter-rouge">Status = 'Shipped'</code>, <code class="language-plaintext highlighter-rouge">Status</code> must be a key column for the optimizer to use it for seeking. An included <code class="language-plaintext highlighter-rouge">Status</code> is invisible to the seek logic.</li>
+  <li>They <strong>cannot</strong> provide sort order. An <code class="language-plaintext highlighter-rouge">ORDER BY Status</code> on a query backed by an index with <code class="language-plaintext highlighter-rouge">Status</code> in INCLUDE forces a separate sort operation — the index pages are not ordered by <code class="language-plaintext highlighter-rouge">Status</code>.</li>
+  <li>They <strong>can</strong> satisfy the <code class="language-plaintext highlighter-rouge">SELECT</code> list without touching the clustered index. That is their only job, and it is a valuable one.</li>
+</ul>
+
+<p>The practical design rule is direct: <strong>columns you filter or sort on belong in the key; columns you only read back in results belong in INCLUDE.</strong> Keeping the key narrow keeps the non-leaf levels of the B-tree compact, which means faster seeks and lower buffer pool pressure.</p>
+
+<h2 id="over-indexing-cost">The real cost of over-indexing</h2>
+
+<p>Every nonclustered index on a table is a B-tree that SQL Server maintains automatically. Every <code class="language-plaintext highlighter-rouge">INSERT</code> adds a row to the clustered index and to every nonclustered index on the table. Every <code class="language-plaintext highlighter-rouge">UPDATE</code> that touches an indexed column modifies the relevant nodes in every affected index. Every <code class="language-plaintext highlighter-rouge">DELETE</code> removes from all of them.</p>
+
+<p>If <code class="language-plaintext highlighter-rouge">Orders</code> has eight nonclustered indexes and your application processes 500 order inserts per second, each insert is touching nine B-trees. The write overhead is proportional, mandatory, and it accumulates continuously.</p>
+
+<p>Beyond write amplification:</p>
+
+<ul>
+  <li><strong>Storage.</strong> Each index stores copies of its key and included columns for every row in the table. On a table with millions of rows and many indexes, this is not trivial.</li>
+  <li><strong>Fragmentation.</strong> As rows arrive and are deleted in non-sequential patterns, index pages become fragmented. Read performance degrades over time and drives maintenance windows for index rebuild or reorganize operations.</li>
+  <li><strong>Optimizer complexity.</strong> A large set of overlapping indexes increases plan compilation time and can occasionally produce plan instability as the optimizer’s candidate plan search becomes more expensive.</li>
+</ul>
+
+<p>Before adding an index, the useful question is not only “will this help this query?” It is: <strong>does the improvement to this read justify the ongoing write cost, and does this overlap with an index I already have?</strong></p>
+
+<p>Read-heavy reporting tables or lookup-heavy reference tables can generally tolerate many indexes. Transactional tables handling high-frequency inserts — order intake, event logging, inventory updates — warrant genuine restraint. Every index on those tables needs to earn its place.</p>
+
+<h2 id="reading-execution-plans">Reading a basic execution plan</h2>
+
+<p>The execution plan is the only reliable way to know whether the optimizer used your index and whether it behaved the way you expected.</p>
+
+<p>In SSMS, enable the actual execution plan before running your query (<code class="language-plaintext highlighter-rouge">Ctrl+M</code>, or Query → Include Actual Execution Plan). Run your query. The plan appears in a tab at the bottom.</p>
+
+<p>Read the plan <strong>right to left</strong>. Data originates at the rightmost operators and flows left toward the final output. Each operator displays its estimated cost as a percentage of the total query cost.</p>
+
+<p>The operators to focus on:</p>
+
+<ul>
+  <li><strong>Index Seek</strong>: the optimizer navigated the B-tree directly to the matching rows. This is the outcome you are designing for on selective predicates.</li>
+  <li><strong>Index Scan</strong>: the optimizer walked the entire index. May be appropriate for a small table; investigate if the index is large.</li>
+  <li><strong>Table Scan / Clustered Index Scan</strong>: no narrow seek was possible. Either there is no usable index, the predicate was too unselective to justify one, or statistics are misleading the optimizer.</li>
+  <li><strong>Key Lookup (Clustered)</strong>: the optimizer used your nonclustered index but had to fetch additional columns from the clustered index row by row. This is the covering index signal. If you see it on a high-frequency query, evaluate whether <code class="language-plaintext highlighter-rouge">INCLUDE</code> columns would eliminate it.</li>
+</ul>
+
+<p><strong>Arrow thickness</strong> between operators represents row count. A wide arrow means many rows are flowing through that step. If you see a thin arrow entering an operator and a much wider arrow leaving it, the optimizer’s estimates were wrong — actual row counts are substantially higher than predicted. This is almost always stale statistics. Running <code class="language-plaintext highlighter-rouge">UPDATE STATISTICS Orders</code> or verifying that automatic statistics update is enabled is the first step.</p>
+
+<p>After you create or modify an index, run the affected query again with the actual plan. Confirm the plan changed. Confirm the key lookup disappeared if that was the goal. An index that the optimizer silently ignores provides no benefit but still imposes the full write cost on every mutation.</p>
+
+<p>If you are auditing an existing database and do not know where to start, <code class="language-plaintext highlighter-rouge">sys.dm_db_missing_index_details</code> records the optimizer’s own recommendations based on query history. Treat it as a starting point for analysis, not a checklist to execute without review — the DMV does not know your write volume or your existing index overlap.</p>
+
+<h2 id="closing">Indexes are a design decision, not a fix</h2>
+
+<p>Indexing is not a set-and-forget step applied after queries slow down. It is an ongoing design decision that interacts with your query access patterns, write throughput, data distribution, and maintenance schedule.</p>
+
+<p>The developers who index well are not the ones who know the most index variants. They are the ones who understand what the optimizer is reasoning about, treat the execution plan as the source of truth, and recognize that every index added to a write-bearing table is a tradeoff that needs to be justified.</p>
+
+<p>Know what you are adding. Know why. Verify with the plan.</p>
+
+<hr />
+
+<p><em>Meta description: SQL Server indexing strategy for backend developers — how the optimizer chooses indexes, the difference between composite and covering indexes, what INCLUDE columns do, the write cost of over-indexing, and how to read an execution plan.</em></p>
+
+<p><em>SEO keywords: SQL Server covering index, SQL Server INCLUDE columns index, SQL Server key lookup execution plan, SQL Server composite vs covering index, SQL Server over-indexing write performance</em></p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

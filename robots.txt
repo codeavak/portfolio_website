@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codeavak.github.io/portfolio_website/sitemap.xml

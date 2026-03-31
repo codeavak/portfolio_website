@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1324"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .title { font: 800 54px Inter, Segoe UI, Arial, sans-serif; fill: #F8FAFC; }
+      .subtitle { font: 500 26px Inter, Segoe UI, Arial, sans-serif; fill: #CBD5E1; }
+      .panel-title { font: 800 30px Inter, Segoe UI, Arial, sans-serif; }
+      .body { font: 600 22px Inter, Segoe UI, Arial, sans-serif; fill: #E5E7EB; }
+      .small { font: 500 18px Inter, Segoe UI, Arial, sans-serif; fill: #CBD5E1; }
+      .caps { font: 800 18px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 1.6px; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.12">
+    <circle cx="1360" cy="160" r="180" fill="#14B8A6"/>
+    <circle cx="250" cy="720" r="220" fill="#F97316"/>
+  </g>
+
+  <text x="100" y="110" class="title">Secrets Management</text>
+  <text x="100" y="160" class="subtitle">Environment variables are a better start, not a complete operating model.</text>
+
+  <rect x="90" y="220" width="610" height="560" rx="34" fill="#111827" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="900" y="220" width="610" height="560" rx="34" fill="#0F172A" stroke="#14B8A6" stroke-width="2" filter="url(#shadow)"/>
+
+  <text x="135" y="275" class="caps" fill="#FDBA74">ENV VARS ONLY</text>
+  <text x="135" y="325" class="panel-title" fill="#FFEDD5">Placement without much control</text>
+
+  <rect x="135" y="370" width="230" height="86" rx="22" fill="#1F2937" stroke="#F59E0B" stroke-width="2"/>
+  <text x="250" y="423" text-anchor="middle" class="body" fill="#FED7AA">Process state</text>
+
+  <rect x="405" y="370" width="230" height="86" rx="22" fill="#1F2937" stroke="#FB923C" stroke-width="2"/>
+  <text x="520" y="423" text-anchor="middle" class="body" fill="#FED7AA">Logs and dumps</text>
+
+  <rect x="135" y="490" width="230" height="86" rx="22" fill="#1F2937" stroke="#FB923C" stroke-width="2"/>
+  <text x="250" y="543" text-anchor="middle" class="body" fill="#FED7AA">Child processes</text>
+
+  <rect x="405" y="490" width="230" height="86" rx="22" fill="#1F2937" stroke="#F97316" stroke-width="2"/>
+  <text x="520" y="543" text-anchor="middle" class="body" fill="#FED7AA">Container inspect</text>
+
+  <rect x="135" y="620" width="500" height="110" rx="26" fill="#1F2937" stroke="#FDBA74" stroke-width="2"/>
+  <text x="385" y="670" text-anchor="middle" class="body" fill="#FFF7ED">Static value pushed into runtime</text>
+  <text x="385" y="705" text-anchor="middle" class="small">No built-in audit trail, scope, rotation workflow, or revocation path</text>
+
+  <text x="945" y="275" class="caps" fill="#99F6E4">MANAGED SECRETS</text>
+  <text x="945" y="325" class="panel-title" fill="#ECFDF5">Identity and policy around the secret</text>
+
+  <rect x="945" y="370" width="230" height="86" rx="22" fill="#102132" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="1060" y="423" text-anchor="middle" class="body" fill="#CCFBF1">Scoped access</text>
+
+  <rect x="1215" y="370" width="230" height="86" rx="22" fill="#102132" stroke="#34D399" stroke-width="2"/>
+  <text x="1330" y="423" text-anchor="middle" class="body" fill="#CCFBF1">Audit trail</text>
+
+  <rect x="945" y="490" width="230" height="86" rx="22" fill="#102132" stroke="#34D399" stroke-width="2"/>
+  <text x="1060" y="543" text-anchor="middle" class="body" fill="#CCFBF1">Rotation</text>
+
+  <rect x="1215" y="490" width="230" height="86" rx="22" fill="#102132" stroke="#10B981" stroke-width="2"/>
+  <text x="1330" y="543" text-anchor="middle" class="body" fill="#CCFBF1">Revocation</text>
+
+  <rect x="945" y="620" width="500" height="110" rx="26" fill="#102132" stroke="#99F6E4" stroke-width="2"/>
+  <text x="1195" y="670" text-anchor="middle" class="body" fill="#ECFDF5">Secret retrieved by workload identity</text>
+  <text x="1195" y="705" text-anchor="middle" class="small">Central policy, monitored access, and safer change over time</text>
+
+  <path d="M730 500 C 820 500, 860 500, 870 500" stroke="url(#amber)" stroke-width="10" stroke-linecap="round"/>
+  <polygon points="870,485 900,500 870,515" fill="#F59E0B"/>
+
+  <rect x="665" y="430" width="260" height="140" rx="28" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <text x="795" y="482" text-anchor="middle" class="caps" fill="#E2E8F0">THE SHIFT</text>
+  <text x="795" y="523" text-anchor="middle" class="body" fill="#F8FAFC">From storing a value</text>
+  <text x="795" y="555" text-anchor="middle" class="body" fill="#F8FAFC">to controlling access</text>
+
+  <rect x="100" y="820" width="600" height="44" rx="22" fill="url(#amber)" opacity="0.95"/>
+  <text x="400" y="848" text-anchor="middle" class="caps" fill="#431407">BETTER THAN HARD-CODED</text>
+
+  <rect x="900" y="820" width="600" height="44" rx="22" fill="url(#teal)" opacity="0.95"/>
+  <text x="1200" y="848" text-anchor="middle" class="caps" fill="#052E2B">BETTER CONTROL OVER REAL SECRETS</text>
+</svg>

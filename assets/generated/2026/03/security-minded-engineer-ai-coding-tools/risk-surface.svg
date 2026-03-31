@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-label="Risk surface expansion from autocomplete to coding agent">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111d"/>
+      <stop offset="100%" stop-color="#11263f"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" rx="34" fill="url(#bg)"/>
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="76" y="92" fill="#e6f0fc" font-size="30" font-weight="700">How the risk surface expands</text>
+    <text x="76" y="130" fill="#94a9c2" font-size="18">What feels small in autocomplete mode becomes a workflow problem in agent mode.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="82" y="182" width="386" height="448" rx="28" fill="#0f1a2b" stroke="#314c6a"/>
+    <rect x="108" y="214" width="334" height="176" rx="22" fill="#11243a" stroke="#35567d"/>
+    <text x="108" y="438" fill="#edf5ff" font-size="28" font-weight="700">1. Autocomplete</text>
+    <text x="108" y="478" fill="#9db2c7" font-size="18">Primary job:</text>
+    <text x="232" y="478" fill="#dbeafe" font-size="18">suggest the next bit of code</text>
+    <text x="108" y="512" fill="#9db2c7" font-size="18">Main concerns:</text>
+    <text x="246" y="512" fill="#dbeafe" font-size="18">correctness, style, licensing</text>
+    <text x="108" y="546" fill="#9db2c7" font-size="18">Typical blast radius:</text>
+    <text x="276" y="546" fill="#dbeafe" font-size="18">local to the change</text>
+    <rect x="108" y="582" width="280" height="16" rx="8" fill="#18304c"/>
+    <rect x="108" y="582" width="104" height="16" rx="8" fill="url(#bar1)"/>
+    <text x="108" y="620" fill="#7ecff6" font-size="16" font-weight="700">Lower context, lower agency, lower review burden</text>
+
+    <rect x="508" y="182" width="386" height="448" rx="28" fill="#0f1a2b" stroke="#314c6a"/>
+    <rect x="534" y="214" width="334" height="176" rx="22" fill="#11243a" stroke="#35567d"/>
+    <text x="534" y="438" fill="#edf5ff" font-size="28" font-weight="700">2. Repo-aware chat</text>
+    <text x="534" y="478" fill="#9db2c7" font-size="18">Primary job:</text>
+    <text x="658" y="478" fill="#dbeafe" font-size="18">explain, compare, draft, plan</text>
+    <text x="534" y="512" fill="#9db2c7" font-size="18">Main concerns:</text>
+    <text x="672" y="512" fill="#dbeafe" font-size="18">sensitive context, hidden assumptions</text>
+    <text x="534" y="546" fill="#9db2c7" font-size="18">Typical blast radius:</text>
+    <text x="702" y="546" fill="#dbeafe" font-size="18">cross-file reasoning mistakes</text>
+    <rect x="534" y="582" width="280" height="16" rx="8" fill="#18304c"/>
+    <rect x="534" y="582" width="176" height="16" rx="8" fill="url(#bar2)"/>
+    <text x="534" y="620" fill="#f1c87a" font-size="16" font-weight="700">More context means more governance questions</text>
+
+    <rect x="934" y="182" width="386" height="448" rx="28" fill="#0f1a2b" stroke="#314c6a"/>
+    <rect x="960" y="214" width="334" height="176" rx="22" fill="#11243a" stroke="#35567d"/>
+    <text x="960" y="438" fill="#edf5ff" font-size="28" font-weight="700">3. Coding agent</text>
+    <text x="960" y="478" fill="#9db2c7" font-size="18">Primary job:</text>
+    <text x="1084" y="478" fill="#dbeafe" font-size="18">retrieve, edit, run, and propose</text>
+    <text x="960" y="512" fill="#9db2c7" font-size="18">Main concerns:</text>
+    <text x="1098" y="512" fill="#dbeafe" font-size="18">permissions, prompt injection, auditability</text>
+    <text x="960" y="546" fill="#9db2c7" font-size="18">Typical blast radius:</text>
+    <text x="1128" y="546" fill="#dbeafe" font-size="18">repo workflow and downstream systems</text>
+    <rect x="960" y="582" width="280" height="16" rx="8" fill="#18304c"/>
+    <rect x="960" y="582" width="254" height="16" rx="8" fill="url(#bar3)"/>
+    <text x="960" y="620" fill="#f6b18a" font-size="16" font-weight="700">Context, reach, and approval design all matter</text>
+  </g>
+
+  <g stroke="#67b5ff" stroke-width="4" stroke-linecap="round">
+    <path d="M468 406 H508"/>
+    <path d="M894 406 H934"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="82" y="658" width="1238" height="60" rx="20" fill="#0d1a2c" stroke="#314c6a"/>
+    <text x="110" y="695" fill="#d9e8f8" font-size="18">Security-minded interpretation: every jump in context and autonomy should trigger a new conversation about data scope, tool permissions, validation, and human review.</text>
+  </g>
+</svg>

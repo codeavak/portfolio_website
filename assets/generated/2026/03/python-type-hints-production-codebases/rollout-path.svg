@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Gradual typing rollout path</title>
+  <desc id="desc">A five-step practical rollout path for adopting type checking in existing Python production codebases.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10242a" />
+      <stop offset="100%" stop-color="#16353e" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <text x="56" y="76" fill="#def2f8" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">
+    Gradual Typing Rollout That Actually Sticks
+  </text>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="70" y="120" width="1060" height="86" rx="14" fill="#214d59" />
+    <text x="96" y="172" fill="#d9f2f8" font-size="23" font-weight="700">1. Start at boundaries</text>
+    <text x="380" y="172" fill="#b5dce6" font-size="20">Requests, responses, queue payloads, shared utilities</text>
+
+    <rect x="70" y="223" width="1060" height="86" rx="14" fill="#2c6070" />
+    <text x="96" y="275" fill="#e3f7fc" font-size="23" font-weight="700">2. Run checker in CI</text>
+    <text x="380" y="275" fill="#c5e7ef" font-size="20">Observe noise first, then enforce high-signal rules</text>
+
+    <rect x="70" y="326" width="1060" height="86" rx="14" fill="#356f82" />
+    <text x="96" y="378" fill="#ecfbff" font-size="23" font-weight="700">3. Fix Optional and shape issues</text>
+    <text x="380" y="378" fill="#d5eef5" font-size="20">Prioritize defects likely to break production paths</text>
+
+    <rect x="70" y="429" width="1060" height="86" rx="14" fill="#3f7f95" />
+    <text x="96" y="481" fill="#f2fdff" font-size="23" font-weight="700">4. Raise strictness per module</text>
+    <text x="380" y="481" fill="#def3f8" font-size="20">Avoid all-at-once migration fatigue</text>
+
+    <rect x="70" y="532" width="1060" height="86" rx="14" fill="#4a90aa" />
+    <text x="96" y="584" fill="#f8ffff" font-size="23" font-weight="700">5. Track Any and ignores as debt</text>
+    <text x="380" y="584" fill="#e8f8fc" font-size="20">Keep type quality from eroding over time</text>
+  </g>
+</svg>

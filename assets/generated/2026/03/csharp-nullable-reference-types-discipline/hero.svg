@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Annotation Theater vs Real Discipline</title>
+  <desc id="desc">Dark technical hero diagram comparing null-forgiving annotation theater against disciplined non-nullable constructor design.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0b0f14; }
+      .panel { fill: #111827; stroke: #263041; stroke-width: 2; }
+      .panelSoft { fill: #0f1722; stroke: #1f2937; stroke-width: 1.5; }
+      .divider { stroke: #334155; stroke-width: 2; stroke-dasharray: 6 10; opacity: 0.9; }
+      .title { fill: #e5e7eb; font: 700 38px Inter, Arial, sans-serif; letter-spacing: 0.2px; }
+      .subtitle { fill: #94a3b8; font: 500 18px Inter, Arial, sans-serif; }
+      .labelBad { fill: #fca5a5; font: 700 22px Inter, Arial, sans-serif; }
+      .labelGood { fill: #86efac; font: 700 22px Inter, Arial, sans-serif; }
+      .code { fill: #cbd5e1; font: 500 26px 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace; }
+      .codeDim { fill: #94a3b8; font: 500 24px 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace; }
+      .accentRed { fill: #f87171; }
+      .accentGreen { fill: #4ade80; }
+      .accentSlate { fill: #1e293b; }
+      .cardTitle { fill: #cbd5e1; font: 700 17px Inter, Arial, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; }
+      .tiny { fill: #94a3b8; font: 500 15px Inter, Arial, sans-serif; }
+      .shadow { filter: drop-shadow(0 16px 26px rgba(0,0,0,0.26)); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="900" rx="28" />
+
+  <text x="800" y="88" text-anchor="middle" class="title">Nullable Reference Types: Signal vs Discipline</text>
+  <text x="800" y="124" text-anchor="middle" class="subtitle">Suppressing warnings is not the same thing as enforcing invariants.</text>
+
+  <line x1="800" y1="170" x2="800" y2="812" class="divider" />
+
+  <!-- Left side -->
+  <g class="shadow">
+    <rect class="panel" x="90" y="180" width="650" height="610" rx="28" />
+    <rect class="panelSoft" x="120" y="232" width="590" height="485" rx="22" />
+  </g>
+  <text x="145" y="220" class="labelBad">Annotation Theater</text>
+  <text x="145" y="748" class="tiny">Looks quiet. Still leaks ambiguity into the object graph.</text>
+
+  <rect x="120" y="232" width="590" height="56" rx="22" fill="#0d1420" />
+  <circle cx="155" cy="260" r="7" fill="#ef4444" opacity="0.9" />
+  <circle cx="182" cy="260" r="7" fill="#f59e0b" opacity="0.9" />
+  <circle cx="209" cy="260" r="7" fill="#22c55e" opacity="0.9" />
+  <text x="245" y="266" class="cardTitle">nullability.cs</text>
+
+  <text x="155" y="345" class="codeDim">public class UserProfile</text>
+  <text x="155" y="390" class="codeDim">{</text>
+  <text x="185" y="438" class="code">public string Name { get; init; } = </text>
+  <text x="685" y="438" text-anchor="end" class="code accentRed">null!</text>
+  <text x="185" y="485" class="code">public string Email { get; init; } = </text>
+  <text x="685" y="485" text-anchor="end" class="code accentRed">null!</text>
+  <text x="185" y="532" class="code">var len = customer</text>
+  <text x="470" y="532" class="code accentRed">!</text>
+  <text x="490" y="532" class="code">.Name.Length;</text>
+  <text x="155" y="586" class="codeDim">}</text>
+
+  <!-- warning suppressed icon -->
+  <g transform="translate(552 290)">
+    <path d="M0 60 L32 4 L64 60 Z" fill="none" stroke="#f87171" stroke-width="4" opacity="0.95"/>
+    <rect x="30" y="23" width="4" height="18" rx="2" class="accentRed"/>
+    <circle cx="32" cy="49" r="2.8" class="accentRed"/>
+    <line x1="-10" y1="72" x2="74" y2="-8" stroke="#fca5a5" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="548" y="386" class="tiny">warning silenced</text>
+
+  <!-- Right side -->
+  <g class="shadow">
+    <rect class="panel" x="860" y="180" width="650" height="610" rx="28" />
+    <rect class="panelSoft" x="890" y="232" width="590" height="485" rx="22" />
+  </g>
+  <text x="915" y="220" class="labelGood">Real Discipline</text>
+  <text x="915" y="748" class="tiny">Non-nullable contracts are backed by construction-time guarantees.</text>
+
+  <rect x="890" y="232" width="590" height="56" rx="22" fill="#0d1420" />
+  <circle cx="925" cy="260" r="7" fill="#ef4444" opacity="0.9" />
+  <circle cx="952" cy="260" r="7" fill="#f59e0b" opacity="0.9" />
+  <circle cx="979" cy="260" r="7" fill="#22c55e" opacity="0.9" />
+  <text x="1015" y="266" class="cardTitle">user.cs</text>
+
+  <text x="925" y="345" class="codeDim">public sealed class User</text>
+  <text x="925" y="390" class="codeDim">{</text>
+  <text x="955" y="438" class="code">public User(string </text>
+  <text x="1214" y="438" class="code accentGreen">name</text>
+  <text x="1280" y="438" class="code">, string </text>
+  <text x="1385" y="438" class="code accentGreen">email</text>
+  <text x="1465" y="438" class="code">)</text>
+
+  <text x="955" y="490" class="code">{</text>
+  <text x="990" y="535" class="code">Name  = Guard.Against.NullOrWhiteSpace(name);</text>
+  <text x="990" y="580" class="code">Email = Guard.Against.NullOrWhiteSpace(email);</text>
+  <text x="955" y="625" class="code">}</text>
+
+  <text x="955" y="672" class="code">public string Name  { get; }</text>
+  <text x="955" y="709" class="code">public string Email { get; }</text>
+
+  <!-- checkmark badge -->
+  <g transform="translate(1390 250)">
+    <circle cx="42" cy="42" r="38" fill="#052e16" stroke="#4ade80" stroke-width="4" />
+    <path d="M24 43 L36 55 L61 28" fill="none" stroke="#86efac" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1338" y="360" class="tiny">invariant enforced</text>
+
+  <!-- bottom callout -->
+  <rect x="365" y="808" width="870" height="50" rx="16" fill="#0f1722" stroke="#243244" stroke-width="1.5" />
+  <text x="800" y="840" text-anchor="middle" class="subtitle">Annotations can describe intent. Constructors, factories, and result types enforce reality.</text>
+</svg>

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Index Key vs INCLUDE Structure Comparison</title>
+  <desc id="desc2">Diagram contrasting a wide composite key index against a narrow key with INCLUDE columns, showing where each column type lives in the B-tree.</desc>
+  <defs>
+    <style>
+      .bg2 { fill: #0b0f14; }
+      .panel2 { fill: #111827; stroke: #263041; stroke-width: 2; }
+      .lbl { fill: #e5e7eb; font: 700 22px Inter, Arial, sans-serif; }
+      .sub { fill: #94a3b8; font: 500 15px Inter, Arial, sans-serif; }
+      .hdr { fill: #1e3a5f; stroke: #3b82f6; stroke-width: 2; }
+      .leaf { fill: #14312b; stroke: #22c55e; stroke-width: 2; }
+      .leafOut { fill: #1a2e1a; stroke: #4ade80; stroke-width: 1.5; stroke-dasharray: 5 4; }
+      .nonLeaf { fill: #1e293b; stroke: #475569; stroke-width: 1.5; }
+      .txt { fill: #cbd5e1; font: 500 14px 'JetBrains Mono', Consolas, monospace; }
+      .txtKey { fill: #93c5fd; font: 600 14px 'JetBrains Mono', Consolas, monospace; }
+      .txtGrn { fill: #86efac; font: 600 14px 'JetBrains Mono', Consolas, monospace; }
+      .txtBad { fill: #fca5a5; font: 600 14px 'JetBrains Mono', Consolas, monospace; }
+      .arrow { stroke: #60a5fa; stroke-width: 2; fill: none; }
+      .div2 { stroke: #334155; stroke-width: 2; stroke-dasharray: 6 10; }
+      .badge { fill: #14532d; stroke: #22c55e; stroke-width: 1.5; }
+      .badgeRed { fill: #7f1d1d; stroke: #ef4444; stroke-width: 1.5; }
+      .badgeTxt { fill: #86efac; font: 700 13px Inter, Arial, sans-serif; }
+      .badgeTxtR { fill: #fca5a5; font: 700 13px Inter, Arial, sans-serif; }
+      .lvlLbl { fill: #64748b; font: 600 12px Inter, Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.8px; }
+    </style>
+  </defs>
+
+  <rect class="bg2" x="0" y="0" width="1400" height="520" rx="22"/>
+
+  <text x="700" y="46" text-anchor="middle" class="lbl">Key Columns vs INCLUDE Columns — Where They Live in the B-Tree</text>
+  <text x="700" y="68" text-anchor="middle" class="sub">All key columns propagate to every level. INCLUDE columns appear at the leaf level only.</text>
+
+  <line x1="700" y1="85" x2="700" y2="490" class="div2"/>
+
+  <!-- ===== LEFT: All in key (wider) ===== -->
+  <text x="360" y="107" text-anchor="middle" fill="#fca5a5" font="700 18px Inter, Arial, sans-serif" style="font: 700 18px Inter, Arial, sans-serif; fill: #fca5a5">All four columns as key — wider tree</text>
+
+  <!-- Level labels left -->
+  <text x="72" y="160" class="lvlLbl">Root</text>
+  <text x="72" y="262" class="lvlLbl">Non-leaf</text>
+  <text x="72" y="400" class="lvlLbl">Leaf</text>
+
+  <!-- Root node left -->
+  <rect class="hdr" x="200" y="140" width="310" height="48" rx="8"/>
+  <text x="355" y="161" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="355" y="176" text-anchor="middle" class="txtKey">OrderDate  Status  TotalAmount</text>
+
+  <!-- Non-leaf left -->
+  <rect class="nonLeaf" x="140" y="240" width="220" height="40" rx="8"/>
+  <text x="250" y="258" text-anchor="middle" class="txtKey">CustomerId, OrderDate,</text>
+  <text x="250" y="272" text-anchor="middle" class="txtKey">Status, TotalAmount</text>
+
+  <rect class="nonLeaf" x="380" y="240" width="220" height="40" rx="8"/>
+  <text x="490" y="258" text-anchor="middle" class="txtKey">CustomerId, OrderDate,</text>
+  <text x="490" y="272" text-anchor="middle" class="txtKey">Status, TotalAmount</text>
+
+  <!-- Leaf left -->
+  <rect class="leaf" x="100" y="360" width="220" height="80" rx="8"/>
+  <text x="210" y="382" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="210" y="398" text-anchor="middle" class="txtKey">OrderDate</text>
+  <text x="210" y="414" text-anchor="middle" class="txtBad">Status</text>
+  <text x="210" y="430" text-anchor="middle" class="txtBad">TotalAmount</text>
+
+  <rect class="leaf" x="340" y="360" width="220" height="80" rx="8"/>
+  <text x="450" y="382" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="450" y="398" text-anchor="middle" class="txtKey">OrderDate</text>
+  <text x="450" y="414" text-anchor="middle" class="txtBad">Status</text>
+  <text x="450" y="430" text-anchor="middle" class="txtBad">TotalAmount</text>
+
+  <!-- Arrows left -->
+  <line x1="320" y1="188" x2="255" y2="240" class="arrow"/>
+  <line x1="390" y1="188" x2="450" y2="240" class="arrow"/>
+  <line x1="230" y1="280" x2="215" y2="360" class="arrow"/>
+  <line x1="470" y1="280" x2="455" y2="360" class="arrow"/>
+
+  <!-- Badge left -->
+  <rect class="badgeRed" x="175" y="457" width="360" height="24" rx="6"/>
+  <text x="355" y="474" text-anchor="middle" class="badgeTxtR">Key is wide at every level → heavier non-leaf pages</text>
+
+  <!-- ===== RIGHT: Narrow key + INCLUDE ===== -->
+  <text x="1040" y="107" text-anchor="middle" fill="#86efac" font="700 18px Inter, Arial, sans-serif" style="font: 700 18px Inter, Arial, sans-serif; fill: #86efac">Narrow key + INCLUDE — leaner tree</text>
+
+  <!-- Level labels right -->
+  <text x="718" y="160" class="lvlLbl">Root</text>
+  <text x="718" y="262" class="lvlLbl">Non-leaf</text>
+  <text x="718" y="400" class="lvlLbl">Leaf</text>
+
+  <!-- Root node right -->
+  <rect class="hdr" x="880" y="140" width="260" height="48" rx="8"/>
+  <text x="1010" y="161" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="1010" y="176" text-anchor="middle" class="txtKey">OrderDate  ← key only</text>
+
+  <!-- Non-leaf right -->
+  <rect class="nonLeaf" x="810" y="240" width="185" height="40" rx="8"/>
+  <text x="902" y="258" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="902" y="272" text-anchor="middle" class="txtKey">OrderDate</text>
+
+  <rect class="nonLeaf" x="1024" y="240" width="185" height="40" rx="8"/>
+  <text x="1116" y="258" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="1116" y="272" text-anchor="middle" class="txtKey">OrderDate</text>
+
+  <!-- Leaf right: includes INCLUDE cols -->
+  <rect class="leafOut" x="753" y="355" width="210" height="96" rx="8"/>
+  <text x="858" y="376" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="858" y="392" text-anchor="middle" class="txtKey">OrderDate ← key</text>
+  <text x="858" y="412" text-anchor="middle" class="txtGrn">Status</text>
+  <text x="858" y="428" text-anchor="middle" class="txtGrn">TotalAmount</text>
+  <text x="858" y="444" text-anchor="middle" style="fill:#6b7280; font: 500 12px Inter, Arial, sans-serif;">INCLUDE only here</text>
+
+  <rect class="leafOut" x="988" y="355" width="210" height="96" rx="8"/>
+  <text x="1093" y="376" text-anchor="middle" class="txtKey">CustomerId</text>
+  <text x="1093" y="392" text-anchor="middle" class="txtKey">OrderDate ← key</text>
+  <text x="1093" y="412" text-anchor="middle" class="txtGrn">Status</text>
+  <text x="1093" y="428" text-anchor="middle" class="txtGrn">TotalAmount</text>
+  <text x="1093" y="444" text-anchor="middle" style="fill:#6b7280; font: 500 12px Inter, Arial, sans-serif;">INCLUDE only here</text>
+
+  <!-- Arrows right -->
+  <line x1="980" y1="188" x2="920" y2="240" class="arrow"/>
+  <line x1="1040" y1="188" x2="1100" y2="240" class="arrow"/>
+  <line x1="882" y1="280" x2="870" y2="355" class="arrow"/>
+  <line x1="1096" y1="280" x2="1085" y2="355" class="arrow"/>
+
+  <!-- Badge right -->
+  <rect class="badge" x="820" y="462" width="390" height="24" rx="6"/>
+  <text x="1015" y="479" text-anchor="middle" class="badgeTxt">Narrow key → fewer non-leaf pages → faster seeks</text>
+</svg>

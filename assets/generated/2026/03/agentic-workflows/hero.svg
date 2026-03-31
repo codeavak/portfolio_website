@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-label="Editorial illustration for agentic workflows in software engineering">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111c"/>
+      <stop offset="52%" stop-color="#0d2034"/>
+      <stop offset="100%" stop-color="#102945"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#74b6ff"/>
+      <stop offset="55%" stop-color="#58d9d2"/>
+      <stop offset="100%" stop-color="#f7b267"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="980" rx="42" fill="url(#bg)"/>
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <path d="M0 164 H1600"/>
+    <path d="M0 328 H1600"/>
+    <path d="M0 492 H1600"/>
+    <path d="M0 656 H1600"/>
+    <path d="M0 820 H1600"/>
+    <path d="M228 0 V980"/>
+    <path d="M492 0 V980"/>
+    <path d="M756 0 V980"/>
+    <path d="M1020 0 V980"/>
+    <path d="M1284 0 V980"/>
+  </g>
+
+  <circle cx="1328" cy="170" r="244" fill="#2563eb" opacity="0.14"/>
+  <circle cx="276" cy="828" r="268" fill="#14b8a6" opacity="0.10"/>
+  <circle cx="1110" cy="760" r="180" fill="#f59e0b" opacity="0.07"/>
+
+  <g filter="url(#shadow)">
+    <rect x="208" y="176" width="1184" height="622" rx="40" fill="#0b1625" stroke="#294764"/>
+    <rect x="244" y="212" width="372" height="550" rx="30" fill="#0d1c2d" stroke="#35567d"/>
+    <rect x="652" y="212" width="470" height="550" rx="30" fill="#0d1c2d" stroke="#35567d"/>
+    <rect x="1158" y="212" width="198" height="550" rx="30" fill="#0d1c2d" stroke="#35567d"/>
+  </g>
+
+  <g fill="url(#glow)">
+    <rect x="274" y="244" width="312" height="144" rx="24"/>
+    <rect x="684" y="248" width="406" height="194" rx="28"/>
+    <rect x="1188" y="244" width="138" height="154" rx="22"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="96" y="110" fill="#dbe7f5" font-size="30" font-weight="700">Agentic workflows without chaos</text>
+    <text x="96" y="150" fill="#90a7c0" font-size="18">Useful autonomy comes from scoped steps, visible handoffs, and strong review points.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif" fill="#e8f2ff">
+    <text x="278" y="286" font-size="18" font-weight="700">Intent</text>
+    <text x="684" y="286" font-size="18" font-weight="700">Workflow core</text>
+    <text x="1188" y="286" font-size="18" font-weight="700">Gates</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="278" y="322" width="304" height="118" rx="24" fill="#102235" stroke="#3d6288"/>
+    <rect x="278" y="470" width="304" height="118" rx="24" fill="#102235" stroke="#3d6288"/>
+    <rect x="278" y="618" width="304" height="102" rx="24" fill="#102235" stroke="#3d6288"/>
+
+    <rect x="684" y="320" width="404" height="124" rx="26" fill="#11253a" stroke="#3d6288"/>
+    <rect x="684" y="474" width="404" height="124" rx="26" fill="#11253a" stroke="#3d6288"/>
+    <rect x="684" y="628" width="404" height="92" rx="26" fill="#11253a" stroke="#3d6288"/>
+
+    <rect x="1188" y="330" width="138" height="114" rx="24" fill="#102235" stroke="#3d6288"/>
+    <rect x="1188" y="474" width="138" height="114" rx="24" fill="#102235" stroke="#3d6288"/>
+    <rect x="1188" y="618" width="138" height="102" rx="24" fill="#102235" stroke="#3d6288"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="314" y="372" fill="#edf6ff" font-size="28" font-weight="700">Request</text>
+    <text x="314" y="408" fill="#a1b6cc" font-size="17">Real task. Clear outcome.</text>
+
+    <text x="314" y="520" fill="#edf6ff" font-size="28" font-weight="700">Context</text>
+    <text x="314" y="556" fill="#a1b6cc" font-size="17">Files, docs, incidents, history.</text>
+
+    <text x="314" y="664" fill="#edf6ff" font-size="28" font-weight="700">Constraints</text>
+    <text x="314" y="698" fill="#a1b6cc" font-size="17">Scope, roles, stop conditions.</text>
+
+    <text x="724" y="372" fill="#edf6ff" font-size="30" font-weight="700">Plan and retrieve</text>
+    <text x="724" y="408" fill="#a1b6cc" font-size="17">Known steps where possible. Tool use where it pays off.</text>
+
+    <text x="724" y="526" fill="#edf6ff" font-size="30" font-weight="700">Draft and check</text>
+    <text x="724" y="562" fill="#a1b6cc" font-size="17">Code changes, summaries, test runs, validation traces.</text>
+
+    <text x="724" y="670" fill="#edf6ff" font-size="30" font-weight="700">Hand off with evidence</text>
+    <text x="724" y="702" fill="#a1b6cc" font-size="17">What changed, why it changed, and what still needs judgment.</text>
+
+    <text x="1210" y="376" fill="#edf6ff" font-size="24" font-weight="700">Policy</text>
+    <text x="1210" y="408" fill="#9fb4ca" font-size="15">route</text>
+
+    <text x="1210" y="520" fill="#edf6ff" font-size="24" font-weight="700">Checks</text>
+    <text x="1210" y="552" fill="#9fb4ca" font-size="15">prove</text>
+
+    <text x="1210" y="662" fill="#edf6ff" font-size="24" font-weight="700">Review</text>
+    <text x="1210" y="694" fill="#9fb4ca" font-size="15">decide</text>
+  </g>
+
+  <g stroke="url(#flow)" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M582 380 H684"/>
+    <path d="M582 528 H684"/>
+    <path d="M582 668 H684"/>
+    <path d="M1088 380 H1188"/>
+    <path d="M1088 528 H1188"/>
+    <path d="M1088 668 H1188"/>
+  </g>
+
+  <g fill="#18304c">
+    <rect x="724" y="592" width="278" height="10" rx="5"/>
+    <rect x="724" y="440" width="296" height="10" rx="5"/>
+    <rect x="724" y="718" width="250" height="10" rx="5"/>
+  </g>
+
+  <g>
+    <rect x="484" y="102" width="632" height="40" rx="20" fill="#0f2236" stroke="#35567d"/>
+    <text x="800" y="128" text-anchor="middle" fill="#c7dbf4" font-size="16" font-family="Inter, Segoe UI, sans-serif" font-weight="700">Autonomy becomes valuable when the surrounding system stays calm, observable, and reversible.</text>
+  </g>
+</svg>

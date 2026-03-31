@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+      <url>
+        <loc>https://codeavak.github.io/portfolio_website/blog/</loc>
+        <lastmod>2026-03-31T18:57:22+00:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://codeavak.github.io/portfolio_website/</loc>
+        <lastmod>2026-03-31T18:57:22+00:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://codeavak.github.io/portfolio_website/robots.txt</loc>
+        <lastmod>2026-03-31T18:57:22+00:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://codeavak.github.io/portfolio_website/sitemap.xml</loc>
+        <lastmod>2026-03-31T18:57:22+00:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://codeavak.github.io/portfolio_website/assets/main.css</loc>
+        <lastmod>2026-03-31T18:57:22+00:00</lastmod>
+      </url>
+    
+  
+
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/</loc>
+      <lastmod>2026-03-31T12:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/</loc>
+      <lastmod>2026-03-31T00:00:01+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases/</loc>
+      <lastmod>2026-03-29T22:38:46+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks/</loc>
+      <lastmod>2026-03-29T07:10:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait/</loc>
+      <lastmod>2026-03-29T07:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/</loc>
+      <lastmod>2026-03-28T13:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain/</loc>
+      <lastmod>2026-03-27T16:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/</loc>
+      <lastmod>2026-03-27T13:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/</loc>
+      <lastmod>2026-03-27T10:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools/</loc>
+      <lastmod>2026-03-26T16:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/agentic-workflows/</loc>
+      <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+    </url>
+  
+</urlset>

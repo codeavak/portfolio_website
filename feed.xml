@@ -1,0 +1,2197 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-03-31T18:57:22+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
+
+<p>You call them <code class="language-plaintext highlighter-rouge">dict</code>, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code>, <code class="language-plaintext highlighter-rouge">HashSet&lt;T&gt;</code>, lookup tables, indexes, caches, frequency maps, dedup maps, and memoization stores.</p>
+
+<p>They become so normal that many developers stop seeing them as a data structure at all. They just feel like the place values go when you want fast lookup.</p>
+
+<p>That is usually fine until one of three things happens:</p>
+
+<ul>
+  <li>lookups are technically $O(1)$ but still show up in a profile</li>
+  <li>a key starts “disappearing” after mutation</li>
+  <li>a workload that should be easy suddenly spends too much time probing, comparing, or resizing</li>
+</ul>
+
+<p>Hash maps are not magic. They are an array, a hash function, and a collision policy.
+That is exactly why they are so useful.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" alt="A hash map diagram showing keys transformed into hash codes and placed into buckets, with collisions handled explicitly." />
+  <figcaption>Fast lookup comes from structure, not luck: buckets, hash codes, and collision handling.</figcaption>
+</figure>
+
+<h2 id="mental-model">The mental model worth keeping in your head</h2>
+
+<p>At implementation level, a hash map starts with a backing array.
+That array is divided into buckets or slots.</p>
+
+<p>When you insert a key:</p>
+
+<ol>
+  <li>The runtime computes a hash code for the key.</li>
+  <li>It turns that hash code into a bucket index.</li>
+  <li>It stores the key-value pair in that bucket, or resolves a collision if something is already there.</li>
+</ol>
+
+<p>Conceptually, it looks like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hash(key) -&gt; large integer -&gt; bucket index -&gt; locate entry
+</code></pre></div></div>
+
+<p>The important property is not that the hash code is unique.
+It rarely is.
+The important property is that it spreads keys out well enough that each bucket stays cheap to inspect.</p>
+
+<p>That is why official language docs focus so much on the equality and hash contract.
+In Python, hashable objects must keep a stable hash value for their lifetime, and objects that compare equal must have the same hash.
+In .NET, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code> retrieval is described as close to $O(1)$, but Microsoft explicitly notes that speed depends on the quality of the hashing algorithm for <code class="language-plaintext highlighter-rouge">TKey</code> and that keys must not change in a way that affects their hash while stored in the dictionary.</p>
+
+<p>Those are not trivia rules.
+They are the rules that make the data structure work.</p>
+
+<h2 id="collision-handling">Collision handling is where the real behavior lives</h2>
+
+<p>Two different keys can land in the same bucket.
+That is a collision.</p>
+
+<p>Every practical hash map needs a strategy for this.
+The two common families are:</p>
+
+<h3 id="separate-chaining">Separate chaining</h3>
+
+<p>Each bucket points to a small collection of entries.
+If several keys land in the same bucket, the runtime scans that chain until it finds the matching key.</p>
+
+<p>This is the model many developers learn first because it is easy to visualize.
+.NET’s dictionary implementation is close to this mental model: buckets point into entry storage, and collisions are resolved by following stored links.</p>
+
+<h3 id="open-addressing">Open addressing</h3>
+
+<p>All entries stay inside the array itself.
+If the first slot is occupied, the runtime probes other slots according to a rule.</p>
+
+<p>Python dictionaries are better understood with this model in mind.
+You do not follow a linked list; you probe for the next usable position until you find the key or an empty slot.</p>
+
+<p>The exact algorithm differs by runtime, but the tradeoff is consistent:</p>
+
+<ul>
+  <li>fewer collisions means fewer comparisons</li>
+  <li>fewer comparisons means fewer memory accesses</li>
+  <li>fewer memory accesses means the “constant” in $O(1)$ stays small</li>
+</ul>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/collision-paths.svg" alt="A diagram contrasting separate chaining with open addressing for hash map collision handling." />
+  <figcaption>Collisions do not break a hash map. They determine how expensive the constant factor becomes.</figcaption>
+</figure>
+
+<h2 id="load-factor-rehashing">Load factor and rehashing are the price of staying fast</h2>
+
+<p>If you keep inserting entries into a fixed-size table, collisions become more frequent.
+The runtime needs a threshold that says, in effect, “this table is getting crowded enough that future lookups are becoming more expensive.”</p>
+
+<p>That threshold is load factor.</p>
+
+<p>At a high level:</p>
+
+\[\text{load factor} = \frac{\text{number of stored entries}}{\text{number of buckets}}\]
+
+<p>Once that ratio gets too high, the map resizes, allocates a larger backing structure, and re-inserts or repositions existing entries based on the new capacity.</p>
+
+<p>That step is rehashing or resizing.</p>
+
+<p>This explains an important production reality:</p>
+
+<ul>
+  <li>single lookups are usually cheap</li>
+  <li>occasional inserts are expensive because they trigger a resize</li>
+  <li>bulk-loading into a map without sizing it can create avoidable churn</li>
+</ul>
+
+<p>That is why capacity APIs exist.
+.NET exposes constructors that take an initial capacity and methods like <code class="language-plaintext highlighter-rouge">EnsureCapacity</code>.
+Even when a language hides more of the mechanics, the underlying truth stays the same: if you know roughly how many items are coming, pre-sizing is often the simplest performance win.</p>
+
+<h2 id="why-o1-is-not-always-fast">Why lookup is $O(1)$ and still not always fast</h2>
+
+<p>Saying hash map lookup is $O(1)$ is directionally correct and often useful.
+It is not the whole performance story.</p>
+
+<p>In practice, the cost of a lookup includes several pieces:</p>
+
+<h3 id="1-hash-computation-cost">1. Hash computation cost</h3>
+
+<p>If the key is a short integer, hashing is cheap.
+If the key is a large string, a composite object, or something with a custom comparer, the upfront cost can matter.</p>
+
+<h3 id="2-collision-cost">2. Collision cost</h3>
+
+<p>Every extra probe or chain traversal means more comparisons and more branches.
+Poor distribution makes the constant factor worse.</p>
+
+<h3 id="3-memory-access-cost">3. Memory access cost</h3>
+
+<p>Hash maps trade ordering for fast addressability, but the access pattern can still bounce around memory.
+That can be slower than a tight linear scan over a small, cache-friendly array.</p>
+
+<h3 id="4-resizing-cost">4. Resizing cost</h3>
+
+<p>Most lookups do not resize.
+Some insert-heavy phases do.
+When they do, the operation is much more expensive than the average case suggests.</p>
+
+<h3 id="5-equality-comparer-cost">5. Equality comparer cost</h3>
+
+<p>A collision is not resolved by hash code alone.
+Eventually the runtime still needs to ask whether two keys are actually equal.
+Bad <code class="language-plaintext highlighter-rouge">Equals</code> or <code class="language-plaintext highlighter-rouge">__eq__</code> logic can make that step expensive or wrong.</p>
+
+<p>This is why small collections are a useful sanity check.
+If you have six items and run one lookup once per request, replacing a list scan with a dictionary is not automatically an optimization.
+Hash maps dominate when you are doing enough lookups, against enough items, that indexed access beats repeated linear work.</p>
+
+<h2 id="common-pitfalls">Two failure modes developers cause themselves</h2>
+
+<h3 id="mutable-keys">Mutable keys</h3>
+
+<p>If a key changes after insertion in a way that changes equality or hash behavior, you have violated the lookup contract.</p>
+
+<p>The runtime stored the entry based on the old hash.
+Your later lookup uses the new hash.
+Now the entry appears to be missing.</p>
+
+<p>Python tries to protect you here by making obvious mutable containers like <code class="language-plaintext highlighter-rouge">list</code> and <code class="language-plaintext highlighter-rouge">dict</code> unhashable.
+But you can still create unsafe custom types.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserKey</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+
+    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">hash</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">UserKey</span><span class="p">)</span> <span class="ow">and</span> <span class="n">self</span><span class="p">.</span><span class="n">email</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">email</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="nc">UserKey</span><span class="p">(</span><span class="sh">"</span><span class="s">alice@example.com</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">users</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="n">key</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="sh">"</span><span class="s">alice@new-domain.example</span><span class="sh">"</span>
+
+<span class="c1"># This lookup is now operating on a different hash/equality identity.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>The C# version of the same mistake is a mutable type whose <code class="language-plaintext highlighter-rouge">Equals</code> and <code class="language-plaintext highlighter-rouge">GetHashCode</code> depend on a property that later changes.</p>
+
+<p>The rule is simple: keys should be effectively immutable while stored.</p>
+
+<h3 id="poor-hash-functions">Poor hash functions</h3>
+
+<p>If many distinct keys produce the same or similar hash codes, the table degrades toward repeated collision handling.</p>
+
+<p>This C# example is intentionally bad:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">CountryCode</span> <span class="p">:</span> <span class="n">IEquatable</span><span class="p">&lt;</span><span class="n">CountryCode</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Code</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">CountryCode</span><span class="p">(</span><span class="kt">string</span> <span class="n">code</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Code</span> <span class="p">=</span> <span class="n">code</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Equals</span><span class="p">(</span><span class="n">CountryCode</span><span class="p">?</span> <span class="n">other</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">other</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">Code</span> <span class="p">==</span> <span class="n">other</span><span class="p">.</span><span class="n">Code</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">Equals</span><span class="p">(</span><span class="kt">object</span><span class="p">?</span> <span class="n">obj</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">obj</span> <span class="k">is</span> <span class="n">CountryCode</span> <span class="n">other</span> <span class="p">&amp;&amp;</span> <span class="nf">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">int</span> <span class="nf">GetHashCode</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Code</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Every two-character country code collides.
+The dictionary still works, but its fast path has been sabotaged.</p>
+
+<p>Good hash functions do not need to be cryptographic.
+They do need to distribute realistic inputs well and remain consistent with equality.</p>
+
+<h2 id="engineering-problems">Three engineering problems that become cleaner once you reach for a hash map deliberately</h2>
+
+<h3 id="1-counting-and-grouping-events">1. Counting and grouping events</h3>
+
+<p>If you need counts by error code, endpoint, tenant, or feature flag, a hash map is the natural in-memory accumulator.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error_counts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">error_code</span> <span class="ow">in</span> <span class="n">stream_of_error_codes</span><span class="p">:</span>
+    <span class="n">error_counts</span><span class="p">[</span><span class="n">error_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">error_counts</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">error_code</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>That is more than convenience.
+It turns repeated “have I seen this before?” scans into direct keyed updates.</p>
+
+<h3 id="2-building-an-in-memory-join-index">2. Building an in-memory join index</h3>
+
+<p>Suppose one API returns customers and another returns orders, and you need to attach customer details to each order.
+The naive version scans the customer list for each order.
+The deliberate version builds an index once.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">customersById</span> <span class="p">=</span> <span class="n">customers</span><span class="p">.</span><span class="nf">ToDictionary</span><span class="p">(</span><span class="n">customer</span> <span class="p">=&gt;</span> <span class="n">customer</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">order</span> <span class="k">in</span> <span class="n">orders</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">customersById</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerId</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">customer</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">order</span><span class="p">.</span><span class="n">CustomerName</span> <span class="p">=</span> <span class="n">customer</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>That is the same reason database indexes exist: pay a little structure cost once, stop paying search cost repeatedly.</p>
+
+<h3 id="3-deduplication-and-idempotency-tracking">3. Deduplication and idempotency tracking</h3>
+
+<p>When you need to answer “have I already processed this request ID, event ID, or file checksum?” a hash-backed lookup is the cleanest first move.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seen_request_ids</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">request_id</span> <span class="ow">in</span> <span class="n">incoming_request_ids</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">request_id</span> <span class="ow">in</span> <span class="n">seen_request_ids</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">seen_request_ids</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span>
+    <span class="nf">process</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Yes, a <code class="language-plaintext highlighter-rouge">set</code> is not spelled <code class="language-plaintext highlighter-rouge">dict</code>, but it relies on the same hash-map idea.
+If the problem is membership or uniqueness, hash-based structures are usually the first tool worth considering.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/deliberate-uses.svg" alt="Three engineering uses of hash maps: counting events, joining records by id, and deduplicating request identifiers." />
+  <figcaption>Hash maps stop being a generic convenience and become a design tool once you recognize repeated keyed access.</figcaption>
+</figure>
+
+<h2 id="bottom-line">Bottom line</h2>
+
+<p>Hash maps deserve more respect than they usually get.</p>
+
+<p>Not because they are exotic.
+Because they are ordinary and therefore easy to misuse without noticing.</p>
+
+<p>The useful mental model is small:</p>
+
+<ul>
+  <li>hash maps are arrays organized by hash codes</li>
+  <li>collisions are unavoidable and policy matters</li>
+  <li>load factor controls when performance starts to slip</li>
+  <li>resizing keeps average lookup fast but makes some inserts expensive</li>
+  <li>key immutability and hash/equality correctness are non-negotiable</li>
+</ul>
+
+<p>Once you actually keep that model in your head, a lot of everyday code gets easier to reason about.
+You stop treating dictionaries as a default container and start using them as a deliberate answer to a specific class of problem: repeated keyed access under realistic load.</p>
+
+<p>If you want a practical exercise, profile one hot path in your codebase where you repeatedly search a collection by an identifier. Build the hash-based index explicitly, size it sensibly, and compare the code clarity before you even compare the runtime.
+That is usually where the value becomes obvious first.</p>
+
+<!--
+---
+
+**Meta description:** A practical guide to how hash maps really work: hash functions, collisions, load factor, rehashing, mutable key pitfalls, and everyday engineering problems they solve cleanly.
+
+**SEO keyword ideas:**
+- how hash maps work
+- dictionary performance python csharp
+- mutable key hash map bug
+- load factor and rehashing explained
+- hash map collision handling
+-->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Idempotency: The Most Underused Pattern in Distributed Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" rel="alternate" type="text/html" title="Idempotency: The Most Underused Pattern in Distributed Systems" /><published>2026-03-31T00:00:01+00:00</published><updated>2026-03-31T00:00:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/"><![CDATA[<p>If you have worked on distributed systems long enough, you have probably had this incident:</p>
+
+<p>A request timed out, the client retried, and suddenly the same business action happened twice.</p>
+
+<p>Maybe it was a double charge.
+Maybe it was two shipment labels.
+Maybe it was a monthly billing job that ran twice and required manual cleanup.</p>
+
+<p>None of that happens because the team forgot the definition of idempotency.
+It happens because idempotency was treated as an API trivia concept instead of a system design decision.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" alt="Two retry paths converging into a single committed transaction, representing idempotent processing in a distributed system." />
+  <figcaption>Retries are normal. Duplicate side effects are optional.</figcaption>
+</figure>
+
+<h2 id="what-it-means-in-practice">What idempotency means in practice</h2>
+
+<p>In plain engineering terms, idempotency means:</p>
+
+<p>You can submit the same intent more than once, and the system ends in the same business state as if it were processed once.</p>
+
+<p>Notice what that does not mean:</p>
+
+<ul>
+  <li>It does not mean identical logs.</li>
+  <li>It does not mean identical timestamps.</li>
+  <li>It does not mean no internal work happens on retries.</li>
+</ul>
+
+<p>RFC 9110 makes this distinction clearly for HTTP methods: idempotency is about the intended effect on the server state, not whether every side effect looks identical on each request.</p>
+
+<p>That distinction matters because teams often get stuck on the wrong question:
+“Can this code path ever run twice?”</p>
+
+<p>In distributed systems, it absolutely can.</p>
+
+<p>The better question is:
+“If it runs twice, does the business outcome stay correct?”</p>
+
+<p>That is idempotency in the only form that protects production systems.</p>
+
+<h2 id="retries-and-at-least-once">Why it matters for retries and at-least-once delivery</h2>
+
+<p>Retries are not edge cases. They are default behavior.</p>
+
+<ul>
+  <li>Clients retry when they hit timeouts.</li>
+  <li>SDKs retry on transient failures.</li>
+  <li>Message consumers reprocess when ack deadlines expire.</li>
+  <li>Job schedulers retry when workers crash.</li>
+</ul>
+
+<p>If your system is not idempotent, retries are a duplicate side-effect engine.</p>
+
+<p>Cloud messaging docs keep reinforcing the same practical reality:</p>
+
+<ul>
+  <li>Azure Service Bus duplicate detection exists because senders often cannot tell if the original send succeeded after failures.</li>
+  <li>Google Pub/Sub explicitly distinguishes valid redelivery from duplicates and still requires consumer-side discipline to avoid duplicate work.</li>
+</ul>
+
+<p>Translation for day-to-day architecture: delivery is often at-least-once, so processing must be safe-more-than-once.</p>
+
+<p>If your business operation requires exactly-once outcomes, you usually get there by combining:</p>
+
+<ol>
+  <li>At-least-once delivery.</li>
+  <li>Idempotent handlers.</li>
+  <li>Good state modeling.</li>
+</ol>
+
+<p>Not by wishing the network were perfect.</p>
+
+<h2 id="idempotent-http-endpoints">Designing idempotent HTTP endpoints</h2>
+
+<p>HTTP gives you some help, but only some.</p>
+
+<h3 id="natural-idempotency-use-resource-oriented-semantics">Natural idempotency: use resource-oriented semantics</h3>
+
+<p><code class="language-plaintext highlighter-rouge">PUT</code> and <code class="language-plaintext highlighter-rouge">DELETE</code> are defined as idempotent methods.</p>
+
+<p>When your operation can be expressed as:</p>
+
+<ul>
+  <li>“set this resource to this state” (<code class="language-plaintext highlighter-rouge">PUT</code>)</li>
+  <li>“remove this resource” (<code class="language-plaintext highlighter-rouge">DELETE</code>)</li>
+</ul>
+
+<p>you get a natural idempotency model.</p>
+
+<p>Example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">PUT /users/42/preferences/notifications</code></p>
+
+<p>If the request body is the same and you send it twice, the resulting user preference state should be identical.</p>
+
+<p>This is why state-replacement APIs often age better operationally than command-style APIs for mutable resources.</p>
+
+<h3 id="enforced-idempotency-make-post-safe-with-idempotency-keys">Enforced idempotency: make <code class="language-plaintext highlighter-rouge">POST</code> safe with idempotency keys</h3>
+
+<p>Real systems still need <code class="language-plaintext highlighter-rouge">POST</code> for operations like payment authorization, order placement, or workflow transitions.</p>
+
+<p>That is where idempotency keys become a design pattern, not a framework feature toggle.</p>
+
+<p>A robust pattern looks like this:</p>
+
+<ol>
+  <li>Client generates a unique idempotency key per business intent.</li>
+  <li>Server stores key + normalized request fingerprint + final response outcome.</li>
+  <li>First request executes and stores result atomically.</li>
+  <li>Retries with same key return stored result.</li>
+  <li>Retries with same key but different payload are rejected.</li>
+</ol>
+
+<p>Stripe documents this model explicitly: first result is stored and replayed for subsequent retries with the same key, and parameter mismatch is treated as misuse.</p>
+
+<p>A minimal C#-style sketch:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IResult</span><span class="p">&gt;</span> <span class="nf">CreatePayment</span><span class="p">(</span><span class="n">CreatePaymentRequest</span> <span class="n">request</span><span class="p">,</span> <span class="kt">string</span> <span class="n">idempotencyKey</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">existing</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">idempotencyKey</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">existing</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">existing</span><span class="p">.</span><span class="n">RequestHash</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Conflict</span><span class="p">(</span><span class="s">"Idempotency key reused with different payload."</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Json</span><span class="p">(</span><span class="n">existing</span><span class="p">.</span><span class="n">ResponseBody</span><span class="p">,</span> <span class="n">statusCode</span><span class="p">:</span> <span class="n">existing</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">using</span> <span class="nn">var</span> <span class="n">tx</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_db</span><span class="p">.</span><span class="nf">BeginTransactionAsync</span><span class="p">();</span>
+
+    <span class="kt">var</span> <span class="n">paymentResult</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_paymentService</span><span class="p">.</span><span class="nf">AuthorizeAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+
+    <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">SaveAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">IdempotencyRecord</span>
+    <span class="p">{</span>
+        <span class="n">Key</span> <span class="p">=</span> <span class="n">idempotencyKey</span><span class="p">,</span>
+        <span class="n">RequestHash</span> <span class="p">=</span> <span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
+        <span class="n">StatusCode</span> <span class="p">=</span> <span class="m">201</span><span class="p">,</span>
+        <span class="n">ResponseBody</span> <span class="p">=</span> <span class="n">paymentResult</span>
+    <span class="p">});</span>
+
+    <span class="k">await</span> <span class="n">tx</span><span class="p">.</span><span class="nf">CommitAsync</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Created</span><span class="p">(</span><span class="s">$"/payments/</span><span class="p">{</span><span class="n">paymentResult</span><span class="p">.</span><span class="n">PaymentId</span><span class="p">}</span><span class="s">"</span><span class="p">,</span> <span class="n">paymentResult</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The important part is not the specific framework. It is the atomicity boundary between business state change and key persistence.</p>
+
+<p>If those are not coordinated, retries can still slip through.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/idempotency-key-flow.svg" alt="Workflow showing first request persisting an idempotency key result and retries returning the stored response instead of repeating side effects." />
+  <figcaption>Idempotency keys turn uncertain retries into deterministic outcomes.</figcaption>
+</figure>
+
+<h2 id="idempotent-background-jobs">Designing idempotent background jobs and consumers</h2>
+
+<p>Background processing is where idempotency failures become expensive quickly.</p>
+
+<p>Teams often rely on queue semantics but skip handler semantics.</p>
+
+<p>Two practical patterns hold up well.</p>
+
+<h3 id="1-processed-events-table">1. Processed-events table</h3>
+
+<p>For each incoming message/event, store a stable message identity in a processed-events table with a uniqueness constraint.</p>
+
+<p>Handler flow:</p>
+
+<ol>
+  <li>Try to insert message identity.</li>
+  <li>If insert succeeds, continue business logic.</li>
+  <li>If insert fails due to uniqueness, treat as already processed and exit safely.</li>
+</ol>
+
+<p>This is simple, explainable, and auditable.</p>
+
+<h3 id="2-idempotent-state-transition-with-upsertmerge">2. Idempotent state transition with upsert/merge</h3>
+
+<p>If the operation is naturally a state set, model it as upsert with deterministic keys.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Instead of “add loyalty points delta repeatedly,” store a per-order points grant keyed by <code class="language-plaintext highlighter-rouge">order_id</code>.</li>
+  <li>Reprocessing same event updates the same record rather than creating a second grant.</li>
+</ul>
+
+<p>That one schema decision can eliminate entire classes of retry bugs.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/background-job-idempotency.svg" alt="Queue worker retries passing through a deduplication and processed-events check before producing a single committed outcome." />
+  <figcaption>At-least-once delivery is fine when the handler is designed for repeatability.</figcaption>
+</figure>
+
+<h2 id="natural-vs-enforced">Natural idempotency vs enforced idempotency</h2>
+
+<p>Both are useful. They solve different problems.</p>
+
+<h3 id="natural-idempotency">Natural idempotency</h3>
+
+<p>Best when:</p>
+
+<ul>
+  <li>operation is a pure state assignment</li>
+  <li>resource identity is stable and known</li>
+  <li>domain semantics fit <code class="language-plaintext highlighter-rouge">PUT</code>/<code class="language-plaintext highlighter-rouge">DELETE</code></li>
+</ul>
+
+<p>Tradeoffs:</p>
+
+<ul>
+  <li>not every business action maps cleanly to state replacement</li>
+  <li>may require API redesign if current model is command-driven</li>
+</ul>
+
+<h3 id="enforced-idempotency">Enforced idempotency</h3>
+
+<p>Best when:</p>
+
+<ul>
+  <li>operation is command-like (<code class="language-plaintext highlighter-rouge">POST /payments</code>, <code class="language-plaintext highlighter-rouge">POST /orders</code>)</li>
+  <li>retries are likely and expensive to mishandle</li>
+  <li>clients can generate stable operation keys</li>
+</ul>
+
+<p>Tradeoffs:</p>
+
+<ul>
+  <li>requires key storage lifecycle and TTL policy</li>
+  <li>needs payload consistency checks</li>
+  <li>can become a false safety blanket if atomic boundaries are weak</li>
+</ul>
+
+<p>A good rule:</p>
+
+<p>Use natural idempotency where your domain allows it.
+Use enforced idempotency where your business operations are inherently command-shaped.</p>
+
+<h2 id="payment-example">Concrete example: payment processing</h2>
+
+<p>Suppose checkout calls <code class="language-plaintext highlighter-rouge">POST /payments</code>.</p>
+
+<p>Without idempotency key:</p>
+
+<ul>
+  <li>client times out after payment processor call succeeds</li>
+  <li>client retries</li>
+  <li>second charge attempts, often with ugly reconciliation work</li>
+</ul>
+
+<p>With idempotency key keyed to checkout attempt:</p>
+
+<ul>
+  <li>first call processes and stores result</li>
+  <li>timeout still happens</li>
+  <li>retry returns original payment outcome</li>
+  <li>customer gets one charge, not a support ticket</li>
+</ul>
+
+<p>This is exactly the class of failure idempotency keys are designed to absorb.</p>
+
+<h2 id="job-scheduling-example">Concrete example: job scheduling</h2>
+
+<p>Suppose a scheduler emits <code class="language-plaintext highlighter-rouge">GenerateInvoice(accountId, period)</code>.</p>
+
+<p>Without idempotency:</p>
+
+<ul>
+  <li>worker crash after DB write but before ack</li>
+  <li>message redelivered</li>
+  <li>second invoice generated for same period</li>
+</ul>
+
+<p>With idempotent design:</p>
+
+<ul>
+  <li>invoice uniqueness constraint on <code class="language-plaintext highlighter-rouge">(account_id, billing_period)</code></li>
+  <li>handler performs upsert or checks existence before create</li>
+  <li>redelivery observes existing invoice and exits safely</li>
+</ul>
+
+<p>No heroics. Just deliberate state modeling.</p>
+
+<h2 id="implementation-checklist">A practical implementation checklist</h2>
+
+<p>If you want this to stick beyond one postmortem, standardize these decisions:</p>
+
+<ol>
+  <li>Define idempotency scope per operation.</li>
+</ol>
+
+<ul>
+  <li>Per API request?</li>
+  <li>Per business entity?</li>
+  <li>Per workflow step?</li>
+</ul>
+
+<ol>
+  <li>Define operation identity.</li>
+</ol>
+
+<ul>
+  <li>Client key?</li>
+  <li>Domain key composite?</li>
+  <li>Message ID + business partition key?</li>
+</ul>
+
+<ol>
+  <li>Define persistence contract.</li>
+</ol>
+
+<ul>
+  <li>Where is idempotency state stored?</li>
+  <li>What is TTL?</li>
+  <li>How are mismatched payload retries handled?</li>
+</ul>
+
+<ol>
+  <li>Define atomic boundary.</li>
+</ol>
+
+<ul>
+  <li>Can business side effect and idempotency record commit together?</li>
+  <li>If not, what is the failure mode?</li>
+</ul>
+
+<ol>
+  <li>Define observability.</li>
+</ol>
+
+<ul>
+  <li>Metric: idempotency hits vs misses</li>
+  <li>Metric: key collisions with payload mismatch</li>
+  <li>Trace annotation for retry paths</li>
+</ul>
+
+<ol>
+  <li>Define operational policy.</li>
+</ol>
+
+<ul>
+  <li>Which endpoints require keys?</li>
+  <li>Which consumers require processed-event checks?</li>
+  <li>What is the incident response for duplicate side effects?</li>
+</ul>
+
+<p>This turns idempotency from “team folklore” into engineering policy.</p>
+
+<h2 id="bottom-line">Bottom line</h2>
+
+<p>Idempotency is one of the cheapest reliability multipliers in distributed systems.</p>
+
+<p>It is not glamorous work, but it is exactly the kind of design discipline that prevents customer-facing incidents when retries, redeliveries, and partial failures inevitably happen.</p>
+
+<p>If your system currently depends on requests being processed exactly once by luck, you do not have a reliability strategy yet.</p>
+
+<p>If this is on your backlog, start with one operation where duplicate side effects are painful, implement an explicit idempotency contract, and measure retry outcomes for one sprint. That single change often pays for itself immediately.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical senior-engineer guide to idempotency in distributed systems: retries, at-least-once delivery, idempotency keys, HTTP endpoint design, background job safety, and real tradeoffs.</p>
+
+<p><strong>SEO keywords:</strong></p>
+<ul>
+  <li>idempotency in distributed systems</li>
+  <li>idempotency keys API design</li>
+  <li>retries and at least once delivery</li>
+  <li>idempotent background job patterns</li>
+  <li>payment API duplicate prevention</li>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Distributed Systems" /><category term="Software Engineering" /><category term="idempotency" /><category term="distributed systems" /><category term="retries" /><category term="api design" /><category term="reliability" /><summary type="html"><![CDATA[Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Python Type Hints in Production: What They Buy You and What They Don’t</title><link href="https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases/" rel="alternate" type="text/html" title="Python Type Hints in Production: What They Buy You and What They Don’t" /><published>2026-03-29T22:38:46+00:00</published><updated>2026-03-29T22:38:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases/"><![CDATA[<p>Python type hints trigger strong opinions. Usually for good reasons.</p>
+
+<p>If you have shipped production Python for years, you have probably seen both extremes:</p>
+
+<ul>
+  <li>codebases with almost no annotations, where everything works until one implicit assumption breaks in production;</li>
+  <li>codebases with verbose hints everywhere, but little actual enforcement, so annotations became expensive comments.</li>
+</ul>
+
+<p>Both are real. Both are avoidable.</p>
+
+<p>The practical question is not “are type hints good?” It is: where do type hints prevent expensive bugs, and where are they mostly ceremony?</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" alt="Diagram showing dynamic runtime checks on one side and static type checks with mypy and pyright catching mismatches before execution on the other." />
+  <figcaption>Type hints pay off when they move failures left, from runtime incidents to editor and CI feedback.</figcaption>
+</figure>
+
+<h2 id="what-they-catch">What mypy and pyright catch that runtime usually won’t</h2>
+
+<p>Python’s own docs are explicit: type annotations are not enforced by the runtime by default. Your program still runs unless a path executes code that fails at runtime.</p>
+
+<p>That gap is where static checkers create value.</p>
+
+<h3 id="1-cross-function-contract-breaks">1. Cross-function contract breaks</h3>
+
+<p>If one function returns <code class="language-plaintext highlighter-rouge">dict[str, str]</code> and another assumes <code class="language-plaintext highlighter-rouge">dict[str, int]</code>, runtime only fails when the wrong branch executes. Static checkers flag it immediately.</p>
+
+<h3 id="2-optional-and-union-misuse">2. Optional and union misuse</h3>
+
+<p>A classic bug is calling <code class="language-plaintext highlighter-rouge">.strip()</code> or <code class="language-plaintext highlighter-rouge">.items()</code> on a value that is actually <code class="language-plaintext highlighter-rouge">None</code> on some path. Mypy and pyright perform flow-sensitive narrowing and warn before execution.</p>
+
+<h3 id="3-typeddict-shape-drift">3. TypedDict shape drift</h3>
+
+<p>For dictionary-shaped data, <code class="language-plaintext highlighter-rouge">TypedDict</code> catches missing keys, unknown keys, and wrong value types. Runtime dictionaries won’t.</p>
+
+<h3 id="4-api-boundary-mismatches">4. API boundary mismatches</h3>
+
+<p>When a module promises one type but callers pass another, static checks expose incompatibilities during refactors, before rollout.</p>
+
+<h3 id="5-incorrect-assumptions-hidden-by-any">5. Incorrect assumptions hidden by <code class="language-plaintext highlighter-rouge">Any</code></h3>
+
+<p>This one is subtle: type checkers also show where you effectively disabled checking by letting <code class="language-plaintext highlighter-rouge">Any</code> spread. That visibility alone prevents false confidence.</p>
+
+<p>None of this replaces tests. It reduces the number of bugs that tests need to discover through execution paths.</p>
+
+<h2 id="docs-vs-enforcement">Documentation vs enforcement: same syntax, different outcomes</h2>
+
+<p>A lot of teams say they “use type hints” when they really mean they annotate signatures occasionally.</p>
+
+<p>That is documentation value, and documentation matters. But it is not enforcement.</p>
+
+<p>You only get enforcement when all three are true:</p>
+
+<ol>
+  <li>The checker runs consistently (local and CI).</li>
+  <li>The checker is configured to fail on meaningful classes of issues.</li>
+  <li>The team treats checker output as quality signals, not optional suggestions.</li>
+</ol>
+
+<p>If you add hints but keep permissive defaults forever, you mostly get nicer editor hover text.</p>
+
+<p>A practical split:</p>
+
+<ul>
+  <li>Annotating for documentation: better readability, easier onboarding, limited bug prevention.</li>
+  <li>Annotating for enforcement: predictable interfaces, earlier break detection, safer refactors.</li>
+</ul>
+
+<p>You can start with documentation. Just be honest about what problem you are solving.</p>
+
+<h2 id="gradual-typing-cost">The real cost of gradual typing in existing codebases</h2>
+
+<p>Skepticism is healthy because type hints have real costs.</p>
+
+<h3 id="1-initial-annotation-tax">1. Initial annotation tax</h3>
+
+<p>Legacy modules with dynamic patterns can take significant effort to type accurately.</p>
+
+<h3 id="2-third-party-typing-gaps">2. Third-party typing gaps</h3>
+
+<p>Some libraries have incomplete stubs, forcing local protocols, cast statements, or narrower wrappers.</p>
+
+<h3 id="3-tool-configuration-work">3. Tool configuration work</h3>
+
+<p>Teams need to tune settings, error codes, and per-module strictness. Defaults are rarely the right long-term profile.</p>
+
+<h3 id="4-false-precision-risk">4. False precision risk</h3>
+
+<p>A typed signature can still describe a wrong assumption. Bad types can institutionalize bugs instead of preventing them.</p>
+
+<h3 id="5-team-learning-curve">5. Team learning curve</h3>
+
+<p>Concepts like variance, protocols, <code class="language-plaintext highlighter-rouge">TypedDict</code>, and <code class="language-plaintext highlighter-rouge">TypeGuard</code> are not free for every team.</p>
+
+<p>So why do disciplined teams still adopt gradual typing?
+Because the cost is front-loaded, while the payoff compounds during maintenance and refactoring.</p>
+
+<h2 id="where-they-pay-off">Where type hints reliably prevent real bugs</h2>
+
+<h3 id="api-boundaries-internal-and-external">API boundaries (internal and external)</h3>
+
+<p>Boundary code is where data shape assumptions are most fragile. Precise input/output types catch drift early.</p>
+
+<h3 id="data-transformation-pipelines">Data transformation pipelines</h3>
+
+<p>ETL jobs and event processing often chain many small transformations. A wrong intermediate type can survive several stages before exploding. Type checking catches breaks at the stage where they begin.</p>
+
+<h3 id="shared-utility-modules">Shared utility modules</h3>
+
+<p>Utilities are imported widely. A subtle signature change can ripple across dozens of callers. Type checking makes those breakpoints visible during development.</p>
+
+<h3 id="domain-identifiers-and-constrained-values">Domain identifiers and constrained values</h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">NewType</code>, <code class="language-plaintext highlighter-rouge">Literal</code>, or narrowed unions prevents mixing conceptually different values that share the same runtime type, such as <code class="language-plaintext highlighter-rouge">UserId</code> and <code class="language-plaintext highlighter-rouge">AccountId</code> both being integers.</p>
+
+<h2 id="before-after">Concrete before/after example</h2>
+
+<p>Below is a realistic example from data ingestion code that looked fine in review but produced intermittent production failures.</p>
+
+<h3 id="before-runtime-only-detection">Before: runtime-only detection</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="k">def</span> <span class="nf">normalize_order</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="c1"># row comes from JSON payloads with inconsistent shapes
+</span>    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">])</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">.</span><span class="nf">strip</span><span class="p">(),</span>
+        <span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">:</span> <span class="n">created_at</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>What went wrong in production:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">customer_id</code> was sometimes <code class="language-plaintext highlighter-rouge">None</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">total</code> occasionally arrived as <code class="language-plaintext highlighter-rouge">{"amount": "19.99"}</code> from another producer.</li>
+  <li>Errors surfaced late and only for specific partner payloads.</li>
+</ul>
+
+<h3 id="after-explicit-contract-with-enforcement">After: explicit contract with enforcement</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+
+
+<span class="k">class</span> <span class="nc">RawOrder</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">total</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="k">class</span> <span class="nc">NormalizedOrder</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">total</span><span class="p">:</span> <span class="nb">float</span>
+
+
+<span class="k">def</span> <span class="nf">normalize_order</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">RawOrder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NormalizedOrder</span><span class="p">:</span>
+    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">customer_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">customer_id is required</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">.</span><span class="nf">strip</span><span class="p">(),</span>
+        <span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">:</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">]),</span>
+        <span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">:</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">]),</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now mypy/pyright can flag incorrect callers immediately:</p>
+
+<ul>
+  <li>missing required keys;</li>
+  <li>wrong <code class="language-plaintext highlighter-rouge">total</code> shape (<code class="language-plaintext highlighter-rouge">dict</code> instead of <code class="language-plaintext highlighter-rouge">str</code>);</li>
+  <li>unsafe operations on optional values.</li>
+</ul>
+
+<p>The runtime guard still exists for genuinely bad input. But most integration drift is now caught before deploy.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/before-after.svg" alt="Side-by-side view of untyped dictionary transformation code versus TypedDict-based transformation with explicit Optional handling." />
+  <figcaption>The gain is not prettier annotations. The gain is earlier, more local failures.</figcaption>
+</figure>
+
+<h2 id="rollout-model">A practical rollout model for skeptical teams</h2>
+
+<p>If your codebase is large, full strict mode everywhere is usually the wrong first move.</p>
+
+<p>Use an incremental strategy:</p>
+
+<ol>
+  <li>Start at high-leverage boundaries: request/response DTOs, queue/event payloads, and shared utility modules.</li>
+  <li>Enable checker in CI in non-blocking mode for one sprint.</li>
+  <li>Fix high-signal issues first: <code class="language-plaintext highlighter-rouge">Optional</code> misuse, bad return types, missing keys.</li>
+  <li>Introduce stricter rules per module once baseline noise drops.</li>
+  <li>Track <code class="language-plaintext highlighter-rouge">Any</code> spread and unresolved ignores as debt, not normal state.</li>
+</ol>
+
+<p>This keeps momentum without turning typing into a migration project that never ends.</p>
+
+<h2 id="what-they-dont-buy">What type hints do not buy you</h2>
+
+<p>Type hints are valuable, but they are not a substitute for engineering discipline.</p>
+
+<p>They do not give you:</p>
+
+<ul>
+  <li>runtime input validation from untrusted clients;</li>
+  <li>business rule correctness;</li>
+  <li>performance improvements by themselves;</li>
+  <li>freedom from tests.</li>
+</ul>
+
+<p>Think of them as contract verification and refactoring safety, not as runtime security or logic proof.</p>
+
+<h2 id="bottom-line">Bottom line</h2>
+
+<p>Type hints in production Python are neither silver bullet nor theater.</p>
+
+<p>They are worth the effort when you use them where bugs are expensive: boundaries, transformations, and shared contracts. They are wasteful when added mechanically without enforcement.</p>
+
+<p>The practical test is simple:</p>
+
+<ul>
+  <li>If hints only improve readability, keep the scope narrow.</li>
+  <li>If hints are wired into CI and refactoring discipline, they become a reliability tool.</li>
+</ul>
+
+<p>That is usually the dividing line between teams that feel type hints are bureaucracy and teams that feel they are leverage.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/rollout-path.svg" alt="Step-based roadmap from boundary annotation to CI enforcement to stricter module-by-module typing in a mature codebase." />
+  <figcaption>Gradual typing works when strictness is introduced intentionally, module by module.</figcaption>
+</figure>
+
+<hr />
+
+<p>If this resonated, the next useful step is to audit one production boundary this week and type it end-to-end, including CI enforcement for that module.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical guide to Python type hints in production: what mypy and pyright catch, what they do not, the cost of gradual typing, and where annotations prevent real bugs.</p>
+
+<p><strong>SEO keywords:</strong></p>
+<ul>
+  <li>Python type hints in production</li>
+  <li>mypy vs pyright practical guide</li>
+  <li>gradual typing Python codebase</li>
+  <li>TypedDict API boundary validation</li>
+  <li>Python static typing real world benefits</li>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="Python" /><category term="python" /><category term="type hints" /><category term="mypy" /><category term="pyright" /><category term="static typing" /><category term="engineering discipline" /><summary type="html"><![CDATA[Type hints are not magic, and they are not free. But in the right places, mypy and pyright catch bugs before runtime that tests often miss, especially at API boundaries and in data transformation code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SQL Injection in 2026: Still Real, Just Better Hidden</title><link href="https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks/" rel="alternate" type="text/html" title="SQL Injection in 2026: Still Real, Just Better Hidden" /><published>2026-03-29T07:10:00+00:00</published><updated>2026-03-29T07:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks/"><![CDATA[<p>A lot of teams treat SQL injection as a solved 2005 problem. They know to parameterize values, they use modern ORMs, and they assume the category is mostly handled by defaults.</p>
+
+<p>That confidence is understandable. It is also where the risk hides.</p>
+
+<p>In 2026, SQL injection still shows up in production systems. It just rarely appears as obvious <code class="language-plaintext highlighter-rouge">WHERE id = '" + input + "'</code> code anymore. It appears in dynamic sorting, dynamic identifiers, convenience interpolation in ORM escape hatches, and stored procedures that build dynamic SQL internally.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" alt="Diagram showing modern SQL injection paths: dynamic ORDER BY, dynamic table names, ORM raw SQL interpolation, and stored procedures with dynamic SQL." />
+  <figcaption>Most modern SQL injection issues are design and review failures, not lack-of-awareness failures.</figcaption>
+</figure>
+
+<p>OWASP’s guidance is still clear: injection remains a core risk category, and primary defenses are still parameterization, allow-list validation, and safe query construction patterns. The difference is where disciplined teams still slip.</p>
+
+<h2 id="not-enough">Why “we use parameters” is not enough</h2>
+
+<p>Parameterized queries protect data values. They do not automatically protect SQL syntax elements.</p>
+
+<p>That distinction matters.</p>
+
+<p>When an attacker controls a value like <code class="language-plaintext highlighter-rouge">@UserId</code>, parameters are the correct defense because the database treats the value as data, not executable SQL. But some parts of a SQL statement are not values and cannot be parameterized in the same way:</p>
+
+<ul>
+  <li>Column names</li>
+  <li>Table names</li>
+  <li>Sort direction (<code class="language-plaintext highlighter-rouge">ASC</code> / <code class="language-plaintext highlighter-rouge">DESC</code>)</li>
+  <li>SQL keywords and fragments</li>
+</ul>
+
+<p>As soon as code starts composing those pieces dynamically, you leave the safety of value parameterization and enter a territory where allow-listing and strict query shape control are mandatory.</p>
+
+<p>This is exactly where many “we already fixed injection” systems are still exposed.</p>
+
+<h2 id="where-it-hides">Where teams still get it wrong</h2>
+
+<h3 id="dynamic-order-by">1) Dynamic ORDER BY clauses</h3>
+
+<p>Sorting is one of the most common places engineers accidentally create SQL injection surface.</p>
+
+<p>A typical pattern looks like this:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Vulnerable pattern</span>
+<span class="kt">var</span> <span class="n">sql</span> <span class="p">=</span> <span class="s">$@"</span><span class="err">
+</span><span class="s">SELECT Id, Name, CreatedAt</span><span class="err">
+</span><span class="s">FROM Users</span><span class="err">
+</span><span class="s">ORDER BY </span><span class="p">{</span><span class="n">sortColumn</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">sortDirection</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="k">await</span> <span class="n">connection</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;(</span><span class="n">sql</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Even if <code class="language-plaintext highlighter-rouge">WHERE</code> predicates elsewhere are parameterized, this query is injectable because <code class="language-plaintext highlighter-rouge">sortColumn</code> and <code class="language-plaintext highlighter-rouge">sortDirection</code> are inserted as SQL syntax.</p>
+
+<p>Safer pattern:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">allowedColumns</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="n">StringComparer</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Name"</span><span class="p">,</span>
+    <span class="p">[</span><span class="s">"created"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"CreatedAt"</span><span class="p">,</span>
+    <span class="p">[</span><span class="s">"email"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Email"</span>
+<span class="p">};</span>
+
+<span class="kt">var</span> <span class="n">safeColumn</span> <span class="p">=</span> <span class="n">allowedColumns</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">sortBy</span> <span class="p">??</span> <span class="s">"created"</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">col</span><span class="p">)</span>
+    <span class="p">?</span> <span class="n">col</span>
+    <span class="p">:</span> <span class="s">"CreatedAt"</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">safeDirection</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">direction</span><span class="p">,</span> <span class="s">"asc"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span>
+    <span class="p">?</span> <span class="s">"ASC"</span>
+    <span class="p">:</span> <span class="s">"DESC"</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">sql</span> <span class="p">=</span> <span class="s">$@"</span><span class="err">
+</span><span class="s">SELECT Id, Name, CreatedAt</span><span class="err">
+</span><span class="s">FROM Users</span><span class="err">
+</span><span class="s">ORDER BY </span><span class="p">{</span><span class="n">safeColumn</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">safeDirection</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This still uses string interpolation, but only after mapping input through a strict allow-list to known static SQL tokens.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/dynamic-order-by.png" alt="Before-and-after diagram of dynamic ORDER BY handling showing unsafe direct interpolation versus allow-listed column and direction mapping." />
+  <figcaption>For SQL syntax fragments, allow-listing is the defense. Parameterization is not enough.</figcaption>
+</figure>
+
+<h3 id="dynamic-identifiers">2) Dynamic table names and schema selectors</h3>
+
+<p>Multi-tenant or reporting systems often need to target different datasets. Teams sometimes model this as user-supplied table or schema names.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">$</span><span class="p">{</span><span class="n">tableName</span><span class="p">}</span> <span class="k">WHERE</span> <span class="n">TenantId</span> <span class="o">=</span> <span class="o">@</span><span class="n">TenantId</span>
+</code></pre></div></div>
+
+<p>This is high-risk unless <code class="language-plaintext highlighter-rouge">tableName</code> comes from a controlled internal mapping and never directly from user input. In practice, the safe approach is one of these:</p>
+
+<ul>
+  <li>Route through predefined query paths per dataset</li>
+  <li>Resolve logical names to physical identifiers in server-side code</li>
+  <li>Reject unknown identifiers and never pass raw input through</li>
+</ul>
+
+<p>If a design requires dynamic identifiers, treat identifier resolution as a security-critical component with unit tests and logging, not as a small string helper.</p>
+
+<h3 id="orm-interpolation">3) String interpolation in ORM “raw SQL” paths</h3>
+
+<p>Modern ORMs reduce injection risk by default when you stay inside their query APIs. The sharp edge appears when developers step into raw SQL convenience methods.</p>
+
+<p>For example in EF Core, the safe and unsafe paths look similar at a glance:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FromSqlInterpolated(...)</code> can parameterize interpolated values safely</li>
+  <li><code class="language-plaintext highlighter-rouge">FromSqlRaw(...)</code> executes raw SQL text and can be dangerous when combined with interpolation</li>
+</ul>
+
+<p>The same pattern exists in many ecosystems: there is a safe parameterized method and a lower-level raw method. Under deadline pressure, teams choose the flexible one and move on.</p>
+
+<p>The core rule is simple: if you are in a raw SQL API, verify exactly how parameters are bound. Do not assume because the API name includes “SQL” that interpolation is safe.</p>
+
+<h3 id="stored-proc-dynamic-sql">4) Stored procedures that build dynamic SQL internally</h3>
+
+<p>“We only call stored procedures” is often treated as proof against SQL injection. It is not.</p>
+
+<p>Stored procedures are safe when they use static SQL and typed parameters. They become risky when they concatenate input into dynamic SQL strings.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">dbo</span><span class="p">.</span><span class="n">SearchUsers</span>
+  <span class="o">@</span><span class="n">SortColumn</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="k">AS</span>
+<span class="k">BEGIN</span>
+  <span class="k">DECLARE</span> <span class="o">@</span><span class="k">sql</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="k">MAX</span><span class="p">)</span> <span class="o">=</span>
+    <span class="n">N</span><span class="s1">'SELECT Id, Name, Email FROM dbo.Users ORDER BY '</span> <span class="o">+</span> <span class="o">@</span><span class="n">SortColumn</span><span class="p">;</span>
+
+  <span class="k">EXEC</span><span class="p">(</span><span class="o">@</span><span class="k">sql</span><span class="p">);</span>
+<span class="k">END</span>
+</code></pre></div></div>
+
+<p>This can be exploitable exactly like application-side concatenation.</p>
+
+<p>If dynamic SQL is required in SQL Server, use <code class="language-plaintext highlighter-rouge">sp_executesql</code> with parameters for values and an allow-list for identifiers. OWASP’s cheat sheet and SQL Server security guidance are aligned on this point: dynamic SQL is not forbidden, but unconstrained dynamic SQL is a direct injection vector.</p>
+
+<h2 id="false-confidence">How ORMs create false confidence</h2>
+
+<p>ORM adoption removes a lot of accidental risk. It can also create blind spots.</p>
+
+<p>The blind spot is governance, not tooling.</p>
+
+<p>Teams assume:</p>
+
+<ul>
+  <li>“The ORM handles this”</li>
+  <li>“This code path is internal”</li>
+  <li>“It is only an admin endpoint”</li>
+  <li>“The user cannot realistically send that value”</li>
+</ul>
+
+<p>Attackers do not care whether a route is elegant or legacy. They care whether untrusted input can influence executable SQL shape.</p>
+
+<p>The most useful mindset is this:</p>
+
+<ul>
+  <li>ORM-managed query builders reduce exposure</li>
+  <li>Escape hatches reintroduce exposure</li>
+  <li>Any place query shape is dynamic needs explicit review</li>
+</ul>
+
+<p>That framing keeps teams practical. You can use ORMs and raw SQL responsibly. You just cannot treat either as automatic proof of safety.</p>
+
+<h2 id="checklist">Practical review checklist for SQL injection surface</h2>
+
+<p>Use this checklist in code reviews, security reviews, and production incident hardening.</p>
+
+<ol>
+  <li>
+    <p><strong>Find all query construction paths</strong>
+Search for raw SQL APIs, command text assignment, string interpolation, and stored procedure calls.</p>
+  </li>
+  <li>
+    <p><strong>Classify each dynamic input by role</strong>
+Is it a value, identifier, keyword, or query fragment? Values should be parameterized. Non-values should come from strict allow-lists.</p>
+  </li>
+  <li>
+    <p><strong>Verify API semantics, not assumptions</strong>
+Confirm whether the specific method call binds parameters safely (<code class="language-plaintext highlighter-rouge">Raw</code> vs <code class="language-plaintext highlighter-rouge">Interpolated</code>, positional vs named parameter APIs, etc.).</p>
+  </li>
+  <li>
+    <p><strong>Review stored procedures for internal dynamic SQL</strong>
+Stored procedure boundaries are not trust boundaries. Inspect for concatenation, <code class="language-plaintext highlighter-rouge">EXEC(@sql)</code>, and unvalidated identifiers.</p>
+  </li>
+  <li>
+    <p><strong>Check dynamic ORDER BY / filter / pagination builders</strong>
+These are common injection points because they feel “not dangerous” compared to <code class="language-plaintext highlighter-rouge">WHERE</code> values.</p>
+  </li>
+  <li>
+    <p><strong>Validate error handling and logging</strong>
+Avoid leaking SQL details in responses. Log enough context for investigation without exposing secrets.</p>
+  </li>
+  <li>
+    <p><strong>Test with malicious payloads in integration tests</strong>
+Include payloads in sort fields, filter operators, and identifier-like parameters. Do not test only value fields.</p>
+  </li>
+  <li>
+    <p><strong>Map findings to OWASP guidance</strong>
+Use OWASP SQL Injection Prevention Cheat Sheet controls as acceptance criteria: parameterization, allow-listing, least privilege, and defense in depth.</p>
+  </li>
+</ol>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/review-checklist.png" alt="Checklist-style visual for reviewing SQL injection surface in modern applications." />
+  <figcaption>Security reviews improve when injection checks are systematic instead of intuition-driven.</figcaption>
+</figure>
+
+<h2 id="rule-of-thumb">A practical rule of thumb</h2>
+
+<p>If user input can influence SQL <strong>shape</strong>, stop and design the control explicitly.</p>
+
+<ul>
+  <li>SQL values: parameterize</li>
+  <li>SQL identifiers and keywords: allow-list map to known tokens</li>
+  <li>Dynamic SQL: constrain, parameterize values, and audit aggressively</li>
+</ul>
+
+<p>This is not alarmism. It is just engineering discipline applied where modern systems still fail.</p>
+
+<p>SQL injection in 2026 is less visible than it used to be, but not less real. The teams that avoid it are not the teams with the fanciest stack. They are the teams that treat query construction as a security-critical part of application design.</p>
+
+<hr />
+<!-- 
+*If this was useful, the next security-focused post will go deeper on code review patterns for catching AI-assisted security bugs before they ship.*
+
+---
+
+**Meta description:** SQL injection is still a live risk in 2026, especially in dynamic ORDER BY, identifier handling, ORM raw SQL paths, and stored procedures with dynamic SQL. Practical checklist included.
+
+**SEO keywords:**
+- SQL injection 2026
+- dynamic ORDER BY SQL injection
+- ORM raw SQL injection risks
+- OWASP SQL injection prevention checklist
+- stored procedure dynamic SQL security -->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="SQL" /><category term="sql injection" /><category term="owasp" /><category term="secure coding" /><category term="database security" /><category term="orm" /><summary type="html"><![CDATA[SQL injection did not disappear when teams adopted parameterized queries. It moved into dynamic ORDER BY clauses, dynamic identifiers, ORM interpolation paths, and stored procedures that quietly build dynamic SQL.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What Developers Get Wrong About ConfigureAwait</title><link href="https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait/" rel="alternate" type="text/html" title="What Developers Get Wrong About ConfigureAwait" /><published>2026-03-29T07:00:00+00:00</published><updated>2026-03-29T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait/"><![CDATA[<p>Most async code in C# works until it doesn’t. The failure mode is a hang, not a crash: no exception, no stack trace, just a request that never returns or a UI that locks up cold. Usually, the cause is a combination of a <code class="language-plaintext highlighter-rouge">.Result</code> call, a synchronization context, and the absence of <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> somewhere in the chain.</p>
+
+<p>The rule gets repeated often enough — “use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> in library code” — but the why tends to get left out. Without the mechanism, the rule feels arbitrary, which is how you end up adding it everywhere defensively or ignoring it entirely.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" alt="Diagram comparing an await that captures the SynchronizationContext with one using ConfigureAwait(false) that routes directly to the thread pool." />
+  <figcaption>Default await captures and resumes through the SynchronizationContext. ConfigureAwait(false) skips that and resumes on the thread pool.</figcaption>
+</figure>
+
+<h2 id="synchronization-context">What a synchronization context actually is</h2>
+
+<p><code class="language-plaintext highlighter-rouge">SynchronizationContext</code> is an abstraction that answers one question: when a piece of work needs to run, where should it run?</p>
+
+<p>The clearest example is a desktop UI application. In WinForms or WPF, controls can only be touched from the UI thread. If you fetch data on a background thread and then try to update a label, you’ll get an <code class="language-plaintext highlighter-rouge">InvalidOperationException</code>. The synchronization context for the UI thread knows how to post work back to that specific thread. When you <code class="language-plaintext highlighter-rouge">await</code> inside a button click handler, the runtime captures the current <code class="language-plaintext highlighter-rouge">SynchronizationContext</code>. After the awaited operation finishes, the continuation — everything after the <code class="language-plaintext highlighter-rouge">await</code> — is scheduled back through that captured context, which means it runs on the UI thread. That’s why you can update a label after an <code class="language-plaintext highlighter-rouge">await</code> without explicitly marshaling to the UI thread yourself.</p>
+
+<p>ASP.NET Classic (.NET Framework) had its own synchronization context too: <code class="language-plaintext highlighter-rouge">AspNetSynchronizationContext</code>. It captured the per-request HTTP context and ensured that continuation work ran within the same request scope. This mattered because <code class="language-plaintext highlighter-rouge">HttpContext.Current</code> was thread-local, so continuations needed to land on a thread that had the right HTTP context set up.</p>
+
+<p>That context worked, but it also introduced an entire class of deadlocks.</p>
+
+<h2 id="aspnet-core-no-context">ASP.NET Core removed it on purpose</h2>
+
+<p>When the ASP.NET Core team built ASP.NET Core, they made a deliberate choice: no synchronization context. In a typical ASP.NET Core request, <code class="language-plaintext highlighter-rouge">SynchronizationContext.Current</code> is <code class="language-plaintext highlighter-rouge">null</code>.</p>
+
+<p>There are practical reasons for this. Without a synchronization context, continuations run on the thread pool — whichever thread is available. This avoids the overhead of marshaling continuations back to a specific thread and, more importantly, eliminates the deadlock scenario that the old <code class="language-plaintext highlighter-rouge">AspNetSynchronizationContext</code> enabled. It also fits ASP.NET Core’s design, which no longer relies on thread-local state like <code class="language-plaintext highlighter-rouge">HttpContext.Current</code>. The <code class="language-plaintext highlighter-rouge">IHttpContextAccessor</code> abstraction handles context propagation without needing the continuations to return to a specific thread.</p>
+
+<p>The implication: in ASP.NET Core, <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> has no functional effect. There is no context to skip. The continuation already goes to the thread pool.</p>
+
+<p>Where this matters is everywhere else. <strong>Blazor Server has a synchronization context.</strong> The renderer posts work to a per-circuit context to keep component state consistent. <strong>Blazor WebAssembly runs on the browser’s JS thread</strong>, which also has scheduling constraints. <strong>WinForms and WPF</strong> have their UI thread contexts. Any environment where components or state are tied to a specific thread has a synchronization context, and the deadlock risk reappears.</p>
+
+<h2 id="deadlock">The deadlock, step by step</h2>
+
+<p>The classic async deadlock needs three things together:</p>
+
+<ol>
+  <li>A synchronization context is active</li>
+  <li>An async method awaits without <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code></li>
+  <li>Something blocks synchronously on the result — <code class="language-plaintext highlighter-rouge">.Result</code>, <code class="language-plaintext highlighter-rouge">.Wait()</code>, or <code class="language-plaintext highlighter-rouge">.GetAwaiter().GetResult()</code></li>
+</ol>
+
+<p>Here is the minimal version:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// In a WinForms button click handler (UI thread has a SynchronizationContext)</span>
+<span class="k">private</span> <span class="k">void</span> <span class="nf">button_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="nf">FetchDataAsync</span><span class="p">().</span><span class="n">Result</span><span class="p">;</span> <span class="c1">// blocks the UI thread here</span>
+    <span class="n">label1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// await captures SynchronizationContext.Current (the UI thread's context)</span>
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">);</span>
+    <span class="c1">// Continuation is posted back to the UI thread context.</span>
+    <span class="c1">// But the UI thread is blocked on .Result above. Neither can proceed.</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The sequence:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">button_Click</code> runs on the UI thread and calls <code class="language-plaintext highlighter-rouge">.Result</code>, which blocks the thread</li>
+  <li><code class="language-plaintext highlighter-rouge">FetchDataAsync</code> starts, hits <code class="language-plaintext highlighter-rouge">await</code>, and captures <code class="language-plaintext highlighter-rouge">SynchronizationContext.Current</code> — the UI context</li>
+  <li>The HTTP request completes on a thread pool thread</li>
+  <li>The runtime tries to schedule the continuation back on the UI context</li>
+  <li>The UI context is blocked waiting for <code class="language-plaintext highlighter-rouge">.Result</code></li>
+  <li>Deadlock — no exception, no timeout, just silence</li>
+</ol>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/deadlock-flow.svg" alt="Flowchart showing the four-step sequence leading to an async deadlock when a context thread blocks on .Result while the continuation waits for that same context." />
+  <figcaption>The deadlock completes when the continuation needs the same thread that is waiting for it.</figcaption>
+</figure>
+
+<p>Adding <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> breaks the cycle:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+    <span class="c1">// Continuation runs on the thread pool. No attempt to post back to the UI context.</span>
+    <span class="c1">// The .Result call above can now unblock.</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> tells the runtime: after this await completes, do not attempt to resume on the captured context. Use whatever thread is available. The continuation no longer needs the blocked UI thread, so the hold releases.</p>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> only applies to the specific <code class="language-plaintext highlighter-rouge">await</code> it is attached to. If a method has multiple <code class="language-plaintext highlighter-rouge">await</code> expressions and only some of them use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code>, the ones without it can still try to resume on the original context. The protection is per-await, not per-method.</p>
+
+<h2 id="library-vs-app">Library code vs application code</h2>
+
+<p>This is where the practical guidance becomes clear.</p>
+
+<p><strong>Library code</strong> is code you write to be consumed by others. You do not know whether the caller is in ASP.NET Core (no context), WinForms (UI context), Blazor Server (renderer context), or a console app (no context). If your library uses <code class="language-plaintext highlighter-rouge">await</code> without <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> and the caller decides to block synchronously on your methods — which happens in legacy code, in test runners, and in synchronous-to-async bridging scenarios — you have shipped a latent deadlock risk.</p>
+
+<p>The convention is unambiguous: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on every <code class="language-plaintext highlighter-rouge">await</code> in library code that does not specifically need to return to the caller’s context. The .NET runtime libraries themselves follow this convention. Stephen Toub’s async guidance documents for the runtime team state it explicitly.</p>
+
+<p><strong>Application code</strong> is different because you know the environment. In ASP.NET Core, there is no context, so <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> does nothing meaningful. Some teams use it consistently for cross-environment habit; others skip it. Neither choice breaks anything in ASP.NET Core.</p>
+
+<p>In UI application code, the default behavior — returning to the UI context — is often what you want:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WPF: stays on UI thread after await, so you can update the UI directly</span>
+<span class="k">private</span> <span class="k">async</span> <span class="k">void</span> <span class="nf">button_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">statusLabel</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">"Loading..."</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">FetchDataAsync</span><span class="p">();</span> <span class="c1">// defaults to ConfigureAwait(true)</span>
+    <span class="n">statusLabel</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>        <span class="c1">// safe — still on UI thread</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> here and then try to touch a UI element, you’ll get a thread access exception. The rule for UI code is: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on awaits where you do not need to return to the UI thread afterward, and omit it where you do.</p>
+
+<p>Blazor Server deserves specific mention. Because it has a synchronization context and because components are commonly used by developers who may not be fluent in the subtleties, the same guidelines apply as for library code if you’re writing reusable Blazor components or services.</p>
+
+<h2 id="root-cause">The root cause is usually not ConfigureAwait</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> is a mitigation. It reduces the consequence of blocking on async code, but it does not fix the underlying problem.</p>
+
+<p>The underlying problem is mixing async and sync in the call chain: calling <code class="language-plaintext highlighter-rouge">.Result</code>, <code class="language-plaintext highlighter-rouge">.Wait()</code>, or <code class="language-plaintext highlighter-rouge">.GetAwaiter().GetResult()</code> on an async method from a synchronous method in a context that has a synchronization context. The correct solution is to go async all the way up. Async code composes naturally from bottom to top; forcing a synchronous result at any point in the chain is where the risk concentrates.</p>
+
+<p>There are real scenarios where you cannot go fully async — integrating with APIs that are synchronous, working in legacy codebases, or bridging into synchronization boundaries that you do not control. In those cases, <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> throughout the async path is the defensive measure that prevents the deadlock. But it is the fallback, not the design.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Preferred: go async all the way</span>
+<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">button_ClickAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">label1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">FetchDataAsync</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// When you genuinely cannot avoid a sync call,</span>
+<span class="c1">// ConfigureAwait(false) in the async method protects the caller</span>
+<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="practical-rule">The practical rule</h2>
+
+<ul>
+  <li><strong>Library or shared utility code</strong>: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on every <code class="language-plaintext highlighter-rouge">await</code> unless the method explicitly needs to resume on the caller’s context. This is a firm convention, not a preference.</li>
+  <li><strong>ASP.NET Core application code</strong>: <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> has no effect. Use it or don’t — it will not change behavior.</li>
+  <li><strong>UI application code (WinForms, WPF, WinUI)</strong>: default to not using it on awaits followed by UI updates. Use it on awaits that are pure I/O and not followed by UI work.</li>
+  <li><strong>Blazor Server</strong>: apply the same thinking as UI code. Be deliberate about when you need to stay on the renderer context and when you do not.</li>
+  <li><strong>Wherever you are</strong>: prefer async all the way to blocking on async with <code class="language-plaintext highlighter-rouge">.Result</code>.</li>
+</ul>
+
+<p>Understanding the synchronization context is what makes these rules stop feeling arbitrary. They follow directly from how <code class="language-plaintext highlighter-rouge">await</code> captures and resumes context, and from the deliberate architectural choices that ASP.NET Core made when it dropped context capture entirely.</p>
+
+<hr />
+
+<p><em>If you found this useful, the next post in this series covers SQL injection in 2026 — specifically the places teams still get it wrong despite parameterized queries being well-established.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Cuts through ConfigureAwait confusion with a clear explanation of synchronization contexts, a minimal reproducible deadlock, and the practical rule for library code vs application code in .NET.</p>
+
+<p><strong>SEO keywords:</strong></p>
+<ul>
+  <li>ConfigureAwait false deadlock C#</li>
+  <li>SynchronizationContext ASP.NET Core explained</li>
+  <li>C# async await ConfigureAwait library code</li>
+  <li>async deadlock reproduce example csharp</li>
+  <li>ConfigureAwait Blazor WPF WinForms</li>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="async await" /><category term="configureawait" /><category term="synchronization context" /><category term="dotnet" /><category term="concurrency" /><summary type="html"><![CDATA[ConfigureAwait(false) shows up in every async discussion, but most explanations skip the part that makes it click: what a synchronization context is, why ASP.NET Core doesn't have one, and the exact scenario where the deadlock happens.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop</title><link href="https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/" rel="alternate" type="text/html" title="SQL Server Indexing Strategy: Covering Indexes, Included Columns, and Knowing When to Stop" /><published>2026-03-28T13:00:00+00:00</published><updated>2026-03-28T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/sql-server-indexing-strategy/"><![CDATA[<p>The reflex is familiar. A query is slow. You add an index. The query gets faster. You move on.</p>
+
+<p>That cycle is productive until it stops working — when the table is write-heavy and inserts start lagging, when you have a dozen indexes and the optimizer still chooses a scan, when a junior developer asks why adding an index made things slower. At that point, reactive indexing has hit its limit.</p>
+
+<p>The developers who handle those scenarios well are not the ones who memorized the most index types. They are the ones who understand what the optimizer is trying to do, can read an execution plan, and treat each index as a deliberate design decision with a real cost on both sides of the tradeoff.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" alt="Side-by-side diagram showing an index that causes a key lookup versus a covering index with included columns that eliminates it." />
+  <figcaption>A key lookup in your execution plan is not a failure — it is a signal that you have a covering index opportunity.</figcaption>
+</figure>
+
+<h2 id="how-the-optimizer-decides">How SQL Server chooses an index</h2>
+
+<p>SQL Server’s query optimizer is cost-based. When a query arrives, it generates candidate execution plans and selects the one with the lowest estimated cost, measured in I/O and CPU. To estimate that cost, it relies on statistics — histograms maintained per column that track value distribution across the table.</p>
+
+<p>The optimizer’s central concern is selectivity: what fraction of rows does a given predicate match? A predicate with high selectivity — <code class="language-plaintext highlighter-rouge">WHERE CustomerId = 42</code> on a table with a million orders spread across many customers — matches a small set of rows. An index seek, which navigates the B-tree directly to those rows, is efficient. A predicate with low selectivity — <code class="language-plaintext highlighter-rouge">WHERE Status = 'Active'</code> when 90% of rows are active — matches most of the table. At that point, a full scan is often cheaper than navigating the B-tree and performing hundreds of thousands of lookups.</p>
+
+<p>This is why adding an index on a low-selectivity column rarely helps. The optimizer calculates the estimated cost of using it, decides the scan is cheaper, and ignores the index entirely. The index still extracts its write cost on every mutation. You get the penalty without the benefit.</p>
+
+<p>Statistics need to be reasonably current for the optimizer to make good decisions. Stale statistics produce row count estimates that no longer reflect reality, leading to plan choices that were optimal for old data and are now wrong for the data you have.</p>
+
+<h2 id="composite-indexes">Composite indexes and the leftmost prefix rule</h2>
+
+<p>A composite index has multiple columns in its key. The order of those columns determines which queries the index can support.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- The table used in all examples below</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Orders</span> <span class="p">(</span>
+    <span class="n">OrderId</span>      <span class="nb">INT</span>           <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">IDENTITY</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">CustomerId</span>   <span class="nb">INT</span>           <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">OrderDate</span>    <span class="nb">DATETIME</span>      <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Status</span>       <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>   <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">TotalAmount</span>  <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Given this index:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_customer_date</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The B-tree is sorted first by <code class="language-plaintext highlighter-rouge">CustomerId</code>, then within each customer by <code class="language-plaintext highlighter-rouge">OrderDate</code>. This means:</p>
+
+<ul>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">CustomerId = 42</code> alone can seek directly to that customer’s rows.</li>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">CustomerId = 42 AND OrderDate &gt; '2025-01-01'</code> can seek to exactly the right range.</li>
+  <li>A query filtering on <code class="language-plaintext highlighter-rouge">OrderDate &gt; '2025-01-01'</code> with no <code class="language-plaintext highlighter-rouge">CustomerId</code> predicate cannot use this index for a selective seek. Every customer’s date range is interleaved throughout the B-tree; the optimizer would have to scan the whole thing.</li>
+</ul>
+
+<p>This is the <strong>leftmost prefix rule</strong>: a composite index on <code class="language-plaintext highlighter-rouge">(A, B, C)</code> supports seeks on <code class="language-plaintext highlighter-rouge">A</code>, on <code class="language-plaintext highlighter-rouge">(A, B)</code>, and on <code class="language-plaintext highlighter-rouge">(A, B, C)</code>. A predicate that skips the leading column cannot benefit from the index’s sort order.</p>
+
+<p>Column order is a design decision, not a formality. It should reflect your most common and most performance-critical access patterns.</p>
+
+<h2 id="covering-indexes">Covering indexes: eliminating the key lookup</h2>
+
+<p>When a query uses a nonclustered index, SQL Server may still need to retrieve columns that are not stored in that index. To get them, it goes back to the clustered index — the base table — for each matching row. That extra trip is a <strong>key lookup</strong>.</p>
+
+<p>Consider this query:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">OrderId</span><span class="p">,</span> <span class="n">OrderDate</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span>
+<span class="k">FROM</span> <span class="n">Orders</span>
+<span class="k">WHERE</span> <span class="n">CustomerId</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>With only <code class="language-plaintext highlighter-rouge">ix_orders_customer_date</code> (keyed on <code class="language-plaintext highlighter-rouge">CustomerId, OrderDate</code>), the optimizer seeks on the nonclustered index to find the matching rows. But <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> are not in the index. For each matching row — say 500 orders for this customer — it must perform a separate lookup into the clustered index to retrieve those columns. Five hundred lookups per query execution, on a hot path.</p>
+
+<p>An execution plan will show this explicitly: an <code class="language-plaintext highlighter-rouge">Index Seek</code> connected by a <code class="language-plaintext highlighter-rouge">Nested Loops</code> join to a <code class="language-plaintext highlighter-rouge">Key Lookup (Clustered)</code>. Any time you see that pattern on a query that matters, you are looking at a covering index opportunity.</p>
+
+<p>A <strong>covering index</strong> satisfies all the columns a query needs entirely from the index, without touching the clustered index. You have two ways to achieve this.</p>
+
+<p><strong>Option A — add the extra columns to the key:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_cover_key</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This works. But <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> are now key columns, which means they propagate to every level of the B-tree. Non-leaf pages carry four key columns instead of two. The index is wider, heavier, and takes up more space in the buffer pool.</p>
+
+<p><strong>Option B — use INCLUDE columns:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">ix_orders_cover_include</span>
+<span class="k">ON</span> <span class="n">Orders</span> <span class="p">(</span><span class="n">CustomerId</span><span class="p">,</span> <span class="n">OrderDate</span> <span class="k">DESC</span><span class="p">)</span>
+<span class="n">INCLUDE</span> <span class="p">(</span><span class="n">Status</span><span class="p">,</span> <span class="n">TotalAmount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The key stays narrow: just <code class="language-plaintext highlighter-rouge">CustomerId</code> and <code class="language-plaintext highlighter-rouge">OrderDate</code>. SQL Server stores <code class="language-plaintext highlighter-rouge">Status</code> and <code class="language-plaintext highlighter-rouge">TotalAmount</code> at the leaf level only. The query’s SELECT list is satisfied without a key lookup, and the B-tree stays lean.</p>
+
+<p>This is what <code class="language-plaintext highlighter-rouge">INCLUDE</code> was designed for.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/index-structure.svg" alt="Diagram comparing a four-column key index against a two-column key with two INCLUDE columns, showing that INCLUDE columns appear only at the leaf level." />
+  <figcaption>INCLUDE columns do not appear in non-leaf nodes. They keep the sort key narrow without sacrificing coverage at the leaf level.</figcaption>
+</figure>
+
+<h2 id="included-columns">What included columns do — and what they cannot</h2>
+
+<p>Included columns live at the leaf level of the index B-tree only. They are not part of the sort structure. This distinction has real implications:</p>
+
+<ul>
+  <li>They <strong>cannot</strong> narrow a seek. If your query filters on <code class="language-plaintext highlighter-rouge">Status = 'Shipped'</code>, <code class="language-plaintext highlighter-rouge">Status</code> must be a key column for the optimizer to use it for seeking. An included <code class="language-plaintext highlighter-rouge">Status</code> is invisible to the seek logic.</li>
+  <li>They <strong>cannot</strong> provide sort order. An <code class="language-plaintext highlighter-rouge">ORDER BY Status</code> on a query backed by an index with <code class="language-plaintext highlighter-rouge">Status</code> in INCLUDE forces a separate sort operation — the index pages are not ordered by <code class="language-plaintext highlighter-rouge">Status</code>.</li>
+  <li>They <strong>can</strong> satisfy the <code class="language-plaintext highlighter-rouge">SELECT</code> list without touching the clustered index. That is their only job, and it is a valuable one.</li>
+</ul>
+
+<p>The practical design rule is direct: <strong>columns you filter or sort on belong in the key; columns you only read back in results belong in INCLUDE.</strong> Keeping the key narrow keeps the non-leaf levels of the B-tree compact, which means faster seeks and lower buffer pool pressure.</p>
+
+<h2 id="over-indexing-cost">The real cost of over-indexing</h2>
+
+<p>Every nonclustered index on a table is a B-tree that SQL Server maintains automatically. Every <code class="language-plaintext highlighter-rouge">INSERT</code> adds a row to the clustered index and to every nonclustered index on the table. Every <code class="language-plaintext highlighter-rouge">UPDATE</code> that touches an indexed column modifies the relevant nodes in every affected index. Every <code class="language-plaintext highlighter-rouge">DELETE</code> removes from all of them.</p>
+
+<p>If <code class="language-plaintext highlighter-rouge">Orders</code> has eight nonclustered indexes and your application processes 500 order inserts per second, each insert is touching nine B-trees. The write overhead is proportional, mandatory, and it accumulates continuously.</p>
+
+<p>Beyond write amplification:</p>
+
+<ul>
+  <li><strong>Storage.</strong> Each index stores copies of its key and included columns for every row in the table. On a table with millions of rows and many indexes, this is not trivial.</li>
+  <li><strong>Fragmentation.</strong> As rows arrive and are deleted in non-sequential patterns, index pages become fragmented. Read performance degrades over time and drives maintenance windows for index rebuild or reorganize operations.</li>
+  <li><strong>Optimizer complexity.</strong> A large set of overlapping indexes increases plan compilation time and can occasionally produce plan instability as the optimizer’s candidate plan search becomes more expensive.</li>
+</ul>
+
+<p>Before adding an index, the useful question is not only “will this help this query?” It is: <strong>does the improvement to this read justify the ongoing write cost, and does this overlap with an index I already have?</strong></p>
+
+<p>Read-heavy reporting tables or lookup-heavy reference tables can generally tolerate many indexes. Transactional tables handling high-frequency inserts — order intake, event logging, inventory updates — warrant genuine restraint. Every index on those tables needs to earn its place.</p>
+
+<h2 id="reading-execution-plans">Reading a basic execution plan</h2>
+
+<p>The execution plan is the only reliable way to know whether the optimizer used your index and whether it behaved the way you expected.</p>
+
+<p>In SSMS, enable the actual execution plan before running your query (<code class="language-plaintext highlighter-rouge">Ctrl+M</code>, or Query → Include Actual Execution Plan). Run your query. The plan appears in a tab at the bottom.</p>
+
+<p>Read the plan <strong>right to left</strong>. Data originates at the rightmost operators and flows left toward the final output. Each operator displays its estimated cost as a percentage of the total query cost.</p>
+
+<p>The operators to focus on:</p>
+
+<ul>
+  <li><strong>Index Seek</strong>: the optimizer navigated the B-tree directly to the matching rows. This is the outcome you are designing for on selective predicates.</li>
+  <li><strong>Index Scan</strong>: the optimizer walked the entire index. May be appropriate for a small table; investigate if the index is large.</li>
+  <li><strong>Table Scan / Clustered Index Scan</strong>: no narrow seek was possible. Either there is no usable index, the predicate was too unselective to justify one, or statistics are misleading the optimizer.</li>
+  <li><strong>Key Lookup (Clustered)</strong>: the optimizer used your nonclustered index but had to fetch additional columns from the clustered index row by row. This is the covering index signal. If you see it on a high-frequency query, evaluate whether <code class="language-plaintext highlighter-rouge">INCLUDE</code> columns would eliminate it.</li>
+</ul>
+
+<p><strong>Arrow thickness</strong> between operators represents row count. A wide arrow means many rows are flowing through that step. If you see a thin arrow entering an operator and a much wider arrow leaving it, the optimizer’s estimates were wrong — actual row counts are substantially higher than predicted. This is almost always stale statistics. Running <code class="language-plaintext highlighter-rouge">UPDATE STATISTICS Orders</code> or verifying that automatic statistics update is enabled is the first step.</p>
+
+<p>After you create or modify an index, run the affected query again with the actual plan. Confirm the plan changed. Confirm the key lookup disappeared if that was the goal. An index that the optimizer silently ignores provides no benefit but still imposes the full write cost on every mutation.</p>
+
+<p>If you are auditing an existing database and do not know where to start, <code class="language-plaintext highlighter-rouge">sys.dm_db_missing_index_details</code> records the optimizer’s own recommendations based on query history. Treat it as a starting point for analysis, not a checklist to execute without review — the DMV does not know your write volume or your existing index overlap.</p>
+
+<h2 id="closing">Indexes are a design decision, not a fix</h2>
+
+<p>Indexing is not a set-and-forget step applied after queries slow down. It is an ongoing design decision that interacts with your query access patterns, write throughput, data distribution, and maintenance schedule.</p>
+
+<p>The developers who index well are not the ones who know the most index variants. They are the ones who understand what the optimizer is reasoning about, treat the execution plan as the source of truth, and recognize that every index added to a write-bearing table is a tradeoff that needs to be justified.</p>
+
+<p>Know what you are adding. Know why. Verify with the plan.</p>
+
+<hr />
+
+<p><em>Meta description: SQL Server indexing strategy for backend developers — how the optimizer chooses indexes, the difference between composite and covering indexes, what INCLUDE columns do, the write cost of over-indexing, and how to read an execution plan.</em></p>
+
+<p><em>SEO keywords: SQL Server covering index, SQL Server INCLUDE columns index, SQL Server key lookup execution plan, SQL Server composite vs covering index, SQL Server over-indexing write performance</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="SQL" /><category term="Database" /><category term="sql-server" /><category term="indexing" /><category term="query-optimization" /><category term="execution-plans" /><category term="database-performance" /><summary type="html"><![CDATA[Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI Coding Tools Are Part of Your Software Supply Chain Now</title><link href="https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain/" rel="alternate" type="text/html" title="AI Coding Tools Are Part of Your Software Supply Chain Now" /><published>2026-03-27T16:00:00+00:00</published><updated>2026-03-27T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain/"><![CDATA[<p>Many teams still talk about AI coding tools as if they are mostly a better autocomplete box. That description is getting less accurate by the month.</p>
+
+<p>Once a tool can read a repository, pull in extra context, call external tools, run commands, or open a pull request, it stops being just a convenience feature. It becomes part of the way software moves from idea to production. That means it belongs in the same conversation as dependencies, CI pipelines, external services, and other supply-chain components.</p>
+
+<p>That is the framing I think more engineers need right now. Not because it sounds dramatic, but because it helps us ask better questions. Security-minded teams already know how to reason about provenance, least privilege, validation, auditability, and rollback. Those habits map surprisingly well to AI coding workflows.</p>
+
+<div class="post-note">
+  <strong>Timeless principle:</strong> externally produced code should be treated as untrusted until verified. <strong>What is newer as of March 27, 2026:</strong> the external producer is increasingly an agent connected to tools, hosted environments, and remote context sources, not just a human vendor or open-source package maintainer.
+</div>
+
+<h2 id="mental-model">Why supply chain is the right mental model</h2>
+
+<p>In practical engineering terms, your supply chain is every external component or service whose integrity can change your outcome.</p>
+
+<p>By that definition, AI coding tools now qualify. The model provider matters. The editor extension matters. The hosted runner or sandbox matters. The tool server matters. The prompt files and repository instructions matter. The external docs, tickets, and APIs that feed context into the system matter too.</p>
+
+<p>That does not mean every AI feature is equally risky. A draft explanation of a codebase is different from an agent that can branch, edit files, and trigger workflow steps. But the moment the tool begins to influence code, commands, dependencies, or approvals in a repeatable way, it is reasonable to ask supply-chain questions:</p>
+
+<ul>
+  <li>Where did this output come from?</li>
+  <li>What else touched it on the way here?</li>
+  <li>What permissions existed at each step?</li>
+  <li>What checks stand between this output and the default branch?</li>
+  <li>If a component or integration is compromised, how quickly can we contain it?</li>
+</ul>
+
+<p>This is also why a pure “productivity tool” mindset is too shallow. Productivity is only half the story. The other half is trustworthiness.</p>
+
+<h2 id="timeless-vs-new">What is timeless, and what has recently changed</h2>
+
+<p>The timeless part is straightforward. Good engineering still depends on clear ownership, narrow permissions, deterministic validation, and review that catches bad assumptions. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> makes that explicit by extending the Secure Software Development Framework with AI-specific practices rather than replacing secure development fundamentals.</p>
+
+<p>The newer part is the shape of the toolchain. In <a href="https://survey.stackoverflow.co/2025">Stack Overflow’s 2025 Developer Survey</a>, 84% of respondents said they are using or planning to use AI tools in development, but the same survey also found that a majority of developers either do not use AI agents or still stick to simpler tools. It also found that more developers distrust AI tool accuracy than trust it. That combination is important: adoption is real, but skepticism is real too.</p>
+
+<p>Vendor documentation shows why. GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">Copilot coding agent documentation</a> describes an agent that can work in an isolated environment, create draft pull requests, stay scoped to repository-controlled branches, and require human approval before workflows proceed. That is much closer to a controlled software-delivery participant than a passive assistant.</p>
+
+<p>At the same time, GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> notes that excluded files can still influence behavior indirectly through semantic information such as symbols, type information, and build properties. In other words, even the governance controls are nuanced. Security-minded adoption still requires understanding the edges of the platform.</p>
+
+<p>The ecosystem around these tools is changing too. The official <a href="https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices">Model Context Protocol security best practices</a> now warn directly about token passthrough, confused-deputy problems, and over-broad scopes, and recommend progressive least-privilege authorization. That is a supply-chain conversation, not a prompt-writing conversation.</p>
+
+<p>OpenAI’s current <a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">agent safety guidance</a> and Anthropic’s <a href="https://code.claude.com/docs/en/security">Claude Code security guidance</a> reinforce the same pattern: keep tool approvals on, constrain outputs, prefer explicit permissions, and preserve strong boundaries around commands and write actions.</p>
+
+<p>OWASP’s <a href="https://genai.owasp.org/llm05/">LLM05 supply-chain guidance</a> pushes the point further. It explicitly treats models, training data, and deployment platforms as part of the risk surface, and recommends inventory, signing, monitoring, and supplier review. That is familiar language for engineers who have spent time around application security or software supply chain work.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.png" alt="Diagram showing AI coding tools sitting between external model and tool providers on one side and repository, CI, and review systems on the other." />
+  <figcaption>The AI coding tool is no longer just a user interface. It sits inside a chain of external dependencies, permissions, and approvals.</figcaption>
+</figure>
+
+<h2 id="what-to-do">What a security-minded engineer should do about it</h2>
+
+<p>The good news is that mature teams do not need a brand-new philosophy here. They need disciplined translation.</p>
+
+<div class="post-checklist">
+  <div>
+    <strong>1. Inventory the chain.</strong> Do not stop at "we use Copilot" or "we use Claude Code." List the model provider, extension or client, hosted execution environment, tool servers, external context sources, approval path, and downstream systems the tool can touch.
+  </div>
+  <div>
+    <strong>2. Separate read access from write access.</strong> Read-heavy assistance often creates value quickly with less risk. Write actions, network calls, and command execution deserve stronger controls because they change the blast radius.
+  </div>
+  <div>
+    <strong>3. Treat tool integrations like new vendors.</strong> If an agent can talk to a ticketing system, docs platform, MCP server, or internal API, review the scopes, provenance, maintenance posture, and revocation path the same way you would for any other third-party integration.
+  </div>
+  <div>
+    <strong>4. Keep deterministic checks after every meaningful AI step.</strong> Linting, tests, policy gates, dependency review, and secret scanning should be positioned as mandatory controls, not nice-to-have cleanup.
+  </div>
+  <div>
+    <strong>5. Preserve traceability.</strong> You want to know what context was used, what commands were attempted, what tools were called, and who approved the result. Fast output with weak provenance is not a mature workflow.
+  </div>
+</div>
+
+<p>One of the more useful mindset shifts is this: treat AI-generated code the way you would treat code from a third party you have not fully vetted yet. It may be useful. It may be well-intentioned. It may even look polished. But it still needs verification before it earns trust.</p>
+
+<p>That does not mean slowing everything down equally. It means matching the controls to the consequence.</p>
+
+<h2 id="approval-ladder">A practical approval ladder</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Supply-chain exposure</th>
+      <th>Default stance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Drafting explanations, tests, summaries, or refactor ideas</td>
+      <td>Mostly local context and low downstream consequence</td>
+      <td>Safe default for broad use with normal review</td>
+    </tr>
+    <tr>
+      <td>Editing multiple files or drafting pull requests</td>
+      <td>Repo integrity and CI signal become part of the workflow</td>
+      <td>Use scoped branches, deterministic checks, and human review before merge</td>
+    </tr>
+    <tr>
+      <td>Calling external tools or MCP servers</td>
+      <td>New credentials, scopes, and dependency paths enter the system</td>
+      <td>Review scopes carefully, prefer least privilege, log access, and avoid silent elevation</td>
+    </tr>
+    <tr>
+      <td>High-impact changes in auth, infrastructure, secrets, or data flows</td>
+      <td>The tool now sits near your highest-trust surfaces</td>
+      <td>Keep these human-led or behind strong approvals and isolated environments</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That ladder is more practical than blanket enthusiasm or blanket fear.</p>
+
+<p>It also reflects the direction the ecosystem is taking. The <a href="https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/">OWASP Top 10 for Agentic Applications release on December 9, 2025</a> is another signal that security thinking is moving from “LLM answers can be wrong” to “agent ecosystems create new operational failure modes.” Once AI began taking actions, the security model had to grow up too.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.png" alt="Diagram showing an approval ladder from low-risk drafting to high-risk infrastructure and identity changes, with stronger controls at each level." />
+  <figcaption>Not every AI-assisted task deserves the same level of autonomy. Matching controls to consequence is where mature teams separate themselves.</figcaption>
+</figure>
+
+<h2 id="final-thought">Final thought</h2>
+
+<p>I do not think the long-term winners will be the teams that talk about AI coding tools the most. I think they will be the teams that absorb them into engineering reality without becoming careless about trust.</p>
+
+<p>That usually means calmer decisions, not louder ones.</p>
+
+<p>Inventory the chain. Narrow the permissions. Keep the checks. Understand the weak points in vendor controls. Treat new tool integrations like real dependencies, because that is what they are.</p>
+
+<p>If we do that well, AI coding tools become a useful extension of disciplined engineering instead of a fast path to importing invisible risk.</p>
+
+<h2 id="research-notes">Research notes</h2>
+
+<ul class="post-sources">
+  <li><a href="https://survey.stackoverflow.co/2025">Stack Overflow 2025 Developer Survey</a>: Used for current adoption, caution, and trust signals around AI tools and AI agents.</li>
+  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to anchor the article in established secure software development practices extended for generative AI and dual-use foundation models.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">GitHub Copilot coding agent docs</a>: Used for current examples of agentic workflow controls such as scoped branches, isolated execution, draft PRs, and human approvals.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub Copilot content exclusion docs</a>: Used for the caveat that exclusions have real limitations and semantic leakage paths.</li>
+  <li><a href="https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices">Model Context Protocol security best practices</a>: Used for current guidance on least-privilege scopes, token handling, and tool-server trust boundaries.</li>
+  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on tool approvals, guardrails, and trace-level evaluation.</li>
+  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of read-only defaults, permission-based execution, sandboxing, and prompt-injection protections.</li>
+  <li><a href="https://genai.owasp.org/llm05/">OWASP LLM05 supply chain vulnerabilities</a>: Used for the explicit supply-chain framing around models, data, deployment platforms, inventory, signing, and supplier review.</li>
+  <li><a href="https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/">OWASP Top 10 for Agentic Applications announcement</a>: Used as a recent signal that industry security guidance has moved deeper into agentic operational risk.</li>
+</ul>
+
+<!--
+Meta description: AI coding tools are no longer just productivity aids. Once they can read repositories, call tools, and open pull requests, they become part of your software supply chain and need the same discipline around provenance, permissions, validation, and review.
+SEO keyword ideas:
+1. AI coding tools software supply chain
+2. secure AI coding workflow
+3. AI agents software supply chain
+4. software supply chain AI tools
+5. AppSec AI coding tools
+-->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="software supply chain" /><category term="secure software development" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">C# Nullable Reference Types: Real Discipline vs Annotation Theater</title><link href="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/" rel="alternate" type="text/html" title="C# Nullable Reference Types: Real Discipline vs Annotation Theater" /><published>2026-03-27T13:00:00+00:00</published><updated>2026-03-27T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/"><![CDATA[<p>Most teams followed the same script after upgrading to .NET 6 or later. They opened the project file, set <code class="language-plaintext highlighter-rouge">&lt;Nullable&gt;enable&lt;/Nullable&gt;</code>, and watched the compiler light up with hundreds of warnings. Then, under deadline pressure, they plastered <code class="language-plaintext highlighter-rouge">= null!</code> and <code class="language-plaintext highlighter-rouge">!</code> operators across the codebase until the warnings went away.</p>
+
+<p>The feature was technically enabled. The warnings were technically resolved. The actual null-safety was largely unchanged.</p>
+
+<p>That is annotation theater: the visual appearance of discipline without the underlying design.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" alt="Code diagram contrasting null-forgiving operator suppression with disciplined nullable design in C#." />
+  <figcaption>Enabling the feature and silencing the warnings are two different things.</figcaption>
+</figure>
+
+<h2 id="what-nrts-give-you">What nullable reference types actually give you</h2>
+
+<p>Nullable reference types are a static analysis contract, not a runtime enforcement mechanism. The compiler tracks nullability through your code and tells you where you have made a promise you cannot keep.</p>
+
+<p>When you declare <code class="language-plaintext highlighter-rouge">string Name</code>, you are telling the compiler — and every developer who reads that code — that <code class="language-plaintext highlighter-rouge">Name</code> will never be null. When you declare <code class="language-plaintext highlighter-rouge">string? Description</code>, you are acknowledging that absence is a legitimate state for that value. That is useful information encoded in the type system, where it cannot go stale the way a comment can.</p>
+
+<p>The concrete benefits are real when you use the feature with intent:</p>
+
+<ul>
+  <li><strong>API boundaries become honest.</strong> A method signature of <code class="language-plaintext highlighter-rouge">Customer? FindById(int id)</code> communicates that the caller must handle the not-found case. The compiler enforces that they do.</li>
+  <li><strong>Flow analysis catches real mistakes.</strong> Branching on null, reassigning a nullable to a non-nullable without checking, returning null from a method declared to return a non-nullable — the compiler finds these before the runtime does.</li>
+  <li><strong>The type annotation is documentation that compiles.</strong> In a <code class="language-plaintext highlighter-rouge">string Name</code> property on a domain entity, the non-nullability is a domain assertion. That entity does not exist in a valid state without a name.</li>
+</ul>
+
+<p>The key word is intent. The compiler is only as useful as the meaning you put behind your annotations.</p>
+
+<h2 id="null-forgiving-theater">Why null-forgiving operators defeat the purpose</h2>
+
+<p>The null-forgiving operator <code class="language-plaintext highlighter-rouge">!</code> tells the compiler: “I know you’re uncertain about this, but trust me.” The compiler stops warning you. Nothing else changes.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This compiles cleanly with no warnings.</span>
+<span class="c1">// It will throw a NullReferenceException at runtime if Name was never assigned.</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">= null!</code> is not an idiom for “I’ll fill this in later.” It is a suppression. You have removed the warning without resolving the condition that triggered it. The object can now be constructed with no name and no email, and the compiler will not tell you until the production exception report does.</p>
+
+<p>The same problem appears in method bodies:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">SendWelcome</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// The compiler is satisfied. The runtime is not impressed.</span>
+    <span class="kt">var</span> <span class="n">greeting</span> <span class="p">=</span> <span class="s">"Welcome, "</span> <span class="p">+</span> <span class="n">_customer</span><span class="p">.</span><span class="n">Name</span><span class="p">!.</span><span class="nf">ToUpper</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sprinkling <code class="language-plaintext highlighter-rouge">!</code> throughout a codebase is a way of accumulating technical debt that looks like it has been paid off. Every suppressed warning is a decision deferred to production.</p>
+
+<h2 id="code-comparison">Wrong vs right: a direct comparison</h2>
+
+<p>The wrong approach treats nullability annotations as a migration tax to be minimized:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong: annotations silenced, design unchanged</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">!.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_emailService</span><span class="p">!.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">!);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Every <code class="language-plaintext highlighter-rouge">!</code> here is a deferred null check. The constructor never ran. The dependencies might be null. The method body checks <code class="language-plaintext highlighter-rouge">order != null</code> but trusts <code class="language-plaintext highlighter-rouge">CustomerEmail</code> unconditionally.</p>
+
+<p>The right approach uses constructor injection to establish validity at creation:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Right: validity guaranteed at construction</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">OrderService</span><span class="p">(</span><span class="n">IOrderRepository</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IEmailService</span> <span class="n">emailService</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_repository</span> <span class="p">=</span> <span class="n">repository</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">repository</span><span class="p">));</span>
+        <span class="n">_emailService</span> <span class="p">=</span> <span class="n">emailService</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">emailService</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+        <span class="n">_emailService</span><span class="p">.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>No <code class="language-plaintext highlighter-rouge">!</code> operators. No <code class="language-plaintext highlighter-rouge">null!</code> initializers. The compiler is satisfied because the design is correct, not because the analysis was suppressed. If a caller passes a null dependency, they get an <code class="language-plaintext highlighter-rouge">ArgumentNullException</code> immediately at the injection site — the clearest possible signal.</p>
+
+<h2 id="constructor-injection">Constructor injection: validity at creation</h2>
+
+<p>The principle behind the right approach is simple. An object should either exist in a valid state or not exist at all. If a class requires non-null collaborators to function, enforce that at construction.</p>
+
+<p>This works equally well with record types:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The compiler guarantees Name and Email are non-null everywhere this is used.</span>
+<span class="k">public</span> <span class="k">record</span> <span class="nc">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">Email</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Records are particularly well-suited here. Their concise syntax and immutability combine naturally with the non-nullability contract. A <code class="language-plaintext highlighter-rouge">Customer</code> record is always a <code class="language-plaintext highlighter-rouge">Customer</code> with a real name and a real email. There is no half-constructed state.</p>
+
+<p>For mutable entities, the <code class="language-plaintext highlighter-rouge">required</code> keyword introduced in C# 11 provides similar guarantees without requiring a constructor argument for every property:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">ShippingAddress</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">Street</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">City</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Apartment</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>  <span class="c1">// legitimately optional</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">required</code> properties must be set in object initializers. The compiler enforces it. <code class="language-plaintext highlighter-rouge">Apartment</code> is <code class="language-plaintext highlighter-rouge">string?</code> because a shipping address genuinely might not have one — that is an honest modeling choice, not a suppression.</p>
+
+<h2 id="factory-methods">Factory methods: honest creation that can fail</h2>
+
+<p>Constructor injection works well when you control the inputs. When creation might fail — for example, when parsing external data — factory methods let you be explicit about the uncertainty:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">private</span> <span class="nf">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">email</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Customer</span><span class="p">?</span> <span class="nf">TryCreate</span><span class="p">(</span><span class="kt">string</span><span class="p">?</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span><span class="p">?</span> <span class="n">email</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">email</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The private constructor means no partially valid <code class="language-plaintext highlighter-rouge">Customer</code> can exist. <code class="language-plaintext highlighter-rouge">TryCreate</code> returns <code class="language-plaintext highlighter-rouge">Customer?</code>, which forces callers to handle the failure case. The <code class="language-plaintext highlighter-rouge">!</code> operator never appears because the <code class="language-plaintext highlighter-rouge">null</code> check happens before the construction — there is nothing to suppress.</p>
+
+<p>The caller receives a clear contract:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">.</span><span class="nf">TryCreate</span><span class="p">(</span><span class="n">nameInput</span><span class="p">,</span> <span class="n">emailInput</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">customer</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nf">ValidationProblem</span><span class="p">(</span><span class="s">"Name and email are required."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// customer is non-null here, and the compiler knows it</span>
+</code></pre></div></div>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/design-patterns.svg" alt="Diagram showing three paths: constructor injection for required dependencies, factory methods for conditional creation, and Result types for explicit error propagation." />
+  <figcaption>Three patterns that design null out rather than around it.</figcaption>
+</figure>
+
+<h2 id="option-result-types">Option and Result types: modeling absence explicitly</h2>
+
+<p>For cases where <code class="language-plaintext highlighter-rouge">null</code> and “not found” and “failed validation” are conceptually distinct — and conflating them would lose information — Result and Option types give you richer vocabulary.</p>
+
+<p>A simple Result type:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">readonly</span> <span class="k">record</span> <span class="nc">struct</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsSuccess</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">T</span><span class="p">?</span> <span class="n">Value</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Error</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> <span class="n">Error</span> <span class="p">=</span> <span class="n">error</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Success</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Failure</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="n">error</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Usage communicates intent clearly:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;</span> <span class="nf">RegisterCustomer</span><span class="p">(</span><span class="n">RegistrationRequest</span> <span class="n">request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Name is required."</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(!</span><span class="nf">IsValidEmail</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Email address is not valid."</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
+    <span class="n">_repository</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Success</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The caller gets a <code class="language-plaintext highlighter-rouge">Result&lt;Customer&gt;</code>. They cannot accidentally treat the value as valid without checking <code class="language-plaintext highlighter-rouge">IsSuccess</code>. There is no null, no exception for a control flow decision, and no ambiguity between “customer not found” and “customer invalid.”</p>
+
+<p>Libraries like <code class="language-plaintext highlighter-rouge">CSharpFunctionalExtensions</code> offer production-ready implementations of this pattern with monadic chaining if you want richer composition. The concept scales whether you roll your own or bring in a library.</p>
+
+<h2 id="design-question">The design question to ask instead</h2>
+
+<p>The pattern becomes clearer once you shift from “how do I handle null here?” to “why could this be null in the first place?”</p>
+
+<p>When the answer is “because this field is genuinely optional in the domain,” then <code class="language-plaintext highlighter-rouge">string?</code> is correct and deliberate. A product description might be optional. A middle name might be optional. A secondary email might be optional.</p>
+
+<p>When the answer is “because the object just hasn’t been initialized yet” or “because we haven’t wired up the tests properly,” that is not a nullable type problem. That is a design problem wearing a type system mask.</p>
+
+<div class="post-note">
+  <strong>The practical test:</strong> if you cannot explain in one sentence why a field is nullable in terms of the domain — not in terms of the code — it probably should not be nullable. It should be required, or it should not exist until the object is in the state where it is meaningful.
+</div>
+
+<h2 id="warnings-as-signals">Treat warnings as design signals</h2>
+
+<p>When the compiler warns you about a potential null dereference, it is not being pedantic. It is telling you that your type annotations do not match your code’s behavior, which means either the annotations are wrong or the code is wrong. Either way, there is a discrepancy worth understanding.</p>
+
+<p>The discipline is straightforward:</p>
+
+<ul>
+  <li>If a warning indicates a property that should always be non-null, fix the construction path so the compiler can verify it.</li>
+  <li>If a warning indicates a genuinely nullable value, handle the null case explicitly until the compiler can prove the path is safe.</li>
+  <li>If you reach for <code class="language-plaintext highlighter-rouge">!</code> or <code class="language-plaintext highlighter-rouge">= null!</code>, treat it as a code smell requiring a comment explaining why the suppression is justified — and plan to remove it.</li>
+</ul>
+
+<p>That last constraint is a useful forcing function. Requiring an explanation for every suppression is how you distinguish the legitimate uses — interop with uninitialized reflection, legacy migration paths, tests scaffolded for brevity — from the habitual ones.</p>
+
+<p>Teams that do this consistently find that the feature pays off. Not because null becomes impossible, but because the points where null is possible are explicit, visible, and deliberate. The type system carries the documentation, and the analysis enforces it.</p>
+
+<p>That is what the feature was designed to do. The annotation theater version just makes the warnings go quiet.</p>
+
+<hr />]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="nullable reference types" /><category term="dotnet" /><category term="code quality" /><category term="domain design" /><summary type="html"><![CDATA[Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How Security-Minded Engineers Evaluate AI Coding Tools</title><link href="https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/" rel="alternate" type="text/html" title="How Security-Minded Engineers Evaluate AI Coding Tools" /><published>2026-03-27T10:00:00+00:00</published><updated>2026-03-27T10:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/"><![CDATA[<p>The easiest way to misunderstand AI coding tools is to evaluate them like autocomplete with better marketing.</p>
+
+<p>That model is already outdated. The modern tools can read repositories, absorb project instructions, call external tools, execute commands, and open pull requests. Once that happens, the important question is not only whether the output looks useful. It is whether the surrounding workflow is trustworthy.</p>
+
+<p>That is where security-minded engineers tend to think more clearly than the average product demo. They are not impressed by capability in isolation. They want to know what the tool can see, what it can do, what stands between it and a bad outcome, and how quickly the team can recover when something goes wrong in a believable way.</p>
+
+<div class="post-note">
+  <strong>Timeless principle:</strong> code and actions produced outside your direct control should be treated as untrusted until verified. <strong>What feels newer in March 2026:</strong> the external producer is increasingly an AI workflow connected to tools, hosted environments, and external context, not just a human contractor or third-party package.
+</div>
+
+<h2 id="first-questions">The first questions a security-minded engineer asks</h2>
+
+<p>The first difference is not technical skill. It is framing.</p>
+
+<p>A security-minded engineer does not start with, “How much faster is this tool?” They start with, “What is the trust boundary here?”</p>
+
+<p>That usually leads to a more useful set of questions:</p>
+
+<ul>
+  <li>What context can the tool access?</li>
+  <li>What actions can it take without asking?</li>
+  <li>Which identities, secrets, or external systems sit behind those actions?</li>
+  <li>What checks stand between the tool output and the default branch?</li>
+  <li>What evidence will we have if we need to explain what happened later?</li>
+</ul>
+
+<p>Those questions apply whether you are looking at a GitHub coding agent, a local terminal assistant, an MCP-connected toolchain, or a custom internal workflow. They are the difference between using AI as a productivity aid and quietly expanding your blast radius without noticing.</p>
+
+<p>This is also why I think the security mindset matters more than specific tool loyalty. Product names will change. Model rankings will change. What tends to survive is the discipline behind the workflow.</p>
+
+<div class="post-checklist">
+  <div>
+    <strong>1. Context is exposure.</strong> If the tool can read architecture docs, tickets, secrets-adjacent files, or customer-related material, then context design is a security question, not just a usability question.
+  </div>
+  <div>
+    <strong>2. Tool use is privilege.</strong> Reading code, editing files, running tests, using networked tools, and opening a pull request are not equivalent capabilities. Each one changes the risk shape.
+  </div>
+  <div>
+    <strong>3. Output is still untrusted until verified.</strong> AI-generated code, shell commands, dependency suggestions, and remediation advice still need deterministic checks and human judgment before they earn trust.
+  </div>
+  <div>
+    <strong>4. Provenance matters.</strong> A clean-looking diff is not enough if you cannot tell what inputs the tool used, what commands it ran, and which review path it went through.
+  </div>
+  <div>
+    <strong>5. Safe rollback beats confident autonomy.</strong> Mature workflows assume believable mistakes will happen and make containment easier than cleanup.
+  </div>
+</div>
+
+<p>The older I get in software, the more I value tools that make risk visible. Security-minded engineers are usually trying to answer the same practical question: if this system fails in a polished and convincing way, how fast will we notice?</p>
+
+<h2 id="whats-changed">What has actually changed recently</h2>
+
+<p>The biggest change is that the major platforms are now documenting AI coding tools as workflow actors, not just suggestion engines.</p>
+
+<p>GitHub’s current <a href="https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom">responsible-use guidance for Copilot coding agent</a> is a good example. It describes repository-only access, <code class="language-plaintext highlighter-rouge">copilot/</code> branch restrictions, approval requirements before pull-request-triggered workflows run, the absence of normal repository or organization secrets during runtime, and a default firewall to reduce data exfiltration risk. That is already a security architecture conversation.</p>
+
+<p>GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> adds another important nuance. Even when exclusions exist, excluded files can still influence behavior indirectly through semantic information such as symbols, type information, or build properties. In plain English: the controls help, but they are not magic, and teams still need to understand the edges.</p>
+
+<p>The same pattern shows up in the broader ecosystem. The official <a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices">Model Context Protocol security best practices</a> explicitly warn against token passthrough, confused-deputy problems, and overly broad scopes. If your coding assistant can reach external MCP servers or tool integrations, that is not just an AI prompt issue. It is an authorization and trust-boundary issue.</p>
+
+<p>OpenAI’s <a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">agent safety guidance</a> and Anthropic’s <a href="https://code.claude.com/docs/en/security">Claude Code security guidance</a> point in the same direction: explicit approvals, structured outputs, strong sandboxing, clear permission models, and careful treatment of risky commands or tools.</p>
+
+<p>There is also a healthy dose of caution in the developer community itself. <a href="https://survey.stackoverflow.co/2025">Stack Overflow’s 2025 Developer Survey</a> found that 84% of respondents are using or planning to use AI tools in development, but it also found that a majority of developers do not use AI agents or still stick to simpler AI tools. The same survey says more developers distrust AI tool accuracy than trust it. That feels rational to me, not resistant.</p>
+
+<p>Security-minded engineers are usually not the people pretending the tools are useless. They are the people refusing to confuse impressive demos with mature operational posture.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/evaluation-lenses.svg" alt="Diagram showing four evaluation lenses for AI coding tools: context, permissions, validation, and provenance." />
+  <figcaption>The fastest useful evaluation is usually not model-versus-model. It is context, permissions, validation, and provenance.</figcaption>
+</figure>
+
+<h2 id="control-ladder">A practical control ladder</h2>
+
+<p>The most useful teams I know do not apply one blanket policy to every AI-assisted task. They match controls to consequence.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work type</th>
+      <th>Typical risk shape</th>
+      <th>Reasonable default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Summaries, explanations, draft tests, or refactor ideas</td>
+      <td>Mostly local quality risk</td>
+      <td>Broad use is usually fine with normal review</td>
+    </tr>
+    <tr>
+      <td>Multi-file edits or draft pull requests</td>
+      <td>Repo integrity and CI become part of the workflow</td>
+      <td>Use scoped branches, deterministic checks, and human review before merge</td>
+    </tr>
+    <tr>
+      <td>External tool usage or networked integrations</td>
+      <td>New identities, scopes, and trust boundaries appear</td>
+      <td>Review permissions closely, log usage, and keep explicit approvals for risky actions</td>
+    </tr>
+    <tr>
+      <td>High-impact areas such as auth, infrastructure, secrets, or production data paths</td>
+      <td>Failure cost is materially higher</td>
+      <td>Keep these human-led or behind strong approvals and isolated environments</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This ladder is not anti-AI. It is anti-carelessness.</p>
+
+<p>It also fits the direction of current security guidance. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> extends secure software development practices into the generative-AI world, and OWASP’s <a href="https://genai.owasp.org/llm05/">LLM05 supply-chain guidance</a> explicitly pushes teams to inventory models, data, and platforms as part of the security surface. The point is not to invent exotic new principles. It is to apply mature ones to a changing toolchain.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/control-ladder.svg" alt="A ladder diagram showing stronger controls as AI-assisted work moves from drafting to repo edits to external tools to high-impact systems." />
+  <figcaption>Autonomy should rise slowly. Consequence usually rises faster.</figcaption>
+</figure>
+
+<h2 id="practical-eval">How I would evaluate an AI coding tool in practice</h2>
+
+<p>If I were evaluating a new tool for a team today, I would keep the process simple.</p>
+
+<ol>
+  <li>Start with a read-heavy use case where failure is cheap.</li>
+  <li>Document exactly what context the tool needs and what it does not need.</li>
+  <li>Separate local editing from networked tool use.</li>
+  <li>Force deterministic checks after each meaningful AI-generated change.</li>
+  <li>Keep human approval on anything that can create repo, CI, or downstream-system impact.</li>
+  <li>Revisit the vendor guidance regularly, because the capability surface is changing faster than many teams update their assumptions.</li>
+</ol>
+
+<p>That last point matters more than people think. The danger is not only that a tool fails. The danger is that a team keeps using an old mental model after the product has gained new reach, new integrations, or new behavior.</p>
+
+<p>This is why I keep coming back to security-minded engineering as a durable advantage. It is not about paranoia. It is about seeing systems clearly enough to ask better questions before the incident review does it for you.</p>
+
+<h2 id="final-thought">Final thought</h2>
+
+<p>I do not think the long-term winners in AI-enabled engineering will be the teams with the loudest opinions about AI. I think they will be the teams that learn how to absorb these tools without lowering their standards for trust, review, and accountability.</p>
+
+<p>That is a quieter skill, but a more durable one.</p>
+
+<p>Use the tools. Learn them well. But evaluate them like an engineer who still has to own the consequences after the excitement wears off.</p>
+
+<h2 id="research-notes">Research notes</h2>
+
+<ul class="post-sources">
+  <li><a href="https://survey.stackoverflow.co/2025">Stack Overflow 2025 Developer Survey</a>: Used for current adoption, skepticism, and trust signals around AI tools and agents.</li>
+  <li><a href="https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom">GitHub responsible use of Copilot coding agent</a>: Used for current security controls such as scoped branches, workflow approvals, limited secret access, and default firewall behavior.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub content exclusion docs</a>: Used for the caveat that exclusions have meaningful limitations and indirect semantic leakage paths.</li>
+  <li><a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices">MCP security best practices</a>: Used for current guidance on token passthrough, confused-deputy risks, and least-privilege authorization.</li>
+  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on approvals, guardrails, and trace-aware evaluation.</li>
+  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of permissions, sandboxing, and prompt-injection-aware controls.</li>
+  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to anchor the article in established secure software development practice.</li>
+  <li><a href="https://genai.owasp.org/llm05/">OWASP LLM05 supply chain vulnerabilities</a>: Used for the supply-chain framing around models, data, deployment platforms, inventory, and monitoring.</li>
+</ul>
+
+<!--
+Meta description: Security-minded engineers do not evaluate AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that coding agents can read repositories, call tools, and open pull requests.
+SEO keyword ideas:
+1. security minded engineer AI coding tools
+2. evaluate AI coding tools
+3. secure AI coding workflow
+4. AI coding tools AppSec
+5. AI agents software engineering security
+-->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[Security-minded engineers do not judge AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that modern coding agents can read repositories, call tools, and open pull requests.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools</title><link href="https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools/" rel="alternate" type="text/html" title="Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools" /><published>2026-03-26T16:00:00+00:00</published><updated>2026-03-26T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools/"><![CDATA[<p>A year ago, many teams could still treat AI coding tools as smarter autocomplete. That model is already too small. The newest tools can inspect repositories, follow project instructions, run tests, propose multi-file edits, and open pull requests. That creates real leverage. It also moves the risk from isolated suggestions to trust boundaries, sensitive context, workflow design, and operational control.</p>
+
+<p>That is why security-minded engineers are well positioned for this moment. The habits that matter most are still the durable ones: least privilege, explicit review, untrusted-input thinking, deterministic checks, and good audit trails.</p>
+
+<div class="post-note">
+  <strong>As of March 26, 2026:</strong> the mainstream vendor guidance around AI coding tools is no longer centered on clever prompting alone. Official documentation now talks openly about approvals, firewalls, sandboxing, audit logs, branch restrictions, and prompt injection defenses. That is a strong signal that the center of gravity has moved from suggestion quality to system design.
+</div>
+
+<h2 id="tool-changed">The tool changed. The job did not.</h2>
+
+<p>The hardest part of modern software engineering was never typing code quickly. It was making good decisions under constraints.</p>
+
+<p>We still need clear requirements, safe defaults, honest tests, and review that catches bad assumptions. AI coding tools do not remove those responsibilities. They make weak engineering discipline more expensive because mistakes can now be produced faster and wrapped in more confident language.</p>
+
+<blockquote>
+  <p>The real risk is not that an AI tool writes one bad function. It is that a team quietly gives a probabilistic system too much context, too much reach, and too little review.</p>
+</blockquote>
+
+<p>This is where a security mindset becomes practical rather than abstract. Security-minded engineers instinctively ask:</p>
+
+<ul>
+  <li>What data can this tool see?</li>
+  <li>What actions can it take?</li>
+  <li>What happens if it is wrong in a believable way?</li>
+  <li>How quickly can we see what happened and recover?</li>
+</ul>
+
+<p>Those questions are useful whether the tool is a static analyzer, a deployment pipeline, or an AI agent. The difference now is that more engineering teams are handing AI tools enough power to make those questions impossible to postpone.</p>
+
+<h2 id="whats-new">What feels genuinely new in March 2026</h2>
+
+<p>There are two realities at the same time.</p>
+
+<p>The first is adoption. In <a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow’s 2025 AI survey</a>, 17.5% of professional AI users said they use AI agents at work daily. Among developers already using agents, 84% said they use them for software development. This is no longer hypothetical workflow design for a small frontier group.</p>
+
+<p>The second is concern. The same survey found that just over 81% of respondents had security or privacy concerns about data when using AI agents. That tension matters. Engineers are using these tools, but they are not naive about the downside.</p>
+
+<p>GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">Copilot coding agent overview</a> describes an autonomous agent that can create draft pull requests, push only to tightly scoped branches, expose session logs for auditing, and hold GitHub Actions workflows until a human approves them. That is a controlled software workflow, not just an assistant.</p>
+
+<p>The same GitHub docs also carry a useful warning. GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> says exclusions are not currently supported in Edit and Agent modes of Copilot Chat in some editors, and excluded files may still influence behavior indirectly through semantic information such as type data. Governance controls help, but teams still need to understand their edges.</p>
+
+<p>Anthropic and OpenAI are publishing the same kind of guidance: read-only defaults, explicit approvals, sandboxing, input sanitization, structured outputs, and trace-level evaluation. The serious conversation is no longer “Can the model write code?” It is “How do we keep the overall system disciplined when the model can see more, do more, and fail in more believable ways?”</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.png" alt="A diagram showing the risk surface expanding as AI coding tools move from autocomplete to chat assistants to coding agents that can open pull requests." />
+  <figcaption>The jump from suggestion to execution is also a jump in trust boundary design.</figcaption>
+</figure>
+
+<h2 id="mental-model">A security-minded mental model for AI coding tools</h2>
+
+<p>When I think about responsible AI adoption in engineering teams, I keep coming back to five lenses.</p>
+
+<div class="post-checklist">
+  <div>
+    <strong>1. Context is access.</strong> A coding tool does not need every repository, every ticket, and every internal document just because retrieval is available. Context should be intentionally scoped, especially when the material includes customer data, secrets, security documentation, or unreleased plans.
+  </div>
+  <div>
+    <strong>2. Tool use is privilege.</strong> Reading code, editing files, running tests, opening a PR, and making network requests are not interchangeable capabilities. Treat them the way you would treat API permissions or service-account roles.
+  </div>
+  <div>
+    <strong>3. Output stays untrusted until verified.</strong> AI-generated code, shell commands, dependency recommendations, and remediation advice should go through deterministic checks before anyone treats them as production-ready.
+  </div>
+  <div>
+    <strong>4. The trace matters as much as the result.</strong> A clean diff is not enough if you cannot tell what context the system used, what commands it ran, what it attempted, and why it stopped. Auditability is part of quality.
+  </div>
+  <div>
+    <strong>5. Safe rollback beats confident behavior.</strong> The right workflow assumes believable mistakes will happen. Human approval, branch isolation, reversible changes, and clear ownership matter more than theatrical autonomy.
+  </div>
+</div>
+
+<p>This is also where established security guidance still helps. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> extends secure software development practices for generative AI and dual-use foundation models. The <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM and GenAI applications</a> keeps attention on failure modes that are especially relevant here: prompt injection, improper output handling, excessive agency, supply-chain risk, and sensitive information disclosure.</p>
+
+<p>None of that is theoretical if your tool can inspect a codebase, propose commands, and push changes into a repository workflow.</p>
+
+<h2 id="good-fit">Where AI coding tools are a good fit, and where I slow down</h2>
+
+<p>I do not think the right answer is to avoid these tools. I think the right answer is to use them in proportion to the blast radius.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usage tier</th>
+      <th>Good fit</th>
+      <th>Required controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Low-risk, high-leverage</td>
+      <td>Explaining a codebase, summarizing PRs, drafting tests, proposing refactors, turning rough notes into cleaner technical writing</td>
+      <td>Human review, normal lint/test checks, no special permissions beyond local workspace access</td>
+    </tr>
+    <tr>
+      <td>Medium-risk</td>
+      <td>Multi-file edits, dependency updates, baseline test fixes, issue-to-PR workflows in non-critical areas</td>
+      <td>Sandboxed execution, scoped branches, deterministic CI, explicit command approval, audit logs</td>
+    </tr>
+    <tr>
+      <td>High-risk</td>
+      <td>Auth flows, security controls, data migrations, infrastructure changes, secrets handling, compliance-sensitive code</td>
+      <td>Human-led changes, narrow context windows, stronger approvals, isolated environments, formal review expectations</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In practice, I want read-heavy assistance first, then bounded write access, and only later agentic workflows that can trigger broader downstream actions. That sequence is how teams learn where the model is genuinely useful before the consequences get expensive.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.png" alt="A workflow diagram showing a safe AI coding loop from request to scoped context, draft changes, automated checks, human review, and merge." />
+  <figcaption>A useful default: let the AI move quickly inside a loop that still preserves checks, evidence, and human judgment.</figcaption>
+</figure>
+
+<h2 id="adoption">How to adopt without damaging trust</h2>
+
+<p>If I were helping a team formalize its approach, I would start here.</p>
+
+<ol>
+  <li>Keep the first use cases narrow and measurable.</li>
+  <li>Separate read actions from write actions.</li>
+  <li>Put deterministic validation after every meaningful AI step.</li>
+  <li>Require explicit human approval for high-impact changes.</li>
+  <li>Document the boundaries so the workflow is clear to engineering, security, and leadership.</li>
+  <li>Revisit the setup regularly, because the tools and their controls are changing quickly.</li>
+</ol>
+
+<p>With AI coding tools, the capability surface and the product guardrails are still moving. A policy you wrote six months ago may now be too weak, too broad, or based on product assumptions that are no longer true. That is why I prefer a security-minded framing: keep asking what changed in the product, the permissions, the data path, and the review requirement.</p>
+
+<h2 id="final-thought">Final thought</h2>
+
+<p>The most durable advantage in the age of AI coding tools is not being the engineer who uses the most automation. It is being the engineer who can use automation without lowering the trustworthiness of the system.</p>
+
+<p>So yes, use the tools. Learn them well. But think like an engineer who still has to own the outcome after the demo is over.</p>
+
+<p>If your team is working through that transition right now, this is the part worth getting right early. I plan to keep writing about the patterns that hold up when speed, security, and professional credibility all matter at the same time.</p>
+
+<h2 id="research-notes">Research notes</h2>
+
+<ul class="post-sources">
+  <li><a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow 2025 AI survey</a>: Used for current adoption and concern signals around AI agents at work.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">GitHub Copilot coding agent</a>: Used for current workflow controls such as branch scoping, human review, auditability, and workflow approvals.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub Copilot content exclusion</a>: Used for the current limitations around exclusions in Edit and Agent modes and indirect semantic leakage.</li>
+  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of read-only defaults, permission-based execution, sandboxing, prompt-injection protections, and audit-oriented best practices.</li>
+  <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic engineering guidance on effective agents</a>: Used for the principle of preferring simpler workflows before open-ended autonomy.</li>
+  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on tool approvals, guardrails, structured outputs, and trace evaluation.</li>
+  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to connect AI development back to secure software development fundamentals.</li>
+  <li><a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM and GenAI applications</a>: Used for practical risk categories relevant to AI-enhanced software workflows.</li>
+</ul>
+
+<!--
+Meta description: AI coding tools are becoming repo-aware agents, which means engineering judgment matters more than ever. This post explains how security-minded engineers should think about context, permissions, validation, and human review in March 2026.
+SEO keyword ideas:
+1. AI coding tools security
+2. security-minded engineer AI
+3. AI agents software engineering
+4. secure software development AI tools
+5. responsible AI coding workflow
+-->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="developer productivity" /><summary type="html"><![CDATA[AI coding tools are moving from autocomplete to repo-aware agents that can run checks, propose changes, and open pull requests. A security-minded engineer sees the upside, but also knows the real work is setting the right boundaries around context, permissions, validation, and review.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

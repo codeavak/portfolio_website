@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idempotency: The Most Underused Pattern in Distributed Systems | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-03-31T00:00:01+00:00" />
+    
+      
+        <meta property="article:tag" content="idempotency" />
+      
+        <meta property="article:tag" content="distributed systems" />
+      
+        <meta property="article:tag" content="retries" />
+      
+        <meta property="article:tag" content="api design" />
+      
+        <meta property="article:tag" content="reliability" />
+      
+    
+    <meta property="og:title" content="Idempotency: The Most Underused Pattern in Distributed Systems" />
+    <meta property="og:description" content="Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Idempotency: The Most Underused Pattern in Distributed Systems" />
+    <meta name="twitter:description" content="Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Idempotency: The Most Underused Pattern in Distributed Systems",
+        "description": "Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-03-31T00:00:01+00:00",
+        "dateModified": "2026-03-31T00:00:01+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">Distributed Systems • Software Engineering</div>
+              
+              <time class="post-date" datetime="2026-03-31T00:00:01+00:00">March 31, 2026</time>
+              <h1 class="post-title">Idempotency: The Most Underused Pattern in Distributed Systems</h1>
+              
+                <p class="post-dek">Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">idempotency</span>
+                  
+                    <span class="chip">distributed systems</span>
+                  
+                    <span class="chip">retries</span>
+                  
+                    <span class="chip">api design</span>
+                  
+                    <span class="chip">reliability</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>If you have worked on distributed systems long enough, you have probably had this incident:</p>
+
+<p>A request timed out, the client retried, and suddenly the same business action happened twice.</p>
+
+<p>Maybe it was a double charge.
+Maybe it was two shipment labels.
+Maybe it was a monthly billing job that ran twice and required manual cleanup.</p>
+
+<p>None of that happens because the team forgot the definition of idempotency.
+It happens because idempotency was treated as an API trivia concept instead of a system design decision.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" alt="Two retry paths converging into a single committed transaction, representing idempotent processing in a distributed system." />
+  <figcaption>Retries are normal. Duplicate side effects are optional.</figcaption>
+</figure>
+
+<h2 id="what-it-means-in-practice">What idempotency means in practice</h2>
+
+<p>In plain engineering terms, idempotency means:</p>
+
+<p>You can submit the same intent more than once, and the system ends in the same business state as if it were processed once.</p>
+
+<p>Notice what that does not mean:</p>
+
+<ul>
+  <li>It does not mean identical logs.</li>
+  <li>It does not mean identical timestamps.</li>
+  <li>It does not mean no internal work happens on retries.</li>
+</ul>
+
+<p>RFC 9110 makes this distinction clearly for HTTP methods: idempotency is about the intended effect on the server state, not whether every side effect looks identical on each request.</p>
+
+<p>That distinction matters because teams often get stuck on the wrong question:
+“Can this code path ever run twice?”</p>
+
+<p>In distributed systems, it absolutely can.</p>
+
+<p>The better question is:
+“If it runs twice, does the business outcome stay correct?”</p>
+
+<p>That is idempotency in the only form that protects production systems.</p>
+
+<h2 id="retries-and-at-least-once">Why it matters for retries and at-least-once delivery</h2>
+
+<p>Retries are not edge cases. They are default behavior.</p>
+
+<ul>
+  <li>Clients retry when they hit timeouts.</li>
+  <li>SDKs retry on transient failures.</li>
+  <li>Message consumers reprocess when ack deadlines expire.</li>
+  <li>Job schedulers retry when workers crash.</li>
+</ul>
+
+<p>If your system is not idempotent, retries are a duplicate side-effect engine.</p>
+
+<p>Cloud messaging docs keep reinforcing the same practical reality:</p>
+
+<ul>
+  <li>Azure Service Bus duplicate detection exists because senders often cannot tell if the original send succeeded after failures.</li>
+  <li>Google Pub/Sub explicitly distinguishes valid redelivery from duplicates and still requires consumer-side discipline to avoid duplicate work.</li>
+</ul>
+
+<p>Translation for day-to-day architecture: delivery is often at-least-once, so processing must be safe-more-than-once.</p>
+
+<p>If your business operation requires exactly-once outcomes, you usually get there by combining:</p>
+
+<ol>
+  <li>At-least-once delivery.</li>
+  <li>Idempotent handlers.</li>
+  <li>Good state modeling.</li>
+</ol>
+
+<p>Not by wishing the network were perfect.</p>
+
+<h2 id="idempotent-http-endpoints">Designing idempotent HTTP endpoints</h2>
+
+<p>HTTP gives you some help, but only some.</p>
+
+<h3 id="natural-idempotency-use-resource-oriented-semantics">Natural idempotency: use resource-oriented semantics</h3>
+
+<p><code class="language-plaintext highlighter-rouge">PUT</code> and <code class="language-plaintext highlighter-rouge">DELETE</code> are defined as idempotent methods.</p>
+
+<p>When your operation can be expressed as:</p>
+
+<ul>
+  <li>“set this resource to this state” (<code class="language-plaintext highlighter-rouge">PUT</code>)</li>
+  <li>“remove this resource” (<code class="language-plaintext highlighter-rouge">DELETE</code>)</li>
+</ul>
+
+<p>you get a natural idempotency model.</p>
+
+<p>Example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">PUT /users/42/preferences/notifications</code></p>
+
+<p>If the request body is the same and you send it twice, the resulting user preference state should be identical.</p>
+
+<p>This is why state-replacement APIs often age better operationally than command-style APIs for mutable resources.</p>
+
+<h3 id="enforced-idempotency-make-post-safe-with-idempotency-keys">Enforced idempotency: make <code class="language-plaintext highlighter-rouge">POST</code> safe with idempotency keys</h3>
+
+<p>Real systems still need <code class="language-plaintext highlighter-rouge">POST</code> for operations like payment authorization, order placement, or workflow transitions.</p>
+
+<p>That is where idempotency keys become a design pattern, not a framework feature toggle.</p>
+
+<p>A robust pattern looks like this:</p>
+
+<ol>
+  <li>Client generates a unique idempotency key per business intent.</li>
+  <li>Server stores key + normalized request fingerprint + final response outcome.</li>
+  <li>First request executes and stores result atomically.</li>
+  <li>Retries with same key return stored result.</li>
+  <li>Retries with same key but different payload are rejected.</li>
+</ol>
+
+<p>Stripe documents this model explicitly: first result is stored and replayed for subsequent retries with the same key, and parameter mismatch is treated as misuse.</p>
+
+<p>A minimal C#-style sketch:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IResult</span><span class="p">&gt;</span> <span class="nf">CreatePayment</span><span class="p">(</span><span class="n">CreatePaymentRequest</span> <span class="n">request</span><span class="p">,</span> <span class="kt">string</span> <span class="n">idempotencyKey</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">existing</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">idempotencyKey</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">existing</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">existing</span><span class="p">.</span><span class="n">RequestHash</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Conflict</span><span class="p">(</span><span class="s">"Idempotency key reused with different payload."</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Json</span><span class="p">(</span><span class="n">existing</span><span class="p">.</span><span class="n">ResponseBody</span><span class="p">,</span> <span class="n">statusCode</span><span class="p">:</span> <span class="n">existing</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">using</span> <span class="nn">var</span> <span class="n">tx</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_db</span><span class="p">.</span><span class="nf">BeginTransactionAsync</span><span class="p">();</span>
+
+    <span class="kt">var</span> <span class="n">paymentResult</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_paymentService</span><span class="p">.</span><span class="nf">AuthorizeAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+
+    <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">SaveAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">IdempotencyRecord</span>
+    <span class="p">{</span>
+        <span class="n">Key</span> <span class="p">=</span> <span class="n">idempotencyKey</span><span class="p">,</span>
+        <span class="n">RequestHash</span> <span class="p">=</span> <span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
+        <span class="n">StatusCode</span> <span class="p">=</span> <span class="m">201</span><span class="p">,</span>
+        <span class="n">ResponseBody</span> <span class="p">=</span> <span class="n">paymentResult</span>
+    <span class="p">});</span>
+
+    <span class="k">await</span> <span class="n">tx</span><span class="p">.</span><span class="nf">CommitAsync</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Created</span><span class="p">(</span><span class="s">$"/payments/</span><span class="p">{</span><span class="n">paymentResult</span><span class="p">.</span><span class="n">PaymentId</span><span class="p">}</span><span class="s">"</span><span class="p">,</span> <span class="n">paymentResult</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The important part is not the specific framework. It is the atomicity boundary between business state change and key persistence.</p>
+
+<p>If those are not coordinated, retries can still slip through.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/idempotency-key-flow.svg" alt="Workflow showing first request persisting an idempotency key result and retries returning the stored response instead of repeating side effects." />
+  <figcaption>Idempotency keys turn uncertain retries into deterministic outcomes.</figcaption>
+</figure>
+
+<h2 id="idempotent-background-jobs">Designing idempotent background jobs and consumers</h2>
+
+<p>Background processing is where idempotency failures become expensive quickly.</p>
+
+<p>Teams often rely on queue semantics but skip handler semantics.</p>
+
+<p>Two practical patterns hold up well.</p>
+
+<h3 id="1-processed-events-table">1. Processed-events table</h3>
+
+<p>For each incoming message/event, store a stable message identity in a processed-events table with a uniqueness constraint.</p>
+
+<p>Handler flow:</p>
+
+<ol>
+  <li>Try to insert message identity.</li>
+  <li>If insert succeeds, continue business logic.</li>
+  <li>If insert fails due to uniqueness, treat as already processed and exit safely.</li>
+</ol>
+
+<p>This is simple, explainable, and auditable.</p>
+
+<h3 id="2-idempotent-state-transition-with-upsertmerge">2. Idempotent state transition with upsert/merge</h3>
+
+<p>If the operation is naturally a state set, model it as upsert with deterministic keys.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Instead of “add loyalty points delta repeatedly,” store a per-order points grant keyed by <code class="language-plaintext highlighter-rouge">order_id</code>.</li>
+  <li>Reprocessing same event updates the same record rather than creating a second grant.</li>
+</ul>
+
+<p>That one schema decision can eliminate entire classes of retry bugs.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/background-job-idempotency.svg" alt="Queue worker retries passing through a deduplication and processed-events check before producing a single committed outcome." />
+  <figcaption>At-least-once delivery is fine when the handler is designed for repeatability.</figcaption>
+</figure>
+
+<h2 id="natural-vs-enforced">Natural idempotency vs enforced idempotency</h2>
+
+<p>Both are useful. They solve different problems.</p>
+
+<h3 id="natural-idempotency">Natural idempotency</h3>
+
+<p>Best when:</p>
+
+<ul>
+  <li>operation is a pure state assignment</li>
+  <li>resource identity is stable and known</li>
+  <li>domain semantics fit <code class="language-plaintext highlighter-rouge">PUT</code>/<code class="language-plaintext highlighter-rouge">DELETE</code></li>
+</ul>
+
+<p>Tradeoffs:</p>
+
+<ul>
+  <li>not every business action maps cleanly to state replacement</li>
+  <li>may require API redesign if current model is command-driven</li>
+</ul>
+
+<h3 id="enforced-idempotency">Enforced idempotency</h3>
+
+<p>Best when:</p>
+
+<ul>
+  <li>operation is command-like (<code class="language-plaintext highlighter-rouge">POST /payments</code>, <code class="language-plaintext highlighter-rouge">POST /orders</code>)</li>
+  <li>retries are likely and expensive to mishandle</li>
+  <li>clients can generate stable operation keys</li>
+</ul>
+
+<p>Tradeoffs:</p>
+
+<ul>
+  <li>requires key storage lifecycle and TTL policy</li>
+  <li>needs payload consistency checks</li>
+  <li>can become a false safety blanket if atomic boundaries are weak</li>
+</ul>
+
+<p>A good rule:</p>
+
+<p>Use natural idempotency where your domain allows it.
+Use enforced idempotency where your business operations are inherently command-shaped.</p>
+
+<h2 id="payment-example">Concrete example: payment processing</h2>
+
+<p>Suppose checkout calls <code class="language-plaintext highlighter-rouge">POST /payments</code>.</p>
+
+<p>Without idempotency key:</p>
+
+<ul>
+  <li>client times out after payment processor call succeeds</li>
+  <li>client retries</li>
+  <li>second charge attempts, often with ugly reconciliation work</li>
+</ul>
+
+<p>With idempotency key keyed to checkout attempt:</p>
+
+<ul>
+  <li>first call processes and stores result</li>
+  <li>timeout still happens</li>
+  <li>retry returns original payment outcome</li>
+  <li>customer gets one charge, not a support ticket</li>
+</ul>
+
+<p>This is exactly the class of failure idempotency keys are designed to absorb.</p>
+
+<h2 id="job-scheduling-example">Concrete example: job scheduling</h2>
+
+<p>Suppose a scheduler emits <code class="language-plaintext highlighter-rouge">GenerateInvoice(accountId, period)</code>.</p>
+
+<p>Without idempotency:</p>
+
+<ul>
+  <li>worker crash after DB write but before ack</li>
+  <li>message redelivered</li>
+  <li>second invoice generated for same period</li>
+</ul>
+
+<p>With idempotent design:</p>
+
+<ul>
+  <li>invoice uniqueness constraint on <code class="language-plaintext highlighter-rouge">(account_id, billing_period)</code></li>
+  <li>handler performs upsert or checks existence before create</li>
+  <li>redelivery observes existing invoice and exits safely</li>
+</ul>
+
+<p>No heroics. Just deliberate state modeling.</p>
+
+<h2 id="implementation-checklist">A practical implementation checklist</h2>
+
+<p>If you want this to stick beyond one postmortem, standardize these decisions:</p>
+
+<ol>
+  <li>Define idempotency scope per operation.</li>
+</ol>
+
+<ul>
+  <li>Per API request?</li>
+  <li>Per business entity?</li>
+  <li>Per workflow step?</li>
+</ul>
+
+<ol>
+  <li>Define operation identity.</li>
+</ol>
+
+<ul>
+  <li>Client key?</li>
+  <li>Domain key composite?</li>
+  <li>Message ID + business partition key?</li>
+</ul>
+
+<ol>
+  <li>Define persistence contract.</li>
+</ol>
+
+<ul>
+  <li>Where is idempotency state stored?</li>
+  <li>What is TTL?</li>
+  <li>How are mismatched payload retries handled?</li>
+</ul>
+
+<ol>
+  <li>Define atomic boundary.</li>
+</ol>
+
+<ul>
+  <li>Can business side effect and idempotency record commit together?</li>
+  <li>If not, what is the failure mode?</li>
+</ul>
+
+<ol>
+  <li>Define observability.</li>
+</ol>
+
+<ul>
+  <li>Metric: idempotency hits vs misses</li>
+  <li>Metric: key collisions with payload mismatch</li>
+  <li>Trace annotation for retry paths</li>
+</ul>
+
+<ol>
+  <li>Define operational policy.</li>
+</ol>
+
+<ul>
+  <li>Which endpoints require keys?</li>
+  <li>Which consumers require processed-event checks?</li>
+  <li>What is the incident response for duplicate side effects?</li>
+</ul>
+
+<p>This turns idempotency from “team folklore” into engineering policy.</p>
+
+<h2 id="bottom-line">Bottom line</h2>
+
+<p>Idempotency is one of the cheapest reliability multipliers in distributed systems.</p>
+
+<p>It is not glamorous work, but it is exactly the kind of design discipline that prevents customer-facing incidents when retries, redeliveries, and partial failures inevitably happen.</p>
+
+<p>If your system currently depends on requests being processed exactly once by luck, you do not have a reliability strategy yet.</p>
+
+<p>If this is on your backlog, start with one operation where duplicate side effects are painful, implement an explicit idempotency contract, and measure retry outcomes for one sprint. That single change often pays for itself immediately.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical senior-engineer guide to idempotency in distributed systems: retries, at-least-once delivery, idempotency keys, HTTP endpoint design, background job safety, and real tradeoffs.</p>
+
+<p><strong>SEO keywords:</strong></p>
+<ul>
+  <li>idempotency in distributed systems</li>
+  <li>idempotency keys API design</li>
+  <li>retries and at least once delivery</li>
+  <li>idempotent background job patterns</li>
+  <li>payment API duplicate prevention</li>
+</ul>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI adoption challenges chart">
+  <rect x="0" y="0" width="760" height="420" rx="24" fill="#0f172a"/>
+  <text x="34" y="44" fill="#e2e8f0" font-size="24" font-weight="700">The hard part is not access — it is execution quality</text>
+  <text x="34" y="72" fill="#94a3b8" font-size="15">IBM on common AI adoption challenges</text>
+  <g fill="#cbd5e1" font-size="16">
+    <text x="36" y="140">Accuracy or bias concerns</text>
+    <text x="36" y="220">Not enough proprietary data</text>
+    <text x="36" y="300">Not enough gen AI expertise</text>
+  </g>
+  <g>
+    <rect x="330" y="115" width="340" height="34" rx="17" fill="#152238"/>
+    <rect x="330" y="115" width="153" height="34" rx="17" fill="#38bdf8"/>
+    <text x="496" y="138" fill="#e0f2fe" font-size="17" font-weight="700">45%</text>
+
+    <rect x="330" y="195" width="340" height="34" rx="17" fill="#152238"/>
+    <rect x="330" y="195" width="143" height="34" rx="17" fill="#5eead4"/>
+    <text x="486" y="218" fill="#ecfeff" font-size="17" font-weight="700">42%</text>
+
+    <rect x="330" y="275" width="340" height="34" rx="17" fill="#152238"/>
+    <rect x="330" y="275" width="143" height="34" rx="17" fill="#a78bfa"/>
+    <text x="486" y="298" fill="#f5f3ff" font-size="17" font-weight="700">42%</text>
+  </g>
+  <rect x="40" y="338" width="680" height="48" rx="16" fill="#111c33" stroke="#22314e"/>
+  <text x="60" y="368" fill="#cbd5e1" font-size="14">Translation for engineering teams: guardrails, clean data, and operational discipline matter more than flashy demos.</text>
+</svg>

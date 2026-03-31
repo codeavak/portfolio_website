@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C# Nullable Reference Types: Real Discipline vs Annotation Theater | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-03-27T13:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="csharp" />
+      
+        <meta property="article:tag" content="nullable reference types" />
+      
+        <meta property="article:tag" content="dotnet" />
+      
+        <meta property="article:tag" content="code quality" />
+      
+        <meta property="article:tag" content="domain design" />
+      
+    
+    <meta property="og:title" content="C# Nullable Reference Types: Real Discipline vs Annotation Theater" />
+    <meta property="og:description" content="Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="C# Nullable Reference Types: Real Discipline vs Annotation Theater" />
+    <meta name="twitter:description" content="Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C# Nullable Reference Types: Real Discipline vs Annotation Theater",
+        "description": "Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-03-27T13:00:00+00:00",
+        "dateModified": "2026-03-27T13:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">Software Engineering • C# • .NET</div>
+              
+              <time class="post-date" datetime="2026-03-27T13:00:00+00:00">March 27, 2026</time>
+              <h1 class="post-title">C# Nullable Reference Types: Real Discipline vs Annotation Theater</h1>
+              
+                <p class="post-dek">Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">csharp</span>
+                  
+                    <span class="chip">nullable reference types</span>
+                  
+                    <span class="chip">dotnet</span>
+                  
+                    <span class="chip">code quality</span>
+                  
+                    <span class="chip">domain design</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Most teams followed the same script after upgrading to .NET 6 or later. They opened the project file, set <code class="language-plaintext highlighter-rouge">&lt;Nullable&gt;enable&lt;/Nullable&gt;</code>, and watched the compiler light up with hundreds of warnings. Then, under deadline pressure, they plastered <code class="language-plaintext highlighter-rouge">= null!</code> and <code class="language-plaintext highlighter-rouge">!</code> operators across the codebase until the warnings went away.</p>
+
+<p>The feature was technically enabled. The warnings were technically resolved. The actual null-safety was largely unchanged.</p>
+
+<p>That is annotation theater: the visual appearance of discipline without the underlying design.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" alt="Code diagram contrasting null-forgiving operator suppression with disciplined nullable design in C#." />
+  <figcaption>Enabling the feature and silencing the warnings are two different things.</figcaption>
+</figure>
+
+<h2 id="what-nrts-give-you">What nullable reference types actually give you</h2>
+
+<p>Nullable reference types are a static analysis contract, not a runtime enforcement mechanism. The compiler tracks nullability through your code and tells you where you have made a promise you cannot keep.</p>
+
+<p>When you declare <code class="language-plaintext highlighter-rouge">string Name</code>, you are telling the compiler — and every developer who reads that code — that <code class="language-plaintext highlighter-rouge">Name</code> will never be null. When you declare <code class="language-plaintext highlighter-rouge">string? Description</code>, you are acknowledging that absence is a legitimate state for that value. That is useful information encoded in the type system, where it cannot go stale the way a comment can.</p>
+
+<p>The concrete benefits are real when you use the feature with intent:</p>
+
+<ul>
+  <li><strong>API boundaries become honest.</strong> A method signature of <code class="language-plaintext highlighter-rouge">Customer? FindById(int id)</code> communicates that the caller must handle the not-found case. The compiler enforces that they do.</li>
+  <li><strong>Flow analysis catches real mistakes.</strong> Branching on null, reassigning a nullable to a non-nullable without checking, returning null from a method declared to return a non-nullable — the compiler finds these before the runtime does.</li>
+  <li><strong>The type annotation is documentation that compiles.</strong> In a <code class="language-plaintext highlighter-rouge">string Name</code> property on a domain entity, the non-nullability is a domain assertion. That entity does not exist in a valid state without a name.</li>
+</ul>
+
+<p>The key word is intent. The compiler is only as useful as the meaning you put behind your annotations.</p>
+
+<h2 id="null-forgiving-theater">Why null-forgiving operators defeat the purpose</h2>
+
+<p>The null-forgiving operator <code class="language-plaintext highlighter-rouge">!</code> tells the compiler: “I know you’re uncertain about this, but trust me.” The compiler stops warning you. Nothing else changes.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This compiles cleanly with no warnings.</span>
+<span class="c1">// It will throw a NullReferenceException at runtime if Name was never assigned.</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">= null!</code> is not an idiom for “I’ll fill this in later.” It is a suppression. You have removed the warning without resolving the condition that triggered it. The object can now be constructed with no name and no email, and the compiler will not tell you until the production exception report does.</p>
+
+<p>The same problem appears in method bodies:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">SendWelcome</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// The compiler is satisfied. The runtime is not impressed.</span>
+    <span class="kt">var</span> <span class="n">greeting</span> <span class="p">=</span> <span class="s">"Welcome, "</span> <span class="p">+</span> <span class="n">_customer</span><span class="p">.</span><span class="n">Name</span><span class="p">!.</span><span class="nf">ToUpper</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sprinkling <code class="language-plaintext highlighter-rouge">!</code> throughout a codebase is a way of accumulating technical debt that looks like it has been paid off. Every suppressed warning is a decision deferred to production.</p>
+
+<h2 id="code-comparison">Wrong vs right: a direct comparison</h2>
+
+<p>The wrong approach treats nullability annotations as a migration tax to be minimized:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong: annotations silenced, design unchanged</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">!.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_emailService</span><span class="p">!.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">!);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Every <code class="language-plaintext highlighter-rouge">!</code> here is a deferred null check. The constructor never ran. The dependencies might be null. The method body checks <code class="language-plaintext highlighter-rouge">order != null</code> but trusts <code class="language-plaintext highlighter-rouge">CustomerEmail</code> unconditionally.</p>
+
+<p>The right approach uses constructor injection to establish validity at creation:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Right: validity guaranteed at construction</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">OrderService</span><span class="p">(</span><span class="n">IOrderRepository</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IEmailService</span> <span class="n">emailService</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_repository</span> <span class="p">=</span> <span class="n">repository</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">repository</span><span class="p">));</span>
+        <span class="n">_emailService</span> <span class="p">=</span> <span class="n">emailService</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">emailService</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+        <span class="n">_emailService</span><span class="p">.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>No <code class="language-plaintext highlighter-rouge">!</code> operators. No <code class="language-plaintext highlighter-rouge">null!</code> initializers. The compiler is satisfied because the design is correct, not because the analysis was suppressed. If a caller passes a null dependency, they get an <code class="language-plaintext highlighter-rouge">ArgumentNullException</code> immediately at the injection site — the clearest possible signal.</p>
+
+<h2 id="constructor-injection">Constructor injection: validity at creation</h2>
+
+<p>The principle behind the right approach is simple. An object should either exist in a valid state or not exist at all. If a class requires non-null collaborators to function, enforce that at construction.</p>
+
+<p>This works equally well with record types:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The compiler guarantees Name and Email are non-null everywhere this is used.</span>
+<span class="k">public</span> <span class="k">record</span> <span class="nc">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">Email</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Records are particularly well-suited here. Their concise syntax and immutability combine naturally with the non-nullability contract. A <code class="language-plaintext highlighter-rouge">Customer</code> record is always a <code class="language-plaintext highlighter-rouge">Customer</code> with a real name and a real email. There is no half-constructed state.</p>
+
+<p>For mutable entities, the <code class="language-plaintext highlighter-rouge">required</code> keyword introduced in C# 11 provides similar guarantees without requiring a constructor argument for every property:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">ShippingAddress</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">Street</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">City</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Apartment</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>  <span class="c1">// legitimately optional</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">required</code> properties must be set in object initializers. The compiler enforces it. <code class="language-plaintext highlighter-rouge">Apartment</code> is <code class="language-plaintext highlighter-rouge">string?</code> because a shipping address genuinely might not have one — that is an honest modeling choice, not a suppression.</p>
+
+<h2 id="factory-methods">Factory methods: honest creation that can fail</h2>
+
+<p>Constructor injection works well when you control the inputs. When creation might fail — for example, when parsing external data — factory methods let you be explicit about the uncertainty:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">private</span> <span class="nf">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">email</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Customer</span><span class="p">?</span> <span class="nf">TryCreate</span><span class="p">(</span><span class="kt">string</span><span class="p">?</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span><span class="p">?</span> <span class="n">email</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">email</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The private constructor means no partially valid <code class="language-plaintext highlighter-rouge">Customer</code> can exist. <code class="language-plaintext highlighter-rouge">TryCreate</code> returns <code class="language-plaintext highlighter-rouge">Customer?</code>, which forces callers to handle the failure case. The <code class="language-plaintext highlighter-rouge">!</code> operator never appears because the <code class="language-plaintext highlighter-rouge">null</code> check happens before the construction — there is nothing to suppress.</p>
+
+<p>The caller receives a clear contract:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">.</span><span class="nf">TryCreate</span><span class="p">(</span><span class="n">nameInput</span><span class="p">,</span> <span class="n">emailInput</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">customer</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nf">ValidationProblem</span><span class="p">(</span><span class="s">"Name and email are required."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// customer is non-null here, and the compiler knows it</span>
+</code></pre></div></div>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/design-patterns.svg" alt="Diagram showing three paths: constructor injection for required dependencies, factory methods for conditional creation, and Result types for explicit error propagation." />
+  <figcaption>Three patterns that design null out rather than around it.</figcaption>
+</figure>
+
+<h2 id="option-result-types">Option and Result types: modeling absence explicitly</h2>
+
+<p>For cases where <code class="language-plaintext highlighter-rouge">null</code> and “not found” and “failed validation” are conceptually distinct — and conflating them would lose information — Result and Option types give you richer vocabulary.</p>
+
+<p>A simple Result type:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">readonly</span> <span class="k">record</span> <span class="nc">struct</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsSuccess</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">T</span><span class="p">?</span> <span class="n">Value</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Error</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> <span class="n">Error</span> <span class="p">=</span> <span class="n">error</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Success</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Failure</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="n">error</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Usage communicates intent clearly:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;</span> <span class="nf">RegisterCustomer</span><span class="p">(</span><span class="n">RegistrationRequest</span> <span class="n">request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Name is required."</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(!</span><span class="nf">IsValidEmail</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Email address is not valid."</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
+    <span class="n">_repository</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Success</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The caller gets a <code class="language-plaintext highlighter-rouge">Result&lt;Customer&gt;</code>. They cannot accidentally treat the value as valid without checking <code class="language-plaintext highlighter-rouge">IsSuccess</code>. There is no null, no exception for a control flow decision, and no ambiguity between “customer not found” and “customer invalid.”</p>
+
+<p>Libraries like <code class="language-plaintext highlighter-rouge">CSharpFunctionalExtensions</code> offer production-ready implementations of this pattern with monadic chaining if you want richer composition. The concept scales whether you roll your own or bring in a library.</p>
+
+<h2 id="design-question">The design question to ask instead</h2>
+
+<p>The pattern becomes clearer once you shift from “how do I handle null here?” to “why could this be null in the first place?”</p>
+
+<p>When the answer is “because this field is genuinely optional in the domain,” then <code class="language-plaintext highlighter-rouge">string?</code> is correct and deliberate. A product description might be optional. A middle name might be optional. A secondary email might be optional.</p>
+
+<p>When the answer is “because the object just hasn’t been initialized yet” or “because we haven’t wired up the tests properly,” that is not a nullable type problem. That is a design problem wearing a type system mask.</p>
+
+<div class="post-note">
+  <strong>The practical test:</strong> if you cannot explain in one sentence why a field is nullable in terms of the domain — not in terms of the code — it probably should not be nullable. It should be required, or it should not exist until the object is in the state where it is meaningful.
+</div>
+
+<h2 id="warnings-as-signals">Treat warnings as design signals</h2>
+
+<p>When the compiler warns you about a potential null dereference, it is not being pedantic. It is telling you that your type annotations do not match your code’s behavior, which means either the annotations are wrong or the code is wrong. Either way, there is a discrepancy worth understanding.</p>
+
+<p>The discipline is straightforward:</p>
+
+<ul>
+  <li>If a warning indicates a property that should always be non-null, fix the construction path so the compiler can verify it.</li>
+  <li>If a warning indicates a genuinely nullable value, handle the null case explicitly until the compiler can prove the path is safe.</li>
+  <li>If you reach for <code class="language-plaintext highlighter-rouge">!</code> or <code class="language-plaintext highlighter-rouge">= null!</code>, treat it as a code smell requiring a comment explaining why the suppression is justified — and plan to remove it.</li>
+</ul>
+
+<p>That last constraint is a useful forcing function. Requiring an explanation for every suppression is how you distinguish the legitimate uses — interop with uninitialized reflection, legacy migration paths, tests scaffolded for brevity — from the habitual ones.</p>
+
+<p>Teams that do this consistently find that the feature pays off. Not because null becomes impossible, but because the points where null is possible are explicit, visible, and deliberate. The type system carries the documentation, and the analysis enforces it.</p>
+
+<p>That is what the feature was designed to do. The annotation theater version just makes the warnings go quiet.</p>
+
+<hr />
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

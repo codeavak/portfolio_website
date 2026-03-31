@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic Workflows Without Chaos | Johnny Avakian Portfolio</title>
+    <meta name="description" content="A long-form guide to AI and agentic workflows from a senior engineer perspective: where they create real value, where they create risk, and how to design them responsibly." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/agentic-workflows/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agentic Workflows Without Chaos" />
+    <meta property="og:description" content="A long-form guide to AI and agentic workflows from a senior engineer perspective: where they create real value, where they create risk, and how to design them responsibly." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/agentic-workflows/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/agentic-workflows/social.png" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agentic Workflows Without Chaos" />
+    <meta name="twitter:description" content="A long-form guide to AI and agentic workflows from a senior engineer perspective: where they create real value, where they create risk, and how to design them responsibly." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/agentic-workflows/social.png" />
+    
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <main class="container blog-content"> <header class="hero">
+    <div class="container">
+      <div class="eyebrow">AI in development • engineering judgment • secure systems</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Agentic Workflows Without Chaos</h1>
+          <p class="lead">The interesting shift in software engineering is not "AI can write code." It is that AI can now retrieve context, use tools, coordinate steps, and help move work across a workflow. That creates real leverage. It also creates new failure modes. The question is no longer whether teams will use AI. It is whether they will use it with enough judgment to keep the system reliable, secure, and worth trusting.</p>
+          <div class="author-row">
+            <div class="chip">Senior engineer perspective</div>
+            <div class="chip">Security-minded design</div>
+            <div class="chip">Updated for 2026</div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/hero-inline-duplicate.png" alt="Agentic workflow complexity spectrum" />
+        </div>
+        </div>
+      </div>
+    &lt;/div&gt;
+  </header>
+
+<div class="container">
+    <article>
+      <section id="signal">
+        <h2>The signal vs the noise</h2>
+        <p>AI adoption is accelerating. McKinsey’s latest global survey found that 55% of organizations have adopted AI in at least one business function, up from 20% in 2017.<sup><a href="#ref-1">1</a></sup> Stack Overflow’s 2025 developer survey shows 92% of developers using AI tools in their work, with 46% using them daily for professional tasks.<sup><a href="#ref-2">2</a></sup></p>
+        <p>But the trust gap is real. The same survey found that 58% of developers do not trust AI output accuracy, and 49% do not trust it for security-sensitive tasks.<sup><a href="#ref-3">3</a></sup> That is not a technology problem. It is a workflow problem.</p>
+        <p>The challenge is not whether AI can be useful. It is whether teams can integrate it into their processes without creating more chaos, cost, or risk. The most promising path forward is not more AI everywhere. It is agentic workflows: AI systems that can retrieve context, use tools, coordinate steps, and help move work across a process.</p>
+        <p>But agentic workflows are not a silver bullet. They introduce new failure modes, governance challenges, and security considerations that teams often underestimate. The question is not whether to use them. It is how to use them with enough judgment to keep systems reliable, secure, and worth trusting.</p>
+      </section>
+
+      <section id="definition">
+        <h2>What agentic workflow means</h2>
+        <p>Google Cloud defines agentic AI as "AI systems that can autonomously perform tasks, make decisions, and take actions to achieve goals."<sup><a href="#ref-4">4</a></sup> That is a good starting point, but it leaves out the workflow part. Agentic workflows are not just autonomous AI. They are AI systems embedded in structured processes that coordinate with humans, tools, and other systems.</p>
+        <p>The key difference from simpler AI use is the combination of autonomy and coordination. An agentic workflow can:</p>
+        <ul>
+          <li><strong>Retrieve context</strong> from documents, tickets, code, or databases</li>
+          <li><strong>Use tools</strong> to execute actions like running queries, calling APIs, or updating records</li>
+          <li><strong>Coordinate steps</strong> across a process, deciding what to do next based on results</li>
+          <li><strong>Loop until completion</strong> rather than producing a single output</li>
+        </ul>
+        <p>That creates leverage. It also creates risk. The complexity spectrum looks like this:</p>
+
+        <div class="visual">
+          <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/complexity-spectrum.png" alt="Agentic workflow complexity spectrum" />
+        </div>
+
+        <p>Anthropic’s guidance is one of the clearest statements I have seen on this. After working with teams building real systems, they argue that the most successful implementations tend to use simple, composable patterns rather than complex frameworks.<sup><a href="#ref-5">5</a></sup> That feels right. Most workflow problems are not improved by unnecessary autonomy. They are improved by clarity, constraint, and good handoffs.</p>
+      </section>
+
+      <section id="why-engineers">
+        <h2>Why senior engineers should care</h2>
+        <p>Agentic workflows are not just another productivity add-on. They force engineers to think more explicitly about workflow boundaries. Once an AI system can touch context, tools, and downstream actions, software quality depends on decisions that used to be hidden inside human judgment.</p>
+        <p>That changes the role of the engineer in a few important ways.</p>
+
+        <div class="two-col">
+          <div class="callout">
+            <strong>We have to design for decision quality, not just output quality.</strong>
+            A sentence can look polished and still be wrong. A plan can sound reasonable and still be poorly scoped. When AI participates in work, the system needs ways to catch plausible nonsense before it reaches production, customers, or leadership.
+          </div>
+          <div class="callout">
+            <strong>We have to think in workflows, not isolated prompts.</strong>
+            Good systems rarely fail because one answer was imperfect. They fail because context was weak, permissions were too broad, logging was poor, or there was no review step when it actually mattered.
+          </div>
+          <div class="callout">
+            <strong>We have to think more clearly about blast radius.</strong>
+            An assistant that drafts a summary is one thing. An agent that can update tickets, modify records, call external APIs, or open pull requests is another. The technical shape of risk changes with every added tool.
+          </div>
+          <div class="callout">
+            <strong>We have to preserve credibility.</strong>
+            Teams lose trust quickly when AI systems make confident mistakes, expose data, create work that still needs to be re-done manually. Long-term adoption depends on reliability more than novelty.
+          </div>
+        </div>
+
+        <p>That is why this topic fits experienced engineers especially well. Seniority is less about knowing more syntax and more about making better tradeoffs under real constraints. Agentic systems reward that kind of judgment.</p>
+      </section>
+
+      <section id="design">
+        <h2>How to design agentic workflows that are actually useful</h2>
+        <h3>1) Start lower on the complexity ladder than you want to</h3>
+        <p>Microsoft’s current guidance is refreshingly blunt: if you can write a function to handle the task, do that instead of using an AI agent. Use an agent when the task is open-ended or conversational; use a workflow when the process has well-defined steps.<sup><a href="#ref-6">6</a></sup> That is a good default because orchestration introduces cost, latency, nondeterminism, and more places to hide failure.</p>
+
+        <h3>2) Give the system narrow tools with explicit scope</h3>
+        <p>Tool access is where agentic workflows become genuinely powerful and genuinely risky. The tool layer should reflect the same discipline you would apply to any production integration: least privilege, scoped access, auditable calls, reversible actions where possible, and clear contracts for what success and failure look like.</p>
+
+        <h3>3) Separate read actions from write actions</h3>
+        <p>Read access often creates value quickly: search docs, retrieve ticket context, summarize change sets, compare versions, inspect logs. Write access is where you need stronger control. Drafting a pull request is safer than merging one. Drafting a customer response is safer than sending it. Creating a remediation plan is safer than executing it.</p>
+
+        <h3>4) Design for human approval on high-impact steps</h3>
+        <p>Human-in-the-loop is not a sign that the system failed. In many cases it is what makes the system production-worthy. Microsoft’s orchestration guidance explicitly includes human involvement in patterns such as review loops, reviewers, and approval gates.<sup><a href="#ref-7">7</a></sup> The mistake is treating human review as an afterthought rather than a first-class part of the workflow.</p>
+
+        <h3>5) Optimize for evaluation, not just demos</h3>
+        <p>OpenAI’s current guidance for building agents recommends focusing first on accuracy targets, then optimizing for cost and latency, and keeping prompts and components flexible rather than multiplying complexity too early.<sup><a href="#ref-8">8</a></sup> Teams often do the reverse: they celebrate the initial demo, then discover too late that the workflow is brittle, expensive, and difficult to measure.</p>
+
+        <div class="visual">
+          <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/security-minded-workflow.png" alt="Secure agentic workflow architecture" />
+        </div>
+
+        <p>Put differently: an agentic system is only as good as the discipline around it. Better prompts help. Better workflow design matters more.</p>
+      </section>
+
+      <section id="security">
+        <h2>What security-minded teams need to keep front and center</h2>
+        <p>As soon as AI systems start touching enterprise data, code, or tools, security is not a separate concern. It becomes part of the application design itself.</p>
+        <p>NIST’s Generative AI Profile is useful here because it frames risk management as a set of practical actions organizations can align to their goals and priorities.<sup><a href="#ref-9">9</a></sup> OWASP’s work is equally important because it keeps attention on concrete failure modes in real systems. Their LLM guidance highlights prompt injection, insecure output handling, training data poisoning, model denial of service, and supply-chain vulnerabilities among the leading risks for LLM applications.<sup><a href="#ref-10">10</a></sup></p>
+
+        <div class="visual">
+          <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/adoption-challenges.png" alt="AI adoption challenges chart" />
+        </div>
+
+        <p>For working engineers, that translates into a few non-negotiables:</p>
+        <div class="bullets">
+          <div><strong>Validate outputs before using them downstream.</strong> If AI output can trigger code execution, database writes, or customer-facing actions, treat it like untrusted input.</div>
+          <div><strong>Constrain context.</strong> Do not give an agent unrestricted access to every repo, document, or system "just in case." Good retrieval is selective.</div>
+          <div><strong>Log the workflow, not just the final answer.</strong> You want visibility into what the system retrieved, which tools it used, what it attempted, where it stopped, and why.</div>
+          <div><strong>Design for rollback and review.</strong> Safe systems assume some outputs will be wrong and make recovery easy.</div>
+          <div><strong>Protect data boundaries.</strong> Third-party agent ecosystems, connectors, and tool servers make governance and data flow questions more important, not less.</div>
+        </div>
+
+        <p>This is also where a security-minded engineering background becomes an advantage. People who have already internalized least privilege, secure defaults, validation, and observability tend to reason about AI systems more clearly than teams approaching them only as convenience features.</p>
+      </section>
+
+      <section id="use-cases">
+        <h2>Where agentic workflows create real value</h2>
+        <p>The best use cases are usually not the loudest ones. They sit in the middle ground: work that is repetitive enough to benefit from automation, messy enough to benefit from language, and important enough that better context and structure save time every week.</p>
+
+        <h3>Good places to start</h3>
+        <div class="bullets">
+          <div><strong>Engineering knowledge retrieval:</strong> assemble architecture notes, ticket history, incident context, and documentation before a human makes the final call.</div>
+          <div><strong>PR and change review support:</strong> summarize change intent, identify impacted components, draft test gaps, flag security review questions.</div>
+          <div><strong>Runbook and incident workflow support:</strong> gather evidence, compare current signals against known runbooks, draft next-step recommendations for an operator.</div>
+          <div><strong>Application security assistance:</strong> triage findings, map issues to likely remediation paths, draft risk summaries for engineers and leadership.</div>
+          <div><strong>Internal coordination:</strong> convert messy requests into structured work items, draft implementation plans, or generate stakeholder-ready summaries from engineering work.</div>
+        </div>
+
+        <h3>Places to be more cautious</h3>
+        <div class="bullets">
+          <div><strong>Unsupervised production changes</strong> with broad permissions.</div>
+          <div><strong>High-stakes customer communication</strong> without review, especially in regulated or sensitive contexts.</div>
+          <div><strong>Security decisions that require ambiguous tradeoffs</strong> where the model can sound certain without understanding the local reality.</div>
+          <div><strong>Multi-agent systems created mainly because they look advanced</strong> rather than because specialization clearly pays for complexity.</div>
+        </div>
+
+        <p>Microsoft’s architecture guidance explicitly warns against unnecessary coordination complexity and recommends using the lowest level of complexity that reliably meets your needs.<sup><a href="#ref-7">7</a></sup> That advice should probably be posted next to every whiteboard where someone is drawing a six-agent workflow because it feels modern.</p>
+      </section>
+
+      <section id="current">
+        <h2>What feels current right now</h2>
+        <p>A few developments make this moment different from the earlier "prompt engineering everywhere" phase.</p>
+        <p><strong>First, the tooling ecosystem is maturing.</strong> Microsoft’s Agent Framework now brings explicit workflow control, state management, and human-in-the-loop support for long-running and multi-agent scenarios, even while it remains in public preview.<sup><a href="#ref-11">11</a></sup> Google positions Vertex AI Agent Builder around building, scaling, and governing enterprise-grade agents grounded in enterprise data, with orchestration controls and managed runtime support.<sup><a href="#ref-12">12</a></sup></p>
+        <p><strong>Second, the design conversation is getting less naive.</strong> OpenAI’s published guide distinguishes between manager-style and decentralized multi-agent patterns and emphasizes clear prompts, composability, and practical evaluation over framework worship.<sup><a href="#ref-8">8</a></sup> Anthropic makes a parallel case for simpler patterns and careful context design.<sup><a href="#ref-5">5</a></sup></p>
+        <p><strong>Third, market demand is forcing the issue.</strong> Developers are already using AI tools at scale, organizations are embedding AI in more business functions, and the core challenge is shifting from "whether to adopt" to "how to do it without losing trust."<sup><a href="#ref-1">1</a></sup><sup><a href="#ref-2">2</a></sup></p>
+        <p>That combination matters. It means thoughtful teams have an opening to build useful systems before the patterns become stale and over-standardized. But it also means bad patterns can spread quickly if teams optimize for optics instead of engineering quality.</p>
+      </section>
+
+      <section id="leaders">
+        <h2>What this means for modern engineers and leaders</h2>
+        <p>If I had to reduce this entire topic to a handful of practical questions, they would be these:</p>
+        <div class="bullets">
+          <div><strong>What is the smallest unit of useful automation here?</strong></div>
+          <div><strong>What context does the system truly need, and what context should it never see?</strong></div>
+          <div><strong>Which steps are safe to automate, which steps should stay deterministic, and which require human approval?</strong></div>
+          <div><strong>How will we evaluate quality over time, not just during the launch demo?</strong></div>
+          <div><strong>If the workflow fails in a believable way, how quickly will we detect it?</strong></div>
+        </div>
+
+        <p>Those questions are not glamorous. They are also the difference between something impressive for a week and something valuable for a year.</p>
+
+        <div class="visual">
+          <img src="/portfolio_website/assets/generated/2026/03/agentic-workflows/maturity-model.png" alt="Agentic maturity model" />
+        </div>
+
+        <p>There is also a broader career implication here. Engineers who can connect AI capability to workflow design, system reliability, security boundaries, and business credibility will become much more useful than engineers who only know how to generate clever outputs. The durable skill is judgment.</p>
+      </section>
+
+      <section id="conclusion">
+        <h2>Final thought</h2>
+        <p>Agentic workflows deserve serious attention, but not because they sound futuristic. They deserve attention because they expose a deeper engineering truth: the value of AI is rarely in the answer alone. It is in how well the answer fits the workflow, how safely it can be acted on, and how much trust the surrounding system earns over time.</p>
+        <p>That is why I keep coming back to the same principle: build the simplest thing that is reliably useful. Then add autonomy only when the evidence justifies it.</p>
+        <p>For teams willing to take that approach, AI becomes less of a spectacle and more of what good engineering always tries to deliver — clearer systems, better leverage, and fewer avoidable mistakes.</p>
+        <p class="note">If this is the direction your team is exploring, this is also a good moment to sharpen both AI skills and cyber skills together. The future winners here will not just automate more work. They will automate it responsibly.</p>
+      </section>
+
+      <section id="references">
+        <h2>Research sources</h2>
+        <div class="refs">
+          <div class="ref-item" id="ref-1"><strong>1. McKinsey — The State of AI: Global Survey</strong><span>Used for organization-level AI adoption and regular generative AI use.</span><a href="#ref-1">View source</a></div>
+          <div class="ref-item" id="ref-2"><strong>2. Stack Overflow — 2025 Developer Survey (AI)</strong><span>Used for developer AI usage and daily professional use statistics.</span><a href="#ref-2">View source</a></div>
+          <div class="ref-item" id="ref-3"><strong>3. Stack Overflow press release — trust in AI output</strong><span>Used for the share of developers who do not trust output accuracy.</span><a href="#ref-3">View source</a></div>
+          <div class="ref-item" id="ref-4"><strong>4. Google Cloud — What is agentic AI?</strong><span>Used for a practical working definition of agentic AI.</span><a href="#ref-4">View source</a></div>
+          <div class="ref-item" id="ref-5"><strong>5. Anthropic — Building Effective AI Agents</strong><span>Used for the principle that simple, composable patterns often outperform unnecessary complexity.</span><a href="#ref-5">View source</a></div>
+          <div class="ref-item" id="ref-6"><strong>6. Microsoft Agent Framework Overview</strong><span>Used for guidance on when to use agents versus workflows.</span><a href="#ref-6">View source</a></div>
+          <div class="ref-item" id="ref-7"><strong>7. Microsoft Azure Architecture Center — AI agent orchestration patterns</strong><span>Used for complexity guidance, orchestration tradeoffs, human-in-the-loop, and common pitfalls.</span><a href="#ref-7">View source</a></div>
+          <div class="ref-item" id="ref-8"><strong>8. OpenAI — A practical guide to building AI agents</strong><span>Used for design patterns, evaluation priorities, and orchestration styles.</span><a href="#ref-8">View source</a></div>
+          <div class="ref-item" id="ref-9"><strong>9. NIST — AI Risk Management Framework / Generative AI Profile</strong><span>Used for governance and risk management framing.</span><a href="#ref-9">View source</a></div>
+          <div class="ref-item" id="ref-10"><strong>10. OWASP — Top 10 for Large Language Model Applications</strong><span>Used for concrete failure modes and security concerns in LLM applications.</span><a href="#ref-10">View source</a></div>
+          <div class="ref-item" id="ref-11"><strong>11. Microsoft Agent Framework (public preview)</strong><span>Used for recent ecosystem signals around workflow control and state management.</span><a href="#ref-11">View source</a></div>
+          <div class="ref-item" id="ref-12"><strong>12. Google Cloud — Vertex AI Agent Builder</strong><span>Used for enterprise agent platform direction and governance framing.</span><a href="#ref-12">View source</a></div>
+          <div class="ref-item"><strong>Additional supporting source: IBM — AI adoption challenges</strong><span>Used for the chart on common adoption barriers: accuracy or bias, insufficient proprietary data, and inadequate expertise.</span><a href="#ref-13">View source</a></div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="toc">
+      <h4>On this page</h4>
+      <a href="#signal">The signal vs the noise</a>
+      <a href="#definition">What agentic workflow means</a>
+      <a href="#why-engineers">Why senior engineers should care</a>
+      <a href="#design">How to design useful systems</a>
+      <a href="#security">Security-minded design</a>
+      <a href="#use-cases">Where it creates value</a>
+      <a href="#current">What feels current</a>
+      <a href="#leaders">What this means for modern engineers</a>
+      <a href="#conclusion">Final thought</a>
+      <a href="#references">Research sources</a>
+    </aside>
+  </div>
+
+<footer>
+    <div class="container">
+      Built as a self-contained HTML article for website publishing. You can open this file locally or adapt the markup into your blog platform template.
+    </div>
+  </footer>
+ </main>
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

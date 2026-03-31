@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-label="Evaluation lenses for AI coding tools">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111b"/>
+      <stop offset="100%" stop-color="#12263e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" rx="34" fill="url(#bg)"/>
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <text x="76" y="92" fill="#e8f1fc" font-size="30" font-weight="700">Four evaluation lenses</text>
+    <text x="76" y="130" fill="#98aec8" font-size="18">A faster first pass than debating model rankings.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="92" y="186" width="560" height="214" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <text x="132" y="246" fill="#eef6ff" font-size="30" font-weight="700">Context</text>
+    <text x="132" y="292" fill="#9fb5cd" font-size="18">What code, docs, tickets, and external data can the tool read?</text>
+    <text x="132" y="324" fill="#9fb5cd" font-size="18">If the answer is vague, the risk model is vague too.</text>
+
+    <rect x="748" y="186" width="560" height="214" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <text x="788" y="246" fill="#eef6ff" font-size="30" font-weight="700">Permissions</text>
+    <text x="788" y="292" fill="#9fb5cd" font-size="18">Can it only read, or can it edit, run commands, and call tools?</text>
+    <text x="788" y="324" fill="#9fb5cd" font-size="18">Every new action changes the blast radius.</text>
+
+    <rect x="92" y="438" width="560" height="214" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <text x="132" y="498" fill="#eef6ff" font-size="30" font-weight="700">Validation</text>
+    <text x="132" y="544" fill="#9fb5cd" font-size="18">Which deterministic checks stand between output and merge?</text>
+    <text x="132" y="576" fill="#9fb5cd" font-size="18">Tests, policy gates, scans, and review should not be optional cleanup.</text>
+
+    <rect x="748" y="438" width="560" height="214" rx="30" fill="#0f1a2b" stroke="#35567d"/>
+    <text x="788" y="498" fill="#eef6ff" font-size="30" font-weight="700">Provenance</text>
+    <text x="788" y="544" fill="#9fb5cd" font-size="18">Can you reconstruct what the tool saw, did, and proposed?</text>
+    <text x="788" y="576" fill="#9fb5cd" font-size="18">Fast output with weak traceability is not a mature workflow.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <rect x="92" y="680" width="1216" height="46" rx="16" fill="#101d2f" stroke="#35567d"/>
+    <text x="700" y="709" text-anchor="middle" fill="#dbeafd" font-size="17">Security-minded evaluation is usually less about clever prompts and more about clear boundaries.</text>
+  </g>
+</svg>

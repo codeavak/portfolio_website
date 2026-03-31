@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hash map hero diagram</title>
+  <desc id="desc">Keys flow through a hash function into indexed buckets, with one collision highlighted.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2e8"/>
+      <stop offset="100%" stop-color="#dbe8ea"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17313a"/>
+      <stop offset="100%" stop-color="#2b5765"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#c96f3b"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="120" fill="#efe1c6" opacity="0.65"/>
+  <circle cx="1420" cy="760" r="160" fill="#c4d9dd" opacity="0.55"/>
+  <rect x="80" y="90" width="470" height="720" rx="28" fill="#fffaf2" stroke="#d7c8ad" stroke-width="3"/>
+  <rect x="575" y="220" width="430" height="460" rx="32" fill="url(#card)"/>
+  <rect x="1070" y="90" width="450" height="720" rx="28" fill="#fffaf2" stroke="#b8ccd0" stroke-width="3"/>
+  <text x="130" y="155" font-family="Georgia, serif" font-size="44" fill="#17313a">Keys</text>
+  <text x="675" y="300" font-family="Georgia, serif" font-size="54" fill="#f6f1e8">hash(key)</text>
+  <text x="620" y="355" font-family="'Courier New', monospace" font-size="28" fill="#cfe1e6">index = hash % capacity</text>
+  <text x="1120" y="155" font-family="Georgia, serif" font-size="44" fill="#17313a">Buckets</text>
+  <g font-family="'Courier New', monospace" font-size="28" fill="#17313a">
+    <rect x="130" y="210" width="350" height="72" rx="16" fill="#f0e4cc"/>
+    <text x="160" y="255">"user:42"</text>
+    <rect x="130" y="335" width="350" height="72" rx="16" fill="#f0e4cc"/>
+    <text x="160" y="380">"order:1005"</text>
+    <rect x="130" y="460" width="350" height="72" rx="16" fill="#f0e4cc"/>
+    <text x="160" y="505">"cart:42"</text>
+    <rect x="130" y="585" width="350" height="72" rx="16" fill="#f0e4cc"/>
+    <text x="160" y="630">"tenant:blue"</text>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="26" fill="#17313a">
+    <rect x="1120" y="210" width="300" height="70" rx="14" fill="#dce9eb"/>
+    <text x="1145" y="253">[03] user:42</text>
+    <rect x="1120" y="305" width="300" height="70" rx="14" fill="#dce9eb"/>
+    <text x="1145" y="348">[07] tenant:blue</text>
+    <rect x="1120" y="400" width="300" height="70" rx="14" fill="#f3d6c6"/>
+    <text x="1145" y="443">[11] order:1005</text>
+    <rect x="1120" y="495" width="300" height="70" rx="14" fill="#f3d6c6"/>
+    <text x="1145" y="538">[11] cart:42</text>
+    <rect x="1120" y="590" width="300" height="70" rx="14" fill="#dce9eb"/>
+    <text x="1145" y="633">[15] empty</text>
+  </g>
+  <path d="M490 245 C560 245, 560 245, 625 285" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M490 370 C560 370, 560 360, 625 355" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M490 495 C560 495, 560 420, 625 410" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M490 620 C560 620, 560 520, 625 470" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M1005 310 C1050 310, 1065 245, 1110 245" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M1005 360 C1060 360, 1065 350, 1110 340" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M1005 430 C1060 430, 1065 445, 1110 435" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M1005 485 C1060 485, 1065 535, 1110 530" fill="none" stroke="#c96f3b" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="1170" y="730" font-family="Georgia, serif" font-size="30" fill="#8b4b27">Collision highlighted</text>
+  <text x="1120" y="770" font-family="'Courier New', monospace" font-size="22" fill="#17313a">Two keys share bucket 11, so the map uses collision policy.</text>
+</svg>
