@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-03-31T18:57:22+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-03-31T18:58:48+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
 
 <p>You call them <code class="language-plaintext highlighter-rouge">dict</code>, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code>, <code class="language-plaintext highlighter-rouge">HashSet&lt;T&gt;</code>, lookup tables, indexes, caches, frequency maps, dedup maps, and memoization stores.</p>
 
@@ -302,7 +302,327 @@ That is usually where the value becomes obvious first.</p>
 - mutable key hash map bug
 - load factor and rehashing explained
 - hash map collision handling
--->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Idempotency: The Most Underused Pattern in Distributed Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" rel="alternate" type="text/html" title="Idempotency: The Most Underused Pattern in Distributed Systems" /><published>2026-03-31T00:00:01+00:00</published><updated>2026-03-31T00:00:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/"><![CDATA[<p>If you have worked on distributed systems long enough, you have probably had this incident:</p>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secrets Management: Why Environment Variables Are Not the Finish Line</title><link href="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/" rel="alternate" type="text/html" title="Secrets Management: Why Environment Variables Are Not the Finish Line" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/"><![CDATA[<p>Environment variables are usually presented as the grown-up answer to hard-coded credentials.
+That is fair, as far as it goes.</p>
+
+<p>Moving a database password out of source control and into process configuration is an improvement.
+It reduces one obvious category of failure.
+It does not solve secrets management.</p>
+
+<p>That distinction matters because many teams stop at the first improvement and assume they have reached the secure end state.
+In practice, they have only changed where the secret sits at runtime.</p>
+
+<p>If a production secret is still broadly visible to whatever can inspect the process, inherited by child processes, copied into logs during debugging, or stuck in place until the next deployment, you do not have a management system.
+You have a distribution mechanism.</p>
+
+<p>That is the gap this post is about.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" alt="Comparison between environment-variable based secret handling and a managed secrets flow with identity, audit, rotation, and revocation." />
+  <figcaption>Environment variables move secrets out of source code. A secrets manager changes the control model.</figcaption>
+</figure>
+
+<h2 id="where-env-vars-fall-short">Where environment variables fall short in real systems</h2>
+
+<p>Environment variables are not inherently reckless.
+They are often the least bad starting point for local development and simple deployment pipelines.
+The problem is that they do not give you the controls that production secrets usually need.</p>
+
+<p>Four issues show up repeatedly.</p>
+
+<h3 id="process-state">1. They become part of process state</h3>
+
+<p>Once a secret is loaded into an environment variable, it is attached to the running process environment.
+That means it can show up anywhere the process state is visible:</p>
+
+<ul>
+  <li>process inspection tools</li>
+  <li>crash dumps and memory diagnostics</li>
+  <li>ad hoc support scripts that print environment details</li>
+  <li>debugging endpoints or health scripts that expose configuration too generously</li>
+</ul>
+
+<p>This is the part many tutorials skip.
+The secret left the repo, but it did not become hard to reach.
+It became part of operational surface area.</p>
+
+<h3 id="indirect-leaks">2. They are easy to leak indirectly</h3>
+
+<p>Teams do not usually paste secrets into logs on purpose.
+They leak them while trying to be helpful.</p>
+
+<p>Common paths include:</p>
+
+<ul>
+  <li>startup logging that prints configuration values</li>
+  <li>exception handling that serializes configuration objects</li>
+  <li>CI or deployment scripts echoing environment variables while troubleshooting</li>
+  <li>framework diagnostics that dump process configuration when something fails</li>
+</ul>
+
+<p>The more your operational model depends on “please do not print that variable,” the weaker the model is.</p>
+
+<h3 id="inheritance-and-tooling">3. They spread by inheritance and tooling</h3>
+
+<p>Environment variables are convenient precisely because subprocesses can inherit them.
+That convenience is also the risk.</p>
+
+<p>If a build step, migration utility, worker process, or support script inherits the same secret set, your access boundary becomes much wider than the application that actually needs the credential.</p>
+
+<p>Containerized environments add another wrinkle.
+If secrets are injected as environment variables, anyone with sufficient access to inspect container configuration or orchestrator metadata may be able to see them in clear text.
+Again, the issue is not that containers are uniquely bad.
+It is that environment variables are still just exposed process configuration.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/env-var-exposure.svg" alt="A secret placed in an environment variable spreading into child processes, logs, crash diagnostics, and container inspection surfaces." />
+  <figcaption>Once a secret lives in process environment, multiple operational paths can expose it without anyone explicitly "sharing" it.</figcaption>
+</figure>
+
+<h3 id="lifecycle-control">4. They do not provide lifecycle control</h3>
+
+<p>This is the most important limitation.</p>
+
+<p>An environment variable can hold a secret value.
+It cannot answer the questions mature teams eventually need answered:</p>
+
+<ul>
+  <li>Who accessed this secret?</li>
+  <li>Which workload used it?</li>
+  <li>When was it rotated?</li>
+  <li>What systems still depend on the old version?</li>
+  <li>How quickly can we revoke it after suspected compromise?</li>
+</ul>
+
+<p>NIST guidance on key management treats lifecycle, inventory, compromise response, and accountability as part of the management problem itself, not as optional extras bolted on later.
+CIS Control 3 frames data protection similarly: use both process and technical controls for handling sensitive data, not just a convention for where values are stored.</p>
+
+<p>That is why “we use environment variables” is not a satisfying answer once systems matter.</p>
+
+<h2 id="what-real-solutions-change">What a real secrets management solution changes</h2>
+
+<p>Whether you use Azure Key Vault, AWS Secrets Manager, Google Secret Manager, or HashiCorp Vault, the useful shift is the same:</p>
+
+<p>you stop treating secrets as static configuration pushed into workloads and start treating them as protected resources accessed through identity and policy.</p>
+
+<p>That changes several things immediately.</p>
+
+<h3 id="scoped-access">Scoped access instead of broad distribution</h3>
+
+<p>A secrets manager lets you grant access to a specific application identity, environment, or team role.
+The worker that needs a payment API credential does not automatically need database admin credentials, and your background reporting job does not need every secret your web app uses.</p>
+
+<p>This is what least privilege looks like in practice.</p>
+
+<h3 id="auditing">Auditing instead of guesswork</h3>
+
+<p>If a secret is retrieved through a managed service, you can log access events, correlate them to identities, and alert on patterns that should not happen.</p>
+
+<p>That moves you from “we think only the app used this” to “we can verify which principal accessed it and when.”</p>
+
+<h3 id="rotation">Rotation as an operating habit, not a migration project</h3>
+
+<p>Azure’s current secrets guidance explicitly recommends regular rotation, automation where possible, and dual-credential patterns for zero-downtime rollover.
+That is a very different posture from editing a pipeline variable, restarting services, and hoping every consumer updates cleanly.</p>
+
+<p>Managed secrets stores usually give you versioning and metadata as well.
+That makes staged rotation possible.</p>
+
+<h3 id="revocation">Revocation without redeploying everything</h3>
+
+<p>If a secret is compromised, the response should not be “find every place it was injected and schedule emergency configuration changes.”</p>
+
+<p>You want the ability to:</p>
+
+<ul>
+  <li>disable or replace the secret centrally</li>
+  <li>narrow access policy immediately</li>
+  <li>identify affected workloads from logs</li>
+  <li>force consumers onto a new version on a defined timeline</li>
+</ul>
+
+<p>Environment variables do not give you that control plane.
+They only give you a value sitting in a process.</p>
+
+<h2 id="azure-key-vault-practical">Azure Key Vault in a .NET or Python application</h2>
+
+<p>Azure Key Vault is a good concrete example because the current platform guidance is fairly clear.
+Azure RBAC is now the recommended authorization model for the data plane, and Microsoft explicitly positions it over legacy access policies for stronger separation of duties and centralized access control.</p>
+
+<p>The practical pattern is straightforward:</p>
+
+<ol>
+  <li>Keep non-secret configuration such as the vault URI or vault name in ordinary configuration.</li>
+  <li>Use a managed identity in Azure, or developer identity locally.</li>
+  <li>Retrieve secrets through Key Vault using <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code>.</li>
+  <li>Cache sensibly in memory or via your configuration provider rather than fetching on every request.</li>
+  <li>Enable logging, alerts, and ownership metadata so rotation is operationally real.</li>
+</ol>
+
+<p>One subtle but important point:
+environment variables still have a place here, but for non-secret values.
+Passing <code class="language-plaintext highlighter-rouge">KEY_VAULT_NAME</code> or a vault URI through configuration is very different from passing the database password itself.</p>
+
+<h3 id="dotnet-example">.NET example</h3>
+
+<p>For ASP.NET Core, the cleanest option is often to load secrets into configuration through Azure identity rather than hard-wiring credential values into deployment settings.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Azure.Identity</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">WebApplication</span><span class="p">.</span><span class="nf">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">keyVaultUri</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"KeyVaultUri"</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="nf">AddAzureKeyVault</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nf">DefaultAzureCredential</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"SqlConnectionString"</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>In local development, <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code> can use the developer’s Azure CLI or IDE login.
+In production, the same code can use a managed identity assigned to the App Service, Function App, container app, or VM.</p>
+
+<p>That removes the need to ship a long-lived client secret just to retrieve another secret.</p>
+
+<h3 id="python-example">Python example</h3>
+
+<p>In Python, the direct client flow is similarly simple.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="kn">from</span> <span class="n">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
+<span class="kn">from</span> <span class="n">azure.keyvault.secrets</span> <span class="kn">import</span> <span class="n">SecretClient</span>
+
+<span class="n">vault_url</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">"</span><span class="s">KEY_VAULT_URL</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">SecretClient</span><span class="p">(</span>
+    <span class="n">vault_url</span><span class="o">=</span><span class="n">vault_url</span><span class="p">,</span>
+    <span class="n">credential</span><span class="o">=</span><span class="nc">DefaultAzureCredential</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="n">db_password</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">get_secret</span><span class="p">(</span><span class="sh">"</span><span class="s">prod-db-password</span><span class="sh">"</span><span class="p">).</span><span class="n">value</span>
+</code></pre></div></div>
+
+<p>For a web application or worker, do not turn that into a Key Vault round trip on every request.
+Fetch at startup or on a bounded refresh interval, keep the value in memory, and have a deliberate refresh path tied to your rotation policy.</p>
+
+<p>Microsoft’s current guidance is explicit about this too: cache secrets in memory, use retry logic for transient failures, and refresh cached values when rotation occurs.</p>
+
+<h3 id="comparable-options">Comparable options if you are not on Azure</h3>
+
+<p>The platform names change, but the design principles do not.</p>
+
+<ul>
+  <li>AWS Secrets Manager: use IAM roles, resource policies, rotation workflows, and CloudTrail visibility.</li>
+  <li>Google Secret Manager: use workload identity, IAM scoping, and audit logging.</li>
+  <li>HashiCorp Vault: use short-lived credentials, dynamic secrets, leases, and explicit revocation.</li>
+</ul>
+
+<p>The central question is not which vendor label you picked.
+It is whether access is identity-based, auditable, scoped, and rotatable.</p>
+
+<h2 id="minimum-viable-posture">The minimum viable secrets posture for a smaller team</h2>
+
+<p>Not every team needs a full platform engineering program around secrets.
+But almost every team with production data should do more than <code class="language-plaintext highlighter-rouge">.env</code> files and pipeline variables forever.</p>
+
+<p>If you want a practical baseline without enterprise theater, start here.</p>
+
+<h3 id="one-store">1. Put production secrets in one managed store</h3>
+
+<p>Do not split secrets across random deployment variables, wiki pages, local files, and tribal memory.
+Pick one managed system for production secrets and make it the default place to look.</p>
+
+<h3 id="workload-identity">2. Use workload identity, not embedded app credentials</h3>
+
+<p>If your application needs a secret manager, authenticate to it with managed identity or workload identity where your platform supports it.
+Avoid storing a client secret whose only purpose is to unlock other secrets.</p>
+
+<h3 id="scope-per-app">3. Scope access per app and environment</h3>
+
+<p>Production web app, production worker, and staging app should not all share the same broad read permission.
+Grant only the secrets each workload needs.</p>
+
+<h3 id="logs-and-review">4. Turn on logs and actually review them</h3>
+
+<p>Auditing is not a checkbox.
+If your vault can log secret reads, failed access attempts, expiry events, or role changes, enable that and route it somewhere a human or alert can see.</p>
+
+<h3 id="rotation-owner">5. Set a real rotation owner and cadence</h3>
+
+<p>If nobody owns rotation, it does not happen.
+Define:</p>
+
+<ul>
+  <li>who rotates each high-value secret</li>
+  <li>how often it rotates</li>
+  <li>how consumers are updated</li>
+  <li>what the emergency revocation path is</li>
+</ul>
+
+<p>That can be a simple runbook.
+It just needs to exist before the incident.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/minimum-viable-posture.svg" alt="A maturity ladder showing hard-coded secrets, environment variables only, managed vault with identity, and rotation plus monitoring as progressive stages." />
+  <figcaption>The goal for a smaller team is not maximum ceremony. It is a credible control model you can operate consistently.</figcaption>
+</figure>
+
+<h2 id="what-not-to-overcomplicate">What not to overcomplicate yet</h2>
+
+<p>Teams sometimes hear “secrets management” and immediately design a platform program they will never finish.</p>
+
+<p>You do not need, on day one:</p>
+
+<ul>
+  <li>a custom abstraction layer over every secret provider</li>
+  <li>per-request vault lookups for normal application traffic</li>
+  <li>an internal product before you have one reliable production pattern</li>
+</ul>
+
+<p>You do need a cleaner answer than “the secret is in an environment variable somewhere.”</p>
+
+<p>That is the practical standard.</p>
+
+<h2 id="useful-mental-shift">The useful mental shift</h2>
+
+<p>Environment variables answer a narrow question:
+“How does this process receive a value?”</p>
+
+<p>Secrets management answers the broader operational questions:</p>
+
+<ul>
+  <li>who can retrieve it</li>
+  <li>how access is scoped</li>
+  <li>how usage is audited</li>
+  <li>how it rotates safely</li>
+  <li>how compromise is contained</li>
+</ul>
+
+<p>That is why environment variables are not the finish line.
+They solve placement.
+They do not solve control.</p>
+
+<p>If your team is still using environment variables as the final resting place for production secrets, the next step does not need to be dramatic.
+Move one high-value secret behind identity-based access, enable audit logs, and give rotation an owner.
+That is where secrets management starts becoming real.</p>
+
+<!--
+---
+
+**Meta description:** Environment variables are better than hard-coded credentials, but they are not a full secrets management strategy. This post explains the real risks, what managed secrets systems add, and how to use Azure Key Vault practically in .NET and Python.
+
+**SEO keyword ideas:**
+- secrets management vs environment variables
+- azure key vault best practices
+- managed identity key vault dotnet
+- python azure key vault secrets
+- minimum viable secrets posture
+-->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="secrets management" /><category term="azure key vault" /><category term="environment variables" /><category term="application security" /><category term="secure development" /><summary type="html"><![CDATA[Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Idempotency: The Most Underused Pattern in Distributed Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" rel="alternate" type="text/html" title="Idempotency: The Most Underused Pattern in Distributed Systems" /><published>2026-03-31T00:00:01+00:00</published><updated>2026-03-31T00:00:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/"><![CDATA[<p>If you have worked on distributed systems long enough, you have probably had this incident:</p>
 
 <p>A request timed out, the client retried, and suddenly the same business action happened twice.</p>
 
@@ -2038,160 +2358,4 @@ SEO keyword ideas:
 3. secure AI coding workflow
 4. AI coding tools AppSec
 5. AI agents software engineering security
--->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[Security-minded engineers do not judge AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that modern coding agents can read repositories, call tools, and open pull requests.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools</title><link href="https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools/" rel="alternate" type="text/html" title="Thinking Like a Security-Minded Engineer in the Age of AI Coding Tools" /><published>2026-03-26T16:00:00+00:00</published><updated>2026-03-26T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/security-minded-engineer-ai-coding-tools/"><![CDATA[<p>A year ago, many teams could still treat AI coding tools as smarter autocomplete. That model is already too small. The newest tools can inspect repositories, follow project instructions, run tests, propose multi-file edits, and open pull requests. That creates real leverage. It also moves the risk from isolated suggestions to trust boundaries, sensitive context, workflow design, and operational control.</p>
-
-<p>That is why security-minded engineers are well positioned for this moment. The habits that matter most are still the durable ones: least privilege, explicit review, untrusted-input thinking, deterministic checks, and good audit trails.</p>
-
-<div class="post-note">
-  <strong>As of March 26, 2026:</strong> the mainstream vendor guidance around AI coding tools is no longer centered on clever prompting alone. Official documentation now talks openly about approvals, firewalls, sandboxing, audit logs, branch restrictions, and prompt injection defenses. That is a strong signal that the center of gravity has moved from suggestion quality to system design.
-</div>
-
-<h2 id="tool-changed">The tool changed. The job did not.</h2>
-
-<p>The hardest part of modern software engineering was never typing code quickly. It was making good decisions under constraints.</p>
-
-<p>We still need clear requirements, safe defaults, honest tests, and review that catches bad assumptions. AI coding tools do not remove those responsibilities. They make weak engineering discipline more expensive because mistakes can now be produced faster and wrapped in more confident language.</p>
-
-<blockquote>
-  <p>The real risk is not that an AI tool writes one bad function. It is that a team quietly gives a probabilistic system too much context, too much reach, and too little review.</p>
-</blockquote>
-
-<p>This is where a security mindset becomes practical rather than abstract. Security-minded engineers instinctively ask:</p>
-
-<ul>
-  <li>What data can this tool see?</li>
-  <li>What actions can it take?</li>
-  <li>What happens if it is wrong in a believable way?</li>
-  <li>How quickly can we see what happened and recover?</li>
-</ul>
-
-<p>Those questions are useful whether the tool is a static analyzer, a deployment pipeline, or an AI agent. The difference now is that more engineering teams are handing AI tools enough power to make those questions impossible to postpone.</p>
-
-<h2 id="whats-new">What feels genuinely new in March 2026</h2>
-
-<p>There are two realities at the same time.</p>
-
-<p>The first is adoption. In <a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow’s 2025 AI survey</a>, 17.5% of professional AI users said they use AI agents at work daily. Among developers already using agents, 84% said they use them for software development. This is no longer hypothetical workflow design for a small frontier group.</p>
-
-<p>The second is concern. The same survey found that just over 81% of respondents had security or privacy concerns about data when using AI agents. That tension matters. Engineers are using these tools, but they are not naive about the downside.</p>
-
-<p>GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">Copilot coding agent overview</a> describes an autonomous agent that can create draft pull requests, push only to tightly scoped branches, expose session logs for auditing, and hold GitHub Actions workflows until a human approves them. That is a controlled software workflow, not just an assistant.</p>
-
-<p>The same GitHub docs also carry a useful warning. GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> says exclusions are not currently supported in Edit and Agent modes of Copilot Chat in some editors, and excluded files may still influence behavior indirectly through semantic information such as type data. Governance controls help, but teams still need to understand their edges.</p>
-
-<p>Anthropic and OpenAI are publishing the same kind of guidance: read-only defaults, explicit approvals, sandboxing, input sanitization, structured outputs, and trace-level evaluation. The serious conversation is no longer “Can the model write code?” It is “How do we keep the overall system disciplined when the model can see more, do more, and fail in more believable ways?”</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/risk-surface.png" alt="A diagram showing the risk surface expanding as AI coding tools move from autocomplete to chat assistants to coding agents that can open pull requests." />
-  <figcaption>The jump from suggestion to execution is also a jump in trust boundary design.</figcaption>
-</figure>
-
-<h2 id="mental-model">A security-minded mental model for AI coding tools</h2>
-
-<p>When I think about responsible AI adoption in engineering teams, I keep coming back to five lenses.</p>
-
-<div class="post-checklist">
-  <div>
-    <strong>1. Context is access.</strong> A coding tool does not need every repository, every ticket, and every internal document just because retrieval is available. Context should be intentionally scoped, especially when the material includes customer data, secrets, security documentation, or unreleased plans.
-  </div>
-  <div>
-    <strong>2. Tool use is privilege.</strong> Reading code, editing files, running tests, opening a PR, and making network requests are not interchangeable capabilities. Treat them the way you would treat API permissions or service-account roles.
-  </div>
-  <div>
-    <strong>3. Output stays untrusted until verified.</strong> AI-generated code, shell commands, dependency recommendations, and remediation advice should go through deterministic checks before anyone treats them as production-ready.
-  </div>
-  <div>
-    <strong>4. The trace matters as much as the result.</strong> A clean diff is not enough if you cannot tell what context the system used, what commands it ran, what it attempted, and why it stopped. Auditability is part of quality.
-  </div>
-  <div>
-    <strong>5. Safe rollback beats confident behavior.</strong> The right workflow assumes believable mistakes will happen. Human approval, branch isolation, reversible changes, and clear ownership matter more than theatrical autonomy.
-  </div>
-</div>
-
-<p>This is also where established security guidance still helps. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> extends secure software development practices for generative AI and dual-use foundation models. The <a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM and GenAI applications</a> keeps attention on failure modes that are especially relevant here: prompt injection, improper output handling, excessive agency, supply-chain risk, and sensitive information disclosure.</p>
-
-<p>None of that is theoretical if your tool can inspect a codebase, propose commands, and push changes into a repository workflow.</p>
-
-<h2 id="good-fit">Where AI coding tools are a good fit, and where I slow down</h2>
-
-<p>I do not think the right answer is to avoid these tools. I think the right answer is to use them in proportion to the blast radius.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Usage tier</th>
-      <th>Good fit</th>
-      <th>Required controls</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Low-risk, high-leverage</td>
-      <td>Explaining a codebase, summarizing PRs, drafting tests, proposing refactors, turning rough notes into cleaner technical writing</td>
-      <td>Human review, normal lint/test checks, no special permissions beyond local workspace access</td>
-    </tr>
-    <tr>
-      <td>Medium-risk</td>
-      <td>Multi-file edits, dependency updates, baseline test fixes, issue-to-PR workflows in non-critical areas</td>
-      <td>Sandboxed execution, scoped branches, deterministic CI, explicit command approval, audit logs</td>
-    </tr>
-    <tr>
-      <td>High-risk</td>
-      <td>Auth flows, security controls, data migrations, infrastructure changes, secrets handling, compliance-sensitive code</td>
-      <td>Human-led changes, narrow context windows, stronger approvals, isolated environments, formal review expectations</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>In practice, I want read-heavy assistance first, then bounded write access, and only later agentic workflows that can trigger broader downstream actions. That sequence is how teams learn where the model is genuinely useful before the consequences get expensive.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/safe-loop.png" alt="A workflow diagram showing a safe AI coding loop from request to scoped context, draft changes, automated checks, human review, and merge." />
-  <figcaption>A useful default: let the AI move quickly inside a loop that still preserves checks, evidence, and human judgment.</figcaption>
-</figure>
-
-<h2 id="adoption">How to adopt without damaging trust</h2>
-
-<p>If I were helping a team formalize its approach, I would start here.</p>
-
-<ol>
-  <li>Keep the first use cases narrow and measurable.</li>
-  <li>Separate read actions from write actions.</li>
-  <li>Put deterministic validation after every meaningful AI step.</li>
-  <li>Require explicit human approval for high-impact changes.</li>
-  <li>Document the boundaries so the workflow is clear to engineering, security, and leadership.</li>
-  <li>Revisit the setup regularly, because the tools and their controls are changing quickly.</li>
-</ol>
-
-<p>With AI coding tools, the capability surface and the product guardrails are still moving. A policy you wrote six months ago may now be too weak, too broad, or based on product assumptions that are no longer true. That is why I prefer a security-minded framing: keep asking what changed in the product, the permissions, the data path, and the review requirement.</p>
-
-<h2 id="final-thought">Final thought</h2>
-
-<p>The most durable advantage in the age of AI coding tools is not being the engineer who uses the most automation. It is being the engineer who can use automation without lowering the trustworthiness of the system.</p>
-
-<p>So yes, use the tools. Learn them well. But think like an engineer who still has to own the outcome after the demo is over.</p>
-
-<p>If your team is working through that transition right now, this is the part worth getting right early. I plan to keep writing about the patterns that hold up when speed, security, and professional credibility all matter at the same time.</p>
-
-<h2 id="research-notes">Research notes</h2>
-
-<ul class="post-sources">
-  <li><a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow 2025 AI survey</a>: Used for current adoption and concern signals around AI agents at work.</li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">GitHub Copilot coding agent</a>: Used for current workflow controls such as branch scoping, human review, auditability, and workflow approvals.</li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub Copilot content exclusion</a>: Used for the current limitations around exclusions in Edit and Agent modes and indirect semantic leakage.</li>
-  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of read-only defaults, permission-based execution, sandboxing, prompt-injection protections, and audit-oriented best practices.</li>
-  <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic engineering guidance on effective agents</a>: Used for the principle of preferring simpler workflows before open-ended autonomy.</li>
-  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on tool approvals, guardrails, structured outputs, and trace evaluation.</li>
-  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to connect AI development back to secure software development fundamentals.</li>
-  <li><a href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM and GenAI applications</a>: Used for practical risk categories relevant to AI-enhanced software workflows.</li>
-</ul>
-
-<!--
-Meta description: AI coding tools are becoming repo-aware agents, which means engineering judgment matters more than ever. This post explains how security-minded engineers should think about context, permissions, validation, and human review in March 2026.
-SEO keyword ideas:
-1. AI coding tools security
-2. security-minded engineer AI
-3. AI agents software engineering
-4. secure software development AI tools
-5. responsible AI coding workflow
--->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="developer productivity" /><summary type="html"><![CDATA[AI coding tools are moving from autocomplete to repo-aware agents that can run checks, propose changes, and open pull requests. A security-minded engineer sees the upside, but also knows the real work is setting the right boundaries around context, permissions, validation, and review.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineer-ai-coding-tools/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[Security-minded engineers do not judge AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that modern coding agents can read repositories, call tools, and open pull requests.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

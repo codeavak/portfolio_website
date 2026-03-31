@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secrets Management: Why Environment Variables Are Not the Finish Line | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-03-31T12:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="secrets management" />
+      
+        <meta property="article:tag" content="azure key vault" />
+      
+        <meta property="article:tag" content="environment variables" />
+      
+        <meta property="article:tag" content="application security" />
+      
+        <meta property="article:tag" content="secure development" />
+      
+    
+    <meta property="og:title" content="Secrets Management: Why Environment Variables Are Not the Finish Line" />
+    <meta property="og:description" content="Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Secrets Management: Why Environment Variables Are Not the Finish Line" />
+    <meta name="twitter:description" content="Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Secrets Management: Why Environment Variables Are Not the Finish Line",
+        "description": "Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-03-31T12:00:00+00:00",
+        "dateModified": "2026-03-31T12:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">Security • Software Engineering</div>
+              
+              <time class="post-date" datetime="2026-03-31T12:00:00+00:00">March 31, 2026</time>
+              <h1 class="post-title">Secrets Management: Why Environment Variables Are Not the Finish Line</h1>
+              
+                <p class="post-dek">Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">secrets management</span>
+                  
+                    <span class="chip">azure key vault</span>
+                  
+                    <span class="chip">environment variables</span>
+                  
+                    <span class="chip">application security</span>
+                  
+                    <span class="chip">secure development</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Environment variables are usually presented as the grown-up answer to hard-coded credentials.
+That is fair, as far as it goes.</p>
+
+<p>Moving a database password out of source control and into process configuration is an improvement.
+It reduces one obvious category of failure.
+It does not solve secrets management.</p>
+
+<p>That distinction matters because many teams stop at the first improvement and assume they have reached the secure end state.
+In practice, they have only changed where the secret sits at runtime.</p>
+
+<p>If a production secret is still broadly visible to whatever can inspect the process, inherited by child processes, copied into logs during debugging, or stuck in place until the next deployment, you do not have a management system.
+You have a distribution mechanism.</p>
+
+<p>That is the gap this post is about.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" alt="Comparison between environment-variable based secret handling and a managed secrets flow with identity, audit, rotation, and revocation." />
+  <figcaption>Environment variables move secrets out of source code. A secrets manager changes the control model.</figcaption>
+</figure>
+
+<h2 id="where-env-vars-fall-short">Where environment variables fall short in real systems</h2>
+
+<p>Environment variables are not inherently reckless.
+They are often the least bad starting point for local development and simple deployment pipelines.
+The problem is that they do not give you the controls that production secrets usually need.</p>
+
+<p>Four issues show up repeatedly.</p>
+
+<h3 id="process-state">1. They become part of process state</h3>
+
+<p>Once a secret is loaded into an environment variable, it is attached to the running process environment.
+That means it can show up anywhere the process state is visible:</p>
+
+<ul>
+  <li>process inspection tools</li>
+  <li>crash dumps and memory diagnostics</li>
+  <li>ad hoc support scripts that print environment details</li>
+  <li>debugging endpoints or health scripts that expose configuration too generously</li>
+</ul>
+
+<p>This is the part many tutorials skip.
+The secret left the repo, but it did not become hard to reach.
+It became part of operational surface area.</p>
+
+<h3 id="indirect-leaks">2. They are easy to leak indirectly</h3>
+
+<p>Teams do not usually paste secrets into logs on purpose.
+They leak them while trying to be helpful.</p>
+
+<p>Common paths include:</p>
+
+<ul>
+  <li>startup logging that prints configuration values</li>
+  <li>exception handling that serializes configuration objects</li>
+  <li>CI or deployment scripts echoing environment variables while troubleshooting</li>
+  <li>framework diagnostics that dump process configuration when something fails</li>
+</ul>
+
+<p>The more your operational model depends on “please do not print that variable,” the weaker the model is.</p>
+
+<h3 id="inheritance-and-tooling">3. They spread by inheritance and tooling</h3>
+
+<p>Environment variables are convenient precisely because subprocesses can inherit them.
+That convenience is also the risk.</p>
+
+<p>If a build step, migration utility, worker process, or support script inherits the same secret set, your access boundary becomes much wider than the application that actually needs the credential.</p>
+
+<p>Containerized environments add another wrinkle.
+If secrets are injected as environment variables, anyone with sufficient access to inspect container configuration or orchestrator metadata may be able to see them in clear text.
+Again, the issue is not that containers are uniquely bad.
+It is that environment variables are still just exposed process configuration.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/env-var-exposure.svg" alt="A secret placed in an environment variable spreading into child processes, logs, crash diagnostics, and container inspection surfaces." />
+  <figcaption>Once a secret lives in process environment, multiple operational paths can expose it without anyone explicitly "sharing" it.</figcaption>
+</figure>
+
+<h3 id="lifecycle-control">4. They do not provide lifecycle control</h3>
+
+<p>This is the most important limitation.</p>
+
+<p>An environment variable can hold a secret value.
+It cannot answer the questions mature teams eventually need answered:</p>
+
+<ul>
+  <li>Who accessed this secret?</li>
+  <li>Which workload used it?</li>
+  <li>When was it rotated?</li>
+  <li>What systems still depend on the old version?</li>
+  <li>How quickly can we revoke it after suspected compromise?</li>
+</ul>
+
+<p>NIST guidance on key management treats lifecycle, inventory, compromise response, and accountability as part of the management problem itself, not as optional extras bolted on later.
+CIS Control 3 frames data protection similarly: use both process and technical controls for handling sensitive data, not just a convention for where values are stored.</p>
+
+<p>That is why “we use environment variables” is not a satisfying answer once systems matter.</p>
+
+<h2 id="what-real-solutions-change">What a real secrets management solution changes</h2>
+
+<p>Whether you use Azure Key Vault, AWS Secrets Manager, Google Secret Manager, or HashiCorp Vault, the useful shift is the same:</p>
+
+<p>you stop treating secrets as static configuration pushed into workloads and start treating them as protected resources accessed through identity and policy.</p>
+
+<p>That changes several things immediately.</p>
+
+<h3 id="scoped-access">Scoped access instead of broad distribution</h3>
+
+<p>A secrets manager lets you grant access to a specific application identity, environment, or team role.
+The worker that needs a payment API credential does not automatically need database admin credentials, and your background reporting job does not need every secret your web app uses.</p>
+
+<p>This is what least privilege looks like in practice.</p>
+
+<h3 id="auditing">Auditing instead of guesswork</h3>
+
+<p>If a secret is retrieved through a managed service, you can log access events, correlate them to identities, and alert on patterns that should not happen.</p>
+
+<p>That moves you from “we think only the app used this” to “we can verify which principal accessed it and when.”</p>
+
+<h3 id="rotation">Rotation as an operating habit, not a migration project</h3>
+
+<p>Azure’s current secrets guidance explicitly recommends regular rotation, automation where possible, and dual-credential patterns for zero-downtime rollover.
+That is a very different posture from editing a pipeline variable, restarting services, and hoping every consumer updates cleanly.</p>
+
+<p>Managed secrets stores usually give you versioning and metadata as well.
+That makes staged rotation possible.</p>
+
+<h3 id="revocation">Revocation without redeploying everything</h3>
+
+<p>If a secret is compromised, the response should not be “find every place it was injected and schedule emergency configuration changes.”</p>
+
+<p>You want the ability to:</p>
+
+<ul>
+  <li>disable or replace the secret centrally</li>
+  <li>narrow access policy immediately</li>
+  <li>identify affected workloads from logs</li>
+  <li>force consumers onto a new version on a defined timeline</li>
+</ul>
+
+<p>Environment variables do not give you that control plane.
+They only give you a value sitting in a process.</p>
+
+<h2 id="azure-key-vault-practical">Azure Key Vault in a .NET or Python application</h2>
+
+<p>Azure Key Vault is a good concrete example because the current platform guidance is fairly clear.
+Azure RBAC is now the recommended authorization model for the data plane, and Microsoft explicitly positions it over legacy access policies for stronger separation of duties and centralized access control.</p>
+
+<p>The practical pattern is straightforward:</p>
+
+<ol>
+  <li>Keep non-secret configuration such as the vault URI or vault name in ordinary configuration.</li>
+  <li>Use a managed identity in Azure, or developer identity locally.</li>
+  <li>Retrieve secrets through Key Vault using <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code>.</li>
+  <li>Cache sensibly in memory or via your configuration provider rather than fetching on every request.</li>
+  <li>Enable logging, alerts, and ownership metadata so rotation is operationally real.</li>
+</ol>
+
+<p>One subtle but important point:
+environment variables still have a place here, but for non-secret values.
+Passing <code class="language-plaintext highlighter-rouge">KEY_VAULT_NAME</code> or a vault URI through configuration is very different from passing the database password itself.</p>
+
+<h3 id="dotnet-example">.NET example</h3>
+
+<p>For ASP.NET Core, the cleanest option is often to load secrets into configuration through Azure identity rather than hard-wiring credential values into deployment settings.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Azure.Identity</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">WebApplication</span><span class="p">.</span><span class="nf">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">keyVaultUri</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"KeyVaultUri"</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="nf">AddAzureKeyVault</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nf">DefaultAzureCredential</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"SqlConnectionString"</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>In local development, <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code> can use the developer’s Azure CLI or IDE login.
+In production, the same code can use a managed identity assigned to the App Service, Function App, container app, or VM.</p>
+
+<p>That removes the need to ship a long-lived client secret just to retrieve another secret.</p>
+
+<h3 id="python-example">Python example</h3>
+
+<p>In Python, the direct client flow is similarly simple.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="kn">from</span> <span class="n">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
+<span class="kn">from</span> <span class="n">azure.keyvault.secrets</span> <span class="kn">import</span> <span class="n">SecretClient</span>
+
+<span class="n">vault_url</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">"</span><span class="s">KEY_VAULT_URL</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">SecretClient</span><span class="p">(</span>
+    <span class="n">vault_url</span><span class="o">=</span><span class="n">vault_url</span><span class="p">,</span>
+    <span class="n">credential</span><span class="o">=</span><span class="nc">DefaultAzureCredential</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="n">db_password</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">get_secret</span><span class="p">(</span><span class="sh">"</span><span class="s">prod-db-password</span><span class="sh">"</span><span class="p">).</span><span class="n">value</span>
+</code></pre></div></div>
+
+<p>For a web application or worker, do not turn that into a Key Vault round trip on every request.
+Fetch at startup or on a bounded refresh interval, keep the value in memory, and have a deliberate refresh path tied to your rotation policy.</p>
+
+<p>Microsoft’s current guidance is explicit about this too: cache secrets in memory, use retry logic for transient failures, and refresh cached values when rotation occurs.</p>
+
+<h3 id="comparable-options">Comparable options if you are not on Azure</h3>
+
+<p>The platform names change, but the design principles do not.</p>
+
+<ul>
+  <li>AWS Secrets Manager: use IAM roles, resource policies, rotation workflows, and CloudTrail visibility.</li>
+  <li>Google Secret Manager: use workload identity, IAM scoping, and audit logging.</li>
+  <li>HashiCorp Vault: use short-lived credentials, dynamic secrets, leases, and explicit revocation.</li>
+</ul>
+
+<p>The central question is not which vendor label you picked.
+It is whether access is identity-based, auditable, scoped, and rotatable.</p>
+
+<h2 id="minimum-viable-posture">The minimum viable secrets posture for a smaller team</h2>
+
+<p>Not every team needs a full platform engineering program around secrets.
+But almost every team with production data should do more than <code class="language-plaintext highlighter-rouge">.env</code> files and pipeline variables forever.</p>
+
+<p>If you want a practical baseline without enterprise theater, start here.</p>
+
+<h3 id="one-store">1. Put production secrets in one managed store</h3>
+
+<p>Do not split secrets across random deployment variables, wiki pages, local files, and tribal memory.
+Pick one managed system for production secrets and make it the default place to look.</p>
+
+<h3 id="workload-identity">2. Use workload identity, not embedded app credentials</h3>
+
+<p>If your application needs a secret manager, authenticate to it with managed identity or workload identity where your platform supports it.
+Avoid storing a client secret whose only purpose is to unlock other secrets.</p>
+
+<h3 id="scope-per-app">3. Scope access per app and environment</h3>
+
+<p>Production web app, production worker, and staging app should not all share the same broad read permission.
+Grant only the secrets each workload needs.</p>
+
+<h3 id="logs-and-review">4. Turn on logs and actually review them</h3>
+
+<p>Auditing is not a checkbox.
+If your vault can log secret reads, failed access attempts, expiry events, or role changes, enable that and route it somewhere a human or alert can see.</p>
+
+<h3 id="rotation-owner">5. Set a real rotation owner and cadence</h3>
+
+<p>If nobody owns rotation, it does not happen.
+Define:</p>
+
+<ul>
+  <li>who rotates each high-value secret</li>
+  <li>how often it rotates</li>
+  <li>how consumers are updated</li>
+  <li>what the emergency revocation path is</li>
+</ul>
+
+<p>That can be a simple runbook.
+It just needs to exist before the incident.</p>
+
+<figure class="post-figure">
+  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/minimum-viable-posture.svg" alt="A maturity ladder showing hard-coded secrets, environment variables only, managed vault with identity, and rotation plus monitoring as progressive stages." />
+  <figcaption>The goal for a smaller team is not maximum ceremony. It is a credible control model you can operate consistently.</figcaption>
+</figure>
+
+<h2 id="what-not-to-overcomplicate">What not to overcomplicate yet</h2>
+
+<p>Teams sometimes hear “secrets management” and immediately design a platform program they will never finish.</p>
+
+<p>You do not need, on day one:</p>
+
+<ul>
+  <li>a custom abstraction layer over every secret provider</li>
+  <li>per-request vault lookups for normal application traffic</li>
+  <li>an internal product before you have one reliable production pattern</li>
+</ul>
+
+<p>You do need a cleaner answer than “the secret is in an environment variable somewhere.”</p>
+
+<p>That is the practical standard.</p>
+
+<h2 id="useful-mental-shift">The useful mental shift</h2>
+
+<p>Environment variables answer a narrow question:
+“How does this process receive a value?”</p>
+
+<p>Secrets management answers the broader operational questions:</p>
+
+<ul>
+  <li>who can retrieve it</li>
+  <li>how access is scoped</li>
+  <li>how usage is audited</li>
+  <li>how it rotates safely</li>
+  <li>how compromise is contained</li>
+</ul>
+
+<p>That is why environment variables are not the finish line.
+They solve placement.
+They do not solve control.</p>
+
+<p>If your team is still using environment variables as the final resting place for production secrets, the next step does not need to be dramatic.
+Move one high-value secret behind identity-based access, enable audit logs, and give rotation an owner.
+That is where secrets management starts becoming real.</p>
+
+<!--
+---
+
+**Meta description:** Environment variables are better than hard-coded credentials, but they are not a full secrets management strategy. This post explains the real risks, what managed secrets systems add, and how to use Azure Key Vault practically in .NET and Python.
+
+**SEO keyword ideas:**
+- secrets management vs environment variables
+- azure key vault best practices
+- managed identity key vault dotnet
+- python azure key vault secrets
+- minimum viable secrets posture
+-->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
