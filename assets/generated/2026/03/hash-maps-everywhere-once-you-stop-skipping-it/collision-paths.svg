@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Collision handling comparison</title>
+  <desc id="desc">The left side shows separate chaining and the right side shows open addressing probe steps.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf6ee"/>
+      <stop offset="100%" stop-color="#e7eff0"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b9612d"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="820" fill="url(#bg)"/>
+  <text x="130" y="100" font-family="Georgia, serif" font-size="46" fill="#16313a">Separate chaining</text>
+  <text x="770" y="100" font-family="Georgia, serif" font-size="46" fill="#16313a">Open addressing</text>
+  <g font-family="'Courier New', monospace" font-size="24" fill="#16313a">
+    <rect x="120" y="160" width="420" height="520" rx="26" fill="#fffaf3" stroke="#d9cab2" stroke-width="3"/>
+    <rect x="760" y="160" width="520" height="520" rx="26" fill="#fffaf3" stroke="#bfcfd2" stroke-width="3"/>
+    <g>
+      <rect x="170" y="220" width="110" height="58" rx="10" fill="#dbe8ea"/>
+      <text x="200" y="257">[11]</text>
+      <rect x="330" y="220" width="160" height="58" rx="10" fill="#f0ddcf"/>
+      <text x="355" y="257">order</text>
+      <rect x="330" y="315" width="160" height="58" rx="10" fill="#f0ddcf"/>
+      <text x="365" y="352">cart</text>
+      <rect x="330" y="410" width="160" height="58" rx="10" fill="#f0ddcf"/>
+      <text x="362" y="447">item</text>
+      <path d="M280 248 L320 248" stroke="#b9612d" stroke-width="5" marker-end="url(#arrow)"/>
+      <path d="M410 278 L410 305" stroke="#b9612d" stroke-width="5" marker-end="url(#arrow)"/>
+      <path d="M410 373 L410 400" stroke="#b9612d" stroke-width="5" marker-end="url(#arrow)"/>
+    </g>
+    <text x="165" y="560">One bucket points to several entries.</text>
+    <text x="165" y="600">Cost rises with chain length and equality checks.</text>
+    <g>
+      <rect x="820" y="225" width="90" height="58" rx="10" fill="#dbe8ea"/>
+      <text x="845" y="262">[11]</text>
+      <rect x="930" y="225" width="120" height="58" rx="10" fill="#f0ddcf"/>
+      <text x="965" y="262">order</text>
+      <rect x="1065" y="225" width="90" height="58" rx="10" fill="#dbe8ea"/>
+      <text x="1090" y="262">[12]</text>
+      <rect x="1175" y="225" width="80" height="58" rx="10" fill="#edf2d7"/>
+      <text x="1198" y="262">free</text>
+      <path d="M1050 254 L1060 254" stroke="#b9612d" stroke-width="5" marker-end="url(#arrow)"/>
+      <text x="825" y="340">Key hashes to slot 11.</text>
+      <text x="825" y="385">Slot occupied, so probe continues.</text>
+      <text x="825" y="430">Next usable slot is inserted or checked.</text>
+      <path d="M955 300 C980 340, 1080 340, 1200 285" fill="none" stroke="#b9612d" stroke-width="5" marker-end="url(#arrow)"/>
+    </g>
+    <text x="820" y="560">All entries stay in the table.</text>
+    <text x="820" y="600">Cost rises with probe length and table crowding.</text>
+  </g>
+</svg>
