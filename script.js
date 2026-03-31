@@ -575,6 +575,10 @@ const initBlogIndex = () => {
     updateTagButtons();
   };
 
+  const scrollPageToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (dateFromInput) {
     dateFromInput.addEventListener('change', () => {
       currentPage = 1;
@@ -608,6 +612,7 @@ const initBlogIndex = () => {
       if (currentPage > 1) {
         currentPage -= 1;
         updateView();
+        scrollPageToTop();
       }
     });
   }
@@ -616,6 +621,7 @@ const initBlogIndex = () => {
     nextButton.addEventListener('click', () => {
       currentPage += 1;
       updateView();
+      scrollPageToTop();
     });
   }
 
