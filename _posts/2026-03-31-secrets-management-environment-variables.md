@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Secrets Management: Why Environment Variables Are Not the Finish Line"
-date: 2026-03-31 18:20:00 -0700
+date: 2026-03-31 05:00:00 -0700
 categories:
   - Security
   - Software Engineering
