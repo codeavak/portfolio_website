@@ -320,7 +320,7 @@ They do not solve control.
 If your team is still using environment variables as the final resting place for production secrets, the next step does not need to be dramatic.
 Move one high-value secret behind identity-based access, enable audit logs, and give rotation an owner.
 That is where secrets management starts becoming real.
-
+<!-- 
 ## 4. LinkedIn post
 
 Most tutorials stop at "put the secret in an environment variable."
