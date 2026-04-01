@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-03-31T22:02:06+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-01T00:12:06+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Security Governance Is Not Paperwork</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/" rel="alternate" type="text/html" title="Security Governance Is Not Paperwork" /><published>2026-03-31T13:00:00+00:00</published><updated>2026-03-31T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/"><![CDATA[<p>I am studying for the CISSP exam and writing these posts as I go — partly as a study tool, partly because I think the concepts are worth sharing clearly. If you are an engineer moving toward security, a fellow candidate, or just curious about how security thinking works at a strategic level, I hope these are useful.</p>
+
+<hr />
+
+<p>Most engineers hear “governance” and picture compliance checklists or something the legal team handles. That framing misses the point entirely. CISSP treats governance as the structural backbone behind every security decision in an organization. Once you understand it that way, a lot of other security concepts stop feeling like isolated topics and start connecting.</p>
+
+<p>This is Domain 1. It carries the heaviest weight on the exam, and governance is where it starts.</p>
+
+<h2 id="what-governance-actually-is">What governance actually is</h2>
+
+<p>Governance is the system by which an organization directs and controls itself. In security, that means the decisions, accountability structures, and processes that ensure security efforts align with business objectives.</p>
+
+<p>Note what governance is <em>not</em>: it is not a firewall rule, a patch schedule, or an audit finding. It is the scaffolding that determines who has the authority to decide what gets protected, to what extent, and at what cost.</p>
+
+<p>The positioning of the CISO matters here. On the CISSP exam, the CISO reports to executive leadership — a board, a CEO — not to the IT department. That placement is intentional. Security governance is a business function. It belongs at the level where business decisions are made.</p>
+
+<h2 id="the-policy-hierarchy">The policy hierarchy</h2>
+
+<p>One of the concepts CISSP tests most consistently is the relationship between policies, standards, baselines, procedures, and guidelines. Engineers often treat these terms as rough synonyms. The exam does not.</p>
+
+<figure>
+  <img src="/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" alt="The security governance hierarchy: policy at top, then standards, baselines, and procedures, with guidelines shown separately as advisory only." />
+  <figcaption>The governance hierarchy. Policy sets direction; everything below it implements that direction. Only guidelines are advisory.</figcaption>
+</figure>
+
+<p><strong>Policy</strong> is the highest level. It is management-driven, mandatory, and intentionally broad. A policy says what the organization will do and why — not how. For example: <em>“The organization will protect sensitive customer data in accordance with applicable laws and business requirements.”</em> Technical staff do not write policies. Executives and security leadership do.</p>
+
+<p><strong>Standards</strong> are mandatory, specific rules that support a policy. Where a policy says “protect customer data,” a standard says <em>“All databases containing PII must encrypt data at rest using AES-256.”</em> Standards are still technology-aware but specific enough to be measurable.</p>
+
+<p><strong>Baselines</strong> define a minimum security configuration applied consistently across a category of systems. A workstation security baseline specifies which services are disabled, what audit logging is enabled, and what local account policies apply. Every system in scope gets the same starting point.</p>
+
+<p><strong>Procedures</strong> are step-by-step instructions for reaching a baseline or implementing a standard — the closest thing to a how-to document in the governance stack.</p>
+
+<p><strong>Guidelines</strong> are recommended practices. Advisory, not mandatory. This distinction costs candidates exam points. If a question references a guideline, the answer is not enforced by policy.</p>
+
+<p>The exam tests which tier is mandatory, who owns it, and which one gets updated when a specific technical detail changes versus when business risk tolerance shifts. Technical changes drive procedure or standard updates. Strategic shifts drive policy.</p>
+
+<h2 id="compliance-is-not-governance">Compliance is not governance</h2>
+
+<p>These are related but not the same thing, and the exam reflects that distinction.</p>
+
+<p>Governance sets direction — what the organization has committed to doing and the authority structure behind it. Compliance measures whether the organization is actually doing it.</p>
+
+<p>A compliant organization passed an audit. A well-governed organization has the decision-making structures, accountability, and buy-in that made compliance a predictable outcome rather than a last-minute scramble. CISSP consistently steers away from compliance-as-security-strategy. When an answer choice makes you compliant but leaves unaddressed risk on the table, the exam usually does not select it.</p>
+
+<h2 id="risk-appetite-risk-tolerance-and-why-they-are-not-the-same">Risk appetite, risk tolerance, and why they are not the same</h2>
+
+<p>Two terms that frequently blur together and cost exam points.</p>
+
+<p><strong>Risk appetite</strong> is the amount and type of risk an organization is willing to accept in pursuit of its objectives. It is a strategic statement set at the board or executive level: <em>“We accept moderate operational risk to move fast, but zero tolerance for customer data exposure.”</em></p>
+
+<p><strong>Risk tolerance</strong> is the acceptable deviation from that appetite in practice — the operational range. If the appetite says “moderate operational risk,” tolerance defines what moderate actually means: a specific loss threshold, an acceptable SLA breach rate, a permissible number of unpatched critical vulnerabilities within a defined window.</p>
+
+<p>Both matter for governance because they define the boundaries within which security decisions get made. A security professional who does not understand the organization’s risk appetite cannot make governance-aligned recommendations.</p>
+
+<h2 id="due-care-and-due-diligence">Due care and due diligence</h2>
+
+<p>These are legal concepts that CISSP imports into security governance, and candidates frequently invert them.</p>
+
+<p><strong>Due diligence</strong> is the investigation and research you conduct <em>before</em> making a decision. Before deploying a third-party system that handles customer data, you review their security posture, contractual obligations, and incident history. That research is due diligence.</p>
+
+<p><strong>Due care</strong> is the ongoing, reasonable effort to protect assets <em>after</em> a decision has been made. Once you have deployed that system, monitoring it, reviewing access controls, and applying patches is due care. <em>“We did what a reasonable person would do to protect this.”</em></p>
+
+<p>Both have legal weight. If a breach leads to litigation, the questions that arise are: did you investigate before acting, and did you exercise reasonable protection afterward? An organization that skipped vendor review and never audited access has a difficult answer.</p>
+
+<h2 id="a-realistic-scenario">A realistic scenario</h2>
+
+<p>Here is a situation that shows governance in practice.</p>
+
+<figure>
+  <img src="/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/governance-scenario.svg" alt="Diagram showing a governance decision flow: risk identified, policy check, authority question, decision documentation, with due diligence and due care defined below." />
+  <figcaption>Risk decisions must trace back through policy and authority — not just budget or timeline convenience.</figcaption>
+</figure>
+
+<p>A mid-size SaaS company is eight weeks from a SOC 2 Type II audit. The CTO wants to defer a $40,000 network segmentation project by one quarter to hit a product release deadline. The security team has flagged lateral movement risk as high and linked it directly to audit scope.</p>
+
+<p>The governance question is not <em>“can we afford to wait?”</em> It is: <em>“Does accepting this risk align with the documented risk appetite, and who has the authority to make this call?”</em></p>
+
+<p>If the information security policy designates this risk level as non-deferrable without executive sign-off, the CTO cannot make this call unilaterally. It escalates. And if leadership accepts the risk, that decision needs to be documented. You cannot later claim due care over a risk you consciously chose not to mitigate — but you <em>can</em> demonstrate that the decision was made deliberately, at the right level of authority, with the risk fully understood.</p>
+
+<p>This is exactly what CISSP questions about governance and business objectives are testing. Not the technical fix. The decision authority and the accountability trail.</p>
+
+<h2 id="what-the-exam-tests">What the exam tests</h2>
+
+<p>A few patterns worth internalizing before you sit:</p>
+
+<ul>
+  <li>Security decisions on the CISSP exam are framed as business decisions. When two answers both seem technically valid, the one grounded in risk, business objectives, or governance authority is usually correct.</li>
+  <li>Policy does not specify encryption algorithms or password lengths. Standards do that.</li>
+  <li>Due diligence precedes action. Due care is ongoing after the fact.</li>
+  <li>Compliance is an output of governance, not a substitute for it.</li>
+  <li>The sequence — policy → standard → baseline → procedure — appears often enough to know cold.</li>
+</ul>
+
+<p>In real-world practice, governance is messier. Policies sometimes do creep into technical specifics. Risk appetite is sometimes a gut feeling rather than a written statement. The exam tests the ideal model, and understanding it helps you recognize when real-world practice is falling short — which is often when security problems start.</p>
+
+<h2 id="the-pattern-i-keep-noticing">The pattern I keep noticing</h2>
+
+<p>Working through Domain 1, the theme that keeps surfacing is that CISSP consistently pushes you up the abstraction stack. Not: how does this control work? But: who decided this was the right control, under what authority, and how does that decision connect to something the business actually cares about?</p>
+
+<p>Governance is that connection.</p>
+
+<hr />
+
+<p><em>Post 1 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Security governance is how organizations decide what to protect and why. This post explains the policy hierarchy, risk appetite, due care, and due diligence for engineers studying CISSP Domain 1.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+<ol>
+  <li>CISSP Domain 1 security governance</li>
+  <li>security policy standard baseline procedure hierarchy</li>
+  <li>due care vs due diligence CISSP</li>
+  <li>risk appetite vs risk tolerance security</li>
+  <li>security governance for software engineers</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="governance" /><category term="risk-management" /><category term="compliance" /><category term="security-policy" /><category term="domain-1" /><summary type="html"><![CDATA[Security governance is not a filing exercise. It is how an organization decides what matters, what it will protect, and how much uncertainty it can absorb. Post 1 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
 
 <p>You call them <code class="language-plaintext highlighter-rouge">dict</code>, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code>, <code class="language-plaintext highlighter-rouge">HashSet&lt;T&gt;</code>, lookup tables, indexes, caches, frequency maps, dedup maps, and memoization stores.</p>
 
@@ -2196,166 +2313,4 @@ SEO keyword ideas:
 
 <p>That is what the feature was designed to do. The annotation theater version just makes the warnings go quiet.</p>
 
-<hr />]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="nullable reference types" /><category term="dotnet" /><category term="code quality" /><category term="domain design" /><summary type="html"><![CDATA[Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How Security-Minded Engineers Evaluate AI Coding Tools</title><link href="https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/" rel="alternate" type="text/html" title="How Security-Minded Engineers Evaluate AI Coding Tools" /><published>2026-03-27T10:00:00+00:00</published><updated>2026-03-27T10:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/security-minded-engineers-evaluate-ai-coding-tools/"><![CDATA[<p>The easiest way to misunderstand AI coding tools is to evaluate them like autocomplete with better marketing.</p>
-
-<p>That model is already outdated. The modern tools can read repositories, absorb project instructions, call external tools, execute commands, and open pull requests. Once that happens, the important question is not only whether the output looks useful. It is whether the surrounding workflow is trustworthy.</p>
-
-<p>That is where security-minded engineers tend to think more clearly than the average product demo. They are not impressed by capability in isolation. They want to know what the tool can see, what it can do, what stands between it and a bad outcome, and how quickly the team can recover when something goes wrong in a believable way.</p>
-
-<div class="post-note">
-  <strong>Timeless principle:</strong> code and actions produced outside your direct control should be treated as untrusted until verified. <strong>What feels newer in March 2026:</strong> the external producer is increasingly an AI workflow connected to tools, hosted environments, and external context, not just a human contractor or third-party package.
-</div>
-
-<h2 id="first-questions">The first questions a security-minded engineer asks</h2>
-
-<p>The first difference is not technical skill. It is framing.</p>
-
-<p>A security-minded engineer does not start with, “How much faster is this tool?” They start with, “What is the trust boundary here?”</p>
-
-<p>That usually leads to a more useful set of questions:</p>
-
-<ul>
-  <li>What context can the tool access?</li>
-  <li>What actions can it take without asking?</li>
-  <li>Which identities, secrets, or external systems sit behind those actions?</li>
-  <li>What checks stand between the tool output and the default branch?</li>
-  <li>What evidence will we have if we need to explain what happened later?</li>
-</ul>
-
-<p>Those questions apply whether you are looking at a GitHub coding agent, a local terminal assistant, an MCP-connected toolchain, or a custom internal workflow. They are the difference between using AI as a productivity aid and quietly expanding your blast radius without noticing.</p>
-
-<p>This is also why I think the security mindset matters more than specific tool loyalty. Product names will change. Model rankings will change. What tends to survive is the discipline behind the workflow.</p>
-
-<div class="post-checklist">
-  <div>
-    <strong>1. Context is exposure.</strong> If the tool can read architecture docs, tickets, secrets-adjacent files, or customer-related material, then context design is a security question, not just a usability question.
-  </div>
-  <div>
-    <strong>2. Tool use is privilege.</strong> Reading code, editing files, running tests, using networked tools, and opening a pull request are not equivalent capabilities. Each one changes the risk shape.
-  </div>
-  <div>
-    <strong>3. Output is still untrusted until verified.</strong> AI-generated code, shell commands, dependency suggestions, and remediation advice still need deterministic checks and human judgment before they earn trust.
-  </div>
-  <div>
-    <strong>4. Provenance matters.</strong> A clean-looking diff is not enough if you cannot tell what inputs the tool used, what commands it ran, and which review path it went through.
-  </div>
-  <div>
-    <strong>5. Safe rollback beats confident autonomy.</strong> Mature workflows assume believable mistakes will happen and make containment easier than cleanup.
-  </div>
-</div>
-
-<p>The older I get in software, the more I value tools that make risk visible. Security-minded engineers are usually trying to answer the same practical question: if this system fails in a polished and convincing way, how fast will we notice?</p>
-
-<h2 id="whats-changed">What has actually changed recently</h2>
-
-<p>The biggest change is that the major platforms are now documenting AI coding tools as workflow actors, not just suggestion engines.</p>
-
-<p>GitHub’s current <a href="https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom">responsible-use guidance for Copilot coding agent</a> is a good example. It describes repository-only access, <code class="language-plaintext highlighter-rouge">copilot/</code> branch restrictions, approval requirements before pull-request-triggered workflows run, the absence of normal repository or organization secrets during runtime, and a default firewall to reduce data exfiltration risk. That is already a security architecture conversation.</p>
-
-<p>GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> adds another important nuance. Even when exclusions exist, excluded files can still influence behavior indirectly through semantic information such as symbols, type information, or build properties. In plain English: the controls help, but they are not magic, and teams still need to understand the edges.</p>
-
-<p>The same pattern shows up in the broader ecosystem. The official <a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices">Model Context Protocol security best practices</a> explicitly warn against token passthrough, confused-deputy problems, and overly broad scopes. If your coding assistant can reach external MCP servers or tool integrations, that is not just an AI prompt issue. It is an authorization and trust-boundary issue.</p>
-
-<p>OpenAI’s <a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">agent safety guidance</a> and Anthropic’s <a href="https://code.claude.com/docs/en/security">Claude Code security guidance</a> point in the same direction: explicit approvals, structured outputs, strong sandboxing, clear permission models, and careful treatment of risky commands or tools.</p>
-
-<p>There is also a healthy dose of caution in the developer community itself. <a href="https://survey.stackoverflow.co/2025">Stack Overflow’s 2025 Developer Survey</a> found that 84% of respondents are using or planning to use AI tools in development, but it also found that a majority of developers do not use AI agents or still stick to simpler AI tools. The same survey says more developers distrust AI tool accuracy than trust it. That feels rational to me, not resistant.</p>
-
-<p>Security-minded engineers are usually not the people pretending the tools are useless. They are the people refusing to confuse impressive demos with mature operational posture.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/evaluation-lenses.svg" alt="Diagram showing four evaluation lenses for AI coding tools: context, permissions, validation, and provenance." />
-  <figcaption>The fastest useful evaluation is usually not model-versus-model. It is context, permissions, validation, and provenance.</figcaption>
-</figure>
-
-<h2 id="control-ladder">A practical control ladder</h2>
-
-<p>The most useful teams I know do not apply one blanket policy to every AI-assisted task. They match controls to consequence.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Work type</th>
-      <th>Typical risk shape</th>
-      <th>Reasonable default</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Summaries, explanations, draft tests, or refactor ideas</td>
-      <td>Mostly local quality risk</td>
-      <td>Broad use is usually fine with normal review</td>
-    </tr>
-    <tr>
-      <td>Multi-file edits or draft pull requests</td>
-      <td>Repo integrity and CI become part of the workflow</td>
-      <td>Use scoped branches, deterministic checks, and human review before merge</td>
-    </tr>
-    <tr>
-      <td>External tool usage or networked integrations</td>
-      <td>New identities, scopes, and trust boundaries appear</td>
-      <td>Review permissions closely, log usage, and keep explicit approvals for risky actions</td>
-    </tr>
-    <tr>
-      <td>High-impact areas such as auth, infrastructure, secrets, or production data paths</td>
-      <td>Failure cost is materially higher</td>
-      <td>Keep these human-led or behind strong approvals and isolated environments</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>This ladder is not anti-AI. It is anti-carelessness.</p>
-
-<p>It also fits the direction of current security guidance. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> extends secure software development practices into the generative-AI world, and OWASP’s <a href="https://genai.owasp.org/llm05/">LLM05 supply-chain guidance</a> explicitly pushes teams to inventory models, data, and platforms as part of the security surface. The point is not to invent exotic new principles. It is to apply mature ones to a changing toolchain.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/control-ladder.svg" alt="A ladder diagram showing stronger controls as AI-assisted work moves from drafting to repo edits to external tools to high-impact systems." />
-  <figcaption>Autonomy should rise slowly. Consequence usually rises faster.</figcaption>
-</figure>
-
-<h2 id="practical-eval">How I would evaluate an AI coding tool in practice</h2>
-
-<p>If I were evaluating a new tool for a team today, I would keep the process simple.</p>
-
-<ol>
-  <li>Start with a read-heavy use case where failure is cheap.</li>
-  <li>Document exactly what context the tool needs and what it does not need.</li>
-  <li>Separate local editing from networked tool use.</li>
-  <li>Force deterministic checks after each meaningful AI-generated change.</li>
-  <li>Keep human approval on anything that can create repo, CI, or downstream-system impact.</li>
-  <li>Revisit the vendor guidance regularly, because the capability surface is changing faster than many teams update their assumptions.</li>
-</ol>
-
-<p>That last point matters more than people think. The danger is not only that a tool fails. The danger is that a team keeps using an old mental model after the product has gained new reach, new integrations, or new behavior.</p>
-
-<p>This is why I keep coming back to security-minded engineering as a durable advantage. It is not about paranoia. It is about seeing systems clearly enough to ask better questions before the incident review does it for you.</p>
-
-<h2 id="final-thought">Final thought</h2>
-
-<p>I do not think the long-term winners in AI-enabled engineering will be the teams with the loudest opinions about AI. I think they will be the teams that learn how to absorb these tools without lowering their standards for trust, review, and accountability.</p>
-
-<p>That is a quieter skill, but a more durable one.</p>
-
-<p>Use the tools. Learn them well. But evaluate them like an engineer who still has to own the consequences after the excitement wears off.</p>
-
-<h2 id="research-notes">Research notes</h2>
-
-<ul class="post-sources">
-  <li><a href="https://survey.stackoverflow.co/2025">Stack Overflow 2025 Developer Survey</a>: Used for current adoption, skepticism, and trust signals around AI tools and agents.</li>
-  <li><a href="https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom">GitHub responsible use of Copilot coding agent</a>: Used for current security controls such as scoped branches, workflow approvals, limited secret access, and default firewall behavior.</li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub content exclusion docs</a>: Used for the caveat that exclusions have meaningful limitations and indirect semantic leakage paths.</li>
-  <li><a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices">MCP security best practices</a>: Used for current guidance on token passthrough, confused-deputy risks, and least-privilege authorization.</li>
-  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on approvals, guardrails, and trace-aware evaluation.</li>
-  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of permissions, sandboxing, and prompt-injection-aware controls.</li>
-  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to anchor the article in established secure software development practice.</li>
-  <li><a href="https://genai.owasp.org/llm05/">OWASP LLM05 supply chain vulnerabilities</a>: Used for the supply-chain framing around models, data, deployment platforms, inventory, and monitoring.</li>
-</ul>
-
-<!--
-Meta description: Security-minded engineers do not evaluate AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that coding agents can read repositories, call tools, and open pull requests.
-SEO keyword ideas:
-1. security minded engineer AI coding tools
-2. evaluate AI coding tools
-3. secure AI coding workflow
-4. AI coding tools AppSec
-5. AI agents software engineering security
--->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="secure software development" /><category term="engineering judgment" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[Security-minded engineers do not judge AI coding tools by demo quality alone. They look at context, permissions, validation, provenance, and blast radius, especially now that modern coding agents can read repositories, call tools, and open pull requests.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/security-minded-engineers-evaluate-ai-coding-tools/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<hr />]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="nullable reference types" /><category term="dotnet" /><category term="code quality" /><category term="domain design" /><summary type="html"><![CDATA[Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
