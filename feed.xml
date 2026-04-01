@@ -1,4 +1,203 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-01T00:40:08+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Security Governance Is Not Paperwork</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/" rel="alternate" type="text/html" title="Security Governance Is Not Paperwork" /><published>2026-03-31T13:00:00+00:00</published><updated>2026-03-31T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/"><![CDATA[<p>I am studying for the CISSP exam and writing these posts as I go — partly as a study tool, partly because I think the concepts are worth sharing clearly. If you are an engineer moving toward security, a fellow candidate, or just curious about how security thinking works at a strategic level, I hope these are useful.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-01T07:43:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" rel="alternate" type="text/html" title="BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" /><published>2026-03-31T19:00:00+00:00</published><updated>2026-03-31T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/"><![CDATA[<p>Most people can define incident response in one sentence. Fewer can explain, under pressure, where incident response ends and disaster recovery starts. Fewer still can separate those from business continuity and crisis management in a way that survives a real outage.</p>
+
+<p>That distinction matters on the CISSP exam, and it matters even more in practice.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" alt="Visual model showing business continuity, disaster recovery, incident response, and crisis management as connected but distinct functions in an operational resilience program." />
+  <figcaption>These functions are related, but they solve different problems and operate on different timelines.</figcaption>
+</figure>
+
+<h2 id="the-one-page-mental-model">The one-page mental model</h2>
+
+<p>If you remember nothing else, remember this:</p>
+
+<ul>
+  <li>Business continuity planning (BCP) protects the business mission.</li>
+  <li>Disaster recovery planning (DRP) restores technology capability.</li>
+  <li>Incident response (IR) contains and handles security incidents.</li>
+  <li>Crisis management leads enterprise-level decisions and communications when disruption threatens the organization.</li>
+</ul>
+
+<p>All four belong in a mature resilience program. They overlap, but they are not interchangeable.</p>
+
+<h2 id="what-cissp-tests-vs-what-practice-demands">What CISSP tests vs what practice demands</h2>
+
+<p>CISSP questions often present two technically plausible answers. The better answer is usually the one that reflects scope and objective correctly.</p>
+
+<p>In exam terms, BCP is broader than DRP. DRP is often a subset or supporting plan under continuity strategy. IR is primarily a security function focused on detection, containment, eradication, and recovery from cyber incidents. Crisis management is executive coordination across legal, communications, operations, and leadership.</p>
+
+<p>In practice, these boundaries can be organizationally messy. Teams are understaffed. A single leader may wear two hats. Plans may live in separate tools and never get reconciled until the worst day. The exam assumes a clean model. Real operations reward you for understanding the clean model first, then handling the mess deliberately.</p>
+
+<h2 id="bcp-keep-critical-business-services-running">BCP: Keep critical business services running</h2>
+
+<p>Business continuity planning answers this question: how does the organization keep delivering essential outcomes during and after disruption?</p>
+
+<p>The scope is business processes, people, third parties, facilities, technology dependencies, and alternate work methods. BCP is driven by business impact analysis (BIA), which identifies critical functions and their tolerable downtime.</p>
+
+<p>If payroll can be delayed for 24 hours with manageable impact but payment processing cannot be down for more than 30 minutes, that is continuity prioritization, not a server conversation.</p>
+
+<p>Typical BCP outputs include:</p>
+
+<ul>
+  <li>prioritized business functions</li>
+  <li>continuity strategies for people, process, and location constraints</li>
+  <li>manual workarounds and alternate process paths</li>
+  <li>dependency maps across vendors and internal teams</li>
+  <li>governance for continuity exercises and updates</li>
+</ul>
+
+<p>Exam trap: picking a purely technical recovery action when the question is about maintaining business operations.</p>
+
+<h2 id="drp-restore-systems-and-data-to-support-continuity">DRP: Restore systems and data to support continuity</h2>
+
+<p>Disaster recovery planning is technology recovery strategy. It answers: how do we restore IT capabilities within acceptable windows after major disruption?</p>
+
+<p>This is where recovery sites, backup architecture, replication models, infrastructure as code restoration, and recovery testing cadence live. DRP is tightly coupled to continuity requirements but remains technical in focus.</p>
+
+<p>Two terms that frequently appear:</p>
+
+<ul>
+  <li>RTO (Recovery Time Objective): targeted maximum downtime for a system.</li>
+  <li>RPO (Recovery Point Objective): targeted maximum acceptable data loss measured in time.</li>
+</ul>
+
+<p>For example, an order platform with RTO of 60 minutes and RPO of 5 minutes needs architecture and procedures that can meet both objectives under realistic failure conditions.</p>
+
+<p>Exam trap: treating RTO and RPO as incident response metrics. They are recovery and continuity planning metrics.</p>
+
+<h2 id="incident-response-reduce-harm-during-a-security-event">Incident Response: Reduce harm during a security event</h2>
+
+<p>Incident response is a structured process for managing security events that rise to incident level. Most teams map to phases similar to preparation, detection/analysis, containment, eradication, recovery, and lessons learned.</p>
+
+<p>IR is operational and time-sensitive. It is focused on limiting blast radius, preserving evidence, coordinating technical remediation, and restoring trusted operations.</p>
+
+<p>If ransomware is spreading laterally, IR owns rapid containment decisions such as host isolation, account disablement, and forensic capture priorities. DRP may be invoked afterward for clean restoration. BCP may activate earlier if business services are degraded. Crisis management may engage if regulatory disclosures, customer trust, or executive decisions are in play.</p>
+
+<p>Exam trap: selecting “restore from backup” as the first response to an active incident before containment and analysis are handled.</p>
+
+<h2 id="crisis-management-lead-the-enterprise-under-uncertainty">Crisis Management: Lead the enterprise under uncertainty</h2>
+
+<p>Crisis management is the executive-level coordination function when disruption has strategic, legal, reputational, or safety impact.</p>
+
+<p>It addresses questions like:</p>
+
+<ul>
+  <li>Who can declare an organizational crisis?</li>
+  <li>Who approves external messaging?</li>
+  <li>What must be disclosed, to whom, and when?</li>
+  <li>Which tradeoffs are acceptable when legal, financial, and operational goals conflict?</li>
+</ul>
+
+<p>The crisis team usually includes executive leadership, legal, communications, risk, HR, and key operational leaders. Technical responders provide inputs, but crisis management is not a SOC runbook.</p>
+
+<p>Exam trap: assuming the technical incident commander owns public statements or regulatory communication strategy.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/rto-rpo-mtd-map.svg" alt="Timeline illustration mapping MTD, RTO, and RPO to a service outage and recovery sequence." />
+  <figcaption>MTD frames business tolerance, while RTO and RPO shape technical recovery design.</figcaption>
+</figure>
+
+<h2 id="mtd-rto-and-rpo-without-confusion">MTD, RTO, and RPO without confusion</h2>
+
+<p>These are often memorized separately and then misapplied together.</p>
+
+<ul>
+  <li>MTD (Maximum Tolerable Downtime) is business-centric. Beyond this point, mission impact becomes unacceptable.</li>
+  <li>RTO should be less than or equal to MTD for supporting systems.</li>
+  <li>RPO defines acceptable data loss exposure.</li>
+</ul>
+
+<p>A practical relationship is:</p>
+
+<ul>
+  <li>business defines MTD through BIA</li>
+  <li>technology designs RTO and RPO in DRP to stay within that business boundary</li>
+  <li>IR actions may affect whether those objectives are realistically achievable during an active attack</li>
+</ul>
+
+<p>When these values are defined in isolation, recovery plans fail in execution.</p>
+
+<h2 id="real-scenario-cloud-outage-during-a-security-incident">Real scenario: cloud outage during a security incident</h2>
+
+<p>Consider a SaaS company with a multi-region deployment. At 09:10, the security team detects unauthorized access to production credentials. At 09:20, suspicious administrative actions begin. By 09:35, one region is unavailable due to emergency containment and service impact is visible.</p>
+
+<p>Here is how boundaries should work:</p>
+
+<ul>
+  <li>IR activates first to contain credential abuse, preserve evidence, and stop further unauthorized activity.</li>
+  <li>BCP leadership evaluates which customer-facing services must continue and authorizes temporary degraded modes where needed.</li>
+  <li>DRP executes restoration plans for clean environments and validated data states, aligned with RTO/RPO commitments.</li>
+  <li>Crisis management decides communication posture, legal escalation, customer notifications, and executive decision rights.</li>
+</ul>
+
+<p>If one team tries to run all of this from a single technical checklist, coordination breaks. The result is usually delayed containment, confused messaging, and slower restoration.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<p>Some parts of this topic are stable and have been stable for years:</p>
+
+<ul>
+  <li>BCP, DRP, IR, and crisis management are distinct but interdependent functions.</li>
+  <li>BIA drives continuity priorities.</li>
+  <li>RTO/RPO are recovery design constraints tied to business tolerances.</li>
+  <li>Incident handling needs preparation, containment discipline, and post-incident learning.</li>
+</ul>
+
+<p>Recent developments mainly increase expectations for evidence of operational resilience, not the underlying principles.</p>
+
+<ul>
+  <li>Regulatory environments now place stronger pressure on resilience testing and governance. In the EU, DORA operationalized digital resilience obligations for financial entities.</li>
+  <li>Public company cyber disclosure obligations have tightened expectations around incident governance and communication discipline.</li>
+  <li>Cloud-native architectures changed implementation patterns, but not the need for clear function boundaries and accountability.</li>
+</ul>
+
+<p>The durable idea: tools evolve, governance logic does not.</p>
+
+<h2 id="common-mistakes-cissp-candidates-make">Common mistakes CISSP candidates make</h2>
+
+<ul>
+  <li>Treating BCP and DRP as synonyms.</li>
+  <li>Forgetting that BCP starts with business process criticality, not infrastructure preference.</li>
+  <li>Using incident response steps as if they are continuity strategy.</li>
+  <li>Ignoring crisis communication governance in high-impact incidents.</li>
+  <li>Memorizing MTD/RTO/RPO definitions but missing how they constrain one another.</li>
+</ul>
+
+<p>A useful exam habit is to ask: what is the primary objective in this question, and which function owns that objective?</p>
+
+<h2 id="how-to-make-this-operational-at-work">How to make this operational at work</h2>
+
+<p>If you are leading engineering or security in a real organization, a practical way to improve maturity is to run one integrated scenario each quarter and score the handoffs.</p>
+
+<p>Evaluate:</p>
+
+<ul>
+  <li>did IR contain quickly without destroying recovery options?</li>
+  <li>did DRP meet the declared RTO/RPO under realistic pressure?</li>
+  <li>did BCP keep critical services and business decisions aligned?</li>
+  <li>did crisis leadership control message, authority, and escalation timing?</li>
+</ul>
+
+<p>Most programs do not fail because they lack a plan. They fail because interfaces between plans were never exercised.</p>
+
+<p>That is exactly why this distinction matters beyond the exam.</p>
+
+<hr />
+
+<p><em>Post 2 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Learn the practical and exam-critical differences between BCP, DRP, incident response, and crisis management, including how MTD, RTO, and RPO work together in real operations.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+<ol>
+  <li>CISSP BCP vs DRP vs incident response</li>
+  <li>crisis management vs incident response cybersecurity</li>
+  <li>MTD RTO RPO explained for CISSP</li>
+  <li>business continuity planning for security leaders</li>
+  <li>CISSP Domain 1 resilience and recovery</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="bcp" /><category term="drp" /><category term="incident-response" /><category term="crisis-management" /><category term="resilience" /><summary type="html"><![CDATA[CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Governance Is Not Paperwork</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/" rel="alternate" type="text/html" title="Security Governance Is Not Paperwork" /><published>2026-03-31T13:00:00+00:00</published><updated>2026-03-31T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/"><![CDATA[<p>I am studying for the CISSP exam and writing these posts as I go — partly as a study tool, partly because I think the concepts are worth sharing clearly. If you are an engineer moving toward security, a fellow candidate, or just curious about how security thinking works at a strategic level, I hope these are useful.</p>
 
 <hr />
 
@@ -2076,241 +2275,4 @@ SEO keyword ideas:
 3. AI agents software supply chain
 4. software supply chain AI tools
 5. AppSec AI coding tools
--->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="software supply chain" /><category term="secure software development" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">C# Nullable Reference Types: Real Discipline vs Annotation Theater</title><link href="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/" rel="alternate" type="text/html" title="C# Nullable Reference Types: Real Discipline vs Annotation Theater" /><published>2026-03-27T13:00:00+00:00</published><updated>2026-03-27T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/csharp-nullable-reference-types-discipline/"><![CDATA[<p>Most teams followed the same script after upgrading to .NET 6 or later. They opened the project file, set <code class="language-plaintext highlighter-rouge">&lt;Nullable&gt;enable&lt;/Nullable&gt;</code>, and watched the compiler light up with hundreds of warnings. Then, under deadline pressure, they plastered <code class="language-plaintext highlighter-rouge">= null!</code> and <code class="language-plaintext highlighter-rouge">!</code> operators across the codebase until the warnings went away.</p>
-
-<p>The feature was technically enabled. The warnings were technically resolved. The actual null-safety was largely unchanged.</p>
-
-<p>That is annotation theater: the visual appearance of discipline without the underlying design.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" alt="Code diagram contrasting null-forgiving operator suppression with disciplined nullable design in C#." />
-  <figcaption>Enabling the feature and silencing the warnings are two different things.</figcaption>
-</figure>
-
-<h2 id="what-nrts-give-you">What nullable reference types actually give you</h2>
-
-<p>Nullable reference types are a static analysis contract, not a runtime enforcement mechanism. The compiler tracks nullability through your code and tells you where you have made a promise you cannot keep.</p>
-
-<p>When you declare <code class="language-plaintext highlighter-rouge">string Name</code>, you are telling the compiler — and every developer who reads that code — that <code class="language-plaintext highlighter-rouge">Name</code> will never be null. When you declare <code class="language-plaintext highlighter-rouge">string? Description</code>, you are acknowledging that absence is a legitimate state for that value. That is useful information encoded in the type system, where it cannot go stale the way a comment can.</p>
-
-<p>The concrete benefits are real when you use the feature with intent:</p>
-
-<ul>
-  <li><strong>API boundaries become honest.</strong> A method signature of <code class="language-plaintext highlighter-rouge">Customer? FindById(int id)</code> communicates that the caller must handle the not-found case. The compiler enforces that they do.</li>
-  <li><strong>Flow analysis catches real mistakes.</strong> Branching on null, reassigning a nullable to a non-nullable without checking, returning null from a method declared to return a non-nullable — the compiler finds these before the runtime does.</li>
-  <li><strong>The type annotation is documentation that compiles.</strong> In a <code class="language-plaintext highlighter-rouge">string Name</code> property on a domain entity, the non-nullability is a domain assertion. That entity does not exist in a valid state without a name.</li>
-</ul>
-
-<p>The key word is intent. The compiler is only as useful as the meaning you put behind your annotations.</p>
-
-<h2 id="null-forgiving-theater">Why null-forgiving operators defeat the purpose</h2>
-
-<p>The null-forgiving operator <code class="language-plaintext highlighter-rouge">!</code> tells the compiler: “I know you’re uncertain about this, but trust me.” The compiler stops warning you. Nothing else changes.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This compiles cleanly with no warnings.</span>
-<span class="c1">// It will throw a NullReferenceException at runtime if Name was never assigned.</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">= null!</code> is not an idiom for “I’ll fill this in later.” It is a suppression. You have removed the warning without resolving the condition that triggered it. The object can now be constructed with no name and no email, and the compiler will not tell you until the production exception report does.</p>
-
-<p>The same problem appears in method bodies:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">SendWelcome</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// The compiler is satisfied. The runtime is not impressed.</span>
-    <span class="kt">var</span> <span class="n">greeting</span> <span class="p">=</span> <span class="s">"Welcome, "</span> <span class="p">+</span> <span class="n">_customer</span><span class="p">.</span><span class="n">Name</span><span class="p">!.</span><span class="nf">ToUpper</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Sprinkling <code class="language-plaintext highlighter-rouge">!</code> throughout a codebase is a way of accumulating technical debt that looks like it has been paid off. Every suppressed warning is a decision deferred to production.</p>
-
-<h2 id="code-comparison">Wrong vs right: a direct comparison</h2>
-
-<p>The wrong approach treats nullability annotations as a migration tax to be minimized:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong: annotations silenced, design unchanged</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span> <span class="p">=</span> <span class="k">null</span><span class="p">!;</span>
-
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">!.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">_emailService</span><span class="p">!.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">!);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Every <code class="language-plaintext highlighter-rouge">!</code> here is a deferred null check. The constructor never ran. The dependencies might be null. The method body checks <code class="language-plaintext highlighter-rouge">order != null</code> but trusts <code class="language-plaintext highlighter-rouge">CustomerEmail</code> unconditionally.</p>
-
-<p>The right approach uses constructor injection to establish validity at creation:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Right: validity guaranteed at construction</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IOrderRepository</span> <span class="n">_repository</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="nf">OrderService</span><span class="p">(</span><span class="n">IOrderRepository</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IEmailService</span> <span class="n">emailService</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_repository</span> <span class="p">=</span> <span class="n">repository</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">repository</span><span class="p">));</span>
-        <span class="n">_emailService</span> <span class="p">=</span> <span class="n">emailService</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">emailService</span><span class="p">));</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">ProcessOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">orderId</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">order</span> <span class="p">=</span> <span class="n">_repository</span><span class="p">.</span><span class="nf">GetById</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-
-        <span class="n">_emailService</span><span class="p">.</span><span class="nf">SendConfirmation</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerEmail</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>No <code class="language-plaintext highlighter-rouge">!</code> operators. No <code class="language-plaintext highlighter-rouge">null!</code> initializers. The compiler is satisfied because the design is correct, not because the analysis was suppressed. If a caller passes a null dependency, they get an <code class="language-plaintext highlighter-rouge">ArgumentNullException</code> immediately at the injection site — the clearest possible signal.</p>
-
-<h2 id="constructor-injection">Constructor injection: validity at creation</h2>
-
-<p>The principle behind the right approach is simple. An object should either exist in a valid state or not exist at all. If a class requires non-null collaborators to function, enforce that at construction.</p>
-
-<p>This works equally well with record types:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The compiler guarantees Name and Email are non-null everywhere this is used.</span>
-<span class="k">public</span> <span class="k">record</span> <span class="nc">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">Email</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Records are particularly well-suited here. Their concise syntax and immutability combine naturally with the non-nullability contract. A <code class="language-plaintext highlighter-rouge">Customer</code> record is always a <code class="language-plaintext highlighter-rouge">Customer</code> with a real name and a real email. There is no half-constructed state.</p>
-
-<p>For mutable entities, the <code class="language-plaintext highlighter-rouge">required</code> keyword introduced in C# 11 provides similar guarantees without requiring a constructor argument for every property:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">ShippingAddress</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">Street</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">required</span> <span class="kt">string</span> <span class="n">City</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Apartment</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">init</span><span class="p">;</span> <span class="p">}</span>  <span class="c1">// legitimately optional</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">required</code> properties must be set in object initializers. The compiler enforces it. <code class="language-plaintext highlighter-rouge">Apartment</code> is <code class="language-plaintext highlighter-rouge">string?</code> because a shipping address genuinely might not have one — that is an honest modeling choice, not a suppression.</p>
-
-<h2 id="factory-methods">Factory methods: honest creation that can fail</h2>
-
-<p>Constructor injection works well when you control the inputs. When creation might fail — for example, when parsing external data — factory methods let you be explicit about the uncertainty:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Customer</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Email</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="k">private</span> <span class="nf">Customer</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">email</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="n">Email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="n">Customer</span><span class="p">?</span> <span class="nf">TryCreate</span><span class="p">(</span><span class="kt">string</span><span class="p">?</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span><span class="p">?</span> <span class="n">email</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">email</span><span class="p">))</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>The private constructor means no partially valid <code class="language-plaintext highlighter-rouge">Customer</code> can exist. <code class="language-plaintext highlighter-rouge">TryCreate</code> returns <code class="language-plaintext highlighter-rouge">Customer?</code>, which forces callers to handle the failure case. The <code class="language-plaintext highlighter-rouge">!</code> operator never appears because the <code class="language-plaintext highlighter-rouge">null</code> check happens before the construction — there is nothing to suppress.</p>
-
-<p>The caller receives a clear contract:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">.</span><span class="nf">TryCreate</span><span class="p">(</span><span class="n">nameInput</span><span class="p">,</span> <span class="n">emailInput</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">customer</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nf">ValidationProblem</span><span class="p">(</span><span class="s">"Name and email are required."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="c1">// customer is non-null here, and the compiler knows it</span>
-</code></pre></div></div>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/design-patterns.svg" alt="Diagram showing three paths: constructor injection for required dependencies, factory methods for conditional creation, and Result types for explicit error propagation." />
-  <figcaption>Three patterns that design null out rather than around it.</figcaption>
-</figure>
-
-<h2 id="option-result-types">Option and Result types: modeling absence explicitly</h2>
-
-<p>For cases where <code class="language-plaintext highlighter-rouge">null</code> and “not found” and “failed validation” are conceptually distinct — and conflating them would lose information — Result and Option types give you richer vocabulary.</p>
-
-<p>A simple Result type:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">readonly</span> <span class="k">record</span> <span class="nc">struct</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsSuccess</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">T</span><span class="p">?</span> <span class="n">Value</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="kt">string</span><span class="p">?</span> <span class="n">Error</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">private</span> <span class="nf">Result</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span> <span class="n">IsSuccess</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> <span class="n">Error</span> <span class="p">=</span> <span class="n">error</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Success</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="nf">Failure</span><span class="p">(</span><span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">new</span><span class="p">(</span><span class="n">error</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Usage communicates intent clearly:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;</span> <span class="nf">RegisterCustomer</span><span class="p">(</span><span class="n">RegistrationRequest</span> <span class="n">request</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Name is required."</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(!</span><span class="nf">IsValidEmail</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Failure</span><span class="p">(</span><span class="s">"Email address is not valid."</span><span class="p">);</span>
-
-    <span class="kt">var</span> <span class="n">customer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
-    <span class="n">_repository</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">Result</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;.</span><span class="nf">Success</span><span class="p">(</span><span class="n">customer</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>The caller gets a <code class="language-plaintext highlighter-rouge">Result&lt;Customer&gt;</code>. They cannot accidentally treat the value as valid without checking <code class="language-plaintext highlighter-rouge">IsSuccess</code>. There is no null, no exception for a control flow decision, and no ambiguity between “customer not found” and “customer invalid.”</p>
-
-<p>Libraries like <code class="language-plaintext highlighter-rouge">CSharpFunctionalExtensions</code> offer production-ready implementations of this pattern with monadic chaining if you want richer composition. The concept scales whether you roll your own or bring in a library.</p>
-
-<h2 id="design-question">The design question to ask instead</h2>
-
-<p>The pattern becomes clearer once you shift from “how do I handle null here?” to “why could this be null in the first place?”</p>
-
-<p>When the answer is “because this field is genuinely optional in the domain,” then <code class="language-plaintext highlighter-rouge">string?</code> is correct and deliberate. A product description might be optional. A middle name might be optional. A secondary email might be optional.</p>
-
-<p>When the answer is “because the object just hasn’t been initialized yet” or “because we haven’t wired up the tests properly,” that is not a nullable type problem. That is a design problem wearing a type system mask.</p>
-
-<div class="post-note">
-  <strong>The practical test:</strong> if you cannot explain in one sentence why a field is nullable in terms of the domain — not in terms of the code — it probably should not be nullable. It should be required, or it should not exist until the object is in the state where it is meaningful.
-</div>
-
-<h2 id="warnings-as-signals">Treat warnings as design signals</h2>
-
-<p>When the compiler warns you about a potential null dereference, it is not being pedantic. It is telling you that your type annotations do not match your code’s behavior, which means either the annotations are wrong or the code is wrong. Either way, there is a discrepancy worth understanding.</p>
-
-<p>The discipline is straightforward:</p>
-
-<ul>
-  <li>If a warning indicates a property that should always be non-null, fix the construction path so the compiler can verify it.</li>
-  <li>If a warning indicates a genuinely nullable value, handle the null case explicitly until the compiler can prove the path is safe.</li>
-  <li>If you reach for <code class="language-plaintext highlighter-rouge">!</code> or <code class="language-plaintext highlighter-rouge">= null!</code>, treat it as a code smell requiring a comment explaining why the suppression is justified — and plan to remove it.</li>
-</ul>
-
-<p>That last constraint is a useful forcing function. Requiring an explanation for every suppression is how you distinguish the legitimate uses — interop with uninitialized reflection, legacy migration paths, tests scaffolded for brevity — from the habitual ones.</p>
-
-<p>Teams that do this consistently find that the feature pays off. Not because null becomes impossible, but because the points where null is possible are explicit, visible, and deliberate. The type system carries the documentation, and the analysis enforces it.</p>
-
-<p>That is what the feature was designed to do. The annotation theater version just makes the warnings go quiet.</p>
-
-<hr />]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="nullable reference types" /><category term="dotnet" /><category term="code quality" /><category term="domain design" /><summary type="html"><![CDATA[Most teams enabled nullable reference types and then used the null-forgiving operator to silence the warnings. That is not discipline. It is annotation theater with extra steps.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-nullable-reference-types-discipline/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="software supply chain" /><category term="secure software development" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

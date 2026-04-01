@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines | Johnny Avakian Portfolio</title>
+    <meta name="description" content="CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-03-31T19:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-1" />
+      
+        <meta property="article:tag" content="bcp" />
+      
+        <meta property="article:tag" content="drp" />
+      
+        <meta property="article:tag" content="incident-response" />
+      
+        <meta property="article:tag" content="crisis-management" />
+      
+        <meta property="article:tag" content="resilience" />
+      
+    
+    <meta property="og:title" content="BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" />
+    <meta property="og:description" content="CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" />
+    <meta name="twitter:description" content="CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines",
+        "description": "CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-03-31T19:00:00+00:00",
+        "dateModified": "2026-03-31T19:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-03-31T19:00:00+00:00">March 31, 2026</time>
+              <h1 class="post-title">BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines</h1>
+              
+                <p class="post-dek">CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-1</span>
+                  
+                    <span class="chip">bcp</span>
+                  
+                    <span class="chip">drp</span>
+                  
+                    <span class="chip">incident-response</span>
+                  
+                    <span class="chip">crisis-management</span>
+                  
+                    <span class="chip">resilience</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Most people can define incident response in one sentence. Fewer can explain, under pressure, where incident response ends and disaster recovery starts. Fewer still can separate those from business continuity and crisis management in a way that survives a real outage.</p>
+
+<p>That distinction matters on the CISSP exam, and it matters even more in practice.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" alt="Visual model showing business continuity, disaster recovery, incident response, and crisis management as connected but distinct functions in an operational resilience program." />
+  <figcaption>These functions are related, but they solve different problems and operate on different timelines.</figcaption>
+</figure>
+
+<h2 id="the-one-page-mental-model">The one-page mental model</h2>
+
+<p>If you remember nothing else, remember this:</p>
+
+<ul>
+  <li>Business continuity planning (BCP) protects the business mission.</li>
+  <li>Disaster recovery planning (DRP) restores technology capability.</li>
+  <li>Incident response (IR) contains and handles security incidents.</li>
+  <li>Crisis management leads enterprise-level decisions and communications when disruption threatens the organization.</li>
+</ul>
+
+<p>All four belong in a mature resilience program. They overlap, but they are not interchangeable.</p>
+
+<h2 id="what-cissp-tests-vs-what-practice-demands">What CISSP tests vs what practice demands</h2>
+
+<p>CISSP questions often present two technically plausible answers. The better answer is usually the one that reflects scope and objective correctly.</p>
+
+<p>In exam terms, BCP is broader than DRP. DRP is often a subset or supporting plan under continuity strategy. IR is primarily a security function focused on detection, containment, eradication, and recovery from cyber incidents. Crisis management is executive coordination across legal, communications, operations, and leadership.</p>
+
+<p>In practice, these boundaries can be organizationally messy. Teams are understaffed. A single leader may wear two hats. Plans may live in separate tools and never get reconciled until the worst day. The exam assumes a clean model. Real operations reward you for understanding the clean model first, then handling the mess deliberately.</p>
+
+<h2 id="bcp-keep-critical-business-services-running">BCP: Keep critical business services running</h2>
+
+<p>Business continuity planning answers this question: how does the organization keep delivering essential outcomes during and after disruption?</p>
+
+<p>The scope is business processes, people, third parties, facilities, technology dependencies, and alternate work methods. BCP is driven by business impact analysis (BIA), which identifies critical functions and their tolerable downtime.</p>
+
+<p>If payroll can be delayed for 24 hours with manageable impact but payment processing cannot be down for more than 30 minutes, that is continuity prioritization, not a server conversation.</p>
+
+<p>Typical BCP outputs include:</p>
+
+<ul>
+  <li>prioritized business functions</li>
+  <li>continuity strategies for people, process, and location constraints</li>
+  <li>manual workarounds and alternate process paths</li>
+  <li>dependency maps across vendors and internal teams</li>
+  <li>governance for continuity exercises and updates</li>
+</ul>
+
+<p>Exam trap: picking a purely technical recovery action when the question is about maintaining business operations.</p>
+
+<h2 id="drp-restore-systems-and-data-to-support-continuity">DRP: Restore systems and data to support continuity</h2>
+
+<p>Disaster recovery planning is technology recovery strategy. It answers: how do we restore IT capabilities within acceptable windows after major disruption?</p>
+
+<p>This is where recovery sites, backup architecture, replication models, infrastructure as code restoration, and recovery testing cadence live. DRP is tightly coupled to continuity requirements but remains technical in focus.</p>
+
+<p>Two terms that frequently appear:</p>
+
+<ul>
+  <li>RTO (Recovery Time Objective): targeted maximum downtime for a system.</li>
+  <li>RPO (Recovery Point Objective): targeted maximum acceptable data loss measured in time.</li>
+</ul>
+
+<p>For example, an order platform with RTO of 60 minutes and RPO of 5 minutes needs architecture and procedures that can meet both objectives under realistic failure conditions.</p>
+
+<p>Exam trap: treating RTO and RPO as incident response metrics. They are recovery and continuity planning metrics.</p>
+
+<h2 id="incident-response-reduce-harm-during-a-security-event">Incident Response: Reduce harm during a security event</h2>
+
+<p>Incident response is a structured process for managing security events that rise to incident level. Most teams map to phases similar to preparation, detection/analysis, containment, eradication, recovery, and lessons learned.</p>
+
+<p>IR is operational and time-sensitive. It is focused on limiting blast radius, preserving evidence, coordinating technical remediation, and restoring trusted operations.</p>
+
+<p>If ransomware is spreading laterally, IR owns rapid containment decisions such as host isolation, account disablement, and forensic capture priorities. DRP may be invoked afterward for clean restoration. BCP may activate earlier if business services are degraded. Crisis management may engage if regulatory disclosures, customer trust, or executive decisions are in play.</p>
+
+<p>Exam trap: selecting “restore from backup” as the first response to an active incident before containment and analysis are handled.</p>
+
+<h2 id="crisis-management-lead-the-enterprise-under-uncertainty">Crisis Management: Lead the enterprise under uncertainty</h2>
+
+<p>Crisis management is the executive-level coordination function when disruption has strategic, legal, reputational, or safety impact.</p>
+
+<p>It addresses questions like:</p>
+
+<ul>
+  <li>Who can declare an organizational crisis?</li>
+  <li>Who approves external messaging?</li>
+  <li>What must be disclosed, to whom, and when?</li>
+  <li>Which tradeoffs are acceptable when legal, financial, and operational goals conflict?</li>
+</ul>
+
+<p>The crisis team usually includes executive leadership, legal, communications, risk, HR, and key operational leaders. Technical responders provide inputs, but crisis management is not a SOC runbook.</p>
+
+<p>Exam trap: assuming the technical incident commander owns public statements or regulatory communication strategy.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/rto-rpo-mtd-map.svg" alt="Timeline illustration mapping MTD, RTO, and RPO to a service outage and recovery sequence." />
+  <figcaption>MTD frames business tolerance, while RTO and RPO shape technical recovery design.</figcaption>
+</figure>
+
+<h2 id="mtd-rto-and-rpo-without-confusion">MTD, RTO, and RPO without confusion</h2>
+
+<p>These are often memorized separately and then misapplied together.</p>
+
+<ul>
+  <li>MTD (Maximum Tolerable Downtime) is business-centric. Beyond this point, mission impact becomes unacceptable.</li>
+  <li>RTO should be less than or equal to MTD for supporting systems.</li>
+  <li>RPO defines acceptable data loss exposure.</li>
+</ul>
+
+<p>A practical relationship is:</p>
+
+<ul>
+  <li>business defines MTD through BIA</li>
+  <li>technology designs RTO and RPO in DRP to stay within that business boundary</li>
+  <li>IR actions may affect whether those objectives are realistically achievable during an active attack</li>
+</ul>
+
+<p>When these values are defined in isolation, recovery plans fail in execution.</p>
+
+<h2 id="real-scenario-cloud-outage-during-a-security-incident">Real scenario: cloud outage during a security incident</h2>
+
+<p>Consider a SaaS company with a multi-region deployment. At 09:10, the security team detects unauthorized access to production credentials. At 09:20, suspicious administrative actions begin. By 09:35, one region is unavailable due to emergency containment and service impact is visible.</p>
+
+<p>Here is how boundaries should work:</p>
+
+<ul>
+  <li>IR activates first to contain credential abuse, preserve evidence, and stop further unauthorized activity.</li>
+  <li>BCP leadership evaluates which customer-facing services must continue and authorizes temporary degraded modes where needed.</li>
+  <li>DRP executes restoration plans for clean environments and validated data states, aligned with RTO/RPO commitments.</li>
+  <li>Crisis management decides communication posture, legal escalation, customer notifications, and executive decision rights.</li>
+</ul>
+
+<p>If one team tries to run all of this from a single technical checklist, coordination breaks. The result is usually delayed containment, confused messaging, and slower restoration.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<p>Some parts of this topic are stable and have been stable for years:</p>
+
+<ul>
+  <li>BCP, DRP, IR, and crisis management are distinct but interdependent functions.</li>
+  <li>BIA drives continuity priorities.</li>
+  <li>RTO/RPO are recovery design constraints tied to business tolerances.</li>
+  <li>Incident handling needs preparation, containment discipline, and post-incident learning.</li>
+</ul>
+
+<p>Recent developments mainly increase expectations for evidence of operational resilience, not the underlying principles.</p>
+
+<ul>
+  <li>Regulatory environments now place stronger pressure on resilience testing and governance. In the EU, DORA operationalized digital resilience obligations for financial entities.</li>
+  <li>Public company cyber disclosure obligations have tightened expectations around incident governance and communication discipline.</li>
+  <li>Cloud-native architectures changed implementation patterns, but not the need for clear function boundaries and accountability.</li>
+</ul>
+
+<p>The durable idea: tools evolve, governance logic does not.</p>
+
+<h2 id="common-mistakes-cissp-candidates-make">Common mistakes CISSP candidates make</h2>
+
+<ul>
+  <li>Treating BCP and DRP as synonyms.</li>
+  <li>Forgetting that BCP starts with business process criticality, not infrastructure preference.</li>
+  <li>Using incident response steps as if they are continuity strategy.</li>
+  <li>Ignoring crisis communication governance in high-impact incidents.</li>
+  <li>Memorizing MTD/RTO/RPO definitions but missing how they constrain one another.</li>
+</ul>
+
+<p>A useful exam habit is to ask: what is the primary objective in this question, and which function owns that objective?</p>
+
+<h2 id="how-to-make-this-operational-at-work">How to make this operational at work</h2>
+
+<p>If you are leading engineering or security in a real organization, a practical way to improve maturity is to run one integrated scenario each quarter and score the handoffs.</p>
+
+<p>Evaluate:</p>
+
+<ul>
+  <li>did IR contain quickly without destroying recovery options?</li>
+  <li>did DRP meet the declared RTO/RPO under realistic pressure?</li>
+  <li>did BCP keep critical services and business decisions aligned?</li>
+  <li>did crisis leadership control message, authority, and escalation timing?</li>
+</ul>
+
+<p>Most programs do not fail because they lack a plan. They fail because interfaces between plans were never exercised.</p>
+
+<p>That is exactly why this distinction matters beyond the exam.</p>
+
+<hr />
+
+<p><em>Post 2 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Learn the practical and exam-critical differences between BCP, DRP, incident response, and crisis management, including how MTD, RTO, and RPO work together in real operations.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+<ol>
+  <li>CISSP BCP vs DRP vs incident response</li>
+  <li>crisis management vs incident response cybersecurity</li>
+  <li>MTD RTO RPO explained for CISSP</li>
+  <li>business continuity planning for security leaders</li>
+  <li>CISSP Domain 1 resilience and recovery</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
