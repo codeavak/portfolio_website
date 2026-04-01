@@ -29,7 +29,7 @@ The positioning of the CISO matters here. On the CISSP exam, the CISO reports to
 One of the concepts CISSP tests most consistently is the relationship between policies, standards, baselines, procedures, and guidelines. Engineers often treat these terms as rough synonyms. The exam does not.
 
 <figure>
-  <img src="/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" alt="The security governance hierarchy: policy at top, then standards, baselines, and procedures, with guidelines shown separately as advisory only.">
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" alt="The security governance hierarchy: policy at top, then standards, baselines, and procedures, with guidelines shown separately as advisory only.">
   <figcaption>The governance hierarchy. Policy sets direction; everything below it implements that direction. Only guidelines are advisory.</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ Both have legal weight. If a breach leads to litigation, the questions that aris
 Here is a situation that shows governance in practice.
 
 <figure>
-  <img src="/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/governance-scenario.svg" alt="Diagram showing a governance decision flow: risk identified, policy check, authority question, decision documentation, with due diligence and due care defined below.">
+  <img src="{{ site.baseurl }}/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/governance-scenario.svg" alt="Diagram showing a governance decision flow: risk identified, policy check, authority question, decision documentation, with due diligence and due care defined below.">
   <figcaption>Risk decisions must trace back through policy and authority — not just budget or timeline convenience.</figcaption>
 </figure>
 
