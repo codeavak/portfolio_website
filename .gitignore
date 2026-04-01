@@ -1,6 +1,7 @@
 rawMaterial
 .agents/
 prompts/
+.github/prompts/
 scripts/
 AGENTS.md
 README.md
