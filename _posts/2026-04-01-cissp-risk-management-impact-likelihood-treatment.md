@@ -203,7 +203,7 @@ That framing is useful on the exam, and even more useful in the kind of rooms wh
 *Post 3 of 60 in my CISSP study series.*
 
 ---
-
+<!-- 
 **Meta description:** Learn CISSP risk management in plain English: qualitative vs quantitative analysis, SLE, ARO, ALE, and how to choose between avoiding, mitigating, transferring, or accepting risk.
 
 **SEO keyword ideas:**
@@ -211,4 +211,4 @@ That framing is useful on the exam, and even more useful in the kind of rooms wh
 2. SLE ARO ALE examples for CISSP
 3. qualitative vs quantitative risk analysis cybersecurity
 4. risk acceptance vs mitigation CISSP
-5. CISSP Domain 1 risk treatment options
+5. CISSP Domain 1 risk treatment options -->

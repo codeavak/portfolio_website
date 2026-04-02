@@ -195,7 +195,7 @@ That is what makes this topic more important than its reputation suggests.
 *Post 4 of 60 in my CISSP study series.*
 
 ---
-
+<!-- 
 **Meta description:** Learn the CISSP difference between awareness, training, and education—and why leadership culture is what makes security awareness programs actually change behavior.
 
 **SEO keyword ideas:**
@@ -203,4 +203,4 @@ That is what makes this topic more important than its reputation suggests.
 2. security awareness training leadership culture
 3. CISSP Domain 1 security awareness program
 4. role based security training examples
-5. mature security awareness program
+5. mature security awareness program -->

@@ -120,7 +120,7 @@ The lasting lesson is simple: people need support, not just reminders.
 *Post 4 of 60 in my CISSP study series.*
 
 ---
-
+<!-- 
 ## 4. LinkedIn post
 
 Security awareness training is easy to mock.
@@ -159,4 +159,4 @@ What is one thing your team has done that made good security behavior easier—n
 - Purpose: make the concept of a mature learning program feel practical and operational
 
 **Optional future expansion idea:**
-- A social carousel comparing “bad awareness theater” vs “mature behavior-focused security learning” for engineering and security audiences
+- A social carousel comparing “bad awareness theater” vs “mature behavior-focused security learning” for engineering and security audiences -->
