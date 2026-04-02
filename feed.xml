@@ -1,4 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-01T07:43:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" rel="alternate" type="text/html" title="BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" /><published>2026-03-31T19:00:00+00:00</published><updated>2026-03-31T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/"><![CDATA[<p>Most people can define incident response in one sentence. Fewer can explain, under pressure, where incident response ends and disaster recovery starts. Fewer still can separate those from business continuity and crisis management in a way that survives a real outage.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-02T04:34:02+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Risk Management Gets Real When You Have to Choose a Treatment</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/" rel="alternate" type="text/html" title="Risk Management Gets Real When You Have to Choose a Treatment" /><published>2026-04-01T13:00:00+00:00</published><updated>2026-04-01T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/"><![CDATA[<p>Risk management is one of those CISSP topics that sounds simple right up until you have to make an actual decision. Most people can say the words <em>likelihood</em>, <em>impact</em>, and <em>mitigation</em>. Fewer can explain what the organization should do when a real risk is expensive to reduce, impossible to eliminate, and not equally important to every business function.</p>
+
+<p>That is the part the exam cares about, and it is the part that matters in real work.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" alt="Impact and likelihood matrix mapped to risk treatment choices: avoid, mitigate, transfer, or accept." />
+  <figcaption>Risk management becomes useful when it leads to a clear treatment decision, not just a color on a spreadsheet.</figcaption>
+</figure>
+
+<h2 id="risk-management-is-really-about-decision-quality">Risk management is really about decision quality</h2>
+
+<p>CISSP does not teach risk management as math for its own sake. It teaches it as a way to help the business make informed tradeoffs.</p>
+
+<p>A risk exists when a <strong>threat</strong> can exploit a <strong>vulnerability</strong> and cause harm to an <strong>asset</strong>. That harm may be financial, operational, legal, safety-related, or reputational. The moment you frame risk this way, the conversation shifts from vague anxiety to decision-making.</p>
+
+<p>That is why the exam keeps pulling you back to business context:</p>
+
+<ul>
+  <li>What asset are we protecting?</li>
+  <li>How likely is the event?</li>
+  <li>How bad is the outcome if it happens?</li>
+  <li>What options do we have?</li>
+  <li>Who has the authority to decide?</li>
+</ul>
+
+<p>For engineers, the most important mindset shift is this: finding a vulnerability is not the same thing as concluding the organization must fix it immediately. The right action depends on risk level, mission impact, compensating controls, cost, timing, and ownership.</p>
+
+<h2 id="qualitative-vs-quantitative-analysis">Qualitative vs quantitative analysis</h2>
+
+<p>CISSP expects you to understand both approaches and when each is useful.</p>
+
+<h3 id="qualitative-risk-analysis">Qualitative risk analysis</h3>
+
+<p>Qualitative analysis uses ratings such as <em>low</em>, <em>medium</em>, and <em>high</em>. It is fast, practical, and often the only realistic option when exact numbers do not exist.</p>
+
+<p>A qualitative assessment might look like this:</p>
+
+<ul>
+  <li><strong>Asset value:</strong> high</li>
+  <li><strong>Likelihood:</strong> medium</li>
+  <li><strong>Business impact:</strong> high</li>
+  <li><strong>Overall risk:</strong> high</li>
+</ul>
+
+<p>This is common in workshops, leadership reviews, and early prioritization. It works well when the goal is to rank risks quickly and decide where deeper analysis is worth the effort.</p>
+
+<p>Its weakness is subjectivity. Two smart people can both be serious and still disagree on whether something is “medium” or “high.” That does not make qualitative analysis bad. It just means the organization needs consistent criteria.</p>
+
+<h3 id="quantitative-risk-analysis">Quantitative risk analysis</h3>
+
+<p>Quantitative analysis tries to estimate risk in numeric terms, usually money. CISSP does not expect actuarial precision, but it does expect you to understand the logic.</p>
+
+<p>The three terms people memorize are:</p>
+
+<ul>
+  <li><strong>SLE (Single Loss Expectancy):</strong> expected loss from one incident</li>
+  <li><strong>ARO (Annualized Rate of Occurrence):</strong> expected frequency per year</li>
+  <li><strong>ALE (Annualized Loss Expectancy):</strong> expected yearly loss</li>
+</ul>
+
+<p>The classic formulas are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SLE = Asset Value × Exposure Factor</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ALE = SLE × ARO</code></li>
+</ul>
+
+<p>So if a database outage would cost roughly $80,000 each time it happens, and you expect that scenario about once every four years, the ARO is 0.25 and the ALE is about $20,000 per year.</p>
+
+<p>That number is not magic. It is a decision aid. If a control costs $5,000 annually and materially reduces the risk, the business case becomes easier to defend. If the control costs $200,000 each year, the recommendation changes.</p>
+
+<h2 id="do-not-turn-the-formulas-into-math-theater">Do not turn the formulas into math theater</h2>
+
+<p>This is where both candidates and practitioners go wrong.</p>
+
+<p>The point of SLE, ARO, and ALE is not to pretend the future is perfectly knowable. The point is to force clearer thinking. Even a rough estimate can improve a decision if it is honest about uncertainty.</p>
+
+<p>A mature risk discussion sounds like this:</p>
+
+<ul>
+  <li>Here is what we think the loss could look like.</li>
+  <li>Here is how often we believe it may occur.</li>
+  <li>Here is the confidence level of those estimates.</li>
+  <li>Here are the treatment options and costs.</li>
+</ul>
+
+<p>That is much stronger than saying “this feels scary, so we should buy a tool.”</p>
+
+<p>The exam mindset is similar. If one answer choice uses structured risk reasoning and another is driven by fear, urgency, or technical enthusiasm, the structured answer is usually better.</p>
+
+<h2 id="the-four-main-risk-responses">The four main risk responses</h2>
+
+<p>Once a risk has been assessed, the organization has to decide what to do about it. This is the part that makes risk management real.</p>
+
+<h3 id="1-avoid">1. Avoid</h3>
+
+<p>Avoidance means changing the plan so the risk no longer applies.</p>
+
+<p>If a proposed vendor requires storing highly sensitive customer data in a way that clearly violates the organization’s policy and risk appetite, the cleanest answer may be not to use that vendor at all. You are not reducing the risk. You are stepping away from the activity creating it.</p>
+
+<h3 id="2-mitigate">2. Mitigate</h3>
+
+<p>Mitigation means reducing likelihood, impact, or both through controls.</p>
+
+<p>Examples include patching a vulnerable service, adding MFA, segmenting a network, improving logging, or hardening cloud permissions. This is the response engineers instinctively jump to, and often for good reason. But it is not the only valid response.</p>
+
+<h3 id="3-transfer">3. Transfer</h3>
+
+<p>Transfer means shifting some of the financial or contractual burden to another party.</p>
+
+<p>Cyber insurance is the classic example. Outsourcing to a provider under strong contractual terms can also transfer elements of risk. But CISSP expects you to remember that transferred risk is not eliminated risk. Operational pain, reputational damage, and residual exposure can still remain with the organization.</p>
+
+<h3 id="4-accept">4. Accept</h3>
+
+<p>Acceptance means the organization knowingly decides the remaining risk is within tolerance.</p>
+
+<p>This is not negligence when done properly. It is a governance decision.</p>
+
+<p>The key details are:</p>
+
+<ul>
+  <li>the risk is understood</li>
+  <li>the residual exposure is documented</li>
+  <li>the correct owner approves it</li>
+  <li>the acceptance aligns with business objectives and risk tolerance</li>
+</ul>
+
+<p>That last point matters. A system administrator or analyst does not unilaterally accept organizational risk. The appropriate manager, business owner, or data owner does.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/risk-treatment-paths.svg" alt="A practical decision path showing when to avoid, mitigate, transfer, or accept a risk based on impact, likelihood, and business fit." />
+  <figcaption>The best response is the one that fits the business context and residual risk tolerance, not the one that sounds most aggressive.</figcaption>
+</figure>
+
+<h2 id="a-scenario-where-accepting-the-risk-is-the-right-decision">A scenario where accepting the risk is the right decision</h2>
+
+<p>This is the part people sometimes resist because “accepting risk” sounds passive. In reality, every functioning organization accepts some risk every day.</p>
+
+<p>Imagine an internal reporting portal used by a small finance team. It sits behind SSO and VPN access, stores no regulated customer data, and is scheduled for replacement in six weeks. During review, the team finds a medium-severity UI issue that could expose limited internal notes to another authorized user under a narrow set of conditions.</p>
+
+<p>The fix is possible, but it would require pulling two engineers off a production reliability effort tied to a customer-facing revenue system. That customer-facing work addresses a much higher-impact outage risk.</p>
+
+<p>In this case, the rational decision may be to:</p>
+
+<ul>
+  <li>document the internal portal issue</li>
+  <li>confirm existing compensating controls still limit exposure</li>
+  <li>time-box acceptance for six weeks</li>
+  <li>monitor for abuse</li>
+  <li>prioritize the reliability work first</li>
+</ul>
+
+<p>That is not sloppy security. It is prioritization under constrained resources.</p>
+
+<p>CISSP wants candidates to understand that risk management is about choosing the best business-aligned option, not reflexively choosing the most technically aggressive one.</p>
+
+<h2 id="risk-appetite-and-risk-tolerance-still-sit-above-the-analysis">Risk appetite and risk tolerance still sit above the analysis</h2>
+
+<p>This is where Domain 1 connects back to governance.</p>
+
+<p>Risk analysis helps estimate exposure. <strong>Risk appetite</strong> and <strong>risk tolerance</strong> tell you what the organization is willing to live with.</p>
+
+<p>Two companies can review the same threat and make different choices without either one being irrational:</p>
+
+<ul>
+  <li>A hospital may have very low tolerance for downtime in clinical systems.</li>
+  <li>A startup may tolerate more operational risk in non-critical internal tooling to preserve speed.</li>
+</ul>
+
+<p>The analysis informs the decision, but leadership defines the boundary conditions.</p>
+
+<h2 id="what-the-exam-wants-vs-what-real-life-looks-like">What the exam wants vs what real life looks like</h2>
+
+<p>On the exam, the clean answer is usually easier than in practice:</p>
+
+<ul>
+  <li>identify the asset and the business impact</li>
+  <li>assess likelihood and severity</li>
+  <li>recommend the most appropriate treatment</li>
+  <li>escalate acceptance decisions to the proper owner</li>
+  <li>choose the answer that reflects due care and structured reasoning</li>
+</ul>
+
+<p>In real organizations, estimates are imperfect. Politics exists. Budgets are constrained. Teams disagree. Third-party dependencies complicate everything.</p>
+
+<p>But the principles still hold. In fact, they matter more when the environment is messy.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<p>The foundations of this topic are stable:</p>
+
+<ul>
+  <li>risk is evaluated through likelihood and impact</li>
+  <li>treatment decisions generally fall into avoid, mitigate, transfer, or accept</li>
+  <li>residual risk remains even after controls are applied</li>
+  <li>governance determines who can approve what level of risk</li>
+</ul>
+
+<p>What has changed more recently is the operating environment around those decisions. Frameworks such as <strong>NIST CSF 2.0</strong> continue to emphasize that cybersecurity risk belongs inside broader enterprise risk management, not in a technical silo. The rise of cloud concentration risk, third-party dependency risk, and AI-related governance questions has expanded what organizations have to assess, but not the core logic of how risk decisions should be made.</p>
+
+<p>The durable lesson is simple: the tooling changes; disciplined risk thinking does not.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>If you are studying for CISSP, do not memorize SLE, ARO, and ALE as isolated vocabulary. Tie them to the bigger question:</p>
+
+<p><strong>What should the organization do next, and why is that the most defensible option?</strong></p>
+
+<p>That framing is useful on the exam, and even more useful in the kind of rooms where real security decisions get made.</p>
+
+<hr />
+
+<p><em>Post 3 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Learn CISSP risk management in plain English: qualitative vs quantitative analysis, SLE, ARO, ALE, and how to choose between avoiding, mitigating, transferring, or accepting risk.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+<ol>
+  <li>CISSP risk management explained</li>
+  <li>SLE ARO ALE examples for CISSP</li>
+  <li>qualitative vs quantitative risk analysis cybersecurity</li>
+  <li>risk acceptance vs mitigation CISSP</li>
+  <li>CISSP Domain 1 risk treatment options</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="risk-management" /><category term="qualitative-risk" /><category term="quantitative-risk" /><category term="sle" /><category term="aro" /><category term="ale" /><summary type="html"><![CDATA[Risk management is not about memorizing formulas. It is about comparing impact, likelihood, and treatment options well enough to make a defensible business decision. Post 3 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" rel="alternate" type="text/html" title="BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" /><published>2026-03-31T19:00:00+00:00</published><updated>2026-03-31T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/"><![CDATA[<p>Most people can define incident response in one sentence. Fewer can explain, under pressure, where incident response ends and disaster recovery starts. Fewer still can separate those from business continuity and crisis management in a way that survives a real outage.</p>
 
 <p>That distinction matters on the CISSP exam, and it matters even more in practice.</p>
 
@@ -2125,154 +2350,4 @@ Use OWASP SQL Injection Prevention Cheat Sheet controls as acceptance criteria: 
 
 <p><em>Meta description: SQL Server indexing strategy for backend developers — how the optimizer chooses indexes, the difference between composite and covering indexes, what INCLUDE columns do, the write cost of over-indexing, and how to read an execution plan.</em></p>
 
-<p><em>SEO keywords: SQL Server covering index, SQL Server INCLUDE columns index, SQL Server key lookup execution plan, SQL Server composite vs covering index, SQL Server over-indexing write performance</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="SQL" /><category term="Database" /><category term="sql-server" /><category term="indexing" /><category term="query-optimization" /><category term="execution-plans" /><category term="database-performance" /><summary type="html"><![CDATA[Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI Coding Tools Are Part of Your Software Supply Chain Now</title><link href="https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain/" rel="alternate" type="text/html" title="AI Coding Tools Are Part of Your Software Supply Chain Now" /><published>2026-03-27T16:00:00+00:00</published><updated>2026-03-27T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/ai-coding-tools-software-supply-chain/"><![CDATA[<p>Many teams still talk about AI coding tools as if they are mostly a better autocomplete box. That description is getting less accurate by the month.</p>
-
-<p>Once a tool can read a repository, pull in extra context, call external tools, run commands, or open a pull request, it stops being just a convenience feature. It becomes part of the way software moves from idea to production. That means it belongs in the same conversation as dependencies, CI pipelines, external services, and other supply-chain components.</p>
-
-<p>That is the framing I think more engineers need right now. Not because it sounds dramatic, but because it helps us ask better questions. Security-minded teams already know how to reason about provenance, least privilege, validation, auditability, and rollback. Those habits map surprisingly well to AI coding workflows.</p>
-
-<div class="post-note">
-  <strong>Timeless principle:</strong> externally produced code should be treated as untrusted until verified. <strong>What is newer as of March 27, 2026:</strong> the external producer is increasingly an agent connected to tools, hosted environments, and remote context sources, not just a human vendor or open-source package maintainer.
-</div>
-
-<h2 id="mental-model">Why supply chain is the right mental model</h2>
-
-<p>In practical engineering terms, your supply chain is every external component or service whose integrity can change your outcome.</p>
-
-<p>By that definition, AI coding tools now qualify. The model provider matters. The editor extension matters. The hosted runner or sandbox matters. The tool server matters. The prompt files and repository instructions matter. The external docs, tickets, and APIs that feed context into the system matter too.</p>
-
-<p>That does not mean every AI feature is equally risky. A draft explanation of a codebase is different from an agent that can branch, edit files, and trigger workflow steps. But the moment the tool begins to influence code, commands, dependencies, or approvals in a repeatable way, it is reasonable to ask supply-chain questions:</p>
-
-<ul>
-  <li>Where did this output come from?</li>
-  <li>What else touched it on the way here?</li>
-  <li>What permissions existed at each step?</li>
-  <li>What checks stand between this output and the default branch?</li>
-  <li>If a component or integration is compromised, how quickly can we contain it?</li>
-</ul>
-
-<p>This is also why a pure “productivity tool” mindset is too shallow. Productivity is only half the story. The other half is trustworthiness.</p>
-
-<h2 id="timeless-vs-new">What is timeless, and what has recently changed</h2>
-
-<p>The timeless part is straightforward. Good engineering still depends on clear ownership, narrow permissions, deterministic validation, and review that catches bad assumptions. <a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a> makes that explicit by extending the Secure Software Development Framework with AI-specific practices rather than replacing secure development fundamentals.</p>
-
-<p>The newer part is the shape of the toolchain. In <a href="https://survey.stackoverflow.co/2025">Stack Overflow’s 2025 Developer Survey</a>, 84% of respondents said they are using or planning to use AI tools in development, but the same survey also found that a majority of developers either do not use AI agents or still stick to simpler tools. It also found that more developers distrust AI tool accuracy than trust it. That combination is important: adoption is real, but skepticism is real too.</p>
-
-<p>Vendor documentation shows why. GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">Copilot coding agent documentation</a> describes an agent that can work in an isolated environment, create draft pull requests, stay scoped to repository-controlled branches, and require human approval before workflows proceed. That is much closer to a controlled software-delivery participant than a passive assistant.</p>
-
-<p>At the same time, GitHub’s current <a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">content exclusion documentation</a> notes that excluded files can still influence behavior indirectly through semantic information such as symbols, type information, and build properties. In other words, even the governance controls are nuanced. Security-minded adoption still requires understanding the edges of the platform.</p>
-
-<p>The ecosystem around these tools is changing too. The official <a href="https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices">Model Context Protocol security best practices</a> now warn directly about token passthrough, confused-deputy problems, and over-broad scopes, and recommend progressive least-privilege authorization. That is a supply-chain conversation, not a prompt-writing conversation.</p>
-
-<p>OpenAI’s current <a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">agent safety guidance</a> and Anthropic’s <a href="https://code.claude.com/docs/en/security">Claude Code security guidance</a> reinforce the same pattern: keep tool approvals on, constrain outputs, prefer explicit permissions, and preserve strong boundaries around commands and write actions.</p>
-
-<p>OWASP’s <a href="https://genai.owasp.org/llm05/">LLM05 supply-chain guidance</a> pushes the point further. It explicitly treats models, training data, and deployment platforms as part of the risk surface, and recommends inventory, signing, monitoring, and supplier review. That is familiar language for engineers who have spent time around application security or software supply chain work.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/supply-chain-map.png" alt="Diagram showing AI coding tools sitting between external model and tool providers on one side and repository, CI, and review systems on the other." />
-  <figcaption>The AI coding tool is no longer just a user interface. It sits inside a chain of external dependencies, permissions, and approvals.</figcaption>
-</figure>
-
-<h2 id="what-to-do">What a security-minded engineer should do about it</h2>
-
-<p>The good news is that mature teams do not need a brand-new philosophy here. They need disciplined translation.</p>
-
-<div class="post-checklist">
-  <div>
-    <strong>1. Inventory the chain.</strong> Do not stop at "we use Copilot" or "we use Claude Code." List the model provider, extension or client, hosted execution environment, tool servers, external context sources, approval path, and downstream systems the tool can touch.
-  </div>
-  <div>
-    <strong>2. Separate read access from write access.</strong> Read-heavy assistance often creates value quickly with less risk. Write actions, network calls, and command execution deserve stronger controls because they change the blast radius.
-  </div>
-  <div>
-    <strong>3. Treat tool integrations like new vendors.</strong> If an agent can talk to a ticketing system, docs platform, MCP server, or internal API, review the scopes, provenance, maintenance posture, and revocation path the same way you would for any other third-party integration.
-  </div>
-  <div>
-    <strong>4. Keep deterministic checks after every meaningful AI step.</strong> Linting, tests, policy gates, dependency review, and secret scanning should be positioned as mandatory controls, not nice-to-have cleanup.
-  </div>
-  <div>
-    <strong>5. Preserve traceability.</strong> You want to know what context was used, what commands were attempted, what tools were called, and who approved the result. Fast output with weak provenance is not a mature workflow.
-  </div>
-</div>
-
-<p>One of the more useful mindset shifts is this: treat AI-generated code the way you would treat code from a third party you have not fully vetted yet. It may be useful. It may be well-intentioned. It may even look polished. But it still needs verification before it earns trust.</p>
-
-<p>That does not mean slowing everything down equally. It means matching the controls to the consequence.</p>
-
-<h2 id="approval-ladder">A practical approval ladder</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Activity</th>
-      <th>Supply-chain exposure</th>
-      <th>Default stance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Drafting explanations, tests, summaries, or refactor ideas</td>
-      <td>Mostly local context and low downstream consequence</td>
-      <td>Safe default for broad use with normal review</td>
-    </tr>
-    <tr>
-      <td>Editing multiple files or drafting pull requests</td>
-      <td>Repo integrity and CI signal become part of the workflow</td>
-      <td>Use scoped branches, deterministic checks, and human review before merge</td>
-    </tr>
-    <tr>
-      <td>Calling external tools or MCP servers</td>
-      <td>New credentials, scopes, and dependency paths enter the system</td>
-      <td>Review scopes carefully, prefer least privilege, log access, and avoid silent elevation</td>
-    </tr>
-    <tr>
-      <td>High-impact changes in auth, infrastructure, secrets, or data flows</td>
-      <td>The tool now sits near your highest-trust surfaces</td>
-      <td>Keep these human-led or behind strong approvals and isolated environments</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>That ladder is more practical than blanket enthusiasm or blanket fear.</p>
-
-<p>It also reflects the direction the ecosystem is taking. The <a href="https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/">OWASP Top 10 for Agentic Applications release on December 9, 2025</a> is another signal that security thinking is moving from “LLM answers can be wrong” to “agent ecosystems create new operational failure modes.” Once AI began taking actions, the security model had to grow up too.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/approval-ladder.png" alt="Diagram showing an approval ladder from low-risk drafting to high-risk infrastructure and identity changes, with stronger controls at each level." />
-  <figcaption>Not every AI-assisted task deserves the same level of autonomy. Matching controls to consequence is where mature teams separate themselves.</figcaption>
-</figure>
-
-<h2 id="final-thought">Final thought</h2>
-
-<p>I do not think the long-term winners will be the teams that talk about AI coding tools the most. I think they will be the teams that absorb them into engineering reality without becoming careless about trust.</p>
-
-<p>That usually means calmer decisions, not louder ones.</p>
-
-<p>Inventory the chain. Narrow the permissions. Keep the checks. Understand the weak points in vendor controls. Treat new tool integrations like real dependencies, because that is what they are.</p>
-
-<p>If we do that well, AI coding tools become a useful extension of disciplined engineering instead of a fast path to importing invisible risk.</p>
-
-<h2 id="research-notes">Research notes</h2>
-
-<ul class="post-sources">
-  <li><a href="https://survey.stackoverflow.co/2025">Stack Overflow 2025 Developer Survey</a>: Used for current adoption, caution, and trust signals around AI tools and AI agents.</li>
-  <li><a href="https://csrc.nist.gov/pubs/sp/800/218/a/final">NIST SP 800-218A</a>: Used to anchor the article in established secure software development practices extended for generative AI and dual-use foundation models.</li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent">GitHub Copilot coding agent docs</a>: Used for current examples of agentic workflow controls such as scoped branches, isolated execution, draft PRs, and human approvals.</li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion">GitHub Copilot content exclusion docs</a>: Used for the caveat that exclusions have real limitations and semantic leakage paths.</li>
-  <li><a href="https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices">Model Context Protocol security best practices</a>: Used for current guidance on least-privilege scopes, token handling, and tool-server trust boundaries.</li>
-  <li><a href="https://developers.openai.com/api/docs/guides/agent-builder-safety">OpenAI safety in building agents</a>: Used for current recommendations on tool approvals, guardrails, and trace-level evaluation.</li>
-  <li><a href="https://code.claude.com/docs/en/security">Claude Code security</a>: Used for current examples of read-only defaults, permission-based execution, sandboxing, and prompt-injection protections.</li>
-  <li><a href="https://genai.owasp.org/llm05/">OWASP LLM05 supply chain vulnerabilities</a>: Used for the explicit supply-chain framing around models, data, deployment platforms, inventory, signing, and supplier review.</li>
-  <li><a href="https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/">OWASP Top 10 for Agentic Applications announcement</a>: Used as a recent signal that industry security guidance has moved deeper into agentic operational risk.</li>
-</ul>
-
-<!--
-Meta description: AI coding tools are no longer just productivity aids. Once they can read repositories, call tools, and open pull requests, they become part of your software supply chain and need the same discipline around provenance, permissions, validation, and review.
-SEO keyword ideas:
-1. AI coding tools software supply chain
-2. secure AI coding workflow
-3. AI agents software supply chain
-4. software supply chain AI tools
-5. AppSec AI coding tools
--->]]></content><author><name>Johnny Avakian</name></author><category term="AI Engineering" /><category term="Security" /><category term="Software Engineering" /><category term="AI coding tools" /><category term="software supply chain" /><category term="secure software development" /><category term="AI agents" /><category term="AppSec" /><summary type="html"><![CDATA[When AI coding tools can read repositories, call tools, and open pull requests, they stop being just productivity aids. They become part of your software supply chain, which means provenance, permissions, validation, and review matter more than ever.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/ai-coding-tools-software-supply-chain/social.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><em>SEO keywords: SQL Server covering index, SQL Server INCLUDE columns index, SQL Server key lookup execution plan, SQL Server composite vs covering index, SQL Server over-indexing write performance</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="SQL" /><category term="Database" /><category term="sql-server" /><category term="indexing" /><category term="query-optimization" /><category term="execution-plans" /><category term="database-performance" /><summary type="html"><![CDATA[Reactive indexing works until it stops working. Here is the mental model that takes you past it: how the optimizer chooses indexes, what makes an index covering, what INCLUDE columns do and cannot do, and how to read an execution plan to validate your decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-server-indexing-strategy/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
