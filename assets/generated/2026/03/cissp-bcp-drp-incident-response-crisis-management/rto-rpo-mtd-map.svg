@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+
+  <text x="600" y="58" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#f8fafc" text-anchor="middle">MTD, RTO, and RPO in One View</text>
+  <text x="600" y="86" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle">Business tolerance sets the boundary; recovery targets must fit inside it</text>
+
+  <line x1="120" y1="360" x2="1080" y2="360" stroke="#475569" stroke-width="4"/>
+
+  <circle cx="170" cy="360" r="8" fill="#ef4444"/>
+  <text x="170" y="336" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#fecaca" text-anchor="middle">Outage starts</text>
+
+  <circle cx="420" cy="360" r="8" fill="#f59e0b"/>
+  <text x="420" y="336" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#fde68a" text-anchor="middle">Containment / response</text>
+
+  <circle cx="720" cy="360" r="8" fill="#38bdf8"/>
+  <text x="720" y="336" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#bae6fd" text-anchor="middle">Service restored</text>
+
+  <circle cx="950" cy="360" r="8" fill="#a855f7"/>
+  <text x="950" y="336" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#e9d5ff" text-anchor="middle">Business tolerance limit</text>
+
+  <line x1="170" y1="285" x2="560" y2="285" stroke="#14b8a6" stroke-width="8"/>
+  <text x="365" y="264" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#99f6e4" text-anchor="middle">RPO</text>
+  <text x="365" y="305" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">acceptable data loss window measured backward from recovery point</text>
+
+  <line x1="170" y1="430" x2="720" y2="430" stroke="#0ea5e9" stroke-width="8"/>
+  <text x="445" y="410" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#7dd3fc" text-anchor="middle">RTO</text>
+  <text x="445" y="452" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">target time to restore service after the outage begins</text>
+
+  <line x1="170" y1="515" x2="950" y2="515" stroke="#a855f7" stroke-width="8"/>
+  <text x="560" y="495" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#e9d5ff" text-anchor="middle">MTD</text>
+  <text x="560" y="537" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">maximum tolerable downtime before business impact becomes unacceptable</text>
+
+  <rect x="120" y="120" width="250" height="80" rx="10" fill="#1e293b"/>
+  <text x="245" y="148" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#f8fafc" text-anchor="middle">Exam shortcut</text>
+  <text x="245" y="172" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">MTD is business-focused.</text>
+  <text x="245" y="190" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">RTO/RPO are technical targets.</text>
+
+  <text x="600" y="615" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Good DR planning keeps RTO and RPO inside the organization’s MTD.</text>
+</svg>

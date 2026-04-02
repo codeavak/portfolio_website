@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+
+  <text x="600" y="58" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#f8fafc" text-anchor="middle">Cyber Disruption Handoff Flow</text>
+  <text x="600" y="86" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle">A practical view of which function leads each phase</text>
+
+  <rect x="90" y="220" width="220" height="110" rx="12" fill="#14272a" stroke="#14b8a6" stroke-width="2"/>
+  <text x="200" y="258" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#5eead4" text-anchor="middle">Incident Response</text>
+  <text x="200" y="284" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Detect</text>
+  <text x="200" y="302" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Contain</text>
+  <text x="200" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Preserve evidence</text>
+
+  <rect x="370" y="220" width="220" height="110" rx="12" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="480" y="258" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#bfdbfe" text-anchor="middle">BCP Coordination</text>
+  <text x="480" y="284" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Prioritize services</text>
+  <text x="480" y="302" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Enable workarounds</text>
+  <text x="480" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Protect business mission</text>
+
+  <rect x="650" y="220" width="220" height="110" rx="12" fill="#10243d" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="760" y="258" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#7dd3fc" text-anchor="middle">DR Execution</text>
+  <text x="760" y="284" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Restore systems</text>
+  <text x="760" y="302" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Validate data state</text>
+  <text x="760" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Meet RTO / RPO</text>
+
+  <rect x="930" y="220" width="180" height="110" rx="12" fill="#2a1630" stroke="#a855f7" stroke-width="2"/>
+  <text x="1020" y="258" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#e9d5ff" text-anchor="middle">Crisis Mgmt</text>
+  <text x="1020" y="284" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Legal + comms</text>
+  <text x="1020" y="302" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Executive tradeoffs</text>
+  <text x="1020" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">External messaging</text>
+
+  <line x1="310" y1="275" x2="370" y2="275" stroke="#38bdf8" stroke-width="4"/>
+  <polygon points="370,275 355,267 355,283" fill="#38bdf8"/>
+  <line x1="590" y1="275" x2="650" y2="275" stroke="#38bdf8" stroke-width="4"/>
+  <polygon points="650,275 635,267 635,283" fill="#38bdf8"/>
+  <line x1="870" y1="275" x2="930" y2="275" stroke="#38bdf8" stroke-width="4"/>
+  <polygon points="930,275 915,267 915,283" fill="#38bdf8"/>
+
+  <rect x="250" y="420" width="700" height="110" rx="12" fill="#1e293b"/>
+  <text x="600" y="452" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc" text-anchor="middle">Ownership rule of thumb</text>
+  <text x="600" y="480" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">Ask: What is the primary objective right now?</text>
+  <text x="600" y="502" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">Contain the incident • keep the business running • restore technology • lead enterprise decisions</text>
+</svg>

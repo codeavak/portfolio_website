@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+
+  <text x="600" y="58" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#f8fafc" text-anchor="middle">Operational Resilience Functions</text>
+  <text x="600" y="86" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle">BCP, DRP, Incident Response, and Crisis Management each solve a different problem</text>
+
+  <rect x="70" y="130" width="1060" height="96" rx="12" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="110" y="168" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#bfdbfe">BCP</text>
+  <text x="110" y="196" font-family="system-ui, sans-serif" font-size="14" fill="#dbeafe">Business Continuity Planning</text>
+  <text x="110" y="217" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Protects mission-critical business outcomes, people, vendors, and process continuity.</text>
+  <text x="1070" y="184" font-family="system-ui, sans-serif" font-size="12" fill="#93c5fd" text-anchor="end">Business mission</text>
+
+  <rect x="70" y="245" width="1060" height="96" rx="12" fill="#10243d" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="110" y="283" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#7dd3fc">DRP</text>
+  <text x="110" y="311" font-family="system-ui, sans-serif" font-size="14" fill="#dbeafe">Disaster Recovery Planning</text>
+  <text x="110" y="332" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Restores systems, data, and infrastructure within defined recovery objectives.</text>
+  <text x="1070" y="299" font-family="system-ui, sans-serif" font-size="12" fill="#7dd3fc" text-anchor="end">Technology restoration</text>
+
+  <rect x="70" y="360" width="1060" height="96" rx="12" fill="#14272a" stroke="#14b8a6" stroke-width="2"/>
+  <text x="110" y="398" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#5eead4">IR</text>
+  <text x="110" y="426" font-family="system-ui, sans-serif" font-size="14" fill="#dbeafe">Incident Response</text>
+  <text x="110" y="447" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Detects, contains, eradicates, and recovers from active security incidents.</text>
+  <text x="1070" y="414" font-family="system-ui, sans-serif" font-size="12" fill="#5eead4" text-anchor="end">Security event handling</text>
+
+  <rect x="70" y="475" width="1060" height="96" rx="12" fill="#2a1630" stroke="#a855f7" stroke-width="2"/>
+  <text x="110" y="513" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#e9d5ff">Crisis Management</text>
+  <text x="110" y="541" font-family="system-ui, sans-serif" font-size="14" fill="#f5d0fe">Executive coordination, legal posture, and external communications</text>
+  <text x="110" y="562" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Leads enterprise decisions when disruption becomes strategic, legal, or reputational.</text>
+  <text x="1070" y="529" font-family="system-ui, sans-serif" font-size="12" fill="#e9d5ff" text-anchor="end">Executive coordination</text>
+
+  <line x1="1030" y1="226" x2="1030" y2="245" stroke="#38bdf8" stroke-width="3"/>
+  <line x1="1030" y1="341" x2="1030" y2="360" stroke="#38bdf8" stroke-width="3"/>
+  <line x1="1030" y1="456" x2="1030" y2="475" stroke="#38bdf8" stroke-width="3"/>
+
+  <text x="600" y="630" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Related, but not interchangeable — the exam rewards correct scope, ownership, and objective.</text>
+</svg>
