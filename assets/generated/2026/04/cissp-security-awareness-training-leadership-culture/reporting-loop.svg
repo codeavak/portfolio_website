@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <rect width="900" height="420" fill="#0f172a"/>
+  <text x="450" y="42" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#f8fafc" text-anchor="middle">A Mature Security Learning Loop</text>
+  <text x="450" y="66" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Teach → Reinforce → Report → Learn → Improve</text>
+
+  <circle cx="450" cy="215" r="118" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <rect x="375" y="88" width="150" height="50" rx="8" fill="#1d4ed8"/>
+  <text x="450" y="118" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#dbeafe" text-anchor="middle">TEACH</text>
+
+  <rect x="620" y="175" width="150" height="50" rx="8" fill="#0f766e"/>
+  <text x="695" y="205" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ccfbf1" text-anchor="middle">REINFORCE</text>
+
+  <rect x="540" y="300" width="150" height="50" rx="8" fill="#7c3aed"/>
+  <text x="615" y="330" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ede9fe" text-anchor="middle">REPORT</text>
+
+  <rect x="210" y="300" width="150" height="50" rx="8" fill="#b45309"/>
+  <text x="285" y="330" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#fef3c7" text-anchor="middle">LEARN</text>
+
+  <rect x="130" y="175" width="150" height="50" rx="8" fill="#be123c"/>
+  <text x="205" y="205" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffe4e6" text-anchor="middle">IMPROVE</text>
+
+  <path d="M525 120 C610 125, 655 145, 675 175" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <polygon points="676,175 664,168 666,182" fill="#38bdf8"/>
+  <path d="M695 225 C690 265, 668 292, 620 300" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <polygon points="620,300 629,289 632,302" fill="#38bdf8"/>
+  <path d="M540 325 C470 360, 360 360, 300 335" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <polygon points="300,335 314,332 307,344" fill="#38bdf8"/>
+  <path d="M210 300 C165 286, 145 255, 145 225" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <polygon points="145,225 152,237 138,236" fill="#38bdf8"/>
+  <path d="M190 175 C220 135, 285 115, 375 112" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <polygon points="375,112 364,120 364,106" fill="#38bdf8"/>
+
+  <text x="450" y="222" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#f8fafc" text-anchor="middle">Behavior change</text>
+  <text x="450" y="244" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">comes from repetition, trust, and feedback</text>
+</svg>
