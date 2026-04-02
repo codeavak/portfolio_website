@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480">
+  <rect width="900" height="480" fill="#0f172a"/>
+
+  <text x="450" y="42" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#f8fafc" text-anchor="middle">CISSP Risk Management</text>
+  <text x="450" y="66" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Impact + Likelihood + Business Context = Treatment Decision</text>
+
+  <rect x="80" y="100" width="370" height="280" rx="10" fill="#111827" stroke="#334155"/>
+  <text x="265" y="126" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#e2e8f0" text-anchor="middle">Impact vs. Likelihood</text>
+
+  <line x1="130" y1="340" x2="400" y2="340" stroke="#475569" stroke-width="2"/>
+  <line x1="130" y1="340" x2="130" y2="150" stroke="#475569" stroke-width="2"/>
+  <text x="405" y="346" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Higher likelihood →</text>
+  <text x="118" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" transform="rotate(-90 118 148)">Higher impact →</text>
+
+  <rect x="140" y="290" width="70" height="40" fill="#0b3b2e" rx="4"/>
+  <rect x="220" y="250" width="70" height="80" fill="#14532d" rx="4"/>
+  <rect x="300" y="210" width="70" height="120" fill="#92400e" rx="4"/>
+  <rect x="380" y="170" width="50" height="160" fill="#7f1d1d" rx="4"/>
+
+  <text x="175" y="314" font-family="system-ui, sans-serif" font-size="10" fill="#dcfce7" text-anchor="middle">Low</text>
+  <text x="255" y="294" font-family="system-ui, sans-serif" font-size="10" fill="#dcfce7" text-anchor="middle">Medium</text>
+  <text x="335" y="274" font-family="system-ui, sans-serif" font-size="10" fill="#fde68a" text-anchor="middle">High</text>
+  <text x="405" y="254" font-family="system-ui, sans-serif" font-size="10" fill="#fecaca" text-anchor="middle">Critical</text>
+
+  <path d="M480 240 C545 240, 560 240, 620 240" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <polygon points="620,240 605,232 605,248" fill="#38bdf8"/>
+  <text x="548" y="226" font-family="system-ui, sans-serif" font-size="12" fill="#7dd3fc" text-anchor="middle">Choose treatment</text>
+
+  <rect x="640" y="110" width="180" height="56" rx="8" fill="#1e1b0f"/>
+  <rect x="640" y="180" width="180" height="56" rx="8" fill="#10243d"/>
+  <rect x="640" y="250" width="180" height="56" rx="8" fill="#13281e"/>
+  <rect x="640" y="320" width="180" height="56" rx="8" fill="#2a1630"/>
+
+  <text x="730" y="134" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#fde68a" text-anchor="middle">AVOID</text>
+  <text x="730" y="151" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Stop the risky activity</text>
+
+  <text x="730" y="204" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#93c5fd" text-anchor="middle">MITIGATE</text>
+  <text x="730" y="221" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Reduce impact or likelihood</text>
+
+  <text x="730" y="274" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#86efac" text-anchor="middle">TRANSFER</text>
+  <text x="730" y="291" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Shift some burden elsewhere</text>
+
+  <text x="730" y="344" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#e9d5ff" text-anchor="middle">ACCEPT</text>
+  <text x="730" y="361" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Documented residual risk</text>
+</svg>

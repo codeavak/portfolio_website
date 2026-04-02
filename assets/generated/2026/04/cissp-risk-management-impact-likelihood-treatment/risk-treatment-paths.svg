@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <rect width="900" height="420" fill="#0f172a"/>
+
+  <text x="450" y="40" font-family="system-ui, sans-serif" font-size="23" font-weight="700" fill="#f8fafc" text-anchor="middle">Risk Treatment Decision Path</text>
+  <text x="450" y="63" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">A practical way to think through avoid, mitigate, transfer, and accept</text>
+
+  <rect x="50" y="120" width="180" height="70" rx="8" fill="#172554"/>
+  <text x="140" y="148" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#bfdbfe" text-anchor="middle">1. Assess</text>
+  <text x="140" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Impact, likelihood,</text>
+  <text x="140" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">asset value, exposure</text>
+
+  <rect x="260" y="120" width="180" height="70" rx="8" fill="#3f1d2e"/>
+  <text x="350" y="148" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#fbcfe8" text-anchor="middle">2. Check fit</text>
+  <text x="350" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Does this align with</text>
+  <text x="350" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">risk appetite and timing?</text>
+
+  <rect x="470" y="120" width="180" height="70" rx="8" fill="#1f2937"/>
+  <text x="560" y="148" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#e5e7eb" text-anchor="middle">3. Compare options</text>
+  <text x="560" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Cost, speed, and</text>
+  <text x="560" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">residual risk</text>
+
+  <rect x="680" y="120" width="170" height="70" rx="8" fill="#0b3b2e"/>
+  <text x="765" y="148" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#bbf7d0" text-anchor="middle">4. Decide</text>
+  <text x="765" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Owner approves</text>
+  <text x="765" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">and documents choice</text>
+
+  <line x1="230" y1="155" x2="260" y2="155" stroke="#38bdf8" stroke-width="3"/>
+  <line x1="440" y1="155" x2="470" y2="155" stroke="#38bdf8" stroke-width="3"/>
+  <line x1="650" y1="155" x2="680" y2="155" stroke="#38bdf8" stroke-width="3"/>
+
+  <rect x="90" y="260" width="160" height="90" rx="8" fill="#1e1b0f"/>
+  <text x="170" y="290" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#fde68a" text-anchor="middle">AVOID</text>
+  <text x="170" y="312" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Use when the activity</text>
+  <text x="170" y="327" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">itself is not worth</text>
+  <text x="170" y="342" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">the exposure</text>
+
+  <rect x="280" y="260" width="160" height="90" rx="8" fill="#10243d"/>
+  <text x="360" y="290" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#93c5fd" text-anchor="middle">MITIGATE</text>
+  <text x="360" y="312" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Add controls to reduce</text>
+  <text x="360" y="327" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">likelihood or impact</text>
+
+  <rect x="470" y="260" width="160" height="90" rx="8" fill="#13281e"/>
+  <text x="550" y="290" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#86efac" text-anchor="middle">TRANSFER</text>
+  <text x="550" y="312" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Shift some burden via</text>
+  <text x="550" y="327" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">contracts or insurance</text>
+
+  <rect x="660" y="260" width="160" height="90" rx="8" fill="#2a1630"/>
+  <text x="740" y="290" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#e9d5ff" text-anchor="middle">ACCEPT</text>
+  <text x="740" y="312" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Retain residual risk</text>
+  <text x="740" y="327" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">with explicit approval</text>
+</svg>
