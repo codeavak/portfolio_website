@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-03T10:49:40+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-03T13:50:15+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
 
 <p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
 
@@ -209,7 +209,260 @@
 2. data owner vs custodian CISSP
 3. CISSP Domain 2 asset security examples
 4. data retention and media sanitization cybersecurity
-5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
+5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T07:05:00+00:00</published><updated>2026-04-03T07:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
+
+<p>Then real systems show up.</p>
+
+<p>Legacy applications need broad service accounts. Deadlines create “temporary” exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still <em>talks</em> about least privilege while running on accumulated convenience.</p>
+
+<p>That tension is exactly why this topic matters for CISSP and for real security work.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" alt="Diagram showing least privilege, need to know, and separation of duties reducing blast radius and improving accountability." />
+  <figcaption>Least privilege is not one control. It is a discipline that limits blast radius, mistakes, and silent abuse.</figcaption>
+</figure>
+
+<h2 id="least-privilege-is-not-about-distrust">Least privilege is not about distrust</h2>
+
+<p>A lot of teams treat least privilege as if it were a cultural insult: <em>“Do you not trust your people?”</em> That framing misses the point.</p>
+
+<p>Least privilege is not a statement about whether employees are good or bad. It is a statement about how organizations manage risk under normal human conditions:</p>
+
+<ul>
+  <li>people make mistakes</li>
+  <li>accounts get phished</li>
+  <li>malware runs with the privileges it inherits</li>
+  <li>insiders sometimes abuse access</li>
+  <li>emergency exceptions have a habit of becoming permanent</li>
+</ul>
+
+<p>If an account has more power than it actually needs, every one of those failure modes becomes more expensive.</p>
+
+<p>That is why CISSP keeps returning to access control as a risk-reduction discipline. The goal is not to make work miserable. The goal is to reduce unnecessary exposure while keeping the business functional.</p>
+
+<h2 id="three-concepts-people-keep-blending-together">Three concepts people keep blending together</h2>
+
+<p>CISSP expects you to separate <strong>least privilege</strong>, <strong>need to know</strong>, and <strong>separation of duties</strong>. They support each other, but they are not synonyms.</p>
+
+<h3 id="least-privilege">Least privilege</h3>
+
+<p>Least privilege means a subject should receive only the permissions necessary to perform its assigned tasks, and no more.</p>
+
+<p>That applies to:</p>
+
+<ul>
+  <li>end users</li>
+  <li>administrators</li>
+  <li>developers</li>
+  <li>service accounts</li>
+  <li>applications</li>
+  <li>APIs and machine identities</li>
+</ul>
+
+<p>If a developer needs read access to logs and deployment rights in staging, that does not automatically mean they should have production database admin rights or global cloud ownership.</p>
+
+<h3 id="need-to-know">Need to know</h3>
+
+<p>Need to know is narrower. It focuses on access to information, even when someone has a broad role or high level of trust.</p>
+
+<p>A user may be cleared, employed, and generally authorized, but still should only access specific information when there is a legitimate business need.</p>
+
+<p>This matters in environments with sensitive legal, HR, health, defense, or executive information. It also matters in ordinary companies. Not everyone in engineering needs access to customer support transcripts, payroll records, or acquisition plans just because they work for the same organization.</p>
+
+<h3 id="separation-of-duties">Separation of duties</h3>
+
+<p>Separation of duties prevents one person from controlling an entire sensitive process alone.</p>
+
+<p>The classic reason is fraud prevention, but the principle also reduces accidental harm and makes review more meaningful. Examples include:</p>
+
+<ul>
+  <li>one person requests elevated access, another approves it</li>
+  <li>one engineer writes a production change, another reviews or deploys it</li>
+  <li>the person reconciling financial records is not the same person issuing payments</li>
+  <li>a security administrator should not be the sole approver of their own privileged exception</li>
+</ul>
+
+<p>CISSP likes this concept because it reflects a bigger pattern: good security is not just about technical restriction. It is about accountable process design.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/access-control-model.svg" alt="Three-column model distinguishing least privilege, need to know, and separation of duties with practical examples." />
+  <figcaption>These ideas overlap, but each solves a slightly different problem.</figcaption>
+</figure>
+
+<h2 id="why-organizations-still-get-this-wrong">Why organizations still get this wrong</h2>
+
+<p>Least privilege is conceptually simple and operationally annoying. That is usually where the drift starts.</p>
+
+<p>A few common failure patterns show up everywhere:</p>
+
+<h3 id="permission-creep">Permission creep</h3>
+
+<p>People change teams, projects, and responsibilities, but their old access is rarely removed with the same urgency used to grant new access. Over time, one account reflects five historical jobs instead of one current role.</p>
+
+<h3 id="standing-privilege">Standing privilege</h3>
+
+<p>Organizations often leave high-level permissions in place because it feels faster than requesting elevation when needed. That makes everyday accounts far more valuable to attackers.</p>
+
+<h3 id="shared-or-vague-ownership">Shared or vague ownership</h3>
+
+<p>When nobody clearly owns access recertification, exceptions pile up. Managers assume IT is reviewing them. IT assumes the business still wants them. The result is stale privilege that remains invisible until an audit or incident exposes it.</p>
+
+<h3 id="overpowered-service-accounts">Overpowered service accounts</h3>
+
+<p>Human access is not the only risk. Applications and automation often run with far broader permissions than necessary because scoping machine identities takes effort. In cloud environments especially, that creates quiet, high-impact attack paths.</p>
+
+<p>The exam version of this topic is clean. Real life is messy. But the underlying lesson is the same: excessive privilege increases blast radius.</p>
+
+<h2 id="a-realistic-scenario-the-temporary-admin-role-that-never-goes-away">A realistic scenario: the temporary admin role that never goes away</h2>
+
+<p>Imagine a platform engineer is granted broad cloud administrator rights late on a Friday to troubleshoot a production deployment issue. The incident is resolved, but the access is never removed because nobody wants to slow future troubleshooting.</p>
+
+<p>Three months later, that engineer’s laptop is compromised through a convincing phishing flow. The attacker does not need a zero-day. They simply inherit the standing privilege already attached to the account.</p>
+
+<p>Now the attacker can:</p>
+
+<ul>
+  <li>create new privileged identities</li>
+  <li>weaken logging or retention settings</li>
+  <li>access secrets stores</li>
+  <li>modify network rules</li>
+  <li>interfere with evidence collection</li>
+</ul>
+
+<p>At that point, the problem is not just weak phishing resistance. It is weak privilege discipline.</p>
+
+<p>A stronger design would have looked like this:</p>
+
+<ul>
+  <li>time-box the elevated access</li>
+  <li>require approval for privileged activation</li>
+  <li>log the session and high-risk actions</li>
+  <li>use a separate admin account instead of a daily-use identity</li>
+  <li>review whether the engineer needed full admin rights or only a narrower operational role</li>
+</ul>
+
+<p>That is the practical version of least privilege. Not theory. Not slogans. Design choices that limit the cost of inevitable failures.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, least privilege is rarely just a vocabulary question. It is usually part of a better-answer pattern.</p>
+
+<p>CISSP wants you to recognize that the more secure answer often does one or more of the following:</p>
+
+<ul>
+  <li>reduces access to the minimum necessary level</li>
+  <li>assigns ownership and approval to the right authority</li>
+  <li>prevents one person from controlling a critical function end to end</li>
+  <li>favors accountability and auditability over convenience</li>
+  <li>protects the business without granting unnecessary power</li>
+</ul>
+
+<p>That is why answers grounded in governance and process often beat answers that sound merely technical.</p>
+
+<p>If a question asks which control best reduces fraud risk in a sensitive workflow, separation of duties is usually stronger than simply adding more logging. If it asks how to limit damage from compromise, least privilege is usually better than broad default access with monitoring alone.</p>
+
+<h2 id="where-zero-trust-fits--and-where-people-overstate-it">Where zero trust fits — and where people overstate it</h2>
+
+<p>This is one place where established principles and recent developments fit together well.</p>
+
+<p>The core principles are old and stable:</p>
+
+<ul>
+  <li>least privilege</li>
+  <li>need to know</li>
+  <li>separation of duties</li>
+  <li>explicit approval and review</li>
+  <li>accountability for privileged actions</li>
+</ul>
+
+<p>What has evolved is the operating model around them. NIST SP 800-207 describes zero trust as moving defenses away from static, network-based trust assumptions and toward decisions centered on users, assets, and resources. That shift reinforces least privilege. It does not replace it.</p>
+
+<p>In practice, modern access control programs increasingly use:</p>
+
+<ul>
+  <li>just-in-time privileged access</li>
+  <li>conditional access based on context</li>
+  <li>stronger identity verification</li>
+  <li>shorter-lived tokens and sessions</li>
+  <li>continuous review of entitlements</li>
+</ul>
+
+<p>Those are modern implementation patterns for a very old idea: stop giving broad, persistent access when narrower and more accountable access will do.</p>
+
+<p>One mistake teams make is talking about zero trust as if buying a product automatically creates least privilege. It does not. If roles are still too broad, approvals are weak, and exceptions never expire, the labels have changed more than the reality.</p>
+
+<h2 id="what-good-access-discipline-looks-like-in-practice">What good access discipline looks like in practice</h2>
+
+<p>A mature program usually does a few boring things consistently well:</p>
+
+<ul>
+  <li>defaults new access to the minimum required role</li>
+  <li>uses separate privileged accounts for administrative work</li>
+  <li>reviews access periodically with manager or data-owner accountability</li>
+  <li>time-boxes emergency or elevated access</li>
+  <li>removes access promptly when job responsibilities change</li>
+  <li>scopes service accounts and application permissions tightly</li>
+  <li>logs high-risk actions well enough to support investigation and deterrence</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/privilege-review-cycle.svg" alt="Privilege review cycle showing request, approval, time-boxing, logging, recertification, and removal." />
+  <figcaption>Least privilege works best as a lifecycle, not as a one-time provisioning task.</figcaption>
+</figure>
+
+<p>None of this is glamorous. That is probably why it gets neglected. But it is some of the highest-leverage security work an organization can do.</p>
+
+<h2 id="what-the-exam-wants-vs-what-work-demands">What the exam wants vs what work demands</h2>
+
+<p>The exam usually gives you a cleaner world than production does.</p>
+
+<p>On CISSP questions, you can often assume:</p>
+
+<ul>
+  <li>access should be role-appropriate and justified</li>
+  <li>sensitive tasks should not rest with one unchecked individual</li>
+  <li>the proper owner should approve access</li>
+  <li>the best answer reduces risk while preserving business need</li>
+</ul>
+
+<p>In real organizations, you will also have to deal with:</p>
+
+<ul>
+  <li>legacy applications that do not support granular roles well</li>
+  <li>political resistance to access removal</li>
+  <li>emergency access paths that are necessary but poorly governed</li>
+  <li>cloud platforms where a single overbroad role quietly implies dozens of capabilities</li>
+</ul>
+
+<p>That does not make the CISSP model unrealistic. It makes it useful. The cleaner exam framework helps you see where real environments are compensating for convenience instead of controlling risk deliberately.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>If you are studying for CISSP, do not memorize least privilege as a slogan and move on.</p>
+
+<p>Treat it as a design question:</p>
+
+<p><strong>Who really needs this access, for how long, under what approval, and what happens if that account is compromised?</strong></p>
+
+<p>That question improves your exam answers, your architecture decisions, and your judgment in real security work.</p>
+
+<p>And the longer I work through CISSP material, the more that seems to be the real pattern: mature security is often less about adding dramatic controls and more about tightening the ordinary decisions that quietly shape risk every day.</p>
+
+<hr />
+
+<p><em>Post 5 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn how least privilege, need to know, and separation of duties actually work in CISSP and real-world security, including where zero trust and just-in-time access fit.
+
+**SEO keyword ideas:**
+1. CISSP least privilege explained
+2. separation of duties cybersecurity examples
+3. need to know vs least privilege CISSP
+4. zero trust and least privilege access control
+5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
 
 <p>But the existence of bad programs does not make the underlying problem fake. Organizations are run by people working under time pressure, partial information, and conflicting incentives. Weak human controls keep showing up in real incidents because secure behavior is not automatic. It has to be taught, reinforced, and supported.</p>
 
@@ -2215,236 +2468,4 @@ Because the cost is front-loaded, while the payoff compounds during maintenance 
   <li>gradual typing Python codebase</li>
   <li>TypedDict API boundary validation</li>
   <li>Python static typing real world benefits</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="Python" /><category term="python" /><category term="type hints" /><category term="mypy" /><category term="pyright" /><category term="static typing" /><category term="engineering discipline" /><summary type="html"><![CDATA[Type hints are not magic, and they are not free. But in the right places, mypy and pyright catch bugs before runtime that tests often miss, especially at API boundaries and in data transformation code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SQL Injection in 2026: Still Real, Just Better Hidden</title><link href="https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks/" rel="alternate" type="text/html" title="SQL Injection in 2026: Still Real, Just Better Hidden" /><published>2026-03-29T07:10:00+00:00</published><updated>2026-03-29T07:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/sql-injection-2026-hidden-risks/"><![CDATA[<p>A lot of teams treat SQL injection as a solved 2005 problem. They know to parameterize values, they use modern ORMs, and they assume the category is mostly handled by defaults.</p>
-
-<p>That confidence is understandable. It is also where the risk hides.</p>
-
-<p>In 2026, SQL injection still shows up in production systems. It just rarely appears as obvious <code class="language-plaintext highlighter-rouge">WHERE id = '" + input + "'</code> code anymore. It appears in dynamic sorting, dynamic identifiers, convenience interpolation in ORM escape hatches, and stored procedures that build dynamic SQL internally.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" alt="Diagram showing modern SQL injection paths: dynamic ORDER BY, dynamic table names, ORM raw SQL interpolation, and stored procedures with dynamic SQL." />
-  <figcaption>Most modern SQL injection issues are design and review failures, not lack-of-awareness failures.</figcaption>
-</figure>
-
-<p>OWASP’s guidance is still clear: injection remains a core risk category, and primary defenses are still parameterization, allow-list validation, and safe query construction patterns. The difference is where disciplined teams still slip.</p>
-
-<h2 id="not-enough">Why “we use parameters” is not enough</h2>
-
-<p>Parameterized queries protect data values. They do not automatically protect SQL syntax elements.</p>
-
-<p>That distinction matters.</p>
-
-<p>When an attacker controls a value like <code class="language-plaintext highlighter-rouge">@UserId</code>, parameters are the correct defense because the database treats the value as data, not executable SQL. But some parts of a SQL statement are not values and cannot be parameterized in the same way:</p>
-
-<ul>
-  <li>Column names</li>
-  <li>Table names</li>
-  <li>Sort direction (<code class="language-plaintext highlighter-rouge">ASC</code> / <code class="language-plaintext highlighter-rouge">DESC</code>)</li>
-  <li>SQL keywords and fragments</li>
-</ul>
-
-<p>As soon as code starts composing those pieces dynamically, you leave the safety of value parameterization and enter a territory where allow-listing and strict query shape control are mandatory.</p>
-
-<p>This is exactly where many “we already fixed injection” systems are still exposed.</p>
-
-<h2 id="where-it-hides">Where teams still get it wrong</h2>
-
-<h3 id="dynamic-order-by">1) Dynamic ORDER BY clauses</h3>
-
-<p>Sorting is one of the most common places engineers accidentally create SQL injection surface.</p>
-
-<p>A typical pattern looks like this:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Vulnerable pattern</span>
-<span class="kt">var</span> <span class="n">sql</span> <span class="p">=</span> <span class="s">$@"</span><span class="err">
-</span><span class="s">SELECT Id, Name, CreatedAt</span><span class="err">
-</span><span class="s">FROM Users</span><span class="err">
-</span><span class="s">ORDER BY </span><span class="p">{</span><span class="n">sortColumn</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">sortDirection</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
-
-<span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="k">await</span> <span class="n">connection</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;(</span><span class="n">sql</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Even if <code class="language-plaintext highlighter-rouge">WHERE</code> predicates elsewhere are parameterized, this query is injectable because <code class="language-plaintext highlighter-rouge">sortColumn</code> and <code class="language-plaintext highlighter-rouge">sortDirection</code> are inserted as SQL syntax.</p>
-
-<p>Safer pattern:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">allowedColumns</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="n">StringComparer</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Name"</span><span class="p">,</span>
-    <span class="p">[</span><span class="s">"created"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"CreatedAt"</span><span class="p">,</span>
-    <span class="p">[</span><span class="s">"email"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Email"</span>
-<span class="p">};</span>
-
-<span class="kt">var</span> <span class="n">safeColumn</span> <span class="p">=</span> <span class="n">allowedColumns</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">sortBy</span> <span class="p">??</span> <span class="s">"created"</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">col</span><span class="p">)</span>
-    <span class="p">?</span> <span class="n">col</span>
-    <span class="p">:</span> <span class="s">"CreatedAt"</span><span class="p">;</span>
-
-<span class="kt">var</span> <span class="n">safeDirection</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">direction</span><span class="p">,</span> <span class="s">"asc"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span>
-    <span class="p">?</span> <span class="s">"ASC"</span>
-    <span class="p">:</span> <span class="s">"DESC"</span><span class="p">;</span>
-
-<span class="kt">var</span> <span class="n">sql</span> <span class="p">=</span> <span class="s">$@"</span><span class="err">
-</span><span class="s">SELECT Id, Name, CreatedAt</span><span class="err">
-</span><span class="s">FROM Users</span><span class="err">
-</span><span class="s">ORDER BY </span><span class="p">{</span><span class="n">safeColumn</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">safeDirection</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>This still uses string interpolation, but only after mapping input through a strict allow-list to known static SQL tokens.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/dynamic-order-by.png" alt="Before-and-after diagram of dynamic ORDER BY handling showing unsafe direct interpolation versus allow-listed column and direction mapping." />
-  <figcaption>For SQL syntax fragments, allow-listing is the defense. Parameterization is not enough.</figcaption>
-</figure>
-
-<h3 id="dynamic-identifiers">2) Dynamic table names and schema selectors</h3>
-
-<p>Multi-tenant or reporting systems often need to target different datasets. Teams sometimes model this as user-supplied table or schema names.</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">$</span><span class="p">{</span><span class="n">tableName</span><span class="p">}</span> <span class="k">WHERE</span> <span class="n">TenantId</span> <span class="o">=</span> <span class="o">@</span><span class="n">TenantId</span>
-</code></pre></div></div>
-
-<p>This is high-risk unless <code class="language-plaintext highlighter-rouge">tableName</code> comes from a controlled internal mapping and never directly from user input. In practice, the safe approach is one of these:</p>
-
-<ul>
-  <li>Route through predefined query paths per dataset</li>
-  <li>Resolve logical names to physical identifiers in server-side code</li>
-  <li>Reject unknown identifiers and never pass raw input through</li>
-</ul>
-
-<p>If a design requires dynamic identifiers, treat identifier resolution as a security-critical component with unit tests and logging, not as a small string helper.</p>
-
-<h3 id="orm-interpolation">3) String interpolation in ORM “raw SQL” paths</h3>
-
-<p>Modern ORMs reduce injection risk by default when you stay inside their query APIs. The sharp edge appears when developers step into raw SQL convenience methods.</p>
-
-<p>For example in EF Core, the safe and unsafe paths look similar at a glance:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">FromSqlInterpolated(...)</code> can parameterize interpolated values safely</li>
-  <li><code class="language-plaintext highlighter-rouge">FromSqlRaw(...)</code> executes raw SQL text and can be dangerous when combined with interpolation</li>
-</ul>
-
-<p>The same pattern exists in many ecosystems: there is a safe parameterized method and a lower-level raw method. Under deadline pressure, teams choose the flexible one and move on.</p>
-
-<p>The core rule is simple: if you are in a raw SQL API, verify exactly how parameters are bound. Do not assume because the API name includes “SQL” that interpolation is safe.</p>
-
-<h3 id="stored-proc-dynamic-sql">4) Stored procedures that build dynamic SQL internally</h3>
-
-<p>“We only call stored procedures” is often treated as proof against SQL injection. It is not.</p>
-
-<p>Stored procedures are safe when they use static SQL and typed parameters. They become risky when they concatenate input into dynamic SQL strings.</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">dbo</span><span class="p">.</span><span class="n">SearchUsers</span>
-  <span class="o">@</span><span class="n">SortColumn</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="k">AS</span>
-<span class="k">BEGIN</span>
-  <span class="k">DECLARE</span> <span class="o">@</span><span class="k">sql</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="k">MAX</span><span class="p">)</span> <span class="o">=</span>
-    <span class="n">N</span><span class="s1">'SELECT Id, Name, Email FROM dbo.Users ORDER BY '</span> <span class="o">+</span> <span class="o">@</span><span class="n">SortColumn</span><span class="p">;</span>
-
-  <span class="k">EXEC</span><span class="p">(</span><span class="o">@</span><span class="k">sql</span><span class="p">);</span>
-<span class="k">END</span>
-</code></pre></div></div>
-
-<p>This can be exploitable exactly like application-side concatenation.</p>
-
-<p>If dynamic SQL is required in SQL Server, use <code class="language-plaintext highlighter-rouge">sp_executesql</code> with parameters for values and an allow-list for identifiers. OWASP’s cheat sheet and SQL Server security guidance are aligned on this point: dynamic SQL is not forbidden, but unconstrained dynamic SQL is a direct injection vector.</p>
-
-<h2 id="false-confidence">How ORMs create false confidence</h2>
-
-<p>ORM adoption removes a lot of accidental risk. It can also create blind spots.</p>
-
-<p>The blind spot is governance, not tooling.</p>
-
-<p>Teams assume:</p>
-
-<ul>
-  <li>“The ORM handles this”</li>
-  <li>“This code path is internal”</li>
-  <li>“It is only an admin endpoint”</li>
-  <li>“The user cannot realistically send that value”</li>
-</ul>
-
-<p>Attackers do not care whether a route is elegant or legacy. They care whether untrusted input can influence executable SQL shape.</p>
-
-<p>The most useful mindset is this:</p>
-
-<ul>
-  <li>ORM-managed query builders reduce exposure</li>
-  <li>Escape hatches reintroduce exposure</li>
-  <li>Any place query shape is dynamic needs explicit review</li>
-</ul>
-
-<p>That framing keeps teams practical. You can use ORMs and raw SQL responsibly. You just cannot treat either as automatic proof of safety.</p>
-
-<h2 id="checklist">Practical review checklist for SQL injection surface</h2>
-
-<p>Use this checklist in code reviews, security reviews, and production incident hardening.</p>
-
-<ol>
-  <li>
-    <p><strong>Find all query construction paths</strong>
-Search for raw SQL APIs, command text assignment, string interpolation, and stored procedure calls.</p>
-  </li>
-  <li>
-    <p><strong>Classify each dynamic input by role</strong>
-Is it a value, identifier, keyword, or query fragment? Values should be parameterized. Non-values should come from strict allow-lists.</p>
-  </li>
-  <li>
-    <p><strong>Verify API semantics, not assumptions</strong>
-Confirm whether the specific method call binds parameters safely (<code class="language-plaintext highlighter-rouge">Raw</code> vs <code class="language-plaintext highlighter-rouge">Interpolated</code>, positional vs named parameter APIs, etc.).</p>
-  </li>
-  <li>
-    <p><strong>Review stored procedures for internal dynamic SQL</strong>
-Stored procedure boundaries are not trust boundaries. Inspect for concatenation, <code class="language-plaintext highlighter-rouge">EXEC(@sql)</code>, and unvalidated identifiers.</p>
-  </li>
-  <li>
-    <p><strong>Check dynamic ORDER BY / filter / pagination builders</strong>
-These are common injection points because they feel “not dangerous” compared to <code class="language-plaintext highlighter-rouge">WHERE</code> values.</p>
-  </li>
-  <li>
-    <p><strong>Validate error handling and logging</strong>
-Avoid leaking SQL details in responses. Log enough context for investigation without exposing secrets.</p>
-  </li>
-  <li>
-    <p><strong>Test with malicious payloads in integration tests</strong>
-Include payloads in sort fields, filter operators, and identifier-like parameters. Do not test only value fields.</p>
-  </li>
-  <li>
-    <p><strong>Map findings to OWASP guidance</strong>
-Use OWASP SQL Injection Prevention Cheat Sheet controls as acceptance criteria: parameterization, allow-listing, least privilege, and defense in depth.</p>
-  </li>
-</ol>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/review-checklist.png" alt="Checklist-style visual for reviewing SQL injection surface in modern applications." />
-  <figcaption>Security reviews improve when injection checks are systematic instead of intuition-driven.</figcaption>
-</figure>
-
-<h2 id="rule-of-thumb">A practical rule of thumb</h2>
-
-<p>If user input can influence SQL <strong>shape</strong>, stop and design the control explicitly.</p>
-
-<ul>
-  <li>SQL values: parameterize</li>
-  <li>SQL identifiers and keywords: allow-list map to known tokens</li>
-  <li>Dynamic SQL: constrain, parameterize values, and audit aggressively</li>
-</ul>
-
-<p>This is not alarmism. It is just engineering discipline applied where modern systems still fail.</p>
-
-<p>SQL injection in 2026 is less visible than it used to be, but not less real. The teams that avoid it are not the teams with the fanciest stack. They are the teams that treat query construction as a security-critical part of application design.</p>
-
-<hr />
-<!-- 
-*If this was useful, the next security-focused post will go deeper on code review patterns for catching AI-assisted security bugs before they ship.*
-
----
-
-**Meta description:** SQL injection is still a live risk in 2026, especially in dynamic ORDER BY, identifier handling, ORM raw SQL paths, and stored procedures with dynamic SQL. Practical checklist included.
-
-**SEO keywords:**
-- SQL injection 2026
-- dynamic ORDER BY SQL injection
-- ORM raw SQL injection risks
-- OWASP SQL injection prevention checklist
-- stored procedure dynamic SQL security -->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="SQL" /><category term="sql injection" /><category term="owasp" /><category term="secure coding" /><category term="database security" /><category term="orm" /><summary type="html"><![CDATA[SQL injection did not disappear when teams adopted parameterized queries. It moved into dynamic ORDER BY clauses, dynamic identifiers, ORM interpolation paths, and stored procedures that quietly build dynamic SQL.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="Python" /><category term="python" /><category term="type hints" /><category term="mypy" /><category term="pyright" /><category term="static typing" /><category term="engineering discipline" /><summary type="html"><![CDATA[Type hints are not magic, and they are not free. But in the right places, mypy and pyright catch bugs before runtime that tests often miss, especially at API boundaries and in data transformation code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

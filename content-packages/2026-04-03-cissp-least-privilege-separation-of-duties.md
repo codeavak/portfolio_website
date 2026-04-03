@@ -1,4 +1,4 @@
-# Content Package — CISSP Post 4/60: Least Privilege Is Easy to Praise and Hard to Practice
+# Content Package — CISSP Post 5/60: Least Privilege Is Easy to Praise and Hard to Practice
 
 **Post:** `_posts/2026-04-03-cissp-least-privilege-separation-of-duties.md`
 **Published:** 2026-04-03
@@ -19,6 +19,7 @@ Tone: calm, credible, reflective, and practical. The post avoids bootcamp-style 
 ## 2. Research summary
 
 **Established CISSP-aligned principles used:**
+
 - Least privilege grants only the minimum access necessary to perform a job or system function
 - Need to know limits access to information based on a legitimate business requirement
 - Separation of duties reduces fraud, abuse, and error by splitting sensitive actions across people or roles
@@ -26,6 +27,7 @@ Tone: calm, credible, reflective, and practical. The post avoids bootcamp-style 
 - Access control is not only a technical issue; it is also a governance and accountability issue
 
 **Current credible references informing the framing:**
+
 - **NIST SP 800-207 (Zero Trust Architecture)** describes the shift from static, perimeter-based trust assumptions toward decisions focused on users, assets, and resources
 - **NIST SP 800-53 Rev. 5** continues to treat access control as a foundational security control family across systems and organizations
 - **NIST CSF 2.0** reinforces the integration of cybersecurity risk, governance, and operational discipline rather than treating access control as a siloed technical setting
@@ -41,7 +43,7 @@ Least privilege is one of those security ideas that nobody argues with in theory
 
 Then real systems show up.
 
-Legacy applications need broad service accounts. Deadlines create "temporary" exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still *talks* about least privilege while running on accumulated convenience.
+Legacy applications need broad service accounts. Deadlines create "temporary" exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still _talks_ about least privilege while running on accumulated convenience.
 
 That tension is exactly why this topic matters for CISSP and for real security work.
 
@@ -62,6 +64,7 @@ If an account has more power than it actually needs, every one of those failure 
 ### Why organizations still get this wrong
 
 The patterns are familiar:
+
 - permission creep after role changes
 - standing privilege left in place for convenience
 - weak ownership of access reviews
@@ -80,6 +83,7 @@ A stronger design would time-box the access, require approval for activation, lo
 ### What the CISSP exam is really testing
 
 CISSP usually wants the answer that:
+
 - reduces access to the minimum necessary level
 - assigns approval to the right authority
 - prevents one person from controlling a critical process end to end
@@ -105,7 +109,7 @@ That question improves both exam judgment and real security work.
 
 ---
 
-*Post 4 of 60 in my CISSP study series.*
+_Post 5 of 60 in my CISSP study series._
 
 ---
 
@@ -117,6 +121,7 @@ Most teams agree with it in theory.
 Far fewer run it well in practice.
 
 What breaks it?
+
 - "temporary" access that never gets removed
 - broad admin roles left in place for convenience
 - weak ownership of access reviews
@@ -124,12 +129,13 @@ What breaks it?
 
 That is why least privilege is more than an IAM checkbox.
 It is a way to reduce blast radius when normal failures happen:
+
 - phishing
 - mistakes
 - stale entitlements
 - overpowered service accounts
 
-One thing CISSP gets right here: the best answer is usually the one that reduces unnecessary power *without* breaking the business.
+One thing CISSP gets right here: the best answer is usually the one that reduces unnecessary power _without_ breaking the business.
 
 I wrote the next post in the series on how least privilege, need to know, and separation of duties actually fit together in real systems.
 
@@ -142,13 +148,16 @@ Which access-control failure do you see most often in the wild: stale privilege,
 ## 5. Extra content assets
 
 **Hero image:** `assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg`
+
 - Dark-theme visual linking least privilege, need to know, and separation of duties to reduced blast radius and accountability
 - Purpose: make the post feel practical and structured at a glance
 
 **Inline image 1:** `assets/generated/2026/04/cissp-least-privilege-separation-of-duties/access-control-model.svg`
+
 - Three-column comparison of least privilege, need to know, and separation of duties
 - Purpose: help readers separate concepts that are often blurred together
 
 **Inline image 2:** `assets/generated/2026/04/cissp-least-privilege-separation-of-duties/privilege-review-cycle.svg`
+
 - Lifecycle diagram showing request, approval, time-boxing, logging, recertification, and removal
 - Purpose: reinforce that least privilege is an ongoing operating discipline, not a one-time setting

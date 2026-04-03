@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Ownership flow for classified data</title>
+  <desc id="desc">Diagram showing the data owner setting classification, the custodian implementing controls, and the user following handling rules.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .panel { fill: #16243a; stroke: #5bb8ff; stroke-width: 2; }
+      .title { font: 700 42px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .h { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .t { font: 400 19px 'Segoe UI', Arial, sans-serif; fill: #d7e6f5; }
+      .arrow { stroke: #8fd0ff; stroke-width: 6; stroke-linecap: round; }
+      .tag { font: 600 17px 'Segoe UI', Arial, sans-serif; fill: #9edcff; }
+    </style>
+  </defs>
+  <rect width="1400" height="700" class="bg"/>
+  <text x="70" y="90" class="title">Who decides, who protects, who follows the rules</text>
+
+  <rect x="70" y="150" width="360" height="430" rx="20" class="panel"/>
+  <text x="100" y="210" class="h">Data Owner</text>
+  <text x="100" y="265" class="t">• Sets classification level</text>
+  <text x="100" y="300" class="t">• Approves access expectations</text>
+  <text x="100" y="335" class="t">• Defines retention and handling</text>
+  <text x="100" y="390" class="tag">Accountability lives here</text>
+
+  <rect x="520" y="150" width="360" height="430" rx="20" class="panel"/>
+  <text x="550" y="210" class="h">Custodian</text>
+  <text x="550" y="265" class="t">• Implements technical controls</text>
+  <text x="550" y="300" class="t">• Secures storage, backup, logging</text>
+  <text x="550" y="335" class="t">• Enforces retention + disposal</text>
+  <text x="550" y="390" class="tag">Operational discipline lives here</text>
+
+  <rect x="970" y="150" width="360" height="430" rx="20" class="panel"/>
+  <text x="1000" y="210" class="h">User</text>
+  <text x="1000" y="265" class="t">• Accesses only what is needed</text>
+  <text x="1000" y="300" class="t">• Follows sharing and storage rules</text>
+  <text x="1000" y="335" class="t">• Does not improvise around policy</text>
+  <text x="1000" y="390" class="tag">Everyday handling lives here</text>
+
+  <line x1="430" y1="365" x2="520" y2="365" class="arrow"/>
+  <polygon points="505,352 535,365 505,378" fill="#8fd0ff"/>
+  <line x1="880" y1="365" x2="970" y2="365" class="arrow"/>
+  <polygon points="955,352 985,365 955,378" fill="#8fd0ff"/>
+
+  <text x="445" y="340" class="tag">requirements</text>
+  <text x="900" y="340" class="tag">controls + guidance</text>
+</svg>

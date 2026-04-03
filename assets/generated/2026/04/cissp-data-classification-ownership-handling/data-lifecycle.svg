@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Data lifecycle security diagram</title>
+  <desc id="desc">Dark lifecycle diagram showing creation, classification, storage, sharing, retention, archival, and secure destruction of data.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .title { font: 700 42px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .node { fill: #16243a; stroke: #5bb8ff; stroke-width: 2; }
+      .label { font: 700 22px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .small { font: 400 17px 'Segoe UI', Arial, sans-serif; fill: #d7e6f5; }
+      .arrow { stroke: #8fd0ff; stroke-width: 5; fill: none; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="1400" height="700" class="bg"/>
+  <text x="70" y="90" class="title">Asset security is a lifecycle, not a label</text>
+
+  <rect x="80" y="180" width="190" height="110" rx="18" class="node"/>
+  <text x="118" y="225" class="label">Create</text>
+  <text x="105" y="255" class="small">collect or generate</text>
+
+  <rect x="330" y="180" width="190" height="110" rx="18" class="node"/>
+  <text x="355" y="225" class="label">Classify</text>
+  <text x="360" y="255" class="small">value + sensitivity</text>
+
+  <rect x="580" y="180" width="190" height="110" rx="18" class="node"/>
+  <text x="620" y="225" class="label">Store</text>
+  <text x="604" y="255" class="small">approved locations</text>
+
+  <rect x="830" y="180" width="190" height="110" rx="18" class="node"/>
+  <text x="868" y="225" class="label">Use / Share</text>
+  <text x="862" y="255" class="small">need to know</text>
+
+  <rect x="1080" y="180" width="220" height="110" rx="18" class="node"/>
+  <text x="1130" y="225" class="label">Retain</text>
+  <text x="1106" y="255" class="small">legal + business need</text>
+
+  <rect x="460" y="430" width="220" height="110" rx="18" class="node"/>
+  <text x="510" y="475" class="label">Archive</text>
+  <text x="488" y="505" class="small">controlled long-term hold</text>
+
+  <rect x="770" y="430" width="260" height="110" rx="18" class="node"/>
+  <text x="815" y="475" class="label">Destroy / Sanitize</text>
+  <text x="805" y="505" class="small">wipe, crypto erase, shred</text>
+
+  <line x1="270" y1="235" x2="330" y2="235" class="arrow"/>
+  <polygon points="315,223 340,235 315,247" fill="#8fd0ff"/>
+  <line x1="520" y1="235" x2="580" y2="235" class="arrow"/>
+  <polygon points="565,223 590,235 565,247" fill="#8fd0ff"/>
+  <line x1="770" y1="235" x2="830" y2="235" class="arrow"/>
+  <polygon points="815,223 840,235 815,247" fill="#8fd0ff"/>
+  <line x1="1020" y1="235" x2="1080" y2="235" class="arrow"/>
+  <polygon points="1065,223 1090,235 1065,247" fill="#8fd0ff"/>
+
+  <path d="M 1190 290 C 1190 360, 1010 390, 930 430" class="arrow"/>
+  <polygon points="923,412 940,435 912,434" fill="#8fd0ff"/>
+  <path d="M 1080 290 C 970 350, 710 370, 610 430" class="arrow"/>
+  <polygon points="603,412 620,435 592,434" fill="#8fd0ff"/>
+</svg>
