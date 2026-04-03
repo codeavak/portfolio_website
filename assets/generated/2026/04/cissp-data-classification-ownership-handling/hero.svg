@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Data classification hero illustration</title>
+  <desc id="desc">A dark lifecycle diagram showing data classification driving access, storage, retention, and secure disposal decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#13243a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17304d"/>
+      <stop offset="100%" stop-color="#1f4b7a"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 56px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .subtitle { font: 400 25px 'Segoe UI', Arial, sans-serif; fill: #cfdceb; }
+      .panelTitle { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .panelText { font: 400 21px 'Segoe UI', Arial, sans-serif; fill: #dce8f5; }
+      .badge { fill: #0f1d2f; stroke: #65c5ff; stroke-width: 2; }
+      .badgeText { font: 600 21px 'Segoe UI', Arial, sans-serif; fill: #9edcff; }
+      .line { stroke: #8fd0ff; stroke-width: 6; stroke-linecap: round; opacity: 0.9; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1360" cy="120" r="170" fill="#17304d" opacity="0.22"/>
+  <circle cx="230" cy="790" r="220" fill="#1a3555" opacity="0.18"/>
+
+  <text x="90" y="125" class="title">Data Classification Only Matters</text>
+  <text x="90" y="190" class="title">When Handling Rules Change</text>
+  <text x="90" y="240" class="subtitle">Sensitive data should move through clearer decisions on access, storage, retention, and disposal.</text>
+
+  <rect x="90" y="320" rx="24" ry="24" width="300" height="210" fill="url(#panel)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="125" y="385" class="panelTitle">Classify</text>
+  <text x="125" y="435" class="panelText">Public • Internal</text>
+  <text x="125" y="470" class="panelText">Confidential • Restricted</text>
+
+  <rect x="470" y="320" rx="24" ry="24" width="300" height="210" fill="url(#panel)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="505" y="385" class="panelTitle">Handle</text>
+  <text x="505" y="435" class="panelText">Need to know</text>
+  <text x="505" y="470" class="panelText">Approved storage + sharing</text>
+
+  <rect x="850" y="320" rx="24" ry="24" width="300" height="210" fill="url(#panel)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="885" y="385" class="panelTitle">Retain</text>
+  <text x="885" y="435" class="panelText">Keep only as long as</text>
+  <text x="885" y="470" class="panelText">business and law require</text>
+
+  <rect x="1230" y="320" rx="24" ry="24" width="280" height="210" fill="url(#panel)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="1265" y="385" class="panelTitle">Dispose</text>
+  <text x="1265" y="435" class="panelText">Wipe, archive,</text>
+  <text x="1265" y="470" class="panelText">or destroy safely</text>
+
+  <line x1="390" y1="425" x2="470" y2="425" class="line"/>
+  <polygon points="455,412 485,425 455,438" fill="#8fd0ff"/>
+  <line x1="770" y1="425" x2="850" y2="425" class="line"/>
+  <polygon points="835,412 865,425 835,438" fill="#8fd0ff"/>
+  <line x1="1150" y1="425" x2="1230" y2="425" class="line"/>
+  <polygon points="1215,412 1245,425 1215,438" fill="#8fd0ff"/>
+
+  <rect x="360" y="650" rx="18" ry="18" width="880" height="92" class="badge"/>
+  <text x="435" y="707" class="badgeText">Less sprawl • clearer ownership • safer retention • better incident resilience</text>
+</svg>

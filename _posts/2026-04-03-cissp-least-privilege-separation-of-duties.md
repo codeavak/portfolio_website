@@ -1,9 +1,17 @@
 ---
 layout: post
 title: "Least Privilege Is Easy to Praise and Hard to Practice"
-date: 2026-04-03 06:00:00 -0700
+date: 2026-04-03 00:05:00 -0700
 categories: [security, cissp]
-tags: [cissp, domain-5, access-control, least-privilege, separation-of-duties, zero-trust]
+tags:
+  [
+    cissp,
+    domain-5,
+    access-control,
+    least-privilege,
+    separation-of-duties,
+    zero-trust,
+  ]
 excerpt: "Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series."
 image: /assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg
 ---
@@ -12,7 +20,7 @@ Least privilege is one of those security ideas that nobody argues with in theory
 
 Then real systems show up.
 
-Legacy applications need broad service accounts. Deadlines create "temporary" exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still *talks* about least privilege while running on accumulated convenience.
+Legacy applications need broad service accounts. Deadlines create "temporary" exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still _talks_ about least privilege while running on accumulated convenience.
 
 That tension is exactly why this topic matters for CISSP and for real security work.
 
@@ -23,7 +31,7 @@ That tension is exactly why this topic matters for CISSP and for real security w
 
 ## Least privilege is not about distrust
 
-A lot of teams treat least privilege as if it were a cultural insult: *"Do you not trust your people?"* That framing misses the point.
+A lot of teams treat least privilege as if it were a cultural insult: _"Do you not trust your people?"_ That framing misses the point.
 
 Least privilege is not a statement about whether employees are good or bad. It is a statement about how organizations manage risk under normal human conditions:
 
@@ -227,10 +235,11 @@ And the longer I work through CISSP material, the more that seems to be the real
 
 ---
 
-*Post 5 of 60 in my CISSP study series.*
+_Post 5 of 60 in my CISSP study series._
 
 ---
-<!-- 
+
+<!--
 **Meta description:** Learn how least privilege, need to know, and separation of duties actually work in CISSP and real-world security, including where zero trust and just-in-time access fit.
 
 **SEO keyword ideas:**
