@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Privilege review cycle</title>
+  <desc id="desc">Lifecycle diagram for privileged access: request, approve, time-box, log, review, remove.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0b1220; }
+      .node { fill: #14304c; stroke: #6ec6ff; stroke-width: 2; }
+      .title { font: 700 40px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .label { font: 700 22px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .small { font: 400 17px 'Segoe UI', Arial, sans-serif; fill: #d7e6f5; }
+      .arrow { stroke: #8fd0ff; stroke-width: 5; fill: none; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="1400" height="700" class="bg"/>
+  <text x="80" y="90" class="title">Least privilege works as a lifecycle</text>
+
+  <rect x="120" y="220" width="180" height="120" rx="18" class="node"/>
+  <text x="170" y="270" class="label">Request</text>
+  <text x="145" y="305" class="small">justify the need</text>
+
+  <rect x="380" y="220" width="180" height="120" rx="18" class="node"/>
+  <text x="430" y="270" class="label">Approve</text>
+  <text x="410" y="305" class="small">right owner signs off</text>
+
+  <rect x="640" y="220" width="180" height="120" rx="18" class="node"/>
+  <text x="668" y="270" class="label">Time-box</text>
+  <text x="666" y="305" class="small">expire by default</text>
+
+  <rect x="900" y="220" width="180" height="120" rx="18" class="node"/>
+  <text x="960" y="270" class="label">Log</text>
+  <text x="930" y="305" class="small">monitor high-risk use</text>
+
+  <rect x="640" y="430" width="180" height="120" rx="18" class="node"/>
+  <text x="665" y="480" class="label">Review</text>
+  <text x="657" y="515" class="small">recertify regularly</text>
+
+  <rect x="380" y="430" width="180" height="120" rx="18" class="node"/>
+  <text x="430" y="480" class="label">Remove</text>
+  <text x="407" y="515" class="small">clean up stale access</text>
+
+  <path d="M 300 280 L 380 280" class="arrow"/>
+  <path d="M 560 280 L 640 280" class="arrow"/>
+  <path d="M 820 280 L 900 280" class="arrow"/>
+  <path d="M 990 340 C 990 420, 860 490, 820 490" class="arrow"/>
+  <path d="M 640 490 L 560 490" class="arrow"/>
+  <path d="M 380 490 C 240 490, 180 390, 180 340" class="arrow"/>
+</svg>

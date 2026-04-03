@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Least privilege hero illustration</title>
+  <desc id="desc">A dark diagram linking least privilege, need to know, and separation of duties to lower blast radius and stronger accountability.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#132238"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17304d"/>
+      <stop offset="100%" stop-color="#1f4b7a"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 56px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .subtitle { font: 400 26px 'Segoe UI', Arial, sans-serif; fill: #cdd9e5; }
+      .cardTitle { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .cardText { font: 400 22px 'Segoe UI', Arial, sans-serif; fill: #dce8f5; }
+      .pill { fill: #0f1d2f; stroke: #4db3ff; stroke-width: 2; }
+      .pillText { font: 600 22px 'Segoe UI', Arial, sans-serif; fill: #8fd0ff; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1370" cy="120" r="180" fill="#1a3555" opacity="0.25"/>
+  <circle cx="210" cy="780" r="220" fill="#17304d" opacity="0.22"/>
+
+  <text x="100" y="130" class="title">Least Privilege, Need to Know,</text>
+  <text x="100" y="195" class="title">and Separation of Duties</text>
+  <text x="100" y="245" class="subtitle">Small access decisions quietly shape blast radius, accountability, and resilience.</text>
+
+  <rect x="100" y="320" rx="24" ry="24" width="380" height="260" fill="url(#card)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="135" y="390" class="cardTitle">Least Privilege</text>
+  <text x="135" y="445" class="cardText">Grant only the access</text>
+  <text x="135" y="480" class="cardText">needed for the task.</text>
+
+  <rect x="610" y="320" rx="24" ry="24" width="380" height="260" fill="url(#card)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="645" y="390" class="cardTitle">Need to Know</text>
+  <text x="645" y="445" class="cardText">Limit information access</text>
+  <text x="645" y="480" class="cardText">to a real business need.</text>
+
+  <rect x="1120" y="320" rx="24" ry="24" width="380" height="260" fill="url(#card)" stroke="#4db3ff" stroke-width="2"/>
+  <text x="1155" y="390" class="cardTitle">Separation of Duties</text>
+  <text x="1155" y="445" class="cardText">Split sensitive actions</text>
+  <text x="1155" y="480" class="cardText">across roles and approvals.</text>
+
+  <path d="M 290 610 C 380 700, 1220 700, 1310 610" fill="none" stroke="#8fd0ff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <polygon points="1295,596 1345,610 1295,624" fill="#8fd0ff"/>
+
+  <rect x="520" y="690" rx="18" ry="18" width="560" height="90" class="pill"/>
+  <text x="610" y="745" class="pillText">Reduced blast radius • better accountability • fewer silent failures</text>
+</svg>

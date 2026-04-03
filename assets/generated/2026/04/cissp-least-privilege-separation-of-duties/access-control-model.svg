@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Access control model</title>
+  <desc id="desc">Comparison of least privilege, need to know, and separation of duties with examples.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .panel { fill: #16243a; stroke: #5bb8ff; stroke-width: 2; }
+      .h { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .t { font: 400 19px 'Segoe UI', Arial, sans-serif; fill: #d7e6f5; }
+      .title { font: 700 42px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+  <rect width="1400" height="700" class="bg"/>
+  <text x="70" y="90" class="title">Three related ideas, three different jobs</text>
+
+  <rect x="70" y="140" width="380" height="470" rx="20" class="panel"/>
+  <text x="100" y="200" class="h">Least Privilege</text>
+  <text x="100" y="255" class="t">• Minimum permissions for</text>
+  <text x="100" y="285" class="t">  a person, system, or app</text>
+  <text x="100" y="340" class="t">• Focus: reduce unnecessary</text>
+  <text x="100" y="370" class="t">  power and blast radius</text>
+  <text x="100" y="425" class="t">• Example: deploy to staging,</text>
+  <text x="100" y="455" class="t">  not global cloud admin</text>
+
+  <rect x="510" y="140" width="380" height="470" rx="20" class="panel"/>
+  <text x="540" y="200" class="h">Need to Know</text>
+  <text x="540" y="255" class="t">• Limit information access</text>
+  <text x="540" y="285" class="t">  to a legitimate purpose</text>
+  <text x="540" y="340" class="t">• Focus: sensitive data and</text>
+  <text x="540" y="370" class="t">  justified business need</text>
+  <text x="540" y="425" class="t">• Example: HR sees payroll,</text>
+  <text x="540" y="455" class="t">  not incident forensics</text>
+
+  <rect x="950" y="140" width="380" height="470" rx="20" class="panel"/>
+  <text x="980" y="200" class="h">Separation of Duties</text>
+  <text x="980" y="255" class="t">• Split sensitive actions</text>
+  <text x="980" y="285" class="t">  across people or roles</text>
+  <text x="980" y="340" class="t">• Focus: prevent abuse,</text>
+  <text x="980" y="370" class="t">  fraud, and unchecked error</text>
+  <text x="980" y="425" class="t">• Example: one requests access,</text>
+  <text x="980" y="455" class="t">  another approves it</text>
+</svg>
