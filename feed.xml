@@ -1,4 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-02T05:33:39+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-03T10:49:40+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+
+<p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
+
+<p>At that point, the organization can honestly say it has a classification policy. What it cannot honestly say is that the policy is changing behavior.</p>
+
+<p>That gap is exactly why this is such a useful CISSP topic.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" alt="Diagram showing data classification driving access, storage, retention, and disposal decisions across the information lifecycle." />
+  <figcaption>Classification matters only when it changes how data is handled from creation through destruction.</figcaption>
+</figure>
+
+<h2 id="classification-is-a-decision-tool-not-a-sticker">Classification is a decision tool, not a sticker</h2>
+
+<p>CISSP expects you to think about classification as a way to express the <strong>sensitivity</strong>, <strong>value</strong>, and <strong>criticality</strong> of information so the organization can apply appropriate protection.</p>
+
+<p>The exact labels vary by environment. Government systems may use formal classification levels. Commercial organizations often use simpler schemes such as:</p>
+
+<ul>
+  <li>public</li>
+  <li>internal</li>
+  <li>confidential</li>
+  <li>restricted</li>
+</ul>
+
+<p>The names matter less than the discipline behind them.</p>
+
+<p>A good classification scheme answers practical questions:</p>
+
+<ul>
+  <li>Who should be able to access this data?</li>
+  <li>Where can it be stored?</li>
+  <li>How can it be transmitted?</li>
+  <li>How long should it be retained?</li>
+  <li>What should happen when it is no longer needed?</li>
+</ul>
+
+<p>If the label does not change any of those decisions, it is not doing much security work.</p>
+
+<p>That is one of the broader CISSP patterns that keeps showing up: a control is only mature when it changes process, not just paperwork.</p>
+
+<h2 id="ownership-matters-more-than-most-teams-realize">Ownership matters more than most teams realize</h2>
+
+<p>One reason classification breaks down is that organizations blur <strong>ownership</strong>, <strong>custody</strong>, and <strong>use</strong>.</p>
+
+<p>CISSP wants you to keep those roles straight.</p>
+
+<h3 id="data-owner">Data owner</h3>
+
+<p>The <strong>owner</strong> is accountable for determining the classification and deciding the protection requirements. That does not mean the owner personally administers every control. It means the owner has the authority to say what level of protection the data deserves and who should have access.</p>
+
+<h3 id="custodian">Custodian</h3>
+
+<p>The <strong>custodian</strong> protects and maintains the data according to the owner’s requirements. That can include IT administrators, platform teams, database teams, records teams, or managed providers. They implement storage, backup, retention, and security controls.</p>
+
+<h3 id="user">User</h3>
+
+<p>The <strong>user</strong> is expected to follow the handling rules. That sounds obvious, but it matters. A user does not get to decide that copying a restricted export into an unapproved SaaS workspace is acceptable just because it feels efficient.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/ownership-flow.svg" alt="Flow showing data owners setting classification, custodians implementing controls, and users following handling requirements." />
+  <figcaption>The owner decides the protection level; custodians operationalize it; users must handle the data accordingly.</figcaption>
+</figure>
+
+<p>These distinctions matter on the exam because many questions quietly test who should make the decision. They matter even more in real life because unclear ownership is how sensitive data becomes everybody’s problem and nobody’s responsibility.</p>
+
+<h2 id="a-label-without-handling-rules-is-theater">A label without handling rules is theater</h2>
+
+<p>The real value of classification shows up in the handling requirements attached to it.</p>
+
+<h3 id="access">Access</h3>
+
+<p>More sensitive information should generally have tighter <strong>need-to-know</strong> and <strong>least privilege</strong> boundaries. That connects directly to the access-control ideas CISSP tests elsewhere. The classification should help determine who gets access and under what approval path.</p>
+
+<h3 id="storage-and-transmission">Storage and transmission</h3>
+
+<p>Some data can safely live in standard collaboration tools. Some should only live in approved repositories with stronger controls, encryption, logging, and limited sharing paths. If the organization labels something restricted but still lets it move through casual channels, the label is mostly decorative.</p>
+
+<h3 id="retention">Retention</h3>
+
+<p>This is where mature programs separate themselves from performative ones.</p>
+
+<p>A surprising amount of risk comes from keeping data longer than necessary. Old customer exports, stale HR files, archived logs, abandoned snapshots, and forgotten backups all expand the attack surface. Good asset security is not just about protecting data while it exists. It is about deciding whether it should still exist at all.</p>
+
+<p>Retention should reflect legal, regulatory, contractual, operational, and business needs — not inertia.</p>
+
+<h3 id="disposal-and-sanitization">Disposal and sanitization</h3>
+
+<p>When data or media reaches end of life, secure disposal matters.</p>
+
+<p>This is not just a shred-bin topic. It includes cloud storage, laptops, removable media, virtual disks, backup media, and retired infrastructure. NIST’s media sanitization guidance remains a useful reminder that ordinary deletion is not always the same thing as rendering recovery infeasible. For some situations, verified wipe procedures, crypto erase, or physical destruction may be the right control depending on the media and sensitivity involved.</p>
+
+<p>That is another place where CISSP is practical: it wants you to think about the entire lifecycle, not just the moment of access.</p>
+
+<h2 id="a-realistic-scenario-just-copy-production-into-test">A realistic scenario: “just copy production into test”</h2>
+
+<p>This is one of the most common places where classification, ownership, and handling discipline either becomes real or collapses.</p>
+
+<p>Imagine a team is debugging a difficult issue in a customer-facing application. An engineer asks for a copy of the production database to reproduce the problem quickly in a lower environment.</p>
+
+<p>Technically, that sounds convenient. From an asset-security perspective, it should trigger better questions:</p>
+
+<ul>
+  <li>Does the lower environment need the full dataset or only a masked subset?</li>
+  <li>Who approves the movement of that data?</li>
+  <li>Does the test environment meet the same security expectations as production?</li>
+  <li>How long will the copied data remain there?</li>
+  <li>How will the team verify cleanup afterward?</li>
+</ul>
+
+<p>If the dataset contains customer PII, support transcripts, financial records, or internal case data, the classification should change the answer. A mature organization does not treat that request as a casual engineering shortcut. It routes it through approved handling rules.</p>
+
+<p>The safer answer may be:</p>
+
+<ul>
+  <li>use tokenized, masked, or synthetic data where possible</li>
+  <li>grant only the minimum necessary access</li>
+  <li>time-box the exception</li>
+  <li>log the access and approvals</li>
+  <li>remove the copied data promptly when the work is done</li>
+</ul>
+
+<p>That is what it looks like when classification is operational instead of ceremonial.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/data-lifecycle.svg" alt="Lifecycle diagram showing creation, classification, use, sharing, retention, archival, and secure destruction of data." />
+  <figcaption>Asset security is lifecycle security. The hard part is keeping the rules intact as data moves and ages.</figcaption>
+</figure>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>This topic is usually not about memorizing a label hierarchy in isolation.</p>
+
+<p>The exam is more often testing whether you understand that:</p>
+
+<ul>
+  <li>classification should drive handling requirements</li>
+  <li>the appropriate owner determines classification and access expectations</li>
+  <li>custodians implement controls, but they do not invent the business rules</li>
+  <li>retention and destruction are part of security, not just records management</li>
+  <li>the best answer usually protects the data across its full lifecycle</li>
+</ul>
+
+<p>That is also why “business context” keeps mattering. A public marketing brochure and a merger planning document are both digital files, but they should not be handled the same way. The organization’s obligations, risk, and exposure are different.</p>
+
+<h2 id="what-the-exam-wants-vs-what-real-work-demands">What the exam wants vs what real work demands</h2>
+
+<p>The exam version is cleaner than production reality.</p>
+
+<p>On the test, you can usually assume the classification model exists, the owner is identifiable, and the best answer follows policy cleanly.</p>
+
+<p>In real environments, the harder problems look more like this:</p>
+
+<ul>
+  <li>legacy file shares with weak ownership</li>
+  <li>SaaS sprawl where teams copy data into too many tools</li>
+  <li>inconsistent labels across business units</li>
+  <li>retention policies that exist on paper but are not technically enforced</li>
+  <li>lower environments quietly holding more sensitive data than anyone intended</li>
+</ul>
+
+<p>None of that makes the CISSP model unrealistic. It makes it useful.</p>
+
+<p>The exam gives you the clean version of the principle so you can recognize where real systems are drifting away from disciplined handling.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<p>The foundations of this topic are stable and have been stable for a long time:</p>
+
+<ul>
+  <li>classify information based on sensitivity, value, and criticality</li>
+  <li>assign accountability to the right owner</li>
+  <li>apply access and handling controls that match the classification</li>
+  <li>retain information only as long as necessary</li>
+  <li>destroy or sanitize it appropriately when it is no longer needed</li>
+</ul>
+
+<p>What has become more urgent in recent years is the operating environment around those principles.</p>
+
+<p>Cloud collaboration tools, SaaS platforms, and AI-assisted workflows make it easier than ever to copy, transform, and move data into places that feel productive but were never meant to hold certain information classes. Meanwhile, NIST CSF 2.0 continues to reinforce that data protection belongs inside broader governance and enterprise risk management, not in a narrow technical silo. NIST also refreshed its media sanitization guidance in 2025, which is a useful reminder that disposal still deserves operational attention.</p>
+
+<p>The durable lesson is simple: the technologies keep changing, but the need for clear handling rules does not.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>If you are studying for CISSP, this is one of those topics worth tying to real examples instead of flashcards.</p>
+
+<p>Ask the practical question:</p>
+
+<p><strong>If this data is classified as sensitive, what changes because of that?</strong></p>
+
+<p>If the answer includes tighter access, safer storage, better transmission controls, clear retention, and deliberate disposal, the classification program is doing real work.</p>
+
+<p>If nothing changes except the label, it is mostly branding.</p>
+
+<p>And the more I work through CISSP material, the more that seems to be the recurring theme: mature security is often less about dramatic controls and more about making ordinary discipline hard to ignore.</p>
+
+<hr />
+
+<p><em>Post 6 of 60 in my CISSP study series.</em></p>
+
+<hr />
+<!-- 
+**Meta description:** Learn CISSP data classification in plain English, including ownership, handling, retention, and media sanitization so labels actually lead to better security decisions.
+
+**SEO keyword ideas:**
+1. CISSP data classification explained
+2. data owner vs custodian CISSP
+3. CISSP Domain 2 asset security examples
+4. data retention and media sanitization cybersecurity
+5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
 
 <p>But the existence of bad programs does not make the underlying problem fake. Organizations are run by people working under time pressure, partial information, and conflicting incentives. Weak human controls keep showing up in real incidents because secure behavior is not automatic. It has to be taught, reinforced, and supported.</p>
 
@@ -2236,169 +2447,4 @@ Use OWASP SQL Injection Prevention Cheat Sheet controls as acceptance criteria: 
 - dynamic ORDER BY SQL injection
 - ORM raw SQL injection risks
 - OWASP SQL injection prevention checklist
-- stored procedure dynamic SQL security -->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="SQL" /><category term="sql injection" /><category term="owasp" /><category term="secure coding" /><category term="database security" /><category term="orm" /><summary type="html"><![CDATA[SQL injection did not disappear when teams adopted parameterized queries. It moved into dynamic ORDER BY clauses, dynamic identifiers, ORM interpolation paths, and stored procedures that quietly build dynamic SQL.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What Developers Get Wrong About ConfigureAwait</title><link href="https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait/" rel="alternate" type="text/html" title="What Developers Get Wrong About ConfigureAwait" /><published>2026-03-29T07:00:00+00:00</published><updated>2026-03-29T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/csharp-async-configureawait/"><![CDATA[<p>Most async code in C# works until it doesn’t. The failure mode is a hang, not a crash: no exception, no stack trace, just a request that never returns or a UI that locks up cold. Usually, the cause is a combination of a <code class="language-plaintext highlighter-rouge">.Result</code> call, a synchronization context, and the absence of <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> somewhere in the chain.</p>
-
-<p>The rule gets repeated often enough — “use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> in library code” — but the why tends to get left out. Without the mechanism, the rule feels arbitrary, which is how you end up adding it everywhere defensively or ignoring it entirely.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" alt="Diagram comparing an await that captures the SynchronizationContext with one using ConfigureAwait(false) that routes directly to the thread pool." />
-  <figcaption>Default await captures and resumes through the SynchronizationContext. ConfigureAwait(false) skips that and resumes on the thread pool.</figcaption>
-</figure>
-
-<h2 id="synchronization-context">What a synchronization context actually is</h2>
-
-<p><code class="language-plaintext highlighter-rouge">SynchronizationContext</code> is an abstraction that answers one question: when a piece of work needs to run, where should it run?</p>
-
-<p>The clearest example is a desktop UI application. In WinForms or WPF, controls can only be touched from the UI thread. If you fetch data on a background thread and then try to update a label, you’ll get an <code class="language-plaintext highlighter-rouge">InvalidOperationException</code>. The synchronization context for the UI thread knows how to post work back to that specific thread. When you <code class="language-plaintext highlighter-rouge">await</code> inside a button click handler, the runtime captures the current <code class="language-plaintext highlighter-rouge">SynchronizationContext</code>. After the awaited operation finishes, the continuation — everything after the <code class="language-plaintext highlighter-rouge">await</code> — is scheduled back through that captured context, which means it runs on the UI thread. That’s why you can update a label after an <code class="language-plaintext highlighter-rouge">await</code> without explicitly marshaling to the UI thread yourself.</p>
-
-<p>ASP.NET Classic (.NET Framework) had its own synchronization context too: <code class="language-plaintext highlighter-rouge">AspNetSynchronizationContext</code>. It captured the per-request HTTP context and ensured that continuation work ran within the same request scope. This mattered because <code class="language-plaintext highlighter-rouge">HttpContext.Current</code> was thread-local, so continuations needed to land on a thread that had the right HTTP context set up.</p>
-
-<p>That context worked, but it also introduced an entire class of deadlocks.</p>
-
-<h2 id="aspnet-core-no-context">ASP.NET Core removed it on purpose</h2>
-
-<p>When the ASP.NET Core team built ASP.NET Core, they made a deliberate choice: no synchronization context. In a typical ASP.NET Core request, <code class="language-plaintext highlighter-rouge">SynchronizationContext.Current</code> is <code class="language-plaintext highlighter-rouge">null</code>.</p>
-
-<p>There are practical reasons for this. Without a synchronization context, continuations run on the thread pool — whichever thread is available. This avoids the overhead of marshaling continuations back to a specific thread and, more importantly, eliminates the deadlock scenario that the old <code class="language-plaintext highlighter-rouge">AspNetSynchronizationContext</code> enabled. It also fits ASP.NET Core’s design, which no longer relies on thread-local state like <code class="language-plaintext highlighter-rouge">HttpContext.Current</code>. The <code class="language-plaintext highlighter-rouge">IHttpContextAccessor</code> abstraction handles context propagation without needing the continuations to return to a specific thread.</p>
-
-<p>The implication: in ASP.NET Core, <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> has no functional effect. There is no context to skip. The continuation already goes to the thread pool.</p>
-
-<p>Where this matters is everywhere else. <strong>Blazor Server has a synchronization context.</strong> The renderer posts work to a per-circuit context to keep component state consistent. <strong>Blazor WebAssembly runs on the browser’s JS thread</strong>, which also has scheduling constraints. <strong>WinForms and WPF</strong> have their UI thread contexts. Any environment where components or state are tied to a specific thread has a synchronization context, and the deadlock risk reappears.</p>
-
-<h2 id="deadlock">The deadlock, step by step</h2>
-
-<p>The classic async deadlock needs three things together:</p>
-
-<ol>
-  <li>A synchronization context is active</li>
-  <li>An async method awaits without <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code></li>
-  <li>Something blocks synchronously on the result — <code class="language-plaintext highlighter-rouge">.Result</code>, <code class="language-plaintext highlighter-rouge">.Wait()</code>, or <code class="language-plaintext highlighter-rouge">.GetAwaiter().GetResult()</code></li>
-</ol>
-
-<p>Here is the minimal version:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// In a WinForms button click handler (UI thread has a SynchronizationContext)</span>
-<span class="k">private</span> <span class="k">void</span> <span class="nf">button_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="nf">FetchDataAsync</span><span class="p">().</span><span class="n">Result</span><span class="p">;</span> <span class="c1">// blocks the UI thread here</span>
-    <span class="n">label1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// await captures SynchronizationContext.Current (the UI thread's context)</span>
-    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">);</span>
-    <span class="c1">// Continuation is posted back to the UI thread context.</span>
-    <span class="c1">// But the UI thread is blocked on .Result above. Neither can proceed.</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>The sequence:</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">button_Click</code> runs on the UI thread and calls <code class="language-plaintext highlighter-rouge">.Result</code>, which blocks the thread</li>
-  <li><code class="language-plaintext highlighter-rouge">FetchDataAsync</code> starts, hits <code class="language-plaintext highlighter-rouge">await</code>, and captures <code class="language-plaintext highlighter-rouge">SynchronizationContext.Current</code> — the UI context</li>
-  <li>The HTTP request completes on a thread pool thread</li>
-  <li>The runtime tries to schedule the continuation back on the UI context</li>
-  <li>The UI context is blocked waiting for <code class="language-plaintext highlighter-rouge">.Result</code></li>
-  <li>Deadlock — no exception, no timeout, just silence</li>
-</ol>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/deadlock-flow.svg" alt="Flowchart showing the four-step sequence leading to an async deadlock when a context thread blocks on .Result while the continuation waits for that same context." />
-  <figcaption>The deadlock completes when the continuation needs the same thread that is waiting for it.</figcaption>
-</figure>
-
-<p>Adding <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> breaks the cycle:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">)</span>
-        <span class="p">.</span><span class="nf">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-    <span class="c1">// Continuation runs on the thread pool. No attempt to post back to the UI context.</span>
-    <span class="c1">// The .Result call above can now unblock.</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> tells the runtime: after this await completes, do not attempt to resume on the captured context. Use whatever thread is available. The continuation no longer needs the blocked UI thread, so the hold releases.</p>
-
-<p>Note that <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> only applies to the specific <code class="language-plaintext highlighter-rouge">await</code> it is attached to. If a method has multiple <code class="language-plaintext highlighter-rouge">await</code> expressions and only some of them use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code>, the ones without it can still try to resume on the original context. The protection is per-await, not per-method.</p>
-
-<h2 id="library-vs-app">Library code vs application code</h2>
-
-<p>This is where the practical guidance becomes clear.</p>
-
-<p><strong>Library code</strong> is code you write to be consumed by others. You do not know whether the caller is in ASP.NET Core (no context), WinForms (UI context), Blazor Server (renderer context), or a console app (no context). If your library uses <code class="language-plaintext highlighter-rouge">await</code> without <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> and the caller decides to block synchronously on your methods — which happens in legacy code, in test runners, and in synchronous-to-async bridging scenarios — you have shipped a latent deadlock risk.</p>
-
-<p>The convention is unambiguous: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on every <code class="language-plaintext highlighter-rouge">await</code> in library code that does not specifically need to return to the caller’s context. The .NET runtime libraries themselves follow this convention. Stephen Toub’s async guidance documents for the runtime team state it explicitly.</p>
-
-<p><strong>Application code</strong> is different because you know the environment. In ASP.NET Core, there is no context, so <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> does nothing meaningful. Some teams use it consistently for cross-environment habit; others skip it. Neither choice breaks anything in ASP.NET Core.</p>
-
-<p>In UI application code, the default behavior — returning to the UI context — is often what you want:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WPF: stays on UI thread after await, so you can update the UI directly</span>
-<span class="k">private</span> <span class="k">async</span> <span class="k">void</span> <span class="nf">button_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">statusLabel</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">"Loading..."</span><span class="p">;</span>
-    <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">FetchDataAsync</span><span class="p">();</span> <span class="c1">// defaults to ConfigureAwait(true)</span>
-    <span class="n">statusLabel</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>        <span class="c1">// safe — still on UI thread</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>If you use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> here and then try to touch a UI element, you’ll get a thread access exception. The rule for UI code is: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on awaits where you do not need to return to the UI thread afterward, and omit it where you do.</p>
-
-<p>Blazor Server deserves specific mention. Because it has a synchronization context and because components are commonly used by developers who may not be fluent in the subtleties, the same guidelines apply as for library code if you’re writing reusable Blazor components or services.</p>
-
-<h2 id="root-cause">The root cause is usually not ConfigureAwait</h2>
-
-<p><code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> is a mitigation. It reduces the consequence of blocking on async code, but it does not fix the underlying problem.</p>
-
-<p>The underlying problem is mixing async and sync in the call chain: calling <code class="language-plaintext highlighter-rouge">.Result</code>, <code class="language-plaintext highlighter-rouge">.Wait()</code>, or <code class="language-plaintext highlighter-rouge">.GetAwaiter().GetResult()</code> on an async method from a synchronous method in a context that has a synchronization context. The correct solution is to go async all the way up. Async code composes naturally from bottom to top; forcing a synchronous result at any point in the chain is where the risk concentrates.</p>
-
-<p>There are real scenarios where you cannot go fully async — integrating with APIs that are synchronous, working in legacy codebases, or bridging into synchronization boundaries that you do not control. In those cases, <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> throughout the async path is the defensive measure that prevents the deadlock. But it is the fallback, not the design.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Preferred: go async all the way</span>
-<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">button_ClickAsync</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">label1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">FetchDataAsync</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// When you genuinely cannot avoid a sync call,</span>
-<span class="c1">// ConfigureAwait(false) in the async method protects the caller</span>
-<span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">FetchDataAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="n">httpClient</span><span class="p">.</span><span class="nf">GetStringAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">)</span>
-        <span class="p">.</span><span class="nf">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="practical-rule">The practical rule</h2>
-
-<ul>
-  <li><strong>Library or shared utility code</strong>: use <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> on every <code class="language-plaintext highlighter-rouge">await</code> unless the method explicitly needs to resume on the caller’s context. This is a firm convention, not a preference.</li>
-  <li><strong>ASP.NET Core application code</strong>: <code class="language-plaintext highlighter-rouge">ConfigureAwait(false)</code> has no effect. Use it or don’t — it will not change behavior.</li>
-  <li><strong>UI application code (WinForms, WPF, WinUI)</strong>: default to not using it on awaits followed by UI updates. Use it on awaits that are pure I/O and not followed by UI work.</li>
-  <li><strong>Blazor Server</strong>: apply the same thinking as UI code. Be deliberate about when you need to stay on the renderer context and when you do not.</li>
-  <li><strong>Wherever you are</strong>: prefer async all the way to blocking on async with <code class="language-plaintext highlighter-rouge">.Result</code>.</li>
-</ul>
-
-<p>Understanding the synchronization context is what makes these rules stop feeling arbitrary. They follow directly from how <code class="language-plaintext highlighter-rouge">await</code> captures and resumes context, and from the deliberate architectural choices that ASP.NET Core made when it dropped context capture entirely.</p>
-
-<hr />
-
-<p><em>If you found this useful, the next post in this series covers SQL injection in 2026 — specifically the places teams still get it wrong despite parameterized queries being well-established.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> Cuts through ConfigureAwait confusion with a clear explanation of synchronization contexts, a minimal reproducible deadlock, and the practical rule for library code vs application code in .NET.</p>
-
-<p><strong>SEO keywords:</strong></p>
-<ul>
-  <li>ConfigureAwait false deadlock C#</li>
-  <li>SynchronizationContext ASP.NET Core explained</li>
-  <li>C# async await ConfigureAwait library code</li>
-  <li>async deadlock reproduce example csharp</li>
-  <li>ConfigureAwait Blazor WPF WinForms</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="C#" /><category term=".NET" /><category term="csharp" /><category term="async await" /><category term="configureawait" /><category term="synchronization context" /><category term="dotnet" /><category term="concurrency" /><summary type="html"><![CDATA[ConfigureAwait(false) shows up in every async discussion, but most explanations skip the part that makes it click: what a synchronization context is, why ASP.NET Core doesn't have one, and the exact scenario where the deadlock happens.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/csharp-async-configureawait/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+- stored procedure dynamic SQL security -->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="SQL" /><category term="sql injection" /><category term="owasp" /><category term="secure coding" /><category term="database security" /><category term="orm" /><summary type="html"><![CDATA[SQL injection did not disappear when teams adopted parameterized queries. It moved into dynamic ORDER BY clauses, dynamic identifiers, ORM interpolation paths, and stored procedures that quietly build dynamic SQL.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/sql-injection-2026-hidden-risks/hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

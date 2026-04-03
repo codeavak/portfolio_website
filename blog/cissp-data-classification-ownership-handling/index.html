@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Classification Only Works When Handling Rules Are Real | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-03T07:15:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-2" />
+      
+        <meta property="article:tag" content="asset-security" />
+      
+        <meta property="article:tag" content="data-classification" />
+      
+        <meta property="article:tag" content="data-ownership" />
+      
+        <meta property="article:tag" content="data-retention" />
+      
+        <meta property="article:tag" content="media-sanitization" />
+      
+    
+    <meta property="og:title" content="Data Classification Only Works When Handling Rules Are Real" />
+    <meta property="og:description" content="Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Classification Only Works When Handling Rules Are Real" />
+    <meta name="twitter:description" content="Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Data Classification Only Works When Handling Rules Are Real",
+        "description": "Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-03T07:15:00+00:00",
+        "dateModified": "2026-04-03T07:15:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-03T07:15:00+00:00">April 3, 2026</time>
+              <h1 class="post-title">Data Classification Only Works When Handling Rules Are Real</h1>
+              
+                <p class="post-dek">Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-2</span>
+                  
+                    <span class="chip">asset-security</span>
+                  
+                    <span class="chip">data-classification</span>
+                  
+                    <span class="chip">data-ownership</span>
+                  
+                    <span class="chip">data-retention</span>
+                  
+                    <span class="chip">media-sanitization</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>There is a version of data classification that exists mostly to make people feel better.</p>
+
+<p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
+
+<p>At that point, the organization can honestly say it has a classification policy. What it cannot honestly say is that the policy is changing behavior.</p>
+
+<p>That gap is exactly why this is such a useful CISSP topic.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" alt="Diagram showing data classification driving access, storage, retention, and disposal decisions across the information lifecycle." />
+  <figcaption>Classification matters only when it changes how data is handled from creation through destruction.</figcaption>
+</figure>
+
+<h2 id="classification-is-a-decision-tool-not-a-sticker">Classification is a decision tool, not a sticker</h2>
+
+<p>CISSP expects you to think about classification as a way to express the <strong>sensitivity</strong>, <strong>value</strong>, and <strong>criticality</strong> of information so the organization can apply appropriate protection.</p>
+
+<p>The exact labels vary by environment. Government systems may use formal classification levels. Commercial organizations often use simpler schemes such as:</p>
+
+<ul>
+  <li>public</li>
+  <li>internal</li>
+  <li>confidential</li>
+  <li>restricted</li>
+</ul>
+
+<p>The names matter less than the discipline behind them.</p>
+
+<p>A good classification scheme answers practical questions:</p>
+
+<ul>
+  <li>Who should be able to access this data?</li>
+  <li>Where can it be stored?</li>
+  <li>How can it be transmitted?</li>
+  <li>How long should it be retained?</li>
+  <li>What should happen when it is no longer needed?</li>
+</ul>
+
+<p>If the label does not change any of those decisions, it is not doing much security work.</p>
+
+<p>That is one of the broader CISSP patterns that keeps showing up: a control is only mature when it changes process, not just paperwork.</p>
+
+<h2 id="ownership-matters-more-than-most-teams-realize">Ownership matters more than most teams realize</h2>
+
+<p>One reason classification breaks down is that organizations blur <strong>ownership</strong>, <strong>custody</strong>, and <strong>use</strong>.</p>
+
+<p>CISSP wants you to keep those roles straight.</p>
+
+<h3 id="data-owner">Data owner</h3>
+
+<p>The <strong>owner</strong> is accountable for determining the classification and deciding the protection requirements. That does not mean the owner personally administers every control. It means the owner has the authority to say what level of protection the data deserves and who should have access.</p>
+
+<h3 id="custodian">Custodian</h3>
+
+<p>The <strong>custodian</strong> protects and maintains the data according to the owner’s requirements. That can include IT administrators, platform teams, database teams, records teams, or managed providers. They implement storage, backup, retention, and security controls.</p>
+
+<h3 id="user">User</h3>
+
+<p>The <strong>user</strong> is expected to follow the handling rules. That sounds obvious, but it matters. A user does not get to decide that copying a restricted export into an unapproved SaaS workspace is acceptable just because it feels efficient.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/ownership-flow.svg" alt="Flow showing data owners setting classification, custodians implementing controls, and users following handling requirements." />
+  <figcaption>The owner decides the protection level; custodians operationalize it; users must handle the data accordingly.</figcaption>
+</figure>
+
+<p>These distinctions matter on the exam because many questions quietly test who should make the decision. They matter even more in real life because unclear ownership is how sensitive data becomes everybody’s problem and nobody’s responsibility.</p>
+
+<h2 id="a-label-without-handling-rules-is-theater">A label without handling rules is theater</h2>
+
+<p>The real value of classification shows up in the handling requirements attached to it.</p>
+
+<h3 id="access">Access</h3>
+
+<p>More sensitive information should generally have tighter <strong>need-to-know</strong> and <strong>least privilege</strong> boundaries. That connects directly to the access-control ideas CISSP tests elsewhere. The classification should help determine who gets access and under what approval path.</p>
+
+<h3 id="storage-and-transmission">Storage and transmission</h3>
+
+<p>Some data can safely live in standard collaboration tools. Some should only live in approved repositories with stronger controls, encryption, logging, and limited sharing paths. If the organization labels something restricted but still lets it move through casual channels, the label is mostly decorative.</p>
+
+<h3 id="retention">Retention</h3>
+
+<p>This is where mature programs separate themselves from performative ones.</p>
+
+<p>A surprising amount of risk comes from keeping data longer than necessary. Old customer exports, stale HR files, archived logs, abandoned snapshots, and forgotten backups all expand the attack surface. Good asset security is not just about protecting data while it exists. It is about deciding whether it should still exist at all.</p>
+
+<p>Retention should reflect legal, regulatory, contractual, operational, and business needs — not inertia.</p>
+
+<h3 id="disposal-and-sanitization">Disposal and sanitization</h3>
+
+<p>When data or media reaches end of life, secure disposal matters.</p>
+
+<p>This is not just a shred-bin topic. It includes cloud storage, laptops, removable media, virtual disks, backup media, and retired infrastructure. NIST’s media sanitization guidance remains a useful reminder that ordinary deletion is not always the same thing as rendering recovery infeasible. For some situations, verified wipe procedures, crypto erase, or physical destruction may be the right control depending on the media and sensitivity involved.</p>
+
+<p>That is another place where CISSP is practical: it wants you to think about the entire lifecycle, not just the moment of access.</p>
+
+<h2 id="a-realistic-scenario-just-copy-production-into-test">A realistic scenario: “just copy production into test”</h2>
+
+<p>This is one of the most common places where classification, ownership, and handling discipline either becomes real or collapses.</p>
+
+<p>Imagine a team is debugging a difficult issue in a customer-facing application. An engineer asks for a copy of the production database to reproduce the problem quickly in a lower environment.</p>
+
+<p>Technically, that sounds convenient. From an asset-security perspective, it should trigger better questions:</p>
+
+<ul>
+  <li>Does the lower environment need the full dataset or only a masked subset?</li>
+  <li>Who approves the movement of that data?</li>
+  <li>Does the test environment meet the same security expectations as production?</li>
+  <li>How long will the copied data remain there?</li>
+  <li>How will the team verify cleanup afterward?</li>
+</ul>
+
+<p>If the dataset contains customer PII, support transcripts, financial records, or internal case data, the classification should change the answer. A mature organization does not treat that request as a casual engineering shortcut. It routes it through approved handling rules.</p>
+
+<p>The safer answer may be:</p>
+
+<ul>
+  <li>use tokenized, masked, or synthetic data where possible</li>
+  <li>grant only the minimum necessary access</li>
+  <li>time-box the exception</li>
+  <li>log the access and approvals</li>
+  <li>remove the copied data promptly when the work is done</li>
+</ul>
+
+<p>That is what it looks like when classification is operational instead of ceremonial.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/data-lifecycle.svg" alt="Lifecycle diagram showing creation, classification, use, sharing, retention, archival, and secure destruction of data." />
+  <figcaption>Asset security is lifecycle security. The hard part is keeping the rules intact as data moves and ages.</figcaption>
+</figure>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>This topic is usually not about memorizing a label hierarchy in isolation.</p>
+
+<p>The exam is more often testing whether you understand that:</p>
+
+<ul>
+  <li>classification should drive handling requirements</li>
+  <li>the appropriate owner determines classification and access expectations</li>
+  <li>custodians implement controls, but they do not invent the business rules</li>
+  <li>retention and destruction are part of security, not just records management</li>
+  <li>the best answer usually protects the data across its full lifecycle</li>
+</ul>
+
+<p>That is also why “business context” keeps mattering. A public marketing brochure and a merger planning document are both digital files, but they should not be handled the same way. The organization’s obligations, risk, and exposure are different.</p>
+
+<h2 id="what-the-exam-wants-vs-what-real-work-demands">What the exam wants vs what real work demands</h2>
+
+<p>The exam version is cleaner than production reality.</p>
+
+<p>On the test, you can usually assume the classification model exists, the owner is identifiable, and the best answer follows policy cleanly.</p>
+
+<p>In real environments, the harder problems look more like this:</p>
+
+<ul>
+  <li>legacy file shares with weak ownership</li>
+  <li>SaaS sprawl where teams copy data into too many tools</li>
+  <li>inconsistent labels across business units</li>
+  <li>retention policies that exist on paper but are not technically enforced</li>
+  <li>lower environments quietly holding more sensitive data than anyone intended</li>
+</ul>
+
+<p>None of that makes the CISSP model unrealistic. It makes it useful.</p>
+
+<p>The exam gives you the clean version of the principle so you can recognize where real systems are drifting away from disciplined handling.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<p>The foundations of this topic are stable and have been stable for a long time:</p>
+
+<ul>
+  <li>classify information based on sensitivity, value, and criticality</li>
+  <li>assign accountability to the right owner</li>
+  <li>apply access and handling controls that match the classification</li>
+  <li>retain information only as long as necessary</li>
+  <li>destroy or sanitize it appropriately when it is no longer needed</li>
+</ul>
+
+<p>What has become more urgent in recent years is the operating environment around those principles.</p>
+
+<p>Cloud collaboration tools, SaaS platforms, and AI-assisted workflows make it easier than ever to copy, transform, and move data into places that feel productive but were never meant to hold certain information classes. Meanwhile, NIST CSF 2.0 continues to reinforce that data protection belongs inside broader governance and enterprise risk management, not in a narrow technical silo. NIST also refreshed its media sanitization guidance in 2025, which is a useful reminder that disposal still deserves operational attention.</p>
+
+<p>The durable lesson is simple: the technologies keep changing, but the need for clear handling rules does not.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>If you are studying for CISSP, this is one of those topics worth tying to real examples instead of flashcards.</p>
+
+<p>Ask the practical question:</p>
+
+<p><strong>If this data is classified as sensitive, what changes because of that?</strong></p>
+
+<p>If the answer includes tighter access, safer storage, better transmission controls, clear retention, and deliberate disposal, the classification program is doing real work.</p>
+
+<p>If nothing changes except the label, it is mostly branding.</p>
+
+<p>And the more I work through CISSP material, the more that seems to be the recurring theme: mature security is often less about dramatic controls and more about making ordinary discipline hard to ignore.</p>
+
+<hr />
+
+<p><em>Post 6 of 60 in my CISSP study series.</em></p>
+
+<hr />
+<!-- 
+**Meta description:** Learn CISSP data classification in plain English, including ownership, handling, retention, and media sanitization so labels actually lead to better security decisions.
+
+**SEO keyword ideas:**
+1. CISSP data classification explained
+2. data owner vs custodian CISSP
+3. CISSP Domain 2 asset security examples
+4. data retention and media sanitization cybersecurity
+5. need to know and data handling rules -->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
