@@ -193,6 +193,7 @@ _Post 8 of 60 in my CISSP study series._
 **Meta description:** Learn how CISSP secure design principles apply to real engineering work through secure defaults, complete mediation, trust boundaries, and reduced attack surface.
 
 **SEO keyword ideas:**
+
 1. CISSP secure design principles explained
 2. secure by design for software engineers
 3. fail safe defaults complete mediation CISSP
@@ -212,6 +213,7 @@ A feature ships with permissive defaults because tightening it can happen "later
 That is why secure design principles still matter so much.
 
 A few that show up constantly in real work:
+
 - start with **secure defaults**
 - enforce **authorization at the resource**, not just once at login
 - reduce **attack surface** by removing what you do not need
