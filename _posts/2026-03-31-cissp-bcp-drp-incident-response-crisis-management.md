@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines"
-date: 2026-03-31 12:00:00 -0700
+title: "CISSP #2: BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines"
+date: 2026-03-31 12:02:00 +0000
 categories: [security, cissp]
-tags: [cissp, domain-1, bcp, drp, incident-response, crisis-management, resilience]
+tags:
+  [cissp, domain-1, bcp, drp, incident-response, crisis-management, resilience]
 excerpt: "CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations."
 image: /assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg
 ---
@@ -172,13 +173,14 @@ That is exactly why this distinction matters beyond the exam.
 
 ---
 
-*Post 2 of 60 in my CISSP study series.*
+_Post 2 of 60 in my CISSP study series._
 
 ---
 
 **Meta description:** Learn the practical and exam-critical differences between BCP, DRP, incident response, and crisis management, including how MTD, RTO, and RPO work together in real operations.
 
 **SEO keyword ideas:**
+
 1. CISSP BCP vs DRP vs incident response
 2. crisis management vs incident response cybersecurity
 3. MTD RTO RPO explained for CISSP

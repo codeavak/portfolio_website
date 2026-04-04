@@ -1,9 +1,17 @@
 ---
 layout: post
-title: "Security Awareness Training Only Works When Leadership Makes It Real"
-date: 2026-04-01 00:05:00 +0000
+title: "CISSP #4: Security Awareness Training Only Works When Leadership Makes It Real"
+date: 2026-04-01 12:04:00 +0000
 categories: [security, cissp]
-tags: [cissp, domain-1, security-awareness, security-training, leadership, human-risk]
+tags:
+  [
+    cissp,
+    domain-1,
+    security-awareness,
+    security-training,
+    leadership,
+    human-risk,
+  ]
 excerpt: "Security awareness gets mocked because bad programs feel like theater. But a mature program—backed by leadership, role-based training, and strong reporting culture—still matters. Post 4 of 60 in my CISSP study series."
 image: /assets/generated/2026/04/cissp-security-awareness-training-leadership-culture/hero.svg
 ---
@@ -192,10 +200,11 @@ That is what makes this topic more important than its reputation suggests.
 
 ---
 
-*Post 4 of 60 in my CISSP study series.*
+_Post 4 of 60 in my CISSP study series._
 
 ---
-<!-- 
+
+<!--
 **Meta description:** Learn the CISSP difference between awareness, training, and education—and why leadership culture is what makes security awareness programs actually change behavior.
 
 **SEO keyword ideas:**

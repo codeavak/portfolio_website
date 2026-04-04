@@ -1,16 +1,25 @@
 ---
 layout: post
-title: "Data Classification Only Works When Handling Rules Are Real"
-date: 2026-04-03 00:10:00 +0000
+title: "CISSP #6: Data Classification Only Works When Handling Rules Are Real"
+date: 2026-04-03 12:06:00 +0000
 categories: [security, cissp]
-tags: [cissp, domain-2, asset-security, data-classification, data-ownership, data-retention, media-sanitization]
+tags:
+  [
+    cissp,
+    domain-2,
+    asset-security,
+    data-classification,
+    data-ownership,
+    data-retention,
+    media-sanitization,
+  ]
 excerpt: "Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series."
 image: /assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg
 ---
 
 There is a version of data classification that exists mostly to make people feel better.
 
-Files get stamped *confidential*. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.
+Files get stamped _confidential_. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.
 
 At that point, the organization can honestly say it has a classification policy. What it cannot honestly say is that the policy is changing behavior.
 
@@ -194,10 +203,11 @@ And the more I work through CISSP material, the more that seems to be the recurr
 
 ---
 
-*Post 6 of 60 in my CISSP study series.*
+_Post 6 of 60 in my CISSP study series._
 
 ---
-<!-- 
+
+<!--
 **Meta description:** Learn CISSP data classification in plain English, including ownership, handling, retention, and media sanitization so labels actually lead to better security decisions.
 
 **SEO keyword ideas:**

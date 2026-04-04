@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Security Governance Is Not Paperwork"
-date: 2026-03-31 06:00:00 -0700
+title: "CISSP #1: Security Governance Is Not Paperwork"
+date: 2026-03-31 12:01:00 +0000
 categories: [security, cissp]
-tags: [cissp, governance, risk-management, compliance, security-policy, domain-1]
+tags:
+  [cissp, governance, risk-management, compliance, security-policy, domain-1]
 excerpt: "Security governance is not a filing exercise. It is how an organization decides what matters, what it will protect, and how much uncertainty it can absorb. Post 1 of 60 in my CISSP study series."
 image: /assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg
 ---
@@ -20,7 +21,7 @@ This is Domain 1. It carries the heaviest weight on the exam, and governance is 
 
 Governance is the system by which an organization directs and controls itself. In security, that means the decisions, accountability structures, and processes that ensure security efforts align with business objectives.
 
-Note what governance is *not*: it is not a firewall rule, a patch schedule, or an audit finding. It is the scaffolding that determines who has the authority to decide what gets protected, to what extent, and at what cost.
+Note what governance is _not_: it is not a firewall rule, a patch schedule, or an audit finding. It is the scaffolding that determines who has the authority to decide what gets protected, to what extent, and at what cost.
 
 The positioning of the CISO matters here. On the CISSP exam, the CISO reports to executive leadership — a board, a CEO — not to the IT department. That placement is intentional. Security governance is a business function. It belongs at the level where business decisions are made.
 
@@ -33,9 +34,9 @@ One of the concepts CISSP tests most consistently is the relationship between po
   <figcaption>The governance hierarchy. Policy sets direction; everything below it implements that direction. Only guidelines are advisory.</figcaption>
 </figure>
 
-**Policy** is the highest level. It is management-driven, mandatory, and intentionally broad. A policy says what the organization will do and why — not how. For example: *"The organization will protect sensitive customer data in accordance with applicable laws and business requirements."* Technical staff do not write policies. Executives and security leadership do.
+**Policy** is the highest level. It is management-driven, mandatory, and intentionally broad. A policy says what the organization will do and why — not how. For example: _"The organization will protect sensitive customer data in accordance with applicable laws and business requirements."_ Technical staff do not write policies. Executives and security leadership do.
 
-**Standards** are mandatory, specific rules that support a policy. Where a policy says "protect customer data," a standard says *"All databases containing PII must encrypt data at rest using AES-256."* Standards are still technology-aware but specific enough to be measurable.
+**Standards** are mandatory, specific rules that support a policy. Where a policy says "protect customer data," a standard says _"All databases containing PII must encrypt data at rest using AES-256."_ Standards are still technology-aware but specific enough to be measurable.
 
 **Baselines** define a minimum security configuration applied consistently across a category of systems. A workstation security baseline specifies which services are disabled, what audit logging is enabled, and what local account policies apply. Every system in scope gets the same starting point.
 
@@ -57,7 +58,7 @@ A compliant organization passed an audit. A well-governed organization has the d
 
 Two terms that frequently blur together and cost exam points.
 
-**Risk appetite** is the amount and type of risk an organization is willing to accept in pursuit of its objectives. It is a strategic statement set at the board or executive level: *"We accept moderate operational risk to move fast, but zero tolerance for customer data exposure."*
+**Risk appetite** is the amount and type of risk an organization is willing to accept in pursuit of its objectives. It is a strategic statement set at the board or executive level: _"We accept moderate operational risk to move fast, but zero tolerance for customer data exposure."_
 
 **Risk tolerance** is the acceptable deviation from that appetite in practice — the operational range. If the appetite says "moderate operational risk," tolerance defines what moderate actually means: a specific loss threshold, an acceptable SLA breach rate, a permissible number of unpatched critical vulnerabilities within a defined window.
 
@@ -67,9 +68,9 @@ Both matter for governance because they define the boundaries within which secur
 
 These are legal concepts that CISSP imports into security governance, and candidates frequently invert them.
 
-**Due diligence** is the investigation and research you conduct *before* making a decision. Before deploying a third-party system that handles customer data, you review their security posture, contractual obligations, and incident history. That research is due diligence.
+**Due diligence** is the investigation and research you conduct _before_ making a decision. Before deploying a third-party system that handles customer data, you review their security posture, contractual obligations, and incident history. That research is due diligence.
 
-**Due care** is the ongoing, reasonable effort to protect assets *after* a decision has been made. Once you have deployed that system, monitoring it, reviewing access controls, and applying patches is due care. *"We did what a reasonable person would do to protect this."*
+**Due care** is the ongoing, reasonable effort to protect assets _after_ a decision has been made. Once you have deployed that system, monitoring it, reviewing access controls, and applying patches is due care. _"We did what a reasonable person would do to protect this."_
 
 Both have legal weight. If a breach leads to litigation, the questions that arise are: did you investigate before acting, and did you exercise reasonable protection afterward? An organization that skipped vendor review and never audited access has a difficult answer.
 
@@ -84,9 +85,9 @@ Here is a situation that shows governance in practice.
 
 A mid-size SaaS company is eight weeks from a SOC 2 Type II audit. The CTO wants to defer a $40,000 network segmentation project by one quarter to hit a product release deadline. The security team has flagged lateral movement risk as high and linked it directly to audit scope.
 
-The governance question is not *"can we afford to wait?"* It is: *"Does accepting this risk align with the documented risk appetite, and who has the authority to make this call?"*
+The governance question is not _"can we afford to wait?"_ It is: _"Does accepting this risk align with the documented risk appetite, and who has the authority to make this call?"_
 
-If the information security policy designates this risk level as non-deferrable without executive sign-off, the CTO cannot make this call unilaterally. It escalates. And if leadership accepts the risk, that decision needs to be documented. You cannot later claim due care over a risk you consciously chose not to mitigate — but you *can* demonstrate that the decision was made deliberately, at the right level of authority, with the risk fully understood.
+If the information security policy designates this risk level as non-deferrable without executive sign-off, the CTO cannot make this call unilaterally. It escalates. And if leadership accepts the risk, that decision needs to be documented. You cannot later claim due care over a risk you consciously chose not to mitigate — but you _can_ demonstrate that the decision was made deliberately, at the right level of authority, with the risk fully understood.
 
 This is exactly what CISSP questions about governance and business objectives are testing. Not the technical fix. The decision authority and the accountability trail.
 
@@ -110,13 +111,14 @@ Governance is that connection.
 
 ---
 
-*Post 1 of 60 in my CISSP study series.*
+_Post 1 of 60 in my CISSP study series._
 
 ---
 
 **Meta description:** Security governance is how organizations decide what to protect and why. This post explains the policy hierarchy, risk appetite, due care, and due diligence for engineers studying CISSP Domain 1.
 
 **SEO keyword ideas:**
+
 1. CISSP Domain 1 security governance
 2. security policy standard baseline procedure hierarchy
 3. due care vs due diligence CISSP

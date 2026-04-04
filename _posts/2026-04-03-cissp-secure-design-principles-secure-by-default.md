@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Secure Design Principles Matter Long Before an Incident Does"
-date: 2026-04-03 00:00:00 +0000
+title: "CISSP #8: Secure Design Principles Matter Long Before an Incident Does"
+date: 2026-04-03 12:08:00 +0000
 categories: [security, cissp]
 tags:
   [

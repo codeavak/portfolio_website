@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Defense in Depth Is What Keeps One Failure from Becoming an Incident"
-date: 2026-04-03 00:15:00 +0000
+title: "CISSP #7: Defense in Depth Is What Keeps One Failure from Becoming an Incident"
+date: 2026-04-03 12:07:00 +0000
 categories: [security, cissp]
 tags:
   [

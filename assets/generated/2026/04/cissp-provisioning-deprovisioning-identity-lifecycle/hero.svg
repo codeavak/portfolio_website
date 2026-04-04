@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Identity lifecycle security illustration</title>
+  <desc id="desc">A clean hero graphic showing request, approval, provisioning, review, and deprovisioning as a continuous security control loop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#eaf4ff" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1f3a5a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <circle cx="1360" cy="130" r="120" fill="#dbeafe" opacity="0.65" />
+  <circle cx="160" cy="760" r="150" fill="#dcfce7" opacity="0.6" />
+
+  <text x="110" y="118" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#0f172a">Access is a lifecycle, not a one-time event</text>
+  <text x="110" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#334155">Strong IAM keeps access requested, approved, reviewed, and removed with discipline.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="110" y="250" rx="24" ry="24" width="250" height="170" fill="#ffffff" />
+    <rect x="410" y="250" rx="24" ry="24" width="250" height="170" fill="#ffffff" />
+    <rect x="710" y="250" rx="24" ry="24" width="250" height="170" fill="#ffffff" />
+    <rect x="1010" y="250" rx="24" ry="24" width="250" height="170" fill="#ffffff" />
+    <rect x="1310" y="250" rx="24" ry="24" width="180" height="170" fill="#ffffff" />
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <circle cx="180" cy="315" r="28" fill="#dbeafe" />
+    <text x="168" y="323" font-size="24" font-weight="700" fill="#1d4ed8">1</text>
+    <text x="145" y="360" font-size="28" font-weight="700" fill="#0f172a">Request</text>
+    <text x="145" y="394" font-size="20" fill="#475569">Business need is</text>
+    <text x="145" y="422" font-size="20" fill="#475569">documented clearly</text>
+
+    <circle cx="480" cy="315" r="28" fill="#e9d5ff" />
+    <text x="468" y="323" font-size="24" font-weight="700" fill="#7c3aed">2</text>
+    <text x="445" y="360" font-size="28" font-weight="700" fill="#0f172a">Approve</text>
+    <text x="445" y="394" font-size="20" fill="#475569">Owner checks role,</text>
+    <text x="445" y="422" font-size="20" fill="#475569">scope, and risk</text>
+
+    <circle cx="780" cy="315" r="28" fill="#dcfce7" />
+    <text x="768" y="323" font-size="24" font-weight="700" fill="#15803d">3</text>
+    <text x="740" y="360" font-size="28" font-weight="700" fill="#0f172a">Provision</text>
+    <text x="740" y="394" font-size="20" fill="#475569">Least-privilege</text>
+    <text x="740" y="422" font-size="20" fill="#475569">access is granted</text>
+
+    <circle cx="1080" cy="315" r="28" fill="#fde68a" />
+    <text x="1068" y="323" font-size="24" font-weight="700" fill="#b45309">4</text>
+    <text x="1048" y="360" font-size="28" font-weight="700" fill="#0f172a">Review</text>
+    <text x="1045" y="394" font-size="20" fill="#475569">Attest, adjust,</text>
+    <text x="1045" y="422" font-size="20" fill="#475569">and time-box access</text>
+
+    <circle cx="1360" cy="315" r="28" fill="#fce7f3" />
+    <text x="1348" y="323" font-size="24" font-weight="700" fill="#be185d">5</text>
+    <text x="1340" y="360" font-size="28" font-weight="700" fill="#0f172a">Remove</text>
+    <text x="1335" y="394" font-size="20" fill="#475569">Stale rights</text>
+    <text x="1335" y="422" font-size="20" fill="#475569">do not linger</text>
+  </g>
+
+  <g stroke="#94a3b8" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M360 355 L410 355" />
+    <path d="M660 355 L710 355" />
+    <path d="M960 355 L1010 355" />
+    <path d="M1260 355 L1310 355" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="250" y="550" rx="26" ry="26" width="1100" height="170" fill="#0f172a" opacity="0.96" />
+  </g>
+  <text x="295" y="615" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Joiners, movers, and leavers all change the risk picture.</text>
+  <text x="295" y="660" font-family="Segoe UI, Arial, sans-serif" font-size="23" fill="#dbeafe">When approvals, reviews, and deprovisioning drift, identity becomes one of the easiest paths to overexposure.</text>
+</svg>

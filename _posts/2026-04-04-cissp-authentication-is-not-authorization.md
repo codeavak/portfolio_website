@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Authentication Is Not Authorization, and CISSP Is Right to Separate Them"
-date: 2026-04-04 00:00:00 +0000
+title: "CISSP #9: Authentication Is Not Authorization, and CISSP Is Right to Separate Them"
+date: 2026-04-04 12:09:00 +0000
 categories: [security, cissp]
 tags:
   [

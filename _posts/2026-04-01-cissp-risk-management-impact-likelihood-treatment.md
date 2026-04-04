@@ -1,14 +1,24 @@
 ---
 layout: post
-title: "Risk Management Gets Real When You Have to Choose a Treatment"
-date: 2026-04-01 00:00:00 +0000
+title: "CISSP #3: Risk Management Gets Real When You Have to Choose a Treatment"
+date: 2026-04-01 12:03:00 +0000
 categories: [security, cissp]
-tags: [cissp, domain-1, risk-management, qualitative-risk, quantitative-risk, sle, aro, ale]
+tags:
+  [
+    cissp,
+    domain-1,
+    risk-management,
+    qualitative-risk,
+    quantitative-risk,
+    sle,
+    aro,
+    ale,
+  ]
 excerpt: "Risk management is not about memorizing formulas. It is about comparing impact, likelihood, and treatment options well enough to make a defensible business decision. Post 3 of 60 in my CISSP study series."
 image: /assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg
 ---
 
-Risk management is one of those CISSP topics that sounds simple right up until you have to make an actual decision. Most people can say the words *likelihood*, *impact*, and *mitigation*. Fewer can explain what the organization should do when a real risk is expensive to reduce, impossible to eliminate, and not equally important to every business function.
+Risk management is one of those CISSP topics that sounds simple right up until you have to make an actual decision. Most people can say the words _likelihood_, _impact_, and _mitigation_. Fewer can explain what the organization should do when a real risk is expensive to reduce, impossible to eliminate, and not equally important to every business function.
 
 That is the part the exam cares about, and it is the part that matters in real work.
 
@@ -39,7 +49,7 @@ CISSP expects you to understand both approaches and when each is useful.
 
 ### Qualitative risk analysis
 
-Qualitative analysis uses ratings such as *low*, *medium*, and *high*. It is fast, practical, and often the only realistic option when exact numbers do not exist.
+Qualitative analysis uses ratings such as _low_, _medium_, and _high_. It is fast, practical, and often the only realistic option when exact numbers do not exist.
 
 A qualitative assessment might look like this:
 
@@ -200,10 +210,11 @@ That framing is useful on the exam, and even more useful in the kind of rooms wh
 
 ---
 
-*Post 3 of 60 in my CISSP study series.*
+_Post 3 of 60 in my CISSP study series._
 
 ---
-<!-- 
+
+<!--
 **Meta description:** Learn CISSP risk management in plain English: qualitative vs quantitative analysis, SLE, ARO, ALE, and how to choose between avoiding, mitigating, transferring, or accepting risk.
 
 **SEO keyword ideas:**
