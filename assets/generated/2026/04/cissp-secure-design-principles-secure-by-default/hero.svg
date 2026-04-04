@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Secure design principles hero illustration</title>
+  <desc id="desc">A modern architectural graphic showing secure defaults, trust boundaries, complete mediation, and smaller attack surface around a business application.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111f"/>
+      <stop offset="100%" stop-color="#142742"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17324f"/>
+      <stop offset="100%" stop-color="#1f537f"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b566f"/>
+      <stop offset="100%" stop-color="#2cc5bf"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 58px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .subtitle { font: 400 26px 'Segoe UI', Arial, sans-serif; fill: #d3e1ef; }
+      .label { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .small { font: 400 21px 'Segoe UI', Arial, sans-serif; fill: #d8e8f5; }
+      .pill { fill: #0d1c2f; stroke: #72d8ff; stroke-width: 2; }
+      .pillText { font: 600 21px 'Segoe UI', Arial, sans-serif; fill: #9fe7ff; }
+      .boundary { fill: none; stroke: #5cbcff; stroke-width: 6; stroke-dasharray: 16 14; opacity: 0.95; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1325" cy="120" r="170" fill="#1d3b58" opacity="0.22"/>
+  <circle cx="220" cy="760" r="215" fill="#17324f" opacity="0.16"/>
+
+  <text x="90" y="120" class="title">Secure Design Principles</text>
+  <text x="90" y="185" class="title">Make Safer Systems the Default</text>
+  <text x="90" y="235" class="subtitle">Trust boundaries, smaller attack surface, and real authorization checks all start in the design.</text>
+
+  <rect x="600" y="320" rx="28" ry="28" width="400" height="240" fill="url(#core)" stroke="#a7fbff" stroke-width="3"/>
+  <text x="800" y="420" text-anchor="middle" class="label">Business App</text>
+  <text x="800" y="460" text-anchor="middle" class="small">Secure defaults • scoped access</text>
+  <text x="800" y="492" text-anchor="middle" class="small">logging • validation • resilience</text>
+
+  <rect x="500" y="240" rx="36" ry="36" width="600" height="400" class="boundary"/>
+  <text x="800" y="220" text-anchor="middle" class="label" style="font-size:26px;">Trust boundary</text>
+
+  <rect x="170" y="350" rx="22" ry="22" width="270" height="100" fill="url(#panel)" stroke="#5cbcff" stroke-width="2.5"/>
+  <text x="305" y="402" text-anchor="middle" class="label" style="font-size:28px;">Secure defaults</text>
+  <text x="305" y="432" text-anchor="middle" class="small">Start closed, enable intentionally</text>
+
+  <rect x="170" y="520" rx="22" ry="22" width="270" height="100" fill="url(#panel)" stroke="#5cbcff" stroke-width="2.5"/>
+  <text x="305" y="572" text-anchor="middle" class="label" style="font-size:28px;">Attack surface</text>
+  <text x="305" y="602" text-anchor="middle" class="small">Remove what is not needed</text>
+
+  <rect x="1160" y="350" rx="22" ry="22" width="280" height="100" fill="url(#panel)" stroke="#5cbcff" stroke-width="2.5"/>
+  <text x="1300" y="402" text-anchor="middle" class="label" style="font-size:28px;">Complete mediation</text>
+  <text x="1300" y="432" text-anchor="middle" class="small">Check access where it matters</text>
+
+  <rect x="1160" y="520" rx="22" ry="22" width="280" height="100" fill="url(#panel)" stroke="#5cbcff" stroke-width="2.5"/>
+  <text x="1300" y="572" text-anchor="middle" class="label" style="font-size:28px;">Open design</text>
+  <text x="1300" y="602" text-anchor="middle" class="small">Real controls beat obscurity</text>
+
+  <path d="M 440 400 L 520 400" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 440 570 L 520 540" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 1080 400 L 1160 400" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 1080 540 L 1160 570" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+
+  <rect x="410" y="780" rx="18" ry="18" width="780" height="72" class="pill"/>
+  <text x="800" y="825" text-anchor="middle" class="pillText">Good security is often a design decision made long before an incident starts</text>
+</svg>

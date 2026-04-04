@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Design Principles Matter Long Before an Incident Does | Johnny Avakian Portfolio</title>
+    <meta name="description" content="CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-03T07:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-3" />
+      
+        <meta property="article:tag" content="secure-design" />
+      
+        <meta property="article:tag" content="secure-by-design" />
+      
+        <meta property="article:tag" content="trust-boundaries" />
+      
+        <meta property="article:tag" content="software-engineering" />
+      
+    
+    <meta property="og:title" content="Secure Design Principles Matter Long Before an Incident Does" />
+    <meta property="og:description" content="CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Secure Design Principles Matter Long Before an Incident Does" />
+    <meta name="twitter:description" content="CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Secure Design Principles Matter Long Before an Incident Does",
+        "description": "CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-03T07:00:00+00:00",
+        "dateModified": "2026-04-03T07:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-03T07:00:00+00:00">April 3, 2026</time>
+              <h1 class="post-title">Secure Design Principles Matter Long Before an Incident Does</h1>
+              
+                <p class="post-dek">CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-3</span>
+                  
+                    <span class="chip">secure-design</span>
+                  
+                    <span class="chip">secure-by-design</span>
+                  
+                    <span class="chip">trust-boundaries</span>
+                  
+                    <span class="chip">software-engineering</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>A lot of incidents get described as if they were sudden surprises.</p>
+
+<p>Then you look closer and the real problem started much earlier. A system trusted too much, an internal tool was too open, or a feature shipped with defaults nobody came back to harden.</p>
+
+<p>That is why secure design principles matter so much in CISSP. They sit inside Security Architecture and Engineering, but they are really about judgment: how to build systems that stay safer when people make mistakes, dependencies fail, or attackers get one foothold.</p>
+
+<p>For software engineers, that makes this one of the most useful CISSP concepts in the series.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" alt="Clean architectural illustration showing a business application surrounded by trust boundaries, secure defaults, validation checks, and monitoring layers." />
+  <figcaption>Secure design principles shape risk before security operations ever have to respond to it.</figcaption>
+</figure>
+
+<h2 id="what-cissp-means-by-secure-design-principles">What CISSP means by secure design principles</h2>
+
+<p>When CISSP talks about secure design principles, it is not asking you to memorize a decorative list and move on. It is asking you to think about the habits behind trustworthy systems.</p>
+
+<p>In practice, that means designing systems that:</p>
+
+<ul>
+  <li>start from <strong>secure defaults</strong> rather than broad permissive access</li>
+  <li>enforce <strong>authorization consistently</strong> instead of trusting one early check forever</li>
+  <li>reduce <strong>unnecessary functionality and attack surface</strong></li>
+  <li>define <strong>trust boundaries</strong> clearly</li>
+  <li>assume controls can fail and therefore need monitoring, containment, and recovery</li>
+  <li>remain understandable enough to review and operate safely</li>
+</ul>
+
+<p>These principles influence ordinary engineering choices: what a service exposes, how admin actions are approved, whether secrets are broadly reachable, and what happens when a component fails. The exam version is cleaner than reality, but the direction is the same: mature security starts upstream.</p>
+
+<h2 id="five-principles-that-still-matter-in-real-engineering-work">Five principles that still matter in real engineering work</h2>
+
+<h3 id="1-secure-defaults-beat-permissive-convenience">1. Secure defaults beat permissive convenience</h3>
+
+<p>If a role, endpoint, storage setting, or feature begins in an overly open state, teams rarely tighten it with the same urgency they used to ship it. That is why <strong>fail-safe defaults</strong> remain one of the most practical design principles.</p>
+
+<p>For engineers, this often shows up in small choices:</p>
+
+<ul>
+  <li>new identities receive the minimum access needed, not a broad starter role</li>
+  <li>admin functions stay disabled until explicitly enabled</li>
+  <li>sensitive logging and audit trails are on by default</li>
+  <li>debug or maintenance features are not reachable in production by accident</li>
+  <li>public access is blocked unless the business case clearly requires it</li>
+</ul>
+
+<p>It sounds conservative right up until someone has to explain why the risky default was left in place “temporarily.”</p>
+
+<h3 id="2-complete-mediation-matters-more-than-one-good-login-screen">2. Complete mediation matters more than one good login screen</h3>
+
+<p>A lot of systems authenticate once and then trust too much afterward. CISSP uses the phrase <strong>complete mediation</strong> to remind you that every access to every protected resource should be checked against the current rules, not against an old assumption.</p>
+
+<p>That does not mean forcing users to re-enter credentials every minute. It means the system should keep making real authorization decisions where they matter:</p>
+
+<ul>
+  <li>can this user view this customer record?</li>
+  <li>can this service invoke this privileged API?</li>
+  <li>should this session still be trusted for a high-risk action?</li>
+  <li>does this request still satisfy tenant, role, and context rules?</li>
+</ul>
+
+<p>This is especially relevant in API-heavy and microservice-heavy environments. A VPN, internal network, or prior login event is not enough if the application never checks what the caller is allowed to do at the actual resource boundary.</p>
+
+<h3 id="3-reduce-attack-surface-by-removing-what-you-do-not-need">3. Reduce attack surface by removing what you do not need</h3>
+
+<p>Teams often focus on protecting everything they already have. Stronger teams also ask whether they should have exposed all of it in the first place. Unused ports, dormant admin paths, legacy protocols, overpowered service accounts, and stale integrations all widen attack surface.</p>
+
+<p><strong>Least functionality</strong> is powerful for a simple reason: a capability you never expose does not need hardening, monitoring, or emergency cleanup later.</p>
+
+<h3 id="4-trust-boundaries-should-be-explicit-not-implied">4. Trust boundaries should be explicit, not implied</h3>
+
+<p>Secure systems know where trust changes. Weak systems blur everything together.</p>
+
+<p>Trust boundaries show up between:</p>
+
+<ul>
+  <li>internet users and public endpoints</li>
+  <li>ordinary business workflows and privileged administration</li>
+  <li>one tenant’s data and another’s</li>
+  <li>CI/CD pipelines and production environments</li>
+  <li>application code and the secrets or keys it depends on</li>
+</ul>
+
+<p>When those boundaries stay vague, hidden assumptions start doing security work they were never meant to do. This is how teams end up treating “internal” as equivalent to “safe,” or “authenticated” as equivalent to “authorized.”</p>
+
+<h3 id="5-open-design-is-safer-than-hidden-design">5. Open design is safer than hidden design</h3>
+
+<p>Security by obscurity can add minor friction, but it is a weak foundation. If a control only works because the attacker has not seen the URL pattern, naming convention, or undocumented behavior yet, the system is brittle.</p>
+
+<p><strong>Open design</strong> is the healthier principle: the mechanism should still hold up even when its structure becomes known. In ordinary engineering terms, that means relying on real authentication, authorization, encryption, segmentation, rate limiting, and sound key management rather than on hidden paths or wishful secrecy.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/principles-map.svg" alt="Simple diagram mapping secure defaults, complete mediation, reduced attack surface, trust boundaries, and open design to practical engineering decisions." />
+  <figcaption>These principles are old, but they still map cleanly to modern cloud, API, and SaaS design decisions.</figcaption>
+</figure>
+
+<h2 id="a-realistic-example-the-internal-admin-tool-that-trusted-the-wrong-thing">A realistic example: the internal admin tool that trusted the wrong thing</h2>
+
+<p>Imagine a company builds an internal support dashboard reachable only from the corporate network or VPN. Over time it grows into a powerful tool: entitlement changes, invoice adjustments, token revocation, and account lookups.</p>
+
+<p>On paper the access path still looks restricted. In practice, the design has drifted:</p>
+
+<ul>
+  <li>authorization checks are thin because employees are already logged in</li>
+  <li>support roles can see more customer data than they truly need</li>
+  <li>sensitive actions are logged inconsistently</li>
+  <li>one compromised laptop or VPN session gives an attacker a strong foothold</li>
+</ul>
+
+<p>A better design would require strong authentication, distinct admin roles, tighter checks for high-risk actions, scoped customer access, and tamper-resistant logging.</p>
+
+<p>The feature set may look similar to the business. The risk profile is not. That difference comes from design principles, not from bolting on a new product later.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/fail-open-vs-fail-safe.svg" alt="Side-by-side comparison of a fail-open internal admin workflow and a fail-safe workflow with explicit approvals, logging, and scoped access." />
+  <figcaption>Good design does not assume the operator, the network, or the session will always behave perfectly.</figcaption>
+</figure>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, secure design principles are usually embedded inside a broader best-answer pattern. CISSP wants you to recognize that the strongest answer often starts with architecture and governance, not with a tool alone.</p>
+
+<p>In other words, the exam is often testing whether you can think like someone responsible for business risk:</p>
+
+<ul>
+  <li>choose the design that reduces exposure before an incident occurs</li>
+  <li>prefer clearer trust boundaries over implied trust</li>
+  <li>use people, process, and technology together rather than over-trusting one layer</li>
+  <li>favor secure defaults and constrained access over open convenience</li>
+  <li>reduce single points of failure and hidden assumptions</li>
+</ul>
+
+<p>That is why a layered, risk-aware design answer usually beats a narrower answer such as “add more monitoring” or “install another control” in isolation.</p>
+
+<h2 id="where-the-current-secure-by-design-push-fits">Where the current secure-by-design push fits</h2>
+
+<p>This is one of those topics where established principles and current industry direction line up well.</p>
+
+<p>The established part is not new: fail safely, mediate access, minimize complexity, define trust boundaries, and do not depend on secrecy alone. What has become more visible is the expectation that vendors, platform teams, and engineering leaders should ship safer starting positions by default.</p>
+
+<p>That is the practical value of the secure-by-design push. Mature security is not only about responding well after a flaw is found. It is about not handing users an unsafe baseline in the first place.</p>
+
+<h2 id="a-practical-checklist-for-everyday-engineering-decisions">A practical checklist for everyday engineering decisions</h2>
+
+<p>The most useful question here is not, “Can I remember the list?” It is:</p>
+
+<p><strong>What risky assumption am I asking the user, the network, or the operator to carry for me?</strong></p>
+
+<p>A few practical checks help:</p>
+
+<ul>
+  <li>Does this feature start closed or open?</li>
+  <li>Are authorization checks happening at the actual resource boundary?</li>
+  <li>If one control fails, is the blast radius still limited?</li>
+  <li>Can a compromised identity move farther than it should?</li>
+  <li>Is this component necessary, or did nobody ever remove it?</li>
+  <li>If the design were public tomorrow, would it still hold up?</li>
+</ul>
+
+<p>That kind of thinking helps on CISSP questions, but it matters even more in design reviews, code reviews, and incident retrospectives.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>A lot of security work is really design work wearing a different label.</p>
+
+<p>By the time an alert fires, the most important choices may already be behind you: what the system trusted, what it exposed, what it defaulted to, and what it failed to re-check. That is why secure design principles are such a strong next step in this CISSP sequence. They connect the earlier topics—governance, risk, data handling, defense in depth, and least privilege—to the place where those ideas become real: the design itself.</p>
+
+<p>If you are studying too, this is one of the concepts worth understanding as a mindset, not just as a list.</p>
+
+<hr />
+
+<p><em>Post 8 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn how CISSP secure design principles apply to real engineering work through secure defaults, complete mediation, trust boundaries, and reduced attack surface.
+
+**SEO keyword ideas:**
+1. CISSP secure design principles explained
+2. secure by design for software engineers
+3. fail safe defaults complete mediation CISSP
+4. CISSP domain 3 security architecture concepts
+5. trust boundaries and attack surface reduction -->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

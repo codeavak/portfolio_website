@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T05:23:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T06:45:20+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
 
 <p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
 
@@ -623,7 +623,190 @@
 2. separation of duties cybersecurity examples
 3. need to know vs least privilege CISSP
 4. zero trust and least privilege access control
-5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
+5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secure Design Principles Matter Long Before an Incident Does</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/" rel="alternate" type="text/html" title="Secure Design Principles Matter Long Before an Incident Does" /><published>2026-04-03T07:00:00+00:00</published><updated>2026-04-03T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/"><![CDATA[<p>A lot of incidents get described as if they were sudden surprises.</p>
+
+<p>Then you look closer and the real problem started much earlier. A system trusted too much, an internal tool was too open, or a feature shipped with defaults nobody came back to harden.</p>
+
+<p>That is why secure design principles matter so much in CISSP. They sit inside Security Architecture and Engineering, but they are really about judgment: how to build systems that stay safer when people make mistakes, dependencies fail, or attackers get one foothold.</p>
+
+<p>For software engineers, that makes this one of the most useful CISSP concepts in the series.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" alt="Clean architectural illustration showing a business application surrounded by trust boundaries, secure defaults, validation checks, and monitoring layers." />
+  <figcaption>Secure design principles shape risk before security operations ever have to respond to it.</figcaption>
+</figure>
+
+<h2 id="what-cissp-means-by-secure-design-principles">What CISSP means by secure design principles</h2>
+
+<p>When CISSP talks about secure design principles, it is not asking you to memorize a decorative list and move on. It is asking you to think about the habits behind trustworthy systems.</p>
+
+<p>In practice, that means designing systems that:</p>
+
+<ul>
+  <li>start from <strong>secure defaults</strong> rather than broad permissive access</li>
+  <li>enforce <strong>authorization consistently</strong> instead of trusting one early check forever</li>
+  <li>reduce <strong>unnecessary functionality and attack surface</strong></li>
+  <li>define <strong>trust boundaries</strong> clearly</li>
+  <li>assume controls can fail and therefore need monitoring, containment, and recovery</li>
+  <li>remain understandable enough to review and operate safely</li>
+</ul>
+
+<p>These principles influence ordinary engineering choices: what a service exposes, how admin actions are approved, whether secrets are broadly reachable, and what happens when a component fails. The exam version is cleaner than reality, but the direction is the same: mature security starts upstream.</p>
+
+<h2 id="five-principles-that-still-matter-in-real-engineering-work">Five principles that still matter in real engineering work</h2>
+
+<h3 id="1-secure-defaults-beat-permissive-convenience">1. Secure defaults beat permissive convenience</h3>
+
+<p>If a role, endpoint, storage setting, or feature begins in an overly open state, teams rarely tighten it with the same urgency they used to ship it. That is why <strong>fail-safe defaults</strong> remain one of the most practical design principles.</p>
+
+<p>For engineers, this often shows up in small choices:</p>
+
+<ul>
+  <li>new identities receive the minimum access needed, not a broad starter role</li>
+  <li>admin functions stay disabled until explicitly enabled</li>
+  <li>sensitive logging and audit trails are on by default</li>
+  <li>debug or maintenance features are not reachable in production by accident</li>
+  <li>public access is blocked unless the business case clearly requires it</li>
+</ul>
+
+<p>It sounds conservative right up until someone has to explain why the risky default was left in place “temporarily.”</p>
+
+<h3 id="2-complete-mediation-matters-more-than-one-good-login-screen">2. Complete mediation matters more than one good login screen</h3>
+
+<p>A lot of systems authenticate once and then trust too much afterward. CISSP uses the phrase <strong>complete mediation</strong> to remind you that every access to every protected resource should be checked against the current rules, not against an old assumption.</p>
+
+<p>That does not mean forcing users to re-enter credentials every minute. It means the system should keep making real authorization decisions where they matter:</p>
+
+<ul>
+  <li>can this user view this customer record?</li>
+  <li>can this service invoke this privileged API?</li>
+  <li>should this session still be trusted for a high-risk action?</li>
+  <li>does this request still satisfy tenant, role, and context rules?</li>
+</ul>
+
+<p>This is especially relevant in API-heavy and microservice-heavy environments. A VPN, internal network, or prior login event is not enough if the application never checks what the caller is allowed to do at the actual resource boundary.</p>
+
+<h3 id="3-reduce-attack-surface-by-removing-what-you-do-not-need">3. Reduce attack surface by removing what you do not need</h3>
+
+<p>Teams often focus on protecting everything they already have. Stronger teams also ask whether they should have exposed all of it in the first place. Unused ports, dormant admin paths, legacy protocols, overpowered service accounts, and stale integrations all widen attack surface.</p>
+
+<p><strong>Least functionality</strong> is powerful for a simple reason: a capability you never expose does not need hardening, monitoring, or emergency cleanup later.</p>
+
+<h3 id="4-trust-boundaries-should-be-explicit-not-implied">4. Trust boundaries should be explicit, not implied</h3>
+
+<p>Secure systems know where trust changes. Weak systems blur everything together.</p>
+
+<p>Trust boundaries show up between:</p>
+
+<ul>
+  <li>internet users and public endpoints</li>
+  <li>ordinary business workflows and privileged administration</li>
+  <li>one tenant’s data and another’s</li>
+  <li>CI/CD pipelines and production environments</li>
+  <li>application code and the secrets or keys it depends on</li>
+</ul>
+
+<p>When those boundaries stay vague, hidden assumptions start doing security work they were never meant to do. This is how teams end up treating “internal” as equivalent to “safe,” or “authenticated” as equivalent to “authorized.”</p>
+
+<h3 id="5-open-design-is-safer-than-hidden-design">5. Open design is safer than hidden design</h3>
+
+<p>Security by obscurity can add minor friction, but it is a weak foundation. If a control only works because the attacker has not seen the URL pattern, naming convention, or undocumented behavior yet, the system is brittle.</p>
+
+<p><strong>Open design</strong> is the healthier principle: the mechanism should still hold up even when its structure becomes known. In ordinary engineering terms, that means relying on real authentication, authorization, encryption, segmentation, rate limiting, and sound key management rather than on hidden paths or wishful secrecy.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/principles-map.svg" alt="Simple diagram mapping secure defaults, complete mediation, reduced attack surface, trust boundaries, and open design to practical engineering decisions." />
+  <figcaption>These principles are old, but they still map cleanly to modern cloud, API, and SaaS design decisions.</figcaption>
+</figure>
+
+<h2 id="a-realistic-example-the-internal-admin-tool-that-trusted-the-wrong-thing">A realistic example: the internal admin tool that trusted the wrong thing</h2>
+
+<p>Imagine a company builds an internal support dashboard reachable only from the corporate network or VPN. Over time it grows into a powerful tool: entitlement changes, invoice adjustments, token revocation, and account lookups.</p>
+
+<p>On paper the access path still looks restricted. In practice, the design has drifted:</p>
+
+<ul>
+  <li>authorization checks are thin because employees are already logged in</li>
+  <li>support roles can see more customer data than they truly need</li>
+  <li>sensitive actions are logged inconsistently</li>
+  <li>one compromised laptop or VPN session gives an attacker a strong foothold</li>
+</ul>
+
+<p>A better design would require strong authentication, distinct admin roles, tighter checks for high-risk actions, scoped customer access, and tamper-resistant logging.</p>
+
+<p>The feature set may look similar to the business. The risk profile is not. That difference comes from design principles, not from bolting on a new product later.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/fail-open-vs-fail-safe.svg" alt="Side-by-side comparison of a fail-open internal admin workflow and a fail-safe workflow with explicit approvals, logging, and scoped access." />
+  <figcaption>Good design does not assume the operator, the network, or the session will always behave perfectly.</figcaption>
+</figure>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, secure design principles are usually embedded inside a broader best-answer pattern. CISSP wants you to recognize that the strongest answer often starts with architecture and governance, not with a tool alone.</p>
+
+<p>In other words, the exam is often testing whether you can think like someone responsible for business risk:</p>
+
+<ul>
+  <li>choose the design that reduces exposure before an incident occurs</li>
+  <li>prefer clearer trust boundaries over implied trust</li>
+  <li>use people, process, and technology together rather than over-trusting one layer</li>
+  <li>favor secure defaults and constrained access over open convenience</li>
+  <li>reduce single points of failure and hidden assumptions</li>
+</ul>
+
+<p>That is why a layered, risk-aware design answer usually beats a narrower answer such as “add more monitoring” or “install another control” in isolation.</p>
+
+<h2 id="where-the-current-secure-by-design-push-fits">Where the current secure-by-design push fits</h2>
+
+<p>This is one of those topics where established principles and current industry direction line up well.</p>
+
+<p>The established part is not new: fail safely, mediate access, minimize complexity, define trust boundaries, and do not depend on secrecy alone. What has become more visible is the expectation that vendors, platform teams, and engineering leaders should ship safer starting positions by default.</p>
+
+<p>That is the practical value of the secure-by-design push. Mature security is not only about responding well after a flaw is found. It is about not handing users an unsafe baseline in the first place.</p>
+
+<h2 id="a-practical-checklist-for-everyday-engineering-decisions">A practical checklist for everyday engineering decisions</h2>
+
+<p>The most useful question here is not, “Can I remember the list?” It is:</p>
+
+<p><strong>What risky assumption am I asking the user, the network, or the operator to carry for me?</strong></p>
+
+<p>A few practical checks help:</p>
+
+<ul>
+  <li>Does this feature start closed or open?</li>
+  <li>Are authorization checks happening at the actual resource boundary?</li>
+  <li>If one control fails, is the blast radius still limited?</li>
+  <li>Can a compromised identity move farther than it should?</li>
+  <li>Is this component necessary, or did nobody ever remove it?</li>
+  <li>If the design were public tomorrow, would it still hold up?</li>
+</ul>
+
+<p>That kind of thinking helps on CISSP questions, but it matters even more in design reviews, code reviews, and incident retrospectives.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>A lot of security work is really design work wearing a different label.</p>
+
+<p>By the time an alert fires, the most important choices may already be behind you: what the system trusted, what it exposed, what it defaulted to, and what it failed to re-check. That is why secure design principles are such a strong next step in this CISSP sequence. They connect the earlier topics—governance, risk, data handling, defense in depth, and least privilege—to the place where those ideas become real: the design itself.</p>
+
+<p>If you are studying too, this is one of the concepts worth understanding as a mindset, not just as a list.</p>
+
+<hr />
+
+<p><em>Post 8 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn how CISSP secure design principles apply to real engineering work through secure defaults, complete mediation, trust boundaries, and reduced attack surface.
+
+**SEO keyword ideas:**
+1. CISSP secure design principles explained
+2. secure by design for software engineers
+3. fail safe defaults complete mediation CISSP
+4. CISSP domain 3 security architecture concepts
+5. trust boundaries and attack surface reduction -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="secure-design" /><category term="secure-by-design" /><category term="trust-boundaries" /><category term="software-engineering" /><summary type="html"><![CDATA[CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
 
 <p>But the existence of bad programs does not make the underlying problem fake. Organizations are run by people working under time pressure, partial information, and conflicting incentives. Weak human controls keep showing up in real incidents because secure behavior is not automatic. It has to be taught, reinforced, and supported.</p>
 
@@ -1999,375 +2182,4 @@ That is where secrets management starts becoming real.</p>
 - managed identity key vault dotnet
 - python azure key vault secrets
 - minimum viable secrets posture
--->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="secrets management" /><category term="azure key vault" /><category term="environment variables" /><category term="application security" /><category term="secure development" /><summary type="html"><![CDATA[Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Idempotency: The Most Underused Pattern in Distributed Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/" rel="alternate" type="text/html" title="Idempotency: The Most Underused Pattern in Distributed Systems" /><published>2026-03-31T00:00:01+00:00</published><updated>2026-03-31T00:00:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/idempotency-underused-pattern-distributed-systems/"><![CDATA[<p>If you have worked on distributed systems long enough, you have probably had this incident:</p>
-
-<p>A request timed out, the client retried, and suddenly the same business action happened twice.</p>
-
-<p>Maybe it was a double charge.
-Maybe it was two shipment labels.
-Maybe it was a monthly billing job that ran twice and required manual cleanup.</p>
-
-<p>None of that happens because the team forgot the definition of idempotency.
-It happens because idempotency was treated as an API trivia concept instead of a system design decision.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" alt="Two retry paths converging into a single committed transaction, representing idempotent processing in a distributed system." />
-  <figcaption>Retries are normal. Duplicate side effects are optional.</figcaption>
-</figure>
-
-<h2 id="what-it-means-in-practice">What idempotency means in practice</h2>
-
-<p>In plain engineering terms, idempotency means:</p>
-
-<p>You can submit the same intent more than once, and the system ends in the same business state as if it were processed once.</p>
-
-<p>Notice what that does not mean:</p>
-
-<ul>
-  <li>It does not mean identical logs.</li>
-  <li>It does not mean identical timestamps.</li>
-  <li>It does not mean no internal work happens on retries.</li>
-</ul>
-
-<p>RFC 9110 makes this distinction clearly for HTTP methods: idempotency is about the intended effect on the server state, not whether every side effect looks identical on each request.</p>
-
-<p>That distinction matters because teams often get stuck on the wrong question:
-“Can this code path ever run twice?”</p>
-
-<p>In distributed systems, it absolutely can.</p>
-
-<p>The better question is:
-“If it runs twice, does the business outcome stay correct?”</p>
-
-<p>That is idempotency in the only form that protects production systems.</p>
-
-<h2 id="retries-and-at-least-once">Why it matters for retries and at-least-once delivery</h2>
-
-<p>Retries are not edge cases. They are default behavior.</p>
-
-<ul>
-  <li>Clients retry when they hit timeouts.</li>
-  <li>SDKs retry on transient failures.</li>
-  <li>Message consumers reprocess when ack deadlines expire.</li>
-  <li>Job schedulers retry when workers crash.</li>
-</ul>
-
-<p>If your system is not idempotent, retries are a duplicate side-effect engine.</p>
-
-<p>Cloud messaging docs keep reinforcing the same practical reality:</p>
-
-<ul>
-  <li>Azure Service Bus duplicate detection exists because senders often cannot tell if the original send succeeded after failures.</li>
-  <li>Google Pub/Sub explicitly distinguishes valid redelivery from duplicates and still requires consumer-side discipline to avoid duplicate work.</li>
-</ul>
-
-<p>Translation for day-to-day architecture: delivery is often at-least-once, so processing must be safe-more-than-once.</p>
-
-<p>If your business operation requires exactly-once outcomes, you usually get there by combining:</p>
-
-<ol>
-  <li>At-least-once delivery.</li>
-  <li>Idempotent handlers.</li>
-  <li>Good state modeling.</li>
-</ol>
-
-<p>Not by wishing the network were perfect.</p>
-
-<h2 id="idempotent-http-endpoints">Designing idempotent HTTP endpoints</h2>
-
-<p>HTTP gives you some help, but only some.</p>
-
-<h3 id="natural-idempotency-use-resource-oriented-semantics">Natural idempotency: use resource-oriented semantics</h3>
-
-<p><code class="language-plaintext highlighter-rouge">PUT</code> and <code class="language-plaintext highlighter-rouge">DELETE</code> are defined as idempotent methods.</p>
-
-<p>When your operation can be expressed as:</p>
-
-<ul>
-  <li>“set this resource to this state” (<code class="language-plaintext highlighter-rouge">PUT</code>)</li>
-  <li>“remove this resource” (<code class="language-plaintext highlighter-rouge">DELETE</code>)</li>
-</ul>
-
-<p>you get a natural idempotency model.</p>
-
-<p>Example:</p>
-
-<p><code class="language-plaintext highlighter-rouge">PUT /users/42/preferences/notifications</code></p>
-
-<p>If the request body is the same and you send it twice, the resulting user preference state should be identical.</p>
-
-<p>This is why state-replacement APIs often age better operationally than command-style APIs for mutable resources.</p>
-
-<h3 id="enforced-idempotency-make-post-safe-with-idempotency-keys">Enforced idempotency: make <code class="language-plaintext highlighter-rouge">POST</code> safe with idempotency keys</h3>
-
-<p>Real systems still need <code class="language-plaintext highlighter-rouge">POST</code> for operations like payment authorization, order placement, or workflow transitions.</p>
-
-<p>That is where idempotency keys become a design pattern, not a framework feature toggle.</p>
-
-<p>A robust pattern looks like this:</p>
-
-<ol>
-  <li>Client generates a unique idempotency key per business intent.</li>
-  <li>Server stores key + normalized request fingerprint + final response outcome.</li>
-  <li>First request executes and stores result atomically.</li>
-  <li>Retries with same key return stored result.</li>
-  <li>Retries with same key but different payload are rejected.</li>
-</ol>
-
-<p>Stripe documents this model explicitly: first result is stored and replayed for subsequent retries with the same key, and parameter mismatch is treated as misuse.</p>
-
-<p>A minimal C#-style sketch:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IResult</span><span class="p">&gt;</span> <span class="nf">CreatePayment</span><span class="p">(</span><span class="n">CreatePaymentRequest</span> <span class="n">request</span><span class="p">,</span> <span class="kt">string</span> <span class="n">idempotencyKey</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">var</span> <span class="n">existing</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">idempotencyKey</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">existing</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(!</span><span class="n">existing</span><span class="p">.</span><span class="n">RequestHash</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">)))</span>
-            <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Conflict</span><span class="p">(</span><span class="s">"Idempotency key reused with different payload."</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Json</span><span class="p">(</span><span class="n">existing</span><span class="p">.</span><span class="n">ResponseBody</span><span class="p">,</span> <span class="n">statusCode</span><span class="p">:</span> <span class="n">existing</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">using</span> <span class="nn">var</span> <span class="n">tx</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_db</span><span class="p">.</span><span class="nf">BeginTransactionAsync</span><span class="p">();</span>
-
-    <span class="kt">var</span> <span class="n">paymentResult</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_paymentService</span><span class="p">.</span><span class="nf">AuthorizeAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-
-    <span class="k">await</span> <span class="n">_idempotencyStore</span><span class="p">.</span><span class="nf">SaveAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">IdempotencyRecord</span>
-    <span class="p">{</span>
-        <span class="n">Key</span> <span class="p">=</span> <span class="n">idempotencyKey</span><span class="p">,</span>
-        <span class="n">RequestHash</span> <span class="p">=</span> <span class="nf">Hash</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
-        <span class="n">StatusCode</span> <span class="p">=</span> <span class="m">201</span><span class="p">,</span>
-        <span class="n">ResponseBody</span> <span class="p">=</span> <span class="n">paymentResult</span>
-    <span class="p">});</span>
-
-    <span class="k">await</span> <span class="n">tx</span><span class="p">.</span><span class="nf">CommitAsync</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">Results</span><span class="p">.</span><span class="nf">Created</span><span class="p">(</span><span class="s">$"/payments/</span><span class="p">{</span><span class="n">paymentResult</span><span class="p">.</span><span class="n">PaymentId</span><span class="p">}</span><span class="s">"</span><span class="p">,</span> <span class="n">paymentResult</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>The important part is not the specific framework. It is the atomicity boundary between business state change and key persistence.</p>
-
-<p>If those are not coordinated, retries can still slip through.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/idempotency-key-flow.svg" alt="Workflow showing first request persisting an idempotency key result and retries returning the stored response instead of repeating side effects." />
-  <figcaption>Idempotency keys turn uncertain retries into deterministic outcomes.</figcaption>
-</figure>
-
-<h2 id="idempotent-background-jobs">Designing idempotent background jobs and consumers</h2>
-
-<p>Background processing is where idempotency failures become expensive quickly.</p>
-
-<p>Teams often rely on queue semantics but skip handler semantics.</p>
-
-<p>Two practical patterns hold up well.</p>
-
-<h3 id="1-processed-events-table">1. Processed-events table</h3>
-
-<p>For each incoming message/event, store a stable message identity in a processed-events table with a uniqueness constraint.</p>
-
-<p>Handler flow:</p>
-
-<ol>
-  <li>Try to insert message identity.</li>
-  <li>If insert succeeds, continue business logic.</li>
-  <li>If insert fails due to uniqueness, treat as already processed and exit safely.</li>
-</ol>
-
-<p>This is simple, explainable, and auditable.</p>
-
-<h3 id="2-idempotent-state-transition-with-upsertmerge">2. Idempotent state transition with upsert/merge</h3>
-
-<p>If the operation is naturally a state set, model it as upsert with deterministic keys.</p>
-
-<p>Example:</p>
-
-<ul>
-  <li>Instead of “add loyalty points delta repeatedly,” store a per-order points grant keyed by <code class="language-plaintext highlighter-rouge">order_id</code>.</li>
-  <li>Reprocessing same event updates the same record rather than creating a second grant.</li>
-</ul>
-
-<p>That one schema decision can eliminate entire classes of retry bugs.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/background-job-idempotency.svg" alt="Queue worker retries passing through a deduplication and processed-events check before producing a single committed outcome." />
-  <figcaption>At-least-once delivery is fine when the handler is designed for repeatability.</figcaption>
-</figure>
-
-<h2 id="natural-vs-enforced">Natural idempotency vs enforced idempotency</h2>
-
-<p>Both are useful. They solve different problems.</p>
-
-<h3 id="natural-idempotency">Natural idempotency</h3>
-
-<p>Best when:</p>
-
-<ul>
-  <li>operation is a pure state assignment</li>
-  <li>resource identity is stable and known</li>
-  <li>domain semantics fit <code class="language-plaintext highlighter-rouge">PUT</code>/<code class="language-plaintext highlighter-rouge">DELETE</code></li>
-</ul>
-
-<p>Tradeoffs:</p>
-
-<ul>
-  <li>not every business action maps cleanly to state replacement</li>
-  <li>may require API redesign if current model is command-driven</li>
-</ul>
-
-<h3 id="enforced-idempotency">Enforced idempotency</h3>
-
-<p>Best when:</p>
-
-<ul>
-  <li>operation is command-like (<code class="language-plaintext highlighter-rouge">POST /payments</code>, <code class="language-plaintext highlighter-rouge">POST /orders</code>)</li>
-  <li>retries are likely and expensive to mishandle</li>
-  <li>clients can generate stable operation keys</li>
-</ul>
-
-<p>Tradeoffs:</p>
-
-<ul>
-  <li>requires key storage lifecycle and TTL policy</li>
-  <li>needs payload consistency checks</li>
-  <li>can become a false safety blanket if atomic boundaries are weak</li>
-</ul>
-
-<p>A good rule:</p>
-
-<p>Use natural idempotency where your domain allows it.
-Use enforced idempotency where your business operations are inherently command-shaped.</p>
-
-<h2 id="payment-example">Concrete example: payment processing</h2>
-
-<p>Suppose checkout calls <code class="language-plaintext highlighter-rouge">POST /payments</code>.</p>
-
-<p>Without idempotency key:</p>
-
-<ul>
-  <li>client times out after payment processor call succeeds</li>
-  <li>client retries</li>
-  <li>second charge attempts, often with ugly reconciliation work</li>
-</ul>
-
-<p>With idempotency key keyed to checkout attempt:</p>
-
-<ul>
-  <li>first call processes and stores result</li>
-  <li>timeout still happens</li>
-  <li>retry returns original payment outcome</li>
-  <li>customer gets one charge, not a support ticket</li>
-</ul>
-
-<p>This is exactly the class of failure idempotency keys are designed to absorb.</p>
-
-<h2 id="job-scheduling-example">Concrete example: job scheduling</h2>
-
-<p>Suppose a scheduler emits <code class="language-plaintext highlighter-rouge">GenerateInvoice(accountId, period)</code>.</p>
-
-<p>Without idempotency:</p>
-
-<ul>
-  <li>worker crash after DB write but before ack</li>
-  <li>message redelivered</li>
-  <li>second invoice generated for same period</li>
-</ul>
-
-<p>With idempotent design:</p>
-
-<ul>
-  <li>invoice uniqueness constraint on <code class="language-plaintext highlighter-rouge">(account_id, billing_period)</code></li>
-  <li>handler performs upsert or checks existence before create</li>
-  <li>redelivery observes existing invoice and exits safely</li>
-</ul>
-
-<p>No heroics. Just deliberate state modeling.</p>
-
-<h2 id="implementation-checklist">A practical implementation checklist</h2>
-
-<p>If you want this to stick beyond one postmortem, standardize these decisions:</p>
-
-<ol>
-  <li>Define idempotency scope per operation.</li>
-</ol>
-
-<ul>
-  <li>Per API request?</li>
-  <li>Per business entity?</li>
-  <li>Per workflow step?</li>
-</ul>
-
-<ol>
-  <li>Define operation identity.</li>
-</ol>
-
-<ul>
-  <li>Client key?</li>
-  <li>Domain key composite?</li>
-  <li>Message ID + business partition key?</li>
-</ul>
-
-<ol>
-  <li>Define persistence contract.</li>
-</ol>
-
-<ul>
-  <li>Where is idempotency state stored?</li>
-  <li>What is TTL?</li>
-  <li>How are mismatched payload retries handled?</li>
-</ul>
-
-<ol>
-  <li>Define atomic boundary.</li>
-</ol>
-
-<ul>
-  <li>Can business side effect and idempotency record commit together?</li>
-  <li>If not, what is the failure mode?</li>
-</ul>
-
-<ol>
-  <li>Define observability.</li>
-</ol>
-
-<ul>
-  <li>Metric: idempotency hits vs misses</li>
-  <li>Metric: key collisions with payload mismatch</li>
-  <li>Trace annotation for retry paths</li>
-</ul>
-
-<ol>
-  <li>Define operational policy.</li>
-</ol>
-
-<ul>
-  <li>Which endpoints require keys?</li>
-  <li>Which consumers require processed-event checks?</li>
-  <li>What is the incident response for duplicate side effects?</li>
-</ul>
-
-<p>This turns idempotency from “team folklore” into engineering policy.</p>
-
-<h2 id="bottom-line">Bottom line</h2>
-
-<p>Idempotency is one of the cheapest reliability multipliers in distributed systems.</p>
-
-<p>It is not glamorous work, but it is exactly the kind of design discipline that prevents customer-facing incidents when retries, redeliveries, and partial failures inevitably happen.</p>
-
-<p>If your system currently depends on requests being processed exactly once by luck, you do not have a reliability strategy yet.</p>
-
-<p>If this is on your backlog, start with one operation where duplicate side effects are painful, implement an explicit idempotency contract, and measure retry outcomes for one sprint. That single change often pays for itself immediately.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical senior-engineer guide to idempotency in distributed systems: retries, at-least-once delivery, idempotency keys, HTTP endpoint design, background job safety, and real tradeoffs.</p>
-
-<p><strong>SEO keywords:</strong></p>
-<ul>
-  <li>idempotency in distributed systems</li>
-  <li>idempotency keys API design</li>
-  <li>retries and at least once delivery</li>
-  <li>idempotent background job patterns</li>
-  <li>payment API duplicate prevention</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Distributed Systems" /><category term="Software Engineering" /><category term="idempotency" /><category term="distributed systems" /><category term="retries" /><category term="api design" /><category term="reliability" /><summary type="html"><![CDATA[Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="secrets management" /><category term="azure key vault" /><category term="environment variables" /><category term="application security" /><category term="secure development" /><summary type="html"><![CDATA[Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
