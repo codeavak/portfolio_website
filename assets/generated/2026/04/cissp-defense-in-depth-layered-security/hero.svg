@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Defense in depth hero illustration</title>
+  <desc id="desc">A dark cybersecurity diagram showing a business system protected by multiple layers including identity, application, data, monitoring, and recovery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#13263d"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16314f"/>
+      <stop offset="100%" stop-color="#1f4f81"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#174b69"/>
+      <stop offset="100%" stop-color="#2aa4b8"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 58px 'Segoe UI', Arial, sans-serif; fill: #f8fbff; }
+      .subtitle { font: 400 26px 'Segoe UI', Arial, sans-serif; fill: #d1dfef; }
+      .label { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .small { font: 400 21px 'Segoe UI', Arial, sans-serif; fill: #d8e8f5; }
+      .pill { fill: #0e1d30; stroke: #6ecbff; stroke-width: 2; }
+      .pillText { font: 600 22px 'Segoe UI', Arial, sans-serif; fill: #9fe0ff; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1320" cy="140" r="170" fill="#1b3a59" opacity="0.22"/>
+  <circle cx="220" cy="760" r="220" fill="#17304d" opacity="0.18"/>
+
+  <text x="90" y="120" class="title">Defense in Depth</text>
+  <text x="90" y="185" class="title">Keeps One Failure Contained</text>
+  <text x="90" y="235" class="subtitle">Layered controls reduce blast radius, improve visibility, and make recovery possible.</text>
+
+  <circle cx="820" cy="520" r="220" fill="none" stroke="#22486f" stroke-width="14" opacity="0.8"/>
+  <circle cx="820" cy="520" r="170" fill="none" stroke="#3b77a8" stroke-width="10" opacity="0.85"/>
+  <circle cx="820" cy="520" r="120" fill="url(#core)" stroke="#98f0ff" stroke-width="3"/>
+  <text x="744" y="505" class="label">Business</text>
+  <text x="760" y="545" class="label">System</text>
+
+  <rect x="580" y="290" rx="22" ry="22" width="480" height="80" fill="#102238" stroke="#5abfff" stroke-width="2.5"/>
+  <text x="768" y="340" text-anchor="middle" class="label" style="font-size:30px;">Identity</text>
+
+  <rect x="1085" y="440" rx="22" ry="22" width="290" height="92" fill="url(#panel)" stroke="#5abfff" stroke-width="2.5"/>
+  <text x="1230" y="485" text-anchor="middle" class="label" style="font-size:28px;">Application</text>
+  <text x="1230" y="515" text-anchor="middle" class="small">Authz • validation</text>
+
+  <rect x="1045" y="620" rx="22" ry="22" width="330" height="96" fill="url(#panel)" stroke="#5abfff" stroke-width="2.5"/>
+  <text x="1210" y="665" text-anchor="middle" class="label" style="font-size:28px;">Monitoring</text>
+  <text x="1210" y="697" text-anchor="middle" class="small">Logs • alerts • evidence</text>
+
+  <rect x="250" y="440" rx="22" ry="22" width="290" height="92" fill="url(#panel)" stroke="#5abfff" stroke-width="2.5"/>
+  <text x="395" y="485" text-anchor="middle" class="label" style="font-size:28px;">Data</text>
+  <text x="395" y="515" text-anchor="middle" class="small">Access • encryption</text>
+
+  <rect x="220" y="620" rx="22" ry="22" width="330" height="96" fill="url(#panel)" stroke="#5abfff" stroke-width="2.5"/>
+  <text x="385" y="665" text-anchor="middle" class="label" style="font-size:28px;">Recovery</text>
+  <text x="385" y="697" text-anchor="middle" class="small">Backups • restore • playbooks</text>
+
+  <path d="M 820 370 L 820 400" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 980 500 L 1040 500" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 975 590 L 1030 645" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 660 500 L 540 500" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 665 590 L 560 645" stroke="#8fdfff" stroke-width="6" stroke-linecap="round"/>
+
+  <rect x="365" y="785" rx="18" ry="18" width="870" height="72" class="pill"/>
+  <text x="800" y="830" text-anchor="middle" class="pillText">Identity • Application • Data • Monitoring • Recovery all reinforce each other</text>
+</svg>
