@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Fail open versus fail safe workflow</title>
+  <desc id="desc">A side-by-side comparison showing the difference between a permissive fail-open admin workflow and a controlled fail-safe workflow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fafc"/>
+      <stop offset="100%" stop-color="#e8f1f8"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 42px 'Segoe UI', Arial, sans-serif; fill: #10263f; }
+      .panelTitle { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .item { font: 400 22px 'Segoe UI', Arial, sans-serif; fill: #23384e; }
+      .footer { font: 600 22px 'Segoe UI', Arial, sans-serif; fill: #17324f; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="80" y="90" class="title">Internal admin workflows become safer when they fail closed</text>
+
+  <rect x="90" y="150" rx="24" ry="24" width="540" height="610" fill="#fff4f2" stroke="#e58d82" stroke-width="3"/>
+  <rect x="90" y="150" rx="24" ry="24" width="540" height="90" fill="#c55b4e"/>
+  <text x="360" y="205" text-anchor="middle" class="panelTitle">Fail open</text>
+  <circle cx="145" cy="295" r="10" fill="#c55b4e"/>
+  <text x="175" y="303" class="item">Broad role grants access to many customer records</text>
+  <circle cx="145" cy="375" r="10" fill="#c55b4e"/>
+  <text x="175" y="383" class="item">One login is trusted for every later action</text>
+  <circle cx="145" cy="455" r="10" fill="#c55b4e"/>
+  <text x="175" y="463" class="item">Sensitive changes happen without step-up checks</text>
+  <circle cx="145" cy="535" r="10" fill="#c55b4e"/>
+  <text x="175" y="543" class="item">Logs are incomplete and hard to review</text>
+  <circle cx="145" cy="615" r="10" fill="#c55b4e"/>
+  <text x="175" y="623" class="item">A compromised session expands blast radius quickly</text>
+
+  <rect x="770" y="150" rx="24" ry="24" width="540" height="610" fill="#f2fbf7" stroke="#5da97b" stroke-width="3"/>
+  <rect x="770" y="150" rx="24" ry="24" width="540" height="90" fill="#2d7d55"/>
+  <text x="1040" y="205" text-anchor="middle" class="panelTitle">Fail safe</text>
+  <circle cx="825" cy="295" r="10" fill="#2d7d55"/>
+  <text x="855" y="303" class="item">Scoped roles limit what each team can touch</text>
+  <circle cx="825" cy="375" r="10" fill="#2d7d55"/>
+  <text x="855" y="383" class="item">Authorization is rechecked at each high-risk step</text>
+  <circle cx="825" cy="455" r="10" fill="#2d7d55"/>
+  <text x="855" y="463" class="item">Step-up verification protects privileged actions</text>
+  <circle cx="825" cy="535" r="10" fill="#2d7d55"/>
+  <text x="855" y="543" class="item">Central logging preserves accountability and evidence</text>
+  <circle cx="825" cy="615" r="10" fill="#2d7d55"/>
+  <text x="855" y="623" class="item">One failure stays contained instead of cascading</text>
+
+  <rect x="300" y="800" rx="18" ry="18" width="800" height="58" fill="#dcecf8"/>
+  <text x="700" y="837" text-anchor="middle" class="footer">Secure design does not assume the network, user, or session will always behave perfectly</text>
+</svg>
