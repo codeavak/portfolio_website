@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Layered security control stack</title>
+  <desc id="desc">A stacked diagram showing governance, identity, application, data, detection and response, and recovery layers in a defense in depth model.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1220"/>
+      <stop offset="100%" stop-color="#14243a"/>
+    </linearGradient>
+    <linearGradient id="cardA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a3757"/>
+      <stop offset="100%" stop-color="#235d92"/>
+    </linearGradient>
+    <linearGradient id="cardB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16465d"/>
+      <stop offset="100%" stop-color="#1e7f9c"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 50px 'Segoe UI', Arial, sans-serif; fill: #f7fbff; }
+      .subtitle { font: 400 24px 'Segoe UI', Arial, sans-serif; fill: #d4e0ec; }
+      .layer { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .text { font: 400 21px 'Segoe UI', Arial, sans-serif; fill: #ddedf8; }
+      .caption { font: 600 20px 'Segoe UI', Arial, sans-serif; fill: #9fe0ff; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="900" fill="url(#bg)"/>
+  <text x="90" y="95" class="title">A Practical Defense-in-Depth Stack</text>
+  <text x="90" y="135" class="subtitle">Each layer should catch a different kind of failure, not just repeat the same assumption.</text>
+
+  <rect x="160" y="190" rx="24" ry="24" width="1180" height="90" fill="url(#cardA)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="240" y="245" class="layer">1. Governance</text>
+  <text x="560" y="245" class="text">Policy • ownership • approvals • training • standards</text>
+
+  <rect x="220" y="300" rx="24" ry="24" width="1060" height="90" fill="url(#cardB)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="300" y="355" class="layer">2. Identity</text>
+  <text x="560" y="355" class="text">MFA • least privilege • JIT access • conditional checks</text>
+
+  <rect x="280" y="410" rx="24" ry="24" width="940" height="90" fill="url(#cardA)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="360" y="465" class="layer">3. Application</text>
+  <text x="640" y="465" class="text">Authorization • validation • secure defaults</text>
+
+  <rect x="340" y="520" rx="24" ry="24" width="820" height="90" fill="url(#cardB)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="420" y="575" class="layer">4. Data</text>
+  <text x="610" y="575" class="text">Classification • encryption • retention • access controls</text>
+
+  <rect x="400" y="630" rx="24" ry="24" width="700" height="90" fill="url(#cardA)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="470" y="685" class="layer">5. Detection / Response</text>
+  <text x="840" y="685" class="text">Logging • alerting • containment</text>
+
+  <rect x="460" y="740" rx="24" ry="24" width="580" height="90" fill="url(#cardB)" stroke="#6acfff" stroke-width="2.5"/>
+  <text x="540" y="795" class="layer">6. Recovery</text>
+  <text x="770" y="795" class="text">Backups • restore tests • resilience</text>
+
+  <path d="M 750 280 L 750 300 M 750 390 L 750 410 M 750 500 L 750 520 M 750 610 L 750 630 M 750 720 L 750 740" stroke="#9fe0ff" stroke-width="6" stroke-linecap="round"/>
+  <text x="1065" y="810" class="caption">Layering works when the controls support each other.</text>
+</svg>

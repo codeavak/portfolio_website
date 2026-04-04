@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-03T13:50:15+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T05:23:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
 
 <p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
 
@@ -209,7 +209,168 @@
 2. data owner vs custodian CISSP
 3. CISSP Domain 2 asset security examples
 4. data retention and media sanitization cybersecurity
-5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T07:05:00+00:00</published><updated>2026-04-03T07:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
+5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Defense in Depth Is What Keeps One Failure from Becoming an Incident</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/" rel="alternate" type="text/html" title="Defense in Depth Is What Keeps One Failure from Becoming an Incident" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/"><![CDATA[<p>A lot of security plans quietly depend on one thing working perfectly.</p>
+
+<p>The firewall has to block it. MFA has to stop it. The code review has to catch it. The admin approval flow has to work every time. Real systems do not stay that neat for very long.</p>
+
+<p>People make mistakes. Configurations drift. Attackers look for the one gap the team assumed was “good enough.” That is why defense in depth remains one of the most durable ideas in CISSP and in real security work: it assumes that any single control can fail, and it designs accordingly.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" alt="Layered security diagram showing identity, application, data, monitoring, and recovery controls surrounding a business system." />
+  <figcaption>Defense in depth is what keeps one miss, one mistake, or one bypass from turning into a full incident.</figcaption>
+</figure>
+
+<h2 id="defense-in-depth-is-not-buy-more-tools">Defense in depth is not “buy more tools”</h2>
+
+<p>Defense in depth means using <strong>multiple layers of protection</strong> so that the failure of one safeguard does not automatically become the failure of the whole system.</p>
+
+<p>That does not mean adding random products until the architecture is hard to explain. Good layering is more disciplined than that. It asks whether the organization has meaningful protection across several dimensions:</p>
+
+<ul>
+  <li><strong>administrative controls</strong> such as policy, approval, separation of duties, and training</li>
+  <li><strong>technical controls</strong> such as authentication, authorization, segmentation, encryption, and logging</li>
+  <li><strong>physical controls</strong> where they matter, including facility and device protections</li>
+  <li><strong>preventive, detective, and corrective</strong> measures rather than a single kind of control</li>
+</ul>
+
+<p>This is one reason CISSP likes the concept so much. It reflects mature security thinking: assume imperfection, reduce single points of failure, and design for resilience rather than wishful certainty.</p>
+
+<h2 id="why-this-still-matters-in-cloud-saas-and-ai-heavy-environments">Why this still matters in cloud, SaaS, and AI-heavy environments</h2>
+
+<p>The principle itself is not new. What has changed is where the layers live.</p>
+
+<p>In older mental models, security discussions often revolved around the network perimeter. In modern environments, the control plane is far more distributed. Identity systems, cloud permissions, SaaS admin consoles, CI/CD pipelines, secrets stores, and endpoint posture all influence whether an attacker can move deeper into the environment.</p>
+
+<p>That is where current guidance still lines up well with the classic CISSP approach. NIST CSF 2.0 continues to frame cybersecurity as risk reduction across the organization, and NIST SP 800-207 describes zero trust as a shift away from assuming static, network-based trust. Neither idea replaces defense in depth. They make it more necessary.</p>
+
+<p>A modern layered model often includes:</p>
+
+<ul>
+  <li>strong identity verification and phishing-resistant MFA where possible</li>
+  <li>least privilege and just-in-time elevation for privileged tasks</li>
+  <li>secure configuration baselines and infrastructure guardrails</li>
+  <li>application-layer authorization instead of trusting network location alone</li>
+  <li>logging, alerting, and retention that support real investigation</li>
+  <li>tested backup and recovery paths when prevention does not hold</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/control-layers.svg" alt="Stacked control layers showing governance, identity, application, data, monitoring, and recovery working together." />
+  <figcaption>The important question is not whether you have one control. It is whether the controls meaningfully support each other.</figcaption>
+</figure>
+
+<h2 id="a-realistic-example-one-compromised-identity-very-different-outcomes">A realistic example: one compromised identity, very different outcomes</h2>
+
+<p>Imagine a support engineer at a SaaS company clicks a convincing phishing link and unintentionally hands over a valid session token.</p>
+
+<p>If the organization is relying on a single layer, the attacker may now have a direct path into customer-impacting systems. From there, the attacker might browse internal tools, access sensitive tickets, escalate to privileged roles, disable monitoring, or pivot toward production resources.</p>
+
+<p>Now imagine the same situation in an environment built with defense in depth in mind.</p>
+
+<p>The identity is still compromised, which is serious. But several other layers start reducing the damage:</p>
+
+<ul>
+  <li>the engineer’s role is limited by least privilege</li>
+  <li>privileged actions require step-up authentication or a separate admin flow</li>
+  <li>internal tools enforce additional authorization checks</li>
+  <li>sensitive systems are segmented and not broadly reachable</li>
+  <li>high-risk changes generate alerts in a logging system the engineer cannot quietly disable</li>
+  <li>incident response playbooks support rapid token revocation and containment</li>
+</ul>
+
+<p>The phishing event still matters. But it no longer guarantees full organizational exposure.</p>
+
+<p>That is the real value of defense in depth. It does not promise that nothing bad will happen. It makes the outcome smaller, slower, noisier, and easier to contain.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, defense in depth is rarely about choosing a slogan. It is usually part of a broader best-answer pattern.</p>
+
+<p>CISSP wants you to recognize that strong security programs:</p>
+
+<ul>
+  <li>avoid dependence on one control or one person</li>
+  <li>use layers that address different parts of the risk</li>
+  <li>combine people, process, and technology instead of over-trusting any single one</li>
+  <li>balance prevention with detection and recovery</li>
+  <li>reduce business risk without pretending that perfect prevention exists</li>
+</ul>
+
+<p>That is why a layered answer often beats a narrower one.</p>
+
+<p>If a question asks how to protect a sensitive system, the strongest answer usually does more than say “install a firewall” or “enable logging.” It reflects a design mindset that assumes controls can fail and that accountability, visibility, and recovery matter too.</p>
+
+<h2 id="common-mistakes-teams-make-when-they-think-they-are-doing-layering">Common mistakes teams make when they think they are doing layering</h2>
+
+<p>A lot of environments look layered on paper but remain fragile in practice.</p>
+
+<h3 id="1-every-layer-depends-on-the-same-identity-plane">1. Every layer depends on the same identity plane</h3>
+
+<p>If one privileged identity can change the cloud configuration, disable logging, weaken security tooling, and access the secrets store, the environment may have many products but still too little separation.</p>
+
+<h3 id="2-the-controls-are-duplicates-not-layers">2. The controls are duplicates, not layers</h3>
+
+<p>Buying two tools that do roughly the same thing is not the same as designing complementary protections. Real layers should catch different failure modes.</p>
+
+<h3 id="3-detection-exists-but-response-is-weak">3. Detection exists, but response is weak</h3>
+
+<p>Many teams are better at generating alerts than acting on them. A detective control without an operational response path is helpful, but incomplete.</p>
+
+<h3 id="4-exceptions-quietly-punch-through-everything">4. Exceptions quietly punch through everything</h3>
+
+<p>Temporary access, emergency firewall rules, broad service accounts, or unreviewed integrations can undermine several layers at once. This is one of the most common ways mature-looking environments become easier to compromise than they appear.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/attack-path.svg" alt="Comparison showing a single-control environment versus a layered-control environment interrupting an attacker path." />
+  <figcaption>Layering works best when each control interrupts a different stage of the attack path.</figcaption>
+</figure>
+
+<h2 id="what-good-defense-in-depth-looks-like-in-ordinary-organizations">What good defense in depth looks like in ordinary organizations</h2>
+
+<p>It usually looks less dramatic than conference talks make it sound.</p>
+
+<p>A mature organization often improves layering through steady, unglamorous decisions:</p>
+
+<ul>
+  <li>review privileged access and remove standing rights that are no longer justified</li>
+  <li>separate daily-use identities from high-risk administrative activity</li>
+  <li>protect critical systems with more than one approval or verification step</li>
+  <li>enforce authorization checks at the application and data levels, not just at the edge</li>
+  <li>centralize logs in a place that is hard for an attacker to tamper with</li>
+  <li>rehearse recovery so backups are not just a comforting idea</li>
+</ul>
+
+<p>None of those steps is flashy on its own. Together, they make the environment far more resilient.</p>
+
+<h2 id="the-practical-question-worth-remembering">The practical question worth remembering</h2>
+
+<p>If you are studying for CISSP, one question is worth carrying into almost every architecture and operations topic:</p>
+
+<p><strong>If this control fails, what still stands?</strong></p>
+
+<p>That question improves exam judgment because it pushes you toward layered, risk-based answers. It also improves real-world security because it forces the team to stop treating one safeguard as a magic guarantee.</p>
+
+<p>The more I work through CISSP material, the more this seems to be the pattern underneath a lot of the certification: mature security is not built on optimism. It is built on thoughtful design that expects failure, limits blast radius, and keeps the business able to recover.</p>
+
+<p>Defense in depth is one of the clearest examples of that mindset.</p>
+
+<p>If you are studying too, this is one of those ideas worth understanding beyond the flashcard definition.</p>
+
+<hr />
+
+<p><em>Post 7 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn how defense in depth works in CISSP and real-world security, including layered controls for cloud, SaaS, identity, detection, and recovery.
+
+**SEO keyword ideas:**
+1. CISSP defense in depth explained
+2. defense in depth layered security examples
+3. zero trust vs defense in depth
+4. CISSP security architecture principles
+5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T07:05:00+00:00</published><updated>2026-04-03T07:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
 
 <p>Then real systems show up.</p>
 
@@ -2209,263 +2370,4 @@ Use enforced idempotency where your business operations are inherently command-s
   <li>retries and at least once delivery</li>
   <li>idempotent background job patterns</li>
   <li>payment API duplicate prevention</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Distributed Systems" /><category term="Software Engineering" /><category term="idempotency" /><category term="distributed systems" /><category term="retries" /><category term="api design" /><category term="reliability" /><summary type="html"><![CDATA[Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Python Type Hints in Production: What They Buy You and What They Don’t</title><link href="https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases/" rel="alternate" type="text/html" title="Python Type Hints in Production: What They Buy You and What They Don’t" /><published>2026-03-29T22:38:46+00:00</published><updated>2026-03-29T22:38:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/python-type-hints-production-codebases/"><![CDATA[<p>Python type hints trigger strong opinions. Usually for good reasons.</p>
-
-<p>If you have shipped production Python for years, you have probably seen both extremes:</p>
-
-<ul>
-  <li>codebases with almost no annotations, where everything works until one implicit assumption breaks in production;</li>
-  <li>codebases with verbose hints everywhere, but little actual enforcement, so annotations became expensive comments.</li>
-</ul>
-
-<p>Both are real. Both are avoidable.</p>
-
-<p>The practical question is not “are type hints good?” It is: where do type hints prevent expensive bugs, and where are they mostly ceremony?</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" alt="Diagram showing dynamic runtime checks on one side and static type checks with mypy and pyright catching mismatches before execution on the other." />
-  <figcaption>Type hints pay off when they move failures left, from runtime incidents to editor and CI feedback.</figcaption>
-</figure>
-
-<h2 id="what-they-catch">What mypy and pyright catch that runtime usually won’t</h2>
-
-<p>Python’s own docs are explicit: type annotations are not enforced by the runtime by default. Your program still runs unless a path executes code that fails at runtime.</p>
-
-<p>That gap is where static checkers create value.</p>
-
-<h3 id="1-cross-function-contract-breaks">1. Cross-function contract breaks</h3>
-
-<p>If one function returns <code class="language-plaintext highlighter-rouge">dict[str, str]</code> and another assumes <code class="language-plaintext highlighter-rouge">dict[str, int]</code>, runtime only fails when the wrong branch executes. Static checkers flag it immediately.</p>
-
-<h3 id="2-optional-and-union-misuse">2. Optional and union misuse</h3>
-
-<p>A classic bug is calling <code class="language-plaintext highlighter-rouge">.strip()</code> or <code class="language-plaintext highlighter-rouge">.items()</code> on a value that is actually <code class="language-plaintext highlighter-rouge">None</code> on some path. Mypy and pyright perform flow-sensitive narrowing and warn before execution.</p>
-
-<h3 id="3-typeddict-shape-drift">3. TypedDict shape drift</h3>
-
-<p>For dictionary-shaped data, <code class="language-plaintext highlighter-rouge">TypedDict</code> catches missing keys, unknown keys, and wrong value types. Runtime dictionaries won’t.</p>
-
-<h3 id="4-api-boundary-mismatches">4. API boundary mismatches</h3>
-
-<p>When a module promises one type but callers pass another, static checks expose incompatibilities during refactors, before rollout.</p>
-
-<h3 id="5-incorrect-assumptions-hidden-by-any">5. Incorrect assumptions hidden by <code class="language-plaintext highlighter-rouge">Any</code></h3>
-
-<p>This one is subtle: type checkers also show where you effectively disabled checking by letting <code class="language-plaintext highlighter-rouge">Any</code> spread. That visibility alone prevents false confidence.</p>
-
-<p>None of this replaces tests. It reduces the number of bugs that tests need to discover through execution paths.</p>
-
-<h2 id="docs-vs-enforcement">Documentation vs enforcement: same syntax, different outcomes</h2>
-
-<p>A lot of teams say they “use type hints” when they really mean they annotate signatures occasionally.</p>
-
-<p>That is documentation value, and documentation matters. But it is not enforcement.</p>
-
-<p>You only get enforcement when all three are true:</p>
-
-<ol>
-  <li>The checker runs consistently (local and CI).</li>
-  <li>The checker is configured to fail on meaningful classes of issues.</li>
-  <li>The team treats checker output as quality signals, not optional suggestions.</li>
-</ol>
-
-<p>If you add hints but keep permissive defaults forever, you mostly get nicer editor hover text.</p>
-
-<p>A practical split:</p>
-
-<ul>
-  <li>Annotating for documentation: better readability, easier onboarding, limited bug prevention.</li>
-  <li>Annotating for enforcement: predictable interfaces, earlier break detection, safer refactors.</li>
-</ul>
-
-<p>You can start with documentation. Just be honest about what problem you are solving.</p>
-
-<h2 id="gradual-typing-cost">The real cost of gradual typing in existing codebases</h2>
-
-<p>Skepticism is healthy because type hints have real costs.</p>
-
-<h3 id="1-initial-annotation-tax">1. Initial annotation tax</h3>
-
-<p>Legacy modules with dynamic patterns can take significant effort to type accurately.</p>
-
-<h3 id="2-third-party-typing-gaps">2. Third-party typing gaps</h3>
-
-<p>Some libraries have incomplete stubs, forcing local protocols, cast statements, or narrower wrappers.</p>
-
-<h3 id="3-tool-configuration-work">3. Tool configuration work</h3>
-
-<p>Teams need to tune settings, error codes, and per-module strictness. Defaults are rarely the right long-term profile.</p>
-
-<h3 id="4-false-precision-risk">4. False precision risk</h3>
-
-<p>A typed signature can still describe a wrong assumption. Bad types can institutionalize bugs instead of preventing them.</p>
-
-<h3 id="5-team-learning-curve">5. Team learning curve</h3>
-
-<p>Concepts like variance, protocols, <code class="language-plaintext highlighter-rouge">TypedDict</code>, and <code class="language-plaintext highlighter-rouge">TypeGuard</code> are not free for every team.</p>
-
-<p>So why do disciplined teams still adopt gradual typing?
-Because the cost is front-loaded, while the payoff compounds during maintenance and refactoring.</p>
-
-<h2 id="where-they-pay-off">Where type hints reliably prevent real bugs</h2>
-
-<h3 id="api-boundaries-internal-and-external">API boundaries (internal and external)</h3>
-
-<p>Boundary code is where data shape assumptions are most fragile. Precise input/output types catch drift early.</p>
-
-<h3 id="data-transformation-pipelines">Data transformation pipelines</h3>
-
-<p>ETL jobs and event processing often chain many small transformations. A wrong intermediate type can survive several stages before exploding. Type checking catches breaks at the stage where they begin.</p>
-
-<h3 id="shared-utility-modules">Shared utility modules</h3>
-
-<p>Utilities are imported widely. A subtle signature change can ripple across dozens of callers. Type checking makes those breakpoints visible during development.</p>
-
-<h3 id="domain-identifiers-and-constrained-values">Domain identifiers and constrained values</h3>
-
-<p>Using <code class="language-plaintext highlighter-rouge">NewType</code>, <code class="language-plaintext highlighter-rouge">Literal</code>, or narrowed unions prevents mixing conceptually different values that share the same runtime type, such as <code class="language-plaintext highlighter-rouge">UserId</code> and <code class="language-plaintext highlighter-rouge">AccountId</code> both being integers.</p>
-
-<h2 id="before-after">Concrete before/after example</h2>
-
-<p>Below is a realistic example from data ingestion code that looked fine in review but produced intermittent production failures.</p>
-
-<h3 id="before-runtime-only-detection">Before: runtime-only detection</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-
-<span class="k">def</span> <span class="nf">normalize_order</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="c1"># row comes from JSON payloads with inconsistent shapes
-</span>    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">])</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">])</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">.</span><span class="nf">strip</span><span class="p">(),</span>
-        <span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">:</span> <span class="n">created_at</span><span class="p">,</span>
-        <span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>What went wrong in production:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">customer_id</code> was sometimes <code class="language-plaintext highlighter-rouge">None</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">total</code> occasionally arrived as <code class="language-plaintext highlighter-rouge">{"amount": "19.99"}</code> from another producer.</li>
-  <li>Errors surfaced late and only for specific partner payloads.</li>
-</ul>
-
-<h3 id="after-explicit-contract-with-enforcement">After: explicit contract with enforcement</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-
-<span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
-
-
-<span class="k">class</span> <span class="nc">RawOrder</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
-    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span>
-    <span class="n">created_at</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">total</span><span class="p">:</span> <span class="nb">str</span>
-
-
-<span class="k">class</span> <span class="nc">NormalizedOrder</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
-    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span>
-    <span class="n">total</span><span class="p">:</span> <span class="nb">float</span>
-
-
-<span class="k">def</span> <span class="nf">normalize_order</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">RawOrder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NormalizedOrder</span><span class="p">:</span>
-    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">customer_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">customer_id is required</span><span class="sh">"</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">.</span><span class="nf">strip</span><span class="p">(),</span>
-        <span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">:</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">created_at</span><span class="sh">"</span><span class="p">]),</span>
-        <span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">:</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">total</span><span class="sh">"</span><span class="p">]),</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>Now mypy/pyright can flag incorrect callers immediately:</p>
-
-<ul>
-  <li>missing required keys;</li>
-  <li>wrong <code class="language-plaintext highlighter-rouge">total</code> shape (<code class="language-plaintext highlighter-rouge">dict</code> instead of <code class="language-plaintext highlighter-rouge">str</code>);</li>
-  <li>unsafe operations on optional values.</li>
-</ul>
-
-<p>The runtime guard still exists for genuinely bad input. But most integration drift is now caught before deploy.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/before-after.svg" alt="Side-by-side view of untyped dictionary transformation code versus TypedDict-based transformation with explicit Optional handling." />
-  <figcaption>The gain is not prettier annotations. The gain is earlier, more local failures.</figcaption>
-</figure>
-
-<h2 id="rollout-model">A practical rollout model for skeptical teams</h2>
-
-<p>If your codebase is large, full strict mode everywhere is usually the wrong first move.</p>
-
-<p>Use an incremental strategy:</p>
-
-<ol>
-  <li>Start at high-leverage boundaries: request/response DTOs, queue/event payloads, and shared utility modules.</li>
-  <li>Enable checker in CI in non-blocking mode for one sprint.</li>
-  <li>Fix high-signal issues first: <code class="language-plaintext highlighter-rouge">Optional</code> misuse, bad return types, missing keys.</li>
-  <li>Introduce stricter rules per module once baseline noise drops.</li>
-  <li>Track <code class="language-plaintext highlighter-rouge">Any</code> spread and unresolved ignores as debt, not normal state.</li>
-</ol>
-
-<p>This keeps momentum without turning typing into a migration project that never ends.</p>
-
-<h2 id="what-they-dont-buy">What type hints do not buy you</h2>
-
-<p>Type hints are valuable, but they are not a substitute for engineering discipline.</p>
-
-<p>They do not give you:</p>
-
-<ul>
-  <li>runtime input validation from untrusted clients;</li>
-  <li>business rule correctness;</li>
-  <li>performance improvements by themselves;</li>
-  <li>freedom from tests.</li>
-</ul>
-
-<p>Think of them as contract verification and refactoring safety, not as runtime security or logic proof.</p>
-
-<h2 id="bottom-line">Bottom line</h2>
-
-<p>Type hints in production Python are neither silver bullet nor theater.</p>
-
-<p>They are worth the effort when you use them where bugs are expensive: boundaries, transformations, and shared contracts. They are wasteful when added mechanically without enforcement.</p>
-
-<p>The practical test is simple:</p>
-
-<ul>
-  <li>If hints only improve readability, keep the scope narrow.</li>
-  <li>If hints are wired into CI and refactoring discipline, they become a reliability tool.</li>
-</ul>
-
-<p>That is usually the dividing line between teams that feel type hints are bureaucracy and teams that feel they are leverage.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/rollout-path.svg" alt="Step-based roadmap from boundary annotation to CI enforcement to stricter module-by-module typing in a mature codebase." />
-  <figcaption>Gradual typing works when strictness is introduced intentionally, module by module.</figcaption>
-</figure>
-
-<hr />
-
-<p>If this resonated, the next useful step is to audit one production boundary this week and type it end-to-end, including CI enforcement for that module.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical guide to Python type hints in production: what mypy and pyright catch, what they do not, the cost of gradual typing, and where annotations prevent real bugs.</p>
-
-<p><strong>SEO keywords:</strong></p>
-<ul>
-  <li>Python type hints in production</li>
-  <li>mypy vs pyright practical guide</li>
-  <li>gradual typing Python codebase</li>
-  <li>TypedDict API boundary validation</li>
-  <li>Python static typing real world benefits</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Software Engineering" /><category term="Python" /><category term="python" /><category term="type hints" /><category term="mypy" /><category term="pyright" /><category term="static typing" /><category term="engineering discipline" /><summary type="html"><![CDATA[Type hints are not magic, and they are not free. But in the right places, mypy and pyright catch bugs before runtime that tests often miss, especially at API boundaries and in data transformation code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/python-type-hints-production-codebases/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="Distributed Systems" /><category term="Software Engineering" /><category term="idempotency" /><category term="distributed systems" /><category term="retries" /><category term="api design" /><category term="reliability" /><summary type="html"><![CDATA[Idempotency is not a theory term. It is a practical design decision that keeps retries from creating duplicate charges, duplicate jobs, and duplicate state transitions in real systems.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/idempotency-underused-pattern-distributed-systems/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
