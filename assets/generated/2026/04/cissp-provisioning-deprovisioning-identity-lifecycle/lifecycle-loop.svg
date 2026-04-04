@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Joiners movers leavers lifecycle</title>
+  <desc id="desc">A visual loop showing joiner, mover, and leaver identity events with approval, review, and deprovisioning controls.</desc>
+  <rect width="1400" height="820" fill="#f8fafc"/>
+  <text x="80" y="90" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#0f172a">Joiners, movers, leavers</text>
+  <text x="80" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#475569">Access risk often grows at the transitions, not at the login screen.</text>
+
+  <circle cx="700" cy="430" r="220" fill="#eef4ff" stroke="#bfdbfe" stroke-width="3"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="560" y="180" width="280" height="110" rx="20" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="640" y="230" font-size="30" font-weight="700" fill="#1d4ed8">Joiner</text>
+    <text x="600" y="264" font-size="19" fill="#475569">Provision only what is needed</text>
+
+    <rect x="890" y="370" width="280" height="110" rx="20" fill="#ffffff" stroke="#86efac"/>
+    <text x="975" y="420" font-size="30" font-weight="700" fill="#15803d">Mover</text>
+    <text x="926" y="454" font-size="19" fill="#475569">Remove old access, not just add new</text>
+
+    <rect x="560" y="570" width="280" height="110" rx="20" fill="#ffffff" stroke="#fda4af"/>
+    <text x="642" y="620" font-size="30" font-weight="700" fill="#be123c">Leaver</text>
+    <text x="600" y="654" font-size="19" fill="#475569">Deactivate promptly and verify cleanup</text>
+
+    <rect x="220" y="370" width="240" height="110" rx="20" fill="#ffffff" stroke="#fde68a"/>
+    <text x="286" y="420" font-size="28" font-weight="700" fill="#b45309">Review</text>
+    <text x="248" y="454" font-size="19" fill="#475569">Owner sign-off and recertification</text>
+  </g>
+
+  <g stroke="#64748b" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M840 235 C940 260 1010 320 1050 380"/>
+    <path d="M1030 490 C980 560 910 610 835 630"/>
+    <path d="M565 625 C470 600 380 550 330 480"/>
+    <path d="M330 370 C380 290 470 235 560 225"/>
+  </g>
+
+  <text x="220" y="760" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#334155">Good IAM treats access as something that should change with the role, not something that only grows over time.</text>
+</svg>
