@@ -1,4 +1,270 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T07:16:24+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T14:53:56+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Authentication Is Not Authorization, and CISSP Is Right to Separate Them</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" rel="alternate" type="text/html" title="Authentication Is Not Authorization, and CISSP Is Right to Separate Them" /><published>2026-04-04T07:00:00+00:00</published><updated>2026-04-04T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/"><![CDATA[<p>Authentication gets too much credit.</p>
+
+<p>A system can have single sign-on, MFA, and a polished login page and still make terrible security decisions after the user gets in. That is how teams end up with breaches that were not really authentication failures at all. They were authorization failures, accountability failures, or both.</p>
+
+<p>That is why CISSP keeps these ideas separate: <strong>identification, authentication, authorization, and accountability</strong>. It is not exam pedantry. It is a useful way to understand where trust is being established, where access is being granted, and where control quietly breaks down.</p>
+
+<p>For software engineers and security-minded builders, this is one of the most practical IAM lessons in the whole series.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" alt="Illustration showing identity flowing through identification, authentication, authorization, and accountability before access is granted." />
+  <figcaption>Good IAM does not stop at login. It carries trust, access decisions, and traceability all the way through the request.</figcaption>
+</figure>
+
+<h2 id="the-four-ideas-cissp-wants-you-to-keep-separate">The four ideas CISSP wants you to keep separate</h2>
+
+<p>One reason IAM gets blurry is that people collapse multiple decisions into the word “auth.”</p>
+
+<p>CISSP is trying to make you more precise.</p>
+
+<h3 id="1-identification-who-is-claiming-to-be-here">1. Identification: who is claiming to be here?</h3>
+
+<p>Identification is the claim.</p>
+
+<p>A user enters a username, selects an account, presents an email address, or a workload presents a service identity. At this point, the system has not yet decided the claim is true. It has only been told which identity is being asserted.</p>
+
+<h3 id="2-authentication-how-much-confidence-do-we-have-in-the-claim">2. Authentication: how much confidence do we have in the claim?</h3>
+
+<p>Authentication is the proof step.</p>
+
+<p>This is where the system evaluates one or more authenticators such as:</p>
+
+<ul>
+  <li>a password or passphrase</li>
+  <li>a one-time code</li>
+  <li>a smart card or certificate</li>
+  <li>a passkey or hardware-backed cryptographic key</li>
+  <li>a biometric used as part of multi-factor authentication</li>
+</ul>
+
+<p>Strong authentication reduces uncertainty. It does <strong>not</strong> automatically decide what the subject should be allowed to do next.</p>
+
+<h3 id="3-authorization-what-is-this-identity-allowed-to-do-right-now">3. Authorization: what is this identity allowed to do right now?</h3>
+
+<p>Authorization is the access decision.</p>
+
+<p>This is where the system determines whether the authenticated user, service, or process can actually perform the requested action on the specific resource in question. That decision may depend on:</p>
+
+<ul>
+  <li>role</li>
+  <li>group membership</li>
+  <li>data ownership</li>
+  <li>device or network context</li>
+  <li>sensitivity of the action</li>
+  <li>time, location, tenant, or business workflow rules</li>
+</ul>
+
+<p>This is where least privilege becomes real.</p>
+
+<h3 id="4-accountability-can-we-trace-the-action-and-hold-it-to-process">4. Accountability: can we trace the action and hold it to process?</h3>
+
+<p>Accountability is what makes actions attributable and reviewable.</p>
+
+<p>It depends on things like:</p>
+
+<ul>
+  <li>unique identities rather than shared accounts</li>
+  <li>durable logs and audit trails</li>
+  <li>clear approval paths</li>
+  <li>separation of duties for sensitive actions</li>
+  <li>evidence that a specific user approved or executed a change</li>
+</ul>
+
+<p>Without accountability, an organization struggles to investigate abuse, mistakes, or fraud even if authentication itself was strong.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/four-as.svg" alt="Diagram distinguishing identification, authentication, authorization, and accountability with simple definitions." />
+  <figcaption>The four ideas work together, but they solve different problems and fail in different ways.</figcaption>
+</figure>
+
+<h2 id="why-authentication-gets-too-much-credit">Why authentication gets too much credit</h2>
+
+<p>A lot of security conversations stall out at the login screen.</p>
+
+<p>Teams say things like:</p>
+
+<ul>
+  <li>“We already have MFA.”</li>
+  <li>“It goes through our SSO provider.”</li>
+  <li>“Only employees can reach that page.”</li>
+  <li>“The user is authenticated, so the request is trusted.”</li>
+</ul>
+
+<p>Those statements may be partially true and still lead to a weak design.</p>
+
+<p>Authentication answers a narrow question: <strong>is this subject likely to be who it claims to be?</strong></p>
+
+<p>It does not answer:</p>
+
+<ul>
+  <li>should this user see this specific customer record?</li>
+  <li>should this session still be trusted for a high-risk action?</li>
+  <li>does this service account really need write access here?</li>
+  <li>can we prove who approved and executed a privileged change?</li>
+</ul>
+
+<p>That is why strong login can coexist with weak security outcomes. Too many organizations improve identity proof at the front door while leaving the interior permissions too broad and the audit trail too thin.</p>
+
+<h2 id="a-realistic-example-the-support-dashboard-that-trusts-the-wrong-thing">A realistic example: the support dashboard that trusts the wrong thing</h2>
+
+<p>Imagine a customer support platform used only by employees.</p>
+
+<p>The company does several things right:</p>
+
+<ul>
+  <li>staff sign in through a central identity provider</li>
+  <li>MFA is enabled</li>
+  <li>sessions expire properly</li>
+  <li>suspicious sign-ins are monitored</li>
+</ul>
+
+<p>So far, so good.</p>
+
+<p>But inside the application, almost every support agent can:</p>
+
+<ul>
+  <li>search any customer account</li>
+  <li>view sensitive profile data</li>
+  <li>revoke MFA methods</li>
+  <li>issue refunds</li>
+  <li>export case history</li>
+</ul>
+
+<p>Nothing about that problem is fixed by saying “the employee was authenticated.”</p>
+
+<p>The employee probably <strong>was</strong> authenticated. The real issue is that the application translated a successful login into overly broad access.</p>
+
+<p>A stronger design would separate the decisions more carefully:</p>
+
+<ul>
+  <li>ordinary support agents can view only the cases assigned to them or their queue</li>
+  <li>especially sensitive records require additional justification or elevated approval</li>
+  <li>token resets or refund actions require step-up authentication</li>
+  <li>high-risk actions are logged with enough detail to support investigation</li>
+  <li>no one person can request, approve, and execute the full sensitive workflow alone</li>
+</ul>
+
+<p>That is a much more mature IAM story. The difference is not better branding around MFA. It is better authorization and accountability discipline.</p>
+
+<h2 id="what-strong-iam-looks-like-in-real-systems">What strong IAM looks like in real systems</h2>
+
+<p>Good IAM is less about one shiny control and more about a stack of ordinary decisions made well.</p>
+
+<h3 id="start-with-identity-lifecycle-discipline">Start with identity lifecycle discipline</h3>
+
+<p>Access problems often begin before the first live request.</p>
+
+<p>Joiner, mover, and leaver processes matter because stale entitlements accumulate quietly. If a role changed six months ago but the old access never came off, the system is already carrying unnecessary exposure.</p>
+
+<h3 id="enforce-authorization-at-the-resource-boundary">Enforce authorization at the resource boundary</h3>
+
+<p>Being on the internal network, behind a VPN, or already signed in should not be treated as a blanket permission model.</p>
+
+<p>Applications and APIs should make access decisions where the resource is actually touched. That is especially important in multi-tenant SaaS systems, internal admin tools, and service-to-service communication.</p>
+
+<h3 id="use-step-up-controls-for-higher-risk-actions">Use step-up controls for higher-risk actions</h3>
+
+<p>Not every action deserves the same level of trust.</p>
+
+<p>Viewing your own dashboard is different from changing payroll information, exporting regulated data, or disabling security settings. Mature systems often require stronger proof or additional approval when the action carries more business risk.</p>
+
+<h3 id="limit-standing-privilege">Limit standing privilege</h3>
+
+<p>Privileged access that is always on becomes an attacker’s shortcut.</p>
+
+<p>That is true for administrators, developers, service accounts, and automation identities. Just-in-time access, time-boxed elevation, and narrower machine permissions reduce blast radius far more effectively than broad permanent rights with a promise to “monitor everything.”</p>
+
+<h3 id="make-actions-attributable">Make actions attributable</h3>
+
+<p>If a shared admin account performs a critical action, the organization has already lost something important even before an incident occurs. Unique identities, approval records, and tamper-resistant logs are what turn access control into something governable.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/step-up-access.svg" alt="Side-by-side flow comparing ordinary low-risk access with high-risk actions that require step-up authentication, approval, and audit logging." />
+  <figcaption>Good IAM scales trust with risk instead of treating every authenticated session as equally safe.</figcaption>
+</figure>
+
+<h2 id="where-passkeys-and-phishing-resistant-mfa-fit">Where passkeys and phishing-resistant MFA fit</h2>
+
+<p>This is one of those CISSP topics where established principles and current industry direction line up nicely.</p>
+
+<p>The established part is old and stable:</p>
+
+<ul>
+  <li>identify the subject clearly</li>
+  <li>authenticate with appropriate assurance</li>
+  <li>authorize based on business need and least privilege</li>
+  <li>preserve accountability through logging and process control</li>
+</ul>
+
+<p>The newer emphasis is in <strong>how</strong> organizations strengthen authentication.</p>
+
+<p>Current NIST digital identity guidance continues to push toward higher-assurance, phishing-resistant options for stronger environments. That is one reason passkeys and other cryptographic authenticators matter so much right now. They are better at resisting replay and phishing than passwords, SMS codes, or approval-fatigue patterns alone.</p>
+
+<p>But this is the important qualifier: <strong>better authentication does not replace authorization design</strong>.</p>
+
+<p>A passkey can make it much harder for the wrong person to log in as me. It does not decide whether my account should be able to export every customer record, approve its own privileged exception, or keep broad standing access forever.</p>
+
+<p>That is the mistake CISSP is quietly trying to keep people from making.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, this topic often hides inside a best-answer pattern.</p>
+
+<p>CISSP usually wants you to think like the person responsible for business risk, not just like the person configuring a login prompt.</p>
+
+<p>That means the stronger answer often does one or more of the following:</p>
+
+<ul>
+  <li>separates authentication from authorization cleanly</li>
+  <li>reduces privileges to the minimum necessary level</li>
+  <li>adds accountability and approval to sensitive actions</li>
+  <li>favors centralized control and review over ad hoc exceptions</li>
+  <li>picks the response that improves overall governance, not just one technical step</li>
+</ul>
+
+<p>If a question describes fraud, excessive access, or misuse after login, the best answer is often not simply “enable MFA” in isolation. It may be tighter authorization, better separation of duties, more appropriate recertification, or stronger accountability for privileged activity.</p>
+
+<h2 id="a-practical-checklist-for-engineers-and-cissp-candidates">A practical checklist for engineers and CISSP candidates</h2>
+
+<p>A few questions help keep this topic grounded:</p>
+
+<ul>
+  <li>What identity is being claimed here?</li>
+  <li>How is that claim being authenticated?</li>
+  <li>What exact resource or action is being authorized?</li>
+  <li>Is the access still appropriate for the user’s current role?</li>
+  <li>Would this action deserve step-up authentication or approval?</li>
+  <li>If something goes wrong, can we tell who did what and when?</li>
+  <li>Are we relying on network location or prior login more than we should?</li>
+</ul>
+
+<p>That is the kind of reasoning that improves both architecture reviews and exam answers.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>A lot of insecure systems are not failing because nobody implemented login.</p>
+
+<p>They fail because the organization stopped thinking once the login succeeded.</p>
+
+<p>CISSP is right to keep identification, authentication, authorization, and accountability separate because each one answers a different risk question. The systems that handle those questions distinctly tend to be safer, easier to govern, and easier to explain after something goes wrong.</p>
+
+<p>If you are studying too, this is one of those topics worth learning as a model for real systems, not just as a vocabulary list.</p>
+
+<hr />
+
+<p><em>Post 9 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn why authentication is not authorization in CISSP and real-world IAM, including identification, MFA, accountability, and step-up access decisions.
+
+**SEO keyword ideas:**
+1. CISSP authentication vs authorization
+2. identification authentication authorization accountability explained
+3. CISSP IAM domain 5 study guide
+4. phishing resistant MFA and passkeys CISSP
+5. least privilege and accountability in IAM -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="authentication" /><category term="authorization" /><category term="accountability" /><category term="mfa" /><category term="passkeys" /><summary type="html"><![CDATA[A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
 
 <p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
 
@@ -1862,324 +2128,4 @@ That is usually where the value becomes obvious first.</p>
 - mutable key hash map bug
 - load factor and rehashing explained
 - hash map collision handling
--->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secrets Management: Why Environment Variables Are Not the Finish Line</title><link href="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/" rel="alternate" type="text/html" title="Secrets Management: Why Environment Variables Are Not the Finish Line" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/secrets-management-environment-variables/"><![CDATA[<p>Environment variables are usually presented as the grown-up answer to hard-coded credentials.
-That is fair, as far as it goes.</p>
-
-<p>Moving a database password out of source control and into process configuration is an improvement.
-It reduces one obvious category of failure.
-It does not solve secrets management.</p>
-
-<p>That distinction matters because many teams stop at the first improvement and assume they have reached the secure end state.
-In practice, they have only changed where the secret sits at runtime.</p>
-
-<p>If a production secret is still broadly visible to whatever can inspect the process, inherited by child processes, copied into logs during debugging, or stuck in place until the next deployment, you do not have a management system.
-You have a distribution mechanism.</p>
-
-<p>That is the gap this post is about.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" alt="Comparison between environment-variable based secret handling and a managed secrets flow with identity, audit, rotation, and revocation." />
-  <figcaption>Environment variables move secrets out of source code. A secrets manager changes the control model.</figcaption>
-</figure>
-
-<h2 id="where-env-vars-fall-short">Where environment variables fall short in real systems</h2>
-
-<p>Environment variables are not inherently reckless.
-They are often the least bad starting point for local development and simple deployment pipelines.
-The problem is that they do not give you the controls that production secrets usually need.</p>
-
-<p>Four issues show up repeatedly.</p>
-
-<h3 id="process-state">1. They become part of process state</h3>
-
-<p>Once a secret is loaded into an environment variable, it is attached to the running process environment.
-That means it can show up anywhere the process state is visible:</p>
-
-<ul>
-  <li>process inspection tools</li>
-  <li>crash dumps and memory diagnostics</li>
-  <li>ad hoc support scripts that print environment details</li>
-  <li>debugging endpoints or health scripts that expose configuration too generously</li>
-</ul>
-
-<p>This is the part many tutorials skip.
-The secret left the repo, but it did not become hard to reach.
-It became part of operational surface area.</p>
-
-<h3 id="indirect-leaks">2. They are easy to leak indirectly</h3>
-
-<p>Teams do not usually paste secrets into logs on purpose.
-They leak them while trying to be helpful.</p>
-
-<p>Common paths include:</p>
-
-<ul>
-  <li>startup logging that prints configuration values</li>
-  <li>exception handling that serializes configuration objects</li>
-  <li>CI or deployment scripts echoing environment variables while troubleshooting</li>
-  <li>framework diagnostics that dump process configuration when something fails</li>
-</ul>
-
-<p>The more your operational model depends on “please do not print that variable,” the weaker the model is.</p>
-
-<h3 id="inheritance-and-tooling">3. They spread by inheritance and tooling</h3>
-
-<p>Environment variables are convenient precisely because subprocesses can inherit them.
-That convenience is also the risk.</p>
-
-<p>If a build step, migration utility, worker process, or support script inherits the same secret set, your access boundary becomes much wider than the application that actually needs the credential.</p>
-
-<p>Containerized environments add another wrinkle.
-If secrets are injected as environment variables, anyone with sufficient access to inspect container configuration or orchestrator metadata may be able to see them in clear text.
-Again, the issue is not that containers are uniquely bad.
-It is that environment variables are still just exposed process configuration.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/env-var-exposure.svg" alt="A secret placed in an environment variable spreading into child processes, logs, crash diagnostics, and container inspection surfaces." />
-  <figcaption>Once a secret lives in process environment, multiple operational paths can expose it without anyone explicitly "sharing" it.</figcaption>
-</figure>
-
-<h3 id="lifecycle-control">4. They do not provide lifecycle control</h3>
-
-<p>This is the most important limitation.</p>
-
-<p>An environment variable can hold a secret value.
-It cannot answer the questions mature teams eventually need answered:</p>
-
-<ul>
-  <li>Who accessed this secret?</li>
-  <li>Which workload used it?</li>
-  <li>When was it rotated?</li>
-  <li>What systems still depend on the old version?</li>
-  <li>How quickly can we revoke it after suspected compromise?</li>
-</ul>
-
-<p>NIST guidance on key management treats lifecycle, inventory, compromise response, and accountability as part of the management problem itself, not as optional extras bolted on later.
-CIS Control 3 frames data protection similarly: use both process and technical controls for handling sensitive data, not just a convention for where values are stored.</p>
-
-<p>That is why “we use environment variables” is not a satisfying answer once systems matter.</p>
-
-<h2 id="what-real-solutions-change">What a real secrets management solution changes</h2>
-
-<p>Whether you use Azure Key Vault, AWS Secrets Manager, Google Secret Manager, or HashiCorp Vault, the useful shift is the same:</p>
-
-<p>you stop treating secrets as static configuration pushed into workloads and start treating them as protected resources accessed through identity and policy.</p>
-
-<p>That changes several things immediately.</p>
-
-<h3 id="scoped-access">Scoped access instead of broad distribution</h3>
-
-<p>A secrets manager lets you grant access to a specific application identity, environment, or team role.
-The worker that needs a payment API credential does not automatically need database admin credentials, and your background reporting job does not need every secret your web app uses.</p>
-
-<p>This is what least privilege looks like in practice.</p>
-
-<h3 id="auditing">Auditing instead of guesswork</h3>
-
-<p>If a secret is retrieved through a managed service, you can log access events, correlate them to identities, and alert on patterns that should not happen.</p>
-
-<p>That moves you from “we think only the app used this” to “we can verify which principal accessed it and when.”</p>
-
-<h3 id="rotation">Rotation as an operating habit, not a migration project</h3>
-
-<p>Azure’s current secrets guidance explicitly recommends regular rotation, automation where possible, and dual-credential patterns for zero-downtime rollover.
-That is a very different posture from editing a pipeline variable, restarting services, and hoping every consumer updates cleanly.</p>
-
-<p>Managed secrets stores usually give you versioning and metadata as well.
-That makes staged rotation possible.</p>
-
-<h3 id="revocation">Revocation without redeploying everything</h3>
-
-<p>If a secret is compromised, the response should not be “find every place it was injected and schedule emergency configuration changes.”</p>
-
-<p>You want the ability to:</p>
-
-<ul>
-  <li>disable or replace the secret centrally</li>
-  <li>narrow access policy immediately</li>
-  <li>identify affected workloads from logs</li>
-  <li>force consumers onto a new version on a defined timeline</li>
-</ul>
-
-<p>Environment variables do not give you that control plane.
-They only give you a value sitting in a process.</p>
-
-<h2 id="azure-key-vault-practical">Azure Key Vault in a .NET or Python application</h2>
-
-<p>Azure Key Vault is a good concrete example because the current platform guidance is fairly clear.
-Azure RBAC is now the recommended authorization model for the data plane, and Microsoft explicitly positions it over legacy access policies for stronger separation of duties and centralized access control.</p>
-
-<p>The practical pattern is straightforward:</p>
-
-<ol>
-  <li>Keep non-secret configuration such as the vault URI or vault name in ordinary configuration.</li>
-  <li>Use a managed identity in Azure, or developer identity locally.</li>
-  <li>Retrieve secrets through Key Vault using <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code>.</li>
-  <li>Cache sensibly in memory or via your configuration provider rather than fetching on every request.</li>
-  <li>Enable logging, alerts, and ownership metadata so rotation is operationally real.</li>
-</ol>
-
-<p>One subtle but important point:
-environment variables still have a place here, but for non-secret values.
-Passing <code class="language-plaintext highlighter-rouge">KEY_VAULT_NAME</code> or a vault URI through configuration is very different from passing the database password itself.</p>
-
-<h3 id="dotnet-example">.NET example</h3>
-
-<p>For ASP.NET Core, the cleanest option is often to load secrets into configuration through Azure identity rather than hard-wiring credential values into deployment settings.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Azure.Identity</span><span class="p">;</span>
-
-<span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">WebApplication</span><span class="p">.</span><span class="nf">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
-
-<span class="kt">var</span> <span class="n">keyVaultUri</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"KeyVaultUri"</span><span class="p">];</span>
-
-<span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">))</span>
-<span class="p">{</span>
-    <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="nf">AddAzureKeyVault</span><span class="p">(</span>
-        <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="n">keyVaultUri</span><span class="p">),</span>
-        <span class="k">new</span> <span class="nf">DefaultAzureCredential</span><span class="p">());</span>
-<span class="p">}</span>
-
-<span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">"SqlConnectionString"</span><span class="p">];</span>
-</code></pre></div></div>
-
-<p>In local development, <code class="language-plaintext highlighter-rouge">DefaultAzureCredential</code> can use the developer’s Azure CLI or IDE login.
-In production, the same code can use a managed identity assigned to the App Service, Function App, container app, or VM.</p>
-
-<p>That removes the need to ship a long-lived client secret just to retrieve another secret.</p>
-
-<h3 id="python-example">Python example</h3>
-
-<p>In Python, the direct client flow is similarly simple.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
-
-<span class="kn">from</span> <span class="n">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
-<span class="kn">from</span> <span class="n">azure.keyvault.secrets</span> <span class="kn">import</span> <span class="n">SecretClient</span>
-
-<span class="n">vault_url</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">"</span><span class="s">KEY_VAULT_URL</span><span class="sh">"</span><span class="p">]</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="nc">SecretClient</span><span class="p">(</span>
-    <span class="n">vault_url</span><span class="o">=</span><span class="n">vault_url</span><span class="p">,</span>
-    <span class="n">credential</span><span class="o">=</span><span class="nc">DefaultAzureCredential</span><span class="p">(),</span>
-<span class="p">)</span>
-
-<span class="n">db_password</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">get_secret</span><span class="p">(</span><span class="sh">"</span><span class="s">prod-db-password</span><span class="sh">"</span><span class="p">).</span><span class="n">value</span>
-</code></pre></div></div>
-
-<p>For a web application or worker, do not turn that into a Key Vault round trip on every request.
-Fetch at startup or on a bounded refresh interval, keep the value in memory, and have a deliberate refresh path tied to your rotation policy.</p>
-
-<p>Microsoft’s current guidance is explicit about this too: cache secrets in memory, use retry logic for transient failures, and refresh cached values when rotation occurs.</p>
-
-<h3 id="comparable-options">Comparable options if you are not on Azure</h3>
-
-<p>The platform names change, but the design principles do not.</p>
-
-<ul>
-  <li>AWS Secrets Manager: use IAM roles, resource policies, rotation workflows, and CloudTrail visibility.</li>
-  <li>Google Secret Manager: use workload identity, IAM scoping, and audit logging.</li>
-  <li>HashiCorp Vault: use short-lived credentials, dynamic secrets, leases, and explicit revocation.</li>
-</ul>
-
-<p>The central question is not which vendor label you picked.
-It is whether access is identity-based, auditable, scoped, and rotatable.</p>
-
-<h2 id="minimum-viable-posture">The minimum viable secrets posture for a smaller team</h2>
-
-<p>Not every team needs a full platform engineering program around secrets.
-But almost every team with production data should do more than <code class="language-plaintext highlighter-rouge">.env</code> files and pipeline variables forever.</p>
-
-<p>If you want a practical baseline without enterprise theater, start here.</p>
-
-<h3 id="one-store">1. Put production secrets in one managed store</h3>
-
-<p>Do not split secrets across random deployment variables, wiki pages, local files, and tribal memory.
-Pick one managed system for production secrets and make it the default place to look.</p>
-
-<h3 id="workload-identity">2. Use workload identity, not embedded app credentials</h3>
-
-<p>If your application needs a secret manager, authenticate to it with managed identity or workload identity where your platform supports it.
-Avoid storing a client secret whose only purpose is to unlock other secrets.</p>
-
-<h3 id="scope-per-app">3. Scope access per app and environment</h3>
-
-<p>Production web app, production worker, and staging app should not all share the same broad read permission.
-Grant only the secrets each workload needs.</p>
-
-<h3 id="logs-and-review">4. Turn on logs and actually review them</h3>
-
-<p>Auditing is not a checkbox.
-If your vault can log secret reads, failed access attempts, expiry events, or role changes, enable that and route it somewhere a human or alert can see.</p>
-
-<h3 id="rotation-owner">5. Set a real rotation owner and cadence</h3>
-
-<p>If nobody owns rotation, it does not happen.
-Define:</p>
-
-<ul>
-  <li>who rotates each high-value secret</li>
-  <li>how often it rotates</li>
-  <li>how consumers are updated</li>
-  <li>what the emergency revocation path is</li>
-</ul>
-
-<p>That can be a simple runbook.
-It just needs to exist before the incident.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/minimum-viable-posture.svg" alt="A maturity ladder showing hard-coded secrets, environment variables only, managed vault with identity, and rotation plus monitoring as progressive stages." />
-  <figcaption>The goal for a smaller team is not maximum ceremony. It is a credible control model you can operate consistently.</figcaption>
-</figure>
-
-<h2 id="what-not-to-overcomplicate">What not to overcomplicate yet</h2>
-
-<p>Teams sometimes hear “secrets management” and immediately design a platform program they will never finish.</p>
-
-<p>You do not need, on day one:</p>
-
-<ul>
-  <li>a custom abstraction layer over every secret provider</li>
-  <li>per-request vault lookups for normal application traffic</li>
-  <li>an internal product before you have one reliable production pattern</li>
-</ul>
-
-<p>You do need a cleaner answer than “the secret is in an environment variable somewhere.”</p>
-
-<p>That is the practical standard.</p>
-
-<h2 id="useful-mental-shift">The useful mental shift</h2>
-
-<p>Environment variables answer a narrow question:
-“How does this process receive a value?”</p>
-
-<p>Secrets management answers the broader operational questions:</p>
-
-<ul>
-  <li>who can retrieve it</li>
-  <li>how access is scoped</li>
-  <li>how usage is audited</li>
-  <li>how it rotates safely</li>
-  <li>how compromise is contained</li>
-</ul>
-
-<p>That is why environment variables are not the finish line.
-They solve placement.
-They do not solve control.</p>
-
-<p>If your team is still using environment variables as the final resting place for production secrets, the next step does not need to be dramatic.
-Move one high-value secret behind identity-based access, enable audit logs, and give rotation an owner.
-That is where secrets management starts becoming real.</p>
-
-<!--
----
-
-**Meta description:** Environment variables are better than hard-coded credentials, but they are not a full secrets management strategy. This post explains the real risks, what managed secrets systems add, and how to use Azure Key Vault practically in .NET and Python.
-
-**SEO keyword ideas:**
-- secrets management vs environment variables
-- azure key vault best practices
-- managed identity key vault dotnet
-- python azure key vault secrets
-- minimum viable secrets posture
--->]]></content><author><name>Johnny Avakian</name></author><category term="Security" /><category term="Software Engineering" /><category term="secrets management" /><category term="azure key vault" /><category term="environment variables" /><category term="application security" /><category term="secure development" /><summary type="html"><![CDATA[Environment variables are better than hard-coded secrets, but they are not a secrets management strategy. Real secrets management adds scoped access, auditing, rotation, and revocation so teams can reduce exposure without turning every deployment into a credential ceremony.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/secrets-management-environment-variables/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

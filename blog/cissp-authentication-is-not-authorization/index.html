@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Is Not Authorization, and CISSP Is Right to Separate Them | Johnny Avakian Portfolio</title>
+    <meta name="description" content="A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-04T07:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-5" />
+      
+        <meta property="article:tag" content="iam" />
+      
+        <meta property="article:tag" content="authentication" />
+      
+        <meta property="article:tag" content="authorization" />
+      
+        <meta property="article:tag" content="accountability" />
+      
+        <meta property="article:tag" content="mfa" />
+      
+        <meta property="article:tag" content="passkeys" />
+      
+    
+    <meta property="og:title" content="Authentication Is Not Authorization, and CISSP Is Right to Separate Them" />
+    <meta property="og:description" content="A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Authentication Is Not Authorization, and CISSP Is Right to Separate Them" />
+    <meta name="twitter:description" content="A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Authentication Is Not Authorization, and CISSP Is Right to Separate Them",
+        "description": "A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-04T07:00:00+00:00",
+        "dateModified": "2026-04-04T07:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-04T07:00:00+00:00">April 4, 2026</time>
+              <h1 class="post-title">Authentication Is Not Authorization, and CISSP Is Right to Separate Them</h1>
+              
+                <p class="post-dek">A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-5</span>
+                  
+                    <span class="chip">iam</span>
+                  
+                    <span class="chip">authentication</span>
+                  
+                    <span class="chip">authorization</span>
+                  
+                    <span class="chip">accountability</span>
+                  
+                    <span class="chip">mfa</span>
+                  
+                    <span class="chip">passkeys</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Authentication gets too much credit.</p>
+
+<p>A system can have single sign-on, MFA, and a polished login page and still make terrible security decisions after the user gets in. That is how teams end up with breaches that were not really authentication failures at all. They were authorization failures, accountability failures, or both.</p>
+
+<p>That is why CISSP keeps these ideas separate: <strong>identification, authentication, authorization, and accountability</strong>. It is not exam pedantry. It is a useful way to understand where trust is being established, where access is being granted, and where control quietly breaks down.</p>
+
+<p>For software engineers and security-minded builders, this is one of the most practical IAM lessons in the whole series.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" alt="Illustration showing identity flowing through identification, authentication, authorization, and accountability before access is granted." />
+  <figcaption>Good IAM does not stop at login. It carries trust, access decisions, and traceability all the way through the request.</figcaption>
+</figure>
+
+<h2 id="the-four-ideas-cissp-wants-you-to-keep-separate">The four ideas CISSP wants you to keep separate</h2>
+
+<p>One reason IAM gets blurry is that people collapse multiple decisions into the word “auth.”</p>
+
+<p>CISSP is trying to make you more precise.</p>
+
+<h3 id="1-identification-who-is-claiming-to-be-here">1. Identification: who is claiming to be here?</h3>
+
+<p>Identification is the claim.</p>
+
+<p>A user enters a username, selects an account, presents an email address, or a workload presents a service identity. At this point, the system has not yet decided the claim is true. It has only been told which identity is being asserted.</p>
+
+<h3 id="2-authentication-how-much-confidence-do-we-have-in-the-claim">2. Authentication: how much confidence do we have in the claim?</h3>
+
+<p>Authentication is the proof step.</p>
+
+<p>This is where the system evaluates one or more authenticators such as:</p>
+
+<ul>
+  <li>a password or passphrase</li>
+  <li>a one-time code</li>
+  <li>a smart card or certificate</li>
+  <li>a passkey or hardware-backed cryptographic key</li>
+  <li>a biometric used as part of multi-factor authentication</li>
+</ul>
+
+<p>Strong authentication reduces uncertainty. It does <strong>not</strong> automatically decide what the subject should be allowed to do next.</p>
+
+<h3 id="3-authorization-what-is-this-identity-allowed-to-do-right-now">3. Authorization: what is this identity allowed to do right now?</h3>
+
+<p>Authorization is the access decision.</p>
+
+<p>This is where the system determines whether the authenticated user, service, or process can actually perform the requested action on the specific resource in question. That decision may depend on:</p>
+
+<ul>
+  <li>role</li>
+  <li>group membership</li>
+  <li>data ownership</li>
+  <li>device or network context</li>
+  <li>sensitivity of the action</li>
+  <li>time, location, tenant, or business workflow rules</li>
+</ul>
+
+<p>This is where least privilege becomes real.</p>
+
+<h3 id="4-accountability-can-we-trace-the-action-and-hold-it-to-process">4. Accountability: can we trace the action and hold it to process?</h3>
+
+<p>Accountability is what makes actions attributable and reviewable.</p>
+
+<p>It depends on things like:</p>
+
+<ul>
+  <li>unique identities rather than shared accounts</li>
+  <li>durable logs and audit trails</li>
+  <li>clear approval paths</li>
+  <li>separation of duties for sensitive actions</li>
+  <li>evidence that a specific user approved or executed a change</li>
+</ul>
+
+<p>Without accountability, an organization struggles to investigate abuse, mistakes, or fraud even if authentication itself was strong.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/four-as.svg" alt="Diagram distinguishing identification, authentication, authorization, and accountability with simple definitions." />
+  <figcaption>The four ideas work together, but they solve different problems and fail in different ways.</figcaption>
+</figure>
+
+<h2 id="why-authentication-gets-too-much-credit">Why authentication gets too much credit</h2>
+
+<p>A lot of security conversations stall out at the login screen.</p>
+
+<p>Teams say things like:</p>
+
+<ul>
+  <li>“We already have MFA.”</li>
+  <li>“It goes through our SSO provider.”</li>
+  <li>“Only employees can reach that page.”</li>
+  <li>“The user is authenticated, so the request is trusted.”</li>
+</ul>
+
+<p>Those statements may be partially true and still lead to a weak design.</p>
+
+<p>Authentication answers a narrow question: <strong>is this subject likely to be who it claims to be?</strong></p>
+
+<p>It does not answer:</p>
+
+<ul>
+  <li>should this user see this specific customer record?</li>
+  <li>should this session still be trusted for a high-risk action?</li>
+  <li>does this service account really need write access here?</li>
+  <li>can we prove who approved and executed a privileged change?</li>
+</ul>
+
+<p>That is why strong login can coexist with weak security outcomes. Too many organizations improve identity proof at the front door while leaving the interior permissions too broad and the audit trail too thin.</p>
+
+<h2 id="a-realistic-example-the-support-dashboard-that-trusts-the-wrong-thing">A realistic example: the support dashboard that trusts the wrong thing</h2>
+
+<p>Imagine a customer support platform used only by employees.</p>
+
+<p>The company does several things right:</p>
+
+<ul>
+  <li>staff sign in through a central identity provider</li>
+  <li>MFA is enabled</li>
+  <li>sessions expire properly</li>
+  <li>suspicious sign-ins are monitored</li>
+</ul>
+
+<p>So far, so good.</p>
+
+<p>But inside the application, almost every support agent can:</p>
+
+<ul>
+  <li>search any customer account</li>
+  <li>view sensitive profile data</li>
+  <li>revoke MFA methods</li>
+  <li>issue refunds</li>
+  <li>export case history</li>
+</ul>
+
+<p>Nothing about that problem is fixed by saying “the employee was authenticated.”</p>
+
+<p>The employee probably <strong>was</strong> authenticated. The real issue is that the application translated a successful login into overly broad access.</p>
+
+<p>A stronger design would separate the decisions more carefully:</p>
+
+<ul>
+  <li>ordinary support agents can view only the cases assigned to them or their queue</li>
+  <li>especially sensitive records require additional justification or elevated approval</li>
+  <li>token resets or refund actions require step-up authentication</li>
+  <li>high-risk actions are logged with enough detail to support investigation</li>
+  <li>no one person can request, approve, and execute the full sensitive workflow alone</li>
+</ul>
+
+<p>That is a much more mature IAM story. The difference is not better branding around MFA. It is better authorization and accountability discipline.</p>
+
+<h2 id="what-strong-iam-looks-like-in-real-systems">What strong IAM looks like in real systems</h2>
+
+<p>Good IAM is less about one shiny control and more about a stack of ordinary decisions made well.</p>
+
+<h3 id="start-with-identity-lifecycle-discipline">Start with identity lifecycle discipline</h3>
+
+<p>Access problems often begin before the first live request.</p>
+
+<p>Joiner, mover, and leaver processes matter because stale entitlements accumulate quietly. If a role changed six months ago but the old access never came off, the system is already carrying unnecessary exposure.</p>
+
+<h3 id="enforce-authorization-at-the-resource-boundary">Enforce authorization at the resource boundary</h3>
+
+<p>Being on the internal network, behind a VPN, or already signed in should not be treated as a blanket permission model.</p>
+
+<p>Applications and APIs should make access decisions where the resource is actually touched. That is especially important in multi-tenant SaaS systems, internal admin tools, and service-to-service communication.</p>
+
+<h3 id="use-step-up-controls-for-higher-risk-actions">Use step-up controls for higher-risk actions</h3>
+
+<p>Not every action deserves the same level of trust.</p>
+
+<p>Viewing your own dashboard is different from changing payroll information, exporting regulated data, or disabling security settings. Mature systems often require stronger proof or additional approval when the action carries more business risk.</p>
+
+<h3 id="limit-standing-privilege">Limit standing privilege</h3>
+
+<p>Privileged access that is always on becomes an attacker’s shortcut.</p>
+
+<p>That is true for administrators, developers, service accounts, and automation identities. Just-in-time access, time-boxed elevation, and narrower machine permissions reduce blast radius far more effectively than broad permanent rights with a promise to “monitor everything.”</p>
+
+<h3 id="make-actions-attributable">Make actions attributable</h3>
+
+<p>If a shared admin account performs a critical action, the organization has already lost something important even before an incident occurs. Unique identities, approval records, and tamper-resistant logs are what turn access control into something governable.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/step-up-access.svg" alt="Side-by-side flow comparing ordinary low-risk access with high-risk actions that require step-up authentication, approval, and audit logging." />
+  <figcaption>Good IAM scales trust with risk instead of treating every authenticated session as equally safe.</figcaption>
+</figure>
+
+<h2 id="where-passkeys-and-phishing-resistant-mfa-fit">Where passkeys and phishing-resistant MFA fit</h2>
+
+<p>This is one of those CISSP topics where established principles and current industry direction line up nicely.</p>
+
+<p>The established part is old and stable:</p>
+
+<ul>
+  <li>identify the subject clearly</li>
+  <li>authenticate with appropriate assurance</li>
+  <li>authorize based on business need and least privilege</li>
+  <li>preserve accountability through logging and process control</li>
+</ul>
+
+<p>The newer emphasis is in <strong>how</strong> organizations strengthen authentication.</p>
+
+<p>Current NIST digital identity guidance continues to push toward higher-assurance, phishing-resistant options for stronger environments. That is one reason passkeys and other cryptographic authenticators matter so much right now. They are better at resisting replay and phishing than passwords, SMS codes, or approval-fatigue patterns alone.</p>
+
+<p>But this is the important qualifier: <strong>better authentication does not replace authorization design</strong>.</p>
+
+<p>A passkey can make it much harder for the wrong person to log in as me. It does not decide whether my account should be able to export every customer record, approve its own privileged exception, or keep broad standing access forever.</p>
+
+<p>That is the mistake CISSP is quietly trying to keep people from making.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, this topic often hides inside a best-answer pattern.</p>
+
+<p>CISSP usually wants you to think like the person responsible for business risk, not just like the person configuring a login prompt.</p>
+
+<p>That means the stronger answer often does one or more of the following:</p>
+
+<ul>
+  <li>separates authentication from authorization cleanly</li>
+  <li>reduces privileges to the minimum necessary level</li>
+  <li>adds accountability and approval to sensitive actions</li>
+  <li>favors centralized control and review over ad hoc exceptions</li>
+  <li>picks the response that improves overall governance, not just one technical step</li>
+</ul>
+
+<p>If a question describes fraud, excessive access, or misuse after login, the best answer is often not simply “enable MFA” in isolation. It may be tighter authorization, better separation of duties, more appropriate recertification, or stronger accountability for privileged activity.</p>
+
+<h2 id="a-practical-checklist-for-engineers-and-cissp-candidates">A practical checklist for engineers and CISSP candidates</h2>
+
+<p>A few questions help keep this topic grounded:</p>
+
+<ul>
+  <li>What identity is being claimed here?</li>
+  <li>How is that claim being authenticated?</li>
+  <li>What exact resource or action is being authorized?</li>
+  <li>Is the access still appropriate for the user’s current role?</li>
+  <li>Would this action deserve step-up authentication or approval?</li>
+  <li>If something goes wrong, can we tell who did what and when?</li>
+  <li>Are we relying on network location or prior login more than we should?</li>
+</ul>
+
+<p>That is the kind of reasoning that improves both architecture reviews and exam answers.</p>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>A lot of insecure systems are not failing because nobody implemented login.</p>
+
+<p>They fail because the organization stopped thinking once the login succeeded.</p>
+
+<p>CISSP is right to keep identification, authentication, authorization, and accountability separate because each one answers a different risk question. The systems that handle those questions distinctly tend to be safer, easier to govern, and easier to explain after something goes wrong.</p>
+
+<p>If you are studying too, this is one of those topics worth learning as a model for real systems, not just as a vocabulary list.</p>
+
+<hr />
+
+<p><em>Post 9 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn why authentication is not authorization in CISSP and real-world IAM, including identification, MFA, accountability, and step-up access decisions.
+
+**SEO keyword ideas:**
+1. CISSP authentication vs authorization
+2. identification authentication authorization accountability explained
+3. CISSP IAM domain 5 study guide
+4. phishing resistant MFA and passkeys CISSP
+5. least privilege and accountability in IAM -->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
