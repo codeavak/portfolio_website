@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Risk Management Gets Real When You Have to Choose a Treatment"
-date: 2026-04-01 06:00:00 -0700
+date: 2026-04-01 00:00:00 +0000
 categories: [security, cissp]
 tags: [cissp, domain-1, risk-management, qualitative-risk, quantitative-risk, sle, aro, ale]
 excerpt: "Risk management is not about memorizing formulas. It is about comparing impact, likelihood, and treatment options well enough to make a defensible business decision. Post 3 of 60 in my CISSP study series."

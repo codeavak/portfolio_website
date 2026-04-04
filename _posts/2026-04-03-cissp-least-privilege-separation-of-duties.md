@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Least Privilege Is Easy to Praise and Hard to Practice"
-date: 2026-04-03 00:05:00 -0700
+date: 2026-04-03 00:05:00 +0000
 categories: [security, cissp]
 tags:
   [

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Classification Only Works When Handling Rules Are Real"
-date: 2026-04-03 00:15:00 -0700
+date: 2026-04-03 00:10:00 +0000
 categories: [security, cissp]
 tags: [cissp, domain-2, asset-security, data-classification, data-ownership, data-retention, media-sanitization]
 excerpt: "Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series."
