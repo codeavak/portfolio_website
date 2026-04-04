@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Provisioning and Deprovisioning Are Security Controls, Not IT Chores"
-date: 2026-04-04 00:10:00 -0700
+date: 2026-04-04 00:10:00 +0000
 categories: [security, cissp]
 tags:
   [
