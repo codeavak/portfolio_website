@@ -1,4 +1,227 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T14:53:56+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Authentication Is Not Authorization, and CISSP Is Right to Separate Them</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" rel="alternate" type="text/html" title="Authentication Is Not Authorization, and CISSP Is Right to Separate Them" /><published>2026-04-04T07:00:00+00:00</published><updated>2026-04-04T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/"><![CDATA[<p>Authentication gets too much credit.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T15:10:28+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">Provisioning and Deprovisioning Are Security Controls, Not IT Chores</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/" rel="alternate" type="text/html" title="Provisioning and Deprovisioning Are Security Controls, Not IT Chores" /><published>2026-04-04T00:10:00+00:00</published><updated>2026-04-04T00:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/"><![CDATA[<p>A lot of access-control failures do not begin with an advanced attacker.</p>
+
+<p>They begin with something much less dramatic: a contractor account that stayed active after the project ended, a role change that left old permissions in place, or a service identity that accumulated broad rights because nobody wanted deployment friction.</p>
+
+<p>That is why identity and access management in CISSP is not just about passwords, MFA, or login prompts. It is also about <strong>lifecycle discipline</strong>: how access is requested, approved, granted, reviewed, changed, and removed over time.</p>
+
+<p>In real organizations, that is often where access control quietly succeeds or fails.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" alt="Illustration showing access requests moving through approval, provisioning, review, and deprovisioning as part of a secure identity lifecycle." />
+  <figcaption>Strong identity security is not just about who gets in. It is about how access changes across the full account lifecycle.</figcaption>
+</figure>
+
+<h2 id="why-this-topic-matters-more-than-teams-admit">Why this topic matters more than teams admit</h2>
+
+<p>Security teams often talk about authentication because it is visible.</p>
+
+<p>Lifecycle failures are quieter. They sit in ticket queues, directory groups, cloud roles, vendor accounts, and long-lived service principals. They are less exciting than a new security product, but they shape a lot of real risk.</p>
+
+<p>That is why CISSP expects you to understand identity lifecycle management as part of broader access control discipline. If the wrong access is granted, never reviewed, or not removed promptly, the quality of the login process only solves part of the problem.</p>
+
+<p>A perfectly authenticated user can still do too much.</p>
+
+<h2 id="what-cissp-means-by-identity-lifecycle-management">What CISSP means by identity lifecycle management</h2>
+
+<p>At a practical level, this topic covers the ordinary but high-impact controls around the lifecycle of identities and entitlements.</p>
+
+<p>That includes:</p>
+
+<ul>
+  <li><strong>provisioning</strong> access for new users, contractors, and services</li>
+  <li><strong>modifying</strong> access when responsibilities change</li>
+  <li><strong>reviewing</strong> access periodically for continued business need</li>
+  <li><strong>revoking</strong> access promptly when employment, assignments, or third-party relationships end</li>
+  <li><strong>documenting approval and ownership</strong> so the business, not just IT, is accountable for sensitive access decisions</li>
+</ul>
+
+<p>You will often hear this framed as <strong>joiners, movers, and leavers</strong>.</p>
+
+<p>That sounds administrative until you notice how many incidents trace back to one of those transitions being handled poorly.</p>
+
+<h2 id="three-places-access-control-quietly-breaks-down">Three places access control quietly breaks down</h2>
+
+<h3 id="1-joiners-get-broad-access-because-it-feels-faster">1. Joiners get broad access because it feels faster</h3>
+
+<p>New employees need to become productive quickly, so organizations often solve the problem with convenience:</p>
+
+<ul>
+  <li>oversized default roles</li>
+  <li>inherited group membership from the team rather than the job</li>
+  <li>emergency access that becomes permanent</li>
+  <li>one starter profile used for many different responsibilities</li>
+</ul>
+
+<p>This is how overprovisioning starts. It usually feels efficient in the moment and expensive later.</p>
+
+<p>A better pattern is role-appropriate baseline access, data-owner approval for sensitive resources, and a clear separation between ordinary access and privileged access.</p>
+
+<h3 id="2-movers-keep-old-permissions-long-after-their-role-changed">2. Movers keep old permissions long after their role changed</h3>
+
+<p>This is one of the most common real-world failures.</p>
+
+<p>Someone moves from one team to another, gets added to the new groups, but their old permissions are never removed with the same urgency. Over time, the account reflects three or four historical jobs instead of one current role.</p>
+
+<p>That is <strong>permission creep</strong>, and it quietly undermines least privilege.</p>
+
+<p>It also creates a misleading sense of legitimacy because every individual permission may once have been approved. The problem is that the combination no longer matches the user’s actual need.</p>
+
+<h3 id="3-leavers-and-third-parties-stay-around-too-long">3. Leavers and third parties stay around too long</h3>
+
+<p>When an employee leaves, a vendor engagement ends, or a temporary assignment is complete, access should be revoked promptly.</p>
+
+<p>But in practice, delays happen because:</p>
+
+<ul>
+  <li>HR updates and technical deprovisioning are not tightly connected</li>
+  <li>system owners assume someone else removed the access</li>
+  <li>service accounts have no clear owner</li>
+  <li>third-party access lives outside the normal identity governance process</li>
+</ul>
+
+<p>This is where stale accounts become an attacker’s gift. An old account with residual access is often much easier to abuse than a freshly defended front door.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/lifecycle-loop.svg" alt="Diagram showing joiner, mover, and leaver events feeding into approval, provisioning, review, and deprovisioning controls." />
+  <figcaption>Identity lifecycle discipline matters most at the transitions: new access, changed access, and removed access.</figcaption>
+</figure>
+
+<h2 id="a-realistic-example-the-engineer-who-never-really-changed-roles">A realistic example: the engineer who never really changed roles</h2>
+
+<p>Imagine a senior engineer starts in application development. They get access to source code, lower environments, build systems, and a few production troubleshooting tools.</p>
+
+<p>A year later, they move into a platform role and receive broader cloud permissions to support deployments. Then they take on temporary on-call coverage and receive a few more emergency privileges.</p>
+
+<p>Individually, each approval made sense.</p>
+
+<p>The problem is what happens next: nobody removes the earlier access because nothing looks obviously wrong. The engineer now has a blended entitlement set across development, operations, and emergency administration.</p>
+
+<p>If that account is compromised, the attacker inherits a much wider attack path. If the engineer makes a mistake, the blast radius is larger than anyone intended.</p>
+
+<p>The root issue is not poor intent or weak authentication. It is weak lifecycle management.</p>
+
+<p>A stronger model would:</p>
+
+<ul>
+  <li>assign a role-aligned baseline for each position</li>
+  <li>time-box temporary elevation</li>
+  <li>require review when responsibilities change</li>
+  <li>separate daily-use access from privileged administration</li>
+  <li>remove old entitlements as deliberately as new ones are added</li>
+</ul>
+
+<p>That is exactly the kind of reasoning CISSP wants you to practice.</p>
+
+<h2 id="why-machine-identities-make-this-harder-now">Why machine identities make this harder now</h2>
+
+<p>This topic used to feel mostly human.</p>
+
+<p>It no longer is.</p>
+
+<p>Modern environments are full of <strong>non-human identities</strong>:</p>
+
+<ul>
+  <li>service accounts</li>
+  <li>cloud roles and service principals</li>
+  <li>CI/CD identities</li>
+  <li>API keys and tokens</li>
+  <li>automation accounts used by infrastructure and integrations</li>
+</ul>
+
+<p>These identities often have broad, persistent permissions because tightening them takes work. They also tend to be reviewed less rigorously than human access, even though they may hold some of the most sensitive privileges in the environment.</p>
+
+<p>That is one reason current identity discussions increasingly focus on short-lived credentials, scoped workload identities, and stronger ownership of machine access. The principle is not new; the scale of the problem is.</p>
+
+<h2 id="where-zero-trust-and-just-in-time-access-fit">Where zero trust and just-in-time access fit</h2>
+
+<p>This is one of those CISSP topics where established principles and current direction line up well.</p>
+
+<p>The established principles are familiar:</p>
+
+<ul>
+  <li>least privilege</li>
+  <li>need to know</li>
+  <li>separation of duties</li>
+  <li>periodic review</li>
+  <li>prompt revocation when access is no longer justified</li>
+</ul>
+
+<p>The newer operational framing is more identity-centered. NIST SP 800-207 continues to describe zero trust as shifting attention away from static network perimeters and toward users, assets, and resources. That reinforces the idea that access should be evaluated deliberately and continuously, not assumed safe because someone is already “inside.”</p>
+
+<p>That is also why just-in-time access, shorter-lived elevation, and tighter entitlement review keep showing up in modern identity programs.</p>
+
+<p>But it is worth saying plainly: <strong>zero trust is not a substitute for cleanup</strong>.</p>
+
+<p>An organization can adopt modern language and still leave stale roles, standing privilege, and ownerless service accounts all over the environment. Good identity lifecycle management is what keeps access discipline grounded in reality.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, this topic is usually wrapped inside a broader best-answer pattern.</p>
+
+<p>CISSP wants you to think like someone managing business risk, not just like someone approving a ticket faster.</p>
+
+<p>That means the stronger answer often:</p>
+
+<ul>
+  <li>gives access based on documented business need</li>
+  <li>uses the proper owner or manager for approval</li>
+  <li>limits privileges to the minimum necessary scope</li>
+  <li>reviews access periodically</li>
+  <li>removes or adjusts access promptly when roles change or end</li>
+  <li>avoids concentrating sensitive functions in one unchecked identity</li>
+</ul>
+
+<p>If a question asks what should happen when an employee transfers roles, the best answer is rarely “just add the new access.” It is usually something closer to <strong>re-evaluate and provision only what the new role requires while removing what no longer fits</strong>.</p>
+
+<p>That is a very CISSP way of thinking: risk-aware, process-aware, and bigger than the immediate technical action.</p>
+
+<h2 id="a-practical-checklist-for-real-teams">A practical checklist for real teams</h2>
+
+<p>A few questions go a long way here:</p>
+
+<ul>
+  <li>Who owns this access decision?</li>
+  <li>Is the access tied to a current role or to historical convenience?</li>
+  <li>Does this identity still need the privilege today?</li>
+  <li>Is privileged access separated from daily-use access?</li>
+  <li>Are temporary exceptions time-boxed and reviewed?</li>
+  <li>If a contractor leaves tomorrow, what would automatically shut off?</li>
+  <li>Which machine identities have powerful permissions but weak ownership?</li>
+  <li>Are periodic access reviews actually removing anything, or just rubber-stamping the current state?</li>
+</ul>
+
+<p>Those are not glamorous questions. They are exactly the kind that prevent ordinary drift from turning into a meaningful incident.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/access-review-cycle.svg" alt="Access review cycle showing request, owner approval, provisioning, time-boxing, review, and removal of stale entitlements." />
+  <figcaption>Access control works best as a lifecycle with ownership, review, and removal built in—not as a one-time provisioning event.</figcaption>
+</figure>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>A lot of security failures are not really authorization design failures or authentication failures alone.</p>
+
+<p>They are <strong>lifecycle failures</strong>.</p>
+
+<p>The organization granted access too broadly, changed it too casually, reviewed it too weakly, or removed it too late. CISSP is right to treat that as security work rather than administrative cleanup, because access governance shapes risk long before an attacker tries to exploit it.</p>
+
+<p>If you are studying too, this is one of the topics worth learning as an operating habit, not just an exam answer.</p>
+
+<hr />
+
+<p><em>Post 10 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn why provisioning, deprovisioning, and identity lifecycle management are core CISSP access-control concepts for real-world security teams.
+
+**SEO keyword ideas:**
+1. CISSP identity lifecycle management
+2. provisioning and deprovisioning security controls
+3. joiners movers leavers access control
+4. least privilege access review CISSP
+5. IAM lifecycle management best practices -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="identity-lifecycle" /><category term="provisioning" /><category term="deprovisioning" /><category term="least-privilege" /><category term="zero-trust" /><summary type="html"><![CDATA[Many access-control failures start long before an incident—when access is granted too broadly, reviewed too rarely, or removed too late. This CISSP-focused guide explains identity lifecycle management, joiners/movers/leavers, and why access reviews still matter. Post 10 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Authentication Is Not Authorization, and CISSP Is Right to Separate Them</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" rel="alternate" type="text/html" title="Authentication Is Not Authorization, and CISSP Is Right to Separate Them" /><published>2026-04-04T00:00:00+00:00</published><updated>2026-04-04T00:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/"><![CDATA[<p>Authentication gets too much credit.</p>
 
 <p>A system can have single sign-on, MFA, and a polished login page and still make terrible security decisions after the user gets in. That is how teams end up with breaches that were not really authentication failures at all. They were authorization failures, accountability failures, or both.</p>
 
@@ -264,7 +487,168 @@
 2. identification authentication authorization accountability explained
 3. CISSP IAM domain 5 study guide
 4. phishing resistant MFA and passkeys CISSP
-5. least privilege and accountability in IAM -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="authentication" /><category term="authorization" /><category term="accountability" /><category term="mfa" /><category term="passkeys" /><summary type="html"><![CDATA[A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
+5. least privilege and accountability in IAM -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="authentication" /><category term="authorization" /><category term="accountability" /><category term="mfa" /><category term="passkeys" /><summary type="html"><![CDATA[A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Defense in Depth Is What Keeps One Failure from Becoming an Incident</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/" rel="alternate" type="text/html" title="Defense in Depth Is What Keeps One Failure from Becoming an Incident" /><published>2026-04-03T00:15:00+00:00</published><updated>2026-04-03T00:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/"><![CDATA[<p>A lot of security plans quietly depend on one thing working perfectly.</p>
+
+<p>The firewall has to block it. MFA has to stop it. The code review has to catch it. The admin approval flow has to work every time. Real systems do not stay that neat for very long.</p>
+
+<p>People make mistakes. Configurations drift. Attackers look for the one gap the team assumed was “good enough.” That is why defense in depth remains one of the most durable ideas in CISSP and in real security work: it assumes that any single control can fail, and it designs accordingly.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" alt="Layered security diagram showing identity, application, data, monitoring, and recovery controls surrounding a business system." />
+  <figcaption>Defense in depth is what keeps one miss, one mistake, or one bypass from turning into a full incident.</figcaption>
+</figure>
+
+<h2 id="defense-in-depth-is-not-buy-more-tools">Defense in depth is not “buy more tools”</h2>
+
+<p>Defense in depth means using <strong>multiple layers of protection</strong> so that the failure of one safeguard does not automatically become the failure of the whole system.</p>
+
+<p>That does not mean adding random products until the architecture is hard to explain. Good layering is more disciplined than that. It asks whether the organization has meaningful protection across several dimensions:</p>
+
+<ul>
+  <li><strong>administrative controls</strong> such as policy, approval, separation of duties, and training</li>
+  <li><strong>technical controls</strong> such as authentication, authorization, segmentation, encryption, and logging</li>
+  <li><strong>physical controls</strong> where they matter, including facility and device protections</li>
+  <li><strong>preventive, detective, and corrective</strong> measures rather than a single kind of control</li>
+</ul>
+
+<p>This is one reason CISSP likes the concept so much. It reflects mature security thinking: assume imperfection, reduce single points of failure, and design for resilience rather than wishful certainty.</p>
+
+<h2 id="why-this-still-matters-in-cloud-saas-and-ai-heavy-environments">Why this still matters in cloud, SaaS, and AI-heavy environments</h2>
+
+<p>The principle itself is not new. What has changed is where the layers live.</p>
+
+<p>In older mental models, security discussions often revolved around the network perimeter. In modern environments, the control plane is far more distributed. Identity systems, cloud permissions, SaaS admin consoles, CI/CD pipelines, secrets stores, and endpoint posture all influence whether an attacker can move deeper into the environment.</p>
+
+<p>That is where current guidance still lines up well with the classic CISSP approach. NIST CSF 2.0 continues to frame cybersecurity as risk reduction across the organization, and NIST SP 800-207 describes zero trust as a shift away from assuming static, network-based trust. Neither idea replaces defense in depth. They make it more necessary.</p>
+
+<p>A modern layered model often includes:</p>
+
+<ul>
+  <li>strong identity verification and phishing-resistant MFA where possible</li>
+  <li>least privilege and just-in-time elevation for privileged tasks</li>
+  <li>secure configuration baselines and infrastructure guardrails</li>
+  <li>application-layer authorization instead of trusting network location alone</li>
+  <li>logging, alerting, and retention that support real investigation</li>
+  <li>tested backup and recovery paths when prevention does not hold</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/control-layers.svg" alt="Stacked control layers showing governance, identity, application, data, monitoring, and recovery working together." />
+  <figcaption>The important question is not whether you have one control. It is whether the controls meaningfully support each other.</figcaption>
+</figure>
+
+<h2 id="a-realistic-example-one-compromised-identity-very-different-outcomes">A realistic example: one compromised identity, very different outcomes</h2>
+
+<p>Imagine a support engineer at a SaaS company clicks a convincing phishing link and unintentionally hands over a valid session token.</p>
+
+<p>If the organization is relying on a single layer, the attacker may now have a direct path into customer-impacting systems. From there, the attacker might browse internal tools, access sensitive tickets, escalate to privileged roles, disable monitoring, or pivot toward production resources.</p>
+
+<p>Now imagine the same situation in an environment built with defense in depth in mind.</p>
+
+<p>The identity is still compromised, which is serious. But several other layers start reducing the damage:</p>
+
+<ul>
+  <li>the engineer’s role is limited by least privilege</li>
+  <li>privileged actions require step-up authentication or a separate admin flow</li>
+  <li>internal tools enforce additional authorization checks</li>
+  <li>sensitive systems are segmented and not broadly reachable</li>
+  <li>high-risk changes generate alerts in a logging system the engineer cannot quietly disable</li>
+  <li>incident response playbooks support rapid token revocation and containment</li>
+</ul>
+
+<p>The phishing event still matters. But it no longer guarantees full organizational exposure.</p>
+
+<p>That is the real value of defense in depth. It does not promise that nothing bad will happen. It makes the outcome smaller, slower, noisier, and easier to contain.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, defense in depth is rarely about choosing a slogan. It is usually part of a broader best-answer pattern.</p>
+
+<p>CISSP wants you to recognize that strong security programs:</p>
+
+<ul>
+  <li>avoid dependence on one control or one person</li>
+  <li>use layers that address different parts of the risk</li>
+  <li>combine people, process, and technology instead of over-trusting any single one</li>
+  <li>balance prevention with detection and recovery</li>
+  <li>reduce business risk without pretending that perfect prevention exists</li>
+</ul>
+
+<p>That is why a layered answer often beats a narrower one.</p>
+
+<p>If a question asks how to protect a sensitive system, the strongest answer usually does more than say “install a firewall” or “enable logging.” It reflects a design mindset that assumes controls can fail and that accountability, visibility, and recovery matter too.</p>
+
+<h2 id="common-mistakes-teams-make-when-they-think-they-are-doing-layering">Common mistakes teams make when they think they are doing layering</h2>
+
+<p>A lot of environments look layered on paper but remain fragile in practice.</p>
+
+<h3 id="1-every-layer-depends-on-the-same-identity-plane">1. Every layer depends on the same identity plane</h3>
+
+<p>If one privileged identity can change the cloud configuration, disable logging, weaken security tooling, and access the secrets store, the environment may have many products but still too little separation.</p>
+
+<h3 id="2-the-controls-are-duplicates-not-layers">2. The controls are duplicates, not layers</h3>
+
+<p>Buying two tools that do roughly the same thing is not the same as designing complementary protections. Real layers should catch different failure modes.</p>
+
+<h3 id="3-detection-exists-but-response-is-weak">3. Detection exists, but response is weak</h3>
+
+<p>Many teams are better at generating alerts than acting on them. A detective control without an operational response path is helpful, but incomplete.</p>
+
+<h3 id="4-exceptions-quietly-punch-through-everything">4. Exceptions quietly punch through everything</h3>
+
+<p>Temporary access, emergency firewall rules, broad service accounts, or unreviewed integrations can undermine several layers at once. This is one of the most common ways mature-looking environments become easier to compromise than they appear.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/attack-path.svg" alt="Comparison showing a single-control environment versus a layered-control environment interrupting an attacker path." />
+  <figcaption>Layering works best when each control interrupts a different stage of the attack path.</figcaption>
+</figure>
+
+<h2 id="what-good-defense-in-depth-looks-like-in-ordinary-organizations">What good defense in depth looks like in ordinary organizations</h2>
+
+<p>It usually looks less dramatic than conference talks make it sound.</p>
+
+<p>A mature organization often improves layering through steady, unglamorous decisions:</p>
+
+<ul>
+  <li>review privileged access and remove standing rights that are no longer justified</li>
+  <li>separate daily-use identities from high-risk administrative activity</li>
+  <li>protect critical systems with more than one approval or verification step</li>
+  <li>enforce authorization checks at the application and data levels, not just at the edge</li>
+  <li>centralize logs in a place that is hard for an attacker to tamper with</li>
+  <li>rehearse recovery so backups are not just a comforting idea</li>
+</ul>
+
+<p>None of those steps is flashy on its own. Together, they make the environment far more resilient.</p>
+
+<h2 id="the-practical-question-worth-remembering">The practical question worth remembering</h2>
+
+<p>If you are studying for CISSP, one question is worth carrying into almost every architecture and operations topic:</p>
+
+<p><strong>If this control fails, what still stands?</strong></p>
+
+<p>That question improves exam judgment because it pushes you toward layered, risk-based answers. It also improves real-world security because it forces the team to stop treating one safeguard as a magic guarantee.</p>
+
+<p>The more I work through CISSP material, the more this seems to be the pattern underneath a lot of the certification: mature security is not built on optimism. It is built on thoughtful design that expects failure, limits blast radius, and keeps the business able to recover.</p>
+
+<p>Defense in depth is one of the clearest examples of that mindset.</p>
+
+<p>If you are studying too, this is one of those ideas worth understanding beyond the flashcard definition.</p>
+
+<hr />
+
+<p><em>Post 7 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn how defense in depth works in CISSP and real-world security, including layered controls for cloud, SaaS, identity, detection, and recovery.
+
+**SEO keyword ideas:**
+1. CISSP defense in depth explained
+2. defense in depth layered security examples
+3. zero trust vs defense in depth
+4. CISSP security architecture principles
+5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T00:10:00+00:00</published><updated>2026-04-03T00:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
 
 <p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
 
@@ -475,168 +859,7 @@
 2. data owner vs custodian CISSP
 3. CISSP Domain 2 asset security examples
 4. data retention and media sanitization cybersecurity
-5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Defense in Depth Is What Keeps One Failure from Becoming an Incident</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/" rel="alternate" type="text/html" title="Defense in Depth Is What Keeps One Failure from Becoming an Incident" /><published>2026-04-03T07:15:00+00:00</published><updated>2026-04-03T07:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/"><![CDATA[<p>A lot of security plans quietly depend on one thing working perfectly.</p>
-
-<p>The firewall has to block it. MFA has to stop it. The code review has to catch it. The admin approval flow has to work every time. Real systems do not stay that neat for very long.</p>
-
-<p>People make mistakes. Configurations drift. Attackers look for the one gap the team assumed was “good enough.” That is why defense in depth remains one of the most durable ideas in CISSP and in real security work: it assumes that any single control can fail, and it designs accordingly.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" alt="Layered security diagram showing identity, application, data, monitoring, and recovery controls surrounding a business system." />
-  <figcaption>Defense in depth is what keeps one miss, one mistake, or one bypass from turning into a full incident.</figcaption>
-</figure>
-
-<h2 id="defense-in-depth-is-not-buy-more-tools">Defense in depth is not “buy more tools”</h2>
-
-<p>Defense in depth means using <strong>multiple layers of protection</strong> so that the failure of one safeguard does not automatically become the failure of the whole system.</p>
-
-<p>That does not mean adding random products until the architecture is hard to explain. Good layering is more disciplined than that. It asks whether the organization has meaningful protection across several dimensions:</p>
-
-<ul>
-  <li><strong>administrative controls</strong> such as policy, approval, separation of duties, and training</li>
-  <li><strong>technical controls</strong> such as authentication, authorization, segmentation, encryption, and logging</li>
-  <li><strong>physical controls</strong> where they matter, including facility and device protections</li>
-  <li><strong>preventive, detective, and corrective</strong> measures rather than a single kind of control</li>
-</ul>
-
-<p>This is one reason CISSP likes the concept so much. It reflects mature security thinking: assume imperfection, reduce single points of failure, and design for resilience rather than wishful certainty.</p>
-
-<h2 id="why-this-still-matters-in-cloud-saas-and-ai-heavy-environments">Why this still matters in cloud, SaaS, and AI-heavy environments</h2>
-
-<p>The principle itself is not new. What has changed is where the layers live.</p>
-
-<p>In older mental models, security discussions often revolved around the network perimeter. In modern environments, the control plane is far more distributed. Identity systems, cloud permissions, SaaS admin consoles, CI/CD pipelines, secrets stores, and endpoint posture all influence whether an attacker can move deeper into the environment.</p>
-
-<p>That is where current guidance still lines up well with the classic CISSP approach. NIST CSF 2.0 continues to frame cybersecurity as risk reduction across the organization, and NIST SP 800-207 describes zero trust as a shift away from assuming static, network-based trust. Neither idea replaces defense in depth. They make it more necessary.</p>
-
-<p>A modern layered model often includes:</p>
-
-<ul>
-  <li>strong identity verification and phishing-resistant MFA where possible</li>
-  <li>least privilege and just-in-time elevation for privileged tasks</li>
-  <li>secure configuration baselines and infrastructure guardrails</li>
-  <li>application-layer authorization instead of trusting network location alone</li>
-  <li>logging, alerting, and retention that support real investigation</li>
-  <li>tested backup and recovery paths when prevention does not hold</li>
-</ul>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/control-layers.svg" alt="Stacked control layers showing governance, identity, application, data, monitoring, and recovery working together." />
-  <figcaption>The important question is not whether you have one control. It is whether the controls meaningfully support each other.</figcaption>
-</figure>
-
-<h2 id="a-realistic-example-one-compromised-identity-very-different-outcomes">A realistic example: one compromised identity, very different outcomes</h2>
-
-<p>Imagine a support engineer at a SaaS company clicks a convincing phishing link and unintentionally hands over a valid session token.</p>
-
-<p>If the organization is relying on a single layer, the attacker may now have a direct path into customer-impacting systems. From there, the attacker might browse internal tools, access sensitive tickets, escalate to privileged roles, disable monitoring, or pivot toward production resources.</p>
-
-<p>Now imagine the same situation in an environment built with defense in depth in mind.</p>
-
-<p>The identity is still compromised, which is serious. But several other layers start reducing the damage:</p>
-
-<ul>
-  <li>the engineer’s role is limited by least privilege</li>
-  <li>privileged actions require step-up authentication or a separate admin flow</li>
-  <li>internal tools enforce additional authorization checks</li>
-  <li>sensitive systems are segmented and not broadly reachable</li>
-  <li>high-risk changes generate alerts in a logging system the engineer cannot quietly disable</li>
-  <li>incident response playbooks support rapid token revocation and containment</li>
-</ul>
-
-<p>The phishing event still matters. But it no longer guarantees full organizational exposure.</p>
-
-<p>That is the real value of defense in depth. It does not promise that nothing bad will happen. It makes the outcome smaller, slower, noisier, and easier to contain.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, defense in depth is rarely about choosing a slogan. It is usually part of a broader best-answer pattern.</p>
-
-<p>CISSP wants you to recognize that strong security programs:</p>
-
-<ul>
-  <li>avoid dependence on one control or one person</li>
-  <li>use layers that address different parts of the risk</li>
-  <li>combine people, process, and technology instead of over-trusting any single one</li>
-  <li>balance prevention with detection and recovery</li>
-  <li>reduce business risk without pretending that perfect prevention exists</li>
-</ul>
-
-<p>That is why a layered answer often beats a narrower one.</p>
-
-<p>If a question asks how to protect a sensitive system, the strongest answer usually does more than say “install a firewall” or “enable logging.” It reflects a design mindset that assumes controls can fail and that accountability, visibility, and recovery matter too.</p>
-
-<h2 id="common-mistakes-teams-make-when-they-think-they-are-doing-layering">Common mistakes teams make when they think they are doing layering</h2>
-
-<p>A lot of environments look layered on paper but remain fragile in practice.</p>
-
-<h3 id="1-every-layer-depends-on-the-same-identity-plane">1. Every layer depends on the same identity plane</h3>
-
-<p>If one privileged identity can change the cloud configuration, disable logging, weaken security tooling, and access the secrets store, the environment may have many products but still too little separation.</p>
-
-<h3 id="2-the-controls-are-duplicates-not-layers">2. The controls are duplicates, not layers</h3>
-
-<p>Buying two tools that do roughly the same thing is not the same as designing complementary protections. Real layers should catch different failure modes.</p>
-
-<h3 id="3-detection-exists-but-response-is-weak">3. Detection exists, but response is weak</h3>
-
-<p>Many teams are better at generating alerts than acting on them. A detective control without an operational response path is helpful, but incomplete.</p>
-
-<h3 id="4-exceptions-quietly-punch-through-everything">4. Exceptions quietly punch through everything</h3>
-
-<p>Temporary access, emergency firewall rules, broad service accounts, or unreviewed integrations can undermine several layers at once. This is one of the most common ways mature-looking environments become easier to compromise than they appear.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/attack-path.svg" alt="Comparison showing a single-control environment versus a layered-control environment interrupting an attacker path." />
-  <figcaption>Layering works best when each control interrupts a different stage of the attack path.</figcaption>
-</figure>
-
-<h2 id="what-good-defense-in-depth-looks-like-in-ordinary-organizations">What good defense in depth looks like in ordinary organizations</h2>
-
-<p>It usually looks less dramatic than conference talks make it sound.</p>
-
-<p>A mature organization often improves layering through steady, unglamorous decisions:</p>
-
-<ul>
-  <li>review privileged access and remove standing rights that are no longer justified</li>
-  <li>separate daily-use identities from high-risk administrative activity</li>
-  <li>protect critical systems with more than one approval or verification step</li>
-  <li>enforce authorization checks at the application and data levels, not just at the edge</li>
-  <li>centralize logs in a place that is hard for an attacker to tamper with</li>
-  <li>rehearse recovery so backups are not just a comforting idea</li>
-</ul>
-
-<p>None of those steps is flashy on its own. Together, they make the environment far more resilient.</p>
-
-<h2 id="the-practical-question-worth-remembering">The practical question worth remembering</h2>
-
-<p>If you are studying for CISSP, one question is worth carrying into almost every architecture and operations topic:</p>
-
-<p><strong>If this control fails, what still stands?</strong></p>
-
-<p>That question improves exam judgment because it pushes you toward layered, risk-based answers. It also improves real-world security because it forces the team to stop treating one safeguard as a magic guarantee.</p>
-
-<p>The more I work through CISSP material, the more this seems to be the pattern underneath a lot of the certification: mature security is not built on optimism. It is built on thoughtful design that expects failure, limits blast radius, and keeps the business able to recover.</p>
-
-<p>Defense in depth is one of the clearest examples of that mindset.</p>
-
-<p>If you are studying too, this is one of those ideas worth understanding beyond the flashcard definition.</p>
-
-<hr />
-
-<p><em>Post 7 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn how defense in depth works in CISSP and real-world security, including layered controls for cloud, SaaS, identity, detection, and recovery.
-
-**SEO keyword ideas:**
-1. CISSP defense in depth explained
-2. defense in depth layered security examples
-3. zero trust vs defense in depth
-4. CISSP security architecture principles
-5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T07:05:00+00:00</published><updated>2026-04-03T07:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
+5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T00:05:00+00:00</published><updated>2026-04-03T00:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
 
 <p>Then real systems show up.</p>
 
@@ -889,7 +1112,7 @@
 2. separation of duties cybersecurity examples
 3. need to know vs least privilege CISSP
 4. zero trust and least privilege access control
-5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secure Design Principles Matter Long Before an Incident Does</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/" rel="alternate" type="text/html" title="Secure Design Principles Matter Long Before an Incident Does" /><published>2026-04-03T07:00:00+00:00</published><updated>2026-04-03T07:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/"><![CDATA[<p>A lot of incidents get described as if they were sudden surprises.</p>
+5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secure Design Principles Matter Long Before an Incident Does</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/" rel="alternate" type="text/html" title="Secure Design Principles Matter Long Before an Incident Does" /><published>2026-04-03T00:00:00+00:00</published><updated>2026-04-03T00:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-design-principles-secure-by-default/"><![CDATA[<p>A lot of incidents get described as if they were sudden surprises.</p>
 
 <p>Then you look closer and the real problem started much earlier. A system trusted too much, an internal tool was too open, or a feature shipped with defaults nobody came back to harden.</p>
 
@@ -1072,7 +1295,7 @@
 2. secure by design for software engineers
 3. fail safe defaults complete mediation CISSP
 4. CISSP domain 3 security architecture concepts
-5. trust boundaries and attack surface reduction -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="secure-design" /><category term="secure-by-design" /><category term="trust-boundaries" /><category term="software-engineering" /><summary type="html"><![CDATA[CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T19:00:00+00:00</published><updated>2026-04-01T19:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
+5. trust boundaries and attack surface reduction -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="secure-design" /><category term="secure-by-design" /><category term="trust-boundaries" /><category term="software-engineering" /><summary type="html"><![CDATA[CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Security Awareness Training Only Works When Leadership Makes It Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/" rel="alternate" type="text/html" title="Security Awareness Training Only Works When Leadership Makes It Real" /><published>2026-04-01T00:05:00+00:00</published><updated>2026-04-01T00:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-awareness-training-leadership-culture/"><![CDATA[<p>Security awareness training is easy to mock, and honestly, some of it deserves the criticism. Most of us have sat through the generic slideshow, clicked through the quiz, and forgotten the content by the end of the afternoon.</p>
 
 <p>But the existence of bad programs does not make the underlying problem fake. Organizations are run by people working under time pressure, partial information, and conflicting incentives. Weak human controls keep showing up in real incidents because secure behavior is not automatic. It has to be taught, reinforced, and supported.</p>
 
@@ -1285,7 +1508,7 @@
 2. security awareness training leadership culture
 3. CISSP Domain 1 security awareness program
 4. role based security training examples
-5. mature security awareness program -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="security-awareness" /><category term="security-training" /><category term="leadership" /><category term="human-risk" /><summary type="html"><![CDATA[Security awareness gets mocked because bad programs feel like theater. But a mature program—backed by leadership, role-based training, and strong reporting culture—still matters. Post 4 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-awareness-training-leadership-culture/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-awareness-training-leadership-culture/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Risk Management Gets Real When You Have to Choose a Treatment</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/" rel="alternate" type="text/html" title="Risk Management Gets Real When You Have to Choose a Treatment" /><published>2026-04-01T13:00:00+00:00</published><updated>2026-04-01T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/"><![CDATA[<p>Risk management is one of those CISSP topics that sounds simple right up until you have to make an actual decision. Most people can say the words <em>likelihood</em>, <em>impact</em>, and <em>mitigation</em>. Fewer can explain what the organization should do when a real risk is expensive to reduce, impossible to eliminate, and not equally important to every business function.</p>
+5. mature security awareness program -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="security-awareness" /><category term="security-training" /><category term="leadership" /><category term="human-risk" /><summary type="html"><![CDATA[Security awareness gets mocked because bad programs feel like theater. But a mature program—backed by leadership, role-based training, and strong reporting culture—still matters. Post 4 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-awareness-training-leadership-culture/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-awareness-training-leadership-culture/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Risk Management Gets Real When You Have to Choose a Treatment</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/" rel="alternate" type="text/html" title="Risk Management Gets Real When You Have to Choose a Treatment" /><published>2026-04-01T00:00:00+00:00</published><updated>2026-04-01T00:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-risk-management-impact-likelihood-treatment/"><![CDATA[<p>Risk management is one of those CISSP topics that sounds simple right up until you have to make an actual decision. Most people can say the words <em>likelihood</em>, <em>impact</em>, and <em>mitigation</em>. Fewer can explain what the organization should do when a real risk is expensive to reduce, impossible to eliminate, and not equally important to every business function.</p>
 
 <p>That is the part the exam cares about, and it is the part that matters in real work.</p>
 
@@ -1824,308 +2047,4 @@
   <li>due care vs due diligence CISSP</li>
   <li>risk appetite vs risk tolerance security</li>
   <li>security governance for software engineers</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="governance" /><category term="risk-management" /><category term="compliance" /><category term="security-policy" /><category term="domain-1" /><summary type="html"><![CDATA[Security governance is not a filing exercise. It is how an organization decides what matters, what it will protect, and how much uncertainty it can absorb. Post 1 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It</title><link href="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/" rel="alternate" type="text/html" title="Hash Maps: The Data Structure That’s Everywhere Once You Stop Skipping It" /><published>2026-03-31T12:00:00+00:00</published><updated>2026-03-31T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/hash-maps-everywhere-once-you-stop-skipping-it/"><![CDATA[<p>If you write production code in Python or C#, you probably use hash maps constantly.</p>
-
-<p>You call them <code class="language-plaintext highlighter-rouge">dict</code>, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code>, <code class="language-plaintext highlighter-rouge">HashSet&lt;T&gt;</code>, lookup tables, indexes, caches, frequency maps, dedup maps, and memoization stores.</p>
-
-<p>They become so normal that many developers stop seeing them as a data structure at all. They just feel like the place values go when you want fast lookup.</p>
-
-<p>That is usually fine until one of three things happens:</p>
-
-<ul>
-  <li>lookups are technically $O(1)$ but still show up in a profile</li>
-  <li>a key starts “disappearing” after mutation</li>
-  <li>a workload that should be easy suddenly spends too much time probing, comparing, or resizing</li>
-</ul>
-
-<p>Hash maps are not magic. They are an array, a hash function, and a collision policy.
-That is exactly why they are so useful.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" alt="A hash map diagram showing keys transformed into hash codes and placed into buckets, with collisions handled explicitly." />
-  <figcaption>Fast lookup comes from structure, not luck: buckets, hash codes, and collision handling.</figcaption>
-</figure>
-
-<h2 id="mental-model">The mental model worth keeping in your head</h2>
-
-<p>At implementation level, a hash map starts with a backing array.
-That array is divided into buckets or slots.</p>
-
-<p>When you insert a key:</p>
-
-<ol>
-  <li>The runtime computes a hash code for the key.</li>
-  <li>It turns that hash code into a bucket index.</li>
-  <li>It stores the key-value pair in that bucket, or resolves a collision if something is already there.</li>
-</ol>
-
-<p>Conceptually, it looks like this:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hash(key) -&gt; large integer -&gt; bucket index -&gt; locate entry
-</code></pre></div></div>
-
-<p>The important property is not that the hash code is unique.
-It rarely is.
-The important property is that it spreads keys out well enough that each bucket stays cheap to inspect.</p>
-
-<p>That is why official language docs focus so much on the equality and hash contract.
-In Python, hashable objects must keep a stable hash value for their lifetime, and objects that compare equal must have the same hash.
-In .NET, <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt;</code> retrieval is described as close to $O(1)$, but Microsoft explicitly notes that speed depends on the quality of the hashing algorithm for <code class="language-plaintext highlighter-rouge">TKey</code> and that keys must not change in a way that affects their hash while stored in the dictionary.</p>
-
-<p>Those are not trivia rules.
-They are the rules that make the data structure work.</p>
-
-<h2 id="collision-handling">Collision handling is where the real behavior lives</h2>
-
-<p>Two different keys can land in the same bucket.
-That is a collision.</p>
-
-<p>Every practical hash map needs a strategy for this.
-The two common families are:</p>
-
-<h3 id="separate-chaining">Separate chaining</h3>
-
-<p>Each bucket points to a small collection of entries.
-If several keys land in the same bucket, the runtime scans that chain until it finds the matching key.</p>
-
-<p>This is the model many developers learn first because it is easy to visualize.
-.NET’s dictionary implementation is close to this mental model: buckets point into entry storage, and collisions are resolved by following stored links.</p>
-
-<h3 id="open-addressing">Open addressing</h3>
-
-<p>All entries stay inside the array itself.
-If the first slot is occupied, the runtime probes other slots according to a rule.</p>
-
-<p>Python dictionaries are better understood with this model in mind.
-You do not follow a linked list; you probe for the next usable position until you find the key or an empty slot.</p>
-
-<p>The exact algorithm differs by runtime, but the tradeoff is consistent:</p>
-
-<ul>
-  <li>fewer collisions means fewer comparisons</li>
-  <li>fewer comparisons means fewer memory accesses</li>
-  <li>fewer memory accesses means the “constant” in $O(1)$ stays small</li>
-</ul>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/collision-paths.svg" alt="A diagram contrasting separate chaining with open addressing for hash map collision handling." />
-  <figcaption>Collisions do not break a hash map. They determine how expensive the constant factor becomes.</figcaption>
-</figure>
-
-<h2 id="load-factor-rehashing">Load factor and rehashing are the price of staying fast</h2>
-
-<p>If you keep inserting entries into a fixed-size table, collisions become more frequent.
-The runtime needs a threshold that says, in effect, “this table is getting crowded enough that future lookups are becoming more expensive.”</p>
-
-<p>That threshold is load factor.</p>
-
-<p>At a high level:</p>
-
-\[\text{load factor} = \frac{\text{number of stored entries}}{\text{number of buckets}}\]
-
-<p>Once that ratio gets too high, the map resizes, allocates a larger backing structure, and re-inserts or repositions existing entries based on the new capacity.</p>
-
-<p>That step is rehashing or resizing.</p>
-
-<p>This explains an important production reality:</p>
-
-<ul>
-  <li>single lookups are usually cheap</li>
-  <li>occasional inserts are expensive because they trigger a resize</li>
-  <li>bulk-loading into a map without sizing it can create avoidable churn</li>
-</ul>
-
-<p>That is why capacity APIs exist.
-.NET exposes constructors that take an initial capacity and methods like <code class="language-plaintext highlighter-rouge">EnsureCapacity</code>.
-Even when a language hides more of the mechanics, the underlying truth stays the same: if you know roughly how many items are coming, pre-sizing is often the simplest performance win.</p>
-
-<h2 id="why-o1-is-not-always-fast">Why lookup is $O(1)$ and still not always fast</h2>
-
-<p>Saying hash map lookup is $O(1)$ is directionally correct and often useful.
-It is not the whole performance story.</p>
-
-<p>In practice, the cost of a lookup includes several pieces:</p>
-
-<h3 id="1-hash-computation-cost">1. Hash computation cost</h3>
-
-<p>If the key is a short integer, hashing is cheap.
-If the key is a large string, a composite object, or something with a custom comparer, the upfront cost can matter.</p>
-
-<h3 id="2-collision-cost">2. Collision cost</h3>
-
-<p>Every extra probe or chain traversal means more comparisons and more branches.
-Poor distribution makes the constant factor worse.</p>
-
-<h3 id="3-memory-access-cost">3. Memory access cost</h3>
-
-<p>Hash maps trade ordering for fast addressability, but the access pattern can still bounce around memory.
-That can be slower than a tight linear scan over a small, cache-friendly array.</p>
-
-<h3 id="4-resizing-cost">4. Resizing cost</h3>
-
-<p>Most lookups do not resize.
-Some insert-heavy phases do.
-When they do, the operation is much more expensive than the average case suggests.</p>
-
-<h3 id="5-equality-comparer-cost">5. Equality comparer cost</h3>
-
-<p>A collision is not resolved by hash code alone.
-Eventually the runtime still needs to ask whether two keys are actually equal.
-Bad <code class="language-plaintext highlighter-rouge">Equals</code> or <code class="language-plaintext highlighter-rouge">__eq__</code> logic can make that step expensive or wrong.</p>
-
-<p>This is why small collections are a useful sanity check.
-If you have six items and run one lookup once per request, replacing a list scan with a dictionary is not automatically an optimization.
-Hash maps dominate when you are doing enough lookups, against enough items, that indexed access beats repeated linear work.</p>
-
-<h2 id="common-pitfalls">Two failure modes developers cause themselves</h2>
-
-<h3 id="mutable-keys">Mutable keys</h3>
-
-<p>If a key changes after insertion in a way that changes equality or hash behavior, you have violated the lookup contract.</p>
-
-<p>The runtime stored the entry based on the old hash.
-Your later lookup uses the new hash.
-Now the entry appears to be missing.</p>
-
-<p>Python tries to protect you here by making obvious mutable containers like <code class="language-plaintext highlighter-rouge">list</code> and <code class="language-plaintext highlighter-rouge">dict</code> unhashable.
-But you can still create unsafe custom types.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserKey</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
-
-    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nf">hash</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">UserKey</span><span class="p">)</span> <span class="ow">and</span> <span class="n">self</span><span class="p">.</span><span class="n">email</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">email</span>
-
-<span class="n">key</span> <span class="o">=</span> <span class="nc">UserKey</span><span class="p">(</span><span class="sh">"</span><span class="s">alice@example.com</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">users</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">}</span>
-
-<span class="n">key</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="sh">"</span><span class="s">alice@new-domain.example</span><span class="sh">"</span>
-
-<span class="c1"># This lookup is now operating on a different hash/equality identity.
-</span><span class="nf">print</span><span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>The C# version of the same mistake is a mutable type whose <code class="language-plaintext highlighter-rouge">Equals</code> and <code class="language-plaintext highlighter-rouge">GetHashCode</code> depend on a property that later changes.</p>
-
-<p>The rule is simple: keys should be effectively immutable while stored.</p>
-
-<h3 id="poor-hash-functions">Poor hash functions</h3>
-
-<p>If many distinct keys produce the same or similar hash codes, the table degrades toward repeated collision handling.</p>
-
-<p>This C# example is intentionally bad:</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">CountryCode</span> <span class="p">:</span> <span class="n">IEquatable</span><span class="p">&lt;</span><span class="n">CountryCode</span><span class="p">&gt;</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Code</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="k">public</span> <span class="nf">CountryCode</span><span class="p">(</span><span class="kt">string</span> <span class="n">code</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Code</span> <span class="p">=</span> <span class="n">code</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Equals</span><span class="p">(</span><span class="n">CountryCode</span><span class="p">?</span> <span class="n">other</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">other</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">Code</span> <span class="p">==</span> <span class="n">other</span><span class="p">.</span><span class="n">Code</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">Equals</span><span class="p">(</span><span class="kt">object</span><span class="p">?</span> <span class="n">obj</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">obj</span> <span class="k">is</span> <span class="n">CountryCode</span> <span class="n">other</span> <span class="p">&amp;&amp;</span> <span class="nf">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
-
-    <span class="k">public</span> <span class="k">override</span> <span class="kt">int</span> <span class="nf">GetHashCode</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Code</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Every two-character country code collides.
-The dictionary still works, but its fast path has been sabotaged.</p>
-
-<p>Good hash functions do not need to be cryptographic.
-They do need to distribute realistic inputs well and remain consistent with equality.</p>
-
-<h2 id="engineering-problems">Three engineering problems that become cleaner once you reach for a hash map deliberately</h2>
-
-<h3 id="1-counting-and-grouping-events">1. Counting and grouping events</h3>
-
-<p>If you need counts by error code, endpoint, tenant, or feature flag, a hash map is the natural in-memory accumulator.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error_counts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">for</span> <span class="n">error_code</span> <span class="ow">in</span> <span class="n">stream_of_error_codes</span><span class="p">:</span>
-    <span class="n">error_counts</span><span class="p">[</span><span class="n">error_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">error_counts</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">error_code</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-</code></pre></div></div>
-
-<p>That is more than convenience.
-It turns repeated “have I seen this before?” scans into direct keyed updates.</p>
-
-<h3 id="2-building-an-in-memory-join-index">2. Building an in-memory join index</h3>
-
-<p>Suppose one API returns customers and another returns orders, and you need to attach customer details to each order.
-The naive version scans the customer list for each order.
-The deliberate version builds an index once.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">customersById</span> <span class="p">=</span> <span class="n">customers</span><span class="p">.</span><span class="nf">ToDictionary</span><span class="p">(</span><span class="n">customer</span> <span class="p">=&gt;</span> <span class="n">customer</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">order</span> <span class="k">in</span> <span class="n">orders</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">customersById</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">CustomerId</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">customer</span><span class="p">))</span>
-    <span class="p">{</span>
-        <span class="n">order</span><span class="p">.</span><span class="n">CustomerName</span> <span class="p">=</span> <span class="n">customer</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>That is the same reason database indexes exist: pay a little structure cost once, stop paying search cost repeatedly.</p>
-
-<h3 id="3-deduplication-and-idempotency-tracking">3. Deduplication and idempotency tracking</h3>
-
-<p>When you need to answer “have I already processed this request ID, event ID, or file checksum?” a hash-backed lookup is the cleanest first move.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seen_request_ids</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">request_id</span> <span class="ow">in</span> <span class="n">incoming_request_ids</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">request_id</span> <span class="ow">in</span> <span class="n">seen_request_ids</span><span class="p">:</span>
-        <span class="k">continue</span>
-
-    <span class="n">seen_request_ids</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span>
-    <span class="nf">process</span><span class="p">(</span><span class="n">request_id</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Yes, a <code class="language-plaintext highlighter-rouge">set</code> is not spelled <code class="language-plaintext highlighter-rouge">dict</code>, but it relies on the same hash-map idea.
-If the problem is membership or uniqueness, hash-based structures are usually the first tool worth considering.</p>
-
-<figure class="post-figure">
-  <img src="/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/deliberate-uses.svg" alt="Three engineering uses of hash maps: counting events, joining records by id, and deduplicating request identifiers." />
-  <figcaption>Hash maps stop being a generic convenience and become a design tool once you recognize repeated keyed access.</figcaption>
-</figure>
-
-<h2 id="bottom-line">Bottom line</h2>
-
-<p>Hash maps deserve more respect than they usually get.</p>
-
-<p>Not because they are exotic.
-Because they are ordinary and therefore easy to misuse without noticing.</p>
-
-<p>The useful mental model is small:</p>
-
-<ul>
-  <li>hash maps are arrays organized by hash codes</li>
-  <li>collisions are unavoidable and policy matters</li>
-  <li>load factor controls when performance starts to slip</li>
-  <li>resizing keeps average lookup fast but makes some inserts expensive</li>
-  <li>key immutability and hash/equality correctness are non-negotiable</li>
-</ul>
-
-<p>Once you actually keep that model in your head, a lot of everyday code gets easier to reason about.
-You stop treating dictionaries as a default container and start using them as a deliberate answer to a specific class of problem: repeated keyed access under realistic load.</p>
-
-<p>If you want a practical exercise, profile one hot path in your codebase where you repeatedly search a collection by an identifier. Build the hash-based index explicitly, size it sensibly, and compare the code clarity before you even compare the runtime.
-That is usually where the value becomes obvious first.</p>
-
-<!--
----
-
-**Meta description:** A practical guide to how hash maps really work: hash functions, collisions, load factor, rehashing, mutable key pitfalls, and everyday engineering problems they solve cleanly.
-
-**SEO keyword ideas:**
-- how hash maps work
-- dictionary performance python csharp
-- mutable key hash map bug
-- load factor and rehashing explained
-- hash map collision handling
--->]]></content><author><name>Johnny Avakian</name></author><category term="Algorithms" /><category term="Software Engineering" /><category term="hash maps" /><category term="dictionaries" /><category term="data structures" /><category term="python" /><category term="csharp" /><summary type="html"><![CDATA[Hash maps feel like magic until a bad key, a resize spike, or a collision-heavy workload reminds you what is underneath. Buckets, hash codes, and load factor are not academic details. They explain both the speed and the failure modes of the most common data structure in day-to-day engineering.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/hash-maps-everywhere-once-you-stop-skipping-it/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="governance" /><category term="risk-management" /><category term="compliance" /><category term="security-policy" /><category term="domain-1" /><summary type="html"><![CDATA[Security governance is not a filing exercise. It is how an organization decides what matters, what it will protect, and how much uncertainty it can absorb. Post 1 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
