@@ -1,4 +1,211 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-04T16:39:47+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/" rel="alternate" type="text/html" title="CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores" /><published>2026-04-04T12:10:00+00:00</published><updated>2026-04-04T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/"><![CDATA[<p>A lot of access-control failures do not begin with an advanced attacker.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-06T00:30:11+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #11: Federation and SSO Do Not Remove Trust Boundaries</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" rel="alternate" type="text/html" title="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" /><published>2026-04-05T12:10:00+00:00</published><updated>2026-04-05T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/"><![CDATA[<p>Single sign-on is one of the most useful conveniences in modern security architecture.</p>
+
+<p>It is also one of the easiest places to overestimate what has been solved.</p>
+
+<p>Teams often implement federation, centralize login at an identity provider, and then quietly assume downstream applications are now “covered.” But CISSP thinking is more disciplined than that. Federation can centralize authentication, improve consistency, and reduce credential sprawl. It does not eliminate trust boundaries, authorization mistakes, or accountability gaps.</p>
+
+<p>That distinction matters in exams and even more in real systems.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" alt="Visual showing user device, identity provider, and relying applications separated by trust boundaries in a federated SSO architecture." />
+  <figcaption>Federation can transfer authentication assurance, but each relying system still owns access decisions and accountability.</figcaption>
+</figure>
+
+<h2 id="why-this-topic-is-easy-to-misunderstand">Why this topic is easy to misunderstand</h2>
+
+<p>Federation and SSO are often sold as architectural simplification.</p>
+
+<p>That is true at one level:</p>
+
+<ul>
+  <li>fewer passwords to manage</li>
+  <li>centralized policy controls</li>
+  <li>smoother user experience</li>
+  <li>stronger authentication options applied in one place</li>
+</ul>
+
+<p>But simplification at the login layer does not automatically simplify access risk. In many incidents, the identity provider did its job. The failure happened later: claims were trusted too broadly, roles were mapped carelessly, token handling was weak, or privileged actions were not independently controlled.</p>
+
+<p>CISSP expects you to reason through that shared responsibility, not just admire the convenience layer.</p>
+
+<h2 id="quick-grounding-federation-terms-that-actually-matter">Quick grounding: federation terms that actually matter</h2>
+
+<p>You do not need protocol trivia to reason well here, but you do need conceptual clarity.</p>
+
+<ul>
+  <li><strong>Identity provider (IdP):</strong> system that authenticates the subject and issues an assertion or token.</li>
+  <li><strong>Relying party/service provider (RP/SP):</strong> application or API that accepts the assertion and grants or denies access.</li>
+  <li><strong>Assertion/token:</strong> signed identity and context data used by the relying system.</li>
+  <li><strong>Trust relationship:</strong> explicit agreement about issuer, keys, audience, attributes, and assurance expectations.</li>
+</ul>
+
+<p>Whether the stack is SAML, OpenID Connect, or another federation pattern, the security question is similar: what trust is being transferred, what trust is being assumed, and where are the decision boundaries?</p>
+
+<h2 id="what-federation-solves-well">What federation solves well</h2>
+
+<p>Federation can be a strong control when designed deliberately.</p>
+
+<h3 id="1-stronger-and-more-consistent-authentication">1. Stronger and more consistent authentication</h3>
+
+<p>A central identity platform can enforce better authenticator policy than dozens of disconnected applications. This is where current guidance around phishing-resistant authentication options, such as passkeys and WebAuthn-based flows, has practical impact.</p>
+
+<h3 id="2-cleaner-credential-lifecycle">2. Cleaner credential lifecycle</h3>
+
+<p>Without federation, every application can become its own credential store and attack surface. Federation reduces password duplication and can improve account lifecycle consistency.</p>
+
+<h3 id="3-better-policy-centralization">3. Better policy centralization</h3>
+
+<p>Conditional access, baseline session controls, and account protections are easier to manage when identity decisions are not fragmented across every app team.</p>
+
+<p>These are real gains.</p>
+
+<p>They are still not the same thing as complete access security.</p>
+
+<h2 id="what-federation-does-not-solve-for-you">What federation does not solve for you</h2>
+
+<h3 id="1-authorization-quality-inside-each-relying-app">1. Authorization quality inside each relying app</h3>
+
+<p>The IdP can say who the user is and provide claims. It usually does not own the final business authorization model in every application.</p>
+
+<p>If an app maps one broad group to “full admin” because it is convenient, federation does not rescue that decision.</p>
+
+<h3 id="2-token-and-session-hygiene-everywhere">2. Token and session hygiene everywhere</h3>
+
+<p>Relying systems still need to validate signature, issuer, audience, expiry, and other token constraints correctly. They still need sane session behavior, revocation logic, and replay resistance where relevant.</p>
+
+<p>Weak local implementation can undermine strong central authentication.</p>
+
+<h3 id="3-accountability-for-sensitive-actions">3. Accountability for sensitive actions</h3>
+
+<p>A signed-in user is not a full audit strategy. Sensitive workflows still need attributable action logging, approval discipline, and separation of duties where business risk requires it.</p>
+
+<h3 id="4-business-context-access-decisions">4. Business-context access decisions</h3>
+
+<p>An IdP rarely knows every domain-specific rule: legal hold constraints, customer data residency restrictions, high-value transaction thresholds, or dual-control requirements.</p>
+
+<p>Those decisions belong where business context lives.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/federation-flow.svg" alt="Federated transaction flow showing request, redirect to identity provider, token validation, and authorization checks in relying systems." />
+  <figcaption>Federated login is a transaction chain. Controls fail when teams secure the redirect but skip downstream validation and authorization checks.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-authentication-was-fine-trust-mapping-was-not">A realistic scenario: authentication was fine, trust mapping was not</h2>
+
+<p>Consider an enterprise with a mature identity platform and MFA required for workforce access.</p>
+
+<p>A newly integrated internal application accepts IdP-issued tokens and maps a high-level claim to local roles. The mapping was rushed during launch:</p>
+
+<ul>
+  <li>users in a broad business unit claim are treated as power users</li>
+  <li>admin functions are hidden in UI but not strongly gated in backend APIs</li>
+  <li>token validation checks signature and expiry but ignores intended audience nuances</li>
+  <li>high-risk actions are logged minimally</li>
+</ul>
+
+<p>An attacker compromises a legitimate employee session through endpoint malware.</p>
+
+<p>The IdP did authenticate correctly. MFA policy was not bypassed. Federation worked exactly as designed.</p>
+
+<p>The exploit path appears in the relying application:</p>
+
+<ul>
+  <li>overbroad claim-to-role mapping grants excessive capability</li>
+  <li>weak backend authorization permits sensitive operations</li>
+  <li>audit records are insufficient for rapid attribution</li>
+</ul>
+
+<p>Root cause is not “SSO is broken.” Root cause is misplaced trust and incomplete control ownership after authentication.</p>
+
+<p>This is a very CISSP-style lesson: controls are evaluated as a system, not as isolated checkboxes.</p>
+
+<h2 id="exam-mindset-best-answer-thinking-for-federation-questions">Exam mindset: best-answer thinking for federation questions</h2>
+
+<p>CISSP questions in this area often test whether you can distinguish centralized authentication from distributed authorization responsibility.</p>
+
+<p>The stronger answer typically:</p>
+
+<ul>
+  <li>validates trust assumptions explicitly, not implicitly</li>
+  <li>enforces least privilege at the resource boundary</li>
+  <li>treats high-risk actions with stronger control (step-up, dual control, tighter review)</li>
+  <li>maintains accountability through durable, attributable logging</li>
+  <li>aligns identity controls with business risk and governance expectations</li>
+</ul>
+
+<p>If an option sounds like “we use SSO, therefore access is secure,” it is usually incomplete.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<h3 id="established-principles-stable">Established principles (stable)</h3>
+
+<ul>
+  <li>least privilege</li>
+  <li>separation of duties</li>
+  <li>need to know</li>
+  <li>explicit trust relationships</li>
+  <li>defense in depth across authentication, authorization, and accountability</li>
+</ul>
+
+<p>These are long-standing security disciplines and core CISSP ground.</p>
+
+<h3 id="recent-direction-evolving-implementation">Recent direction (evolving implementation)</h3>
+
+<p>Identity architecture keeps moving toward stronger phishing resistance, tighter session controls, and policy-driven access decisions. NIST digital identity guidance and zero trust framing continue to emphasize that identity confidence and resource access are related but distinct decisions.</p>
+
+<p>Practically, teams are also dealing with more machine identities, API-to-API trust, and federated access beyond one enterprise boundary. That increases the value of explicit token hygiene, clear audience constraints, key management discipline, and short-lived privilege where possible.</p>
+
+<p>None of this replaces foundational CISSP principles. It operationalizes them at current scale.</p>
+
+<h2 id="practical-control-checklist-for-engineering-teams">Practical control checklist for engineering teams</h2>
+
+<p>When reviewing federated integrations, these questions expose real risk quickly:</p>
+
+<ul>
+  <li>Which assertions or claims are trusted, and why?</li>
+  <li>Is token validation complete: signature, issuer, audience, expiration, and replay protections where needed?</li>
+  <li>Are claims mapped to local privileges narrowly, or translated into overbroad roles?</li>
+  <li>Does backend authorization independently enforce policy, or trust UI visibility rules?</li>
+  <li>Which actions require step-up authentication or additional approval?</li>
+  <li>Can you correlate identity event, session context, and sensitive action in logs?</li>
+  <li>How quickly can access be revoked for both workforce and third-party identities?</li>
+  <li>Who owns periodic review of claim mappings and trust configuration drift?</li>
+</ul>
+
+<p>If these answers are vague, the architecture may be secure on paper but fragile in practice.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/trust-boundary-matrix.svg" alt="Matrix showing trust boundary ownership in federation across authentication, authorization, session controls, and accountability." />
+  <figcaption>Federation is shared responsibility by design. The cleanest way to reduce risk is to define ownership by trust boundary and verify it regularly.</figcaption>
+</figure>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>Federation is valuable. SSO is valuable.</p>
+
+<p>But neither one is a permission model.</p>
+
+<p>The identity provider authenticates and issues trust signals. Every relying application and API still must interpret those signals safely, enforce least privilege, and preserve accountability for high-impact actions.</p>
+
+<p>That is the deeper CISSP takeaway: convenience controls are useful, but risk is managed at decision boundaries.</p>
+
+<p>If you are studying, keep this mental model: <strong>authentication can be centralized, but responsibility for authorization and accountability remains distributed.</strong></p>
+
+<hr />
+
+<p><em>Post 11 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Federation and SSO improve login security and usability, but they do not remove trust boundaries. Learn the CISSP mindset for token trust, authorization, and accountability.
+
+**SEO keyword ideas:**
+1. CISSP federation and SSO
+2. SSO trust boundaries security
+3. identity provider relying party authorization
+4. SAML OIDC security best practices
+5. federated identity access control -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="federation" /><category term="sso" /><category term="saml" /><category term="oidc" /><category term="zero-trust" /><category term="authorization" /><summary type="html"><![CDATA[Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/" rel="alternate" type="text/html" title="CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores" /><published>2026-04-04T12:10:00+00:00</published><updated>2026-04-04T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/"><![CDATA[<p>A lot of access-control failures do not begin with an advanced attacker.</p>
 
 <p>They begin with something much less dramatic: a contractor account that stayed active after the project ended, a role change that left old permissions in place, or a service identity that accumulated broad rights because nobody wanted deployment friction.</p>
 
@@ -1934,122 +2141,4 @@
   <li>MTD RTO RPO explained for CISSP</li>
   <li>business continuity planning for security leaders</li>
   <li>CISSP Domain 1 resilience and recovery</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="bcp" /><category term="drp" /><category term="incident-response" /><category term="crisis-management" /><category term="resilience" /><summary type="html"><![CDATA[CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #1: Security Governance Is Not Paperwork</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/" rel="alternate" type="text/html" title="CISSP #1: Security Governance Is Not Paperwork" /><published>2026-03-31T12:01:00+00:00</published><updated>2026-03-31T12:01:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-governance-is-not-paperwork/"><![CDATA[<p>I am studying for the CISSP exam and writing these posts as I go — partly as a study tool, partly because I think the concepts are worth sharing clearly. If you are an engineer moving toward security, a fellow candidate, or just curious about how security thinking works at a strategic level, I hope these are useful.</p>
-
-<hr />
-
-<p>Most engineers hear “governance” and picture compliance checklists or something the legal team handles. That framing misses the point entirely. CISSP treats governance as the structural backbone behind every security decision in an organization. Once you understand it that way, a lot of other security concepts stop feeling like isolated topics and start connecting.</p>
-
-<p>This is Domain 1. It carries the heaviest weight on the exam, and governance is where it starts.</p>
-
-<h2 id="what-governance-actually-is">What governance actually is</h2>
-
-<p>Governance is the system by which an organization directs and controls itself. In security, that means the decisions, accountability structures, and processes that ensure security efforts align with business objectives.</p>
-
-<p>Note what governance is <em>not</em>: it is not a firewall rule, a patch schedule, or an audit finding. It is the scaffolding that determines who has the authority to decide what gets protected, to what extent, and at what cost.</p>
-
-<p>The positioning of the CISO matters here. On the CISSP exam, the CISO reports to executive leadership — a board, a CEO — not to the IT department. That placement is intentional. Security governance is a business function. It belongs at the level where business decisions are made.</p>
-
-<h2 id="the-policy-hierarchy">The policy hierarchy</h2>
-
-<p>One of the concepts CISSP tests most consistently is the relationship between policies, standards, baselines, procedures, and guidelines. Engineers often treat these terms as rough synonyms. The exam does not.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" alt="The security governance hierarchy: policy at top, then standards, baselines, and procedures, with guidelines shown separately as advisory only." />
-  <figcaption>The governance hierarchy. Policy sets direction; everything below it implements that direction. Only guidelines are advisory.</figcaption>
-</figure>
-
-<p><strong>Policy</strong> is the highest level. It is management-driven, mandatory, and intentionally broad. A policy says what the organization will do and why — not how. For example: <em>“The organization will protect sensitive customer data in accordance with applicable laws and business requirements.”</em> Technical staff do not write policies. Executives and security leadership do.</p>
-
-<p><strong>Standards</strong> are mandatory, specific rules that support a policy. Where a policy says “protect customer data,” a standard says <em>“All databases containing PII must encrypt data at rest using AES-256.”</em> Standards are still technology-aware but specific enough to be measurable.</p>
-
-<p><strong>Baselines</strong> define a minimum security configuration applied consistently across a category of systems. A workstation security baseline specifies which services are disabled, what audit logging is enabled, and what local account policies apply. Every system in scope gets the same starting point.</p>
-
-<p><strong>Procedures</strong> are step-by-step instructions for reaching a baseline or implementing a standard — the closest thing to a how-to document in the governance stack.</p>
-
-<p><strong>Guidelines</strong> are recommended practices. Advisory, not mandatory. This distinction costs candidates exam points. If a question references a guideline, the answer is not enforced by policy.</p>
-
-<p>The exam tests which tier is mandatory, who owns it, and which one gets updated when a specific technical detail changes versus when business risk tolerance shifts. Technical changes drive procedure or standard updates. Strategic shifts drive policy.</p>
-
-<h2 id="compliance-is-not-governance">Compliance is not governance</h2>
-
-<p>These are related but not the same thing, and the exam reflects that distinction.</p>
-
-<p>Governance sets direction — what the organization has committed to doing and the authority structure behind it. Compliance measures whether the organization is actually doing it.</p>
-
-<p>A compliant organization passed an audit. A well-governed organization has the decision-making structures, accountability, and buy-in that made compliance a predictable outcome rather than a last-minute scramble. CISSP consistently steers away from compliance-as-security-strategy. When an answer choice makes you compliant but leaves unaddressed risk on the table, the exam usually does not select it.</p>
-
-<h2 id="risk-appetite-risk-tolerance-and-why-they-are-not-the-same">Risk appetite, risk tolerance, and why they are not the same</h2>
-
-<p>Two terms that frequently blur together and cost exam points.</p>
-
-<p><strong>Risk appetite</strong> is the amount and type of risk an organization is willing to accept in pursuit of its objectives. It is a strategic statement set at the board or executive level: <em>“We accept moderate operational risk to move fast, but zero tolerance for customer data exposure.”</em></p>
-
-<p><strong>Risk tolerance</strong> is the acceptable deviation from that appetite in practice — the operational range. If the appetite says “moderate operational risk,” tolerance defines what moderate actually means: a specific loss threshold, an acceptable SLA breach rate, a permissible number of unpatched critical vulnerabilities within a defined window.</p>
-
-<p>Both matter for governance because they define the boundaries within which security decisions get made. A security professional who does not understand the organization’s risk appetite cannot make governance-aligned recommendations.</p>
-
-<h2 id="due-care-and-due-diligence">Due care and due diligence</h2>
-
-<p>These are legal concepts that CISSP imports into security governance, and candidates frequently invert them.</p>
-
-<p><strong>Due diligence</strong> is the investigation and research you conduct <em>before</em> making a decision. Before deploying a third-party system that handles customer data, you review their security posture, contractual obligations, and incident history. That research is due diligence.</p>
-
-<p><strong>Due care</strong> is the ongoing, reasonable effort to protect assets <em>after</em> a decision has been made. Once you have deployed that system, monitoring it, reviewing access controls, and applying patches is due care. <em>“We did what a reasonable person would do to protect this.”</em></p>
-
-<p>Both have legal weight. If a breach leads to litigation, the questions that arise are: did you investigate before acting, and did you exercise reasonable protection afterward? An organization that skipped vendor review and never audited access has a difficult answer.</p>
-
-<h2 id="a-realistic-scenario">A realistic scenario</h2>
-
-<p>Here is a situation that shows governance in practice.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/governance-scenario.svg" alt="Diagram showing a governance decision flow: risk identified, policy check, authority question, decision documentation, with due diligence and due care defined below." />
-  <figcaption>Risk decisions must trace back through policy and authority — not just budget or timeline convenience.</figcaption>
-</figure>
-
-<p>A mid-size SaaS company is eight weeks from a SOC 2 Type II audit. The CTO wants to defer a $40,000 network segmentation project by one quarter to hit a product release deadline. The security team has flagged lateral movement risk as high and linked it directly to audit scope.</p>
-
-<p>The governance question is not <em>“can we afford to wait?”</em> It is: <em>“Does accepting this risk align with the documented risk appetite, and who has the authority to make this call?”</em></p>
-
-<p>If the information security policy designates this risk level as non-deferrable without executive sign-off, the CTO cannot make this call unilaterally. It escalates. And if leadership accepts the risk, that decision needs to be documented. You cannot later claim due care over a risk you consciously chose not to mitigate — but you <em>can</em> demonstrate that the decision was made deliberately, at the right level of authority, with the risk fully understood.</p>
-
-<p>This is exactly what CISSP questions about governance and business objectives are testing. Not the technical fix. The decision authority and the accountability trail.</p>
-
-<h2 id="what-the-exam-tests">What the exam tests</h2>
-
-<p>A few patterns worth internalizing before you sit:</p>
-
-<ul>
-  <li>Security decisions on the CISSP exam are framed as business decisions. When two answers both seem technically valid, the one grounded in risk, business objectives, or governance authority is usually correct.</li>
-  <li>Policy does not specify encryption algorithms or password lengths. Standards do that.</li>
-  <li>Due diligence precedes action. Due care is ongoing after the fact.</li>
-  <li>Compliance is an output of governance, not a substitute for it.</li>
-  <li>The sequence — policy → standard → baseline → procedure — appears often enough to know cold.</li>
-</ul>
-
-<p>In real-world practice, governance is messier. Policies sometimes do creep into technical specifics. Risk appetite is sometimes a gut feeling rather than a written statement. The exam tests the ideal model, and understanding it helps you recognize when real-world practice is falling short — which is often when security problems start.</p>
-
-<h2 id="the-pattern-i-keep-noticing">The pattern I keep noticing</h2>
-
-<p>Working through Domain 1, the theme that keeps surfacing is that CISSP consistently pushes you up the abstraction stack. Not: how does this control work? But: who decided this was the right control, under what authority, and how does that decision connect to something the business actually cares about?</p>
-
-<p>Governance is that connection.</p>
-
-<hr />
-
-<p><em>Post 1 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> Security governance is how organizations decide what to protect and why. This post explains the policy hierarchy, risk appetite, due care, and due diligence for engineers studying CISSP Domain 1.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP Domain 1 security governance</li>
-  <li>security policy standard baseline procedure hierarchy</li>
-  <li>due care vs due diligence CISSP</li>
-  <li>risk appetite vs risk tolerance security</li>
-  <li>security governance for software engineers</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="governance" /><category term="risk-management" /><category term="compliance" /><category term="security-policy" /><category term="domain-1" /><summary type="html"><![CDATA[Security governance is not a filing exercise. It is how an organization decides what matters, what it will protect, and how much uncertainty it can absorb. Post 1 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-security-governance-is-not-paperwork/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="bcp" /><category term="drp" /><category term="incident-response" /><category term="crisis-management" /><category term="resilience" /><summary type="html"><![CDATA[CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

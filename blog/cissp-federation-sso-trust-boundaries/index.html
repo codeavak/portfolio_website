@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #11: Federation and SSO Do Not Remove Trust Boundaries | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-05T12:10:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-5" />
+      
+        <meta property="article:tag" content="iam" />
+      
+        <meta property="article:tag" content="federation" />
+      
+        <meta property="article:tag" content="sso" />
+      
+        <meta property="article:tag" content="saml" />
+      
+        <meta property="article:tag" content="oidc" />
+      
+        <meta property="article:tag" content="zero-trust" />
+      
+        <meta property="article:tag" content="authorization" />
+      
+    
+    <meta property="og:title" content="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" />
+    <meta property="og:description" content="Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" />
+    <meta name="twitter:description" content="Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #11: Federation and SSO Do Not Remove Trust Boundaries",
+        "description": "Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-05T12:10:00+00:00",
+        "dateModified": "2026-04-05T12:10:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-05T12:10:00+00:00">April 5, 2026</time>
+              <h1 class="post-title">CISSP #11: Federation and SSO Do Not Remove Trust Boundaries</h1>
+              
+                <p class="post-dek">Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-5</span>
+                  
+                    <span class="chip">iam</span>
+                  
+                    <span class="chip">federation</span>
+                  
+                    <span class="chip">sso</span>
+                  
+                    <span class="chip">saml</span>
+                  
+                    <span class="chip">oidc</span>
+                  
+                    <span class="chip">zero-trust</span>
+                  
+                    <span class="chip">authorization</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Single sign-on is one of the most useful conveniences in modern security architecture.</p>
+
+<p>It is also one of the easiest places to overestimate what has been solved.</p>
+
+<p>Teams often implement federation, centralize login at an identity provider, and then quietly assume downstream applications are now “covered.” But CISSP thinking is more disciplined than that. Federation can centralize authentication, improve consistency, and reduce credential sprawl. It does not eliminate trust boundaries, authorization mistakes, or accountability gaps.</p>
+
+<p>That distinction matters in exams and even more in real systems.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" alt="Visual showing user device, identity provider, and relying applications separated by trust boundaries in a federated SSO architecture." />
+  <figcaption>Federation can transfer authentication assurance, but each relying system still owns access decisions and accountability.</figcaption>
+</figure>
+
+<h2 id="why-this-topic-is-easy-to-misunderstand">Why this topic is easy to misunderstand</h2>
+
+<p>Federation and SSO are often sold as architectural simplification.</p>
+
+<p>That is true at one level:</p>
+
+<ul>
+  <li>fewer passwords to manage</li>
+  <li>centralized policy controls</li>
+  <li>smoother user experience</li>
+  <li>stronger authentication options applied in one place</li>
+</ul>
+
+<p>But simplification at the login layer does not automatically simplify access risk. In many incidents, the identity provider did its job. The failure happened later: claims were trusted too broadly, roles were mapped carelessly, token handling was weak, or privileged actions were not independently controlled.</p>
+
+<p>CISSP expects you to reason through that shared responsibility, not just admire the convenience layer.</p>
+
+<h2 id="quick-grounding-federation-terms-that-actually-matter">Quick grounding: federation terms that actually matter</h2>
+
+<p>You do not need protocol trivia to reason well here, but you do need conceptual clarity.</p>
+
+<ul>
+  <li><strong>Identity provider (IdP):</strong> system that authenticates the subject and issues an assertion or token.</li>
+  <li><strong>Relying party/service provider (RP/SP):</strong> application or API that accepts the assertion and grants or denies access.</li>
+  <li><strong>Assertion/token:</strong> signed identity and context data used by the relying system.</li>
+  <li><strong>Trust relationship:</strong> explicit agreement about issuer, keys, audience, attributes, and assurance expectations.</li>
+</ul>
+
+<p>Whether the stack is SAML, OpenID Connect, or another federation pattern, the security question is similar: what trust is being transferred, what trust is being assumed, and where are the decision boundaries?</p>
+
+<h2 id="what-federation-solves-well">What federation solves well</h2>
+
+<p>Federation can be a strong control when designed deliberately.</p>
+
+<h3 id="1-stronger-and-more-consistent-authentication">1. Stronger and more consistent authentication</h3>
+
+<p>A central identity platform can enforce better authenticator policy than dozens of disconnected applications. This is where current guidance around phishing-resistant authentication options, such as passkeys and WebAuthn-based flows, has practical impact.</p>
+
+<h3 id="2-cleaner-credential-lifecycle">2. Cleaner credential lifecycle</h3>
+
+<p>Without federation, every application can become its own credential store and attack surface. Federation reduces password duplication and can improve account lifecycle consistency.</p>
+
+<h3 id="3-better-policy-centralization">3. Better policy centralization</h3>
+
+<p>Conditional access, baseline session controls, and account protections are easier to manage when identity decisions are not fragmented across every app team.</p>
+
+<p>These are real gains.</p>
+
+<p>They are still not the same thing as complete access security.</p>
+
+<h2 id="what-federation-does-not-solve-for-you">What federation does not solve for you</h2>
+
+<h3 id="1-authorization-quality-inside-each-relying-app">1. Authorization quality inside each relying app</h3>
+
+<p>The IdP can say who the user is and provide claims. It usually does not own the final business authorization model in every application.</p>
+
+<p>If an app maps one broad group to “full admin” because it is convenient, federation does not rescue that decision.</p>
+
+<h3 id="2-token-and-session-hygiene-everywhere">2. Token and session hygiene everywhere</h3>
+
+<p>Relying systems still need to validate signature, issuer, audience, expiry, and other token constraints correctly. They still need sane session behavior, revocation logic, and replay resistance where relevant.</p>
+
+<p>Weak local implementation can undermine strong central authentication.</p>
+
+<h3 id="3-accountability-for-sensitive-actions">3. Accountability for sensitive actions</h3>
+
+<p>A signed-in user is not a full audit strategy. Sensitive workflows still need attributable action logging, approval discipline, and separation of duties where business risk requires it.</p>
+
+<h3 id="4-business-context-access-decisions">4. Business-context access decisions</h3>
+
+<p>An IdP rarely knows every domain-specific rule: legal hold constraints, customer data residency restrictions, high-value transaction thresholds, or dual-control requirements.</p>
+
+<p>Those decisions belong where business context lives.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/federation-flow.svg" alt="Federated transaction flow showing request, redirect to identity provider, token validation, and authorization checks in relying systems." />
+  <figcaption>Federated login is a transaction chain. Controls fail when teams secure the redirect but skip downstream validation and authorization checks.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-authentication-was-fine-trust-mapping-was-not">A realistic scenario: authentication was fine, trust mapping was not</h2>
+
+<p>Consider an enterprise with a mature identity platform and MFA required for workforce access.</p>
+
+<p>A newly integrated internal application accepts IdP-issued tokens and maps a high-level claim to local roles. The mapping was rushed during launch:</p>
+
+<ul>
+  <li>users in a broad business unit claim are treated as power users</li>
+  <li>admin functions are hidden in UI but not strongly gated in backend APIs</li>
+  <li>token validation checks signature and expiry but ignores intended audience nuances</li>
+  <li>high-risk actions are logged minimally</li>
+</ul>
+
+<p>An attacker compromises a legitimate employee session through endpoint malware.</p>
+
+<p>The IdP did authenticate correctly. MFA policy was not bypassed. Federation worked exactly as designed.</p>
+
+<p>The exploit path appears in the relying application:</p>
+
+<ul>
+  <li>overbroad claim-to-role mapping grants excessive capability</li>
+  <li>weak backend authorization permits sensitive operations</li>
+  <li>audit records are insufficient for rapid attribution</li>
+</ul>
+
+<p>Root cause is not “SSO is broken.” Root cause is misplaced trust and incomplete control ownership after authentication.</p>
+
+<p>This is a very CISSP-style lesson: controls are evaluated as a system, not as isolated checkboxes.</p>
+
+<h2 id="exam-mindset-best-answer-thinking-for-federation-questions">Exam mindset: best-answer thinking for federation questions</h2>
+
+<p>CISSP questions in this area often test whether you can distinguish centralized authentication from distributed authorization responsibility.</p>
+
+<p>The stronger answer typically:</p>
+
+<ul>
+  <li>validates trust assumptions explicitly, not implicitly</li>
+  <li>enforces least privilege at the resource boundary</li>
+  <li>treats high-risk actions with stronger control (step-up, dual control, tighter review)</li>
+  <li>maintains accountability through durable, attributable logging</li>
+  <li>aligns identity controls with business risk and governance expectations</li>
+</ul>
+
+<p>If an option sounds like “we use SSO, therefore access is secure,” it is usually incomplete.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
+
+<h3 id="established-principles-stable">Established principles (stable)</h3>
+
+<ul>
+  <li>least privilege</li>
+  <li>separation of duties</li>
+  <li>need to know</li>
+  <li>explicit trust relationships</li>
+  <li>defense in depth across authentication, authorization, and accountability</li>
+</ul>
+
+<p>These are long-standing security disciplines and core CISSP ground.</p>
+
+<h3 id="recent-direction-evolving-implementation">Recent direction (evolving implementation)</h3>
+
+<p>Identity architecture keeps moving toward stronger phishing resistance, tighter session controls, and policy-driven access decisions. NIST digital identity guidance and zero trust framing continue to emphasize that identity confidence and resource access are related but distinct decisions.</p>
+
+<p>Practically, teams are also dealing with more machine identities, API-to-API trust, and federated access beyond one enterprise boundary. That increases the value of explicit token hygiene, clear audience constraints, key management discipline, and short-lived privilege where possible.</p>
+
+<p>None of this replaces foundational CISSP principles. It operationalizes them at current scale.</p>
+
+<h2 id="practical-control-checklist-for-engineering-teams">Practical control checklist for engineering teams</h2>
+
+<p>When reviewing federated integrations, these questions expose real risk quickly:</p>
+
+<ul>
+  <li>Which assertions or claims are trusted, and why?</li>
+  <li>Is token validation complete: signature, issuer, audience, expiration, and replay protections where needed?</li>
+  <li>Are claims mapped to local privileges narrowly, or translated into overbroad roles?</li>
+  <li>Does backend authorization independently enforce policy, or trust UI visibility rules?</li>
+  <li>Which actions require step-up authentication or additional approval?</li>
+  <li>Can you correlate identity event, session context, and sensitive action in logs?</li>
+  <li>How quickly can access be revoked for both workforce and third-party identities?</li>
+  <li>Who owns periodic review of claim mappings and trust configuration drift?</li>
+</ul>
+
+<p>If these answers are vague, the architecture may be secure on paper but fragile in practice.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/trust-boundary-matrix.svg" alt="Matrix showing trust boundary ownership in federation across authentication, authorization, session controls, and accountability." />
+  <figcaption>Federation is shared responsibility by design. The cleanest way to reduce risk is to define ownership by trust boundary and verify it regularly.</figcaption>
+</figure>
+
+<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
+
+<p>Federation is valuable. SSO is valuable.</p>
+
+<p>But neither one is a permission model.</p>
+
+<p>The identity provider authenticates and issues trust signals. Every relying application and API still must interpret those signals safely, enforce least privilege, and preserve accountability for high-impact actions.</p>
+
+<p>That is the deeper CISSP takeaway: convenience controls are useful, but risk is managed at decision boundaries.</p>
+
+<p>If you are studying, keep this mental model: <strong>authentication can be centralized, but responsibility for authorization and accountability remains distributed.</strong></p>
+
+<hr />
+
+<p><em>Post 11 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Federation and SSO improve login security and usability, but they do not remove trust boundaries. Learn the CISSP mindset for token trust, authorization, and accountability.
+
+**SEO keyword ideas:**
+1. CISSP federation and SSO
+2. SSO trust boundaries security
+3. identity provider relying party authorization
+4. SAML OIDC security best practices
+5. federated identity access control -->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
