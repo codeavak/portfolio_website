@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Trust boundary matrix for federated identity</title>
+  <desc id="desc">Matrix showing who controls each security decision in federated identity systems and common failure modes.</desc>
+  <rect width="1400" height="820" fill="#f8fafc" />
+  <text x="70" y="84" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#0f172a">Federation Trust Boundary Matrix</text>
+  <text x="70" y="124" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#475569">The most common mistake is assuming one trusted IdP means every downstream decision is safe.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a">
+    <rect x="70" y="170" width="320" height="78" rx="12" fill="#e2e8f0" />
+    <text x="100" y="218" font-weight="700">Decision Area</text>
+
+    <rect x="390" y="170" width="320" height="78" rx="12" fill="#dbeafe" />
+    <text x="460" y="218" font-weight="700">Primary Owner</text>
+
+    <rect x="710" y="170" width="320" height="78" rx="12" fill="#dcfce7" />
+    <text x="760" y="218" font-weight="700">Failure Pattern</text>
+
+    <rect x="1030" y="170" width="300" height="78" rx="12" fill="#fee2e2" />
+    <text x="1070" y="218" font-weight="700">Practical Guardrail</text>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#1f2937">
+    <rect x="70" y="268" width="1260" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="95" y="305" font-weight="700">Identity proof and authentication strength</text>
+    <text x="415" y="305">Identity provider and security governance</text>
+    <text x="735" y="305">Relying parties assume all tokens mean equal assurance</text>
+    <text x="1050" y="305">Bind policy to assurance and risk tier</text>
+
+    <rect x="70" y="386" width="1260" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="95" y="423" font-weight="700">Authorization to app/API resources</text>
+    <text x="415" y="423">Each relying application and API owner</text>
+    <text x="735" y="423">App trusts IdP claim mapping without verification</text>
+    <text x="1050" y="423">Enforce least privilege at resource boundary</text>
+
+    <rect x="70" y="504" width="1260" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="95" y="541" font-weight="700">Session lifecycle and token handling</text>
+    <text x="415" y="541">Shared responsibility across IdP and apps</text>
+    <text x="735" y="541">Long token lifetimes and weak revocation paths</text>
+    <text x="1050" y="541">Short lifetimes + revocation + rotation</text>
+
+    <rect x="70" y="622" width="1260" height="102" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="95" y="659" font-weight="700">Accountability and incident traceability</text>
+    <text x="415" y="659">Security operations plus system owners</text>
+    <text x="735" y="659">Fragmented logs break attribution</text>
+    <text x="1050" y="659">Correlate identity, session, and action IDs</text>
+  </g>
+</svg>
