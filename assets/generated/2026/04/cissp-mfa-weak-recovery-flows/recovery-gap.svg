@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">How attackers route around MFA</title>
+  <desc id="desc">Comparison diagram showing a blocked direct login attack and a successful recovery path attack.</desc>
+  <rect width="1400" height="800" fill="#f5f9ff"/>
+  <text x="80" y="90" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="800" fill="#13294b">How attackers route around MFA</text>
+  <text x="80" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#45638a">The login prompt may be strong while recovery stays too easy.</text>
+
+  <rect x="80" y="190" rx="24" ry="24" width="580" height="500" fill="#ffffff" stroke="#5abf90" stroke-width="3"/>
+  <rect x="740" y="190" rx="24" ry="24" width="580" height="500" fill="#ffffff" stroke="#f4a261" stroke-width="3"/>
+
+  <text x="370" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#184d3b">Direct login path</text>
+  <text x="1030" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#9a4f08">Recovery side path</text>
+
+  <rect x="130" y="290" rx="18" ry="18" width="480" height="72" fill="#ecfff5" stroke="#69c79c"/>
+  <text x="370" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#184d3b">1. Stolen or phished password</text>
+  <path d="M370 362 v40" stroke="#5abf90" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="370,420 358,398 382,398" fill="#5abf90"/>
+
+  <rect x="130" y="430" rx="18" ry="18" width="480" height="72" fill="#ecfff5" stroke="#69c79c"/>
+  <text x="370" y="475" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#184d3b">2. MFA challenge appears</text>
+  <path d="M370 502 v40" stroke="#5abf90" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="370,560 358,538 382,538" fill="#5abf90"/>
+
+  <rect x="130" y="570" rx="18" ry="18" width="480" height="72" fill="#ddf7e7" stroke="#4fa877"/>
+  <text x="370" y="615" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#184d3b">3. Attacker blocked</text>
+
+  <rect x="790" y="290" rx="18" ry="18" width="480" height="72" fill="#fff5ea" stroke="#f4a261"/>
+  <text x="1030" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#8a4d12">1. Password already known</text>
+  <path d="M1030 362 v40" stroke="#f4a261" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="1030,420 1018,398 1042,398" fill="#f4a261"/>
+
+  <rect x="790" y="430" rx="18" ry="18" width="480" height="72" fill="#fff5ea" stroke="#f4a261"/>
+  <text x="1030" y="465" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" fill="#8a4d12">2. Reset factor or add new device</text>
+  <text x="1030" y="492" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#8a4d12">weak help-desk checks, easy fallback, poor alerts</text>
+  <path d="M1030 502 v40" stroke="#f4a261" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="1030,560 1018,538 1042,538" fill="#f4a261"/>
+
+  <rect x="790" y="570" rx="18" ry="18" width="480" height="72" fill="#ffe9d2" stroke="#e98e3a"/>
+  <text x="1030" y="615" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#8a4d12">3. Account takeover succeeds</text>
+
+  <rect x="80" y="720" rx="16" ry="16" width="1240" height="42" fill="#13294b"/>
+  <text x="700" y="748" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Recovery is authentication under pressure, so it cannot be the easier path.</text>
+</svg>

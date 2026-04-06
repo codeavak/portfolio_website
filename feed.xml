@@ -1,4 +1,181 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-06T00:30:11+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #11: Federation and SSO Do Not Remove Trust Boundaries</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" rel="alternate" type="text/html" title="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" /><published>2026-04-05T12:10:00+00:00</published><updated>2026-04-05T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/"><![CDATA[<p>Single sign-on is one of the most useful conveniences in modern security architecture.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-06T00:44:50+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #12: MFA Is Not Enough if Recovery Flows Are Weak</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows/" rel="alternate" type="text/html" title="CISSP #12: MFA Is Not Enough if Recovery Flows Are Weak" /><published>2026-04-05T12:25:00+00:00</published><updated>2026-04-05T12:25:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows/"><![CDATA[<p>MFA deserves its reputation.</p>
+
+<p>It meaningfully raises the cost of account takeover and reduces the damage from weak, reused, or phished passwords. But many real incidents do not come from attackers defeating MFA head-on. They come from attackers routing around it through factor resets, account recovery, or a help-desk process that was easier to fool than the login screen.</p>
+
+<p>That is exactly why CISSP treats identity as more than a sign-in feature. The exam mindset is broader: assurance, lifecycle, accountability, and business risk.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" alt="Illustration showing a secure MFA front door and a weaker account recovery side door in an identity system." />
+  <figcaption>Strong MFA helps, but the real strength of the identity system is limited by enrollment, recovery, and factor-change controls.</figcaption>
+</figure>
+
+<h2 id="why-mfa-still-matters">Why MFA still matters</h2>
+
+<p>MFA remains one of the most practical security improvements an organization can make.</p>
+
+<p>If a password is reused, breached, or phished, a second factor often stops the attacker from converting that knowledge into a live session. That is real value, and it is one reason current guidance increasingly favors stronger, phishing-resistant authentication options such as passkeys, hardware security keys, and other cryptographic methods.</p>
+
+<p>CISSP wants you to understand the principle, not just memorize the acronym:</p>
+
+<ul>
+  <li>one factor is not enough for many meaningful risk scenarios</li>
+  <li>two instances of the same factor are not true MFA</li>
+  <li>stronger assurance should match higher business impact</li>
+  <li>authentication strength does not remove the need for sound authorization and accountability</li>
+</ul>
+
+<p>That last point is where a lot of systems drift into false confidence.</p>
+
+<h2 id="the-quiet-weak-spot-recovery-and-factor-replacement">The quiet weak spot: recovery and factor replacement</h2>
+
+<p>A secure login path is only one path into an account.</p>
+
+<p>If a user can also regain access by clicking a weak email reset link, receiving a low-assurance SMS fallback, answering poor verification questions, or persuading a support agent to register a new device too easily, then the system’s real assurance drops to match that weaker path.</p>
+
+<p>In other words, <strong>account recovery is authentication under pressure</strong>.</p>
+
+<p>That framing is very aligned with CISSP thinking. You are not just protecting the happy path. You are protecting the exceptional path too:</p>
+
+<ul>
+  <li>lost phone or token</li>
+  <li>new device enrollment</li>
+  <li>authenticator replacement</li>
+  <li>locked account recovery</li>
+  <li>disabling MFA for a user who claims they are stuck</li>
+</ul>
+
+<p>These are exactly the moments when business urgency and user frustration can tempt teams into weakening controls.</p>
+
+<p>NIST’s current digital identity guidance makes this explicit. It treats authenticator binding, recovery, invalidation, and notification as lifecycle events that deserve real security design. That is the right mental model.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/recovery-gap.svg" alt="Diagram showing attackers blocked at an MFA prompt but succeeding through an easier recovery and factor reset path." />
+  <figcaption>Attackers often do not beat MFA directly. They look for a weaker recovery or factor-change process beside it.</figcaption>
+</figure>
+
+<h2 id="what-phishing-resistant-really-means">What “phishing-resistant” really means</h2>
+
+<p>This phrase matters more now than it did a few years ago.</p>
+
+<p>Phishing-resistant authentication is not just “more prompts” or “extra friction.” It refers to authentication methods that are cryptographically bound to the legitimate service so the credential or authenticator output cannot be easily captured and replayed by a fake site.</p>
+
+<p>That is why passkeys and modern WebAuthn-based flows are getting so much attention. They improve user experience and reduce the likelihood that a user can be tricked into handing reusable secrets to an attacker.</p>
+
+<p>NIST SP 800-63-4 now requires verifiers at <strong>AAL2</strong> to offer at least one phishing-resistant option and requires phishing-resistant, non-exportable cryptographic authenticators at <strong>AAL3</strong>.</p>
+
+<p>That does not make TOTP or SMS useless. It places them correctly.</p>
+
+<ul>
+  <li>TOTP is still materially better than password-only login.</li>
+  <li>SMS may still exist in some environments as a transitional or lower-assurance option.</li>
+  <li>But neither should be mistaken for the strongest answer, and PSTN-based methods are increasingly treated as a risk-accepted compromise rather than the target state.</li>
+</ul>
+
+<p>For CISSP, the lesson is not “memorize the latest product trend.” The lesson is to reason about assurance and attack paths.</p>
+
+<h2 id="a-realistic-scenario-mfa-was-present-assurance-was-not">A realistic scenario: MFA was present, assurance was not</h2>
+
+<p>Imagine a company that does several things right:</p>
+
+<ul>
+  <li>workforce access goes through SSO</li>
+  <li>MFA is enforced</li>
+  <li>suspicious logins are monitored</li>
+  <li>privileged access is supposed to be controlled centrally</li>
+</ul>
+
+<p>An attacker phishes an employee password.</p>
+
+<p>The first login attempt fails because the attacker cannot satisfy the second factor. So they change tactics. They initiate the “lost phone” path and exploit a weak recovery workflow:</p>
+
+<ul>
+  <li>the support process verifies only easily obtained details</li>
+  <li>a new factor can be registered too quickly</li>
+  <li>the original user receives only a weak or delayed notification</li>
+  <li>the system allows high-risk actions immediately after recovery</li>
+</ul>
+
+<p>The attacker gets access anyway.</p>
+
+<p>That incident should not be described as “MFA failed.” A more accurate root cause is that the organization protected the primary sign-in path better than it protected the recovery path.</p>
+
+<p>This is one of the most useful CISSP lessons in Domain 5: the real question is not whether one control exists, but whether the whole identity lifecycle preserves appropriate assurance.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
+
+<p>These are the durable ideas CISSP keeps returning to:</p>
+
+<ul>
+  <li>unique identification</li>
+  <li>strong authentication appropriate to risk</li>
+  <li>least privilege after login</li>
+  <li>separation of duties for sensitive changes</li>
+  <li>accountability through notifications, logging, and review</li>
+</ul>
+
+<p>Those ideas do not age out.</p>
+
+<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
+
+<p>The implementation details continue to evolve:</p>
+
+<ul>
+  <li>phishing-resistant methods such as passkeys are becoming more common and more realistic at scale</li>
+  <li>security questions are no longer treated as a strong or modern answer</li>
+  <li>SMS and voice remain weaker options with known social engineering and interception risk</li>
+  <li>syncable authenticators improve usability, but high-assurance environments still need to think carefully about device trust, backup paths, and recovery of the sync fabric itself</li>
+</ul>
+
+<p>The theme is consistent: stronger authentication is good, but lifecycle and recovery design must keep up.</p>
+
+<h2 id="practical-checklist-for-engineering-teams">Practical checklist for engineering teams</h2>
+
+<p>If you want the practical version instead of the exam version, these are the controls worth reviewing:</p>
+
+<ul>
+  <li><strong>Offer more than one enrolled authenticator or recovery method</strong> for important accounts so users are not pushed into unsafe exceptions.</li>
+  <li><strong>Require reauthentication with an existing factor</strong> before allowing factor replacement, email changes, or MFA disablement.</li>
+  <li><strong>Prefer phishing-resistant authentication</strong> for admins, security-sensitive roles, and higher-risk workflows, and make it broadly available where possible.</li>
+  <li><strong>Treat help-desk recovery as a privileged workflow</strong>, not a customer service shortcut.</li>
+  <li><strong>Send out-of-band notifications</strong> for authenticator binding, recovery, and major account changes.</li>
+  <li><strong>Apply step-up authentication</strong> for high-risk actions such as disabling MFA, exporting sensitive data, or approving financial changes.</li>
+  <li><strong>Time-box or temporarily restrict privileged activity</strong> immediately after recovery or factor changes.</li>
+  <li><strong>Log identity lifecycle events well enough to investigate later</strong>, including factor enrollment, recovery requests, and administrative overrides.</li>
+</ul>
+
+<p>These are not glamorous controls. They are often the difference between an identity program that looks mature and one that actually is.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/control-stack.svg" alt="Stacked control diagram showing phishing-resistant sign-in, step-up authentication, secure recovery, and notifications and audit." />
+  <figcaption>Mature identity security is layered: stronger sign-in, stronger recovery, stronger step-up, and stronger accountability.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>MFA is a valuable control. It is just not a magic property that automatically survives weak recovery design.</p>
+
+<p>The true strength of an identity system is usually closer to the <strong>weakest account lifecycle path</strong> than to the strongest login demo.</p>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep: <strong>strong authentication is only as trustworthy as enrollment, recovery, and high-risk change control.</strong></p>
+
+<hr />
+
+<p><em>Post 12 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** MFA improves login security, but weak reset and recovery workflows can still lead to account compromise. Learn the CISSP mindset for phishing-resistant authentication and safer recovery design.
+
+**SEO keyword ideas:**
+1. CISSP MFA account recovery
+2. phishing resistant authentication CISSP
+3. passkeys and MFA security
+4. secure account recovery design
+5. identity lifecycle security controls
+-->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="mfa" /><category term="passkeys" /><category term="account-recovery" /><category term="phishing-resistant-authentication" /><summary type="html"><![CDATA[MFA blocks a lot of attacks, but weak reset and recovery processes can quietly undo the benefit. This CISSP-focused guide explains phishing-resistant authentication, safer factor changes, and why identity recovery deserves security design attention.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #11: Federation and SSO Do Not Remove Trust Boundaries</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" rel="alternate" type="text/html" title="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" /><published>2026-04-05T12:10:00+00:00</published><updated>2026-04-05T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/"><![CDATA[<p>Single sign-on is one of the most useful conveniences in modern security architecture.</p>
 
 <p>It is also one of the easiest places to overestimate what has been solved.</p>
 
@@ -1941,204 +2118,4 @@
 2. SLE ARO ALE examples for CISSP
 3. qualitative vs quantitative risk analysis cybersecurity
 4. risk acceptance vs mitigation CISSP
-5. CISSP Domain 1 risk treatment options -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="risk-management" /><category term="qualitative-risk" /><category term="quantitative-risk" /><category term="sle" /><category term="aro" /><category term="ale" /><summary type="html"><![CDATA[Risk management is not about memorizing formulas. It is about comparing impact, likelihood, and treatment options well enough to make a defensible business decision. Post 3 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #2: BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/" rel="alternate" type="text/html" title="CISSP #2: BCP, DRP, Incident Response, and Crisis Management: Stop Blurring the Lines" /><published>2026-03-31T12:02:00+00:00</published><updated>2026-03-31T12:02:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bcp-drp-incident-response-crisis-management/"><![CDATA[<p>Most people can define incident response in one sentence. Fewer can explain, under pressure, where incident response ends and disaster recovery starts. Fewer still can separate those from business continuity and crisis management in a way that survives a real outage.</p>
-
-<p>That distinction matters on the CISSP exam, and it matters even more in practice.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" alt="Visual model showing business continuity, disaster recovery, incident response, and crisis management as connected but distinct functions in an operational resilience program." />
-  <figcaption>These functions are related, but they solve different problems and operate on different timelines.</figcaption>
-</figure>
-
-<h2 id="the-one-page-mental-model">The one-page mental model</h2>
-
-<p>If you remember nothing else, remember this:</p>
-
-<ul>
-  <li>Business continuity planning (BCP) protects the business mission.</li>
-  <li>Disaster recovery planning (DRP) restores technology capability.</li>
-  <li>Incident response (IR) contains and handles security incidents.</li>
-  <li>Crisis management leads enterprise-level decisions and communications when disruption threatens the organization.</li>
-</ul>
-
-<p>All four belong in a mature resilience program. They overlap, but they are not interchangeable.</p>
-
-<h2 id="what-cissp-tests-vs-what-practice-demands">What CISSP tests vs what practice demands</h2>
-
-<p>CISSP questions often present two technically plausible answers. The better answer is usually the one that reflects scope and objective correctly.</p>
-
-<p>In exam terms, BCP is broader than DRP. DRP is often a subset or supporting plan under continuity strategy. IR is primarily a security function focused on detection, containment, eradication, and recovery from cyber incidents. Crisis management is executive coordination across legal, communications, operations, and leadership.</p>
-
-<p>In practice, these boundaries can be organizationally messy. Teams are understaffed. A single leader may wear two hats. Plans may live in separate tools and never get reconciled until the worst day. The exam assumes a clean model. Real operations reward you for understanding the clean model first, then handling the mess deliberately.</p>
-
-<h2 id="bcp-keep-critical-business-services-running">BCP: Keep critical business services running</h2>
-
-<p>Business continuity planning answers this question: how does the organization keep delivering essential outcomes during and after disruption?</p>
-
-<p>The scope is business processes, people, third parties, facilities, technology dependencies, and alternate work methods. BCP is driven by business impact analysis (BIA), which identifies critical functions and their tolerable downtime.</p>
-
-<p>If payroll can be delayed for 24 hours with manageable impact but payment processing cannot be down for more than 30 minutes, that is continuity prioritization, not a server conversation.</p>
-
-<p>Typical BCP outputs include:</p>
-
-<ul>
-  <li>prioritized business functions</li>
-  <li>continuity strategies for people, process, and location constraints</li>
-  <li>manual workarounds and alternate process paths</li>
-  <li>dependency maps across vendors and internal teams</li>
-  <li>governance for continuity exercises and updates</li>
-</ul>
-
-<p>Exam trap: picking a purely technical recovery action when the question is about maintaining business operations.</p>
-
-<h2 id="drp-restore-systems-and-data-to-support-continuity">DRP: Restore systems and data to support continuity</h2>
-
-<p>Disaster recovery planning is technology recovery strategy. It answers: how do we restore IT capabilities within acceptable windows after major disruption?</p>
-
-<p>This is where recovery sites, backup architecture, replication models, infrastructure as code restoration, and recovery testing cadence live. DRP is tightly coupled to continuity requirements but remains technical in focus.</p>
-
-<p>Two terms that frequently appear:</p>
-
-<ul>
-  <li>RTO (Recovery Time Objective): targeted maximum downtime for a system.</li>
-  <li>RPO (Recovery Point Objective): targeted maximum acceptable data loss measured in time.</li>
-</ul>
-
-<p>For example, an order platform with RTO of 60 minutes and RPO of 5 minutes needs architecture and procedures that can meet both objectives under realistic failure conditions.</p>
-
-<p>Exam trap: treating RTO and RPO as incident response metrics. They are recovery and continuity planning metrics.</p>
-
-<h2 id="incident-response-reduce-harm-during-a-security-event">Incident Response: Reduce harm during a security event</h2>
-
-<p>Incident response is a structured process for managing security events that rise to incident level. Most teams map to phases similar to preparation, detection/analysis, containment, eradication, recovery, and lessons learned.</p>
-
-<p>IR is operational and time-sensitive. It is focused on limiting blast radius, preserving evidence, coordinating technical remediation, and restoring trusted operations.</p>
-
-<p>If ransomware is spreading laterally, IR owns rapid containment decisions such as host isolation, account disablement, and forensic capture priorities. DRP may be invoked afterward for clean restoration. BCP may activate earlier if business services are degraded. Crisis management may engage if regulatory disclosures, customer trust, or executive decisions are in play.</p>
-
-<p>Exam trap: selecting “restore from backup” as the first response to an active incident before containment and analysis are handled.</p>
-
-<h2 id="crisis-management-lead-the-enterprise-under-uncertainty">Crisis Management: Lead the enterprise under uncertainty</h2>
-
-<p>Crisis management is the executive-level coordination function when disruption has strategic, legal, reputational, or safety impact.</p>
-
-<p>It addresses questions like:</p>
-
-<ul>
-  <li>Who can declare an organizational crisis?</li>
-  <li>Who approves external messaging?</li>
-  <li>What must be disclosed, to whom, and when?</li>
-  <li>Which tradeoffs are acceptable when legal, financial, and operational goals conflict?</li>
-</ul>
-
-<p>The crisis team usually includes executive leadership, legal, communications, risk, HR, and key operational leaders. Technical responders provide inputs, but crisis management is not a SOC runbook.</p>
-
-<p>Exam trap: assuming the technical incident commander owns public statements or regulatory communication strategy.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/rto-rpo-mtd-map.svg" alt="Timeline illustration mapping MTD, RTO, and RPO to a service outage and recovery sequence." />
-  <figcaption>MTD frames business tolerance, while RTO and RPO shape technical recovery design.</figcaption>
-</figure>
-
-<h2 id="mtd-rto-and-rpo-without-confusion">MTD, RTO, and RPO without confusion</h2>
-
-<p>These are often memorized separately and then misapplied together.</p>
-
-<ul>
-  <li>MTD (Maximum Tolerable Downtime) is business-centric. Beyond this point, mission impact becomes unacceptable.</li>
-  <li>RTO should be less than or equal to MTD for supporting systems.</li>
-  <li>RPO defines acceptable data loss exposure.</li>
-</ul>
-
-<p>A practical relationship is:</p>
-
-<ul>
-  <li>business defines MTD through BIA</li>
-  <li>technology designs RTO and RPO in DRP to stay within that business boundary</li>
-  <li>IR actions may affect whether those objectives are realistically achievable during an active attack</li>
-</ul>
-
-<p>When these values are defined in isolation, recovery plans fail in execution.</p>
-
-<h2 id="real-scenario-cloud-outage-during-a-security-incident">Real scenario: cloud outage during a security incident</h2>
-
-<p>Consider a SaaS company with a multi-region deployment. At 09:10, the security team detects unauthorized access to production credentials. At 09:20, suspicious administrative actions begin. By 09:35, one region is unavailable due to emergency containment and service impact is visible.</p>
-
-<p>Here is how boundaries should work:</p>
-
-<ul>
-  <li>IR activates first to contain credential abuse, preserve evidence, and stop further unauthorized activity.</li>
-  <li>BCP leadership evaluates which customer-facing services must continue and authorizes temporary degraded modes where needed.</li>
-  <li>DRP executes restoration plans for clean environments and validated data states, aligned with RTO/RPO commitments.</li>
-  <li>Crisis management decides communication posture, legal escalation, customer notifications, and executive decision rights.</li>
-</ul>
-
-<p>If one team tries to run all of this from a single technical checklist, coordination breaks. The result is usually delayed containment, confused messaging, and slower restoration.</p>
-
-<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
-
-<p>Some parts of this topic are stable and have been stable for years:</p>
-
-<ul>
-  <li>BCP, DRP, IR, and crisis management are distinct but interdependent functions.</li>
-  <li>BIA drives continuity priorities.</li>
-  <li>RTO/RPO are recovery design constraints tied to business tolerances.</li>
-  <li>Incident handling needs preparation, containment discipline, and post-incident learning.</li>
-</ul>
-
-<p>Recent developments mainly increase expectations for evidence of operational resilience, not the underlying principles.</p>
-
-<ul>
-  <li>Regulatory environments now place stronger pressure on resilience testing and governance. In the EU, DORA operationalized digital resilience obligations for financial entities.</li>
-  <li>Public company cyber disclosure obligations have tightened expectations around incident governance and communication discipline.</li>
-  <li>Cloud-native architectures changed implementation patterns, but not the need for clear function boundaries and accountability.</li>
-</ul>
-
-<p>The durable idea: tools evolve, governance logic does not.</p>
-
-<h2 id="common-mistakes-cissp-candidates-make">Common mistakes CISSP candidates make</h2>
-
-<ul>
-  <li>Treating BCP and DRP as synonyms.</li>
-  <li>Forgetting that BCP starts with business process criticality, not infrastructure preference.</li>
-  <li>Using incident response steps as if they are continuity strategy.</li>
-  <li>Ignoring crisis communication governance in high-impact incidents.</li>
-  <li>Memorizing MTD/RTO/RPO definitions but missing how they constrain one another.</li>
-</ul>
-
-<p>A useful exam habit is to ask: what is the primary objective in this question, and which function owns that objective?</p>
-
-<h2 id="how-to-make-this-operational-at-work">How to make this operational at work</h2>
-
-<p>If you are leading engineering or security in a real organization, a practical way to improve maturity is to run one integrated scenario each quarter and score the handoffs.</p>
-
-<p>Evaluate:</p>
-
-<ul>
-  <li>did IR contain quickly without destroying recovery options?</li>
-  <li>did DRP meet the declared RTO/RPO under realistic pressure?</li>
-  <li>did BCP keep critical services and business decisions aligned?</li>
-  <li>did crisis leadership control message, authority, and escalation timing?</li>
-</ul>
-
-<p>Most programs do not fail because they lack a plan. They fail because interfaces between plans were never exercised.</p>
-
-<p>That is exactly why this distinction matters beyond the exam.</p>
-
-<hr />
-
-<p><em>Post 2 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> Learn the practical and exam-critical differences between BCP, DRP, incident response, and crisis management, including how MTD, RTO, and RPO work together in real operations.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP BCP vs DRP vs incident response</li>
-  <li>crisis management vs incident response cybersecurity</li>
-  <li>MTD RTO RPO explained for CISSP</li>
-  <li>business continuity planning for security leaders</li>
-  <li>CISSP Domain 1 resilience and recovery</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="bcp" /><category term="drp" /><category term="incident-response" /><category term="crisis-management" /><category term="resilience" /><summary type="html"><![CDATA[CISSP candidates lose points when continuity, recovery, incident response, and crisis management get blended together. This guide separates each function and shows how they connect in real operations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/03/cissp-bcp-drp-incident-response-crisis-management/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. CISSP Domain 1 risk treatment options -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="risk-management" /><category term="qualitative-risk" /><category term="quantitative-risk" /><category term="sle" /><category term="aro" /><category term="ale" /><summary type="html"><![CDATA[Risk management is not about memorizing formulas. It is about comparing impact, likelihood, and treatment options well enough to make a defensible business decision. Post 3 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-management-impact-likelihood-treatment/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
