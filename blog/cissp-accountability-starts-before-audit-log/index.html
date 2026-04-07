@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #14: Accountability Starts Before the Audit Log | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Audit logs matter, but they cannot create accountability if identities are shared or weakly controlled. This CISSP-focused guide explains unique identities, service account ownership, privileged access, and how to make actions truly attributable." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-06T12:45:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-5" />
+      
+        <meta property="article:tag" content="iam" />
+      
+        <meta property="article:tag" content="accountability" />
+      
+        <meta property="article:tag" content="audit-logging" />
+      
+        <meta property="article:tag" content="shared-accounts" />
+      
+        <meta property="article:tag" content="service-accounts" />
+      
+    
+    <meta property="og:title" content="CISSP #14: Accountability Starts Before the Audit Log" />
+    <meta property="og:description" content="Audit logs matter, but they cannot create accountability if identities are shared or weakly controlled. This CISSP-focused guide explains unique identities, service account ownership, privileged access, and how to make actions truly attributable." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #14: Accountability Starts Before the Audit Log" />
+    <meta name="twitter:description" content="Audit logs matter, but they cannot create accountability if identities are shared or weakly controlled. This CISSP-focused guide explains unique identities, service account ownership, privileged access, and how to make actions truly attributable." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #14: Accountability Starts Before the Audit Log",
+        "description": "Audit logs matter, but they cannot create accountability if identities are shared or weakly controlled. This CISSP-focused guide explains unique identities, service account ownership, privileged access, and how to make actions truly attributable.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-06T12:45:00+00:00",
+        "dateModified": "2026-04-06T12:45:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-06T12:45:00+00:00">April 6, 2026</time>
+              <h1 class="post-title">CISSP #14: Accountability Starts Before the Audit Log</h1>
+              
+                <p class="post-dek">Audit logs matter, but they cannot create accountability if identities are shared or weakly controlled. This CISSP-focused guide explains unique identities, service account ownership, privileged access, and how to make actions truly attributable.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-5</span>
+                  
+                    <span class="chip">iam</span>
+                  
+                    <span class="chip">accountability</span>
+                  
+                    <span class="chip">audit-logging</span>
+                  
+                    <span class="chip">shared-accounts</span>
+                  
+                    <span class="chip">service-accounts</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>One of the most misleading phrases in security is, <strong>“we have logs for that.”</strong></p>
+
+<p>Logs matter. They are essential for investigation, detection, and auditability. But logs do not create accountability by themselves. If the underlying identity design is weak, the log may only tell you that <code class="language-plaintext highlighter-rouge">admin</code>, <code class="language-plaintext highlighter-rouge">svc-prod</code>, or some shared break-glass account did something important. That is not the same as knowing who actually did it, whether they were supposed to, or how much trust you should place in the record.</p>
+
+<p>That is exactly why CISSP keeps identity and accountability connected. The exam is not just asking whether a system records events. It is asking whether actions are <strong>attributable, reviewable, and governed well enough to support trust</strong>.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/hero.svg" alt="Illustration showing an audit log connected to unique identities, strong authentication, and privileged access controls." />
+  <figcaption>Good logging matters, but accountability starts earlier: with unique identities, strong authentication, and controlled privilege.</figcaption>
+</figure>
+
+<h2 id="why-logs-alone-do-not-create-accountability">Why logs alone do not create accountability</h2>
+
+<p>After an incident, the first question is often, “What do the logs show?”</p>
+
+<p>That is reasonable. But it is only useful if the system was designed so the recorded event is meaningfully tied to a real actor, a trustworthy session, and a bounded action.</p>
+
+<p>OWASP’s logging guidance makes this point in a practical way. Logs should help answer <strong>when, where, who, and what</strong>. They help with audit trails and incident investigation, but they are not a magic substitute for sound identity design. Even non-repudiation is hard to claim from logs alone if the underlying controls are weak or the identity is ambiguous.</p>
+
+<p>That is an important CISSP mindset shift:</p>
+
+<ul>
+  <li>a log entry is not the same as trustworthy attribution</li>
+  <li>logging after the fact does not fix weak authentication before the fact</li>
+  <li>shared identities weaken investigations even if every event is technically recorded</li>
+  <li>broad, unmanaged service accounts create blind spots that monitoring cannot fully repair</li>
+</ul>
+
+<p>In other words, <strong>visibility is valuable, but visibility without attribution is limited</strong>.</p>
+
+<h2 id="what-accountability-actually-requires">What accountability actually requires</h2>
+
+<p>CISSP keeps accountability separate from identification, authentication, and authorization for a reason. It is a related concept, but it answers a different question.</p>
+
+<ul>
+  <li><strong>Identification</strong>: who is claiming to be here?</li>
+  <li><strong>Authentication</strong>: did they prove it with sufficient assurance?</li>
+  <li><strong>Authorization</strong>: what are they allowed to do?</li>
+  <li><strong>Accountability</strong>: can the organization trace the action to the right subject and review it later?</li>
+</ul>
+
+<p>That last question depends on more than logs.</p>
+
+<h3 id="1-unique-identities">1. Unique identities</h3>
+
+<p>This is the foundation.</p>
+
+<p>If multiple people use the same account, the organization gives up a large part of its ability to investigate misuse, prove responsibility, or distinguish error from abuse. A shared admin login might feel convenient during busy operations, but it quietly destroys attribution.</p>
+
+<p>This is why CISSP strongly prefers unique user IDs and attributable actions over generic or communal accounts.</p>
+
+<h3 id="2-authentication-strength-that-matches-the-risk">2. Authentication strength that matches the risk</h3>
+
+<p>A unique username is not enough if anyone can plausibly impersonate the person behind it.</p>
+
+<p>Stronger authentication improves accountability because it gives the organization more confidence that the recorded user really controlled the session. That is one reason current NIST digital identity guidance emphasizes assurance levels, phishing-resistant options at higher assurance, and stronger lifecycle controls around authenticators.</p>
+
+<p>A log that says “Alice approved the change” is much more meaningful if Alice authenticated with an appropriately strong method than if the session depended on weak or reusable secrets.</p>
+
+<h3 id="3-separate-and-controlled-privileged-identities">3. Separate and controlled privileged identities</h3>
+
+<p>Administrators should not do everything from the same everyday account they use for email, chat, documentation, and web browsing.</p>
+
+<p>Separate privileged identities help with:</p>
+
+<ul>
+  <li>reducing phishing blast radius</li>
+  <li>constraining high-risk actions</li>
+  <li>making administrative events easier to review</li>
+  <li>supporting stronger step-up or session controls</li>
+</ul>
+
+<p>This is not about bureaucracy for its own sake. It is about making high-impact actions attributable and governable.</p>
+
+<h3 id="4-service-account-ownership-and-scope">4. Service account ownership and scope</h3>
+
+<p>Service accounts are not a mistake. They are often necessary.</p>
+
+<p>The problem starts when they are broad, long-lived, poorly named, or effectively ownerless. Once that happens, one identity may represent multiple apps, automation jobs, or emergency workarounds. The logs technically exist, but the meaning becomes muddy.</p>
+
+<p>A mature program should know:</p>
+
+<ul>
+  <li>what the service account is for</li>
+  <li>who owns it</li>
+  <li>what systems depend on it</li>
+  <li>what permissions it actually needs</li>
+  <li>how its secrets or keys are rotated and monitored</li>
+</ul>
+
+<p>That is still accountability work, even though no human is typing the credentials.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/identity-chain.svg" alt="Diagram showing accountability as a chain from unique identity to strong authentication to session control to logged action." />
+  <figcaption>Accountability is a chain: identity, authentication, session control, action, and review. Weakness early in the chain weakens the audit story later.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-shared-admin-account-that-tells-you-almost-nothing">A realistic scenario: the shared admin account that tells you almost nothing</h2>
+
+<p>Imagine an operations team managing a critical internal platform.</p>
+
+<p>Everyone knows the environment is sensitive, so logging is enabled everywhere. Administrative actions are recorded. Alerts are configured. The organization feels reasonably mature.</p>
+
+<p>Then a serious incident happens:</p>
+
+<ul>
+  <li>a privileged configuration is changed incorrectly</li>
+  <li>sensitive data is exported unexpectedly</li>
+  <li>the business needs to know whether this was error, misuse, or compromise</li>
+</ul>
+
+<p>The logs show the action came from <code class="language-plaintext highlighter-rouge">ops-admin-shared</code>.</p>
+
+<p>That account is used by several engineers during incidents because it is “faster than requesting elevation,” one manager keeps the credentials for emergencies, and a few scripts still depend on the same identity for historical reasons.</p>
+
+<p>Now the organization has multiple problems at once:</p>
+
+<ul>
+  <li>it cannot confidently attribute the action to one person</li>
+  <li>it cannot tell whether the session was legitimate or misused</li>
+  <li>it cannot scope the blast radius cleanly</li>
+  <li>it cannot prove good process to auditors or leadership</li>
+</ul>
+
+<p>This is the kind of quiet control failure CISSP wants you to recognize.</p>
+
+<p>The issue was not the absence of logs. The issue was that the identity design behind the logs was too weak to support trustworthy accountability.</p>
+
+<h2 id="why-shared-accounts-and-vague-admin-access-are-so-damaging">Why shared accounts and vague admin access are so damaging</h2>
+
+<p>Shared accounts create a false sense of control.</p>
+
+<p>At first, they seem practical. A team has a common credential for fast support, a generic admin login for emergency work, or a script identity that everyone can reuse. Short-term convenience improves. Long-term security clarity degrades.</p>
+
+<p>A few things go wrong very quickly:</p>
+
+<ul>
+  <li>people stop thinking about who should really have access</li>
+  <li>passwords or secrets spread informally</li>
+  <li>emergency access becomes standing access</li>
+  <li>separation of duties gets blurry</li>
+  <li>investigations become slower and less conclusive</li>
+</ul>
+
+<p>This is also where “good logging” gets overstated. A perfectly preserved log of a weakly governed account is still a weak accountability record.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
+
+<p>These ideas do not change:</p>
+
+<ul>
+  <li>use unique identities whenever possible</li>
+  <li>authenticate with assurance appropriate to business risk</li>
+  <li>avoid shared accounts except in narrowly controlled edge cases</li>
+  <li>limit and review privileged access</li>
+  <li>preserve audit trails so actions can be reconstructed and reviewed</li>
+</ul>
+
+<p>Those are durable CISSP principles.</p>
+
+<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
+
+<p>The implementation details continue to evolve:</p>
+
+<ul>
+  <li>phishing-resistant authentication and passkey-style approaches can strengthen attribution for human users</li>
+  <li>federated identity centralizes authentication, but relying systems still need local authorization and accountability discipline</li>
+  <li>workload identity and machine-to-machine authentication are replacing some older service account patterns, but they still need ownership, scoping, and monitoring</li>
+  <li>security teams increasingly care about the full chain: identity proof, login strength, session signals, privilege activation, and audit integrity</li>
+</ul>
+
+<p>The theme stays the same: <strong>stronger identity architecture makes logs more meaningful</strong>.</p>
+
+<h2 id="practical-checklist-for-engineering-and-security-teams">Practical checklist for engineering and security teams</h2>
+
+<p>If you want the practical version instead of the exam version, these are the questions worth asking:</p>
+
+<ul>
+  <li><strong>Does every meaningful human action map to a unique individual identity?</strong></li>
+  <li><strong>Are privileged actions performed from separate, controlled admin identities rather than daily-use accounts?</strong></li>
+  <li><strong>Do shared or break-glass accounts exist, and if so, are they tightly limited, monitored, and reviewed?</strong></li>
+  <li><strong>Do service accounts have a clear owner, a narrow purpose, and scoped permissions?</strong></li>
+  <li><strong>Are logs capturing enough context to answer when, where, who, and what without exposing sensitive secrets?</strong></li>
+  <li><strong>Can we detect privilege changes, admin actions, token misuse, and sensitive exports quickly enough to matter?</strong></li>
+  <li><strong>Would an investigation after an incident produce real attribution, or only a vague story?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-accountability-starts-before-audit-log/shared-account-blindspot.svg" alt="Comparison showing a clear audit trail with unique identities versus an ambiguous trail created by shared admin accounts and broad service accounts." />
+  <figcaption>When identities are shared or vague, the audit trail may still exist, but its value drops sharply when you need it most.</figcaption>
+</figure>
+
+<p>These are not just audit questions. They are resilience questions too.</p>
+
+<p>Good accountability shortens incident investigation, improves deterrence, supports governance, and helps the business make better decisions under pressure.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP rarely wants the flashy answer.</p>
+
+<p>If a question is about fraud, misuse, privileged activity, or proving what happened, the better answer often combines:</p>
+
+<ul>
+  <li>unique identity</li>
+  <li>appropriate authentication strength</li>
+  <li>least privilege or separation of duties</li>
+  <li>attributable logging and review</li>
+</ul>
+
+<p>That is usually stronger than an answer that relies on “turn on more logging” alone.</p>
+
+<p>The exam is trying to reinforce a bigger lesson: <strong>security controls work best when people, process, and technology reinforce each other instead of compensating for each other badly</strong>.</p>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>Logs are essential. They are just not where accountability begins.</p>
+
+<p>Accountability starts with how identities are issued, how authentication is performed, how privileges are separated, and how actions are attributed across both humans and machines.</p>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep: <strong>good audit trails depend on good identity design. Shared accounts, vague service identities, and weak privileged workflows can ruin accountability long before anyone opens the logs.</strong></p>
+
+<hr />
+
+<p><em>Post 14 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Audit logs matter, but they cannot create accountability on their own. Learn the CISSP view of unique identities, shared accounts, service accounts, and attributable security logging.
+
+**SEO keyword ideas:**
+1. CISSP accountability shared accounts
+2. audit logging and identity accountability
+3. service accounts security ownership
+4. unique identities CISSP IAM
+5. privileged access accountability controls
+-->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

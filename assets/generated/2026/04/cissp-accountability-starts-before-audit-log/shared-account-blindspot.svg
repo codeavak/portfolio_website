@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Shared account blind spot diagram</title>
+  <desc id="desc">Side-by-side comparison of clear auditability with unique identities versus ambiguity with shared accounts and broad service identities.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Clear Attribution vs. Shared-Account Blind Spot</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Both sides have logs. Only one side has a trustworthy accountability story.</text>
+
+  <rect x="60" y="150" width="400" height="360" rx="20" fill="#111827" stroke="#34d399" stroke-width="3"/>
+  <rect x="540" y="150" width="400" height="360" rx="20" fill="#111827" stroke="#f87171" stroke-width="3"/>
+
+  <text x="260" y="190" text-anchor="middle" fill="#86efac" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Unique identities</text>
+  <text x="740" y="190" text-anchor="middle" fill="#fca5a5" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Shared identities</text>
+
+  <text x="95" y="240" fill="#d1fae5" font-family="Consolas, monospace" font-size="16">alice.admin  -> approve change</text>
+  <text x="95" y="270" fill="#d1fae5" font-family="Consolas, monospace" font-size="16">bob.ops      -> export report</text>
+  <text x="95" y="300" fill="#d1fae5" font-family="Consolas, monospace" font-size="16">svc.payroll  -> nightly sync</text>
+  <text x="95" y="350" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="17">• clear owner</text>
+  <text x="95" y="376" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="17">• strong review trail</text>
+  <text x="95" y="402" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="17">• faster investigation</text>
+  <text x="95" y="428" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="17">• better deterrence</text>
+
+  <text x="575" y="240" fill="#fee2e2" font-family="Consolas, monospace" font-size="16">ops-admin-shared -> approve?</text>
+  <text x="575" y="270" fill="#fee2e2" font-family="Consolas, monospace" font-size="16">ops-admin-shared -> export?</text>
+  <text x="575" y="300" fill="#fee2e2" font-family="Consolas, monospace" font-size="16">svc-prod        -> many jobs</text>
+  <text x="575" y="350" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="17">• unclear actor</text>
+  <text x="575" y="376" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="17">• weak scoping</text>
+  <text x="575" y="402" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="17">• slow incident response</text>
+  <text x="575" y="428" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="17">• poor audit confidence</text>
+
+  <line x1="500" y1="150" x2="500" y2="510" stroke="#334155" stroke-dasharray="8 8" stroke-width="2"/>
+</svg>
