@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Local versus central biometric design</title>
+  <desc id="desc">Comparison diagram showing lower-risk local biometric activation on a device versus higher-risk central storage and verification.</desc>
+  <rect width="1000" height="600" fill="#0b1220" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Use Biometrics in the Right Place</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">The safer pattern is usually local activation of a trusted authenticator, not a centralized identity shortcut.</text>
+
+  <rect x="60" y="140" width="400" height="370" rx="20" fill="#0f172a" stroke="#34d399" stroke-width="3"/>
+  <rect x="540" y="140" width="400" height="370" rx="20" fill="#0f172a" stroke="#f87171" stroke-width="3"/>
+
+  <text x="260" y="185" text-anchor="middle" fill="#86efac" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Local activation</text>
+  <text x="740" y="185" text-anchor="middle" fill="#fca5a5" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Centralized matching</text>
+
+  <rect x="120" y="225" width="120" height="170" rx="18" fill="#111827" stroke="#93c5fd"/>
+  <circle cx="180" cy="260" r="18" fill="none" stroke="#93c5fd" stroke-width="3"/>
+  <rect x="145" y="430" width="70" height="10" rx="5" fill="#334155"/>
+  <path d="M295 300 h90" stroke="#34d399" stroke-width="6" marker-end="url(#arrowGood)"/>
+  <rect x="320" y="250" width="95" height="100" rx="14" fill="#111827" stroke="#34d399"/>
+  <text x="367" y="292" text-anchor="middle" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="14">Secure</text>
+  <text x="367" y="314" text-anchor="middle" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="14">key /</text>
+  <text x="367" y="336" text-anchor="middle" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="14">passkey</text>
+
+  <text x="90" y="460" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="16">• device-bound</text>
+  <text x="90" y="485" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="16">• less biometric exposure</text>
+  <text x="90" y="510" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="16">• cleaner privacy boundary</text>
+
+  <circle cx="625" cy="285" r="48" fill="#111827" stroke="#93c5fd" stroke-width="3"/>
+  <rect x="695" y="240" width="180" height="90" rx="14" fill="#111827" stroke="#f87171"/>
+  <text x="785" y="273" text-anchor="middle" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">Central biometric</text>
+  <text x="785" y="297" text-anchor="middle" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">template store</text>
+  <path d="M675 285 h18" stroke="#f87171" stroke-width="6" marker-end="url(#arrowBad)"/>
+
+  <text x="570" y="400" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">• higher privacy impact</text>
+  <text x="570" y="425" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">• harder recovery story</text>
+  <text x="570" y="450" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">• more storage / admin risk</text>
+  <text x="570" y="475" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="16">• larger blast radius</text>
+
+  <defs>
+    <marker id="arrowGood" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowBad" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#f87171"/>
+    </marker>
+  </defs>
+</svg>

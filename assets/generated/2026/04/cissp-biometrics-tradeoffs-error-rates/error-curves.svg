@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">FAR FRR CER diagram</title>
+  <desc id="desc">Chart illustrating the tradeoff between false acceptance and false rejection with the crossover error rate marked.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Biometric Threshold Tradeoff</text>
+  <text x="60" y="102" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="18">Tighter matching can lower false accepts but raise false rejects.</text>
+
+  <line x1="120" y1="500" x2="900" y2="500" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="120" y1="500" x2="120" y2="140" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="910" y="506" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">Threshold strictness</text>
+  <text x="35" y="150" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16" transform="rotate(-90 35 150)">Error rate</text>
+
+  <path d="M140 200 C 260 230, 360 270, 470 320 S 700 420, 880 470" fill="none" stroke="#f87171" stroke-width="5" stroke-linecap="round"/>
+  <path d="M140 460 C 270 410, 360 360, 470 320 S 700 210, 880 165" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="500" cy="320" r="8" fill="#facc15"/>
+  <line x1="500" y1="320" x2="500" y2="500" stroke="#facc15" stroke-dasharray="7 7" stroke-width="2"/>
+  <text x="518" y="312" fill="#fde68a" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">CER</text>
+
+  <text x="745" y="456" fill="#fecaca" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">FRR</text>
+  <text x="735" y="190" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">FAR</text>
+
+  <rect x="130" y="525" width="730" height="40" rx="10" fill="#111827" stroke="#334155"/>
+  <text x="495" y="550" text-anchor="middle" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="16">Lower friction on the left • higher assurance on the right • no setting gives perfection</text>
+</svg>
