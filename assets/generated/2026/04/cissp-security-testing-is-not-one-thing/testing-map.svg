@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Security testing map</title>
+  <desc id="desc">Comparison diagram mapping vulnerability assessment, penetration testing, audit, log review, and synthetic monitoring to the security questions they answer.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Which Question Are You Really Asking?</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">The right testing method depends on the decision you need to support.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">
+    <rect x="60" y="150" width="250" height="64" rx="14" fill="#111827" stroke="#34d399"/>
+    <text x="185" y="188" text-anchor="middle" fill="#bbf7d0">What known issues exist?</text>
+
+    <rect x="60" y="235" width="250" height="64" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="185" y="273" text-anchor="middle" fill="#bfdbfe">Can an attacker get impact?</text>
+
+    <rect x="60" y="320" width="250" height="64" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="185" y="358" text-anchor="middle" fill="#fde68a">Are controls in place?</text>
+
+    <rect x="60" y="405" width="250" height="64" rx="14" fill="#111827" stroke="#f87171"/>
+    <text x="185" y="443" text-anchor="middle" fill="#fecaca">Would we notice fast enough?</text>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="640" y="150" width="280" height="64" rx="14" fill="#111827" stroke="#34d399"/>
+    <text x="780" y="188" text-anchor="middle" fill="#bbf7d0">Vulnerability assessment</text>
+
+    <rect x="640" y="235" width="280" height="64" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="780" y="273" text-anchor="middle" fill="#bfdbfe">Penetration test</text>
+
+    <rect x="640" y="320" width="280" height="64" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="780" y="358" text-anchor="middle" fill="#fde68a">Audit / control review</text>
+
+    <rect x="640" y="405" width="280" height="64" rx="14" fill="#111827" stroke="#f87171"/>
+    <text x="780" y="443" text-anchor="middle" fill="#fecaca">Log review / monitoring</text>
+  </g>
+
+  <g stroke-width="5" fill="none">
+    <path d="M310 182 H 640" stroke="#34d399" marker-end="url(#g1)"/>
+    <path d="M310 267 H 640" stroke="#60a5fa" marker-end="url(#g2)"/>
+    <path d="M310 352 H 640" stroke="#f59e0b" marker-end="url(#g3)"/>
+    <path d="M310 437 H 640" stroke="#f87171" marker-end="url(#g4)"/>
+  </g>
+
+  <rect x="180" y="505" width="640" height="52" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="500" y="537" text-anchor="middle" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="16">Synthetic monitoring supports runtime assurance across key flows, but it is not a substitute for deeper security assessment.</text>
+
+  <defs>
+    <marker id="g1" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#34d399"/></marker>
+    <marker id="g2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#60a5fa"/></marker>
+    <marker id="g3" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#f59e0b"/></marker>
+    <marker id="g4" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#f87171"/></marker>
+  </defs>
+</svg>
