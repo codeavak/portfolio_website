@@ -50,14 +50,14 @@ Once you ask the right question, the right testing method becomes much clearer.
 
 Here is the practical version:
 
-| Activity | Main question it answers | Best use | What it does **not** prove |
-| --- | --- | --- | --- |
-| **Vulnerability assessment** | What known weaknesses or misconfigurations exist? | Broad coverage and prioritization | Whether those issues can be chained into real business impact |
-| **Penetration test** | Can a skilled tester actually exploit the environment and achieve meaningful impact? | Adversarial validation of exploitable paths | Full compliance, continuous assurance, or complete defect coverage |
-| **Audit** | Are required controls, processes, and evidence in place? | Governance, assurance, and compliance checking | Real-world exploitability or attack realism |
-| **Log review** | What happened, what is suspicious, and what are we missing? | Detection tuning, investigation, and operational visibility | Whether preventive controls are strong enough on their own |
-| **Synthetic monitoring** | Do critical flows and alerts behave as expected over time? | Runtime assurance for important paths | A deep security assessment by itself |
-| **Control validation** | Does a specific control work in practice, not just on paper? | Verifying preventive and detective safeguards | Overall program maturity by itself |
+| Activity                     | Main question it answers                                                             | Best use                                                    | What it does **not** prove                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Vulnerability assessment** | What known weaknesses or misconfigurations exist?                                    | Broad coverage and prioritization                           | Whether those issues can be chained into real business impact      |
+| **Penetration test**         | Can a skilled tester actually exploit the environment and achieve meaningful impact? | Adversarial validation of exploitable paths                 | Full compliance, continuous assurance, or complete defect coverage |
+| **Audit**                    | Are required controls, processes, and evidence in place?                             | Governance, assurance, and compliance checking              | Real-world exploitability or attack realism                        |
+| **Log review**               | What happened, what is suspicious, and what are we missing?                          | Detection tuning, investigation, and operational visibility | Whether preventive controls are strong enough on their own         |
+| **Synthetic monitoring**     | Do critical flows and alerts behave as expected over time?                           | Runtime assurance for important paths                       | A deep security assessment by itself                               |
+| **Control validation**       | Does a specific control work in practice, not just on paper?                         | Verifying preventive and detective safeguards               | Overall program maturity by itself                                 |
 
 If you remember nothing else for the exam, remember this: **these are complementary, not interchangeable**.
 

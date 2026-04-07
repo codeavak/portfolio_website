@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Logging and monitoring hero image</title>
+  <desc id="desc">Illustration showing many raw logs flowing through filtering and baselining into a smaller set of actionable monitoring signals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08101d" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#12233f" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="160" fill="#60a5fa" opacity="0.12"/>
+  <circle cx="160" cy="540" r="170" fill="#22c55e" opacity="0.08"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)" stroke="#93c5fd" stroke-opacity="0.22"/>
+
+  <text x="100" y="145" fill="#e5eefc" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CISSP #16</text>
+  <text x="100" y="205" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">More Logs Do Not Mean</text>
+  <text x="100" y="250" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Better Monitoring</text>
+  <text x="100" y="305" fill="#c7dbff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Actionable telemetry beats alert fog and dashboard noise.</text>
+
+  <g font-family="Consolas, monospace" font-size="14">
+    <rect x="650" y="120" width="150" height="210" rx="16" fill="#111827" stroke="#f87171"/>
+    <text x="675" y="155" fill="#fecaca">RAW LOGS</text>
+    <text x="670" y="185" fill="#e5e7eb">auth ok</text>
+    <text x="670" y="208" fill="#e5e7eb">healthcheck</text>
+    <text x="670" y="231" fill="#e5e7eb">debug msg</text>
+    <text x="670" y="254" fill="#e5e7eb">request 200</text>
+    <text x="670" y="277" fill="#e5e7eb">probe hit</text>
+    <text x="670" y="300" fill="#e5e7eb">retry...</text>
+
+    <path d="M810 225 H 890" stroke="#93c5fd" stroke-width="8" marker-end="url(#arrow1)"/>
+    <polygon points="890,165 1010,165 960,285 890,285" fill="#0f172a" stroke="#34d399" stroke-width="3"/>
+    <text x="930" y="210" text-anchor="middle" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Filter</text>
+    <text x="930" y="232" text-anchor="middle" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">baseline</text>
+    <text x="930" y="254" text-anchor="middle" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">context</text>
+
+    <path d="M1010 225 H 1085" stroke="#34d399" stroke-width="8" marker-end="url(#arrow2)"/>
+    <rect x="980" y="360" width="130" height="110" rx="16" fill="#111827" stroke="#f59e0b"/>
+    <text x="1045" y="392" text-anchor="middle" fill="#fde68a" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">SIGNAL</text>
+    <text x="995" y="420" fill="#f8fafc" font-size="12">privilege change</text>
+    <text x="995" y="440" fill="#f8fafc" font-size="12">odd export spike</text>
+  </g>
+
+  <defs>
+    <marker id="arrow1" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#93c5fd"/></marker>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#34d399"/></marker>
+  </defs>
+</svg>
