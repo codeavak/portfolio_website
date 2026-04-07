@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Signal versus noise diagram</title>
+  <desc id="desc">Comparison showing noisy monitoring with alert fatigue on one side and contextual, actionable telemetry on the other.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Noise vs. Actionable Telemetry</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Busy dashboards are not the same as useful monitoring.</text>
+
+  <rect x="60" y="150" width="400" height="360" rx="20" fill="#111827" stroke="#f87171" stroke-width="3"/>
+  <rect x="540" y="150" width="400" height="360" rx="20" fill="#111827" stroke="#34d399" stroke-width="3"/>
+
+  <text x="260" y="190" text-anchor="middle" fill="#fca5a5" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Noise / alert fatigue</text>
+  <text x="740" y="190" text-anchor="middle" fill="#86efac" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Actionable signal</text>
+
+  <g fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="17">
+    <text x="95" y="240">• repeated low-value events</text>
+    <text x="95" y="270">• weak or missing context</text>
+    <text x="95" y="300">• poor prioritization</text>
+    <text x="95" y="330">• analysts stop trusting alerts</text>
+    <text x="95" y="360">• important events get buried</text>
+  </g>
+
+  <g fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="17">
+    <text x="575" y="240">• risk-tied events only</text>
+    <text x="575" y="270">• when, where, who, what</text>
+    <text x="575" y="300">• baseline-aware triage</text>
+    <text x="575" y="330">• better analyst confidence</text>
+    <text x="575" y="360">• faster response decisions</text>
+  </g>
+
+  <rect x="105" y="400" width="310" height="70" rx="14" fill="#1f2937" stroke="#f87171"/>
+  <text x="260" y="442" text-anchor="middle" fill="#fecaca" font-family="Consolas, monospace" font-size="15">200 alerts • low trust • slow action</text>
+
+  <rect x="585" y="400" width="310" height="70" rx="14" fill="#1f2937" stroke="#34d399"/>
+  <text x="740" y="442" text-anchor="middle" fill="#bbf7d0" font-family="Consolas, monospace" font-size="15">8 alerts • high context • fast action</text>
+</svg>

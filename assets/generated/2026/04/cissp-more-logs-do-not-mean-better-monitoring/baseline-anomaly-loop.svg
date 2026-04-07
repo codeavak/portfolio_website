@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Baseline and anomaly loop</title>
+  <desc id="desc">Loop diagram showing the cycle of baseline creation, monitoring, anomaly detection, triage, and tuning.</desc>
+  <rect width="1000" height="600" fill="#0b1220" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Monitoring Gets Better Through a Loop</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Normal behavior defines the starting point; tuning keeps the system useful.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="160" y="120" width="180" height="70" rx="16" fill="#111827" stroke="#34d399"/>
+    <text x="250" y="162" text-anchor="middle" fill="#bbf7d0">Build baseline</text>
+
+    <rect x="670" y="120" width="170" height="70" rx="16" fill="#111827" stroke="#60a5fa"/>
+    <text x="755" y="162" text-anchor="middle" fill="#bfdbfe">Monitor events</text>
+
+    <rect x="690" y="400" width="160" height="70" rx="16" fill="#111827" stroke="#f59e0b"/>
+    <text x="770" y="442" text-anchor="middle" fill="#fde68a">Triage anomaly</text>
+
+    <rect x="150" y="400" width="170" height="70" rx="16" fill="#111827" stroke="#a78bfa"/>
+    <text x="235" y="442" text-anchor="middle" fill="#ddd6fe">Tune rules</text>
+
+    <circle cx="500" cy="300" r="78" fill="#111827" stroke="#93c5fd" stroke-width="3"/>
+    <text x="500" y="292" text-anchor="middle" fill="#f8fafc">Detect</text>
+    <text x="500" y="318" text-anchor="middle" fill="#f8fafc">meaningful drift</text>
+  </g>
+
+  <g stroke-width="6" fill="none">
+    <path d="M340 155 C 430 105, 560 105, 670 150" stroke="#34d399" marker-end="url(#l1)"/>
+    <path d="M755 190 C 835 235, 845 340, 790 400" stroke="#60a5fa" marker-end="url(#l2)"/>
+    <path d="M690 445 C 590 520, 390 520, 320 445" stroke="#f59e0b" marker-end="url(#l3)"/>
+    <path d="M180 400 C 120 340, 125 220, 185 175" stroke="#a78bfa" marker-end="url(#l4)"/>
+  </g>
+
+  <defs>
+    <marker id="l1" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#34d399"/></marker>
+    <marker id="l2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#60a5fa"/></marker>
+    <marker id="l3" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#f59e0b"/></marker>
+    <marker id="l4" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#a78bfa"/></marker>
+  </defs>
+</svg>

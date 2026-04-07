@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-07T17:27:18+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #15: Security Testing Is Not One Thing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/" rel="alternate" type="text/html" title="CISSP #15: Security Testing Is Not One Thing" /><published>2026-04-07T12:15:00+00:00</published><updated>2026-04-07T12:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/"><![CDATA[<p>One of the most common security misunderstandings in real organizations sounds like this: <strong>“Something feels risky. Let’s get a pen test.”</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-07T18:08:16+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #16: More Logs Do Not Mean Better Monitoring</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/" rel="alternate" type="text/html" title="CISSP #16: More Logs Do Not Mean Better Monitoring" /><published>2026-04-07T12:45:00+00:00</published><updated>2026-04-07T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/"><![CDATA[<p>A lot of organizations have no shortage of logs. What they lack is <strong>useful signal</strong>.</p>
+
+<p>That is one of the more practical CISSP lessons in Domain 6. Logging, monitoring, baselining, and anomaly detection are all important. But simply collecting more data does not automatically create better visibility. In some environments, it does the opposite: it buries the meaningful events under a flood of low-value noise.</p>
+
+<p>Good monitoring is not about proving that a system can generate terabytes of records. It is about helping the organization answer a few critical questions quickly:</p>
+
+<ul>
+  <li>what happened?</li>
+  <li>who or what was involved?</li>
+  <li>is this normal or abnormal?</li>
+  <li>does it matter enough to act now?</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" alt="Illustration showing a flood of raw logs being filtered into a smaller set of actionable security signals and monitored events." />
+  <figcaption>More records do not automatically produce more clarity. Useful monitoring turns raw events into signals people can actually act on.</figcaption>
+</figure>
+
+<h2 id="why-this-topic-matters-so-much">Why this topic matters so much</h2>
+
+<p>Security teams often ask for “more logging” after an incident, a near miss, or an audit finding. That instinct is understandable. If visibility was weak, collecting more events feels like the obvious fix.</p>
+
+<p>But that fix only works if the new telemetry is relevant, attributable, reviewable, and connected to monitoring processes that can actually separate signal from noise.</p>
+
+<p>OWASP’s logging guidance makes this point clearly: application logging should support both operational and security use cases, and a blind checklist approach can create <strong>alarm fog</strong> rather than insight. NIST guidance on log management and continuous monitoring points in the same direction. Mature programs need visibility, but they also need discipline in what they collect, how they analyze it, and how they respond.</p>
+
+<p>That is a very CISSP kind of lesson: <strong>control effectiveness depends on design and operation, not just tool presence.</strong></p>
+
+<h2 id="logging-monitoring-baselining-and-anomaly-detection-are-not-the-same-thing">Logging, monitoring, baselining, and anomaly detection are not the same thing</h2>
+
+<p>These terms are related, but they do different jobs.</p>
+
+<h3 id="logging">Logging</h3>
+
+<p>Logging is the act of recording events.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>authentication successes and failures</li>
+  <li>authorization failures</li>
+  <li>privileged actions</li>
+  <li>configuration changes</li>
+  <li>data exports</li>
+  <li>application errors</li>
+  <li>session anomalies</li>
+</ul>
+
+<p>A log record is evidence that something happened.</p>
+
+<h3 id="monitoring">Monitoring</h3>
+
+<p>Monitoring is the process of watching the environment for conditions that matter.</p>
+
+<p>That may include dashboards, alerting, review workflows, or centralized analysis through a SIEM or similar platform. Monitoring is where the organization tries to determine whether the recorded events require attention.</p>
+
+<h3 id="baselining">Baselining</h3>
+
+<p>Baselining defines what <strong>normal</strong> looks like.</p>
+
+<p>That might mean normal login times, normal API request volume, normal admin activity, normal data transfer patterns, or normal service-account behavior. Without a baseline, it is much harder to distinguish legitimate variation from truly suspicious activity.</p>
+
+<h3 id="anomaly-detection">Anomaly detection</h3>
+
+<p>Anomaly detection looks for meaningful deviation from the baseline.</p>
+
+<p>That sounds simple, but it only works when the baseline is credible and the organization understands the context. Otherwise, anomaly detection becomes a machine for generating noise.</p>
+
+<p>That is why an unexpected event is not automatically a meaningful event.</p>
+
+<h2 id="the-difference-between-noisy-logging-and-actionable-telemetry">The difference between noisy logging and actionable telemetry</h2>
+
+<p>Not every metric is equally useful. Not every event deserves the same storage, review, or alerting priority.</p>
+
+<p>Useful telemetry has a few traits:</p>
+
+<ul>
+  <li>it is tied to real business or security risk</li>
+  <li>it captures enough context to explain <strong>when, where, who, and what</strong></li>
+  <li>it can be correlated with related events</li>
+  <li>it supports investigation without exposing unnecessary secrets</li>
+  <li>it is reviewed by a process that can actually respond</li>
+</ul>
+
+<p>Noisy telemetry usually has the opposite traits:</p>
+
+<ul>
+  <li>huge volume without clear prioritization</li>
+  <li>repetitive low-value events drowning higher-risk actions</li>
+  <li>weak context or inconsistent fields</li>
+  <li>alerts that fire too often to trust</li>
+  <li>dashboards that look busy but do not improve decisions</li>
+</ul>
+
+<p>This is where many organizations quietly lose the plot. They think they are increasing visibility when they are really increasing clutter.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/signal-vs-noise.svg" alt="Side-by-side diagram showing a noisy event stream with alert fatigue versus a filtered stream of actionable telemetry with clear context." />
+  <figcaption>Noise creates fatigue. Actionable telemetry creates decisions.</figcaption>
+</figure>
+
+<h2 id="what-should-usually-be-logged">What should usually be logged</h2>
+
+<p>OWASP’s guidance is practical here: log events that help identify security incidents, policy violations, misuse, and important business or administrative actions. In practice, higher-value events often include:</p>
+
+<ul>
+  <li>login successes and failures</li>
+  <li>access control failures</li>
+  <li>privilege changes</li>
+  <li>use of default, shared, or break-glass accounts</li>
+  <li>high-risk admin actions</li>
+  <li>sensitive data exports</li>
+  <li>suspicious sequencing or business-logic abuse</li>
+  <li>major configuration changes</li>
+  <li>startup, shutdown, and logging interruptions</li>
+</ul>
+
+<p>That does <strong>not</strong> mean logging everything indiscriminately.</p>
+
+<p>Useful telemetry still has to be safe telemetry. Passwords, access tokens, secrets, and highly sensitive personal data should not simply be dumped into logs. A team that logs too much sensitive content may create a second security problem while trying to improve visibility.</p>
+
+<h2 id="why-baselines-matter-more-than-people-think">Why baselines matter more than people think</h2>
+
+<p>A baseline is what turns observation into judgment.</p>
+
+<p>If an engineer logs in from the corporate VPN at 9:00 a.m. and checks a deployment dashboard, that may be ordinary. If a rarely used service account suddenly authenticates from a new host at 2:13 a.m., requests broad database access, and starts exporting records in unusual volume, that is a very different story.</p>
+
+<p>Both are “events.” Only one is clearly worth escalation.</p>
+
+<p>This is why mature monitoring programs do not just store events. They ask:</p>
+
+<ul>
+  <li>what does normal behavior look like for this system?</li>
+  <li>which users, machines, or workloads regularly do this?</li>
+  <li>what volume, timing, or location would be unusual enough to care about?</li>
+  <li>what combinations of changes create a higher-confidence signal?</li>
+</ul>
+
+<p>That baselining work is not glamorous, but it is what helps anomaly detection become useful instead of theatrical.</p>
+
+<h2 id="a-realistic-scenario-plenty-of-logs-very-little-clarity">A realistic scenario: plenty of logs, very little clarity</h2>
+
+<p>Imagine a SaaS company that takes logging seriously.</p>
+
+<p>Its cloud platform, web applications, identity provider, and WAF all generate large volumes of events. The security dashboard looks active all day. Leadership feels reassured because the organization appears highly instrumented.</p>
+
+<p>Then an attacker compromises a support employee account through a convincing phishing flow and begins working laterally.</p>
+
+<p>The attacker:</p>
+
+<ul>
+  <li>authenticates successfully from an unusual location</li>
+  <li>pivots into an internal admin console</li>
+  <li>triggers several failed authorization checks while exploring</li>
+  <li>eventually reaches a data export path through a poorly reviewed role exception</li>
+</ul>
+
+<p>The problem is not that the organization had no logs.</p>
+
+<p>The problem is that the signal was buried:</p>
+
+<ul>
+  <li>too many low-value alerts were already firing every hour</li>
+  <li>geolocation anomalies were noisy because the baseline was weak</li>
+  <li>admin-console events lacked enough context to show who approved recent role exceptions</li>
+  <li>the data export alert existed, but the response queue was overloaded and tuning had stalled</li>
+</ul>
+
+<p>This is the operational failure CISSP wants you to see.</p>
+
+<p>The missing control was not “more logs.” The missing control was <strong>better telemetry design and better monitoring discipline</strong>.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
+
+<p>These ideas remain durable:</p>
+
+<ul>
+  <li>logs should support investigation, accountability, and detection</li>
+  <li>important events need reliable timestamps and useful context</li>
+  <li>monitoring should focus on events proportionate to risk</li>
+  <li>baselines matter because unusual activity only makes sense against normal behavior</li>
+  <li>log integrity, retention, and review are part of the control, not an afterthought</li>
+</ul>
+
+<p>Those are long-standing security principles.</p>
+
+<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
+
+<p>The implementation environment has evolved:</p>
+
+<ul>
+  <li>cloud platforms and SaaS tools produce far more event data than older environments did</li>
+  <li>identity systems, workload telemetry, and API activity now provide high-value monitoring sources</li>
+  <li>teams increasingly rely on detection engineering to tune alerts and improve fidelity over time</li>
+  <li>anomaly detection and user-behavior analytics can help, but only when grounded in good context and careful tuning</li>
+  <li>continuous monitoring matters more because environments change constantly, not just at audit time</li>
+</ul>
+
+<p>NIST SP 800-137 still captures the heart of this well: continuous monitoring is about visibility into assets, threats, vulnerabilities, and the effectiveness of controls over time.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP is not asking whether you know a particular SIEM product.</p>
+
+<p>It is asking whether you understand that monitoring is a <strong>management and assurance function</strong>, not just a storage problem.</p>
+
+<p>If a question asks how to improve detection or support incident response, the strongest answer usually includes:</p>
+
+<ul>
+  <li>relevant event collection</li>
+  <li>reliable review and alerting</li>
+  <li>enough context to reconstruct events</li>
+  <li>attention to anomaly detection or trend analysis</li>
+  <li>risk-based prioritization rather than logging for its own sake</li>
+</ul>
+
+<p>The exam usually does not reward “collect everything and hope.” It rewards a more disciplined answer.</p>
+
+<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
+
+<p>If you want the practical version instead of the exam version, these are the questions worth asking:</p>
+
+<ul>
+  <li><strong>Are we logging the events that matter most to our real risks, or just the ones that are easy to collect?</strong></li>
+  <li><strong>Do our event records capture enough context to answer when, where, who, and what?</strong></li>
+  <li><strong>Have we built baselines for high-risk workflows, privileged actions, and sensitive data movement?</strong></li>
+  <li><strong>Are alerts tuned well enough that analysts still trust them?</strong></li>
+  <li><strong>Are we protecting logs from tampering, overexposure, or premature deletion?</strong></li>
+  <li><strong>Do we test our monitoring and detection workflows, or only assume they work?</strong></li>
+  <li><strong>If a suspicious event happened tonight, would we notice the right thing fast enough to matter?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/baseline-anomaly-loop.svg" alt="Loop diagram showing baseline creation, monitoring, anomaly detection, triage, tuning, and improved detection over time." />
+  <figcaption>Useful monitoring is a loop: establish normal, detect deviation, triage meaningfully, and tune the system so it gets sharper over time.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Logging records events. Monitoring watches for significance. Baselining defines normal. Anomaly detection highlights meaningful deviation.</strong></p>
+
+<p>Those only become valuable when they work together.</p>
+
+<p>That is why more logs do not necessarily mean better monitoring. Better monitoring comes from collecting the right events, preserving the right context, reducing noise, and turning telemetry into decisions the team can act on.</p>
+
+<hr />
+
+<p><em>Post 16 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn the CISSP view of logging, monitoring, baselining, anomaly detection, and why noisy telemetry can be less useful than a smaller set of actionable events.
+
+**SEO keyword ideas:**
+1. CISSP logging and monitoring explained
+2. baselining and anomaly detection security
+3. actionable telemetry vs noisy logs
+4. CISSP Domain 6 monitoring and logging
+5. useful security metrics and alerts
+-->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-6" /><category term="logging" /><category term="monitoring" /><category term="baselining" /><category term="anomaly-detection" /><category term="telemetry" /><summary type="html"><![CDATA[Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #15: Security Testing Is Not One Thing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/" rel="alternate" type="text/html" title="CISSP #15: Security Testing Is Not One Thing" /><published>2026-04-07T12:15:00+00:00</published><updated>2026-04-07T12:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/"><![CDATA[<p>One of the most common security misunderstandings in real organizations sounds like this: <strong>“Something feels risky. Let’s get a pen test.”</strong></p>
 
 <p>Sometimes that is the right call. Often it is not.</p>
 
@@ -1982,216 +2246,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 2. defense in depth layered security examples
 3. zero trust vs defense in depth
 4. CISSP security architecture principles
-5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #6: Data Classification Only Works When Handling Rules Are Real</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/" rel="alternate" type="text/html" title="CISSP #6: Data Classification Only Works When Handling Rules Are Real" /><published>2026-04-03T12:06:00+00:00</published><updated>2026-04-03T12:06:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-classification-ownership-handling/"><![CDATA[<p>There is a version of data classification that exists mostly to make people feel better.</p>
-
-<p>Files get stamped <em>confidential</em>. Shared folders inherit labels nobody reads. Old backups live forever because they were “important” once. Production data gets copied into lower environments because a team is in a hurry and everyone assumes it will be cleaned up later.</p>
-
-<p>At that point, the organization can honestly say it has a classification policy. What it cannot honestly say is that the policy is changing behavior.</p>
-
-<p>That gap is exactly why this is such a useful CISSP topic.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" alt="Diagram showing data classification driving access, storage, retention, and disposal decisions across the information lifecycle." />
-  <figcaption>Classification matters only when it changes how data is handled from creation through destruction.</figcaption>
-</figure>
-
-<h2 id="classification-is-a-decision-tool-not-a-sticker">Classification is a decision tool, not a sticker</h2>
-
-<p>CISSP expects you to think about classification as a way to express the <strong>sensitivity</strong>, <strong>value</strong>, and <strong>criticality</strong> of information so the organization can apply appropriate protection.</p>
-
-<p>The exact labels vary by environment. Government systems may use formal classification levels. Commercial organizations often use simpler schemes such as:</p>
-
-<ul>
-  <li>public</li>
-  <li>internal</li>
-  <li>confidential</li>
-  <li>restricted</li>
-</ul>
-
-<p>The names matter less than the discipline behind them.</p>
-
-<p>A good classification scheme answers practical questions:</p>
-
-<ul>
-  <li>Who should be able to access this data?</li>
-  <li>Where can it be stored?</li>
-  <li>How can it be transmitted?</li>
-  <li>How long should it be retained?</li>
-  <li>What should happen when it is no longer needed?</li>
-</ul>
-
-<p>If the label does not change any of those decisions, it is not doing much security work.</p>
-
-<p>That is one of the broader CISSP patterns that keeps showing up: a control is only mature when it changes process, not just paperwork.</p>
-
-<h2 id="ownership-matters-more-than-most-teams-realize">Ownership matters more than most teams realize</h2>
-
-<p>One reason classification breaks down is that organizations blur <strong>ownership</strong>, <strong>custody</strong>, and <strong>use</strong>.</p>
-
-<p>CISSP wants you to keep those roles straight.</p>
-
-<h3 id="data-owner">Data owner</h3>
-
-<p>The <strong>owner</strong> is accountable for determining the classification and deciding the protection requirements. That does not mean the owner personally administers every control. It means the owner has the authority to say what level of protection the data deserves and who should have access.</p>
-
-<h3 id="custodian">Custodian</h3>
-
-<p>The <strong>custodian</strong> protects and maintains the data according to the owner’s requirements. That can include IT administrators, platform teams, database teams, records teams, or managed providers. They implement storage, backup, retention, and security controls.</p>
-
-<h3 id="user">User</h3>
-
-<p>The <strong>user</strong> is expected to follow the handling rules. That sounds obvious, but it matters. A user does not get to decide that copying a restricted export into an unapproved SaaS workspace is acceptable just because it feels efficient.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/ownership-flow.svg" alt="Flow showing data owners setting classification, custodians implementing controls, and users following handling requirements." />
-  <figcaption>The owner decides the protection level; custodians operationalize it; users must handle the data accordingly.</figcaption>
-</figure>
-
-<p>These distinctions matter on the exam because many questions quietly test who should make the decision. They matter even more in real life because unclear ownership is how sensitive data becomes everybody’s problem and nobody’s responsibility.</p>
-
-<h2 id="a-label-without-handling-rules-is-theater">A label without handling rules is theater</h2>
-
-<p>The real value of classification shows up in the handling requirements attached to it.</p>
-
-<h3 id="access">Access</h3>
-
-<p>More sensitive information should generally have tighter <strong>need-to-know</strong> and <strong>least privilege</strong> boundaries. That connects directly to the access-control ideas CISSP tests elsewhere. The classification should help determine who gets access and under what approval path.</p>
-
-<h3 id="storage-and-transmission">Storage and transmission</h3>
-
-<p>Some data can safely live in standard collaboration tools. Some should only live in approved repositories with stronger controls, encryption, logging, and limited sharing paths. If the organization labels something restricted but still lets it move through casual channels, the label is mostly decorative.</p>
-
-<h3 id="retention">Retention</h3>
-
-<p>This is where mature programs separate themselves from performative ones.</p>
-
-<p>A surprising amount of risk comes from keeping data longer than necessary. Old customer exports, stale HR files, archived logs, abandoned snapshots, and forgotten backups all expand the attack surface. Good asset security is not just about protecting data while it exists. It is about deciding whether it should still exist at all.</p>
-
-<p>Retention should reflect legal, regulatory, contractual, operational, and business needs — not inertia.</p>
-
-<h3 id="disposal-and-sanitization">Disposal and sanitization</h3>
-
-<p>When data or media reaches end of life, secure disposal matters.</p>
-
-<p>This is not just a shred-bin topic. It includes cloud storage, laptops, removable media, virtual disks, backup media, and retired infrastructure. NIST’s media sanitization guidance remains a useful reminder that ordinary deletion is not always the same thing as rendering recovery infeasible. For some situations, verified wipe procedures, crypto erase, or physical destruction may be the right control depending on the media and sensitivity involved.</p>
-
-<p>That is another place where CISSP is practical: it wants you to think about the entire lifecycle, not just the moment of access.</p>
-
-<h2 id="a-realistic-scenario-just-copy-production-into-test">A realistic scenario: “just copy production into test”</h2>
-
-<p>This is one of the most common places where classification, ownership, and handling discipline either becomes real or collapses.</p>
-
-<p>Imagine a team is debugging a difficult issue in a customer-facing application. An engineer asks for a copy of the production database to reproduce the problem quickly in a lower environment.</p>
-
-<p>Technically, that sounds convenient. From an asset-security perspective, it should trigger better questions:</p>
-
-<ul>
-  <li>Does the lower environment need the full dataset or only a masked subset?</li>
-  <li>Who approves the movement of that data?</li>
-  <li>Does the test environment meet the same security expectations as production?</li>
-  <li>How long will the copied data remain there?</li>
-  <li>How will the team verify cleanup afterward?</li>
-</ul>
-
-<p>If the dataset contains customer PII, support transcripts, financial records, or internal case data, the classification should change the answer. A mature organization does not treat that request as a casual engineering shortcut. It routes it through approved handling rules.</p>
-
-<p>The safer answer may be:</p>
-
-<ul>
-  <li>use tokenized, masked, or synthetic data where possible</li>
-  <li>grant only the minimum necessary access</li>
-  <li>time-box the exception</li>
-  <li>log the access and approvals</li>
-  <li>remove the copied data promptly when the work is done</li>
-</ul>
-
-<p>That is what it looks like when classification is operational instead of ceremonial.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/data-lifecycle.svg" alt="Lifecycle diagram showing creation, classification, use, sharing, retention, archival, and secure destruction of data." />
-  <figcaption>Asset security is lifecycle security. The hard part is keeping the rules intact as data moves and ages.</figcaption>
-</figure>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>This topic is usually not about memorizing a label hierarchy in isolation.</p>
-
-<p>The exam is more often testing whether you understand that:</p>
-
-<ul>
-  <li>classification should drive handling requirements</li>
-  <li>the appropriate owner determines classification and access expectations</li>
-  <li>custodians implement controls, but they do not invent the business rules</li>
-  <li>retention and destruction are part of security, not just records management</li>
-  <li>the best answer usually protects the data across its full lifecycle</li>
-</ul>
-
-<p>That is also why “business context” keeps mattering. A public marketing brochure and a merger planning document are both digital files, but they should not be handled the same way. The organization’s obligations, risk, and exposure are different.</p>
-
-<h2 id="what-the-exam-wants-vs-what-real-work-demands">What the exam wants vs what real work demands</h2>
-
-<p>The exam version is cleaner than production reality.</p>
-
-<p>On the test, you can usually assume the classification model exists, the owner is identifiable, and the best answer follows policy cleanly.</p>
-
-<p>In real environments, the harder problems look more like this:</p>
-
-<ul>
-  <li>legacy file shares with weak ownership</li>
-  <li>SaaS sprawl where teams copy data into too many tools</li>
-  <li>inconsistent labels across business units</li>
-  <li>retention policies that exist on paper but are not technically enforced</li>
-  <li>lower environments quietly holding more sensitive data than anyone intended</li>
-</ul>
-
-<p>None of that makes the CISSP model unrealistic. It makes it useful.</p>
-
-<p>The exam gives you the clean version of the principle so you can recognize where real systems are drifting away from disciplined handling.</p>
-
-<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
-
-<p>The foundations of this topic are stable and have been stable for a long time:</p>
-
-<ul>
-  <li>classify information based on sensitivity, value, and criticality</li>
-  <li>assign accountability to the right owner</li>
-  <li>apply access and handling controls that match the classification</li>
-  <li>retain information only as long as necessary</li>
-  <li>destroy or sanitize it appropriately when it is no longer needed</li>
-</ul>
-
-<p>What has become more urgent in recent years is the operating environment around those principles.</p>
-
-<p>Cloud collaboration tools, SaaS platforms, and AI-assisted workflows make it easier than ever to copy, transform, and move data into places that feel productive but were never meant to hold certain information classes. Meanwhile, NIST CSF 2.0 continues to reinforce that data protection belongs inside broader governance and enterprise risk management, not in a narrow technical silo. NIST also refreshed its media sanitization guidance in 2025, which is a useful reminder that disposal still deserves operational attention.</p>
-
-<p>The durable lesson is simple: the technologies keep changing, but the need for clear handling rules does not.</p>
-
-<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
-
-<p>If you are studying for CISSP, this is one of those topics worth tying to real examples instead of flashcards.</p>
-
-<p>Ask the practical question:</p>
-
-<p><strong>If this data is classified as sensitive, what changes because of that?</strong></p>
-
-<p>If the answer includes tighter access, safer storage, better transmission controls, clear retention, and deliberate disposal, the classification program is doing real work.</p>
-
-<p>If nothing changes except the label, it is mostly branding.</p>
-
-<p>And the more I work through CISSP material, the more that seems to be the recurring theme: mature security is often less about dramatic controls and more about making ordinary discipline hard to ignore.</p>
-
-<hr />
-
-<p><em>Post 6 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn CISSP data classification in plain English, including ownership, handling, retention, and media sanitization so labels actually lead to better security decisions.
-
-**SEO keyword ideas:**
-1. CISSP data classification explained
-2. data owner vs custodian CISSP
-3. CISSP Domain 2 asset security examples
-4. data retention and media sanitization cybersecurity
-5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

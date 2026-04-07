@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #16: More Logs Do Not Mean Better Monitoring | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-07T12:45:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-6" />
+      
+        <meta property="article:tag" content="logging" />
+      
+        <meta property="article:tag" content="monitoring" />
+      
+        <meta property="article:tag" content="baselining" />
+      
+        <meta property="article:tag" content="anomaly-detection" />
+      
+        <meta property="article:tag" content="telemetry" />
+      
+    
+    <meta property="og:title" content="CISSP #16: More Logs Do Not Mean Better Monitoring" />
+    <meta property="og:description" content="Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #16: More Logs Do Not Mean Better Monitoring" />
+    <meta name="twitter:description" content="Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #16: More Logs Do Not Mean Better Monitoring",
+        "description": "Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-07T12:45:00+00:00",
+        "dateModified": "2026-04-07T12:45:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-07T12:45:00+00:00">April 7, 2026</time>
+              <h1 class="post-title">CISSP #16: More Logs Do Not Mean Better Monitoring</h1>
+              
+                <p class="post-dek">Logs only become valuable when they help a team decide what happened, what is unusual, and what needs action. This CISSP-focused guide explains logging, monitoring, baselining, anomaly detection, and why noisy telemetry can make real risk harder to see.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-6</span>
+                  
+                    <span class="chip">logging</span>
+                  
+                    <span class="chip">monitoring</span>
+                  
+                    <span class="chip">baselining</span>
+                  
+                    <span class="chip">anomaly-detection</span>
+                  
+                    <span class="chip">telemetry</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>A lot of organizations have no shortage of logs. What they lack is <strong>useful signal</strong>.</p>
+
+<p>That is one of the more practical CISSP lessons in Domain 6. Logging, monitoring, baselining, and anomaly detection are all important. But simply collecting more data does not automatically create better visibility. In some environments, it does the opposite: it buries the meaningful events under a flood of low-value noise.</p>
+
+<p>Good monitoring is not about proving that a system can generate terabytes of records. It is about helping the organization answer a few critical questions quickly:</p>
+
+<ul>
+  <li>what happened?</li>
+  <li>who or what was involved?</li>
+  <li>is this normal or abnormal?</li>
+  <li>does it matter enough to act now?</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/hero.svg" alt="Illustration showing a flood of raw logs being filtered into a smaller set of actionable security signals and monitored events." />
+  <figcaption>More records do not automatically produce more clarity. Useful monitoring turns raw events into signals people can actually act on.</figcaption>
+</figure>
+
+<h2 id="why-this-topic-matters-so-much">Why this topic matters so much</h2>
+
+<p>Security teams often ask for “more logging” after an incident, a near miss, or an audit finding. That instinct is understandable. If visibility was weak, collecting more events feels like the obvious fix.</p>
+
+<p>But that fix only works if the new telemetry is relevant, attributable, reviewable, and connected to monitoring processes that can actually separate signal from noise.</p>
+
+<p>OWASP’s logging guidance makes this point clearly: application logging should support both operational and security use cases, and a blind checklist approach can create <strong>alarm fog</strong> rather than insight. NIST guidance on log management and continuous monitoring points in the same direction. Mature programs need visibility, but they also need discipline in what they collect, how they analyze it, and how they respond.</p>
+
+<p>That is a very CISSP kind of lesson: <strong>control effectiveness depends on design and operation, not just tool presence.</strong></p>
+
+<h2 id="logging-monitoring-baselining-and-anomaly-detection-are-not-the-same-thing">Logging, monitoring, baselining, and anomaly detection are not the same thing</h2>
+
+<p>These terms are related, but they do different jobs.</p>
+
+<h3 id="logging">Logging</h3>
+
+<p>Logging is the act of recording events.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>authentication successes and failures</li>
+  <li>authorization failures</li>
+  <li>privileged actions</li>
+  <li>configuration changes</li>
+  <li>data exports</li>
+  <li>application errors</li>
+  <li>session anomalies</li>
+</ul>
+
+<p>A log record is evidence that something happened.</p>
+
+<h3 id="monitoring">Monitoring</h3>
+
+<p>Monitoring is the process of watching the environment for conditions that matter.</p>
+
+<p>That may include dashboards, alerting, review workflows, or centralized analysis through a SIEM or similar platform. Monitoring is where the organization tries to determine whether the recorded events require attention.</p>
+
+<h3 id="baselining">Baselining</h3>
+
+<p>Baselining defines what <strong>normal</strong> looks like.</p>
+
+<p>That might mean normal login times, normal API request volume, normal admin activity, normal data transfer patterns, or normal service-account behavior. Without a baseline, it is much harder to distinguish legitimate variation from truly suspicious activity.</p>
+
+<h3 id="anomaly-detection">Anomaly detection</h3>
+
+<p>Anomaly detection looks for meaningful deviation from the baseline.</p>
+
+<p>That sounds simple, but it only works when the baseline is credible and the organization understands the context. Otherwise, anomaly detection becomes a machine for generating noise.</p>
+
+<p>That is why an unexpected event is not automatically a meaningful event.</p>
+
+<h2 id="the-difference-between-noisy-logging-and-actionable-telemetry">The difference between noisy logging and actionable telemetry</h2>
+
+<p>Not every metric is equally useful. Not every event deserves the same storage, review, or alerting priority.</p>
+
+<p>Useful telemetry has a few traits:</p>
+
+<ul>
+  <li>it is tied to real business or security risk</li>
+  <li>it captures enough context to explain <strong>when, where, who, and what</strong></li>
+  <li>it can be correlated with related events</li>
+  <li>it supports investigation without exposing unnecessary secrets</li>
+  <li>it is reviewed by a process that can actually respond</li>
+</ul>
+
+<p>Noisy telemetry usually has the opposite traits:</p>
+
+<ul>
+  <li>huge volume without clear prioritization</li>
+  <li>repetitive low-value events drowning higher-risk actions</li>
+  <li>weak context or inconsistent fields</li>
+  <li>alerts that fire too often to trust</li>
+  <li>dashboards that look busy but do not improve decisions</li>
+</ul>
+
+<p>This is where many organizations quietly lose the plot. They think they are increasing visibility when they are really increasing clutter.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/signal-vs-noise.svg" alt="Side-by-side diagram showing a noisy event stream with alert fatigue versus a filtered stream of actionable telemetry with clear context." />
+  <figcaption>Noise creates fatigue. Actionable telemetry creates decisions.</figcaption>
+</figure>
+
+<h2 id="what-should-usually-be-logged">What should usually be logged</h2>
+
+<p>OWASP’s guidance is practical here: log events that help identify security incidents, policy violations, misuse, and important business or administrative actions. In practice, higher-value events often include:</p>
+
+<ul>
+  <li>login successes and failures</li>
+  <li>access control failures</li>
+  <li>privilege changes</li>
+  <li>use of default, shared, or break-glass accounts</li>
+  <li>high-risk admin actions</li>
+  <li>sensitive data exports</li>
+  <li>suspicious sequencing or business-logic abuse</li>
+  <li>major configuration changes</li>
+  <li>startup, shutdown, and logging interruptions</li>
+</ul>
+
+<p>That does <strong>not</strong> mean logging everything indiscriminately.</p>
+
+<p>Useful telemetry still has to be safe telemetry. Passwords, access tokens, secrets, and highly sensitive personal data should not simply be dumped into logs. A team that logs too much sensitive content may create a second security problem while trying to improve visibility.</p>
+
+<h2 id="why-baselines-matter-more-than-people-think">Why baselines matter more than people think</h2>
+
+<p>A baseline is what turns observation into judgment.</p>
+
+<p>If an engineer logs in from the corporate VPN at 9:00 a.m. and checks a deployment dashboard, that may be ordinary. If a rarely used service account suddenly authenticates from a new host at 2:13 a.m., requests broad database access, and starts exporting records in unusual volume, that is a very different story.</p>
+
+<p>Both are “events.” Only one is clearly worth escalation.</p>
+
+<p>This is why mature monitoring programs do not just store events. They ask:</p>
+
+<ul>
+  <li>what does normal behavior look like for this system?</li>
+  <li>which users, machines, or workloads regularly do this?</li>
+  <li>what volume, timing, or location would be unusual enough to care about?</li>
+  <li>what combinations of changes create a higher-confidence signal?</li>
+</ul>
+
+<p>That baselining work is not glamorous, but it is what helps anomaly detection become useful instead of theatrical.</p>
+
+<h2 id="a-realistic-scenario-plenty-of-logs-very-little-clarity">A realistic scenario: plenty of logs, very little clarity</h2>
+
+<p>Imagine a SaaS company that takes logging seriously.</p>
+
+<p>Its cloud platform, web applications, identity provider, and WAF all generate large volumes of events. The security dashboard looks active all day. Leadership feels reassured because the organization appears highly instrumented.</p>
+
+<p>Then an attacker compromises a support employee account through a convincing phishing flow and begins working laterally.</p>
+
+<p>The attacker:</p>
+
+<ul>
+  <li>authenticates successfully from an unusual location</li>
+  <li>pivots into an internal admin console</li>
+  <li>triggers several failed authorization checks while exploring</li>
+  <li>eventually reaches a data export path through a poorly reviewed role exception</li>
+</ul>
+
+<p>The problem is not that the organization had no logs.</p>
+
+<p>The problem is that the signal was buried:</p>
+
+<ul>
+  <li>too many low-value alerts were already firing every hour</li>
+  <li>geolocation anomalies were noisy because the baseline was weak</li>
+  <li>admin-console events lacked enough context to show who approved recent role exceptions</li>
+  <li>the data export alert existed, but the response queue was overloaded and tuning had stalled</li>
+</ul>
+
+<p>This is the operational failure CISSP wants you to see.</p>
+
+<p>The missing control was not “more logs.” The missing control was <strong>better telemetry design and better monitoring discipline</strong>.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
+
+<p>These ideas remain durable:</p>
+
+<ul>
+  <li>logs should support investigation, accountability, and detection</li>
+  <li>important events need reliable timestamps and useful context</li>
+  <li>monitoring should focus on events proportionate to risk</li>
+  <li>baselines matter because unusual activity only makes sense against normal behavior</li>
+  <li>log integrity, retention, and review are part of the control, not an afterthought</li>
+</ul>
+
+<p>Those are long-standing security principles.</p>
+
+<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
+
+<p>The implementation environment has evolved:</p>
+
+<ul>
+  <li>cloud platforms and SaaS tools produce far more event data than older environments did</li>
+  <li>identity systems, workload telemetry, and API activity now provide high-value monitoring sources</li>
+  <li>teams increasingly rely on detection engineering to tune alerts and improve fidelity over time</li>
+  <li>anomaly detection and user-behavior analytics can help, but only when grounded in good context and careful tuning</li>
+  <li>continuous monitoring matters more because environments change constantly, not just at audit time</li>
+</ul>
+
+<p>NIST SP 800-137 still captures the heart of this well: continuous monitoring is about visibility into assets, threats, vulnerabilities, and the effectiveness of controls over time.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP is not asking whether you know a particular SIEM product.</p>
+
+<p>It is asking whether you understand that monitoring is a <strong>management and assurance function</strong>, not just a storage problem.</p>
+
+<p>If a question asks how to improve detection or support incident response, the strongest answer usually includes:</p>
+
+<ul>
+  <li>relevant event collection</li>
+  <li>reliable review and alerting</li>
+  <li>enough context to reconstruct events</li>
+  <li>attention to anomaly detection or trend analysis</li>
+  <li>risk-based prioritization rather than logging for its own sake</li>
+</ul>
+
+<p>The exam usually does not reward “collect everything and hope.” It rewards a more disciplined answer.</p>
+
+<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
+
+<p>If you want the practical version instead of the exam version, these are the questions worth asking:</p>
+
+<ul>
+  <li><strong>Are we logging the events that matter most to our real risks, or just the ones that are easy to collect?</strong></li>
+  <li><strong>Do our event records capture enough context to answer when, where, who, and what?</strong></li>
+  <li><strong>Have we built baselines for high-risk workflows, privileged actions, and sensitive data movement?</strong></li>
+  <li><strong>Are alerts tuned well enough that analysts still trust them?</strong></li>
+  <li><strong>Are we protecting logs from tampering, overexposure, or premature deletion?</strong></li>
+  <li><strong>Do we test our monitoring and detection workflows, or only assume they work?</strong></li>
+  <li><strong>If a suspicious event happened tonight, would we notice the right thing fast enough to matter?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-more-logs-do-not-mean-better-monitoring/baseline-anomaly-loop.svg" alt="Loop diagram showing baseline creation, monitoring, anomaly detection, triage, tuning, and improved detection over time." />
+  <figcaption>Useful monitoring is a loop: establish normal, detect deviation, triage meaningfully, and tune the system so it gets sharper over time.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Logging records events. Monitoring watches for significance. Baselining defines normal. Anomaly detection highlights meaningful deviation.</strong></p>
+
+<p>Those only become valuable when they work together.</p>
+
+<p>That is why more logs do not necessarily mean better monitoring. Better monitoring comes from collecting the right events, preserving the right context, reducing noise, and turning telemetry into decisions the team can act on.</p>
+
+<hr />
+
+<p><em>Post 16 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn the CISSP view of logging, monitoring, baselining, anomaly detection, and why noisy telemetry can be less useful than a smaller set of actionable events.
+
+**SEO keyword ideas:**
+1. CISSP logging and monitoring explained
+2. baselining and anomaly detection security
+3. actionable telemetry vs noisy logs
+4. CISSP Domain 6 monitoring and logging
+5. useful security metrics and alerts
+-->
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
