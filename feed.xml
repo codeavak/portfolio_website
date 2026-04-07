@@ -1,4 +1,341 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-07T01:33:30+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #14: Accountability Starts Before the Audit Log</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/" rel="alternate" type="text/html" title="CISSP #14: Accountability Starts Before the Audit Log" /><published>2026-04-06T12:45:00+00:00</published><updated>2026-04-06T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/"><![CDATA[<p>One of the most misleading phrases in security is, <strong>“we have logs for that.”</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-07T17:27:18+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #15: Security Testing Is Not One Thing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/" rel="alternate" type="text/html" title="CISSP #15: Security Testing Is Not One Thing" /><published>2026-04-07T12:15:00+00:00</published><updated>2026-04-07T12:15:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-testing-is-not-one-thing/"><![CDATA[<p>One of the most common security misunderstandings in real organizations sounds like this: <strong>“Something feels risky. Let’s get a pen test.”</strong></p>
+
+<p>Sometimes that is the right call. Often it is not.</p>
+
+<p>A penetration test, vulnerability assessment, audit, log review, synthetic monitoring check, and control validation exercise all have value. They just answer <strong>different questions</strong>. CISSP cares about that distinction because mature security programs do not throw the same testing activity at every problem. They choose the method that fits the decision they actually need to make.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-testing-is-not-one-thing/hero.svg" alt="Illustration showing different security testing methods such as vulnerability assessment, penetration testing, audit, log review, and control validation branching from different risk questions." />
+  <figcaption>Security testing is not one activity. Each method answers a different question about risk, control quality, or operational reality.</figcaption>
+</figure>
+
+<h2 id="why-teams-keep-mixing-these-up">Why teams keep mixing these up</h2>
+
+<p>From a distance, all of these activities sound similar.</p>
+
+<p>They all involve looking for security problems. They all generate reports. They all can make leadership uncomfortable. And in many meetings, people use the words loosely enough that a scanner, an audit, and a real adversarial test get blended into one vague bucket called “testing.”</p>
+
+<p>That is a mistake.</p>
+
+<p>The better CISSP mindset is to ask:</p>
+
+<ul>
+  <li>Are we trying to find <strong>known weaknesses</strong>?</li>
+  <li>Are we trying to prove <strong>whether an attacker can actually achieve impact</strong>?</li>
+  <li>Are we trying to check <strong>whether required controls are in place and documented</strong>?</li>
+  <li>Are we trying to confirm <strong>whether detection and response signals are working in production</strong>?</li>
+  <li>Are we trying to validate that a <strong>specific safeguard really performs as designed</strong>?</li>
+</ul>
+
+<p>Once you ask the right question, the right testing method becomes much clearer.</p>
+
+<h2 id="a-simple-comparison-that-actually-helps">A simple comparison that actually helps</h2>
+
+<p>Here is the practical version:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Main question it answers</th>
+      <th>Best use</th>
+      <th>What it does <strong>not</strong> prove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Vulnerability assessment</strong></td>
+      <td>What known weaknesses or misconfigurations exist?</td>
+      <td>Broad coverage and prioritization</td>
+      <td>Whether those issues can be chained into real business impact</td>
+    </tr>
+    <tr>
+      <td><strong>Penetration test</strong></td>
+      <td>Can a skilled tester actually exploit the environment and achieve meaningful impact?</td>
+      <td>Adversarial validation of exploitable paths</td>
+      <td>Full compliance, continuous assurance, or complete defect coverage</td>
+    </tr>
+    <tr>
+      <td><strong>Audit</strong></td>
+      <td>Are required controls, processes, and evidence in place?</td>
+      <td>Governance, assurance, and compliance checking</td>
+      <td>Real-world exploitability or attack realism</td>
+    </tr>
+    <tr>
+      <td><strong>Log review</strong></td>
+      <td>What happened, what is suspicious, and what are we missing?</td>
+      <td>Detection tuning, investigation, and operational visibility</td>
+      <td>Whether preventive controls are strong enough on their own</td>
+    </tr>
+    <tr>
+      <td><strong>Synthetic monitoring</strong></td>
+      <td>Do critical flows and alerts behave as expected over time?</td>
+      <td>Runtime assurance for important paths</td>
+      <td>A deep security assessment by itself</td>
+    </tr>
+    <tr>
+      <td><strong>Control validation</strong></td>
+      <td>Does a specific control work in practice, not just on paper?</td>
+      <td>Verifying preventive and detective safeguards</td>
+      <td>Overall program maturity by itself</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you remember nothing else for the exam, remember this: <strong>these are complementary, not interchangeable</strong>.</p>
+
+<h2 id="vulnerability-assessment-breadth-first-proof-later">Vulnerability assessment: breadth first, proof later</h2>
+
+<p>A vulnerability assessment is usually the broadest and fastest of the group.</p>
+
+<p>Its job is to identify known weaknesses, exposed services, missing patches, unsafe configurations, or risky software conditions across a target scope. It is excellent for finding a lot quickly and for helping teams prioritize remediation.</p>
+
+<p>This is where authoritative guidance like NIST SP 800-115 still helps: technical security assessments often start by discovering and examining systems systematically before moving into deeper validation.</p>
+
+<p>What a vulnerability assessment is good at:</p>
+
+<ul>
+  <li>finding known issues at scale</li>
+  <li>surfacing misconfigurations and hygiene problems</li>
+  <li>giving teams remediation queues and trends over time</li>
+  <li>supporting continuous assessment programs</li>
+</ul>
+
+<p>What it does <strong>not</strong> tell you by itself:</p>
+
+<ul>
+  <li>whether the issue is actually exploitable in your environment</li>
+  <li>whether multiple smaller issues can be chained together</li>
+  <li>how much business impact a realistic attacker could achieve</li>
+</ul>
+
+<p>That is why a vulnerability report with 200 findings is useful, but it is not the same as an attack narrative.</p>
+
+<h2 id="penetration-testing-adversarial-proof-not-blanket-assurance">Penetration testing: adversarial proof, not blanket assurance</h2>
+
+<p>A penetration test asks a more targeted and uncomfortable question:</p>
+
+<p><strong>Can a capable tester behave like an attacker and turn weaknesses into real impact?</strong></p>
+
+<p>This is more than scanning. It includes human judgment, chaining conditions, exploiting weaknesses where authorized, and showing what an attacker could actually accomplish within a defined scope.</p>
+
+<p>That is why penetration tests are so valuable for validating business risk. A single chained attack path often changes executive attention more than a long spreadsheet of medium findings.</p>
+
+<p>But CISSP also wants you to avoid overstating what a pen test means.</p>
+
+<p>A penetration test is:</p>
+
+<ul>
+  <li>time-boxed</li>
+  <li>scope-limited</li>
+  <li>dependent on tester skill and rules of engagement</li>
+  <li>a snapshot of a moment in time</li>
+</ul>
+
+<p>It does <strong>not</strong> mean “the environment is secure now.” It means the test produced a certain result under a defined scope and method.</p>
+
+<p>OWASP’s testing guidance is useful here too: structured testing methods matter because good security testing is intentional, not improvised theater.</p>
+
+<h2 id="audit-are-we-doing-what-we-said-we-would-do">Audit: are we doing what we said we would do?</h2>
+
+<p>An audit answers a different question entirely.</p>
+
+<p>It is usually less about “can this be hacked right now?” and more about “are required controls and processes designed, documented, and operating as expected?”</p>
+
+<p>Audits often look for:</p>
+
+<ul>
+  <li>policy and standard alignment</li>
+  <li>evidence of reviews and approvals</li>
+  <li>control ownership</li>
+  <li>retention of logs or records</li>
+  <li>consistency of execution across systems or teams</li>
+</ul>
+
+<p>That makes audits essential for governance and accountability. But it also means audit results can be misunderstood.</p>
+
+<p>A system can pass an audit and still have exploitable weaknesses.
+A system can fail an audit and still withstand the average attacker better than expected.</p>
+
+<p>Those are different lenses. CISSP wants you to know when each lens is appropriate.</p>
+
+<h2 id="log-review-the-testing-activity-people-underuse-until-an-incident">Log review: the testing activity people underuse until an incident</h2>
+
+<p>Log review is often treated as boring until something bad happens.</p>
+
+<p>In reality, it is one of the clearest ways to validate whether detection and response are functioning. Reviewing logs helps answer:</p>
+
+<ul>
+  <li>are important events being recorded?</li>
+  <li>are we alerting on meaningful suspicious activity?</li>
+  <li>can we reconstruct what happened during an incident?</li>
+  <li>are detection rules too noisy or too weak?</li>
+</ul>
+
+<p>This matters because prevention alone is never enough. Mature programs also test the <strong>detection story</strong>.</p>
+
+<p>A control can exist in a standards document and still fail operationally if:</p>
+
+<ul>
+  <li>the logs are incomplete</li>
+  <li>timestamps are inconsistent</li>
+  <li>alerts are misrouted</li>
+  <li>analysts cannot tell normal from suspicious behavior</li>
+</ul>
+
+<p>That is why a strong security program does not only ask, “Can we block it?” It also asks, “Would we notice it fast enough to matter?”</p>
+
+<h2 id="synthetic-monitoring-proving-key-flows-still-work">Synthetic monitoring: proving key flows still work</h2>
+
+<p>Synthetic monitoring is more common in reliability and operations conversations, but it belongs here too.</p>
+
+<p>It uses scripted or automated transactions to exercise important workflows repeatedly: sign-in, password reset, checkout, API health, privileged approval flow, or other critical paths.</p>
+
+<p>From a CISSP perspective, this matters because security controls can quietly break business flows, and business changes can quietly weaken security flows.</p>
+
+<p>Synthetic monitoring can help teams verify things like:</p>
+
+<ul>
+  <li>the login journey still works after MFA policy changes</li>
+  <li>account lockout or step-up prompts appear when expected</li>
+  <li>critical apps still reach required dependencies after network controls change</li>
+  <li>alerts fire when certain simulated conditions occur</li>
+</ul>
+
+<p>It does not replace a security assessment. But it is powerful for proving that important security-relevant behaviors remain intact over time.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-testing-is-not-one-thing/testing-map.svg" alt="Comparison map showing the different questions answered by vulnerability assessments, penetration tests, audits, log reviews, and synthetic monitoring." />
+  <figcaption>When the question changes, the right testing method changes too.</figcaption>
+</figure>
+
+<h2 id="control-validation-the-discipline-that-ties-the-program-together">Control validation: the discipline that ties the program together</h2>
+
+<p>Control validation is where mature testing gets less performative and more useful.</p>
+
+<p>Instead of asking, “Did we buy the tool?” it asks:</p>
+
+<ul>
+  <li>does the WAF actually block the attack pattern we care about?</li>
+  <li>does MFA get enforced for the risky action we intended?</li>
+  <li>does the SIEM rule trigger when the suspicious event happens?</li>
+  <li>does privileged access really expire when the time window closes?</li>
+</ul>
+
+<p>This is one reason NIST guidance on continuous monitoring still matters. A strong program does not rely on one annual assessment and hope for the best. It builds recurring visibility into whether controls remain effective as systems, threats, and business processes change.</p>
+
+<p>That is also where paper compliance and real security often separate.</p>
+
+<h2 id="a-realistic-scenario-we-need-a-pen-test-is-only-half-right">A realistic scenario: “we need a pen test” is only half right</h2>
+
+<p>Imagine a SaaS company has a customer portal protected by MFA, rate limiting, a WAF, and centralized logging. Leadership hears about account takeover activity at a competitor and says, “We should schedule a pen test immediately.”</p>
+
+<p>That is not a bad instinct. It is just incomplete.</p>
+
+<p>If the company only orders a penetration test, it may miss other questions that matter just as much:</p>
+
+<ul>
+  <li>a <strong>vulnerability assessment</strong> could quickly reveal exposed admin interfaces or known library issues</li>
+  <li>a <strong>log review</strong> could show that suspicious login patterns are already happening and current alerts are too noisy to notice them properly</li>
+  <li><strong>control validation</strong> could reveal that MFA is enforced at login but not for high-risk account changes</li>
+  <li><strong>synthetic monitoring</strong> could confirm whether lockout behavior and recovery flows still work after recent identity changes</li>
+  <li>an <strong>audit</strong> might show the organization has no consistent evidence that access reviews or detection rule reviews are happening at all</li>
+</ul>
+
+<p>Then the deeper lesson appears: the company did have controls on paper, but one of the controls that mattered most failed operationally.</p>
+
+<p>That is exactly the kind of real-world pattern CISSP wants you to understand.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
+
+<p>These ideas do not really change:</p>
+
+<ul>
+  <li>different assessment methods answer different security questions</li>
+  <li>testing should be authorized, scoped, and planned carefully</li>
+  <li>results should lead to remediation, not just reporting</li>
+  <li>security programs must validate both preventive and detective controls</li>
+  <li>one test never proves universal security</li>
+</ul>
+
+<p>Those are durable principles.</p>
+
+<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
+
+<p>What has evolved is the operating rhythm:</p>
+
+<ul>
+  <li>organizations rely more on continuous scanning and continuous validation, not just annual point-in-time exercises</li>
+  <li>cloud and SaaS environments push teams toward configuration drift detection and recurring control checks</li>
+  <li>detection engineering is getting more attention, so teams increasingly test whether alerts and telemetry are useful, not merely present</li>
+  <li>synthetic transactions and attack simulation are becoming more common ways to validate important workflows between major assessments</li>
+</ul>
+
+<p>The principle is still the same: <strong>evidence of control effectiveness matters more than comfort from a dashboard</strong>.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP is not trying to turn you into a tool operator. It is testing whether you can choose the right assurance activity for the right management question.</p>
+
+<p>If leadership wants to know whether the environment has many known weaknesses, a vulnerability assessment is often the best answer.</p>
+
+<p>If they want evidence of exploitability and business impact, a penetration test is stronger.</p>
+
+<p>If they need assurance that required controls are present and being followed, an audit may be the right mechanism.</p>
+
+<p>If the concern is whether detection works in practice, log review and control validation may be more valuable than either of the above.</p>
+
+<p>The best-answer pattern is usually not the flashiest option. It is the one that best matches the actual risk and decision need.</p>
+
+<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
+
+<p>If you want the practical version instead of the exam version, these are the questions worth asking before you request “security testing”:</p>
+
+<ul>
+  <li><strong>What exact question are we trying to answer?</strong></li>
+  <li><strong>Do we need broad discovery, exploit validation, compliance evidence, or operational detection insight?</strong></li>
+  <li><strong>Are we testing prevention only, or also detection and response?</strong></li>
+  <li><strong>Will this activity produce actionable remediation, not just a PDF?</strong></li>
+  <li><strong>Are we validating high-risk workflows repeatedly, or only once a year?</strong></li>
+  <li><strong>Do control owners know how success and failure will be measured?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-testing-is-not-one-thing/control-validation-loop.svg" alt="Diagram showing a loop of preventive controls, detective controls, testing, remediation, and revalidation." />
+  <figcaption>Good testing is a loop: validate, learn, fix, and validate again.</figcaption>
+</figure>
+
+<p>That is the more mature security posture.</p>
+
+<p>Not “we did a pen test once.”
+But “we know what our different testing methods are for, and we use them to keep control effectiveness honest over time.”</p>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>A vulnerability assessment finds likely weaknesses. A penetration test proves exploit paths. An audit checks conformance. Log review tests visibility. Control validation proves whether safeguards actually work.</strong></p>
+
+<p>Those are not rival activities. They are parts of the same assurance system.</p>
+
+<hr />
+
+<p><em>Post 15 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<!--
+**Meta description:** Learn the CISSP difference between vulnerability assessments, penetration tests, audits, log reviews, synthetic monitoring, and control validation.
+
+**SEO keyword ideas:**
+1. CISSP vulnerability assessment vs penetration test
+2. security audit vs penetration test explained
+3. CISSP Domain 6 security testing
+4. control validation and continuous monitoring security
+5. vulnerability scan vs pen test vs audit
+-->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-6" /><category term="security-testing" /><category term="vulnerability-assessment" /><category term="penetration-testing" /><category term="audit" /><category term="control-validation" /><summary type="html"><![CDATA[A vulnerability assessment, penetration test, audit, log review, and control validation answer different questions. This CISSP-focused guide explains what each one is for and why asking for 'a pen test' often misses the real need.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-testing-is-not-one-thing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-testing-is-not-one-thing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #14: Accountability Starts Before the Audit Log</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/" rel="alternate" type="text/html" title="CISSP #14: Accountability Starts Before the Audit Log" /><published>2026-04-06T12:45:00+00:00</published><updated>2026-04-06T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-accountability-starts-before-audit-log/"><![CDATA[<p>One of the most misleading phrases in security is, <strong>“we have logs for that.”</strong></p>
 
 <p>Logs matter. They are essential for investigation, detection, and auditability. But logs do not create accountability by themselves. If the underlying identity design is weak, the log may only tell you that <code class="language-plaintext highlighter-rouge">admin</code>, <code class="language-plaintext highlighter-rouge">svc-prod</code>, or some shared break-glass account did something important. That is not the same as knowing who actually did it, whether they were supposed to, or how much trust you should place in the record.</p>
 
@@ -1857,257 +2194,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 2. data owner vs custodian CISSP
 3. CISSP Domain 2 asset security examples
 4. data retention and media sanitization cybersecurity
-5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #5: Least Privilege Is Easy to Praise and Hard to Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/" rel="alternate" type="text/html" title="CISSP #5: Least Privilege Is Easy to Praise and Hard to Practice" /><published>2026-04-03T12:05:00+00:00</published><updated>2026-04-03T12:05:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-least-privilege-separation-of-duties/"><![CDATA[<p>Least privilege is one of those security ideas that nobody argues with in theory. Of course people should only have the access they need. Of course admin rights should be restricted. Of course no single person should be able to request, approve, and execute every sensitive action alone.</p>
-
-<p>Then real systems show up.</p>
-
-<p>Legacy applications need broad service accounts. Deadlines create “temporary” exceptions that never get cleaned up. Managers want fewer approval steps. Engineers inherit group memberships that made sense two roles ago. Before long, the organization still <em>talks</em> about least privilege while running on accumulated convenience.</p>
-
-<p>That tension is exactly why this topic matters for CISSP and for real security work.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" alt="Diagram showing least privilege, need to know, and separation of duties reducing blast radius and improving accountability." />
-  <figcaption>Least privilege is not one control. It is a discipline that limits blast radius, mistakes, and silent abuse.</figcaption>
-</figure>
-
-<h2 id="least-privilege-is-not-about-distrust">Least privilege is not about distrust</h2>
-
-<p>A lot of teams treat least privilege as if it were a cultural insult: <em>“Do you not trust your people?”</em> That framing misses the point.</p>
-
-<p>Least privilege is not a statement about whether employees are good or bad. It is a statement about how organizations manage risk under normal human conditions:</p>
-
-<ul>
-  <li>people make mistakes</li>
-  <li>accounts get phished</li>
-  <li>malware runs with the privileges it inherits</li>
-  <li>insiders sometimes abuse access</li>
-  <li>emergency exceptions have a habit of becoming permanent</li>
-</ul>
-
-<p>If an account has more power than it actually needs, every one of those failure modes becomes more expensive.</p>
-
-<p>That is why CISSP keeps returning to access control as a risk-reduction discipline. The goal is not to make work miserable. The goal is to reduce unnecessary exposure while keeping the business functional.</p>
-
-<h2 id="three-concepts-people-keep-blending-together">Three concepts people keep blending together</h2>
-
-<p>CISSP expects you to separate <strong>least privilege</strong>, <strong>need to know</strong>, and <strong>separation of duties</strong>. They support each other, but they are not synonyms.</p>
-
-<h3 id="least-privilege">Least privilege</h3>
-
-<p>Least privilege means a subject should receive only the permissions necessary to perform its assigned tasks, and no more.</p>
-
-<p>That applies to:</p>
-
-<ul>
-  <li>end users</li>
-  <li>administrators</li>
-  <li>developers</li>
-  <li>service accounts</li>
-  <li>applications</li>
-  <li>APIs and machine identities</li>
-</ul>
-
-<p>If a developer needs read access to logs and deployment rights in staging, that does not automatically mean they should have production database admin rights or global cloud ownership.</p>
-
-<h3 id="need-to-know">Need to know</h3>
-
-<p>Need to know is narrower. It focuses on access to information, even when someone has a broad role or high level of trust.</p>
-
-<p>A user may be cleared, employed, and generally authorized, but still should only access specific information when there is a legitimate business need.</p>
-
-<p>This matters in environments with sensitive legal, HR, health, defense, or executive information. It also matters in ordinary companies. Not everyone in engineering needs access to customer support transcripts, payroll records, or acquisition plans just because they work for the same organization.</p>
-
-<h3 id="separation-of-duties">Separation of duties</h3>
-
-<p>Separation of duties prevents one person from controlling an entire sensitive process alone.</p>
-
-<p>The classic reason is fraud prevention, but the principle also reduces accidental harm and makes review more meaningful. Examples include:</p>
-
-<ul>
-  <li>one person requests elevated access, another approves it</li>
-  <li>one engineer writes a production change, another reviews or deploys it</li>
-  <li>the person reconciling financial records is not the same person issuing payments</li>
-  <li>a security administrator should not be the sole approver of their own privileged exception</li>
-</ul>
-
-<p>CISSP likes this concept because it reflects a bigger pattern: good security is not just about technical restriction. It is about accountable process design.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/access-control-model.svg" alt="Three-column model distinguishing least privilege, need to know, and separation of duties with practical examples." />
-  <figcaption>These ideas overlap, but each solves a slightly different problem.</figcaption>
-</figure>
-
-<h2 id="why-organizations-still-get-this-wrong">Why organizations still get this wrong</h2>
-
-<p>Least privilege is conceptually simple and operationally annoying. That is usually where the drift starts.</p>
-
-<p>A few common failure patterns show up everywhere:</p>
-
-<h3 id="permission-creep">Permission creep</h3>
-
-<p>People change teams, projects, and responsibilities, but their old access is rarely removed with the same urgency used to grant new access. Over time, one account reflects five historical jobs instead of one current role.</p>
-
-<h3 id="standing-privilege">Standing privilege</h3>
-
-<p>Organizations often leave high-level permissions in place because it feels faster than requesting elevation when needed. That makes everyday accounts far more valuable to attackers.</p>
-
-<h3 id="shared-or-vague-ownership">Shared or vague ownership</h3>
-
-<p>When nobody clearly owns access recertification, exceptions pile up. Managers assume IT is reviewing them. IT assumes the business still wants them. The result is stale privilege that remains invisible until an audit or incident exposes it.</p>
-
-<h3 id="overpowered-service-accounts">Overpowered service accounts</h3>
-
-<p>Human access is not the only risk. Applications and automation often run with far broader permissions than necessary because scoping machine identities takes effort. In cloud environments especially, that creates quiet, high-impact attack paths.</p>
-
-<p>The exam version of this topic is clean. Real life is messy. But the underlying lesson is the same: excessive privilege increases blast radius.</p>
-
-<h2 id="a-realistic-scenario-the-temporary-admin-role-that-never-goes-away">A realistic scenario: the temporary admin role that never goes away</h2>
-
-<p>Imagine a platform engineer is granted broad cloud administrator rights late on a Friday to troubleshoot a production deployment issue. The incident is resolved, but the access is never removed because nobody wants to slow future troubleshooting.</p>
-
-<p>Three months later, that engineer’s laptop is compromised through a convincing phishing flow. The attacker does not need a zero-day. They simply inherit the standing privilege already attached to the account.</p>
-
-<p>Now the attacker can:</p>
-
-<ul>
-  <li>create new privileged identities</li>
-  <li>weaken logging or retention settings</li>
-  <li>access secrets stores</li>
-  <li>modify network rules</li>
-  <li>interfere with evidence collection</li>
-</ul>
-
-<p>At that point, the problem is not just weak phishing resistance. It is weak privilege discipline.</p>
-
-<p>A stronger design would have looked like this:</p>
-
-<ul>
-  <li>time-box the elevated access</li>
-  <li>require approval for privileged activation</li>
-  <li>log the session and high-risk actions</li>
-  <li>use a separate admin account instead of a daily-use identity</li>
-  <li>review whether the engineer needed full admin rights or only a narrower operational role</li>
-</ul>
-
-<p>That is the practical version of least privilege. Not theory. Not slogans. Design choices that limit the cost of inevitable failures.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, least privilege is rarely just a vocabulary question. It is usually part of a better-answer pattern.</p>
-
-<p>CISSP wants you to recognize that the more secure answer often does one or more of the following:</p>
-
-<ul>
-  <li>reduces access to the minimum necessary level</li>
-  <li>assigns ownership and approval to the right authority</li>
-  <li>prevents one person from controlling a critical function end to end</li>
-  <li>favors accountability and auditability over convenience</li>
-  <li>protects the business without granting unnecessary power</li>
-</ul>
-
-<p>That is why answers grounded in governance and process often beat answers that sound merely technical.</p>
-
-<p>If a question asks which control best reduces fraud risk in a sensitive workflow, separation of duties is usually stronger than simply adding more logging. If it asks how to limit damage from compromise, least privilege is usually better than broad default access with monitoring alone.</p>
-
-<h2 id="where-zero-trust-fits--and-where-people-overstate-it">Where zero trust fits — and where people overstate it</h2>
-
-<p>This is one place where established principles and recent developments fit together well.</p>
-
-<p>The core principles are old and stable:</p>
-
-<ul>
-  <li>least privilege</li>
-  <li>need to know</li>
-  <li>separation of duties</li>
-  <li>explicit approval and review</li>
-  <li>accountability for privileged actions</li>
-</ul>
-
-<p>What has evolved is the operating model around them. NIST SP 800-207 describes zero trust as moving defenses away from static, network-based trust assumptions and toward decisions centered on users, assets, and resources. That shift reinforces least privilege. It does not replace it.</p>
-
-<p>In practice, modern access control programs increasingly use:</p>
-
-<ul>
-  <li>just-in-time privileged access</li>
-  <li>conditional access based on context</li>
-  <li>stronger identity verification</li>
-  <li>shorter-lived tokens and sessions</li>
-  <li>continuous review of entitlements</li>
-</ul>
-
-<p>Those are modern implementation patterns for a very old idea: stop giving broad, persistent access when narrower and more accountable access will do.</p>
-
-<p>One mistake teams make is talking about zero trust as if buying a product automatically creates least privilege. It does not. If roles are still too broad, approvals are weak, and exceptions never expire, the labels have changed more than the reality.</p>
-
-<h2 id="what-good-access-discipline-looks-like-in-practice">What good access discipline looks like in practice</h2>
-
-<p>A mature program usually does a few boring things consistently well:</p>
-
-<ul>
-  <li>defaults new access to the minimum required role</li>
-  <li>uses separate privileged accounts for administrative work</li>
-  <li>reviews access periodically with manager or data-owner accountability</li>
-  <li>time-boxes emergency or elevated access</li>
-  <li>removes access promptly when job responsibilities change</li>
-  <li>scopes service accounts and application permissions tightly</li>
-  <li>logs high-risk actions well enough to support investigation and deterrence</li>
-</ul>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/privilege-review-cycle.svg" alt="Privilege review cycle showing request, approval, time-boxing, logging, recertification, and removal." />
-  <figcaption>Least privilege works best as a lifecycle, not as a one-time provisioning task.</figcaption>
-</figure>
-
-<p>None of this is glamorous. That is probably why it gets neglected. But it is some of the highest-leverage security work an organization can do.</p>
-
-<h2 id="what-the-exam-wants-vs-what-work-demands">What the exam wants vs what work demands</h2>
-
-<p>The exam usually gives you a cleaner world than production does.</p>
-
-<p>On CISSP questions, you can often assume:</p>
-
-<ul>
-  <li>access should be role-appropriate and justified</li>
-  <li>sensitive tasks should not rest with one unchecked individual</li>
-  <li>the proper owner should approve access</li>
-  <li>the best answer reduces risk while preserving business need</li>
-</ul>
-
-<p>In real organizations, you will also have to deal with:</p>
-
-<ul>
-  <li>legacy applications that do not support granular roles well</li>
-  <li>political resistance to access removal</li>
-  <li>emergency access paths that are necessary but poorly governed</li>
-  <li>cloud platforms where a single overbroad role quietly implies dozens of capabilities</li>
-</ul>
-
-<p>That does not make the CISSP model unrealistic. It makes it useful. The cleaner exam framework helps you see where real environments are compensating for convenience instead of controlling risk deliberately.</p>
-
-<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
-
-<p>If you are studying for CISSP, do not memorize least privilege as a slogan and move on.</p>
-
-<p>Treat it as a design question:</p>
-
-<p><strong>Who really needs this access, for how long, under what approval, and what happens if that account is compromised?</strong></p>
-
-<p>That question improves your exam answers, your architecture decisions, and your judgment in real security work.</p>
-
-<p>And the longer I work through CISSP material, the more that seems to be the real pattern: mature security is often less about adding dramatic controls and more about tightening the ordinary decisions that quietly shape risk every day.</p>
-
-<hr />
-
-<p><em>Post 5 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn how least privilege, need to know, and separation of duties actually work in CISSP and real-world security, including where zero trust and just-in-time access fit.
-
-**SEO keyword ideas:**
-1. CISSP least privilege explained
-2. separation of duties cybersecurity examples
-3. need to know vs least privilege CISSP
-4. zero trust and least privilege access control
-5. CISSP Domain 5 access control concepts -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="access-control" /><category term="least-privilege" /><category term="separation-of-duties" /><category term="zero-trust" /><summary type="html"><![CDATA[Least privilege sounds obvious until it collides with deadlines, legacy access, and cloud sprawl. This CISSP-focused guide explains how least privilege, need to know, and separation of duties actually work in real organizations. Post 5 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-least-privilege-separation-of-duties/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. need to know and data handling rules -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-2" /><category term="asset-security" /><category term="data-classification" /><category term="data-ownership" /><category term="data-retention" /><category term="media-sanitization" /><summary type="html"><![CDATA[Data classification is useless if it never changes access, retention, or disposal decisions. This CISSP-focused guide explains ownership, handling, retention, and sanitization in the real world. Post 6 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-classification-ownership-handling/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
