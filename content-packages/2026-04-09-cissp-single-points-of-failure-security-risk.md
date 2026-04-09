@@ -30,7 +30,7 @@
 ### Credible references used for framing
 
 - NIST Cybersecurity Framework 2.0 resource center
-- NIST SP 800-34 Rev. 1, *Contingency Planning Guide for Federal Information Systems*
+- NIST SP 800-34 Rev. 1, _Contingency Planning Guide for Federal Information Systems_
 - General CISSP/CBK-aligned principles on availability, resilience, redundancy, and minimizing business impact
 
 ---
@@ -75,12 +75,12 @@ A single point of failure is any component, dependency, or person whose failure 
 That definition is broader than many teams first assume.
 It is not only about a lonely physical server in a rack.
 
-| Area | Example | What fails when it breaks |
-| ---- | ------- | ------------------------- |
-| **Infrastructure** | one database instance, one load balancer, one region | the application or service becomes unavailable |
-| **Identity** | one SSO platform, one MFA provider, one break-glass path nobody has tested | admins and users may be locked out |
-| **Operations** | one person who knows recovery steps, one approval bottleneck | response slows or stops under pressure |
-| **Dependencies** | one DNS provider, one payment API, one secrets store, one CI/CD path | supporting services fail even if the app itself is healthy |
+| Area               | Example                                                                    | What fails when it breaks                                  |
+| ------------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Infrastructure** | one database instance, one load balancer, one region                       | the application or service becomes unavailable             |
+| **Identity**       | one SSO platform, one MFA provider, one break-glass path nobody has tested | admins and users may be locked out                         |
+| **Operations**     | one person who knows recovery steps, one approval bottleneck               | response slows or stops under pressure                     |
+| **Dependencies**   | one DNS provider, one payment API, one secrets store, one CI/CD path       | supporting services fail even if the app itself is healthy |
 
 The important point is that **redundancy on paper is not the same thing as resilience in practice**.
 Two application servers do not help much if both rely on the same fragile database, the same identity dependency, or the same untested recovery path.
@@ -249,6 +249,7 @@ That is why **single points of failure are security risks too**.
 CISSP gets this right: availability is part of security, and resilience usually has to be designed before the incident, not during it.
 
 A few places these risks often hide:
+
 - SSO and MFA dependencies
 - DNS, CDN, and cloud control planes
 - one-person recovery knowledge

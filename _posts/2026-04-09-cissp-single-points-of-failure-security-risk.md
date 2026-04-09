@@ -3,15 +3,7 @@ layout: post
 title: "CISSP #20: Single Points of Failure Are Security Risks Too"
 date: 2026-04-09 12:20:00 +0000
 categories: [security, cissp]
-tags:
-  [
-    cissp,
-    domain-7,
-    availability,
-    resilience,
-    redundancy,
-    failover,
-  ]
+tags: [cissp, domain-7, availability, resilience, redundancy, failover]
 excerpt: "A single fragile dependency can turn a manageable issue into a business outage. This CISSP-focused guide explains why single points of failure belong in security thinking, not just infrastructure diagrams."
 image: /assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg
 ---
@@ -52,12 +44,12 @@ A single point of failure is any component, dependency, or person whose failure 
 That definition is broader than many teams first assume.
 It is not only about a lonely physical server in a rack.
 
-| Area | Example | What fails when it breaks |
-| ---- | ------- | ------------------------- |
-| **Infrastructure** | one database instance, one load balancer, one region | the application or service becomes unavailable |
-| **Identity** | one SSO platform, one MFA provider, one break-glass path nobody has tested | admins and users may be locked out |
-| **Operations** | one person who knows recovery steps, one approval bottleneck | response slows or stops under pressure |
-| **Dependencies** | one DNS provider, one payment API, one secrets store, one CI/CD path | supporting services fail even if the app itself is healthy |
+| Area               | Example                                                                    | What fails when it breaks                                  |
+| ------------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Infrastructure** | one database instance, one load balancer, one region                       | the application or service becomes unavailable             |
+| **Identity**       | one SSO platform, one MFA provider, one break-glass path nobody has tested | admins and users may be locked out                         |
+| **Operations**     | one person who knows recovery steps, one approval bottleneck               | response slows or stops under pressure                     |
+| **Dependencies**   | one DNS provider, one payment API, one secrets store, one CI/CD path       | supporting services fail even if the app itself is healthy |
 
 The important point is that **redundancy on paper is not the same thing as resilience in practice**.
 Two application servers do not help much if both rely on the same fragile database, the same identity dependency, or the same untested recovery path.
