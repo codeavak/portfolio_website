@@ -19,3 +19,5 @@ formspree_endpoint: "https://formspree.io/f/xzdkdvpz"
 utterances_repo: "codeavak/portfolio_website"
 utterances_issue_term: "pathname"
 utterances_label: "blog-comment"
+exclude:
+  - "assets/Johnny's Chronicles/"
