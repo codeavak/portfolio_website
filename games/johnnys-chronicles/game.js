@@ -452,7 +452,10 @@
   }
 
   function revealContactSection() {
-    const resolvedContactUrl = resolveSiteUrl(homeContactUrl, `${portfolioUrl}#contact`);
+    const resolvedContactUrl = resolveSiteUrl(
+      homeContactUrl,
+      `${portfolioUrl}#contact`,
+    );
 
     if (canvasOnlyMode || !contactSection) {
       navigateToUrl(resolvedContactUrl);
