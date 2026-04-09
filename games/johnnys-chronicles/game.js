@@ -12,14 +12,14 @@
   const overlay = document.getElementById("gameOverlay");
   const overlayCard = overlay?.querySelector(".game-overlay-card") || null;
   const overlayScreens = new Map(
-    Array.from(overlay?.querySelectorAll("[data-overlay-screen]") || []).map((element) => [
-      element.getAttribute("data-overlay-screen") || "",
-      element,
-    ])
+    Array.from(overlay?.querySelectorAll("[data-overlay-screen]") || []).map(
+      (element) => [element.getAttribute("data-overlay-screen") || "", element],
+    ),
   );
   const toast = document.getElementById("gameToast");
   const pageBody = document.body;
-  const canvasOnlyMode = pageBody?.classList.contains("resume-adventure-canvas-only") || !overlay;
+  const canvasOnlyMode =
+    pageBody?.classList.contains("resume-adventure-canvas-only") || !overlay;
   const homeContactUrl = canvas.dataset.contactUrl || "portfolio.html#contact";
   const portfolioUrl = canvas.dataset.portfolioUrl || "portfolio.html";
   const blogUrl = canvas.dataset.blogUrl || "blog/";
@@ -60,9 +60,11 @@
     Array.from(document.querySelectorAll(".quest-item")).map((element) => [
       element.getAttribute("data-quest") || "",
       element,
-    ])
+    ]),
   );
-  const storyTargets = Array.from(document.querySelectorAll("[data-story-target]"));
+  const storyTargets = Array.from(
+    document.querySelectorAll("[data-story-target]"),
+  );
   const touchButtons = Array.from(document.querySelectorAll(".touch-button"));
   canvas.tabIndex = 0;
 
@@ -136,8 +138,10 @@
       width: 1820,
       portal: { x: 1660, y: 430, w: 90, h: 150, label: "Simulator Exit" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "Learn movement, try Johnny's pulse blast, and warm up on a brighter arcade playground before the main run.",
-      objective: "Move, jump, dash, and collect the first highlight before leaving the simulator.",
+      menuSummary:
+        "Learn movement, try Johnny's pulse blast, and warm up on a brighter arcade playground before the main run.",
+      objective:
+        "Move, jump, dash, and collect the first highlight before leaving the simulator.",
       meta: "Tutorial level · movement, pulse shots, and highlight-driven exploration",
       summary:
         "The training arena teaches the movement basics, Johnny's light combat tools, and the highlight system so the bigger chapters feel approachable right away.",
@@ -162,8 +166,10 @@
       width: 2680,
       portal: { x: 2480, y: 430, w: 90, h: 150, label: "Hospital Lift" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "Hospital hallways, SQL-powered puzzle relays, and easy med-bots turn Cerner into a fuller arcade chapter.",
-      objective: "Bring the hospital relays online, clear the easy med-bots, and reach the lift.",
+      menuSummary:
+        "Hospital hallways, SQL-powered puzzle relays, and easy med-bots turn Cerner into a fuller arcade chapter.",
+      objective:
+        "Bring the hospital relays online, clear the easy med-bots, and reach the lift.",
       meta: "Technical Solution Analyst · June 2016 to July 2017",
       summary:
         "This level turns Johnny's Cerner years into a colorful hospital run with ward-to-ward puzzles, SQL wins, and calm execution under pressure.",
@@ -188,8 +194,10 @@
       width: 2580,
       portal: { x: 2360, y: 430, w: 90, h: 150, label: "Royalty Gate" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "A longer neon music district with mix-deck relays, record bots, and smooth platforming.",
-      objective: "Trigger the mix deck, clear the easy record bots, and ride to the royalty gate.",
+      menuSummary:
+        "A longer neon music district with mix-deck relays, record bots, and smooth platforming.",
+      objective:
+        "Trigger the mix deck, clear the easy record bots, and ride to the royalty gate.",
       meta: "Software Engineer · June 2018 to March 2019",
       summary:
         "Crunch Digital becomes a neon resume chapter packed with records, reporting, solo-builder energy, and just enough arcade friction to feel alive.",
@@ -214,8 +222,10 @@
       width: 2840,
       portal: { x: 2610, y: 430, w: 90, h: 150, label: "Campus Core" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "School halls, lockers, buses, books, and light builder battles make Oakwood feel like its own place.",
-      objective: "Ring the campus relays, clear the easy school bots, and push into the core.",
+      menuSummary:
+        "School halls, lockers, buses, books, and light builder battles make Oakwood feel like its own place.",
+      objective:
+        "Ring the campus relays, clear the easy school bots, and push into the core.",
       meta: "Software Engineer · January 2019 to March 2021",
       summary:
         "Oakwood is a bigger, busier schoolyard chapter where one engineer handles rewrites, systems, and practical software wins all at once.",
@@ -240,8 +250,10 @@
       width: 2940,
       portal: { x: 2720, y: 430, w: 90, h: 150, label: "Audit Bridge" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "Finance-flavored enterprise systems, audit relays, and easy ledger bots give Johnny's modern work a stronger arcade identity.",
-      objective: "Unlock the audit bridge, clear the easy finance bots, and keep the release flow moving.",
+      menuSummary:
+        "Finance-flavored enterprise systems, audit relays, and easy ledger bots give Johnny's modern work a stronger arcade identity.",
+      objective:
+        "Unlock the audit bridge, clear the easy finance bots, and keep the release flow moving.",
       meta: "Senior Software Engineer · March 2021 to present · finance and verification systems",
       summary:
         "Experian becomes the finance systems chapter: APIs, audit trails, observability, production support, and release confidence all at once.",
@@ -266,8 +278,10 @@
       width: 2760,
       portal: { x: 2540, y: 430, w: 90, h: 150, label: "Sky Bridge" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "A bright cloud-computing chapter with floating platforms, server stacks, and relay puzzles across the sky.",
-      objective: "Bring the cloud relays online, clear the easy drones, and cross the sky bridge.",
+      menuSummary:
+        "A bright cloud-computing chapter with floating platforms, server stacks, and relay puzzles across the sky.",
+      objective:
+        "Bring the cloud relays online, clear the easy drones, and cross the sky bridge.",
       meta: "Azure, AWS, APIs, and practical cloud delivery",
       summary:
         "This chapter turns Johnny's cloud and platform range into a breezy arcade district full of floating routes, server towers, and approachable drone fights.",
@@ -292,8 +306,10 @@
       width: 2860,
       portal: { x: 2640, y: 430, w: 90, h: 150, label: "Shield Gate" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "Firewall relays, security drones, and an easy final showdown turn the credential arc into a real arcade finish.",
-      objective: "Unlock the firewall, clear the security bots, and beat the easy core battle to open the shield gate.",
+      menuSummary:
+        "Firewall relays, security drones, and an easy final showdown turn the credential arc into a real arcade finish.",
+      objective:
+        "Unlock the firewall, clear the security bots, and beat the easy core battle to open the shield gate.",
       meta: "ISC2 CC, Security+, Azure, AWS, and a stronger secure-delivery edge",
       summary:
         "The security arc turns Johnny's recent certifications and secure-engineering focus into a colorful fortress run with an approachable finale.",
@@ -318,8 +334,10 @@
       width: 2080,
       portal: { x: 1880, y: 430, w: 90, h: 150, label: "Contact Portal" },
       playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-      menuSummary: "Records, guitar, long walks, and the final portal into contact.",
-      objective: "Collect the final personal highlights and stroll into the contact portal.",
+      menuSummary:
+        "Records, guitar, long walks, and the final portal into contact.",
+      objective:
+        "Collect the final personal highlights and stroll into the contact portal.",
       meta: "Long walks, records, guitar, and serious work with a human pulse",
       summary:
         "The finale eases off the pressure and lets the game end on personality, rhythm, and a recruiter-friendly portal into contact.",
@@ -346,8 +364,10 @@
     width: 9220,
     portal: { x: 8980, y: 430, w: 90, h: 150, label: "Contact Portal" },
     playerStart: { x: 110, y: FLOOR_Y - PLAYER_HEIGHT },
-    menuSummary: "A recruiter-first side-scroll through Johnny's work history with easy puzzles, light arcade battles, and more distinct chapter worlds.",
-    objective: "Scroll through each chapter, unlock the accomplishment cards, bring relays online, and keep moving right toward contact.",
+    menuSummary:
+      "A recruiter-first side-scroll through Johnny's work history with easy puzzles, light arcade battles, and more distinct chapter worlds.",
+    objective:
+      "Scroll through each chapter, unlock the accomplishment cards, bring relays online, and keep moving right toward contact.",
     meta: "Guided story mode - one interactive resume journey from intro to contact",
     summary:
       "This is the main path through the portfolio: a single continuous side-scroll that turns the resume into a guided story with visible highlights at every stop.",
@@ -471,7 +491,16 @@
     }
   }
 
-  function scheduleTone(time, frequency, duration, type, volume, destination, attack = 0.01, release = 0.12) {
+  function scheduleTone(
+    time,
+    frequency,
+    duration,
+    type,
+    volume,
+    destination,
+    attack = 0.01,
+    release = 0.12,
+  ) {
     if (!audioContext || !destination || !Number.isFinite(frequency)) {
       return;
     }
@@ -493,16 +522,86 @@
     const beat = activeStoryBeat();
     const sceneId = beat?.id || state.level?.id || "training";
     const baseProfiles = {
-      training: { step: 0.28, root: 220, lead: [0, 3, 7, 10], bass: [0, -5], wave: "triangle", accent: "sine" },
-      about: { step: 0.26, root: 207.65, lead: [0, 4, 7, 11], bass: [0, -5], wave: "triangle", accent: "sine" },
-      cerner: { step: 0.24, root: 196, lead: [0, 3, 7, 10], bass: [0, -5], wave: "triangle", accent: "square" },
-      crunch: { step: 0.2, root: 233.08, lead: [0, 5, 7, 10], bass: [0, -7], wave: "sawtooth", accent: "triangle" },
-      oakwood: { step: 0.23, root: 220, lead: [0, 4, 7, 9], bass: [0, -3], wave: "triangle", accent: "square" },
-      experian: { step: 0.18, root: 246.94, lead: [0, 4, 7, 11], bass: [0, -5], wave: "square", accent: "triangle" },
-      cloud: { step: 0.2, root: 261.63, lead: [0, 2, 7, 9], bass: [0, -5], wave: "triangle", accent: "sine" },
-      skills: { step: 0.19, root: 261.63, lead: [0, 2, 5, 9], bass: [0, -7], wave: "triangle", accent: "sine" },
-      security: { step: 0.21, root: 185, lead: [0, 3, 6, 10], bass: [0, -8], wave: "square", accent: "triangle" },
-      beyond: { step: 0.27, root: 174.61, lead: [0, 4, 7, 9], bass: [0, -5], wave: "triangle", accent: "sine" },
+      training: {
+        step: 0.28,
+        root: 220,
+        lead: [0, 3, 7, 10],
+        bass: [0, -5],
+        wave: "triangle",
+        accent: "sine",
+      },
+      about: {
+        step: 0.26,
+        root: 207.65,
+        lead: [0, 4, 7, 11],
+        bass: [0, -5],
+        wave: "triangle",
+        accent: "sine",
+      },
+      cerner: {
+        step: 0.24,
+        root: 196,
+        lead: [0, 3, 7, 10],
+        bass: [0, -5],
+        wave: "triangle",
+        accent: "square",
+      },
+      crunch: {
+        step: 0.2,
+        root: 233.08,
+        lead: [0, 5, 7, 10],
+        bass: [0, -7],
+        wave: "sawtooth",
+        accent: "triangle",
+      },
+      oakwood: {
+        step: 0.23,
+        root: 220,
+        lead: [0, 4, 7, 9],
+        bass: [0, -3],
+        wave: "triangle",
+        accent: "square",
+      },
+      experian: {
+        step: 0.18,
+        root: 246.94,
+        lead: [0, 4, 7, 11],
+        bass: [0, -5],
+        wave: "square",
+        accent: "triangle",
+      },
+      cloud: {
+        step: 0.2,
+        root: 261.63,
+        lead: [0, 2, 7, 9],
+        bass: [0, -5],
+        wave: "triangle",
+        accent: "sine",
+      },
+      skills: {
+        step: 0.19,
+        root: 261.63,
+        lead: [0, 2, 5, 9],
+        bass: [0, -7],
+        wave: "triangle",
+        accent: "sine",
+      },
+      security: {
+        step: 0.21,
+        root: 185,
+        lead: [0, 3, 6, 10],
+        bass: [0, -8],
+        wave: "square",
+        accent: "triangle",
+      },
+      beyond: {
+        step: 0.27,
+        root: 174.61,
+        lead: [0, 4, 7, 9],
+        bass: [0, -5],
+        wave: "triangle",
+        accent: "sine",
+      },
     };
 
     return { id: sceneId, ...(baseProfiles[sceneId] || baseProfiles.training) };
@@ -525,8 +624,26 @@
       const bassStep = profile.bass[musicStep % profile.bass.length];
       const leadFrequency = profile.root * Math.pow(2, leadStep / 12);
       const bassFrequency = profile.root * 0.5 * Math.pow(2, bassStep / 12);
-      scheduleTone(musicNextTime, bassFrequency, profile.step * 0.85, profile.wave, 0.045, audioMusicGain, 0.01, 0.09);
-      scheduleTone(musicNextTime + profile.step * 0.5, leadFrequency, profile.step * 0.42, profile.accent, 0.03, audioMusicGain, 0.005, 0.07);
+      scheduleTone(
+        musicNextTime,
+        bassFrequency,
+        profile.step * 0.85,
+        profile.wave,
+        0.045,
+        audioMusicGain,
+        0.01,
+        0.09,
+      );
+      scheduleTone(
+        musicNextTime + profile.step * 0.5,
+        leadFrequency,
+        profile.step * 0.42,
+        profile.accent,
+        0.03,
+        audioMusicGain,
+        0.005,
+        0.07,
+      );
       musicNextTime += profile.step;
       musicStep += 1;
     }
@@ -541,41 +658,176 @@
     const now = audioContext.currentTime;
     switch (kind) {
       case "jump":
-        scheduleTone(now, 520, 0.05, "triangle", 0.08, audioSfxGain, 0.005, 0.04);
-        scheduleTone(now + 0.04, 640, 0.06, "sine", 0.06, audioSfxGain, 0.005, 0.05);
+        scheduleTone(
+          now,
+          520,
+          0.05,
+          "triangle",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.04,
+        );
+        scheduleTone(
+          now + 0.04,
+          640,
+          0.06,
+          "sine",
+          0.06,
+          audioSfxGain,
+          0.005,
+          0.05,
+        );
         break;
       case "dash":
-        scheduleTone(now, 240, 0.08, "sawtooth", 0.08, audioSfxGain, 0.005, 0.06);
-        scheduleTone(now + 0.03, 320, 0.09, "triangle", 0.06, audioSfxGain, 0.005, 0.06);
+        scheduleTone(
+          now,
+          240,
+          0.08,
+          "sawtooth",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.06,
+        );
+        scheduleTone(
+          now + 0.03,
+          320,
+          0.09,
+          "triangle",
+          0.06,
+          audioSfxGain,
+          0.005,
+          0.06,
+        );
         break;
       case "shoot":
         scheduleTone(now, 430, 0.05, "square", 0.06, audioSfxGain, 0.005, 0.03);
-        scheduleTone(now + 0.02, 620, 0.04, "triangle", 0.04, audioSfxGain, 0.005, 0.04);
+        scheduleTone(
+          now + 0.02,
+          620,
+          0.04,
+          "triangle",
+          0.04,
+          audioSfxGain,
+          0.005,
+          0.04,
+        );
         break;
       case "pickup":
-        scheduleTone(now, 660, 0.06, "triangle", 0.08, audioSfxGain, 0.005, 0.05);
-        scheduleTone(now + 0.04, 880, 0.08, "sine", 0.07, audioSfxGain, 0.005, 0.06);
+        scheduleTone(
+          now,
+          660,
+          0.06,
+          "triangle",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.05,
+        );
+        scheduleTone(
+          now + 0.04,
+          880,
+          0.08,
+          "sine",
+          0.07,
+          audioSfxGain,
+          0.005,
+          0.06,
+        );
         break;
       case "switch":
         scheduleTone(now, 392, 0.05, "square", 0.05, audioSfxGain, 0.005, 0.04);
-        scheduleTone(now + 0.05, 587.33, 0.08, "triangle", 0.06, audioSfxGain, 0.005, 0.05);
+        scheduleTone(
+          now + 0.05,
+          587.33,
+          0.08,
+          "triangle",
+          0.06,
+          audioSfxGain,
+          0.005,
+          0.05,
+        );
         break;
       case "milestone":
         scheduleTone(now, 392, 0.08, "square", 0.06, audioSfxGain, 0.005, 0.05);
-        scheduleTone(now + 0.06, 523.25, 0.1, "triangle", 0.08, audioSfxGain, 0.005, 0.08);
+        scheduleTone(
+          now + 0.06,
+          523.25,
+          0.1,
+          "triangle",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.08,
+        );
         break;
       case "portal":
         scheduleTone(now, 523.25, 0.1, "sine", 0.06, audioSfxGain, 0.005, 0.08);
-        scheduleTone(now + 0.08, 783.99, 0.14, "triangle", 0.07, audioSfxGain, 0.005, 0.1);
+        scheduleTone(
+          now + 0.08,
+          783.99,
+          0.14,
+          "triangle",
+          0.07,
+          audioSfxGain,
+          0.005,
+          0.1,
+        );
         break;
       case "complete":
-        scheduleTone(now, 523.25, 0.08, "triangle", 0.08, audioSfxGain, 0.005, 0.05);
-        scheduleTone(now + 0.06, 659.25, 0.1, "triangle", 0.08, audioSfxGain, 0.005, 0.06);
-        scheduleTone(now + 0.14, 783.99, 0.14, "sine", 0.08, audioSfxGain, 0.005, 0.08);
+        scheduleTone(
+          now,
+          523.25,
+          0.08,
+          "triangle",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.05,
+        );
+        scheduleTone(
+          now + 0.06,
+          659.25,
+          0.1,
+          "triangle",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.06,
+        );
+        scheduleTone(
+          now + 0.14,
+          783.99,
+          0.14,
+          "sine",
+          0.08,
+          audioSfxGain,
+          0.005,
+          0.08,
+        );
         break;
       case "contact":
-        scheduleTone(now, 440, 0.08, "triangle", 0.07, audioSfxGain, 0.005, 0.06);
-        scheduleTone(now + 0.08, 587.33, 0.12, "sine", 0.07, audioSfxGain, 0.005, 0.08);
+        scheduleTone(
+          now,
+          440,
+          0.08,
+          "triangle",
+          0.07,
+          audioSfxGain,
+          0.005,
+          0.06,
+        );
+        scheduleTone(
+          now + 0.08,
+          587.33,
+          0.12,
+          "sine",
+          0.07,
+          audioSfxGain,
+          0.005,
+          0.08,
+        );
         break;
       default:
         break;
@@ -583,11 +835,27 @@
   }
 
   function ground(stageId, x, w) {
-    return { stageId, id: `${stageId}-g-${x}`, x, y: FLOOR_Y, w, h: 120, kind: "ground" };
+    return {
+      stageId,
+      id: `${stageId}-g-${x}`,
+      x,
+      y: FLOOR_Y,
+      w,
+      h: 120,
+      kind: "ground",
+    };
   }
 
   function ledge(stageId, x, y, w, kind = "ledge") {
-    return { stageId, id: `${stageId}-${kind}-${x}-${y}`, x, y, w, h: 22, kind };
+    return {
+      stageId,
+      id: `${stageId}-${kind}-${x}-${y}`,
+      x,
+      y,
+      w,
+      h: 22,
+      kind,
+    };
   }
 
   function moving(stageId, id, baseX, baseY, w, axis, amplitude, speed, phase) {
@@ -613,7 +881,17 @@
   }
 
   function artifact(stageId, id, x, y, label, color = "#ffe27d", data = {}) {
-    return { stageId, id, x, y, r: 15, label, color, collected: false, ...data };
+    return {
+      stageId,
+      id,
+      x,
+      y,
+      r: 15,
+      label,
+      color,
+      collected: false,
+      ...data,
+    };
   }
 
   function walker(stageId, id, x, minX, maxX, speed, skin) {
@@ -710,7 +988,16 @@
     return { stageId, kind, x, y, ...data };
   }
 
-  function milestone(stageId, x, y, badge, title, text, width = 260, height = 112) {
+  function milestone(
+    stageId,
+    x,
+    y,
+    badge,
+    title,
+    text,
+    width = 260,
+    height = 112,
+  ) {
     return prop(stageId, "milestone", x, y, {
       badge,
       title,
@@ -721,7 +1008,16 @@
     });
   }
 
-  function chapter(stageId, x, y, eyebrow, title, text, width = 330, height = 112) {
+  function chapter(
+    stageId,
+    x,
+    y,
+    eyebrow,
+    title,
+    text,
+    width = 330,
+    height = 112,
+  ) {
     return prop(stageId, "chapter", x, y, {
       eyebrow,
       title,
@@ -758,22 +1054,62 @@
       ],
       movingPlatforms: [
         moving("training", "training-lift", 1240, 450, 120, "y", 72, 0.02, 0),
-        moving("training", "training-glide", 1525, 370, 118, "x", 78, 0.02, 0.8),
+        moving(
+          "training",
+          "training-glide",
+          1525,
+          370,
+          118,
+          "x",
+          78,
+          0.02,
+          0.8,
+        ),
       ],
       hazards: [hazard("training", 888, 596, 74, 24)],
       artifacts: [
         artifact("training", "training-map", 860, 430, "Career Map", "#9deeff"),
-        artifact("training", "training-pulse", 1470, 360, "Pulse Blaster", "#ffe17d"),
+        artifact(
+          "training",
+          "training-pulse",
+          1470,
+          360,
+          "Pulse Blaster",
+          "#ffe17d",
+        ),
       ],
-      enemies: [hover("training", "training-drone", 1630, 330, "training-target")],
+      enemies: [
+        hover("training", "training-drone", 1630, 330, "training-target"),
+      ],
       relays: [],
       gates: [],
       props: [
-        prop("training", "sign", 80, 130, { title: "Move", text: "Arrow keys or A / D" }),
-        prop("training", "sign", 360, 130, { title: "Jump", text: "Press Space to clear gaps" }),
-        milestone("training", 620, 120, "FLOW", "Resume adventure", "Move through each chapter and light up the wins instead of fighting through noise.", 290, 118),
-        prop("training", "sign", 1100, 130, { title: "Dash", text: "Shift for a burst sprint" }),
-        prop("training", "sign", 1430, 130, { title: "Blast", text: "Tap J, K, or X for easy pulse shots" }),
+        prop("training", "sign", 80, 130, {
+          title: "Move",
+          text: "Arrow keys or A / D",
+        }),
+        prop("training", "sign", 360, 130, {
+          title: "Jump",
+          text: "Press Space to clear gaps",
+        }),
+        milestone(
+          "training",
+          620,
+          120,
+          "FLOW",
+          "Resume adventure",
+          "Move through each chapter and light up the wins instead of fighting through noise.",
+          290,
+          118,
+        ),
+        prop("training", "sign", 1100, 130, {
+          title: "Dash",
+          text: "Shift for a burst sprint",
+        }),
+        prop("training", "sign", 1430, 130, {
+          title: "Blast",
+          text: "Tap J, K, or X for easy pulse shots",
+        }),
       ],
       boss: null,
     };
@@ -801,13 +1137,32 @@
         ledge("cerner", 1800, 430, 130),
         ledge("cerner", 2230, 380, 140),
       ],
-      movingPlatforms: [moving("cerner", "cerner-elevator", 2090, 470, 124, "y", 92, 0.018, 0.5)],
+      movingPlatforms: [
+        moving(
+          "cerner",
+          "cerner-elevator",
+          2090,
+          470,
+          124,
+          "y",
+          92,
+          0.018,
+          0.5,
+        ),
+      ],
       hazards: [],
       artifacts: [
         artifact("cerner", "cerner-support", 340, 466, "Hospital Support"),
         artifact("cerner", "cerner-sql", 1030, 360, "SQL Automation"),
         artifact("cerner", "cerner-fix", 1550, 458, "Clairvia Reliability"),
-        artifact("cerner", "cerner-schedule", 2265, 338, "Schedule Recovery", "#ffd0a5"),
+        artifact(
+          "cerner",
+          "cerner-schedule",
+          2265,
+          338,
+          "Schedule Recovery",
+          "#ffd0a5",
+        ),
       ],
       enemies: [
         walker("cerner", "cerner-med-1", 640, 540, 1080, 1.22, "medbot"),
@@ -815,10 +1170,38 @@
         walker("cerner", "cerner-med-2", 2130, 550, 2450, 1.34, "medbot"),
       ],
       relays: [
-        relay("cerner", "cerner-relay-a", "cerner-lift", 410, 532, "Badge Scan", "#8defff"),
-        relay("cerner", "cerner-relay-b", "cerner-lift", 1465, 454, "Ward Power", "#ffd4a2"),
+        relay(
+          "cerner",
+          "cerner-relay-a",
+          "cerner-lift",
+          410,
+          532,
+          "Badge Scan",
+          "#8defff",
+        ),
+        relay(
+          "cerner",
+          "cerner-relay-b",
+          "cerner-lift",
+          1465,
+          454,
+          "Ward Power",
+          "#ffd4a2",
+        ),
       ],
-      gates: [gate("cerner", "cerner-gate", "cerner-lift", 1860, 346, 34, 274, "Hospital Lift", "#7be8ff")],
+      gates: [
+        gate(
+          "cerner",
+          "cerner-gate",
+          "cerner-lift",
+          1860,
+          346,
+          34,
+          274,
+          "Hospital Lift",
+          "#7be8ff",
+        ),
+      ],
       props: [
         prop("cerner", "cross", 180, 180),
         prop("cerner", "cross", 480, 150),
@@ -827,9 +1210,36 @@
         prop("cerner", "monitor", 2140, 210),
         npc("cerner", 520, 544, "nurse", 0.98, 1),
         npc("cerner", 1690, 544, "analyst", 0.96, -1),
-        milestone("cerner", 90, 98, "CARE", "Live hospital support", "Worked Level II support for Cerner Clairvia in environments where reliability mattered to real teams.", 280, 118),
-        milestone("cerner", 760, 92, "SQL", "Automation replaced manual toil", "Wrote SQL automation that made triage faster and helped teams move with more confidence.", 286, 118),
-        milestone("cerner", 1880, 116, "CALM", "Pressure tested troubleshooting", "Built a reputation for staying calm and methodical when software issues impacted live operations.", 294, 118),
+        milestone(
+          "cerner",
+          90,
+          98,
+          "CARE",
+          "Live hospital support",
+          "Worked Level II support for Cerner Clairvia in environments where reliability mattered to real teams.",
+          280,
+          118,
+        ),
+        milestone(
+          "cerner",
+          760,
+          92,
+          "SQL",
+          "Automation replaced manual toil",
+          "Wrote SQL automation that made triage faster and helped teams move with more confidence.",
+          286,
+          118,
+        ),
+        milestone(
+          "cerner",
+          1880,
+          116,
+          "CALM",
+          "Pressure tested troubleshooting",
+          "Built a reputation for staying calm and methodical when software issues impacted live operations.",
+          294,
+          118,
+        ),
       ],
       boss: null,
     };
@@ -862,29 +1272,130 @@
       ],
       hazards: [hazard("crunch", 1690, 596, 74, 24)],
       artifacts: [
-        artifact("crunch", "crunch-research", 550, 484, "Metadata Research", "#ffc575"),
-        artifact("crunch", "crunch-reporting", 942, 348, "Royalty Reporting", "#ffd890"),
-        artifact("crunch", "crunch-match", 1600, 304, "Solo Ownership", "#ffd49c"),
-        artifact("crunch", "crunch-rhythm", 2100, 428, "Workflow Rhythm", "#ffe0ab"),
+        artifact(
+          "crunch",
+          "crunch-research",
+          550,
+          484,
+          "Metadata Research",
+          "#ffc575",
+        ),
+        artifact(
+          "crunch",
+          "crunch-reporting",
+          942,
+          348,
+          "Royalty Reporting",
+          "#ffd890",
+        ),
+        artifact(
+          "crunch",
+          "crunch-match",
+          1600,
+          304,
+          "Solo Ownership",
+          "#ffd49c",
+        ),
+        artifact(
+          "crunch",
+          "crunch-rhythm",
+          2100,
+          428,
+          "Workflow Rhythm",
+          "#ffe0ab",
+        ),
       ],
       enemies: [
-        walker("crunch", "crunch-record-1", 790, 420, 720, 1040, 1.24, "record-bot"),
+        walker(
+          "crunch",
+          "crunch-record-1",
+          790,
+          420,
+          720,
+          1040,
+          1.24,
+          "record-bot",
+        ),
         hover("crunch", "crunch-record-2", 1570, 286, "vinyl-drone"),
-        walker("crunch", "crunch-record-3", 2050, 428, 1940, 2260, 1.34, "record-bot"),
+        walker(
+          "crunch",
+          "crunch-record-3",
+          2050,
+          428,
+          1940,
+          2260,
+          1.34,
+          "record-bot",
+        ),
       ],
       relays: [
-        relay("crunch", "crunch-relay-a", "crunch-mix", 420, 530, "Deck A", "#ffbf80"),
-        relay("crunch", "crunch-relay-b", "crunch-mix", 1700, 530, "Deck B", "#7be8ff"),
+        relay(
+          "crunch",
+          "crunch-relay-a",
+          "crunch-mix",
+          420,
+          530,
+          "Deck A",
+          "#ffbf80",
+        ),
+        relay(
+          "crunch",
+          "crunch-relay-b",
+          "crunch-mix",
+          1700,
+          530,
+          "Deck B",
+          "#7be8ff",
+        ),
       ],
-      gates: [gate("crunch", "crunch-gate", "crunch-mix", 2240, 336, 34, 284, "Royalty Gate", "#ffb267")],
+      gates: [
+        gate(
+          "crunch",
+          "crunch-gate",
+          "crunch-mix",
+          2240,
+          336,
+          34,
+          284,
+          "Royalty Gate",
+          "#ffb267",
+        ),
+      ],
       props: [
         prop("crunch", "vinyl", 220, 210),
         prop("crunch", "vinyl", 620, 160),
         prop("crunch", "guitar", 1160, 206),
         prop("crunch", "equalizer", 1410, 190),
-        milestone("crunch", 120, 102, "TOOLS", "Research and reporting tools", "Built practical tooling for metadata matching and royalty review instead of flashy throwaway dashboards.", 294, 118),
-        milestone("crunch", 980, 96, "SOLO", "One engineer, full toolchain", "Owned the internal workflow as the solo engineer and kept analyst teams moving.", 280, 118),
-        milestone("crunch", 1820, 108, "RHYTHM", "Operational work with personality", "This chapter leans into rhythm because the work balanced precision with a real creative pulse.", 288, 118),
+        milestone(
+          "crunch",
+          120,
+          102,
+          "TOOLS",
+          "Research and reporting tools",
+          "Built practical tooling for metadata matching and royalty review instead of flashy throwaway dashboards.",
+          294,
+          118,
+        ),
+        milestone(
+          "crunch",
+          980,
+          96,
+          "SOLO",
+          "One engineer, full toolchain",
+          "Owned the internal workflow as the solo engineer and kept analyst teams moving.",
+          280,
+          118,
+        ),
+        milestone(
+          "crunch",
+          1820,
+          108,
+          "RHYTHM",
+          "Operational work with personality",
+          "This chapter leans into rhythm because the work balanced precision with a real creative pulse.",
+          288,
+          118,
+        ),
         npc("crunch", 520, 544, "dj", 0.98, 1),
         npc("crunch", 1860, 544, "musician", 0.92, -1),
       ],
@@ -920,30 +1431,138 @@
       ],
       hazards: [hazard("oakwood", 1280, 596, 80, 24)],
       artifacts: [
-        artifact("oakwood", "oakwood-rewrite", 820, 376, "System Rewrite", "#ffe07d"),
-        artifact("oakwood", "oakwood-lms", 1260, 350, "LMS Integration", "#ffd18d"),
-        artifact("oakwood", "oakwood-fundraiser", 1700, 390, "Fundraiser App", "#ffe9a4"),
-        artifact("oakwood", "oakwood-ops", 2010, 350, "Operations Apps", "#fff0b5"),
-        artifact("oakwood", "oakwood-cafeteria", 2310, 310, "Cafeteria Flow", "#f8f0c3"),
+        artifact(
+          "oakwood",
+          "oakwood-rewrite",
+          820,
+          376,
+          "System Rewrite",
+          "#ffe07d",
+        ),
+        artifact(
+          "oakwood",
+          "oakwood-lms",
+          1260,
+          350,
+          "LMS Integration",
+          "#ffd18d",
+        ),
+        artifact(
+          "oakwood",
+          "oakwood-fundraiser",
+          1700,
+          390,
+          "Fundraiser App",
+          "#ffe9a4",
+        ),
+        artifact(
+          "oakwood",
+          "oakwood-ops",
+          2010,
+          350,
+          "Operations Apps",
+          "#fff0b5",
+        ),
+        artifact(
+          "oakwood",
+          "oakwood-cafeteria",
+          2310,
+          310,
+          "Cafeteria Flow",
+          "#f8f0c3",
+        ),
       ],
       enemies: [
-        walker("oakwood", "oakwood-book-1", 510, 540, 430, 890, 1.25, "book-bot"),
-        walker("oakwood", "oakwood-book-2", 1540, 540, 1450, 1880, 1.34, "book-bot"),
+        walker(
+          "oakwood",
+          "oakwood-book-1",
+          510,
+          540,
+          430,
+          890,
+          1.25,
+          "book-bot",
+        ),
+        walker(
+          "oakwood",
+          "oakwood-book-2",
+          1540,
+          540,
+          1450,
+          1880,
+          1.34,
+          "book-bot",
+        ),
         hover("oakwood", "oakwood-book-3", 2240, 298, "book-bot"),
       ],
       relays: [
-        relay("oakwood", "oakwood-relay-a", "oakwood-core", 430, 530, "Front Office", "#ffe07d"),
-        relay("oakwood", "oakwood-relay-b", "oakwood-core", 1910, 530, "Bell Tower", "#84ebff"),
+        relay(
+          "oakwood",
+          "oakwood-relay-a",
+          "oakwood-core",
+          430,
+          530,
+          "Front Office",
+          "#ffe07d",
+        ),
+        relay(
+          "oakwood",
+          "oakwood-relay-b",
+          "oakwood-core",
+          1910,
+          530,
+          "Bell Tower",
+          "#84ebff",
+        ),
       ],
-      gates: [gate("oakwood", "oakwood-gate", "oakwood-core", 2440, 334, 34, 286, "Campus Core", "#ffd56f")],
+      gates: [
+        gate(
+          "oakwood",
+          "oakwood-gate",
+          "oakwood-core",
+          2440,
+          334,
+          34,
+          286,
+          "Campus Core",
+          "#ffd56f",
+        ),
+      ],
       props: [
         prop("oakwood", "books", 210, 170),
         prop("oakwood", "locker", 860, 170),
         prop("oakwood", "schoolbus", 1480, 204),
         prop("oakwood", "cafeteria", 1510, 190),
-        milestone("oakwood", 80, 98, "REWRITE", "Led a full system rewrite", "Took on a broad rewrite of the internal information system and gave the school a stronger technical foundation.", 306, 118),
-        milestone("oakwood", 880, 96, "APPS", "Built the practical software stack", "Books, billing, hot lunch, afterschool tracking, and the daily internal tools people actually used.", 300, 118),
-        milestone("oakwood", 1940, 104, "GROWTH", "Fundraising and integration wins", "Delivered a React plus C# fundraiser app and integrated with Blackbaud's LMS.", 294, 118),
+        milestone(
+          "oakwood",
+          80,
+          98,
+          "REWRITE",
+          "Led a full system rewrite",
+          "Took on a broad rewrite of the internal information system and gave the school a stronger technical foundation.",
+          306,
+          118,
+        ),
+        milestone(
+          "oakwood",
+          880,
+          96,
+          "APPS",
+          "Built the practical software stack",
+          "Books, billing, hot lunch, afterschool tracking, and the daily internal tools people actually used.",
+          300,
+          118,
+        ),
+        milestone(
+          "oakwood",
+          1940,
+          104,
+          "GROWTH",
+          "Fundraising and integration wins",
+          "Delivered a React plus C# fundraiser app and integrated with Blackbaud's LMS.",
+          294,
+          118,
+        ),
         npc("oakwood", 560, 544, "teacher", 1, 1),
         npc("oakwood", 2140, 544, "student", 0.9, -1),
       ],
@@ -974,35 +1593,170 @@
         ledge("experian", 2460, 360, 130),
       ],
       movingPlatforms: [
-        moving("experian", "experian-lift", 1080, 470, 132, "y", 108, 0.019, 0.3),
-        moving("experian", "experian-cart", 1840, 418, 124, "x", 118, 0.018, 1.4),
+        moving(
+          "experian",
+          "experian-lift",
+          1080,
+          470,
+          132,
+          "y",
+          108,
+          0.019,
+          0.3,
+        ),
+        moving(
+          "experian",
+          "experian-cart",
+          1840,
+          418,
+          124,
+          "x",
+          118,
+          0.018,
+          1.4,
+        ),
       ],
       hazards: [hazard("experian", 1580, 592, 86, 28, "laser")],
       artifacts: [
-        artifact("experian", "experian-api", 330, 470, "Finance APIs", "#83f1ff"),
-        artifact("experian", "experian-audit", 980, 390, "Audit Trail", "#95f8ff"),
-        artifact("experian", "experian-blob", 1260, 330, "Azure Blob", "#a3f8ff"),
-        artifact("experian", "experian-observability", 1740, 460, "Observability", "#9efcff"),
-        artifact("experian", "experian-stack", 2490, 320, "Release Confidence", "#ffe086"),
+        artifact(
+          "experian",
+          "experian-api",
+          330,
+          470,
+          "Finance APIs",
+          "#83f1ff",
+        ),
+        artifact(
+          "experian",
+          "experian-audit",
+          980,
+          390,
+          "Audit Trail",
+          "#95f8ff",
+        ),
+        artifact(
+          "experian",
+          "experian-blob",
+          1260,
+          330,
+          "Azure Blob",
+          "#a3f8ff",
+        ),
+        artifact(
+          "experian",
+          "experian-observability",
+          1740,
+          460,
+          "Observability",
+          "#9efcff",
+        ),
+        artifact(
+          "experian",
+          "experian-stack",
+          2490,
+          320,
+          "Release Confidence",
+          "#ffe086",
+        ),
       ],
       enemies: [
-        walker("experian", "experian-ledger-1", 690, 540, 620, 1090, 1.28, "ledger-bot"),
-        walker("experian", "experian-ledger-2", 1580, 540, 1500, 1910, 1.36, "ledger-bot"),
+        walker(
+          "experian",
+          "experian-ledger-1",
+          690,
+          540,
+          620,
+          1090,
+          1.28,
+          "ledger-bot",
+        ),
+        walker(
+          "experian",
+          "experian-ledger-2",
+          1580,
+          540,
+          1500,
+          1910,
+          1.36,
+          "ledger-bot",
+        ),
         hover("experian", "experian-api-1", 2010, 360, "api-bug"),
-        turret("experian", "experian-audit-turret", 2520, 316, 122, "ledger-turret"),
+        turret(
+          "experian",
+          "experian-audit-turret",
+          2520,
+          316,
+          122,
+          "ledger-turret",
+        ),
       ],
       relays: [
-        relay("experian", "experian-relay-a", "experian-audit", 520, 530, "Ledger Sync", "#67e0ff"),
-        relay("experian", "experian-relay-b", "experian-audit", 1860, 530, "Audit Seal", "#ffd295"),
+        relay(
+          "experian",
+          "experian-relay-a",
+          "experian-audit",
+          520,
+          530,
+          "Ledger Sync",
+          "#67e0ff",
+        ),
+        relay(
+          "experian",
+          "experian-relay-b",
+          "experian-audit",
+          1860,
+          530,
+          "Audit Seal",
+          "#ffd295",
+        ),
       ],
-      gates: [gate("experian", "experian-gate", "experian-audit", 2320, 314, 36, 306, "Audit Bridge", "#67e0ff")],
+      gates: [
+        gate(
+          "experian",
+          "experian-gate",
+          "experian-audit",
+          2320,
+          314,
+          36,
+          306,
+          "Audit Bridge",
+          "#67e0ff",
+        ),
+      ],
       props: [
         prop("experian", "chart", 250, 208),
         prop("experian", "vault", 1230, 190),
         prop("experian", "nodes", 1720, 170),
-        milestone("experian", 120, 94, "FINANCE", "Business-critical systems", "Worked across APIs, reporting, validations, and document workflows on systems companies depend on.", 320, 118),
-        milestone("experian", 980, 92, "AUDIT", "Clearer trails and support", "Made operational flows easier to understand, support, and release with confidence.", 308, 118),
-        milestone("experian", 1940, 102, "RELEASE", "Reliable release delivery", "Partnered across QA and stakeholders to keep releases dependable in production.", 282, 118),
+        milestone(
+          "experian",
+          120,
+          94,
+          "FINANCE",
+          "Business-critical systems",
+          "Worked across APIs, reporting, validations, and document workflows on systems companies depend on.",
+          320,
+          118,
+        ),
+        milestone(
+          "experian",
+          980,
+          92,
+          "AUDIT",
+          "Clearer trails and support",
+          "Made operational flows easier to understand, support, and release with confidence.",
+          308,
+          118,
+        ),
+        milestone(
+          "experian",
+          1940,
+          102,
+          "RELEASE",
+          "Reliable release delivery",
+          "Partnered across QA and stakeholders to keep releases dependable in production.",
+          282,
+          118,
+        ),
         npc("experian", 540, 544, "engineer", 1, 1),
         npc("experian", 2170, 544, "qa", 0.96, -1),
       ],
@@ -1042,7 +1796,14 @@
       artifacts: [
         artifact("cloud", "cloud-apis", 310, 470, "Cloud APIs", "#9feeff"),
         artifact("cloud", "cloud-ops", 880, 320, "Platform Ops", "#b9f7ff"),
-        artifact("cloud", "cloud-scale", 1620, 370, "Compute Scaling", "#c9fbff"),
+        artifact(
+          "cloud",
+          "cloud-scale",
+          1620,
+          370,
+          "Compute Scaling",
+          "#c9fbff",
+        ),
         artifact("cloud", "cloud-multi", 2380, 250, "Azure + AWS", "#ffe087"),
       ],
       enemies: [
@@ -1051,19 +1812,82 @@
         turret("cloud", "cloud-proxy-1", 2050, 308, 116, "proxy-turret"),
       ],
       relays: [
-        relay("cloud", "cloud-relay-a", "cloud-bridge", 350, 530, "Node A", "#9feeff"),
-        relay("cloud", "cloud-relay-b", "cloud-bridge", 1260, 530, "Node B", "#b9f7ff"),
-        relay("cloud", "cloud-relay-c", "cloud-bridge", 2140, 530, "Node C", "#ffe087"),
+        relay(
+          "cloud",
+          "cloud-relay-a",
+          "cloud-bridge",
+          350,
+          530,
+          "Node A",
+          "#9feeff",
+        ),
+        relay(
+          "cloud",
+          "cloud-relay-b",
+          "cloud-bridge",
+          1260,
+          530,
+          "Node B",
+          "#b9f7ff",
+        ),
+        relay(
+          "cloud",
+          "cloud-relay-c",
+          "cloud-bridge",
+          2140,
+          530,
+          "Node C",
+          "#ffe087",
+        ),
       ],
-      gates: [gate("cloud", "cloud-gate", "cloud-bridge", 2400, 280, 36, 340, "Sky Bridge", "#9feeff")],
+      gates: [
+        gate(
+          "cloud",
+          "cloud-gate",
+          "cloud-bridge",
+          2400,
+          280,
+          36,
+          340,
+          "Sky Bridge",
+          "#9feeff",
+        ),
+      ],
       props: [
         prop("cloud", "server", 250, 180),
         prop("cloud", "cloud", 960, 146),
         prop("cloud", "server", 1500, 198),
         prop("cloud", "cloud", 2120, 134),
-        milestone("cloud", 90, 98, "CLOUD", "Practical cloud delivery", "Azure, AWS, APIs, and operational instincts come together here as one practical toolkit.", 310, 118),
-        milestone("cloud", 980, 96, "RANGE", "Platform thinking", "The cloud arc is still grounded in useful software delivery, not buzzword collecting.", 300, 118),
-        milestone("cloud", 1880, 102, "BRIDGE", "Multi-cloud confidence", "This chapter visualizes Johnny's cloud range as floating routes, relay puzzles, and steady execution.", 320, 118),
+        milestone(
+          "cloud",
+          90,
+          98,
+          "CLOUD",
+          "Practical cloud delivery",
+          "Azure, AWS, APIs, and operational instincts come together here as one practical toolkit.",
+          310,
+          118,
+        ),
+        milestone(
+          "cloud",
+          980,
+          96,
+          "RANGE",
+          "Platform thinking",
+          "The cloud arc is still grounded in useful software delivery, not buzzword collecting.",
+          300,
+          118,
+        ),
+        milestone(
+          "cloud",
+          1880,
+          102,
+          "BRIDGE",
+          "Multi-cloud confidence",
+          "This chapter visualizes Johnny's cloud range as floating routes, relay puzzles, and steady execution.",
+          320,
+          118,
+        ),
         npc("cloud", 620, 544, "architect", 1, 1),
         npc("cloud", 2260, 544, "cloud", 0.98, -1),
       ],
@@ -1093,7 +1917,19 @@
         ledge("security", 1840, 420, 120),
         ledge("security", 2270, 350, 130),
       ],
-      movingPlatforms: [moving("security", "security-lift", 1580, 438, 126, "y", 88, 0.018, 0.9)],
+      movingPlatforms: [
+        moving(
+          "security",
+          "security-lift",
+          1580,
+          438,
+          126,
+          "y",
+          88,
+          0.018,
+          0.9,
+        ),
+      ],
       hazards: [
         hazard("security", 1180, 592, 82, 28, "laser"),
         hazard("security", 2140, 592, 82, 28, "laser"),
@@ -1105,23 +1941,94 @@
         artifact("security", "security-cloud", 2270, 312, "AWS", "#d6ffe8"),
       ],
       enemies: [
-        walker("security", "security-bot-1", 640, 540, 560, 980, 1.34, "shield-bot"),
+        walker(
+          "security",
+          "security-bot-1",
+          640,
+          540,
+          560,
+          980,
+          1.34,
+          "shield-bot",
+        ),
         hover("security", "security-drone-1", 1560, 304, "shield-drone"),
-        turret("security", "security-turret-1", 2280, 308, 108, "shield-turret"),
+        turret(
+          "security",
+          "security-turret-1",
+          2280,
+          308,
+          108,
+          "shield-turret",
+        ),
       ],
       relays: [
-        relay("security", "security-relay-a", "security-firewall", 470, 530, "Keycard A", "#8ff9c5"),
-        relay("security", "security-relay-b", "security-firewall", 1760, 530, "Keycard B", "#7ad7ff"),
+        relay(
+          "security",
+          "security-relay-a",
+          "security-firewall",
+          470,
+          530,
+          "Keycard A",
+          "#8ff9c5",
+        ),
+        relay(
+          "security",
+          "security-relay-b",
+          "security-firewall",
+          1760,
+          530,
+          "Keycard B",
+          "#7ad7ff",
+        ),
       ],
-      gates: [gate("security", "security-gate", "security-firewall", 2380, 280, 40, 340, "Firewall Seal", "#8ff9c5")],
+      gates: [
+        gate(
+          "security",
+          "security-gate",
+          "security-firewall",
+          2380,
+          280,
+          40,
+          340,
+          "Firewall Seal",
+          "#8ff9c5",
+        ),
+      ],
       props: [
         prop("security", "shield", 170, 170),
         prop("security", "firewall", 1040, 196),
         prop("security", "shield", 1720, 150),
         prop("security", "firewall", 2140, 190),
-        milestone("security", 100, 96, "SEC", "Security foundations", "ISC2 CC and Security+ sharpened a practical understanding of risk, identity, and secure delivery.", 298, 118),
-        milestone("security", 900, 96, "CLOUD", "Azure and AWS range", "Cloud certifications expanded that mindset into real-world platform delivery and operations.", 286, 118),
-        milestone("security", 1920, 106, "MINDSET", "Security woven into engineering", "This chapter is about better instincts, not cosplay: clearer thinking around building trusted systems.", 306, 118),
+        milestone(
+          "security",
+          100,
+          96,
+          "SEC",
+          "Security foundations",
+          "ISC2 CC and Security+ sharpened a practical understanding of risk, identity, and secure delivery.",
+          298,
+          118,
+        ),
+        milestone(
+          "security",
+          900,
+          96,
+          "CLOUD",
+          "Azure and AWS range",
+          "Cloud certifications expanded that mindset into real-world platform delivery and operations.",
+          286,
+          118,
+        ),
+        milestone(
+          "security",
+          1920,
+          106,
+          "MINDSET",
+          "Security woven into engineering",
+          "This chapter is about better instincts, not cosplay: clearer thinking around building trusted systems.",
+          306,
+          118,
+        ),
         npc("security", 620, 544, "security", 1, 1),
         npc("security", 2050, 544, "cloud", 0.92, -1),
       ],
@@ -1161,12 +2068,21 @@
         ledge("beyond", 1310, 385, 120),
         ledge("beyond", 1700, 330, 120),
       ],
-      movingPlatforms: [moving("beyond", "beyond-lift", 900, 465, 126, "y", 72, 0.018, 0.6)],
+      movingPlatforms: [
+        moving("beyond", "beyond-lift", 900, 465, 126, "y", 72, 0.018, 0.6),
+      ],
       hazards: [],
       artifacts: [
         artifact("beyond", "beyond-walks", 320, 470, "Long Walks", "#ffd77c"),
         artifact("beyond", "beyond-vinyl", 770, 395, "Vinyl Finale", "#ffd88e"),
-        artifact("beyond", "beyond-guitar", 1360, 332, "Encore Riff", "#ffe4a0"),
+        artifact(
+          "beyond",
+          "beyond-guitar",
+          1360,
+          332,
+          "Encore Riff",
+          "#ffe4a0",
+        ),
         artifact("beyond", "beyond-contact", 1720, 280, "Reach Out", "#fff0b4"),
       ],
       enemies: [],
@@ -1176,9 +2092,36 @@
         prop("beyond", "vinyl", 180, 180),
         prop("beyond", "vinyl", 610, 140),
         prop("beyond", "guitar", 1180, 190),
-        milestone("beyond", 80, 98, "HUMAN", "Professional without feeling robotic", "This chapter shows the human energy behind the work: curiosity, rhythm, and real personality.", 308, 118),
-        milestone("beyond", 760, 94, "VINYL", "Records and recharge", "Long walks, spinning records, and guitar riffs are part of how Johnny resets and keeps perspective.", 308, 118),
-        milestone("beyond", 1180, 104, "CONTACT", "Finish and reach out", "The final portal is intentionally simple: if the story lands, the contact section is right there.", 286, 118),
+        milestone(
+          "beyond",
+          80,
+          98,
+          "HUMAN",
+          "Professional without feeling robotic",
+          "This chapter shows the human energy behind the work: curiosity, rhythm, and real personality.",
+          308,
+          118,
+        ),
+        milestone(
+          "beyond",
+          760,
+          94,
+          "VINYL",
+          "Records and recharge",
+          "Long walks, spinning records, and guitar riffs are part of how Johnny resets and keeps perspective.",
+          308,
+          118,
+        ),
+        milestone(
+          "beyond",
+          1180,
+          104,
+          "CONTACT",
+          "Finish and reach out",
+          "The final portal is intentionally simple: if the story lands, the contact section is right there.",
+          286,
+          118,
+        ),
       ],
       boss: null,
     };
@@ -1201,7 +2144,8 @@
           "Strongest in C#, .NET, React, SQL Server, APIs, Azure, AWS, and production engineering.",
           "Known for calm execution, clear communication, and systems people learn to trust.",
         ],
-        objective: "Use the intro runway to pick up the first accomplishment cards and head right into Cerner.",
+        objective:
+          "Use the intro runway to pick up the first accomplishment cards and head right into Cerner.",
         start: 0,
         end: 980,
       },
@@ -1220,7 +2164,8 @@
           "Wrote SQL automation that replaced manual steps and improved operational reliability.",
           "Built a reputation for calm troubleshooting when issues hit real workflows.",
         ],
-        objective: "Bring the hospital relays online, collect the Cerner wins, and push through the lift.",
+        objective:
+          "Bring the hospital relays online, collect the Cerner wins, and push through the lift.",
         start: 980,
         end: 2060,
       },
@@ -1239,7 +2184,8 @@
           "Worked as the solo engineer and kept analyst workflows practical and dependable.",
           "Balanced technical precision with a creative industry context.",
         ],
-        objective: "Light up the Crunch chapter and ride the record path toward Oakwood.",
+        objective:
+          "Light up the Crunch chapter and ride the record path toward Oakwood.",
         start: 2060,
         end: 3180,
       },
@@ -1258,7 +2204,8 @@
           "Built apps for books, billing, hot lunch, afterschool tracking, and day-to-day operations.",
           "Delivered a React plus C# fundraising application that modernized workflows and supported growth.",
         ],
-        objective: "Ring the campus relays, collect the schoolyard wins, and keep climbing toward finance systems.",
+        objective:
+          "Ring the campus relays, collect the schoolyard wins, and keep climbing toward finance systems.",
         start: 3180,
         end: 4500,
       },
@@ -1277,7 +2224,8 @@
           "Improved observability across importer, reporting, search, and letter generation components.",
           "Partnered with QA and stakeholders to keep releases dependable in production.",
         ],
-        objective: "Unlock the audit bridge, collect the finance wins, and push into cloud delivery.",
+        objective:
+          "Unlock the audit bridge, collect the finance wins, and push into cloud delivery.",
         start: 4500,
         end: 6020,
       },
@@ -1296,7 +2244,8 @@
           "The thread is useful software delivery, not trend chasing.",
           "Strong systems thinking plus clear communication keeps the stack practical.",
         ],
-        objective: "Bring the cloud relays online, collect the platform wins, and cross into the security arc.",
+        objective:
+          "Bring the cloud relays online, collect the platform wins, and cross into the security arc.",
         start: 6020,
         end: 7020,
       },
@@ -1315,7 +2264,8 @@
           "Azure and AWS certifications extended that thinking into cloud delivery.",
           "The value is better judgment around building systems people can trust.",
         ],
-        objective: "Unlock the firewall relays, collect the security credentials, and head into the finale.",
+        objective:
+          "Unlock the firewall relays, collect the security credentials, and head into the finale.",
         start: 7020,
         end: 8080,
       },
@@ -1334,7 +2284,8 @@
           "Professional without feeling robotic is the point.",
           "The finish line connects directly to contact if the story lands.",
         ],
-        objective: "Collect the final personal highlights and reach the contact portal.",
+        objective:
+          "Collect the final personal highlights and reach the contact portal.",
         start: 8080,
         end: 9220,
       },
@@ -1381,137 +2332,1056 @@
         ledge("story", 8850, 388, 120),
       ],
       movingPlatforms: [
-        moving("story", "story-crunch-lift", 2530, 482, 120, "y", 92, 0.018, 0.1),
-        moving("story", "story-oakwood-lift", 3890, 458, 128, "y", 94, 0.017, 1.1),
-        moving("story", "story-experian-lift", 5380, 456, 128, "y", 102, 0.02, 0.3),
-        moving("story", "story-security-lift", 7800, 456, 126, "y", 88, 0.018, 1.5),
+        moving(
+          "story",
+          "story-crunch-lift",
+          2530,
+          482,
+          120,
+          "y",
+          92,
+          0.018,
+          0.1,
+        ),
+        moving(
+          "story",
+          "story-oakwood-lift",
+          3890,
+          458,
+          128,
+          "y",
+          94,
+          0.017,
+          1.1,
+        ),
+        moving(
+          "story",
+          "story-experian-lift",
+          5380,
+          456,
+          128,
+          "y",
+          102,
+          0.02,
+          0.3,
+        ),
+        moving(
+          "story",
+          "story-security-lift",
+          7800,
+          456,
+          126,
+          "y",
+          88,
+          0.018,
+          1.5,
+        ),
       ],
       hazards: [],
       artifacts: [
-        artifact("story", "story-years", 300, 470, "7+ Years", "#8defff", { note: "Professional experience across multiple industries.", sectionId: "about" }),
-        artifact("story", "story-stack", 550, 420, "Core Stack", "#9aeaff", { note: "C#, .NET, React, SQL Server, APIs, Azure, AWS.", sectionId: "about" }),
-        artifact("story", "story-trust", 860, 385, "Trusted Delivery", "#b4f6ff", { note: "Calm execution and communication that teams can trust.", sectionId: "about" }),
-        artifact("story", "story-cerner-support", 1320, 468, "Hospital Support", "#8fe7ff", { note: "Supported Cerner Clairvia in live hospital environments.", sectionId: "cerner" }),
-        artifact("story", "story-cerner-sql", 1620, 420, "SQL Automation", "#97efff", { note: "Automated manual tasks with SQL to improve reliability.", sectionId: "cerner" }),
-        artifact("story", "story-cerner-windows", 1865, 468, "Windows + SQL", "#afefff", { note: "Worked confidently with Windows Server and MS SQL.", sectionId: "cerner" }),
-        artifact("story", "story-crunch-tools", 2345, 475, "Metadata Tools", "#ffc57e", { note: "Built research tooling for metadata matching workflows.", sectionId: "crunch" }),
-        artifact("story", "story-crunch-reporting", 2545, 360, "Royalty Reporting", "#ffd18c", { note: "Delivered reporting that made review workflows clearer.", sectionId: "crunch" }),
-        artifact("story", "story-crunch-solo", 2875, 410, "Solo Engineer", "#ffdca3", { note: "Owned the internal toolchain as a one-engineer team.", sectionId: "crunch" }),
-        artifact("story", "story-oakwood-rewrite", 3420, 460, "System Rewrite", "#ffe37c", { note: "Led the rewrite of the internal information system.", sectionId: "oakwood" }),
-        artifact("story", "story-oakwood-ops", 3775, 410, "Operations Apps", "#ffe58d", { note: "Built apps for books, billing, hot lunch, and more.", sectionId: "oakwood" }),
-        artifact("story", "story-oakwood-lms", 4230, 350, "LMS Integration", "#fff0a5", { note: "Integrated the platform with Blackbaud's LMS.", sectionId: "oakwood" }),
-        artifact("story", "story-oakwood-fundraiser", 4400, 470, "Fundraiser App", "#fff3b5", { note: "Delivered a React plus C# app that supported growth.", sectionId: "oakwood" }),
-        artifact("story", "story-experian-api", 4780, 470, "Finance APIs", "#83f1ff", { note: "Worked across APIs, validations, and backend changes in finance-oriented systems.", sectionId: "experian" }),
-        artifact("story", "story-experian-blob", 5230, 390, "Audit Trail", "#95f8ff", { note: "Built clearer reporting and audit-friendly operational flows.", sectionId: "experian" }),
-        artifact("story", "story-experian-observe", 5670, 340, "Observability", "#aafcff", { note: "Improved supportability across multiple core components.", sectionId: "experian" }),
-        artifact("story", "story-experian-release", 5900, 470, "Release Confidence", "#ffe086", { note: "Partnered with QA and stakeholders to support dependable releases.", sectionId: "experian" }),
-        artifact("story", "story-skills-dotnet", 6250, 470, "Cloud APIs", "#8fe4ff", { note: "Backend delivery that carries cleanly into cloud-connected systems.", sectionId: "skills" }),
-        artifact("story", "story-skills-react", 6600, 405, "Platform UI", "#9ee9ff", { note: "Comfortable building frontend experiences and internal tools.", sectionId: "skills" }),
-        artifact("story", "story-skills-data", 6840, 470, "Automation Flow", "#b3f2ff", { note: "Solid across automation, APIs, and operational workflows.", sectionId: "skills" }),
-        artifact("story", "story-skills-cloud", 6990, 408, "Azure + AWS", "#c9fbff", { note: "Cloud-adjacent delivery grounded in real engineering work.", sectionId: "skills" }),
-        artifact("story", "story-security-cc", 7270, 470, "ISC2 CC", "#a5ffd3", { note: "Security fundamentals with a focus on practical application.", sectionId: "security" }),
-        artifact("story", "story-security-plus", 7620, 418, "Security+", "#b4ffd9", { note: "Reinforced knowledge around risk, access, and secure delivery.", sectionId: "security" }),
-        artifact("story", "story-security-azure", 7810, 360, "Azure Developer", "#c5ffe1", { note: "Cloud certification supporting application delivery on Azure.", sectionId: "security" }),
-        artifact("story", "story-security-aws", 8035, 470, "AWS Associate", "#d7ffe9", { note: "Expanded range across AWS cloud services and architecture.", sectionId: "security" }),
-        artifact("story", "story-beyond-walks", 8280, 470, "Long Walks", "#ffd77c", { note: "A simple way to reset and keep perspective.", sectionId: "beyond" }),
-        artifact("story", "story-beyond-vinyl", 8610, 395, "Vinyl", "#ffd88e", { note: "Records and rhythm are part of the recharge routine.", sectionId: "beyond" }),
-        artifact("story", "story-beyond-guitar", 8880, 330, "Guitar Riffs", "#ffe4a0", { note: "Still technical. Still human. Still curious.", sectionId: "beyond" }),
+        artifact("story", "story-years", 300, 470, "7+ Years", "#8defff", {
+          note: "Professional experience across multiple industries.",
+          sectionId: "about",
+        }),
+        artifact("story", "story-stack", 550, 420, "Core Stack", "#9aeaff", {
+          note: "C#, .NET, React, SQL Server, APIs, Azure, AWS.",
+          sectionId: "about",
+        }),
+        artifact(
+          "story",
+          "story-trust",
+          860,
+          385,
+          "Trusted Delivery",
+          "#b4f6ff",
+          {
+            note: "Calm execution and communication that teams can trust.",
+            sectionId: "about",
+          },
+        ),
+        artifact(
+          "story",
+          "story-cerner-support",
+          1320,
+          468,
+          "Hospital Support",
+          "#8fe7ff",
+          {
+            note: "Supported Cerner Clairvia in live hospital environments.",
+            sectionId: "cerner",
+          },
+        ),
+        artifact(
+          "story",
+          "story-cerner-sql",
+          1620,
+          420,
+          "SQL Automation",
+          "#97efff",
+          {
+            note: "Automated manual tasks with SQL to improve reliability.",
+            sectionId: "cerner",
+          },
+        ),
+        artifact(
+          "story",
+          "story-cerner-windows",
+          1865,
+          468,
+          "Windows + SQL",
+          "#afefff",
+          {
+            note: "Worked confidently with Windows Server and MS SQL.",
+            sectionId: "cerner",
+          },
+        ),
+        artifact(
+          "story",
+          "story-crunch-tools",
+          2345,
+          475,
+          "Metadata Tools",
+          "#ffc57e",
+          {
+            note: "Built research tooling for metadata matching workflows.",
+            sectionId: "crunch",
+          },
+        ),
+        artifact(
+          "story",
+          "story-crunch-reporting",
+          2545,
+          360,
+          "Royalty Reporting",
+          "#ffd18c",
+          {
+            note: "Delivered reporting that made review workflows clearer.",
+            sectionId: "crunch",
+          },
+        ),
+        artifact(
+          "story",
+          "story-crunch-solo",
+          2875,
+          410,
+          "Solo Engineer",
+          "#ffdca3",
+          {
+            note: "Owned the internal toolchain as a one-engineer team.",
+            sectionId: "crunch",
+          },
+        ),
+        artifact(
+          "story",
+          "story-oakwood-rewrite",
+          3420,
+          460,
+          "System Rewrite",
+          "#ffe37c",
+          {
+            note: "Led the rewrite of the internal information system.",
+            sectionId: "oakwood",
+          },
+        ),
+        artifact(
+          "story",
+          "story-oakwood-ops",
+          3775,
+          410,
+          "Operations Apps",
+          "#ffe58d",
+          {
+            note: "Built apps for books, billing, hot lunch, and more.",
+            sectionId: "oakwood",
+          },
+        ),
+        artifact(
+          "story",
+          "story-oakwood-lms",
+          4230,
+          350,
+          "LMS Integration",
+          "#fff0a5",
+          {
+            note: "Integrated the platform with Blackbaud's LMS.",
+            sectionId: "oakwood",
+          },
+        ),
+        artifact(
+          "story",
+          "story-oakwood-fundraiser",
+          4400,
+          470,
+          "Fundraiser App",
+          "#fff3b5",
+          {
+            note: "Delivered a React plus C# app that supported growth.",
+            sectionId: "oakwood",
+          },
+        ),
+        artifact(
+          "story",
+          "story-experian-api",
+          4780,
+          470,
+          "Finance APIs",
+          "#83f1ff",
+          {
+            note: "Worked across APIs, validations, and backend changes in finance-oriented systems.",
+            sectionId: "experian",
+          },
+        ),
+        artifact(
+          "story",
+          "story-experian-blob",
+          5230,
+          390,
+          "Audit Trail",
+          "#95f8ff",
+          {
+            note: "Built clearer reporting and audit-friendly operational flows.",
+            sectionId: "experian",
+          },
+        ),
+        artifact(
+          "story",
+          "story-experian-observe",
+          5670,
+          340,
+          "Observability",
+          "#aafcff",
+          {
+            note: "Improved supportability across multiple core components.",
+            sectionId: "experian",
+          },
+        ),
+        artifact(
+          "story",
+          "story-experian-release",
+          5900,
+          470,
+          "Release Confidence",
+          "#ffe086",
+          {
+            note: "Partnered with QA and stakeholders to support dependable releases.",
+            sectionId: "experian",
+          },
+        ),
+        artifact(
+          "story",
+          "story-skills-dotnet",
+          6250,
+          470,
+          "Cloud APIs",
+          "#8fe4ff",
+          {
+            note: "Backend delivery that carries cleanly into cloud-connected systems.",
+            sectionId: "skills",
+          },
+        ),
+        artifact(
+          "story",
+          "story-skills-react",
+          6600,
+          405,
+          "Platform UI",
+          "#9ee9ff",
+          {
+            note: "Comfortable building frontend experiences and internal tools.",
+            sectionId: "skills",
+          },
+        ),
+        artifact(
+          "story",
+          "story-skills-data",
+          6840,
+          470,
+          "Automation Flow",
+          "#b3f2ff",
+          {
+            note: "Solid across automation, APIs, and operational workflows.",
+            sectionId: "skills",
+          },
+        ),
+        artifact(
+          "story",
+          "story-skills-cloud",
+          6990,
+          408,
+          "Azure + AWS",
+          "#c9fbff",
+          {
+            note: "Cloud-adjacent delivery grounded in real engineering work.",
+            sectionId: "skills",
+          },
+        ),
+        artifact(
+          "story",
+          "story-security-cc",
+          7270,
+          470,
+          "ISC2 CC",
+          "#a5ffd3",
+          {
+            note: "Security fundamentals with a focus on practical application.",
+            sectionId: "security",
+          },
+        ),
+        artifact(
+          "story",
+          "story-security-plus",
+          7620,
+          418,
+          "Security+",
+          "#b4ffd9",
+          {
+            note: "Reinforced knowledge around risk, access, and secure delivery.",
+            sectionId: "security",
+          },
+        ),
+        artifact(
+          "story",
+          "story-security-azure",
+          7810,
+          360,
+          "Azure Developer",
+          "#c5ffe1",
+          {
+            note: "Cloud certification supporting application delivery on Azure.",
+            sectionId: "security",
+          },
+        ),
+        artifact(
+          "story",
+          "story-security-aws",
+          8035,
+          470,
+          "AWS Associate",
+          "#d7ffe9",
+          {
+            note: "Expanded range across AWS cloud services and architecture.",
+            sectionId: "security",
+          },
+        ),
+        artifact(
+          "story",
+          "story-beyond-walks",
+          8280,
+          470,
+          "Long Walks",
+          "#ffd77c",
+          {
+            note: "A simple way to reset and keep perspective.",
+            sectionId: "beyond",
+          },
+        ),
+        artifact("story", "story-beyond-vinyl", 8610, 395, "Vinyl", "#ffd88e", {
+          note: "Records and rhythm are part of the recharge routine.",
+          sectionId: "beyond",
+        }),
+        artifact(
+          "story",
+          "story-beyond-guitar",
+          8880,
+          330,
+          "Guitar Riffs",
+          "#ffe4a0",
+          {
+            note: "Still technical. Still human. Still curious.",
+            sectionId: "beyond",
+          },
+        ),
       ],
       enemies: [
-        { ...hover("story", "story-intro-drone", 760, 358, "training-target"), sectionId: "about" },
-        { ...walker("story", "story-cerner-med", 1420, 1240, 1880, 1.22, "medbot"), sectionId: "cerner" },
-        { ...hover("story", "story-cerner-hover", 1780, 350, "medbot"), sectionId: "cerner" },
-        { ...walker("story", "story-crunch-record", 2460, 2320, 2890, 1.26, "record-bot"), sectionId: "crunch" },
-        { ...hover("story", "story-crunch-hover", 2870, 332, "vinyl-drone"), sectionId: "crunch" },
-        { ...walker("story", "story-oakwood-book", 3560, 3380, 3950, 1.28, "book-bot"), sectionId: "oakwood" },
-        { ...hover("story", "story-oakwood-hover", 4260, 326, "book-bot"), sectionId: "oakwood" },
-        { ...walker("story", "story-finance-ledger", 4940, 4700, 5360, 1.3, "ledger-bot"), sectionId: "experian" },
-        { ...hover("story", "story-finance-hover", 5650, 302, "api-bug"), sectionId: "experian" },
-        { ...hover("story", "story-cloud-hover", 6400, 360, "cloud-drone"), sectionId: "skills" },
-        { ...turret("story", "story-cloud-turret", 6880, 418, 118, "proxy-turret"), sectionId: "skills" },
-        { ...walker("story", "story-security-bot", 7420, 7260, 7840, 1.32, "shield-bot"), sectionId: "security" },
-        { ...hover("story", "story-security-hover", 7830, 318, "shield-drone"), sectionId: "security" },
+        {
+          ...hover("story", "story-intro-drone", 760, 358, "training-target"),
+          sectionId: "about",
+        },
+        {
+          ...walker(
+            "story",
+            "story-cerner-med",
+            1420,
+            1240,
+            1880,
+            1.22,
+            "medbot",
+          ),
+          sectionId: "cerner",
+        },
+        {
+          ...hover("story", "story-cerner-hover", 1780, 350, "medbot"),
+          sectionId: "cerner",
+        },
+        {
+          ...walker(
+            "story",
+            "story-crunch-record",
+            2460,
+            2320,
+            2890,
+            1.26,
+            "record-bot",
+          ),
+          sectionId: "crunch",
+        },
+        {
+          ...hover("story", "story-crunch-hover", 2870, 332, "vinyl-drone"),
+          sectionId: "crunch",
+        },
+        {
+          ...walker(
+            "story",
+            "story-oakwood-book",
+            3560,
+            3380,
+            3950,
+            1.28,
+            "book-bot",
+          ),
+          sectionId: "oakwood",
+        },
+        {
+          ...hover("story", "story-oakwood-hover", 4260, 326, "book-bot"),
+          sectionId: "oakwood",
+        },
+        {
+          ...walker(
+            "story",
+            "story-finance-ledger",
+            4940,
+            4700,
+            5360,
+            1.3,
+            "ledger-bot",
+          ),
+          sectionId: "experian",
+        },
+        {
+          ...hover("story", "story-finance-hover", 5650, 302, "api-bug"),
+          sectionId: "experian",
+        },
+        {
+          ...hover("story", "story-cloud-hover", 6400, 360, "cloud-drone"),
+          sectionId: "skills",
+        },
+        {
+          ...turret(
+            "story",
+            "story-cloud-turret",
+            6880,
+            418,
+            118,
+            "proxy-turret",
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...walker(
+            "story",
+            "story-security-bot",
+            7420,
+            7260,
+            7840,
+            1.32,
+            "shield-bot",
+          ),
+          sectionId: "security",
+        },
+        {
+          ...hover("story", "story-security-hover", 7830, 318, "shield-drone"),
+          sectionId: "security",
+        },
       ],
       relays: [
-        { ...relay("story", "story-cerner-relay-a", "story-cerner", 1260, 530, "Ward A", "#8defff"), sectionId: "cerner" },
-        { ...relay("story", "story-cerner-relay-b", "story-cerner", 1650, 530, "Ward B", "#ffd4a2"), sectionId: "cerner" },
-        { ...relay("story", "story-crunch-relay-a", "story-crunch", 2310, 530, "Deck A", "#ffbf80"), sectionId: "crunch" },
-        { ...relay("story", "story-crunch-relay-b", "story-crunch", 2830, 530, "Deck B", "#8defff"), sectionId: "crunch" },
-        { ...relay("story", "story-oakwood-relay-a", "story-oakwood", 3470, 530, "Office", "#ffe07d"), sectionId: "oakwood" },
-        { ...relay("story", "story-oakwood-relay-b", "story-oakwood", 3990, 530, "Bell", "#8eefff"), sectionId: "oakwood" },
-        { ...relay("story", "story-finance-relay-a", "story-experian", 4830, 530, "Ledger", "#83f1ff"), sectionId: "experian" },
-        { ...relay("story", "story-finance-relay-b", "story-experian", 5490, 530, "Audit", "#ffd18c"), sectionId: "experian" },
-        { ...relay("story", "story-cloud-relay-a", "story-skills", 6250, 530, "Node A", "#8fe4ff"), sectionId: "skills" },
-        { ...relay("story", "story-cloud-relay-b", "story-skills", 6660, 530, "Node B", "#9ee9ff"), sectionId: "skills" },
-        { ...relay("story", "story-cloud-relay-c", "story-skills", 6920, 530, "Node C", "#c9fbff"), sectionId: "skills" },
-        { ...relay("story", "story-security-relay-a", "story-security", 7290, 530, "Keycard A", "#a5ffd3"), sectionId: "security" },
-        { ...relay("story", "story-security-relay-b", "story-security", 7760, 530, "Keycard B", "#b4ffd9"), sectionId: "security" },
+        {
+          ...relay(
+            "story",
+            "story-cerner-relay-a",
+            "story-cerner",
+            1260,
+            530,
+            "Ward A",
+            "#8defff",
+          ),
+          sectionId: "cerner",
+        },
+        {
+          ...relay(
+            "story",
+            "story-cerner-relay-b",
+            "story-cerner",
+            1650,
+            530,
+            "Ward B",
+            "#ffd4a2",
+          ),
+          sectionId: "cerner",
+        },
+        {
+          ...relay(
+            "story",
+            "story-crunch-relay-a",
+            "story-crunch",
+            2310,
+            530,
+            "Deck A",
+            "#ffbf80",
+          ),
+          sectionId: "crunch",
+        },
+        {
+          ...relay(
+            "story",
+            "story-crunch-relay-b",
+            "story-crunch",
+            2830,
+            530,
+            "Deck B",
+            "#8defff",
+          ),
+          sectionId: "crunch",
+        },
+        {
+          ...relay(
+            "story",
+            "story-oakwood-relay-a",
+            "story-oakwood",
+            3470,
+            530,
+            "Office",
+            "#ffe07d",
+          ),
+          sectionId: "oakwood",
+        },
+        {
+          ...relay(
+            "story",
+            "story-oakwood-relay-b",
+            "story-oakwood",
+            3990,
+            530,
+            "Bell",
+            "#8eefff",
+          ),
+          sectionId: "oakwood",
+        },
+        {
+          ...relay(
+            "story",
+            "story-finance-relay-a",
+            "story-experian",
+            4830,
+            530,
+            "Ledger",
+            "#83f1ff",
+          ),
+          sectionId: "experian",
+        },
+        {
+          ...relay(
+            "story",
+            "story-finance-relay-b",
+            "story-experian",
+            5490,
+            530,
+            "Audit",
+            "#ffd18c",
+          ),
+          sectionId: "experian",
+        },
+        {
+          ...relay(
+            "story",
+            "story-cloud-relay-a",
+            "story-skills",
+            6250,
+            530,
+            "Node A",
+            "#8fe4ff",
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...relay(
+            "story",
+            "story-cloud-relay-b",
+            "story-skills",
+            6660,
+            530,
+            "Node B",
+            "#9ee9ff",
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...relay(
+            "story",
+            "story-cloud-relay-c",
+            "story-skills",
+            6920,
+            530,
+            "Node C",
+            "#c9fbff",
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...relay(
+            "story",
+            "story-security-relay-a",
+            "story-security",
+            7290,
+            530,
+            "Keycard A",
+            "#a5ffd3",
+          ),
+          sectionId: "security",
+        },
+        {
+          ...relay(
+            "story",
+            "story-security-relay-b",
+            "story-security",
+            7760,
+            530,
+            "Keycard B",
+            "#b4ffd9",
+          ),
+          sectionId: "security",
+        },
       ],
       gates: [
-        { ...gate("story", "story-cerner-gate", "story-cerner", 1940, 300, 34, 320, "Hospital Lift", "#8defff"), sectionId: "cerner" },
-        { ...gate("story", "story-crunch-gate", "story-crunch", 3050, 300, 34, 320, "Royalty Gate", "#ffb267"), sectionId: "crunch" },
-        { ...gate("story", "story-oakwood-gate", "story-oakwood", 4380, 300, 34, 320, "Campus Core", "#ffe07d"), sectionId: "oakwood" },
-        { ...gate("story", "story-finance-gate", "story-experian", 5930, 300, 34, 320, "Audit Bridge", "#83f1ff"), sectionId: "experian" },
-        { ...gate("story", "story-cloud-gate", "story-skills", 6980, 300, 34, 320, "Sky Bridge", "#9ee9ff"), sectionId: "skills" },
-        { ...gate("story", "story-security-gate", "story-security", 7990, 300, 34, 320, "Firewall Seal", "#b4ffd9"), sectionId: "security" },
+        {
+          ...gate(
+            "story",
+            "story-cerner-gate",
+            "story-cerner",
+            1940,
+            300,
+            34,
+            320,
+            "Hospital Lift",
+            "#8defff",
+          ),
+          sectionId: "cerner",
+        },
+        {
+          ...gate(
+            "story",
+            "story-crunch-gate",
+            "story-crunch",
+            3050,
+            300,
+            34,
+            320,
+            "Royalty Gate",
+            "#ffb267",
+          ),
+          sectionId: "crunch",
+        },
+        {
+          ...gate(
+            "story",
+            "story-oakwood-gate",
+            "story-oakwood",
+            4380,
+            300,
+            34,
+            320,
+            "Campus Core",
+            "#ffe07d",
+          ),
+          sectionId: "oakwood",
+        },
+        {
+          ...gate(
+            "story",
+            "story-finance-gate",
+            "story-experian",
+            5930,
+            300,
+            34,
+            320,
+            "Audit Bridge",
+            "#83f1ff",
+          ),
+          sectionId: "experian",
+        },
+        {
+          ...gate(
+            "story",
+            "story-cloud-gate",
+            "story-skills",
+            6980,
+            300,
+            34,
+            320,
+            "Sky Bridge",
+            "#9ee9ff",
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...gate(
+            "story",
+            "story-security-gate",
+            "story-security",
+            7990,
+            300,
+            34,
+            320,
+            "Firewall Seal",
+            "#b4ffd9",
+          ),
+          sectionId: "security",
+        },
       ],
       props: [
-        { ...chapter("story", 70, 84, "INTRO", "Johnny Avakian", "Scroll right through the resume and let the accomplishments tell the story.", 360, 118), sectionId: "about" },
-        { ...milestone("story", 120, 232, "BUILD", "Experienced engineer", "Enterprise applications, APIs, reporting, and systems that need to keep working.", 286, 118), sectionId: "about" },
-        { ...milestone("story", 560, 220, "RANGE", "Cross-industry track record", "Healthcare, finance, education, music royalties, cloud delivery, and security all appear in the journey ahead.", 320, 118), sectionId: "about" },
+        {
+          ...chapter(
+            "story",
+            70,
+            84,
+            "INTRO",
+            "Johnny Avakian",
+            "Scroll right through the resume and let the accomplishments tell the story.",
+            360,
+            118,
+          ),
+          sectionId: "about",
+        },
+        {
+          ...milestone(
+            "story",
+            120,
+            232,
+            "BUILD",
+            "Experienced engineer",
+            "Enterprise applications, APIs, reporting, and systems that need to keep working.",
+            286,
+            118,
+          ),
+          sectionId: "about",
+        },
+        {
+          ...milestone(
+            "story",
+            560,
+            220,
+            "RANGE",
+            "Cross-industry track record",
+            "Healthcare, finance, education, music royalties, cloud delivery, and security all appear in the journey ahead.",
+            320,
+            118,
+          ),
+          sectionId: "about",
+        },
         npc("story", 200, 536, "guide", 1.08, 1),
         npc("story", 700, 536, "builder", 0.98, -1),
-        { ...chapter("story", 1080, 84, "CHAPTER 01", "Hospital Wing", "Hospital support, SQL automation, and steady execution under pressure.", 360, 118), sectionId: "cerner" },
+        {
+          ...chapter(
+            "story",
+            1080,
+            84,
+            "CHAPTER 01",
+            "Hospital Wing",
+            "Hospital support, SQL automation, and steady execution under pressure.",
+            360,
+            118,
+          ),
+          sectionId: "cerner",
+        },
         prop("story", "cross", 1210, 186),
         prop("story", "bed", 1480, 198),
         prop("story", "heartbeat", 1710, 156),
-        { ...milestone("story", 1200, 232, "CARE", "Live hospital support", "Worked closely with hospital IT teams using Cerner Clairvia.", 280, 118), sectionId: "cerner" },
-        { ...milestone("story", 1575, 208, "SQL", "Automation that mattered", "SQL scripting replaced manual effort and improved support workflows.", 292, 118), sectionId: "cerner" },
+        {
+          ...milestone(
+            "story",
+            1200,
+            232,
+            "CARE",
+            "Live hospital support",
+            "Worked closely with hospital IT teams using Cerner Clairvia.",
+            280,
+            118,
+          ),
+          sectionId: "cerner",
+        },
+        {
+          ...milestone(
+            "story",
+            1575,
+            208,
+            "SQL",
+            "Automation that mattered",
+            "SQL scripting replaced manual effort and improved support workflows.",
+            292,
+            118,
+          ),
+          sectionId: "cerner",
+        },
         npc("story", 1365, 536, "nurse", 1, 1),
         npc("story", 1770, 536, "analyst", 0.96, -1),
-        { ...chapter("story", 2160, 84, "CHAPTER 02", "Crunch Digital", "Metadata research, royalty workflows, and solo ownership with rhythm.", 370, 118), sectionId: "crunch" },
+        {
+          ...chapter(
+            "story",
+            2160,
+            84,
+            "CHAPTER 02",
+            "Crunch Digital",
+            "Metadata research, royalty workflows, and solo ownership with rhythm.",
+            370,
+            118,
+          ),
+          sectionId: "crunch",
+        },
         prop("story", "vinyl", 2300, 188),
         prop("story", "equalizer", 2890, 198),
-        { ...milestone("story", 2250, 232, "TOOLS", "Research and reporting tools", "Built internal tools that made metadata matching and review more practical.", 306, 118), sectionId: "crunch" },
-        { ...milestone("story", 2750, 208, "SOLO", "One engineer, full workflow", "Handled the internal workflow as the solo engineer.", 274, 118), sectionId: "crunch" },
+        {
+          ...milestone(
+            "story",
+            2250,
+            232,
+            "TOOLS",
+            "Research and reporting tools",
+            "Built internal tools that made metadata matching and review more practical.",
+            306,
+            118,
+          ),
+          sectionId: "crunch",
+        },
+        {
+          ...milestone(
+            "story",
+            2750,
+            208,
+            "SOLO",
+            "One engineer, full workflow",
+            "Handled the internal workflow as the solo engineer.",
+            274,
+            118,
+          ),
+          sectionId: "crunch",
+        },
         npc("story", 2405, 536, "dj", 0.96, 1),
         npc("story", 2930, 430, "musician", 0.9, -1),
-        { ...chapter("story", 3270, 84, "CHAPTER 03", "Schoolyard Systems", "Rewrites, integrations, and daily operational software shipped solo.", 380, 118), sectionId: "oakwood" },
+        {
+          ...chapter(
+            "story",
+            3270,
+            84,
+            "CHAPTER 03",
+            "Schoolyard Systems",
+            "Rewrites, integrations, and daily operational software shipped solo.",
+            380,
+            118,
+          ),
+          sectionId: "oakwood",
+        },
         prop("story", "books", 3505, 188),
         prop("story", "locker", 3955, 172),
         prop("story", "schoolbus", 4290, 206),
         prop("story", "cafeteria", 4410, 186),
-        { ...milestone("story", 3370, 232, "REWRITE", "Led a full system rewrite", "Rebuilt the internal information system and established a stronger foundation.", 314, 118), sectionId: "oakwood" },
-        { ...milestone("story", 3835, 208, "APPS", "Built the operations layer", "Books, billing, lunch, and afterschool tooling all landed here.", 294, 118), sectionId: "oakwood" },
+        {
+          ...milestone(
+            "story",
+            3370,
+            232,
+            "REWRITE",
+            "Led a full system rewrite",
+            "Rebuilt the internal information system and established a stronger foundation.",
+            314,
+            118,
+          ),
+          sectionId: "oakwood",
+        },
+        {
+          ...milestone(
+            "story",
+            3835,
+            208,
+            "APPS",
+            "Built the operations layer",
+            "Books, billing, lunch, and afterschool tooling all landed here.",
+            294,
+            118,
+          ),
+          sectionId: "oakwood",
+        },
         npc("story", 3580, 536, "teacher", 1, 1),
         npc("story", 4335, 536, "student", 0.88, -1),
-        { ...chapter("story", 4600, 84, "CHAPTER 04", "Finance Systems", "Business-critical finance software, audit trails, and release confidence.", 390, 118), sectionId: "experian" },
+        {
+          ...chapter(
+            "story",
+            4600,
+            84,
+            "CHAPTER 04",
+            "Finance Systems",
+            "Business-critical finance software, audit trails, and release confidence.",
+            390,
+            118,
+          ),
+          sectionId: "experian",
+        },
         prop("story", "chart", 4860, 188),
         prop("story", "vault", 5400, 156),
         prop("story", "server", 5850, 180),
-        { ...milestone("story", 4700, 232, "FINANCE", "Business-critical systems", "Worked across APIs, reporting, validations, and document workflows.", 316, 118), sectionId: "experian" },
-        { ...milestone("story", 5430, 208, "AUDIT", "Improved clarity and support", "Made importer, reporting, search, and letter generation easier to support.", 312, 118), sectionId: "experian" },
+        {
+          ...milestone(
+            "story",
+            4700,
+            232,
+            "FINANCE",
+            "Business-critical systems",
+            "Worked across APIs, reporting, validations, and document workflows.",
+            316,
+            118,
+          ),
+          sectionId: "experian",
+        },
+        {
+          ...milestone(
+            "story",
+            5430,
+            208,
+            "AUDIT",
+            "Improved clarity and support",
+            "Made importer, reporting, search, and letter generation easier to support.",
+            312,
+            118,
+          ),
+          sectionId: "experian",
+        },
         npc("story", 4920, 536, "engineer", 1, 1),
         npc("story", 5840, 536, "qa", 0.96, -1),
-        { ...chapter("story", 6110, 84, "CHAPTER 05", "Cloud District", "Floating routes, server towers, and practical cloud delivery.", 370, 118), sectionId: "skills" },
+        {
+          ...chapter(
+            "story",
+            6110,
+            84,
+            "CHAPTER 05",
+            "Cloud District",
+            "Floating routes, server towers, and practical cloud delivery.",
+            370,
+            118,
+          ),
+          sectionId: "skills",
+        },
         prop("story", "server", 6280, 196),
         prop("story", "cloud", 6700, 150),
-        { ...milestone("story", 6180, 232, "CLOUD", "Practical depth", "APIs, Azure, AWS, automation, and platform thinking all connect here.", 318, 118), sectionId: "skills" },
-        { ...milestone("story", 6610, 208, "DELIVER", "Useful software over hype", "The through-line is reliable delivery, not trend chasing.", 286, 118), sectionId: "skills" },
+        {
+          ...milestone(
+            "story",
+            6180,
+            232,
+            "CLOUD",
+            "Practical depth",
+            "APIs, Azure, AWS, automation, and platform thinking all connect here.",
+            318,
+            118,
+          ),
+          sectionId: "skills",
+        },
+        {
+          ...milestone(
+            "story",
+            6610,
+            208,
+            "DELIVER",
+            "Useful software over hype",
+            "The through-line is reliable delivery, not trend chasing.",
+            286,
+            118,
+          ),
+          sectionId: "skills",
+        },
         npc("story", 6370, 536, "architect", 1, 1),
         npc("story", 6900, 536, "cloud", 0.98, -1),
-        { ...chapter("story", 7110, 84, "CHAPTER 06", "Security Fortress", "Certifications that sharpen delivery instincts instead of changing the whole identity.", 390, 118), sectionId: "security" },
+        {
+          ...chapter(
+            "story",
+            7110,
+            84,
+            "CHAPTER 06",
+            "Security Fortress",
+            "Certifications that sharpen delivery instincts instead of changing the whole identity.",
+            390,
+            118,
+          ),
+          sectionId: "security",
+        },
         prop("story", "firewall", 7300, 176),
         prop("story", "shield", 7820, 150),
-        { ...milestone("story", 7180, 232, "SEC", "Security foundations", "ISC2 CC and Security+ reinforced identity, risk, and secure delivery thinking.", 314, 118), sectionId: "security" },
-        { ...milestone("story", 7645, 208, "CLOUD", "Cloud range", "Azure and AWS certifications extend that mindset into platform delivery.", 290, 118), sectionId: "security" },
+        {
+          ...milestone(
+            "story",
+            7180,
+            232,
+            "SEC",
+            "Security foundations",
+            "ISC2 CC and Security+ reinforced identity, risk, and secure delivery thinking.",
+            314,
+            118,
+          ),
+          sectionId: "security",
+        },
+        {
+          ...milestone(
+            "story",
+            7645,
+            208,
+            "CLOUD",
+            "Cloud range",
+            "Azure and AWS certifications extend that mindset into platform delivery.",
+            290,
+            118,
+          ),
+          sectionId: "security",
+        },
         npc("story", 7380, 536, "security", 1, 1),
         npc("story", 7900, 440, "cloud", 0.9, -1),
-        { ...chapter("story", 8180, 84, "FINALE", "Beyond Work", "Records, guitar, long walks, and a clear path to contact.", 350, 118), sectionId: "beyond" },
+        {
+          ...chapter(
+            "story",
+            8180,
+            84,
+            "FINALE",
+            "Beyond Work",
+            "Records, guitar, long walks, and a clear path to contact.",
+            350,
+            118,
+          ),
+          sectionId: "beyond",
+        },
         prop("story", "vinyl", 8440, 178),
         prop("story", "guitar", 8850, 186),
-        { ...milestone("story", 8220, 232, "HUMAN", "Professional without feeling robotic", "The work is serious, but the person behind it still has rhythm and perspective.", 320, 118), sectionId: "beyond" },
-        { ...milestone("story", 8630, 208, "CONTACT", "Finish and reach out", "If the journey lands, the final portal is here to send recruiters into contact.", 298, 118), sectionId: "beyond" },
+        {
+          ...milestone(
+            "story",
+            8220,
+            232,
+            "HUMAN",
+            "Professional without feeling robotic",
+            "The work is serious, but the person behind it still has rhythm and perspective.",
+            320,
+            118,
+          ),
+          sectionId: "beyond",
+        },
+        {
+          ...milestone(
+            "story",
+            8630,
+            208,
+            "CONTACT",
+            "Finish and reach out",
+            "If the journey lands, the final portal is here to send recruiters into contact.",
+            298,
+            118,
+          ),
+          sectionId: "beyond",
+        },
         npc("story", 8470, 536, "vinylfan", 0.98, 1),
         npc("story", 8905, 354, "recruiter", 0.88, -1),
       ],
@@ -1579,7 +3449,9 @@
     }
 
     return (
-      level.storyBeats.find((beat) => playerX >= beat.start && playerX < beat.end) ||
+      level.storyBeats.find(
+        (beat) => playerX >= beat.start && playerX < beat.end,
+      ) ||
       level.storyBeats[level.storyBeats.length - 1] ||
       null
     );
@@ -1587,14 +3459,70 @@
 
   function storySceneTheme(beatId) {
     const themes = {
-      about: { skyTop: "#061424", skyBottom: "#204e6f", accent: "#79e6ff", secondary: "#ffd28a", glow: "rgba(121, 230, 255, 0.24)", ground: "#1d344a" },
-      cerner: { skyTop: "#08192e", skyBottom: "#2c6d79", accent: "#8ce8ff", secondary: "#ff9f7c", glow: "rgba(140, 232, 255, 0.22)", ground: "#1b3447" },
-      crunch: { skyTop: "#210f36", skyBottom: "#783776", accent: "#ffb267", secondary: "#75ddff", glow: "rgba(255, 178, 103, 0.24)", ground: "#362448" },
-      oakwood: { skyTop: "#0d2336", skyBottom: "#66828d", accent: "#ffe17b", secondary: "#87e8ff", glow: "rgba(255, 225, 123, 0.22)", ground: "#314b61" },
-      experian: { skyTop: "#081322", skyBottom: "#355f9e", accent: "#67e0ff", secondary: "#ffd087", glow: "rgba(103, 224, 255, 0.24)", ground: "#213753" },
-      skills: { skyTop: "#0a1a2d", skyBottom: "#59b8d7", accent: "#9feeff", secondary: "#ffe087", glow: "rgba(159, 238, 255, 0.22)", ground: "#2d4d69" },
-      security: { skyTop: "#120b1e", skyBottom: "#5f2942", accent: "#9bffd4", secondary: "#83ddff", glow: "rgba(155, 255, 212, 0.22)", ground: "#31182d" },
-      beyond: { skyTop: "#211635", skyBottom: "#87697d", accent: "#ffcf74", secondary: "#8fefff", glow: "rgba(255, 207, 116, 0.24)", ground: "#3d304d" },
+      about: {
+        skyTop: "#061424",
+        skyBottom: "#204e6f",
+        accent: "#79e6ff",
+        secondary: "#ffd28a",
+        glow: "rgba(121, 230, 255, 0.24)",
+        ground: "#1d344a",
+      },
+      cerner: {
+        skyTop: "#08192e",
+        skyBottom: "#2c6d79",
+        accent: "#8ce8ff",
+        secondary: "#ff9f7c",
+        glow: "rgba(140, 232, 255, 0.22)",
+        ground: "#1b3447",
+      },
+      crunch: {
+        skyTop: "#210f36",
+        skyBottom: "#783776",
+        accent: "#ffb267",
+        secondary: "#75ddff",
+        glow: "rgba(255, 178, 103, 0.24)",
+        ground: "#362448",
+      },
+      oakwood: {
+        skyTop: "#0d2336",
+        skyBottom: "#66828d",
+        accent: "#ffe17b",
+        secondary: "#87e8ff",
+        glow: "rgba(255, 225, 123, 0.22)",
+        ground: "#314b61",
+      },
+      experian: {
+        skyTop: "#081322",
+        skyBottom: "#355f9e",
+        accent: "#67e0ff",
+        secondary: "#ffd087",
+        glow: "rgba(103, 224, 255, 0.24)",
+        ground: "#213753",
+      },
+      skills: {
+        skyTop: "#0a1a2d",
+        skyBottom: "#59b8d7",
+        accent: "#9feeff",
+        secondary: "#ffe087",
+        glow: "rgba(159, 238, 255, 0.22)",
+        ground: "#2d4d69",
+      },
+      security: {
+        skyTop: "#120b1e",
+        skyBottom: "#5f2942",
+        accent: "#9bffd4",
+        secondary: "#83ddff",
+        glow: "rgba(155, 255, 212, 0.22)",
+        ground: "#31182d",
+      },
+      beyond: {
+        skyTop: "#211635",
+        skyBottom: "#87697d",
+        accent: "#ffcf74",
+        secondary: "#8fefff",
+        glow: "rgba(255, 207, 116, 0.24)",
+        ground: "#3d304d",
+      },
     };
 
     return themes[beatId || "about"] || themes.about;
@@ -1648,8 +3576,13 @@
 
     const target = entry.storyTarget;
     storyTargets.forEach((element) => {
-      const tokens = (element.getAttribute("data-story-target") || "").split(/\s+/).filter(Boolean);
-      element.classList.toggle("story-target-active", target && tokens.includes(target));
+      const tokens = (element.getAttribute("data-story-target") || "")
+        .split(/\s+/)
+        .filter(Boolean);
+      element.classList.toggle(
+        "story-target-active",
+        target && tokens.includes(target),
+      );
     });
   }
 
@@ -1658,7 +3591,8 @@
       return;
     }
 
-    const filterSection = activeStoryBeat()?.id || state.level.storyTarget || state.level.id;
+    const filterSection =
+      activeStoryBeat()?.id || state.level.storyTarget || state.level.id;
     const milestoneCards = state.level.props
       .filter((item) => item.kind === "milestone")
       .filter((item) => !item.sectionId || item.sectionId === filterSection)
@@ -1687,7 +3621,7 @@
             <strong>${card.title}</strong>
             <p>${card.text}</p>
           </article>
-        `
+        `,
       )
       .join("");
   }
@@ -1712,7 +3646,9 @@
             title: stage.menuTitle,
             label: stage.code,
             active: stage.id === state.stageId,
-            cleared: state.completedStages.has(stage.id) || state.chapterDiscovered.has(stage.id),
+            cleared:
+              state.completedStages.has(stage.id) ||
+              state.chapterDiscovered.has(stage.id),
           }));
 
     chapterRibbon.innerHTML = items
@@ -1722,7 +3658,7 @@
             <strong>${item.title}</strong>
             <span>${item.label}</span>
           </div>
-        `
+        `,
       )
       .join("");
   }
@@ -1757,7 +3693,9 @@
       if (!quest) {
         return;
       }
-      const unlocked = state.completedStages.has(stage.id) || state.chapterDiscovered.has(stage.id);
+      const unlocked =
+        state.completedStages.has(stage.id) ||
+        state.chapterDiscovered.has(stage.id);
       quest.classList.toggle("is-unlocked", unlocked);
       quest.classList.toggle("is-locked", !unlocked);
     });
@@ -1768,15 +3706,32 @@
       return;
     }
 
-    const collectedArtifacts = state.level.artifacts.filter((item) => item.collected).length;
-    const visitedMilestones = state.level.props.filter((item) => item.kind === "milestone" && item.visited).length;
-    const totalHighlights = state.level.artifacts.length + state.level.props.filter((item) => item.kind === "milestone").length;
+    const collectedArtifacts = state.level.artifacts.filter(
+      (item) => item.collected,
+    ).length;
+    const visitedMilestones = state.level.props.filter(
+      (item) => item.kind === "milestone" && item.visited,
+    ).length;
+    const totalHighlights =
+      state.level.artifacts.length +
+      state.level.props.filter((item) => item.kind === "milestone").length;
     const storyBeat = activeStoryBeat();
     const chapterIndex =
       state.level.id === "story"
-        ? Math.max(0, state.level.storyBeats.findIndex((beat) => beat.id === storyBeat?.id)) + 1
-        : Math.max(0, STAGES.findIndex((stage) => stage.id === state.level?.id)) + 1;
-    const chapterTotal = state.level.id === "story" ? state.level.storyBeats.length : STAGES.length;
+        ? Math.max(
+            0,
+            state.level.storyBeats.findIndex(
+              (beat) => beat.id === storyBeat?.id,
+            ),
+          ) + 1
+        : Math.max(
+            0,
+            STAGES.findIndex((stage) => stage.id === state.level?.id),
+          ) + 1;
+    const chapterTotal =
+      state.level.id === "story"
+        ? state.level.storyBeats.length
+        : STAGES.length;
 
     if (healthLabel) {
       healthLabel.textContent = `${chapterIndex} / ${chapterTotal}`;
@@ -1824,7 +3779,9 @@
     clearControls();
 
     if (!canvasOnlyMode) {
-      renderHomeScreen(note || "Choose how you'd like to explore Johnny's work.");
+      renderHomeScreen(
+        note || "Choose how you'd like to explore Johnny's work.",
+      );
       return;
     }
 
@@ -1845,7 +3802,11 @@
         "Blog goes directly to technical writing and security-minded engineering posts.",
       ],
       buttons: [
-        { label: "View Interactive Resume", action: "start-story", primary: true },
+        {
+          label: "View Interactive Resume",
+          action: "start-story",
+          primary: true,
+        },
         { label: "Go To Portfolio Website", action: "open-portfolio" },
         { label: "Go To Blog", action: "open-blog" },
       ],
@@ -1995,12 +3956,18 @@
       state.completedStages.has("security") ||
       state.completedStages.has("beyond") ||
       state.chapterDiscovered.has("skills") ||
-      ["experian", "cloud", "security", "beyond", "story"].includes(state.stageId);
-    setQuestState("skills", skillsUnlocked, activeBeat?.questId === "skills" || state.stageId === "cloud");
+      ["experian", "cloud", "security", "beyond", "story"].includes(
+        state.stageId,
+      );
+    setQuestState(
+      "skills",
+      skillsUnlocked,
+      activeBeat?.questId === "skills" || state.stageId === "cloud",
+    );
     setQuestState(
       "contact",
       state.completedStages.has("beyond") || state.completedStages.has("story"),
-      state.portalActive && ["beyond", "story"].includes(state.level?.id || "")
+      state.portalActive && ["beyond", "story"].includes(state.level?.id || ""),
     );
     renderChapterRibbon();
   }
@@ -2022,27 +3989,51 @@
     const beat = activeStoryBeat();
     const sectionId = level.id === "story" ? beat?.id || null : null;
     const inSection = (item) => !sectionId || item.sectionId === sectionId;
-    const remainingArtifacts = level.artifacts.filter((artifactItem) => !artifactItem.collected && inSection(artifactItem)).length;
-    const remainingMilestones = level.props.filter((propItem) => propItem.kind === "milestone" && !propItem.visited && inSection(propItem)).length;
-    const remainingRelays = (level.relays || []).filter((relayItem) => !relayItem.active && inSection(relayItem)).length;
-    const blockedGates = (level.gates || []).filter((gateItem) => !gateItem.open && inSection(gateItem)).length;
-    const roamingEnemies = level.enemies.filter((enemy) => enemy.alive && inSection(enemy)).length;
+    const remainingArtifacts = level.artifacts.filter(
+      (artifactItem) => !artifactItem.collected && inSection(artifactItem),
+    ).length;
+    const remainingMilestones = level.props.filter(
+      (propItem) =>
+        propItem.kind === "milestone" &&
+        !propItem.visited &&
+        inSection(propItem),
+    ).length;
+    const remainingRelays = (level.relays || []).filter(
+      (relayItem) => !relayItem.active && inSection(relayItem),
+    ).length;
+    const blockedGates = (level.gates || []).filter(
+      (gateItem) => !gateItem.open && inSection(gateItem),
+    ).length;
+    const roamingEnemies = level.enemies.filter(
+      (enemy) => enemy.alive && inSection(enemy),
+    ).length;
 
     const requiredParts = [];
     if (remainingArtifacts > 0) {
-      requiredParts.push(`${remainingArtifacts} highlight${remainingArtifacts === 1 ? "" : "s"} left`);
+      requiredParts.push(
+        `${remainingArtifacts} highlight${remainingArtifacts === 1 ? "" : "s"} left`,
+      );
     }
     if (remainingMilestones > 0) {
-      requiredParts.push(`${remainingMilestones} story card${remainingMilestones === 1 ? "" : "s"} left`);
+      requiredParts.push(
+        `${remainingMilestones} story card${remainingMilestones === 1 ? "" : "s"} left`,
+      );
     }
     if (remainingRelays > 0) {
-      requiredParts.push(`${remainingRelays} relay${remainingRelays === 1 ? "" : "s"} left`);
+      requiredParts.push(
+        `${remainingRelays} relay${remainingRelays === 1 ? "" : "s"} left`,
+      );
     }
     if (blockedGates > 0 && remainingRelays === 0) {
-      requiredParts.push(`${blockedGates} gate${blockedGates === 1 ? "" : "s"} sealed`);
+      requiredParts.push(
+        `${blockedGates} gate${blockedGates === 1 ? "" : "s"} sealed`,
+      );
     }
 
-    const roamingText = roamingEnemies > 0 ? ` ${roamingEnemies} easy bot${roamingEnemies === 1 ? "" : "s"} roaming.` : "";
+    const roamingText =
+      roamingEnemies > 0
+        ? ` ${roamingEnemies} easy bot${roamingEnemies === 1 ? "" : "s"} roaming.`
+        : "";
 
     if (requiredParts.length === 0) {
       if (level.id === "story" && beat) {
@@ -2061,8 +4052,18 @@
   function renderHomeScreen(note = "") {
     showOverlayScreen("home");
 
-    const hasProgress = Boolean(state.level && state.started && !state.running && !state.ended && state.clock > 0);
-    const title = hasProgress ? "Journey paused." : state.ended ? "Journey complete." : "Johnny's Interactive Resume";
+    const hasProgress = Boolean(
+      state.level &&
+      state.started &&
+      !state.running &&
+      !state.ended &&
+      state.clock > 0,
+    );
+    const title = hasProgress
+      ? "Journey paused."
+      : state.ended
+        ? "Journey complete."
+        : "Johnny's Interactive Resume";
     const text = hasProgress
       ? `You're paused inside ${state.level?.menuTitle || "the current chapter"}. Resume instantly, warm up in training, or open chapter select if you want a different stop in the resume.`
       : state.ended
@@ -2077,7 +4078,11 @@
       homeText.textContent = text;
     }
     if (homePrimaryButton) {
-      homePrimaryButton.textContent = hasProgress ? "Resume journey" : state.ended ? "Restart guided journey" : "Start guided journey";
+      homePrimaryButton.textContent = hasProgress
+        ? "Resume journey"
+        : state.ended
+          ? "Restart guided journey"
+          : "Start guided journey";
     }
     if (homeNote) {
       homeNote.textContent =
@@ -2090,9 +4095,15 @@
     bindOverlayButtons();
   }
 
-  function renderMenu(selectedId = state.menuSelection || state.stageId || "cerner", note = "") {
+  function renderMenu(
+    selectedId = state.menuSelection || state.stageId || "cerner",
+    note = "",
+  ) {
     const fallbackStage = stageById.get("cerner") || STAGES[0];
-    const menuSelected = STAGES.find((stage) => stage.id === selectedId) || STAGES.find((stage) => stage.id === state.stageId) || fallbackStage;
+    const menuSelected =
+      STAGES.find((stage) => stage.id === selectedId) ||
+      STAGES.find((stage) => stage.id === state.stageId) ||
+      fallbackStage;
     const selectedStage = menuSelected || fallbackStage;
     state.menuSelection = selectedStage.id;
 
@@ -2100,7 +4111,8 @@
 
     if (levelSelectNote) {
       levelSelectNote.textContent =
-        note || "Every major role is still available as its own chapter. Guided journey stays on the home screen.";
+        note ||
+        "Every major role is still available as its own chapter. Guided journey stays on the home screen.";
     }
 
     if (stageCodeInput instanceof HTMLInputElement) {
@@ -2118,7 +4130,10 @@
         button.type = "button";
         button.className = `level-select-card${stage.id === selectedStage.id ? " is-selected" : ""}`;
         button.setAttribute("data-stage-select", stage.id);
-        button.setAttribute("aria-pressed", stage.id === selectedStage.id ? "true" : "false");
+        button.setAttribute(
+          "aria-pressed",
+          stage.id === selectedStage.id ? "true" : "false",
+        );
 
         let statusText = "Ready";
         let statusClass = "";
@@ -2168,14 +4183,20 @@
       messageText.textContent = text;
     }
     if (messageDetails) {
-      messageDetails.innerHTML = details.map((detail) => `<div>${detail}</div>`).join("");
+      messageDetails.innerHTML = details
+        .map((detail) => `<div>${detail}</div>`)
+        .join("");
     }
     if (messageActions) {
       messageActions.innerHTML = buttons
         .map((button) => {
           const className = button.primary ? "button primary" : "button";
-          const stageAttr = button.stageId ? ` data-stage-play="${button.stageId}"` : "";
-          const actionAttr = button.action ? ` data-game-action="${button.action}"` : "";
+          const stageAttr = button.stageId
+            ? ` data-stage-play="${button.stageId}"`
+            : "";
+          const actionAttr = button.action
+            ? ` data-game-action="${button.action}"`
+            : "";
           return `<button class="${className}" type="button"${stageAttr}${actionAttr}>${button.label}</button>`;
         })
         .join("");
@@ -2233,17 +4254,24 @@
     });
 
     levelSelectBackButton?.addEventListener("click", () => {
-      renderHomeScreen("Chapter select stays tucked away until someone asks for it.");
+      renderHomeScreen(
+        "Chapter select stays tucked away until someone asks for it.",
+      );
     });
 
     stageCodeForm?.addEventListener("submit", (event) => {
       event.preventDefault();
-      const rawCode = String(stageCodeInput instanceof HTMLInputElement ? stageCodeInput.value : "")
+      const rawCode = String(
+        stageCodeInput instanceof HTMLInputElement ? stageCodeInput.value : "",
+      )
         .trim()
         .toUpperCase();
 
       if (!rawCode) {
-        renderMenu(state.menuSelection || state.stageId || "cerner", "Enter one of the visible chapter codes to jump.");
+        renderMenu(
+          state.menuSelection || state.stageId || "cerner",
+          "Enter one of the visible chapter codes to jump.",
+        );
         return;
       }
 
@@ -2251,7 +4279,7 @@
       if (!stageId) {
         renderMenu(
           state.menuSelection || state.stageId || "cerner",
-          `Code ${rawCode} is not recognized. Try one of these: ${STAGES.map((stage) => stage.code).join(", ")}.`
+          `Code ${rawCode} is not recognized. Try one of these: ${STAGES.map((stage) => stage.code).join(", ")}.`,
         );
         return;
       }
@@ -2267,7 +4295,8 @@
 
       const stagePlayButton = target.closest("[data-stage-play]");
       if (stagePlayButton instanceof HTMLElement) {
-        const stageId = stagePlayButton.getAttribute("data-stage-play") || "training";
+        const stageId =
+          stagePlayButton.getAttribute("data-stage-play") || "training";
         startStage(stageId);
         return;
       }
@@ -2328,7 +4357,8 @@
 
     state.level = level;
     state.stageId = stageId;
-    state.menuSelection = stageId === "story" ? state.menuSelection || "cerner" : stageId;
+    state.menuSelection =
+      stageId === "story" ? state.menuSelection || "cerner" : stageId;
     pageBody?.classList.remove("is-contact-open");
     state.cameraX = 0;
     state.clock = 0;
@@ -2371,7 +4401,9 @@
       }
       hideOverlay();
       canvas.focus({ preventScroll: true });
-      showToast(`${level.title} loaded. ${activeStoryBeat()?.sprintName || level.sprintName} ready.`);
+      showToast(
+        `${level.title} loaded. ${activeStoryBeat()?.sprintName || level.sprintName} ready.`,
+      );
     }
   }
 
@@ -2396,16 +4428,24 @@
     const nextId = nextStageId(level.id);
     if (nextId) {
       const nextStage = stageById.get(nextId);
-      details.push(`Next stage: ${nextStage?.menuTitle || nextId} (${nextStage?.code || ""})`);
+      details.push(
+        `Next stage: ${nextStage?.menuTitle || nextId} (${nextStage?.code || ""})`,
+      );
     }
 
     if (level.id === "beyond" || level.id === "story") {
       if (questStatus) {
-        questStatus.textContent = "Final portal cleared. Contact is unlocked below.";
+        questStatus.textContent =
+          "Final portal cleared. Contact is unlocked below.";
       }
       storyTargets.forEach((element) => {
-        const tokens = (element.getAttribute("data-story-target") || "").split(/\s+/).filter(Boolean);
-        element.classList.toggle("story-target-active", tokens.includes("contact"));
+        const tokens = (element.getAttribute("data-story-target") || "")
+          .split(/\s+/)
+          .filter(Boolean);
+        element.classList.toggle(
+          "story-target-active",
+          tokens.includes("contact"),
+        );
       });
       if (canvasOnlyMode) {
         state.canvasPanel = {
@@ -2429,10 +4469,13 @@
         "Recruiters can jump into contact, replay favorite chapters, or return to the home screen for another guided pass.",
         [
           { label: "See contact", action: "contact", primary: true },
-          { label: level.id === "story" ? "Replay journey" : "Replay finale", action: "replay" },
+          {
+            label: level.id === "story" ? "Replay journey" : "Replay finale",
+            action: "replay",
+          },
           { label: "Home", action: "home" },
         ],
-        details
+        details,
       );
       return;
     }
@@ -2445,7 +4488,9 @@
         text: "Keep the journey moving, replay this chapter, or return to the main menu.",
         details,
         buttons: [
-          nextId ? { label: "Next", action: "next-stage", primary: true } : { label: "Replay", action: "replay-stage", primary: true },
+          nextId
+            ? { label: "Next", action: "next-stage", primary: true }
+            : { label: "Replay", action: "replay-stage", primary: true },
           { label: "Replay", action: "replay-stage" },
           { label: "Main Menu", action: "show-main-menu" },
         ],
@@ -2457,11 +4502,17 @@
       `${level.title} cleared.`,
       "The next chapter is unlocked. Keep the journey going, replay this chapter, or head back home.",
       [
-        nextId ? { label: `Play ${stageById.get(nextId)?.menuTitle || nextId}`, stageId: nextId, primary: true } : { label: "Home", action: "home", primary: true },
+        nextId
+          ? {
+              label: `Play ${stageById.get(nextId)?.menuTitle || nextId}`,
+              stageId: nextId,
+              primary: true,
+            }
+          : { label: "Home", action: "home", primary: true },
         { label: "Replay stage", action: "replay" },
         { label: "Home", action: "home" },
       ],
-      details
+      details,
     );
   }
 
@@ -2470,7 +4521,11 @@
       return;
     }
 
-    if (active && !controls[control] && (control === "jump" || control === "dash" || control === "shoot")) {
+    if (
+      active &&
+      !controls[control] &&
+      (control === "jump" || control === "dash" || control === "shoot")
+    ) {
       pressed[control] = true;
     }
 
@@ -2565,7 +4620,9 @@
             }
           } else {
             state.running = false;
-            renderHomeScreen("Journey paused. Resume, train, or open chapter select.");
+            renderHomeScreen(
+              "Journey paused. Resume, train, or open chapter select.",
+            );
           }
         }
         return;
@@ -2632,7 +4689,9 @@
       canvas.scrollIntoView({ behavior: "smooth", block: "center" });
       state.running = false;
       renderHomeScreen(
-        state.started ? "Choose what to do next from the home screen." : "Start guided journey, warm up in training, or open chapter select."
+        state.started
+          ? "Choose what to do next from the home screen."
+          : "Start guided journey, warm up in training, or open chapter select.",
       );
     });
 
@@ -2664,21 +4723,73 @@
 
     switch (stageId) {
       case "training":
-        return { ...base, maxRun: 6.1, dashDuration: 10, gravity: 0.78, shootCooldown: 12 };
+        return {
+          ...base,
+          maxRun: 6.1,
+          dashDuration: 10,
+          gravity: 0.78,
+          shootCooldown: 12,
+        };
       case "cerner":
-        return { ...base, groundAccel: 0.68, maxRun: 6.3, dashDuration: 10, shootSpeed: 11.2 };
+        return {
+          ...base,
+          groundAccel: 0.68,
+          maxRun: 6.3,
+          dashDuration: 10,
+          shootSpeed: 11.2,
+        };
       case "crunch":
-        return { ...base, groundAccel: 0.79, maxRun: 6.9, jumpVelocity: 16.1, gravity: 0.74, maxFall: 16.5, dashDuration: 11 };
+        return {
+          ...base,
+          groundAccel: 0.79,
+          maxRun: 6.9,
+          jumpVelocity: 16.1,
+          gravity: 0.74,
+          maxFall: 16.5,
+          dashDuration: 11,
+        };
       case "oakwood":
         return { ...base, groundAccel: 0.82, maxRun: 7.1, dashDuration: 11 };
       case "experian":
-        return { ...base, groundAccel: 0.84, maxRun: 7.2, shootCooldown: 10, shootSpeed: 12.8, dashDuration: 9 };
+        return {
+          ...base,
+          groundAccel: 0.84,
+          maxRun: 7.2,
+          shootCooldown: 10,
+          shootSpeed: 12.8,
+          dashDuration: 9,
+        };
       case "cloud":
-        return { ...base, groundAccel: 0.82, maxRun: 7.15, jumpVelocity: 16.2, gravity: 0.72, maxFall: 15.6, shootCooldown: 10, shootSpeed: 12.4 };
+        return {
+          ...base,
+          groundAccel: 0.82,
+          maxRun: 7.15,
+          jumpVelocity: 16.2,
+          gravity: 0.72,
+          maxFall: 15.6,
+          shootCooldown: 10,
+          shootSpeed: 12.4,
+        };
       case "security":
-        return { ...base, groundAccel: 0.8, maxRun: 6.9, dashSpeed: (stage?.dashSpeed || 17.4) + 0.4, dashDuration: 8, dashInvuln: 12, shootCooldown: 11 };
+        return {
+          ...base,
+          groundAccel: 0.8,
+          maxRun: 6.9,
+          dashSpeed: (stage?.dashSpeed || 17.4) + 0.4,
+          dashDuration: 8,
+          dashInvuln: 12,
+          shootCooldown: 11,
+        };
       case "beyond":
-        return { ...base, groundAccel: 0.76, maxRun: 6.7, gravity: 0.68, maxFall: 14.8, dashDuration: 12, jumpVelocity: 15.5 };
+        return {
+          ...base,
+          groundAccel: 0.76,
+          maxRun: 6.7,
+          gravity: 0.68,
+          maxFall: 14.8,
+          dashDuration: 12,
+          jumpVelocity: 15.5,
+        };
       default:
         return base;
     }
@@ -2721,8 +4832,12 @@
       platform.prevX = platform.x;
       platform.prevY = platform.y;
       const wave = Math.sin(state.clock * platform.speed + platform.phase);
-      platform.x = platform.baseX + (platform.axis === "x" ? wave * platform.amplitude : 0);
-      platform.y = platform.baseY + (platform.axis === "y" ? wave * platform.amplitude : 0);
+      platform.x =
+        platform.baseX +
+        (platform.axis === "x" ? wave * platform.amplitude : 0);
+      platform.y =
+        platform.baseY +
+        (platform.axis === "y" ? wave * platform.amplitude : 0);
       platform.dx = platform.x - platform.prevX;
       platform.dy = platform.y - platform.prevY;
     });
@@ -2737,7 +4852,9 @@
 
     const physics = stagePhysics(level.id);
     const carriedPlatform = player.supportId
-      ? level.movingPlatforms.find((platform) => platform.id === player.supportId)
+      ? level.movingPlatforms.find(
+          (platform) => platform.id === player.supportId,
+        )
       : null;
 
     if (carriedPlatform) {
@@ -2765,7 +4882,12 @@
       } else if (player.airJumps > 0) {
         player.vy = -physics.airJumpVelocity;
         player.airJumps -= 1;
-        emitBurst(player.x + player.w / 2, player.y + player.h / 2, "#ffd98a", 10);
+        emitBurst(
+          player.x + player.w / 2,
+          player.y + player.h / 2,
+          "#ffd98a",
+          10,
+        );
       }
     }
 
@@ -2775,7 +4897,12 @@
       player.vx = player.facing * physics.dashSpeed;
       player.vy = level.id === "beyond" ? -1.4 : -0.8;
       player.invuln = Math.max(player.invuln, physics.dashInvuln);
-      emitBurst(player.x + player.w / 2, player.y + player.h / 2, level.dashColor || level.theme.accent, 16);
+      emitBurst(
+        player.x + player.w / 2,
+        player.y + player.h / 2,
+        level.dashColor || level.theme.accent,
+        16,
+      );
       playSfx("dash");
 
       if (level.id === "training" && !state.training.dash) {
@@ -2818,7 +4945,12 @@
     player.x = clamp(player.x, 0, Math.max(0, level.width - player.w));
 
     player.vy = Math.min(player.vy + physics.gravity * delta, physics.maxFall);
-    if (level.id === "beyond" && controls.jump && player.vy > 0 && player.vy < 6) {
+    if (
+      level.id === "beyond" &&
+      controls.jump &&
+      player.vy > 0 &&
+      player.vy < 6
+    ) {
       player.vy -= 0.12 * delta;
     }
     player.y += player.vy * delta;
@@ -2878,7 +5010,12 @@
   }
 
   function bossBarrier() {
-    if (!state.boss || state.boss.defeated || !state.boss.active || state.level?.id !== "security") {
+    if (
+      !state.boss ||
+      state.boss.defeated ||
+      !state.boss.active ||
+      state.level?.id !== "security"
+    ) {
       return null;
     }
 
@@ -2898,10 +5035,17 @@
       return [];
     }
 
-    const closedGates = (level.gates || []).filter((gateItem) => !gateItem.open);
+    const closedGates = (level.gates || []).filter(
+      (gateItem) => !gateItem.open,
+    );
     const barrier = bossBarrier();
     if (barrier) {
-      return [...level.platforms, ...level.movingPlatforms, ...closedGates, barrier];
+      return [
+        ...level.platforms,
+        ...level.movingPlatforms,
+        ...closedGates,
+        barrier,
+      ];
     }
     return [...level.platforms, ...level.movingPlatforms, ...closedGates];
   }
@@ -2916,11 +5060,17 @@
       projectile.x += projectile.vx * delta;
       projectile.life -= delta;
 
-      if (projectile.life <= 0 || projectile.x < -40 || projectile.x > level.width + 40) {
+      if (
+        projectile.life <= 0 ||
+        projectile.x < -40 ||
+        projectile.x > level.width + 40
+      ) {
         return false;
       }
 
-      if (getSolidPlatforms().some((platform) => intersects(projectile, platform))) {
+      if (
+        getSolidPlatforms().some((platform) => intersects(projectile, platform))
+      ) {
         emitBurst(projectile.x, projectile.y, projectile.color || "#9adfff", 5);
         return false;
       }
@@ -2939,12 +5089,22 @@
 
         if (enemy.hp <= 0) {
           enemy.alive = false;
-          emitBurst(enemy.x + enemy.w / 2, enemy.y + enemy.h / 2, level.theme.secondary, 14);
+          emitBurst(
+            enemy.x + enemy.w / 2,
+            enemy.y + enemy.h / 2,
+            level.theme.secondary,
+            14,
+          );
         }
         return false;
       }
 
-      if (state.boss && state.boss.active && !state.boss.defeated && intersects(projectile, state.boss)) {
+      if (
+        state.boss &&
+        state.boss.active &&
+        !state.boss.defeated &&
+        intersects(projectile, state.boss)
+      ) {
         if (isBossVulnerable()) {
           state.boss.hp -= 1;
           emitBurst(projectile.x, projectile.y, "#86f5bd", 16);
@@ -2974,14 +5134,26 @@
         return false;
       }
 
-      if (getSolidPlatforms().some((platform) => intersects(projectile, platform))) {
-        emitBurst(projectile.x + projectile.w / 2, projectile.y + projectile.h / 2, projectile.color || "#ff8468", 5);
+      if (
+        getSolidPlatforms().some((platform) => intersects(projectile, platform))
+      ) {
+        emitBurst(
+          projectile.x + projectile.w / 2,
+          projectile.y + projectile.h / 2,
+          projectile.color || "#ff8468",
+          5,
+        );
         return false;
       }
 
       if (intersects(projectile, state.player)) {
         takeDamage(projectile.x + projectile.w / 2);
-        emitBurst(projectile.x + projectile.w / 2, projectile.y + projectile.h / 2, projectile.color || "#ff8468", 7);
+        emitBurst(
+          projectile.x + projectile.w / 2,
+          projectile.y + projectile.h / 2,
+          projectile.color || "#ff8468",
+          7,
+        );
         return false;
       }
 
@@ -3013,9 +5185,18 @@
         enemy.bob += 0.05 * delta;
         enemy.y = enemy.baseY + Math.sin(enemy.bob) * 18;
         enemy.x += Math.cos(state.clock * 0.03 + enemy.bob) * 0.25 * delta;
-        if (Math.abs(player.x - enemy.x) < 520 && enemy.cooldown <= 0 && enemy.skin !== "vinyl-drone") {
+        if (
+          Math.abs(player.x - enemy.x) < 520 &&
+          enemy.cooldown <= 0 &&
+          enemy.skin !== "vinyl-drone"
+        ) {
           enemy.cooldown = enemy.skin === "training-target" ? 120 : 88;
-          fireEnemyProjectile(enemy, player, enemy.skin === "training-target" ? 4.2 : 4.9, enemy.skin === "training-target" ? "#ffd779" : "#ff8468");
+          fireEnemyProjectile(
+            enemy,
+            player,
+            enemy.skin === "training-target" ? 4.2 : 4.9,
+            enemy.skin === "training-target" ? "#ffd779" : "#ff8468",
+          );
         }
       } else if (enemy.type === "turret") {
         enemy.cooldown -= delta;
@@ -3046,7 +5227,12 @@
 
       if (player.dashTime > 0) {
         enemy.alive = false;
-        emitBurst(enemy.x + enemy.w / 2, enemy.y + enemy.h / 2, level.dashColor || level.theme.accent, 14);
+        emitBurst(
+          enemy.x + enemy.w / 2,
+          enemy.y + enemy.h / 2,
+          level.dashColor || level.theme.accent,
+          14,
+        );
         return;
       }
 
@@ -3084,7 +5270,11 @@
       return;
     }
 
-    if (player.dashTime > 0 && isBossVulnerable() && boss.contactCooldown <= 0) {
+    if (
+      player.dashTime > 0 &&
+      isBossVulnerable() &&
+      boss.contactCooldown <= 0
+    ) {
       boss.hp -= 1;
       boss.contactCooldown = 22;
       player.vx = -player.facing * 4;
@@ -3119,7 +5309,12 @@
       }
 
       artifactItem.collected = true;
-      emitBurst(artifactItem.x, artifactItem.y, artifactItem.color || "#ffe38a", 16);
+      emitBurst(
+        artifactItem.x,
+        artifactItem.y,
+        artifactItem.color || "#ffe38a",
+        16,
+      );
       showToast(`${artifactItem.label} highlighted`);
       playSfx("pickup");
       if (state.player) {
@@ -3157,20 +5352,34 @@
       }
 
       relayItem.active = true;
-      emitBurst(relayItem.x + relayItem.w / 2, relayItem.y + relayItem.h / 2, relayItem.color || level.theme.accent, 12);
+      emitBurst(
+        relayItem.x + relayItem.w / 2,
+        relayItem.y + relayItem.h / 2,
+        relayItem.color || level.theme.accent,
+        12,
+      );
       showToast(`${relayItem.label} online.`);
       playSfx("switch");
     });
 
     level.gates?.forEach((gateItem) => {
-      const relatedRelays = level.relays.filter((relayItem) => relayItem.group === gateItem.group);
+      const relatedRelays = level.relays.filter(
+        (relayItem) => relayItem.group === gateItem.group,
+      );
       const required = gateItem.required || relatedRelays.length;
-      const activeCount = relatedRelays.filter((relayItem) => relayItem.active).length;
+      const activeCount = relatedRelays.filter(
+        (relayItem) => relayItem.active,
+      ).length;
       const wasOpen = gateItem.open;
       gateItem.open = activeCount >= required && required > 0;
 
       if (!wasOpen && gateItem.open) {
-        emitBurst(gateItem.x + gateItem.w / 2, gateItem.y + gateItem.h / 2, gateItem.color || level.theme.secondary, 18);
+        emitBurst(
+          gateItem.x + gateItem.w / 2,
+          gateItem.y + gateItem.h / 2,
+          gateItem.color || level.theme.secondary,
+          18,
+        );
         showToast(`${gateItem.label} unlocked.`);
         playSfx("portal");
       }
@@ -3197,7 +5406,12 @@
       }
 
       propItem.visited = true;
-      emitBurst(centerX, propItem.y + 24, state.level?.theme.accent || "#7ce5ff", 14);
+      emitBurst(
+        centerX,
+        propItem.y + 24,
+        state.level?.theme.accent || "#7ce5ff",
+        14,
+      );
       showToast(`${propItem.title} unlocked`);
       playSfx("milestone");
       renderStoryHighlights();
@@ -3212,10 +5426,18 @@
     }
 
     const previous = state.portalActive;
-    const remainingArtifacts = level.artifacts.some((artifactItem) => !artifactItem.collected);
-    const remainingMilestones = level.props.some((propItem) => propItem.kind === "milestone" && !propItem.visited);
-    const remainingRelays = (level.relays || []).some((relayItem) => !relayItem.active);
-    const remainingGates = (level.gates || []).some((gateItem) => !gateItem.open);
+    const remainingArtifacts = level.artifacts.some(
+      (artifactItem) => !artifactItem.collected,
+    );
+    const remainingMilestones = level.props.some(
+      (propItem) => propItem.kind === "milestone" && !propItem.visited,
+    );
+    const remainingRelays = (level.relays || []).some(
+      (relayItem) => !relayItem.active,
+    );
+    const remainingGates = (level.gates || []).some(
+      (gateItem) => !gateItem.open,
+    );
     const bossStanding = Boolean(state.boss && !state.boss.defeated);
     if (level.id === "training") {
       state.portalActive =
@@ -3227,7 +5449,12 @@
         !remainingRelays &&
         !remainingGates;
     } else {
-      state.portalActive = !remainingArtifacts && !remainingMilestones && !remainingRelays && !remainingGates && !bossStanding;
+      state.portalActive =
+        !remainingArtifacts &&
+        !remainingMilestones &&
+        !remainingRelays &&
+        !remainingGates &&
+        !bossStanding;
     }
 
     if (!previous && state.portalActive) {
@@ -3293,7 +5520,11 @@
       state.boss.y = state.boss.baseY ?? state.boss.y;
     }
 
-    state.cameraX = clamp(state.player.x - VIEW_WIDTH * 0.38, 0, Math.max(0, state.level.width - VIEW_WIDTH));
+    state.cameraX = clamp(
+      state.player.x - VIEW_WIDTH * 0.38,
+      0,
+      Math.max(0, state.level.width - VIEW_WIDTH),
+    );
     showToast(message);
     updateHud();
   }
@@ -3311,7 +5542,9 @@
     emitBurst(player.x + player.w / 2, player.y + player.h / 2, "#ff8f73", 12);
 
     if (player.hp <= 0) {
-      respawnPlayer(`Resetting to the start of ${state.level?.menuTitle || "the stage"}.`);
+      respawnPlayer(
+        `Resetting to the start of ${state.level?.menuTitle || "the stage"}.`,
+      );
       return;
     }
 
@@ -3331,13 +5564,21 @@
       life: 120,
       color: theme.accent,
     });
-    emitBurst(player.x + player.w / 2 + player.facing * 12, player.y + player.h * 0.45, theme.accent, 5);
+    emitBurst(
+      player.x + player.w / 2 + player.facing * 12,
+      player.y + player.h * 0.45,
+      theme.accent,
+      5,
+    );
   }
 
   function fireEnemyProjectile(enemy, player, speed, color = "#ff8468") {
     const startX = enemy.x + enemy.w / 2;
     const startY = enemy.y + enemy.h / 2;
-    const angle = Math.atan2(player.y + player.h / 2 - startY, player.x + player.w / 2 - startX);
+    const angle = Math.atan2(
+      player.y + player.h / 2 - startY,
+      player.x + player.w / 2 - startX,
+    );
 
     state.enemyProjectiles.push({
       x: startX - 6,
@@ -3360,7 +5601,10 @@
 
     const startX = boss.x + 24;
     const startY = boss.y + boss.h * 0.48;
-    const baseAngle = Math.atan2(player.y + player.h / 2 - startY, player.x + player.w / 2 - startX);
+    const baseAngle = Math.atan2(
+      player.y + player.h / 2 - startY,
+      player.x + player.w / 2 - startX,
+    );
 
     [-0.42, -0.18, 0, 0.18, 0.42].forEach((offset) => {
       const angle = baseAngle + offset;
@@ -3391,7 +5635,12 @@
 
     state.boss.defeated = true;
     state.boss.active = false;
-    emitBurst(state.boss.x + state.boss.w / 2, state.boss.y + state.boss.h / 2, "#86f5bd", 30);
+    emitBurst(
+      state.boss.x + state.boss.w / 2,
+      state.boss.y + state.boss.h / 2,
+      "#86f5bd",
+      30,
+    );
     showToast("Chaos Engine cleared. Shield gate online.");
   }
 
@@ -3438,10 +5687,18 @@
     context.save();
     context.globalAlpha = 0.16;
     for (let index = 0; index < 8; index += 1) {
-      const towerX = (index * 170 - (state.cameraX * 0.18 + index * 31)) % (VIEW_WIDTH + 200) - 120;
+      const towerX =
+        ((index * 170 - (state.cameraX * 0.18 + index * 31)) %
+          (VIEW_WIDTH + 200)) -
+        120;
       const towerHeight = 120 + ((index * 63) % 180);
       context.fillStyle = theme.accent;
-      context.fillRect(towerX, VIEW_HEIGHT - 210 - towerHeight, 72, towerHeight);
+      context.fillRect(
+        towerX,
+        VIEW_HEIGHT - 210 - towerHeight,
+        72,
+        towerHeight,
+      );
     }
     context.restore();
 
@@ -3449,12 +5706,18 @@
     context.globalAlpha = 0.1;
     context.fillStyle = "#ffffff";
     for (let index = 0; index < 7; index += 1) {
-      const hillX = (index * 220 - state.cameraX * 0.3) % (VIEW_WIDTH + 320) - 180;
+      const hillX =
+        ((index * 220 - state.cameraX * 0.3) % (VIEW_WIDTH + 320)) - 180;
       const hillWidth = 280;
       const hillHeight = 120 + ((index * 51) % 100);
       context.beginPath();
       context.moveTo(hillX, VIEW_HEIGHT - 90);
-      context.quadraticCurveTo(hillX + hillWidth * 0.45, VIEW_HEIGHT - 90 - hillHeight, hillX + hillWidth, VIEW_HEIGHT - 90);
+      context.quadraticCurveTo(
+        hillX + hillWidth * 0.45,
+        VIEW_HEIGHT - 90 - hillHeight,
+        hillX + hillWidth,
+        VIEW_HEIGHT - 90,
+      );
       context.lineTo(hillX + hillWidth, VIEW_HEIGHT);
       context.lineTo(hillX, VIEW_HEIGHT);
       context.closePath();
@@ -3522,7 +5785,8 @@
     } else if (sceneId === "crunch") {
       for (let index = 0; index < 8; index += 1) {
         const x = 50 + index * 150 - shift;
-        context.fillStyle = index % 2 === 0 ? "rgba(255,178,103,0.22)" : "rgba(117,221,255,0.22)";
+        context.fillStyle =
+          index % 2 === 0 ? "rgba(255,178,103,0.22)" : "rgba(117,221,255,0.22)";
         context.fillRect(x, 200 - (index % 4) * 26, 24, 130 + (index % 3) * 20);
       }
       context.strokeStyle = "rgba(255,255,255,0.22)";
@@ -3551,7 +5815,8 @@
     } else if (sceneId === "experian") {
       for (let index = 0; index < 6; index += 1) {
         const x = 70 + index * 180 - shift;
-        context.fillStyle = index % 2 === 0 ? "rgba(103,224,255,0.18)" : "rgba(255,195,123,0.18)";
+        context.fillStyle =
+          index % 2 === 0 ? "rgba(103,224,255,0.18)" : "rgba(255,195,123,0.18)";
         context.fillRect(x, 180 - (index % 3) * 20, 34, 120 + (index % 3) * 18);
         context.fillRect(x + 46, 150 - (index % 2) * 12, 34, 150);
         context.fillRect(x + 92, 168 - (index % 3) * 14, 34, 132);
@@ -3561,7 +5826,10 @@
       context.beginPath();
       context.moveTo(0, 250);
       for (let x = 0; x <= VIEW_WIDTH; x += 44) {
-        const y = 250 - Math.sin((x + state.cameraX) * 0.018) * 26 - (x % 176 === 0 ? 18 : 0);
+        const y =
+          250 -
+          Math.sin((x + state.cameraX) * 0.018) * 26 -
+          (x % 176 === 0 ? 18 : 0);
         context.lineTo(x, y);
       }
       context.stroke();
@@ -3607,7 +5875,12 @@
     } else if (sceneId === "beyond") {
       context.fillStyle = "rgba(255,255,255,0.2)";
       for (let index = 0; index < 28; index += 1) {
-        context.fillRect((index * 53 - state.cameraX * 0.08) % (VIEW_WIDTH + 20), 70 + (index * 27) % 130, 3, 3);
+        context.fillRect(
+          (index * 53 - state.cameraX * 0.08) % (VIEW_WIDTH + 20),
+          70 + ((index * 27) % 130),
+          3,
+          3,
+        );
       }
       context.strokeStyle = "rgba(255,255,255,0.26)";
       context.lineWidth = 4;
@@ -3646,13 +5919,21 @@
         context.stroke();
       });
 
-      [160, 1220, 2320, 3500, 4880, 6280, 7320, 8440].forEach((anchor, index) => {
-        const x = anchor - shift;
-        context.fillStyle = index % 2 === 0 ? accent : secondary;
-        context.beginPath();
-        context.arc(x, 150 + (index % 3) * 26, 18 + (index % 2) * 8, 0, Math.PI * 2);
-        context.fill();
-      });
+      [160, 1220, 2320, 3500, 4880, 6280, 7320, 8440].forEach(
+        (anchor, index) => {
+          const x = anchor - shift;
+          context.fillStyle = index % 2 === 0 ? accent : secondary;
+          context.beginPath();
+          context.arc(
+            x,
+            150 + (index % 3) * 26,
+            18 + (index % 2) * 8,
+            0,
+            Math.PI * 2,
+          );
+          context.fill();
+        },
+      );
     } else if (stage.id === "training") {
       for (let index = 0; index < 5; index += 1) {
         const x = 120 + index * 210 - shift;
@@ -3666,7 +5947,12 @@
       }
     } else if (stage.id === "cerner") {
       for (let index = 0; index < 5; index += 1) {
-        drawCross(110 + index * 180 - shift, 160 + (index % 2) * 28, 18, accent);
+        drawCross(
+          110 + index * 180 - shift,
+          160 + (index % 2) * 28,
+          18,
+          accent,
+        );
         context.fillStyle = "rgba(255,255,255,0.1)";
         context.fillRect(84 + index * 180 - shift, 200, 52, 120);
       }
@@ -3674,7 +5960,12 @@
       for (let index = 0; index < 6; index += 1) {
         const x = 90 + index * 122 - shift;
         context.fillStyle = accent;
-        context.fillRect(x, 240 - 24 - (index % 4) * 24, 20, 24 + (index % 4) * 24);
+        context.fillRect(
+          x,
+          240 - 24 - (index % 4) * 24,
+          20,
+          24 + (index % 4) * 24,
+        );
         context.beginPath();
         context.arc(x + 58, 178 + (index % 2) * 28, 24, 0, Math.PI * 2);
         context.strokeStyle = "#ffffff";
@@ -3697,7 +5988,12 @@
         const y = 150 + (index % 3) * 30;
         context.fillStyle = index % 2 === 0 ? accent : secondary;
         context.fillRect(x, 210 - (index % 4) * 16, 18, 60 + (index % 4) * 16);
-        context.fillRect(x + 26, 170 - (index % 3) * 12, 18, 100 + (index % 3) * 12);
+        context.fillRect(
+          x + 26,
+          170 - (index % 3) * 12,
+          18,
+          100 + (index % 3) * 12,
+        );
         context.strokeStyle = "#ffffff";
         context.lineWidth = 3;
         context.beginPath();
@@ -3765,35 +6061,125 @@
   function npcPalette(role) {
     switch (role) {
       case "guide":
-        return { coat: "#0f1a2b", accent: "#72ddff", skin: "#d9a37f", hair: "#121923", prop: "#ffc576" };
+        return {
+          coat: "#0f1a2b",
+          accent: "#72ddff",
+          skin: "#d9a37f",
+          hair: "#121923",
+          prop: "#ffc576",
+        };
       case "nurse":
-        return { coat: "#f6fbff", accent: "#76ddff", skin: "#d8a27b", hair: "#20324a", prop: "#ff8d7a" };
+        return {
+          coat: "#f6fbff",
+          accent: "#76ddff",
+          skin: "#d8a27b",
+          hair: "#20324a",
+          prop: "#ff8d7a",
+        };
       case "analyst":
-        return { coat: "#243b58", accent: "#97efff", skin: "#cd936f", hair: "#0c1118", prop: "#ffd18c" };
+        return {
+          coat: "#243b58",
+          accent: "#97efff",
+          skin: "#cd936f",
+          hair: "#0c1118",
+          prop: "#ffd18c",
+        };
       case "dj":
-        return { coat: "#2a1d44", accent: "#ffb267", skin: "#d39b72", hair: "#120c1d", prop: "#75ddff" };
+        return {
+          coat: "#2a1d44",
+          accent: "#ffb267",
+          skin: "#d39b72",
+          hair: "#120c1d",
+          prop: "#75ddff",
+        };
       case "musician":
-        return { coat: "#352347", accent: "#ffd18c", skin: "#d8a27b", hair: "#1a1222", prop: "#86e8ff" };
+        return {
+          coat: "#352347",
+          accent: "#ffd18c",
+          skin: "#d8a27b",
+          hair: "#1a1222",
+          prop: "#86e8ff",
+        };
       case "teacher":
-        return { coat: "#304866", accent: "#ffd56f", skin: "#d9a37f", hair: "#263648", prop: "#f6fbff" };
+        return {
+          coat: "#304866",
+          accent: "#ffd56f",
+          skin: "#d9a37f",
+          hair: "#263648",
+          prop: "#f6fbff",
+        };
       case "student":
-        return { coat: "#58728f", accent: "#7ce4ff", skin: "#ddb18e", hair: "#1f2e41", prop: "#ffd56f" };
+        return {
+          coat: "#58728f",
+          accent: "#7ce4ff",
+          skin: "#ddb18e",
+          hair: "#1f2e41",
+          prop: "#ffd56f",
+        };
       case "engineer":
-        return { coat: "#1f334d", accent: "#63dcff", skin: "#d9a37f", hair: "#121923", prop: "#ffbb76" };
+        return {
+          coat: "#1f334d",
+          accent: "#63dcff",
+          skin: "#d9a37f",
+          hair: "#121923",
+          prop: "#ffbb76",
+        };
       case "qa":
-        return { coat: "#19324a", accent: "#aafcff", skin: "#cd936f", hair: "#0e1723", prop: "#ffe086" };
+        return {
+          coat: "#19324a",
+          accent: "#aafcff",
+          skin: "#cd936f",
+          hair: "#0e1723",
+          prop: "#ffe086",
+        };
       case "architect":
-        return { coat: "#173049", accent: "#9ee9ff", skin: "#d8a27b", hair: "#122338", prop: "#c9fbff" };
+        return {
+          coat: "#173049",
+          accent: "#9ee9ff",
+          skin: "#d8a27b",
+          hair: "#122338",
+          prop: "#c9fbff",
+        };
       case "cloud":
-        return { coat: "#21435a", accent: "#c5ffe1", skin: "#ddb18e", hair: "#102534", prop: "#72ddff" };
+        return {
+          coat: "#21435a",
+          accent: "#c5ffe1",
+          skin: "#ddb18e",
+          hair: "#102534",
+          prop: "#72ddff",
+        };
       case "security":
-        return { coat: "#2b1831", accent: "#8ff9c5", skin: "#d59b74", hair: "#111018", prop: "#7ad7ff" };
+        return {
+          coat: "#2b1831",
+          accent: "#8ff9c5",
+          skin: "#d59b74",
+          hair: "#111018",
+          prop: "#7ad7ff",
+        };
       case "vinylfan":
-        return { coat: "#382b46", accent: "#ffc86a", skin: "#d8a27b", hair: "#171320", prop: "#86e8ff" };
+        return {
+          coat: "#382b46",
+          accent: "#ffc86a",
+          skin: "#d8a27b",
+          hair: "#171320",
+          prop: "#86e8ff",
+        };
       case "recruiter":
-        return { coat: "#f2f8ff", accent: "#72ddff", skin: "#d1a07e", hair: "#17273a", prop: "#0f1a2b" };
+        return {
+          coat: "#f2f8ff",
+          accent: "#72ddff",
+          skin: "#d1a07e",
+          hair: "#17273a",
+          prop: "#0f1a2b",
+        };
       default:
-        return { coat: "#23364c", accent: "#72ddff", skin: "#d9a37f", hair: "#101822", prop: "#ffc576" };
+        return {
+          coat: "#23364c",
+          accent: "#72ddff",
+          skin: "#d9a37f",
+          hair: "#101822",
+          prop: "#ffc576",
+        };
     }
   }
 
@@ -3832,7 +6218,13 @@
     context.save();
     context.fillStyle = theme.ground;
     context.beginPath();
-    roundRect(platform.x, platform.y, platform.w, platform.h, platform.kind === "ground" ? 10 : 14);
+    roundRect(
+      platform.x,
+      platform.y,
+      platform.w,
+      platform.h,
+      platform.kind === "ground" ? 10 : 14,
+    );
     context.fill();
     context.fillStyle = theme.accent;
     context.globalAlpha = moving ? 0.88 : 0.55;
@@ -3845,18 +6237,29 @@
     context.save();
     if (hazardItem.kind === "laser") {
       context.fillStyle = "rgba(12, 18, 30, 0.86)";
-      context.fillRect(hazardItem.x, hazardItem.y + 10, hazardItem.w, Math.max(8, hazardItem.h - 10));
+      context.fillRect(
+        hazardItem.x,
+        hazardItem.y + 10,
+        hazardItem.w,
+        Math.max(8, hazardItem.h - 10),
+      );
       context.strokeStyle = theme.secondary;
       context.lineWidth = 3;
       context.beginPath();
       context.moveTo(hazardItem.x + 4, hazardItem.y + hazardItem.h * 0.5);
-      context.lineTo(hazardItem.x + hazardItem.w - 4, hazardItem.y + hazardItem.h * 0.5);
+      context.lineTo(
+        hazardItem.x + hazardItem.w - 4,
+        hazardItem.y + hazardItem.h * 0.5,
+      );
       context.stroke();
       context.strokeStyle = theme.accent;
       context.globalAlpha = 0.6;
       context.beginPath();
       context.moveTo(hazardItem.x + 4, hazardItem.y + hazardItem.h * 0.5 - 7);
-      context.lineTo(hazardItem.x + hazardItem.w - 4, hazardItem.y + hazardItem.h * 0.5 - 7);
+      context.lineTo(
+        hazardItem.x + hazardItem.w - 4,
+        hazardItem.y + hazardItem.h * 0.5 - 7,
+      );
       context.stroke();
       context.restore();
       return;
@@ -3954,7 +6357,10 @@
       if (propItem.role === "nurse") {
         context.fillStyle = palette.prop;
         drawCross(39, 37, 5, palette.prop);
-      } else if (propItem.role === "engineer" || propItem.role === "architect") {
+      } else if (
+        propItem.role === "engineer" ||
+        propItem.role === "architect"
+      ) {
         context.fillStyle = palette.prop;
         context.fillRect(34, 28, 12, 8);
       } else if (propItem.role === "security") {
@@ -3979,8 +6385,12 @@
     } else if (propItem.kind === "milestone") {
       const width = propItem.width || 260;
       const height = propItem.height || 112;
-      context.fillStyle = propItem.visited ? "rgba(9, 25, 40, 0.86)" : "rgba(6, 12, 22, 0.78)";
-      context.strokeStyle = propItem.visited ? theme.accent : "rgba(255,255,255,0.16)";
+      context.fillStyle = propItem.visited
+        ? "rgba(9, 25, 40, 0.86)"
+        : "rgba(6, 12, 22, 0.78)";
+      context.strokeStyle = propItem.visited
+        ? theme.accent
+        : "rgba(255,255,255,0.16)";
       context.lineWidth = propItem.visited ? 2.5 : 2;
       context.beginPath();
       roundRect(0, 0, width, height, 18);
@@ -4112,7 +6522,12 @@
     } else if (propItem.kind === "nodes") {
       context.strokeStyle = theme.accent;
       context.lineWidth = 3;
-      [[0, 0], [42, 18], [86, -6], [104, 34]].forEach(([x, y], index, list) => {
+      [
+        [0, 0],
+        [42, 18],
+        [86, -6],
+        [104, 34],
+      ].forEach(([x, y], index, list) => {
         if (index < list.length - 1) {
           context.beginPath();
           context.moveTo(x, y);
@@ -4217,7 +6632,9 @@
     const theme = activeSceneTheme();
     context.save();
     context.translate(relayItem.x, relayItem.y);
-    context.fillStyle = relayItem.active ? "rgba(9, 25, 40, 0.92)" : "rgba(8, 16, 30, 0.82)";
+    context.fillStyle = relayItem.active
+      ? "rgba(9, 25, 40, 0.92)"
+      : "rgba(8, 16, 30, 0.82)";
     context.strokeStyle = relayItem.color || theme.accent;
     context.lineWidth = relayItem.active ? 3 : 2;
     context.beginPath();
@@ -4243,7 +6660,9 @@
     context.translate(gateItem.x, gateItem.y);
     context.strokeStyle = gateItem.color || theme.accent;
     context.lineWidth = 3;
-    context.fillStyle = gateItem.open ? "rgba(255,255,255,0.04)" : "rgba(103, 213, 255, 0.16)";
+    context.fillStyle = gateItem.open
+      ? "rgba(255,255,255,0.04)"
+      : "rgba(103, 213, 255, 0.16)";
     context.beginPath();
     roundRect(0, 0, gateItem.w, gateItem.h, 12);
     context.fill();
@@ -4274,7 +6693,8 @@
       return;
     }
 
-    const pulse = 1 + Math.sin(state.clock * 0.08 + artifactItem.x * 0.02) * 0.1;
+    const pulse =
+      1 + Math.sin(state.clock * 0.08 + artifactItem.x * 0.02) * 0.1;
     context.save();
     context.translate(artifactItem.x, artifactItem.y);
     context.scale(pulse, pulse);
@@ -4413,7 +6833,13 @@
 
     context.fillStyle = isBossVulnerable() ? "#8ff9c5" : "#ff6f7f";
     context.beginPath();
-    context.arc(boss.w * 0.52, boss.h * 0.48, 30 + Math.sin(state.clock * 0.12) * 4, 0, Math.PI * 2);
+    context.arc(
+      boss.w * 0.52,
+      boss.h * 0.48,
+      30 + Math.sin(state.clock * 0.12) * 4,
+      0,
+      Math.PI * 2,
+    );
     context.fill();
 
     context.fillStyle = "#ffe08c";
@@ -4455,12 +6881,16 @@
     const portal = level.portal;
     context.save();
     context.translate(portal.x + portal.w / 2, portal.y + portal.h / 2);
-    context.strokeStyle = state.portalActive ? "#ffd779" : "rgba(255,255,255,0.2)";
+    context.strokeStyle = state.portalActive
+      ? "#ffd779"
+      : "rgba(255,255,255,0.2)";
     context.lineWidth = 7;
     context.beginPath();
     context.ellipse(0, 0, 36, 56, 0, 0, Math.PI * 2);
     context.stroke();
-    context.strokeStyle = state.portalActive ? level.dashColor || sceneTheme.accent : "rgba(255,255,255,0.12)";
+    context.strokeStyle = state.portalActive
+      ? level.dashColor || sceneTheme.accent
+      : "rgba(255,255,255,0.12)";
     context.lineWidth = 3;
     context.beginPath();
     context.ellipse(0, 0, 24, 42, 0, 0, Math.PI * 2);
@@ -4491,7 +6921,13 @@
     context.save();
     context.fillStyle = projectile.color || "#ff8468";
     context.beginPath();
-    context.arc(projectile.x + projectile.w / 2, projectile.y + projectile.h / 2, projectile.w * 0.5, 0, Math.PI * 2);
+    context.arc(
+      projectile.x + projectile.w / 2,
+      projectile.y + projectile.h / 2,
+      projectile.w * 0.5,
+      0,
+      Math.PI * 2,
+    );
     context.fill();
     context.restore();
   }
@@ -4537,7 +6973,8 @@
         roundRect(-trail * 11, 10, player.w, player.h - 8, 16);
         context.fill();
       }
-      context.globalAlpha = player.invuln > 0 && Math.floor(player.invuln / 4) % 2 === 0 ? 0.5 : 1;
+      context.globalAlpha =
+        player.invuln > 0 && Math.floor(player.invuln / 4) % 2 === 0 ? 0.5 : 1;
     }
 
     context.fillStyle = "#0f1a2b";
@@ -4592,7 +7029,11 @@
     context.beginPath();
     context.arc(27, 16, 18, 0, Math.PI * 2);
     context.clip();
-    if (portraitReady && portrait.naturalWidth > 0 && portrait.naturalHeight > 0) {
+    if (
+      portraitReady &&
+      portrait.naturalWidth > 0 &&
+      portrait.naturalHeight > 0
+    ) {
       const sx = portrait.naturalWidth * 0.13;
       const sy = portrait.naturalHeight * 0.01;
       const sw = portrait.naturalWidth * 0.74;
@@ -4632,7 +7073,10 @@
 
     level.props.forEach((propItem) => {
       if (propItem.kind === "milestone" && !propItem.visited) {
-        candidates.push({ x: propItem.x + (propItem.width || 260) * 0.5, label: propItem.badge || propItem.title });
+        candidates.push({
+          x: propItem.x + (propItem.width || 260) * 0.5,
+          label: propItem.badge || propItem.title,
+        });
       }
     });
 
@@ -4646,7 +7090,10 @@
       return { x: level.portal.x, label: level.portal.label };
     }
 
-    candidates.sort((left, right) => Math.abs(left.x - player.x) - Math.abs(right.x - player.x));
+    candidates.sort(
+      (left, right) =>
+        Math.abs(left.x - player.x) - Math.abs(right.x - player.x),
+    );
     return candidates[0];
   }
 
@@ -4655,8 +7102,12 @@
     state[collectionKey].push({ x, y, w, h, action });
 
     context.save();
-    context.fillStyle = primary ? "rgba(114, 221, 255, 0.22)" : "rgba(6, 12, 22, 0.82)";
-    context.strokeStyle = primary ? "rgba(114, 221, 255, 0.82)" : "rgba(255,255,255,0.14)";
+    context.fillStyle = primary
+      ? "rgba(114, 221, 255, 0.22)"
+      : "rgba(6, 12, 22, 0.82)";
+    context.strokeStyle = primary
+      ? "rgba(114, 221, 255, 0.82)"
+      : "rgba(255,255,255,0.14)";
     context.lineWidth = 2;
     context.beginPath();
     roundRect(x, y, w, h, 16);
@@ -4690,7 +7141,8 @@
       return;
     }
 
-    const toastY = state.helpHintTimer > 0 ? VIEW_HEIGHT - 238 : VIEW_HEIGHT - 138;
+    const toastY =
+      state.helpHintTimer > 0 ? VIEW_HEIGHT - 238 : VIEW_HEIGHT - 138;
 
     context.save();
     context.globalAlpha = Math.min(1, state.toastTimer / 24);
@@ -4720,7 +7172,14 @@
     context.fillStyle = "#f7fbff";
     context.font = "700 17px 'Space Grotesk', sans-serif";
     context.textAlign = "center";
-    drawWrappedText("Move with A/D or arrows. Jump with Space. Dash with Shift. Pulse-shot with J, K, or X.", VIEW_WIDTH / 2, VIEW_HEIGHT - 146, 456, 20, 2);
+    drawWrappedText(
+      "Move with A/D or arrows. Jump with Space. Dash with Shift. Pulse-shot with J, K, or X.",
+      VIEW_WIDTH / 2,
+      VIEW_HEIGHT - 146,
+      456,
+      20,
+      2,
+    );
     context.fillStyle = "#bdd0e6";
     context.font = "15px Inter, sans-serif";
     drawWrappedText(
@@ -4729,7 +7188,7 @@
       VIEW_HEIGHT - 110,
       470,
       18,
-      2
+      2,
     );
     context.restore();
   }
@@ -4767,10 +7226,27 @@
       context.fill();
 
       const utilityButtons = [
-        { x: VIEW_WIDTH - 248, y: 72, w: 88, h: 36, label: state.audioMuted ? "UNMUTE" : "MUTE", action: "toggle-audio", primary: state.audioMuted },
-        { x: VIEW_WIDTH - 148, y: 72, w: 88, h: 36, label: document.fullscreenElement ? "WINDOW" : "FULL", action: "toggle-fullscreen" },
+        {
+          x: VIEW_WIDTH - 248,
+          y: 72,
+          w: 88,
+          h: 36,
+          label: state.audioMuted ? "UNMUTE" : "MUTE",
+          action: "toggle-audio",
+          primary: state.audioMuted,
+        },
+        {
+          x: VIEW_WIDTH - 148,
+          y: 72,
+          w: 88,
+          h: 36,
+          label: document.fullscreenElement ? "WINDOW" : "FULL",
+          action: "toggle-fullscreen",
+        },
       ];
-      utilityButtons.forEach((button) => renderCanvasButton(button, "canvasPanelButtons"));
+      utilityButtons.forEach((button) =>
+        renderCanvasButton(button, "canvasPanelButtons"),
+      );
 
       context.fillStyle = "#8ce8ff";
       context.font = "700 15px 'Space Grotesk', sans-serif";
@@ -4780,7 +7256,14 @@
 
       context.fillStyle = "#ffffff";
       context.font = "700 54px 'Space Grotesk', sans-serif";
-      drawWrappedText(panel.title || "Johnny's Journey Interactive Videogame Resume!", cardX + 34, cardY + 116, 520, 58, 3);
+      drawWrappedText(
+        panel.title || "Johnny's Journey Interactive Videogame Resume!",
+        cardX + 34,
+        cardY + 116,
+        520,
+        58,
+        3,
+      );
 
       context.fillStyle = "#d7e4f5";
       context.font = "19px Inter, sans-serif";
@@ -4798,13 +7281,20 @@
             action: button.action,
             primary: Boolean(button.primary),
           },
-          "canvasPanelButtons"
+          "canvasPanelButtons",
         );
       });
 
       context.fillStyle = "#9eb6d1";
       context.font = "15px Inter, sans-serif";
-      drawWrappedText("Keep the canvas fullscreen and use M for mute or F for fullscreen at any time.", cardX + 34, cardY + 590, 500, 22, 2);
+      drawWrappedText(
+        "Keep the canvas fullscreen and use M for mute or F for fullscreen at any time.",
+        cardX + 34,
+        cardY + 590,
+        500,
+        22,
+        2,
+      );
 
       const portraitFrameX = cardX + cardWidth - 430;
       const portraitFrameY = cardY + 66;
@@ -4813,29 +7303,60 @@
       context.fillStyle = "rgba(7, 14, 24, 0.94)";
       context.strokeStyle = "rgba(114, 221, 255, 0.28)";
       context.beginPath();
-      roundRect(portraitFrameX, portraitFrameY, portraitFrameWidth, portraitFrameHeight, 28);
+      roundRect(
+        portraitFrameX,
+        portraitFrameY,
+        portraitFrameWidth,
+        portraitFrameHeight,
+        28,
+      );
       context.fill();
       context.stroke();
 
       context.save();
       context.beginPath();
-      roundRect(portraitFrameX + 18, portraitFrameY + 18, portraitFrameWidth - 36, portraitFrameHeight - 36, 24);
+      roundRect(
+        portraitFrameX + 18,
+        portraitFrameY + 18,
+        portraitFrameWidth - 36,
+        portraitFrameHeight - 36,
+        24,
+      );
       context.clip();
       if (portraitReady) {
-        drawImageContain(portrait, portraitFrameX + 18, portraitFrameY + 18, portraitFrameWidth - 36, portraitFrameHeight - 36);
+        drawImageContain(
+          portrait,
+          portraitFrameX + 18,
+          portraitFrameY + 18,
+          portraitFrameWidth - 36,
+          portraitFrameHeight - 36,
+        );
       } else {
         context.fillStyle = "#13263f";
-        context.fillRect(portraitFrameX + 18, portraitFrameY + 18, portraitFrameWidth - 36, portraitFrameHeight - 36);
+        context.fillRect(
+          portraitFrameX + 18,
+          portraitFrameY + 18,
+          portraitFrameWidth - 36,
+          portraitFrameHeight - 36,
+        );
       }
       context.restore();
 
       context.fillStyle = "#ffffff";
       context.font = "700 28px 'Space Grotesk', sans-serif";
       context.textAlign = "center";
-      context.fillText("Johnny Avakian", portraitFrameX + portraitFrameWidth / 2, portraitFrameY + portraitFrameHeight + 44);
+      context.fillText(
+        "Johnny Avakian",
+        portraitFrameX + portraitFrameWidth / 2,
+        portraitFrameY + portraitFrameHeight + 44,
+      );
       context.fillStyle = "#9ec9eb";
       context.font = "16px Inter, sans-serif";
-      context.fillText("Senior Software Engineer", portraitFrameX + portraitFrameWidth / 2, portraitFrameY + portraitFrameHeight + 70);
+      context.fillText(
+        "Senior Software Engineer",
+        portraitFrameX + portraitFrameWidth / 2,
+        portraitFrameY + portraitFrameHeight + 70,
+      );
       context.restore();
       return;
     }
@@ -4860,7 +7381,11 @@
     context.font = "700 14px 'Space Grotesk', sans-serif";
     context.textAlign = "left";
     context.textBaseline = "alphabetic";
-    context.fillText(String(panel.kicker || "Resume adventure").toUpperCase(), x + 34, y + 42);
+    context.fillText(
+      String(panel.kicker || "Resume adventure").toUpperCase(),
+      x + 34,
+      y + 42,
+    );
 
     context.fillStyle = "#ffffff";
     context.font = "700 34px 'Space Grotesk', sans-serif";
@@ -4870,19 +7395,34 @@
     context.font = "17px Inter, sans-serif";
     drawWrappedText(panel.text || "", x + 34, y + 118, width - 68, 24, 3);
 
-    const details = Array.isArray(panel.details) ? panel.details.slice(0, 4) : [];
+    const details = Array.isArray(panel.details)
+      ? panel.details.slice(0, 4)
+      : [];
     context.fillStyle = "#9fb6cf";
     context.font = "15px Inter, sans-serif";
     details.forEach((detail, index) => {
-      drawWrappedText(`- ${detail}`, x + 34, y + 184 + index * 24, width - 68, 22, 2);
+      drawWrappedText(
+        `- ${detail}`,
+        x + 34,
+        y + 184 + index * 24,
+        width - 68,
+        22,
+        2,
+      );
     });
 
     const buttons = Array.isArray(panel.buttons) ? panel.buttons : [];
     const gap = 14;
     const buttonWidth = buttons.length
-      ? Math.min(196, Math.floor((width - 68 - gap * (buttons.length - 1)) / buttons.length))
+      ? Math.min(
+          196,
+          Math.floor(
+            (width - 68 - gap * (buttons.length - 1)) / buttons.length,
+          ),
+        )
       : 196;
-    const totalWidth = buttons.length * buttonWidth + Math.max(0, buttons.length - 1) * gap;
+    const totalWidth =
+      buttons.length * buttonWidth + Math.max(0, buttons.length - 1) * gap;
     let buttonX = VIEW_WIDTH / 2 - totalWidth / 2;
     buttons.forEach((button) => {
       renderCanvasButton(
@@ -4895,7 +7435,7 @@
           action: button.action,
           primary: Boolean(button.primary),
         },
-        "canvasPanelButtons"
+        "canvasPanelButtons",
       );
       buttonX += buttonWidth + gap;
     });
@@ -4924,19 +7464,27 @@
       context.fillStyle = "rgba(255,255,255,0.12)";
       context.fillRect(VIEW_WIDTH / 2 - 150, 46, 300, 8);
       context.fillStyle = isBossVulnerable() ? "#8ff9c5" : "#ff6f7f";
-      context.fillRect(VIEW_WIDTH / 2 - 150, 46, 300 * (boss.hp / boss.maxHp), 8);
+      context.fillRect(
+        VIEW_WIDTH / 2 - 150,
+        46,
+        300 * (boss.hp / boss.maxHp),
+        8,
+      );
       context.restore();
     }
 
     const beat = activeStoryBeat();
     const chapter = beat || level;
     const totalHighlights =
-      level.artifacts.length + level.props.filter((item) => item.kind === "milestone").length;
+      level.artifacts.length +
+      level.props.filter((item) => item.kind === "milestone").length;
     const unlockedHighlights =
       level.artifacts.filter((item) => item.collected).length +
-      level.props.filter((item) => item.kind === "milestone" && item.visited).length;
+      level.props.filter((item) => item.kind === "milestone" && item.visited)
+        .length;
     const objective = currentObjectiveText();
-    const progress = totalHighlights > 0 ? unlockedHighlights / totalHighlights : 0;
+    const progress =
+      totalHighlights > 0 ? unlockedHighlights / totalHighlights : 0;
     const journeyButton = state.ended
       ? { label: "REPLAY", action: "restart-story", primary: true }
       : state.running
@@ -4954,20 +7502,32 @@
 
     context.fillStyle = "#8ce8ff";
     context.font = "700 14px 'Space Grotesk', sans-serif";
-    context.fillText(`${chapter.code || level.code}  ·  ${chapter.sprintName || level.sprintName}`, 42, 48);
+    context.fillText(
+      `${chapter.code || level.code}  ·  ${chapter.sprintName || level.sprintName}`,
+      42,
+      48,
+    );
     context.fillStyle = "#ffffff";
     context.font = "700 31px 'Space Grotesk', sans-serif";
     context.fillText(chapter.title || level.title, 42, 86);
     context.fillStyle = "#b8cade";
     context.font = "16px Inter, sans-serif";
-    context.fillText(chapter.meta || level.meta || "Interactive resume chapter", 42, 114);
+    context.fillText(
+      chapter.meta || level.meta || "Interactive resume chapter",
+      42,
+      114,
+    );
     context.fillStyle = "rgba(255,255,255,0.12)";
     context.fillRect(42, 128, 328, 10);
     context.fillStyle = "#72ddff";
     context.fillRect(42, 128, 328 * progress, 10);
     context.fillStyle = "#f5fbff";
     context.font = "700 15px 'Space Grotesk', sans-serif";
-    context.fillText(`Highlights ${unlockedHighlights}/${totalHighlights}`, 384, 137);
+    context.fillText(
+      `Highlights ${unlockedHighlights}/${totalHighlights}`,
+      384,
+      137,
+    );
     context.fillStyle = "#d8e6f5";
     context.font = "16px Inter, sans-serif";
     drawWrappedText(objective, 42, 156, 410, 20, 2);
@@ -4975,10 +7535,40 @@
 
     const fullscreenLabel = document.fullscreenElement ? "WINDOW" : "FULL";
     const controlsList = [
-      { x: VIEW_WIDTH - 136, y: 22, w: 112, h: 40, label: state.audioMuted ? "UNMUTE" : "MUTE", action: "toggle-audio", primary: state.audioMuted },
-      { x: VIEW_WIDTH - 136, y: 68, w: 112, h: 40, label: fullscreenLabel, action: "toggle-fullscreen" },
-      { x: VIEW_WIDTH - 136, y: 114, w: 112, h: 40, label: journeyButton.label, action: journeyButton.action, primary: journeyButton.primary },
-      { x: VIEW_WIDTH - 136, y: 160, w: 112, h: 40, label: "CONTACT", action: "contact" },
+      {
+        x: VIEW_WIDTH - 136,
+        y: 22,
+        w: 112,
+        h: 40,
+        label: state.audioMuted ? "UNMUTE" : "MUTE",
+        action: "toggle-audio",
+        primary: state.audioMuted,
+      },
+      {
+        x: VIEW_WIDTH - 136,
+        y: 68,
+        w: 112,
+        h: 40,
+        label: fullscreenLabel,
+        action: "toggle-fullscreen",
+      },
+      {
+        x: VIEW_WIDTH - 136,
+        y: 114,
+        w: 112,
+        h: 40,
+        label: journeyButton.label,
+        action: journeyButton.action,
+        primary: journeyButton.primary,
+      },
+      {
+        x: VIEW_WIDTH - 136,
+        y: 160,
+        w: 112,
+        h: 40,
+        label: "CONTACT",
+        action: "contact",
+      },
     ];
     controlsList.forEach((button) => renderCanvasButton(button));
 
@@ -5027,7 +7617,7 @@
         VIEW_HEIGHT - 58,
         384,
         18,
-        2
+        2,
       );
       context.restore();
     }
@@ -5037,7 +7627,9 @@
   }
 
   function drawWrappedText(text, x, y, maxWidth, lineHeight, maxLines = 3) {
-    const words = String(text || "").split(/\s+/).filter(Boolean);
+    const words = String(text || "")
+      .split(/\s+/)
+      .filter(Boolean);
     let line = "";
     let lineCount = 0;
 
@@ -5062,7 +7654,10 @@
 
     if (lineCount >= maxLines - 1 && words.join(" ").length > line.length) {
       let clipped = line;
-      while (clipped.length > 0 && context.measureText(`${clipped}...`).width > maxWidth) {
+      while (
+        clipped.length > 0 &&
+        context.measureText(`${clipped}...`).width > maxWidth
+      ) {
         clipped = clipped.slice(0, -1);
       }
       context.fillText(`${clipped}...`, x, y + lineCount * lineHeight);
@@ -5077,7 +7672,12 @@
     context.lineTo(x + width - radius, y);
     context.quadraticCurveTo(x + width, y, x + width, y + radius);
     context.lineTo(x + width, y + height - radius);
-    context.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    context.quadraticCurveTo(
+      x + width,
+      y + height,
+      x + width - radius,
+      y + height,
+    );
     context.lineTo(x + radius, y + height);
     context.quadraticCurveTo(x, y + height, x, y + height - radius);
     context.lineTo(x, y + radius);
@@ -5090,7 +7690,9 @@
   }
 
   function intersects(a, b) {
-    return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    return (
+      a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
+    );
   }
 
   function loop(now) {
@@ -5112,7 +7714,9 @@
     showMainMenu();
   } else {
     startStage("training", { paused: true });
-    renderHomeScreen("Start guided journey, warm up in training, or open chapter select.");
+    renderHomeScreen(
+      "Start guided journey, warm up in training, or open chapter select.",
+    );
   }
   window.requestAnimationFrame(loop);
 })();
