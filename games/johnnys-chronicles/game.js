@@ -423,9 +423,39 @@
     return Boolean(level?.portal?.label === "Contact Portal");
   }
 
+  function resolveSiteUrl(target, fallback = window.location.origin || "/") {
+    try {
+      return new URL(target || fallback, window.location.href).toString();
+    } catch {
+      return target || fallback;
+    }
+  }
+
+  function navigateToUrl(target, { replace = false } = {}) {
+    const resolvedTarget = resolveSiteUrl(target, portfolioUrl);
+
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {});
+    }
+
+    if (replace) {
+      window.location.replace(resolvedTarget);
+      return;
+    }
+
+    window.location.assign(resolvedTarget);
+    window.setTimeout(() => {
+      if (window.location.href !== resolvedTarget) {
+        window.location.replace(resolvedTarget);
+      }
+    }, 120);
+  }
+
   function revealContactSection() {
+    const resolvedContactUrl = resolveSiteUrl(homeContactUrl, `${portfolioUrl}#contact`);
+
     if (canvasOnlyMode || !contactSection) {
-      window.location.assign(homeContactUrl);
+      navigateToUrl(resolvedContactUrl);
       return;
     }
 
@@ -3897,12 +3927,12 @@
     }
 
     if (action === "open-portfolio") {
-      window.location.assign(portfolioUrl);
+      navigateToUrl(portfolioUrl);
       return;
     }
 
     if (action === "open-blog") {
-      window.location.assign(blogUrl);
+      navigateToUrl(blogUrl);
     }
   }
 
