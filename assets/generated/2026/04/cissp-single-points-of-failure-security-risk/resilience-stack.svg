@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Resilience stack</title>
+  <desc id="desc">Layered diagram showing resilient design through redundancy, alternate access, documented runbooks, testing, and shared ownership.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">A Practical Resilience Stack</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Availability improves when architecture, access, process, and testing reinforce each other.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="210" y="460" width="580" height="58" rx="14" fill="#111827" stroke="#22c55e"/>
+    <text x="500" y="496" text-anchor="middle" fill="#bbf7d0">Shared ownership and recovery drills</text>
+
+    <rect x="240" y="380" width="520" height="58" rx="14" fill="#111827" stroke="#a78bfa"/>
+    <text x="500" y="416" text-anchor="middle" fill="#ddd6fe">Documented runbooks and emergency access</text>
+
+    <rect x="270" y="300" width="460" height="58" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="500" y="336" text-anchor="middle" fill="#bfdbfe">Tested failover, restore, and manual workarounds</text>
+
+    <rect x="300" y="220" width="400" height="58" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="500" y="256" text-anchor="middle" fill="#fde68a">Independent paths and reduced concentration</text>
+
+    <rect x="330" y="140" width="340" height="58" rx="14" fill="#111827" stroke="#34d399"/>
+    <text x="500" y="176" text-anchor="middle" fill="#bbf7d0">Critical dependency mapping</text>
+  </g>
+
+  <rect x="220" y="540" width="560" height="34" rx="10" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="562" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="15">Do not wait for an outage to discover what everything depends on.</text>
+</svg>
