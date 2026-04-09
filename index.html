@@ -1,425 +1,849 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Johnny Avakian | Senior Software Engineer</title>
-  <meta name="description" content="Johnny Avakian is a Senior Software Engineer specializing in C#, .NET, React, SQL Server, Azure, AWS, APIs, enterprise software, and security-minded engineering." />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://codeavak.github.io/portfolio_website/" />
+  <head>
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johnny Avakian | Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Johnny Avakian is a Senior Software Engineer specializing in C#, .NET, React, SQL Server, Azure, AWS, APIs, enterprise software, and security-minded engineering."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/" />
 
-  <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Johnny Avakian | Senior Software Engineer" />
-  <meta property="og:description" content="Senior software engineer focused on reliable enterprise systems, APIs, and security-minded development." />
-  <meta property="og:url" content="https://codeavak.github.io/portfolio_website/" />
-  <meta property="og:site_name" content="Johnny Avakian Portfolio" />
-  <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:title"
+      content="Johnny Avakian | Senior Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Senior software engineer focused on reliable enterprise systems, APIs, and security-minded development."
+    />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    <meta
+      property="og:image"
+      content="https://codeavak.github.io/portfolio_website/assets/Johnny.png"
+    />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Johnny Avakian | Senior Software Engineer" />
-  <meta name="twitter:description" content="Senior software engineer focused on reliable enterprise systems, APIs, and security-minded development." />
-  <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Johnny Avakian | Senior Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Senior software engineer focused on reliable enterprise systems, APIs, and security-minded development."
+    />
+    <meta
+      name="twitter:image"
+      content="https://codeavak.github.io/portfolio_website/assets/Johnny.png"
+    />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Johnny Avakian",
-    "jobTitle": "Senior Software Engineer",
-    "url": "https://codeavak.github.io/portfolio_website/",
-    "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png",
-    "email": "mailto:codeavak@gmail.com",
-    "sameAs": ["https://github.com/codeavak"]
-  }
-  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Johnny Avakian",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://codeavak.github.io/portfolio_website/",
+        "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png",
+        "email": "mailto:codeavak@gmail.com",
+        "sameAs": ["https://github.com/codeavak"]
+      }
+    </script>
 
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
-    <div class="scroll-progress-fill" id="scrollProgressFill"></div>
-  </div>
-  <div class="page">
-    <nav class="nav">
-      <div class="container nav-inner">
-        <div class="brand">
-          <button class="nav-toggle mobile-only" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu" type="button">
-            <span class="hamburger" aria-hidden="true">☰</span>
-          </button>
-          <span class="brand-mark desktop-only"></span> Johnny Avakian · Senior Software Engineer
-        </div>
-        <div class="nav-right">
-          <div class="nav-links collapsed" id="navLinks">
-            <a href="#about" data-tooltip="About" aria-label="About"><span class="nav-icon">🏠</span><span class="nav-text">About</span></a>
-            <a href="#experience" data-tooltip="Experience" aria-label="Experience"><span class="nav-icon">💼</span><span class="nav-text">Experience</span></a>
-            <a href="#skills" data-tooltip="Skills" aria-label="Skills"><span class="nav-icon">🛠️</span><span class="nav-text">Skills</span></a>
-            <a href="#education" data-tooltip="Education" aria-label="Education"><span class="nav-icon">🎓</span><span class="nav-text">Education</span></a>
-            <a href="/portfolio_website/games/johnnys-chronicles/" data-tooltip="Play Game" aria-label="Play interactive resume game"><span class="nav-icon">🎮</span><span class="nav-text">Play Game</span></a>
-            <a href="https://codeavak.github.io/portfolio_website/blog/" data-tooltip="Blog" aria-label="Blog"><span class="nav-icon">📝</span><span class="nav-text">Blog</span></a>
-            <a href="#contact" data-tooltip="Contact" aria-label="Contact"><span class="nav-icon">✉️</span><span class="nav-text">Contact</span></a>
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
-              <span id="themeIcon">☾</span>
-              <span id="themeLabel">Dark mode</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <header class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Senior software engineer · enterprise systems · cloud · security-minded delivery</div>
-          <h1><span class="gradient-text">Software people rely on.</span></h1>
-          <p class="lead">
-            I’m Johnny Avakian, a Senior Software Engineer with experience across enterprise applications, APIs, workflow automation,
-            reporting systems, and production engineering. I build software that helps organizations run with more clarity,
-            reliability, and confidence.
-          </p>
-          <div class="hero-actions">
-            <a class="button game-button" href="/portfolio_website/games/johnnys-chronicles/">🎮 Play my interactive resume</a>
-            <a class="button primary" href="mailto:codeavak@gmail.com">Start a conversation</a>
-            <a class="button" href="#experience">Explore my background</a>
-          </div>
-          <p class="hero-game-note">Try the arcade-style interactive resume for a hands-on tour of my background and career highlights.</p>
-          <div class="tag-row">
-            <span class="chip">C# / .NET</span>
-            <span class="chip">React</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">SQL Server</span>
-            <span class="chip">Azure + AWS</span>
-            <span class="chip">Secure SDLC</span>
-          </div>
-          <div class="quick-facts">
-            <span class="chip">7+ years building business-critical software</span>
-            <span class="chip">Growing deeper into security-minded engineering</span>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-label="Portrait collage featuring Johnny Avakian and selected royalty-free technology and music photography">
-          <div class="hero-backdrop"><img src="assets/workspace-dual-monitors.jpg" alt="Dual-monitor workspace in a modern office" /></div>
-          <div class="hero-glow"></div>
-            <div class="portrait-stack">
-            <div class="portrait-ring">
-              <div class="portrait-frame">
-                <img src="assets/Johnny.png" alt="Headshot of Johnny Avakian" />
-              </div>
-            </div>
-          </div>
-          <div class="floating-datum-full-width">
-              Grounded senior engineer with a polished security edge.
-            <span class="chip">Open to standout software roles</span>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="section" id="about">
-      <div class="container split">
-        <article class="panel bio">
-          <div class="section-kicker">About</div>
-          <h2>Experienced engineer. Calm operator. Serious builder.</h2>
-          <p>
-            My background is in building the kinds of systems companies quietly depend on: enterprise applications, internal business software,
-            APIs, workflow automation, reporting, data-driven processes, and production systems that need to keep working when pressure is real.
-          </p>
-          <p>
-            At Experian, I have worked across business-critical verification platforms spanning customer-facing and internal capabilities.
-            My work has included batch workflows, service and data-access changes, APIs, reporting, production support, and the kind of
-            cross-functional delivery that requires strong technical judgment as well as clear communication.
-          </p>
-          <p>
-            Earlier in my career, I modernized school operations at Oakwood School and built practical software that replaced manual effort with cleaner workflows.
-            At Crunch Digital, I built research and reporting tools tied to music metadata and royalty review operations. Across all three roles, the common thread has been the same:
-            take complex work, make it clearer, and turn it into software that people trust.
-          </p>
-          <p>
-            I am also increasingly drawn to security-minded engineering. Not as a costume change, but as a natural extension of how I already like to build:
-            with reliability, observability, access awareness, and disciplined execution in mind.
-          </p>
-        </article>
-
-        <aside class="spotlight panel">
-          <img src="assets/tech-monitor-closeup.jpg" alt="Moody close-up of a workstation with multiple monitors" />
-          <div class="spotlight-copy">
-            <h3>Strong systems engineering, stronger collaboration.</h3>
-            <p>
-              I build reliable, high-impact software alone or leading efforts, but the real difference is how I work with people: I make communication smoother, ideas better, and delivery more predictable. If you want a teammate who can ship features independently and also elevate your team through clarity, empathy, and ownership, let’s talk.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container stats-grid">
-        <div class="stat-card">
-          <p>professional software engineering and support roles across multiple industries, including: finance, education, music royalties, manufacturing, and health care</p>
-        </div>
-        <div class="stat-card">
-          <p>industry certifications spanning security and cloud development</p>
-        </div>
-        <div class="stat-card">
-          <p>technical degrees forming a strong mathematical and systems foundation</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container section-head">
-        <div>
-          <div class="section-kicker">Experience</div>
-          <h2>Work history rooted in real systems.</h2>
-        </div>
-        <p class="section-copy">
-          My experience is strongest in environments where software directly supports operations, process clarity, and reliable delivery.
-        </p>
-      </div>
-      <div class="container timeline">
-        <div class="timeline-item">
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Senior Software Engineer <span class="company">· Experian</span></h3>
-              </div>
-              <div class="dates">Mar 2021 – Present</div>
-            </div>
-            <ul>
-              <li>Build and support business-critical software across tax and verification platforms spanning employment, and income workflows.</li>
-              <li>Worked across APIs, schema and service-layer changes, validation workflows, PDF generation, reporting improvements, and Azure Blob Storage integration.</li>
-              <li>Improved observability and supportability across importer, request management, reporting, search, and letter generation components.</li>
-              <li>Partnered with QA and stakeholders to gather requirements, guide testing, support releases, and keep complex systems dependable in production.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="timeline-item">
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Software Engineer <span class="company">· Oakwood School</span></h3>
-              </div>
-              <div class="dates">Jan 2019 – Mar 2021</div>
-            </div>
-            <ul>
-              <li>Led the complete rewrite of Oakwood School’s internal information system and integrated it with Blackbaud’s web-based LMS as the sole software engineer.</li>
-              <li>Independently built and deployed internal applications for book sales, afterschool time tracking, billing, and hot lunch distribution, streamlining school operations.</li>
-              <li>Spearheaded the development of a fundraising application with a React frontend and C# backend APIs, modernizing operational workflows and driving revenue growth.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="timeline-item">
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Software Engineer <span class="company">· Crunch Digital (Royalty Review Council)</span></h3>
-              </div>
-              <div class="dates">Jun 2018 – Mar 2019</div>
-            </div>
-            <ul>
-              <li>Independently built and maintained internal research and reporting tools for music metadata matching and royalty review operations as the solo software engineer.</li>
-              <li>Developed robust data movement and query workflows to enhance analyst efficiency, troubleshooting capabilities, and internal reporting needs.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="timeline-item">
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Technical Solution Analyst <span class="company">· Cerner Corporation</span></h3>
-              </div>
-              <div class="dates">Jun 2016 – Jul 2017</div>
-            </div>
-            <ul>
-              <li>Partnered directly with IT teams across multiple hospitals as a level II support associate for Cerner Clairvia scheduling software, ensuring seamless integration and user adoption.</li>
-              <li>Proactively identified and reported bugs to the development team while authoring SQL scripts to automate manual tasks, significantly improving user efficiency and system reliability.</li>
-              <li>Leveraged Windows Server, MS SQL, and Cerner's Clairvia technologies to deliver robust solutions and support hospital operations.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container section-head">
-        <div>
-          <div class="section-kicker">Skills</div>
-          <h2>Technical range with practical depth.</h2>
-        </div>
-        <p class="section-copy">
-          The strongest through-line in my stack is not trend chasing. It is useful, reliable software delivery across backend, frontend, data, and cloud-adjacent systems.
-        </p>
-      </div>
-      <div class="container skills-grid">
-        <article class="skill-card">
-          <h3>Languages & Frameworks</h3>
-          <div class="skill-tags">
-            <span>C#</span><span>JavaScript</span><span>React</span><span>ASP.NET MVC</span><span>ASP.NET Web API</span><span>ASP.NET Core</span><span>ASP.NET Web Forms</span><span>HTML</span><span>CSS</span><span>jQuery</span>
-          </div>
-        </article>
-        <article class="skill-card">
-          <h3>Data, APIs & Cloud</h3>
-          <div class="skill-tags">
-            <span>SQL Server</span><span>T-SQL</span><span>REST APIs</span><span>API Integrations</span><span>ADO.NET</span><span>Azure</span><span>AWS</span><span>PowerShell</span><span>Git</span>
-          </div>
-        </article>
-        <article class="skill-card">
-          <h3>Engineering Strengths</h3>
-          <div class="skill-tags">
-            <span>Enterprise Applications</span><span>Workflow Automation</span><span>Production Support</span><span>Observability</span><span>Secure SDLC</span><span>Technical Documentation</span><span>Cross-Functional Delivery</span><span>AI-Assisted Engineering Workflows</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="education">
-      <div class="container section-head">
-        <div>
-          <div class="section-kicker">Education & Certifications</div>
-          <h2>Built on a strong technical foundation.</h2>
-        </div>
-        <p class="section-copy">
-          Formal training in information technology and applied mathematics, reinforced by continued investment in security and cloud certifications.
-        </p>
-      </div>
-      <div class="container edu-grid">
-        <article class="edu-card">
-          <h3>Education</h3>
-          <p><strong>Yerevan State University, Armenia</strong></p>
-          <p>Click each program to learn more about the coursework and academic focus.</p>
-          <div class="edu-grid">
-            <div class="edu-item">
-              <button type="button" class="edu-card-button" data-edu="master" aria-label="Master’s program details">Master of Science in Information Technology</button>
-              <p>Completed advanced study in Information Technologies at Yerevan State University, with graduate-level focus on software systems, algorithms, databases, networking, object-oriented design, C#/.NET, XML, embedded systems, and software quality assurance. IERF evaluated this degree as equivalent to a U.S. Master of Science in Information Technology. Master’s thesis focused on consistency between UML class and object diagrams.</p>
-            </div>
-            <div class="edu-item">
-              <button type="button" class="edu-card-button" data-edu="bachelor" aria-label="Bachelor’s program details">Bachelor of Science in Applied Mathematics</button>
-              <p>Studied Information and Applied Mathematics at Yerevan State University, building a strong foundation in mathematics, computer science, and software engineering concepts. IERF evaluated this degree as equivalent to a U.S. Bachelor of Science in Mathematics with a concentration in Computer Science and Applied Mathematics. Relevant coursework included programming, algorithms, data structures, database systems, operating systems, computer architecture, networking, object-oriented design, information security, and applied mathematics.</p>
-            </div>
-          </div>
-        </article>
-        <article class="edu-card">
-          <h3>Certifications & Exams</h3>
-          <p>Click any credential to view a quick summary, impact for teams, and the skills I bring to projects.</p>
-          <div class="cert-grid">
-            <button type="button" class="cert-card" data-cert="isc2" aria-label="ISC2 Certified in Cybersecurity details">ISC2 Certified in Cybersecurity (CC)</button>
-            <button type="button" class="cert-card" data-cert="azure-dev" aria-label="Microsoft Certified: Azure Developer Associate details">Microsoft Certified: Azure Developer Associate</button>
-            <button type="button" class="cert-card" data-cert="comptia" aria-label="CompTIA Security+ ce details">CompTIA Security+ ce</button>
-            <button type="button" class="cert-card" data-cert="google-cyber" aria-label="Google Cybersecurity Certificate details">Google Cybersecurity Certificate</button>
-            <button type="button" class="cert-card" data-cert="azure-fund" aria-label="Microsoft Certified: Azure Fundamentals details">Microsoft Certified: Azure Fundamentals</button>
-            <button type="button" class="cert-card" data-cert="ms-70-480" aria-label="Microsoft Exam 70-480 details">Microsoft Exam 70-480</button>
-            <button type="button" class="cert-card" data-cert="ms-70-761" aria-label="Microsoft Exam 70-761 details">Microsoft Exam 70-761</button>
-            <button type="button" class="cert-card" data-cert="aws-dev" aria-label="AWS Developer Associate details">AWS Developer - Associate</button>
-            <button type="button" class="cert-card" data-cert="aws-sa" aria-label="AWS Solutions Architect Associate details">AWS Solutions Architect Associate</button>
-            <button type="button" class="cert-card" data-cert="aws-cloud" aria-label="AWS Cloud Practitioner details">AWS Cloud Practitioner</button>
-            <button type="button" class="cert-card" data-cert="sabio" aria-label="Sabio Full Stack Software Development Certificate details">Sabio Full Stack Software Development</button>
-            <button type="button" class="cert-card" data-cert="cisco" aria-label="Cisco CCNA Routing and Switching details">Cisco CCNA Routing and Switching</button>
-            <button type="button" class="cert-card" data-cert="oracle" aria-label="Oracle Certified Java Programmer I details">Oracle Certified Java Programmer I</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <div id="certModal" class="cert-modal hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
-      <div class="cert-modal-backdrop" data-action="close-modal"></div>
-      <div class="cert-modal-content">
-        <button type="button" class="cert-modal-close" data-action="close-modal" aria-label="Close certificate details">×</button>
-        <div class="cert-modal-header">
-          <img id="certModalLogo" src="" alt="" class="cert-logo" />
-          <div>
-            <h3 id="certModalTitle"></h3>
-            <p id="certModalIssuer" class="cert-issuer"></p>
-          </div>
-        </div>
-        <p id="certModalMeta" class="cert-meta"></p>
-        <p id="certModalDesc" class="cert-desc"></p>
-        <p id="certModalSkills" class="cert-skills"></p>
-      </div>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
     </div>
+    <div class="page">
+      <nav class="nav">
+        <div class="container nav-inner">
+          <div class="brand">
+            <button
+              class="nav-toggle mobile-only"
+              id="menuToggle"
+              aria-expanded="false"
+              aria-controls="navLinks"
+              aria-label="Toggle navigation menu"
+              type="button"
+            >
+              <span class="hamburger" aria-hidden="true">☰</span>
+            </button>
+            <span class="brand-mark desktop-only"></span> Johnny Avakian ·
+            Senior Software Engineer
+          </div>
+          <div class="nav-right">
+            <div class="nav-links collapsed" id="navLinks">
+              <a href="#about" data-tooltip="About" aria-label="About"
+                ><span class="nav-icon">🏠</span
+                ><span class="nav-text">About</span></a
+              >
+              <a
+                href="#experience"
+                data-tooltip="Experience"
+                aria-label="Experience"
+                ><span class="nav-icon">💼</span
+                ><span class="nav-text">Experience</span></a
+              >
+              <a href="#skills" data-tooltip="Skills" aria-label="Skills"
+                ><span class="nav-icon">🛠️</span
+                ><span class="nav-text">Skills</span></a
+              >
+              <a
+                href="#education"
+                data-tooltip="Education"
+                aria-label="Education"
+                ><span class="nav-icon">🎓</span
+                ><span class="nav-text">Education</span></a
+              >
+              <a
+                href="/portfolio_website/games/johnnys-chronicles/"
+                data-tooltip="Play Game"
+                aria-label="Play interactive resume game"
+                ><span class="nav-icon">🎮</span
+                ><span class="nav-text">Play Game</span></a
+              >
+              <a
+                href="https://codeavak.github.io/portfolio_website/blog/"
+                data-tooltip="Blog"
+                aria-label="Blog"
+                ><span class="nav-icon">📝</span
+                ><span class="nav-text">Blog</span></a
+              >
+              <a href="#contact" data-tooltip="Contact" aria-label="Contact"
+                ><span class="nav-icon">✉️</span
+                ><span class="nav-text">Contact</span></a
+              >
+              <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle light and dark theme"
+              >
+                <span id="themeIcon">☾</span>
+                <span id="themeLabel">Dark mode</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-    <section class="section">
-      <div class="container gallery-grid">
-        <article class="gallery-card">
-          <img src="assets/guitar-vinyl.jpg" alt="Guitar beside a turntable and vinyl records" />
-          <div class="gallery-copy">
-            <div class="section-kicker" style="color:#c8dcf7;">Beyond work</div>
-            <h3>Still technical. Still human.</h3>
-            <p>
-              When I’m not coding, I enjoy taking long walks, spinning records, and learning the next catchy tune on the guitar.
-              I like work that is serious, but I also like a life that has some rhythm to it.
+      <header class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">
+              Senior software engineer · enterprise systems · cloud ·
+              security-minded delivery
+            </div>
+            <h1><span class="gradient-text">Software people rely on.</span></h1>
+            <p class="lead">
+              I’m Johnny Avakian, a Senior Software Engineer with experience
+              across enterprise applications, APIs, workflow automation,
+              reporting systems, and production engineering. I build software
+              that helps organizations run with more clarity, reliability, and
+              confidence.
             </p>
+            <div class="hero-actions">
+              <a
+                class="button game-button"
+                href="/portfolio_website/games/johnnys-chronicles/"
+                >🎮 Play my interactive resume</a
+              >
+              <a class="button primary" href="mailto:codeavak@gmail.com"
+                >Start a conversation</a
+              >
+              <a class="button" href="#experience">Explore my background</a>
+            </div>
+            <p class="hero-game-note">
+              Try the arcade-style interactive resume for a hands-on tour of my
+              background and career highlights.
+            </p>
+            <div class="tag-row">
+              <span class="chip">C# / .NET</span>
+              <span class="chip">React</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">Azure + AWS</span>
+              <span class="chip">Secure SDLC</span>
+            </div>
+            <div class="quick-facts">
+              <span class="chip"
+                >7+ years building business-critical software</span
+              >
+              <span class="chip"
+                >Growing deeper into security-minded engineering</span
+              >
+            </div>
           </div>
-        </article>
-        <article class="panel personal-copy">
-          <div class="section-kicker">Personal note</div>
-          <h2>Professional without feeling robotic.</h2>
-          <p>
-            Meaningful, purposeful work that helps others inspires me to show up and deliver with endless energy. When I see how my code solves real problems and makes people's lives easier, that's when I bring my absolute best—relentless focus, creative problem-solving, and a commitment to excellence that doesn't quit.
-          </p>
-          <div class="mini-panel">
-            <h3>How I like to show up</h3>
-            <p>Thoughtful, dependable, technically grounded, and increasingly security-minded.</p>
-          </div>
-          <div class="mini-panel" style="margin-top:16px;">
-            <h3>What I care about</h3>
-            <p>Useful software, clear communication, reliable systems, steady growth, and building work that earns trust over time.</p>
-          </div>
-        </article>
-      </div>
-    </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-card">
-          <div class="contact-layout">
-            <div>
-              <h3>Let's talk.</h3>
+          <div
+            class="hero-visual"
+            aria-label="Portrait collage featuring Johnny Avakian and selected royalty-free technology and music photography"
+          >
+            <div class="hero-backdrop">
+              <img
+                src="assets/workspace-dual-monitors.jpg"
+                alt="Dual-monitor workspace in a modern office"
+              />
+            </div>
+            <div class="hero-glow"></div>
+            <div class="portrait-stack">
+              <div class="portrait-ring">
+                <div class="portrait-frame">
+                  <img
+                    src="assets/Johnny.png"
+                    alt="Headshot of Johnny Avakian"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="floating-datum-full-width">
+              Grounded senior engineer with a polished security edge.
+              <span class="chip">Open to standout software roles</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section" id="about">
+        <div class="container split">
+          <article class="panel bio">
+            <div class="section-kicker">About</div>
+            <h2>Experienced engineer. Calm operator. Serious builder.</h2>
+            <p>
+              My background is in building the kinds of systems companies
+              quietly depend on: enterprise applications, internal business
+              software, APIs, workflow automation, reporting, data-driven
+              processes, and production systems that need to keep working when
+              pressure is real.
+            </p>
+            <p>
+              At Experian, I have worked across business-critical verification
+              platforms spanning customer-facing and internal capabilities. My
+              work has included batch workflows, service and data-access
+              changes, APIs, reporting, production support, and the kind of
+              cross-functional delivery that requires strong technical judgment
+              as well as clear communication.
+            </p>
+            <p>
+              Earlier in my career, I modernized school operations at Oakwood
+              School and built practical software that replaced manual effort
+              with cleaner workflows. At Crunch Digital, I built research and
+              reporting tools tied to music metadata and royalty review
+              operations. Across all three roles, the common thread has been the
+              same: take complex work, make it clearer, and turn it into
+              software that people trust.
+            </p>
+            <p>
+              I am also increasingly drawn to security-minded engineering. Not
+              as a costume change, but as a natural extension of how I already
+              like to build: with reliability, observability, access awareness,
+              and disciplined execution in mind.
+            </p>
+          </article>
+
+          <aside class="spotlight panel">
+            <img
+              src="assets/tech-monitor-closeup.jpg"
+              alt="Moody close-up of a workstation with multiple monitors"
+            />
+            <div class="spotlight-copy">
+              <h3>Strong systems engineering, stronger collaboration.</h3>
               <p>
-                If you're building something meaningful and need a senior engineer who ships reliably, send a message here. This form uses Formspree endpoint routing, so no API keys are stored in this repo.
+                I build reliable, high-impact software alone or leading efforts,
+                but the real difference is how I work with people: I make
+                communication smoother, ideas better, and delivery more
+                predictable. If you want a teammate who can ship features
+                independently and also elevate your team through clarity,
+                empathy, and ownership, let’s talk.
               </p>
             </div>
+          </aside>
+        </div>
+      </section>
 
-            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdkdvpz" method="POST" novalidate>
-              <label for="contactName">Name</label>
-              <input id="contactName" name="name" type="text" maxlength="120" required />
+      <section class="section">
+        <div class="container stats-grid">
+          <div class="stat-card">
+            <p>
+              professional software engineering and support roles across
+              multiple industries, including: finance, education, music
+              royalties, manufacturing, and health care
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              industry certifications spanning security and cloud development
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              technical degrees forming a strong mathematical and systems
+              foundation
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <label for="contactEmail">Email</label>
-              <input id="contactEmail" name="email" type="email" maxlength="160" required />
-
-              <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" name="message" rows="6" maxlength="2000" required></textarea>
-
-              <input type="hidden" name="_subject" value="Portfolio contact message" />
-              <input class="contact-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-
-              <div class="contact-form-actions">
-                <button class="button primary" type="submit">Send message</button>
-                <a class="button" href="mailto:codeavak@gmail.com">Email directly</a>
+      <section class="section" id="experience">
+        <div class="container section-head">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2>Work history rooted in real systems.</h2>
+          </div>
+          <p class="section-copy">
+            My experience is strongest in environments where software directly
+            supports operations, process clarity, and reliable delivery.
+          </p>
+        </div>
+        <div class="container timeline">
+          <div class="timeline-item">
+            <article class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>
+                    Senior Software Engineer
+                    <span class="company">· Experian</span>
+                  </h3>
+                </div>
+                <div class="dates">Mar 2021 – Present</div>
               </div>
-              <p id="contactStatus" class="contact-status" role="status" aria-live="polite"></p>
-            </form>
+              <ul>
+                <li>
+                  Build and support business-critical software across tax and
+                  verification platforms spanning employment, and income
+                  workflows.
+                </li>
+                <li>
+                  Worked across APIs, schema and service-layer changes,
+                  validation workflows, PDF generation, reporting improvements,
+                  and Azure Blob Storage integration.
+                </li>
+                <li>
+                  Improved observability and supportability across importer,
+                  request management, reporting, search, and letter generation
+                  components.
+                </li>
+                <li>
+                  Partnered with QA and stakeholders to gather requirements,
+                  guide testing, support releases, and keep complex systems
+                  dependable in production.
+                </li>
+              </ul>
+            </article>
+          </div>
 
-            <div class="hero-actions contact-links">
-              <a class="button" href="https://github.com/codeavak" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button" href="https://www.linkedin.com/in/codeavak" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="timeline-item">
+            <article class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>
+                    Software Engineer
+                    <span class="company">· Oakwood School</span>
+                  </h3>
+                </div>
+                <div class="dates">Jan 2019 – Mar 2021</div>
+              </div>
+              <ul>
+                <li>
+                  Led the complete rewrite of Oakwood School’s internal
+                  information system and integrated it with Blackbaud’s
+                  web-based LMS as the sole software engineer.
+                </li>
+                <li>
+                  Independently built and deployed internal applications for
+                  book sales, afterschool time tracking, billing, and hot lunch
+                  distribution, streamlining school operations.
+                </li>
+                <li>
+                  Spearheaded the development of a fundraising application with
+                  a React frontend and C# backend APIs, modernizing operational
+                  workflows and driving revenue growth.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="timeline-item">
+            <article class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>
+                    Software Engineer
+                    <span class="company"
+                      >· Crunch Digital (Royalty Review Council)</span
+                    >
+                  </h3>
+                </div>
+                <div class="dates">Jun 2018 – Mar 2019</div>
+              </div>
+              <ul>
+                <li>
+                  Independently built and maintained internal research and
+                  reporting tools for music metadata matching and royalty review
+                  operations as the solo software engineer.
+                </li>
+                <li>
+                  Developed robust data movement and query workflows to enhance
+                  analyst efficiency, troubleshooting capabilities, and internal
+                  reporting needs.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="timeline-item">
+            <article class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <h3>
+                    Technical Solution Analyst
+                    <span class="company">· Cerner Corporation</span>
+                  </h3>
+                </div>
+                <div class="dates">Jun 2016 – Jul 2017</div>
+              </div>
+              <ul>
+                <li>
+                  Partnered directly with IT teams across multiple hospitals as
+                  a level II support associate for Cerner Clairvia scheduling
+                  software, ensuring seamless integration and user adoption.
+                </li>
+                <li>
+                  Proactively identified and reported bugs to the development
+                  team while authoring SQL scripts to automate manual tasks,
+                  significantly improving user efficiency and system
+                  reliability.
+                </li>
+                <li>
+                  Leveraged Windows Server, MS SQL, and Cerner's Clairvia
+                  technologies to deliver robust solutions and support hospital
+                  operations.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container section-head">
+          <div>
+            <div class="section-kicker">Skills</div>
+            <h2>Technical range with practical depth.</h2>
+          </div>
+          <p class="section-copy">
+            The strongest through-line in my stack is not trend chasing. It is
+            useful, reliable software delivery across backend, frontend, data,
+            and cloud-adjacent systems.
+          </p>
+        </div>
+        <div class="container skills-grid">
+          <article class="skill-card">
+            <h3>Languages & Frameworks</h3>
+            <div class="skill-tags">
+              <span>C#</span><span>JavaScript</span><span>React</span
+              ><span>ASP.NET MVC</span><span>ASP.NET Web API</span
+              ><span>ASP.NET Core</span><span>ASP.NET Web Forms</span
+              ><span>HTML</span><span>CSS</span><span>jQuery</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <h3>Data, APIs & Cloud</h3>
+            <div class="skill-tags">
+              <span>SQL Server</span><span>T-SQL</span><span>REST APIs</span
+              ><span>API Integrations</span><span>ADO.NET</span
+              ><span>Azure</span><span>AWS</span><span>PowerShell</span
+              ><span>Git</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <h3>Engineering Strengths</h3>
+            <div class="skill-tags">
+              <span>Enterprise Applications</span
+              ><span>Workflow Automation</span><span>Production Support</span
+              ><span>Observability</span><span>Secure SDLC</span
+              ><span>Technical Documentation</span
+              ><span>Cross-Functional Delivery</span
+              ><span>AI-Assisted Engineering Workflows</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container section-head">
+          <div>
+            <div class="section-kicker">Education & Certifications</div>
+            <h2>Built on a strong technical foundation.</h2>
+          </div>
+          <p class="section-copy">
+            Formal training in information technology and applied mathematics,
+            reinforced by continued investment in security and cloud
+            certifications.
+          </p>
+        </div>
+        <div class="container edu-grid">
+          <article class="edu-card">
+            <h3>Education</h3>
+            <p><strong>Yerevan State University, Armenia</strong></p>
+            <p>
+              Click each program to learn more about the coursework and academic
+              focus.
+            </p>
+            <div class="edu-grid">
+              <div class="edu-item">
+                <button
+                  type="button"
+                  class="edu-card-button"
+                  data-edu="master"
+                  aria-label="Master’s program details"
+                >
+                  Master of Science in Information Technology
+                </button>
+                <p>
+                  Completed advanced study in Information Technologies at
+                  Yerevan State University, with graduate-level focus on
+                  software systems, algorithms, databases, networking,
+                  object-oriented design, C#/.NET, XML, embedded systems, and
+                  software quality assurance. IERF evaluated this degree as
+                  equivalent to a U.S. Master of Science in Information
+                  Technology. Master’s thesis focused on consistency between UML
+                  class and object diagrams.
+                </p>
+              </div>
+              <div class="edu-item">
+                <button
+                  type="button"
+                  class="edu-card-button"
+                  data-edu="bachelor"
+                  aria-label="Bachelor’s program details"
+                >
+                  Bachelor of Science in Applied Mathematics
+                </button>
+                <p>
+                  Studied Information and Applied Mathematics at Yerevan State
+                  University, building a strong foundation in mathematics,
+                  computer science, and software engineering concepts. IERF
+                  evaluated this degree as equivalent to a U.S. Bachelor of
+                  Science in Mathematics with a concentration in Computer
+                  Science and Applied Mathematics. Relevant coursework included
+                  programming, algorithms, data structures, database systems,
+                  operating systems, computer architecture, networking,
+                  object-oriented design, information security, and applied
+                  mathematics.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="edu-card">
+            <h3>Certifications & Exams</h3>
+            <p>
+              Click any credential to view a quick summary, impact for teams,
+              and the skills I bring to projects.
+            </p>
+            <div class="cert-grid">
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="isc2"
+                aria-label="ISC2 Certified in Cybersecurity details"
+              >
+                ISC2 Certified in Cybersecurity (CC)
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="azure-dev"
+                aria-label="Microsoft Certified: Azure Developer Associate details"
+              >
+                Microsoft Certified: Azure Developer Associate
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="comptia"
+                aria-label="CompTIA Security+ ce details"
+              >
+                CompTIA Security+ ce
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="google-cyber"
+                aria-label="Google Cybersecurity Certificate details"
+              >
+                Google Cybersecurity Certificate
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="azure-fund"
+                aria-label="Microsoft Certified: Azure Fundamentals details"
+              >
+                Microsoft Certified: Azure Fundamentals
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="ms-70-480"
+                aria-label="Microsoft Exam 70-480 details"
+              >
+                Microsoft Exam 70-480
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="ms-70-761"
+                aria-label="Microsoft Exam 70-761 details"
+              >
+                Microsoft Exam 70-761
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="aws-dev"
+                aria-label="AWS Developer Associate details"
+              >
+                AWS Developer - Associate
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="aws-sa"
+                aria-label="AWS Solutions Architect Associate details"
+              >
+                AWS Solutions Architect Associate
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="aws-cloud"
+                aria-label="AWS Cloud Practitioner details"
+              >
+                AWS Cloud Practitioner
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="sabio"
+                aria-label="Sabio Full Stack Software Development Certificate details"
+              >
+                Sabio Full Stack Software Development
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="cisco"
+                aria-label="Cisco CCNA Routing and Switching details"
+              >
+                Cisco CCNA Routing and Switching
+              </button>
+              <button
+                type="button"
+                class="cert-card"
+                data-cert="oracle"
+                aria-label="Oracle Certified Java Programmer I details"
+              >
+                Oracle Certified Java Programmer I
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div
+        id="certModal"
+        class="cert-modal hidden"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="certModalTitle"
+      >
+        <div class="cert-modal-backdrop" data-action="close-modal"></div>
+        <div class="cert-modal-content">
+          <button
+            type="button"
+            class="cert-modal-close"
+            data-action="close-modal"
+            aria-label="Close certificate details"
+          >
+            ×
+          </button>
+          <div class="cert-modal-header">
+            <img id="certModalLogo" src="" alt="" class="cert-logo" />
+            <div>
+              <h3 id="certModalTitle"></h3>
+              <p id="certModalIssuer" class="cert-issuer"></p>
+            </div>
+          </div>
+          <p id="certModalMeta" class="cert-meta"></p>
+          <p id="certModalDesc" class="cert-desc"></p>
+          <p id="certModalSkills" class="cert-skills"></p>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container gallery-grid">
+          <article class="gallery-card">
+            <img
+              src="assets/guitar-vinyl.jpg"
+              alt="Guitar beside a turntable and vinyl records"
+            />
+            <div class="gallery-copy">
+              <div class="section-kicker" style="color: #c8dcf7">
+                Beyond work
+              </div>
+              <h3>Still technical. Still human.</h3>
+              <p>
+                When I’m not coding, I enjoy taking long walks, spinning
+                records, and learning the next catchy tune on the guitar. I like
+                work that is serious, but I also like a life that has some
+                rhythm to it.
+              </p>
+            </div>
+          </article>
+          <article class="panel personal-copy">
+            <div class="section-kicker">Personal note</div>
+            <h2>Professional without feeling robotic.</h2>
+            <p>
+              Meaningful, purposeful work that helps others inspires me to show
+              up and deliver with endless energy. When I see how my code solves
+              real problems and makes people's lives easier, that's when I bring
+              my absolute best—relentless focus, creative problem-solving, and a
+              commitment to excellence that doesn't quit.
+            </p>
+            <div class="mini-panel">
+              <h3>How I like to show up</h3>
+              <p>
+                Thoughtful, dependable, technically grounded, and increasingly
+                security-minded.
+              </p>
+            </div>
+            <div class="mini-panel" style="margin-top: 16px">
+              <h3>What I care about</h3>
+              <p>
+                Useful software, clear communication, reliable systems, steady
+                growth, and building work that earns trust over time.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-card">
+            <div class="contact-layout">
+              <div>
+                <h3>Let's talk.</h3>
+                <p>
+                  If you're building something meaningful and need a senior
+                  engineer who ships reliably, send a message here. This form
+                  uses Formspree endpoint routing, so no API keys are stored in
+                  this repo.
+                </p>
+              </div>
+
+              <form
+                id="contactForm"
+                class="contact-form"
+                action="https://formspree.io/f/xzdkdvpz"
+                method="POST"
+                novalidate
+              >
+                <label for="contactName">Name</label>
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  maxlength="120"
+                  required
+                />
+
+                <label for="contactEmail">Email</label>
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  maxlength="160"
+                  required
+                />
+
+                <label for="contactMessage">Message</label>
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  rows="6"
+                  maxlength="2000"
+                  required
+                ></textarea>
+
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Portfolio contact message"
+                />
+                <input
+                  class="contact-honeypot"
+                  type="text"
+                  name="_gotcha"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+
+                <div class="contact-form-actions">
+                  <button class="button primary" type="submit">
+                    Send message
+                  </button>
+                  <a class="button" href="mailto:codeavak@gmail.com"
+                    >Email directly</a
+                  >
+                </div>
+                <p
+                  id="contactStatus"
+                  class="contact-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </form>
+
+              <div class="hero-actions contact-links">
+                <a
+                  class="button"
+                  href="https://github.com/codeavak"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a
+                  class="button"
+                  href="https://www.linkedin.com/in/codeavak"
+                  target="_blank"
+                  rel="noreferrer"
+                  >LinkedIn</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <div class="container footer-line">
-        <span>Johnny Avakian · Senior Software Engineer</span>`
-      </div>
-    </footer>
-  </div>
+      <footer>
+        <div class="container footer-line">
+          <span>Johnny Avakian · Senior Software Engineer</span>`
+        </div>
+      </footer>
+    </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,72 +1,86 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Johnny Avakian | Interactive Resume Game</title>
-  <meta
-    name="description"
-    content="Play through Johnny Avakian's interactive resume game as a side-scrolling tour of engineering milestones, accomplishments, and career chapters."
-  />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/" />
+  <head>
+     
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johnny Avakian | Interactive Resume Game</title>
+    <meta
+      name="description"
+      content="Play through Johnny Avakian's interactive resume game as a side-scrolling tour of engineering milestones, accomplishments, and career chapters."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Johnny Avakian | Interactive Resume Game" />
-  <meta
-    property="og:description"
-    content="An interactive side-scrolling resume game highlighting Johnny Avakian's engineering accomplishments, career chapters, and technical range."
-  />
-  <meta property="og:url" content="https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/" />
-  <meta property="og:site_name" content="Johnny Avakian Portfolio" />
-  <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Johnny Avakian | Interactive Resume Game"
+    />
+    <meta
+      property="og:description"
+      content="An interactive side-scrolling resume game highlighting Johnny Avakian's engineering accomplishments, career chapters, and technical range."
+    />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    <meta
+      property="og:image"
+      content="https://codeavak.github.io/portfolio_website/assets/Johnny.png"
+    />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Johnny Avakian | Interactive Resume Game" />
-  <meta
-    name="twitter:description"
-    content="An interactive side-scrolling resume game highlighting Johnny Avakian's engineering accomplishments, career chapters, and technical range."
-  />
-  <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/Johnny.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Johnny Avakian | Interactive Resume Game"
+    />
+    <meta
+      name="twitter:description"
+      content="An interactive side-scrolling resume game highlighting Johnny Avakian's engineering accomplishments, career chapters, and technical range."
+    />
+    <meta
+      name="twitter:image"
+      content="https://codeavak.github.io/portfolio_website/assets/Johnny.png"
+    />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Johnny Avakian Interactive Resume Game",
-    "author": {
-      "@type": "Person",
-      "name": "Johnny Avakian",
-      "jobTitle": "Senior Software Engineer",
-      "url": "https://codeavak.github.io/portfolio_website/",
-      "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png",
-      "email": "mailto:codeavak@gmail.com"
-    },
-    "url": "https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/",
-    "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png"
-  }
-  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Johnny Avakian Interactive Resume Game",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian",
+          "jobTitle": "Senior Software Engineer",
+          "url": "https://codeavak.github.io/portfolio_website/",
+          "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png",
+          "email": "mailto:codeavak@gmail.com"
+        },
+        "url": "https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/",
+        "image": "https://codeavak.github.io/portfolio_website/assets/Johnny.png"
+      }
+    </script>
 
-  <link rel="icon" href="/portfolio_website/favicon.ico" sizes="any" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="resume-adventure-page resume-adventure-canvas-only">
-  <canvas
-    id="careerGameCanvas"
-    class="career-game-canvas"
-    data-contact-url="/portfolio_website/#contact"
-    data-portfolio-url="/portfolio_website/"
-    data-blog-url="/portfolio_website/blog/"
-    width="1280"
-    height="720"
-    role="img"
-    aria-label="Interactive side-scrolling resume where the player moves through Johnny Avakian's career timeline."
-  ></canvas>
-  <script src="game.js"></script>
-</body>
+    <link rel="icon" href="/portfolio_website/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="resume-adventure-page resume-adventure-canvas-only">
+    <canvas
+      id="careerGameCanvas"
+      class="career-game-canvas"
+      data-contact-url="/portfolio_website/#contact"
+      data-portfolio-url="/portfolio_website/"
+      data-blog-url="/portfolio_website/blog/"
+      width="1280"
+      height="720"
+      role="img"
+      aria-label="Interactive side-scrolling resume where the player moves through Johnny Avakian's career timeline."
+    ></canvas>
+    <script src="game.js"></script>
+  </body>
 </html>
