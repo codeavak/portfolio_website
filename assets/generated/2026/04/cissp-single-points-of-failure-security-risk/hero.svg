@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Single points of failure are security risks too hero image</title>
+  <desc id="desc">Editorial illustration showing a critical service supported by multiple components with one highlighted fragile dependency representing a single point of failure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08101d"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#09111f" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#12233f" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="100" r="150" fill="#60a5fa" opacity="0.10"/>
+  <circle cx="145" cy="520" r="170" fill="#22c55e" opacity="0.08"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)" stroke="#93c5fd" stroke-opacity="0.22"/>
+
+  <text x="100" y="145" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CISSP #20</text>
+  <text x="100" y="205" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="39" font-weight="700">Single Points of Failure</text>
+  <text x="100" y="250" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="39" font-weight="700">Are Security Risks Too</text>
+  <text x="100" y="304" fill="#c7dbff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Availability matters when one weak dependency can stop everything that matters.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    <rect x="700" y="118" width="160" height="58" rx="14" fill="#111827" stroke="#22c55e"/>
+    <text x="780" y="153" text-anchor="middle" fill="#bbf7d0">Users + admins</text>
+
+    <rect x="700" y="258" width="160" height="58" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="780" y="293" text-anchor="middle" fill="#bfdbfe">Critical service</text>
+
+    <rect x="930" y="188" width="150" height="58" rx="14" fill="#111827" stroke="#f87171"/>
+    <text x="1005" y="223" text-anchor="middle" fill="#fecaca">One shared</text>
+    <text x="1005" y="241" text-anchor="middle" fill="#fecaca">dependency</text>
+
+    <rect x="650" y="410" width="120" height="48" rx="12" fill="#111827" stroke="#34d399"/>
+    <text x="710" y="440" text-anchor="middle" fill="#bbf7d0">Alt path</text>
+
+    <rect x="810" y="410" width="120" height="48" rx="12" fill="#111827" stroke="#a78bfa"/>
+    <text x="870" y="440" text-anchor="middle" fill="#ddd6fe">Runbook</text>
+  </g>
+
+  <g stroke-width="4" fill="none">
+    <line x1="780" y1="176" x2="780" y2="258" stroke="#60a5fa"/>
+    <line x1="860" y1="220" x2="930" y2="217" stroke="#f87171"/>
+    <line x1="710" y1="410" x2="748" y2="316" stroke="#34d399"/>
+    <line x1="870" y1="410" x2="812" y2="316" stroke="#a78bfa"/>
+  </g>
+</svg>

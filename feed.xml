@@ -1,4 +1,240 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T14:18:44+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #19: Forensics Starts With Chain of Custody</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/" rel="alternate" type="text/html" title="CISSP #19: Forensics Starts With Chain of Custody" /><published>2026-04-09T12:19:00+00:00</published><updated>2026-04-09T12:19:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/"><![CDATA[<p>If an incident turns serious, the first failure is often not technical.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T16:19:51+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #20: Single Points of Failure Are Security Risks Too</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/" rel="alternate" type="text/html" title="CISSP #20: Single Points of Failure Are Security Risks Too" /><published>2026-04-09T12:20:00+00:00</published><updated>2026-04-09T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/"><![CDATA[<p>It is easy to think of a single point of failure as an infrastructure diagram problem.
+One database instance. One identity provider. One admin who knows how the restore process actually works.</p>
+
+<p>Then one routine outage or one bad change hits, and the organization discovers that its “secure” environment only worked while that one dependency stayed alive.</p>
+
+<p>This is another CISSP lesson that feels simple until you see it in the real world: <strong>availability is part of security, and resilience is rarely accidental.</strong> If one failure can take down a critical service, block administrative access, or slow incident response at the worst moment, that is not just an operations issue. It is a security risk.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" alt="Illustration showing a critical business service depending on several paths, with one highlighted fragile dependency representing a single point of failure." />
+  <figcaption>One fragile dependency can turn a normal fault into a real security and business problem.</figcaption>
+</figure>
+
+<h2 id="why-cissp-treats-availability-as-a-security-concern">Why CISSP treats availability as a security concern</h2>
+
+<p>A lot of engineers naturally associate security with confidentiality and access control first.
+CISSP keeps pushing a broader view: <strong>the CIA triad includes availability for a reason</strong>.</p>
+
+<p>If a system is unavailable when the business needs it, the harm can be very real:</p>
+
+<ul>
+  <li>customers cannot transact</li>
+  <li>operations cannot continue</li>
+  <li>responders cannot access tools during an incident</li>
+  <li>administrators cannot authenticate to fix the problem</li>
+  <li>monitoring and logging pipelines may go dark right when evidence matters most</li>
+</ul>
+
+<p>This is why the exam so often rewards answers that reduce business impact, preserve resilience, and keep essential functions operating.
+It is not enough to lock systems down.
+They also need to keep working through realistic failure conditions.</p>
+
+<h2 id="what-a-single-point-of-failure-really-looks-like">What a single point of failure really looks like</h2>
+
+<p>A single point of failure is any component, dependency, or person whose failure can stop a critical function by itself.</p>
+
+<p>That definition is broader than many teams first assume.
+It is not only about a lonely physical server in a rack.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Example</th>
+      <th>What fails when it breaks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Infrastructure</strong></td>
+      <td>one database instance, one load balancer, one region</td>
+      <td>the application or service becomes unavailable</td>
+    </tr>
+    <tr>
+      <td><strong>Identity</strong></td>
+      <td>one SSO platform, one MFA provider, one break-glass path nobody has tested</td>
+      <td>admins and users may be locked out</td>
+    </tr>
+    <tr>
+      <td><strong>Operations</strong></td>
+      <td>one person who knows recovery steps, one approval bottleneck</td>
+      <td>response slows or stops under pressure</td>
+    </tr>
+    <tr>
+      <td><strong>Dependencies</strong></td>
+      <td>one DNS provider, one payment API, one secrets store, one CI/CD path</td>
+      <td>supporting services fail even if the app itself is healthy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The important point is that <strong>redundancy on paper is not the same thing as resilience in practice</strong>.
+Two application servers do not help much if both rely on the same fragile database, the same identity dependency, or the same untested recovery path.</p>
+
+<p>This is one reason mature architectures are evaluated by <strong>failure domains</strong>, not by box count.
+If the same underlying dependency can take out every path that matters, the organization still has a single point of failure.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/spof-map.svg" alt="Comparison diagram showing a fragile service path with one shared dependency versus a more resilient design with alternate paths and redundancy." />
+  <figcaption>Real resilience comes from removing shared failure points, not just adding more boxes.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-identity-outage-during-an-incident">A realistic scenario: the identity outage during an incident</h2>
+
+<p>Imagine a company is working through a serious security event.
+Suspicious activity is spreading, responders need privileged access, and leadership wants fast containment.</p>
+
+<p>Now add one more problem: the organization’s cloud console access, VPN, admin tools, and incident communications all depend on one identity platform and one MFA flow.
+That provider has a service disruption.</p>
+
+<p>Suddenly the incident response team has a second incident:</p>
+
+<ul>
+  <li>administrators cannot sign in normally</li>
+  <li>privileged actions are delayed</li>
+  <li>emergency changes require workarounds nobody has tested recently</li>
+  <li>containment slows while business pressure rises</li>
+</ul>
+
+<p>Nothing about that failure is theoretical.
+It is exactly the kind of situation where availability and security stop being separate conversations.</p>
+
+<p>A better design would not necessarily mean infinite duplication of everything.
+It would mean looking at the business impact and providing reasonable resilience:</p>
+
+<ul>
+  <li>tested break-glass access for emergencies</li>
+  <li>documented alternate communication paths</li>
+  <li>independent recovery procedures</li>
+  <li>failover or alternative access for critical control planes where justified</li>
+</ul>
+
+<p>That is the CISSP mindset in practice: reduce the risk that one ordinary failure becomes a much larger organizational problem.</p>
+
+<h2 id="the-hard-part-single-points-of-failure-can-be-people-and-process-too">The hard part: single points of failure can be people and process too</h2>
+
+<p>This is where many teams miss the point.</p>
+
+<p>They look for hardware redundancy but overlook operational fragility.
+A few common examples:</p>
+
+<ul>
+  <li>only one engineer knows how the backup restore sequence really works</li>
+  <li>only one manager can approve the change needed to fail over</li>
+  <li>only one vendor contact can trigger emergency support</li>
+  <li>only one undocumented script rotates certificates correctly</li>
+</ul>
+
+<p>Those are still single points of failure.
+They just live in people and process instead of infrastructure.</p>
+
+<p>CISSP often tests this broader perspective well.
+The best answer is rarely just “buy another device.”
+It is usually something closer to <strong>design for resilience across people, process, and technology</strong>.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<p>The fundamentals here are stable and worth knowing cold:</p>
+
+<ul>
+  <li>identify critical systems and dependencies</li>
+  <li>eliminate or reduce single points of failure where the business impact justifies it</li>
+  <li>use redundancy, fault tolerance, and failover thoughtfully</li>
+  <li>maintain contingency and recovery procedures</li>
+  <li>test failover, backup restoration, and emergency access instead of assuming they work</li>
+  <li>align resilience decisions to business impact and recovery needs</li>
+</ul>
+
+<p>That is not glamorous advice.
+It is still how mature environments stay available when normal things go wrong.</p>
+
+<h3 id="what-looks-more-current-in-practice">What looks more current in practice</h3>
+
+<p>What has changed is where single points of failure now hide.</p>
+
+<p>Modern systems often depend on:</p>
+
+<ul>
+  <li>one identity provider for most access paths</li>
+  <li>one cloud region or one shared control plane</li>
+  <li>one SaaS platform for ticketing, collaboration, or monitoring</li>
+  <li>one secrets management or CI/CD service</li>
+  <li>one DNS or CDN provider for public reachability</li>
+</ul>
+
+<p>In other words, the architecture diagram may look distributed while the <strong>operational dependency graph</strong> is not.</p>
+
+<p>NIST CSF 2.0 continues to frame cybersecurity as part of enterprise risk management, and that is the right lens here. A single point of failure is not only a technical weakness. It is a business risk concentration.</p>
+
+<p>That is why modern resilience discussions increasingly include third-party concentration risk, recovery exercises, and alternate access planning — not just extra hardware.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP usually is not asking whether you can recite a vendor’s high-availability feature list.
+It is asking whether you understand the security objective.</p>
+
+<p>If a question is really about keeping critical services running or minimizing business impact, the strongest answer often reflects some combination of:</p>
+
+<ul>
+  <li>identifying the critical dependency</li>
+  <li>reducing or removing the single point of failure</li>
+  <li>providing redundancy or alternate processing paths</li>
+  <li>testing recovery and failover procedures</li>
+  <li>using risk-based judgment instead of overengineering everything equally</li>
+</ul>
+
+<p>That last point matters.
+Not every system needs multi-region failover and multiple vendors.
+But high-impact functions should not quietly depend on one fragile element that nobody has challenged.</p>
+
+<p>The exam mindset is usually: <strong>protect the mission by improving resilience where failure would hurt most</strong>.</p>
+
+<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
+
+<p>If you want the real-world version, these are the questions worth asking:</p>
+
+<ol>
+  <li><strong>What one thing could stop this service, process, or access path by itself?</strong></li>
+  <li><strong>If that thing fails during an incident, what business or security function breaks next?</strong></li>
+  <li><strong>Do we have tested alternate access for admins and responders?</strong></li>
+  <li><strong>Have we separated critical paths across independent failure domains where it makes sense?</strong></li>
+  <li><strong>Can we actually restore, fail over, or continue manually under pressure?</strong></li>
+  <li><strong>Are key runbooks, approvals, and recovery steps owned by more than one person?</strong></li>
+  <li><strong>Which third-party dependencies deserve explicit resilience review because of concentration risk?</strong></li>
+</ol>
+
+<p>The goal is not perfection.
+It is to stop being surprised by the same avoidable fragility over and over.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/resilience-stack.svg" alt="Layered diagram showing resilient design through redundancy, alternate access, tested failover, documented runbooks, and ownership across people and technology." />
+  <figcaption>Good resilience is layered: architecture, access, procedures, and testing all matter.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>A single point of failure is not just an infrastructure smell. It is a security risk when one failure can stop a critical business or security function.</strong></p>
+
+<p>That is why availability belongs inside serious security thinking.
+Not because every system must be engineered to perfection, but because critical functions should not depend on hope, one person, or one fragile service.</p>
+
+<p>That is a better way to think for the exam and a better way to build systems in real life.</p>
+
+<p><strong>Meta description:</strong> Learn why single points of failure are security risks too, and how CISSP approaches availability, resilience, failover, redundancy, and business impact.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP single point of failure explained</li>
+  <li>availability and resilience cybersecurity</li>
+  <li>redundancy and failover best practices</li>
+  <li>single points of failure security risk</li>
+  <li>CISSP availability domain practical guide</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="availability" /><category term="resilience" /><category term="redundancy" /><category term="failover" /><summary type="html"><![CDATA[A single fragile dependency can turn a manageable issue into a business outage. This CISSP-focused guide explains why single points of failure belong in security thinking, not just infrastructure diagrams.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #19: Forensics Starts With Chain of Custody</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/" rel="alternate" type="text/html" title="CISSP #19: Forensics Starts With Chain of Custody" /><published>2026-04-09T12:19:00+00:00</published><updated>2026-04-09T12:19:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/"><![CDATA[<p>If an incident turns serious, the first failure is often not technical.
 It is procedural.</p>
 
 <p>A screenshot dropped into chat, a log file copied to someone’s laptop, a disk image saved with no hash, and suddenly the team has “evidence” that nobody can confidently defend later.</p>
@@ -2193,227 +2429,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 2. SSO trust boundaries security
 3. identity provider relying party authorization
 4. SAML OIDC security best practices
-5. federated identity access control -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="federation" /><category term="sso" /><category term="saml" /><category term="oidc" /><category term="zero-trust" /><category term="authorization" /><summary type="html"><![CDATA[Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/" rel="alternate" type="text/html" title="CISSP #10: Provisioning and Deprovisioning Are Security Controls, Not IT Chores" /><published>2026-04-04T12:10:00+00:00</published><updated>2026-04-04T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-provisioning-deprovisioning-identity-lifecycle/"><![CDATA[<p>A lot of access-control failures do not begin with an advanced attacker.</p>
-
-<p>They begin with something much less dramatic: a contractor account that stayed active after the project ended, a role change that left old permissions in place, or a service identity that accumulated broad rights because nobody wanted deployment friction.</p>
-
-<p>That is why identity and access management in CISSP is not just about passwords, MFA, or login prompts. It is also about <strong>lifecycle discipline</strong>: how access is requested, approved, granted, reviewed, changed, and removed over time.</p>
-
-<p>In real organizations, that is often where access control quietly succeeds or fails.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" alt="Illustration showing access requests moving through approval, provisioning, review, and deprovisioning as part of a secure identity lifecycle." />
-  <figcaption>Strong identity security is not just about who gets in. It is about how access changes across the full account lifecycle.</figcaption>
-</figure>
-
-<h2 id="why-this-topic-matters-more-than-teams-admit">Why this topic matters more than teams admit</h2>
-
-<p>Security teams often talk about authentication because it is visible.</p>
-
-<p>Lifecycle failures are quieter. They sit in ticket queues, directory groups, cloud roles, vendor accounts, and long-lived service principals. They are less exciting than a new security product, but they shape a lot of real risk.</p>
-
-<p>That is why CISSP expects you to understand identity lifecycle management as part of broader access control discipline. If the wrong access is granted, never reviewed, or not removed promptly, the quality of the login process only solves part of the problem.</p>
-
-<p>A perfectly authenticated user can still do too much.</p>
-
-<h2 id="what-cissp-means-by-identity-lifecycle-management">What CISSP means by identity lifecycle management</h2>
-
-<p>At a practical level, this topic covers the ordinary but high-impact controls around the lifecycle of identities and entitlements.</p>
-
-<p>That includes:</p>
-
-<ul>
-  <li><strong>provisioning</strong> access for new users, contractors, and services</li>
-  <li><strong>modifying</strong> access when responsibilities change</li>
-  <li><strong>reviewing</strong> access periodically for continued business need</li>
-  <li><strong>revoking</strong> access promptly when employment, assignments, or third-party relationships end</li>
-  <li><strong>documenting approval and ownership</strong> so the business, not just IT, is accountable for sensitive access decisions</li>
-</ul>
-
-<p>You will often hear this framed as <strong>joiners, movers, and leavers</strong>.</p>
-
-<p>That sounds administrative until you notice how many incidents trace back to one of those transitions being handled poorly.</p>
-
-<h2 id="three-places-access-control-quietly-breaks-down">Three places access control quietly breaks down</h2>
-
-<h3 id="1-joiners-get-broad-access-because-it-feels-faster">1. Joiners get broad access because it feels faster</h3>
-
-<p>New employees need to become productive quickly, so organizations often solve the problem with convenience:</p>
-
-<ul>
-  <li>oversized default roles</li>
-  <li>inherited group membership from the team rather than the job</li>
-  <li>emergency access that becomes permanent</li>
-  <li>one starter profile used for many different responsibilities</li>
-</ul>
-
-<p>This is how overprovisioning starts. It usually feels efficient in the moment and expensive later.</p>
-
-<p>A better pattern is role-appropriate baseline access, data-owner approval for sensitive resources, and a clear separation between ordinary access and privileged access.</p>
-
-<h3 id="2-movers-keep-old-permissions-long-after-their-role-changed">2. Movers keep old permissions long after their role changed</h3>
-
-<p>This is one of the most common real-world failures.</p>
-
-<p>Someone moves from one team to another, gets added to the new groups, but their old permissions are never removed with the same urgency. Over time, the account reflects three or four historical jobs instead of one current role.</p>
-
-<p>That is <strong>permission creep</strong>, and it quietly undermines least privilege.</p>
-
-<p>It also creates a misleading sense of legitimacy because every individual permission may once have been approved. The problem is that the combination no longer matches the user’s actual need.</p>
-
-<h3 id="3-leavers-and-third-parties-stay-around-too-long">3. Leavers and third parties stay around too long</h3>
-
-<p>When an employee leaves, a vendor engagement ends, or a temporary assignment is complete, access should be revoked promptly.</p>
-
-<p>But in practice, delays happen because:</p>
-
-<ul>
-  <li>HR updates and technical deprovisioning are not tightly connected</li>
-  <li>system owners assume someone else removed the access</li>
-  <li>service accounts have no clear owner</li>
-  <li>third-party access lives outside the normal identity governance process</li>
-</ul>
-
-<p>This is where stale accounts become an attacker’s gift. An old account with residual access is often much easier to abuse than a freshly defended front door.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/lifecycle-loop.svg" alt="Diagram showing joiner, mover, and leaver events feeding into approval, provisioning, review, and deprovisioning controls." />
-  <figcaption>Identity lifecycle discipline matters most at the transitions: new access, changed access, and removed access.</figcaption>
-</figure>
-
-<h2 id="a-realistic-example-the-engineer-who-never-really-changed-roles">A realistic example: the engineer who never really changed roles</h2>
-
-<p>Imagine a senior engineer starts in application development. They get access to source code, lower environments, build systems, and a few production troubleshooting tools.</p>
-
-<p>A year later, they move into a platform role and receive broader cloud permissions to support deployments. Then they take on temporary on-call coverage and receive a few more emergency privileges.</p>
-
-<p>Individually, each approval made sense.</p>
-
-<p>The problem is what happens next: nobody removes the earlier access because nothing looks obviously wrong. The engineer now has a blended entitlement set across development, operations, and emergency administration.</p>
-
-<p>If that account is compromised, the attacker inherits a much wider attack path. If the engineer makes a mistake, the blast radius is larger than anyone intended.</p>
-
-<p>The root issue is not poor intent or weak authentication. It is weak lifecycle management.</p>
-
-<p>A stronger model would:</p>
-
-<ul>
-  <li>assign a role-aligned baseline for each position</li>
-  <li>time-box temporary elevation</li>
-  <li>require review when responsibilities change</li>
-  <li>separate daily-use access from privileged administration</li>
-  <li>remove old entitlements as deliberately as new ones are added</li>
-</ul>
-
-<p>That is exactly the kind of reasoning CISSP wants you to practice.</p>
-
-<h2 id="why-machine-identities-make-this-harder-now">Why machine identities make this harder now</h2>
-
-<p>This topic used to feel mostly human.</p>
-
-<p>It no longer is.</p>
-
-<p>Modern environments are full of <strong>non-human identities</strong>:</p>
-
-<ul>
-  <li>service accounts</li>
-  <li>cloud roles and service principals</li>
-  <li>CI/CD identities</li>
-  <li>API keys and tokens</li>
-  <li>automation accounts used by infrastructure and integrations</li>
-</ul>
-
-<p>These identities often have broad, persistent permissions because tightening them takes work. They also tend to be reviewed less rigorously than human access, even though they may hold some of the most sensitive privileges in the environment.</p>
-
-<p>That is one reason current identity discussions increasingly focus on short-lived credentials, scoped workload identities, and stronger ownership of machine access. The principle is not new; the scale of the problem is.</p>
-
-<h2 id="where-zero-trust-and-just-in-time-access-fit">Where zero trust and just-in-time access fit</h2>
-
-<p>This is one of those CISSP topics where established principles and current direction line up well.</p>
-
-<p>The established principles are familiar:</p>
-
-<ul>
-  <li>least privilege</li>
-  <li>need to know</li>
-  <li>separation of duties</li>
-  <li>periodic review</li>
-  <li>prompt revocation when access is no longer justified</li>
-</ul>
-
-<p>The newer operational framing is more identity-centered. NIST SP 800-207 continues to describe zero trust as shifting attention away from static network perimeters and toward users, assets, and resources. That reinforces the idea that access should be evaluated deliberately and continuously, not assumed safe because someone is already “inside.”</p>
-
-<p>That is also why just-in-time access, shorter-lived elevation, and tighter entitlement review keep showing up in modern identity programs.</p>
-
-<p>But it is worth saying plainly: <strong>zero trust is not a substitute for cleanup</strong>.</p>
-
-<p>An organization can adopt modern language and still leave stale roles, standing privilege, and ownerless service accounts all over the environment. Good identity lifecycle management is what keeps access discipline grounded in reality.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, this topic is usually wrapped inside a broader best-answer pattern.</p>
-
-<p>CISSP wants you to think like someone managing business risk, not just like someone approving a ticket faster.</p>
-
-<p>That means the stronger answer often:</p>
-
-<ul>
-  <li>gives access based on documented business need</li>
-  <li>uses the proper owner or manager for approval</li>
-  <li>limits privileges to the minimum necessary scope</li>
-  <li>reviews access periodically</li>
-  <li>removes or adjusts access promptly when roles change or end</li>
-  <li>avoids concentrating sensitive functions in one unchecked identity</li>
-</ul>
-
-<p>If a question asks what should happen when an employee transfers roles, the best answer is rarely “just add the new access.” It is usually something closer to <strong>re-evaluate and provision only what the new role requires while removing what no longer fits</strong>.</p>
-
-<p>That is a very CISSP way of thinking: risk-aware, process-aware, and bigger than the immediate technical action.</p>
-
-<h2 id="a-practical-checklist-for-real-teams">A practical checklist for real teams</h2>
-
-<p>A few questions go a long way here:</p>
-
-<ul>
-  <li>Who owns this access decision?</li>
-  <li>Is the access tied to a current role or to historical convenience?</li>
-  <li>Does this identity still need the privilege today?</li>
-  <li>Is privileged access separated from daily-use access?</li>
-  <li>Are temporary exceptions time-boxed and reviewed?</li>
-  <li>If a contractor leaves tomorrow, what would automatically shut off?</li>
-  <li>Which machine identities have powerful permissions but weak ownership?</li>
-  <li>Are periodic access reviews actually removing anything, or just rubber-stamping the current state?</li>
-</ul>
-
-<p>Those are not glamorous questions. They are exactly the kind that prevent ordinary drift from turning into a meaningful incident.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/access-review-cycle.svg" alt="Access review cycle showing request, owner approval, provisioning, time-boxing, review, and removal of stale entitlements." />
-  <figcaption>Access control works best as a lifecycle with ownership, review, and removal built in—not as a one-time provisioning event.</figcaption>
-</figure>
-
-<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
-
-<p>A lot of security failures are not really authorization design failures or authentication failures alone.</p>
-
-<p>They are <strong>lifecycle failures</strong>.</p>
-
-<p>The organization granted access too broadly, changed it too casually, reviewed it too weakly, or removed it too late. CISSP is right to treat that as security work rather than administrative cleanup, because access governance shapes risk long before an attacker tries to exploit it.</p>
-
-<p>If you are studying too, this is one of the topics worth learning as an operating habit, not just an exam answer.</p>
-
-<hr />
-
-<p><em>Post 10 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn why provisioning, deprovisioning, and identity lifecycle management are core CISSP access-control concepts for real-world security teams.
-
-**SEO keyword ideas:**
-1. CISSP identity lifecycle management
-2. provisioning and deprovisioning security controls
-3. joiners movers leavers access control
-4. least privilege access review CISSP
-5. IAM lifecycle management best practices -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="identity-lifecycle" /><category term="provisioning" /><category term="deprovisioning" /><category term="least-privilege" /><category term="zero-trust" /><summary type="html"><![CDATA[Many access-control failures start long before an incident—when access is granted too broadly, reviewed too rarely, or removed too late. This CISSP-focused guide explains identity lifecycle management, joiners/movers/leavers, and why access reviews still matter. Post 10 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. federated identity access control -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="federation" /><category term="sso" /><category term="saml" /><category term="oidc" /><category term="zero-trust" /><category term="authorization" /><summary type="html"><![CDATA[Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
