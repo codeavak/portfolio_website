@@ -3818,33 +3818,10 @@
       return;
     }
 
-    startStage("story", { paused: true });
-    state.helpHintTimer = 0;
-    state.toastMessage = "";
-    state.toastTimer = 0;
-    state.canvasPanel = {
-      mode: "main-menu",
-      kicker: "Main Menu",
-      title: "Johnny's Journey Interactive Videogame Resume!",
-      text:
-        note ||
-        "Choose the game-style resume, jump to the full portfolio website, or head straight to the blog.",
-      details: [
-        "A fullscreen guided resume built around Johnny's accomplishments and story beats.",
-        "Portfolio Website opens the traditional site with experience, skills, and contact.",
-        "Blog goes directly to technical writing and security-minded engineering posts.",
-      ],
-      buttons: [
-        {
-          label: "View Interactive Resume",
-          action: "start-story",
-          primary: true,
-        },
-        { label: "Go To Portfolio Website", action: "open-portfolio" },
-        { label: "Go To Blog", action: "open-blog" },
-      ],
-    };
-    canvas.focus({ preventScroll: true });
+    startStage("story");
+    if (note) {
+      showToast(note);
+    }
   }
 
   function pauseJourney(reason = "Journey paused. Resume when you're ready.") {
@@ -3863,11 +3840,11 @@
       text: reason,
       details: [
         "Resume to keep exploring the timeline.",
-        "Open the main menu if you want the portfolio site or blog.",
+        "Restart the journey or jump straight to contact anytime.",
       ],
       buttons: [
         { label: "Resume", action: "resume", primary: true },
-        { label: "Main Menu", action: "show-main-menu" },
+        { label: "Restart", action: "restart-story" },
         { label: "Contact", action: "contact" },
       ],
     };
@@ -4518,14 +4495,14 @@
         mode: "stage-complete",
         kicker: "Chapter clear",
         title: `${level.title} cleared`,
-        text: "Keep the journey moving, replay this chapter, or return to the main menu.",
+        text: "Keep the journey moving, replay this chapter, or restart the full run.",
         details,
         buttons: [
           nextId
             ? { label: "Next", action: "next-stage", primary: true }
             : { label: "Replay", action: "replay-stage", primary: true },
           { label: "Replay", action: "replay-stage" },
-          { label: "Main Menu", action: "show-main-menu" },
+          { label: "Restart", action: "restart-story" },
         ],
       };
       return;
@@ -5472,7 +5449,9 @@
       (gateItem) => !gateItem.open,
     );
     const bossStanding = Boolean(state.boss && !state.boss.defeated);
-    if (level.id === "training") {
+    if (isContactPortalLevel(level)) {
+      state.portalActive = true;
+    } else if (level.id === "training") {
       state.portalActive =
         state.training.jump &&
         state.training.dash &&
@@ -7744,7 +7723,8 @@
 
   bindInput();
   if (canvasOnlyMode) {
-    showMainMenu();
+    startStage("story");
+    showToast("Journey started. Head right for the contact portal.");
   } else {
     startStage("training", { paused: true });
     renderHomeScreen(
