@@ -1,4 +1,257 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T04:17:17+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #18: Patching Is Not Vulnerability Management</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/" rel="alternate" type="text/html" title="CISSP #18: Patching Is Not Vulnerability Management" /><published>2026-04-08T12:18:00+00:00</published><updated>2026-04-08T12:18:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/"><![CDATA[<p>One of the easiest ways to look productive in security is to say, <strong>“We patched 95% of our critical vulnerabilities.”</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T14:18:44+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #19: Forensics Starts With Chain of Custody</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/" rel="alternate" type="text/html" title="CISSP #19: Forensics Starts With Chain of Custody" /><published>2026-04-09T12:19:00+00:00</published><updated>2026-04-09T12:19:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/"><![CDATA[<p>If an incident turns serious, the first failure is often not technical.
+It is procedural.</p>
+
+<p>A screenshot dropped into chat, a log file copied to someone’s laptop, a disk image saved with no hash, and suddenly the team has “evidence” that nobody can confidently defend later.</p>
+
+<p>This is one of the quieter CISSP lessons that matters a lot in real life: <strong>forensics is not only about finding facts. It is also about preserving trust in the facts.</strong> That is where <strong>chain of custody</strong> comes in. If you cannot show who collected an artifact, how it was preserved, who accessed it, and whether it changed, even good evidence becomes harder to rely on.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" alt="Illustration showing a digital evidence workflow moving from identification and preservation to documented handoff and forensic analysis." />
+  <figcaption>Forensics works best when evidence handling is disciplined before deep analysis even begins.</figcaption>
+</figure>
+
+<h2 id="what-chain-of-custody-actually-means">What chain of custody actually means</h2>
+
+<p>At a practical level, chain of custody is the documented history of evidence from the moment it is identified until it is preserved, transferred, analyzed, and eventually presented.</p>
+
+<p>It answers questions like:</p>
+
+<ul>
+  <li>what exactly was collected</li>
+  <li>when and where it was collected</li>
+  <li>which system or device it came from</li>
+  <li>who handled it at each step</li>
+  <li>how integrity was protected</li>
+  <li>whether the original remained unchanged</li>
+</ul>
+
+<p>That can sound like paperwork.
+It is better to think of it as an <strong>integrity control</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Core question</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Identify</strong></td>
+      <td>What artifact matters?</td>
+      <td>Reduces noise and preserves what is actually relevant</td>
+    </tr>
+    <tr>
+      <td><strong>Collect</strong></td>
+      <td>How was it acquired?</td>
+      <td>Helps avoid contamination or accidental alteration</td>
+    </tr>
+    <tr>
+      <td><strong>Hash and label</strong></td>
+      <td>Is this still the same item later?</td>
+      <td>Supports integrity verification</td>
+    </tr>
+    <tr>
+      <td><strong>Transfer and store</strong></td>
+      <td>Who had access and when?</td>
+      <td>Protects accountability and limits doubt</td>
+    </tr>
+    <tr>
+      <td><strong>Analyze</strong></td>
+      <td>What was done to the working copy?</td>
+      <td>Preserves the original for validation and review</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The big idea is simple: <strong>forensics explains what happened, but chain of custody helps prove the evidence is still trustworthy.</strong></p>
+
+<h2 id="why-this-matters-beyond-courtrooms">Why this matters beyond courtrooms</h2>
+
+<p>A lot of engineers hear “chain of custody” and think of criminal cases or courtroom dramas.
+That is too narrow.</p>
+
+<p>In practice, organizations benefit from disciplined evidence handling long before anything becomes a legal case.
+It matters for:</p>
+
+<ul>
+  <li>internal investigations into misuse or unauthorized access</li>
+  <li>HR or disciplinary reviews</li>
+  <li>third-party and insurance inquiries</li>
+  <li>regulatory or audit follow-up</li>
+  <li>executive decision-making during a serious incident</li>
+  <li>possible later escalation to law enforcement or outside counsel</li>
+</ul>
+
+<p>Even if the evidence never leaves the company, leaders still need confidence that the findings are credible.
+If three analysts touched the same exported log file, nobody recorded the handoffs, and the timestamps are inconsistent, the investigation becomes harder to trust.</p>
+
+<p>That is why CISSP tends to reward answers that <strong>preserve evidence and process first</strong>, not just answers that rush into technical analysis.</p>
+
+<h2 id="what-breaks-the-chain-in-practice">What breaks the chain in practice</h2>
+
+<p>Most evidence problems do not come from sophisticated attackers.
+They come from ordinary shortcuts taken during stressful incidents.</p>
+
+<p>Common failure patterns include:</p>
+
+<ul>
+  <li>copying logs or files without recording the source system and collection time</li>
+  <li>analyzing the original artifact instead of a preserved copy</li>
+  <li>renaming or reformatting exports without documenting what changed</li>
+  <li>allowing multiple responders to access the same evidence with no handoff record</li>
+  <li>saving sensitive artifacts in chat threads, inboxes, or broadly shared folders</li>
+  <li>missing time synchronization across systems, which makes event reconstruction much weaker</li>
+</ul>
+
+<p>This is one reason mature teams prepare investigation procedures before they need them.
+Under pressure, people naturally optimize for speed. Good incident handling makes sure speed does not destroy confidence.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/custody-flow.svg" alt="Flow diagram showing digital evidence moving through identification, collection, hashing, secure storage, controlled transfer, and analysis on a copy." />
+  <figcaption>Document the flow early: identify, collect, hash, preserve, transfer, and analyze on a copy.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-admin-account-mystery">A realistic scenario: the admin account mystery</h2>
+
+<p>Imagine a suspicious privileged login appears on a production system at 2:13 a.m.
+The team now needs to know whether it was a legitimate emergency action, an internal mistake, or a compromise.</p>
+
+<p>A weak response looks like this:</p>
+
+<ul>
+  <li>one responder exports logs to a personal desktop</li>
+  <li>another filters and edits that export before saving it again</li>
+  <li>screenshots are shared in chat with no source references</li>
+  <li>cloud audit timestamps are compared against server time with no note about timezone differences</li>
+  <li>nobody records who handled which artifact or when</li>
+</ul>
+
+<p>The team may still reach the correct technical conclusion.
+But now the investigation has avoidable doubt around accuracy, sequence, and integrity.</p>
+
+<p>A stronger response looks different:</p>
+
+<ul>
+  <li>the original log source and export method are recorded</li>
+  <li>timestamps and timezone context are captured up front</li>
+  <li>evidence files are hashed where appropriate</li>
+  <li>the original is preserved in a restricted location</li>
+  <li>analysis happens on a working copy</li>
+  <li>each handoff is documented</li>
+</ul>
+
+<p>That second approach is not slower in any harmful way.
+It is just more disciplined.
+And discipline is often what separates a credible investigation from a messy one.</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<p>The fundamentals here have held up well over time:</p>
+
+<ul>
+  <li>preserve relevant evidence as early as possible</li>
+  <li>document who collected it, when, where, and how</li>
+  <li>protect originals from unnecessary change</li>
+  <li>use integrity verification such as hashes where appropriate</li>
+  <li>limit access and record transfers or handoffs</li>
+  <li>coordinate with legal, HR, compliance, or leadership when the situation warrants it</li>
+</ul>
+
+<p>NIST guidance on integrating forensic techniques into incident response has emphasized these ideas for years because they are still foundational.</p>
+
+<h3 id="what-looks-more-current-in-practice">What looks more current in practice</h3>
+
+<p>What has changed is the environment around the evidence.</p>
+
+<p>NIST SP 800-61 Rev. 3, finalized in 2025, frames incident response more clearly as part of broader cybersecurity risk management. That fits modern reality: evidence no longer lives only on one workstation or one server.</p>
+
+<p>Today, teams often need to collect and correlate artifacts from:</p>
+
+<ul>
+  <li>cloud control planes</li>
+  <li>SaaS audit logs</li>
+  <li>identity providers</li>
+  <li>EDR platforms</li>
+  <li>containers and orchestration layers</li>
+  <li>collaboration systems and ticketing tools</li>
+</ul>
+
+<p>That makes chain of custody more operationally complicated.
+Now the team must also think about export methods, retention windows, API access, immutable storage, and time synchronization across distributed systems.</p>
+
+<p>The principle is still the same.
+The collection surface is just wider.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP usually is not asking whether you can perform a deep forensic carve-out by hand.
+It is asking whether you understand the <strong>right security decision sequence</strong>.</p>
+
+<p>If a question points toward an investigation, the strongest answer often includes some version of:</p>
+
+<ul>
+  <li>preserve evidence</li>
+  <li>maintain chain of custody</li>
+  <li>follow incident response procedures</li>
+  <li>involve the right stakeholders</li>
+  <li>analyze in a controlled and documented way</li>
+</ul>
+
+<p>The exam mindset is usually not “touch everything quickly and figure it out later.”
+It is “protect the integrity of the investigation while reducing business risk responsibly.”</p>
+
+<p>That is especially true when questions involve potential fraud, insider misuse, legal exposure, or disciplinary action.
+In those situations, a technically clever answer can still be the wrong answer if it ignores evidence handling discipline.</p>
+
+<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
+
+<p>If you want the real-world version, this is the checklist worth keeping nearby:</p>
+
+<ol>
+  <li><strong>Define in advance who is authorized to collect evidence.</strong></li>
+  <li><strong>Record source, system, date, time, collector, and reason for collection.</strong></li>
+  <li><strong>Preserve the original artifact and work from a copy when feasible.</strong></li>
+  <li><strong>Use integrity checks such as hashes when appropriate for the media and process.</strong></li>
+  <li><strong>Restrict access to evidence and document every handoff.</strong></li>
+  <li><strong>Keep time synchronized across key systems so event reconstruction is meaningful.</strong></li>
+  <li><strong>Coordinate with legal, HR, privacy, or leadership when the incident could have formal consequences.</strong></li>
+  <li><strong>Review the case afterward for retention, logging, or procedure gaps.</strong></li>
+</ol>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/evidence-integrity.svg" alt="Side-by-side comparison showing fragile evidence handling with missing timestamps and edited originals versus disciplined handling with preserved source data, hashes, and documented handoffs." />
+  <figcaption>The same incident can produce very different confidence depending on how evidence is handled.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Forensics tells you what happened. Chain of custody helps you prove the evidence remained trustworthy.</strong></p>
+
+<p>That distinction matters because investigations do not fail only when teams miss a clue.
+They also fail when teams cannot defend how the evidence was handled.</p>
+
+<p>Good incident response is not just fast analysis.
+It is careful preservation, documentation, and control from the start.</p>
+
+<p>That is a better way to think for the exam and a better way to operate in real engineering environments.</p>
+
+<p><strong>Meta description:</strong> Learn why chain of custody matters for CISSP and real-world incident response, including evidence preservation, integrity checks, documented handoffs, and disciplined forensic handling.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP chain of custody explained</li>
+  <li>digital forensics evidence handling best practices</li>
+  <li>chain of custody in incident response</li>
+  <li>preserve digital evidence and integrity</li>
+  <li>CISSP forensic investigation process</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="chain-of-custody" /><category term="digital-forensics" /><category term="incident-response" /><category term="evidence-handling" /><summary type="html"><![CDATA[Digital evidence only helps if you can prove it stayed authentic. This CISSP-focused guide explains why chain of custody starts before deep forensic analysis and how disciplined evidence handling protects investigations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #18: Patching Is Not Vulnerability Management</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/" rel="alternate" type="text/html" title="CISSP #18: Patching Is Not Vulnerability Management" /><published>2026-04-08T12:18:00+00:00</published><updated>2026-04-08T12:18:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/"><![CDATA[<p>One of the easiest ways to look productive in security is to say, <strong>“We patched 95% of our critical vulnerabilities.”</strong></p>
 
 <p>That can be good news.
 It is not the same thing as saying you reduced the most important risk.</p>
@@ -2163,270 +2416,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 2. provisioning and deprovisioning security controls
 3. joiners movers leavers access control
 4. least privilege access review CISSP
-5. IAM lifecycle management best practices -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="identity-lifecycle" /><category term="provisioning" /><category term="deprovisioning" /><category term="least-privilege" /><category term="zero-trust" /><summary type="html"><![CDATA[Many access-control failures start long before an incident—when access is granted too broadly, reviewed too rarely, or removed too late. This CISSP-focused guide explains identity lifecycle management, joiners/movers/leavers, and why access reviews still matter. Post 10 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #9: Authentication Is Not Authorization, and CISSP Is Right to Separate Them</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/" rel="alternate" type="text/html" title="CISSP #9: Authentication Is Not Authorization, and CISSP Is Right to Separate Them" /><published>2026-04-04T12:09:00+00:00</published><updated>2026-04-04T12:09:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-authentication-is-not-authorization/"><![CDATA[<p>Authentication gets too much credit.</p>
-
-<p>A system can have single sign-on, MFA, and a polished login page and still make terrible security decisions after the user gets in. That is how teams end up with breaches that were not really authentication failures at all. They were authorization failures, accountability failures, or both.</p>
-
-<p>That is why CISSP keeps these ideas separate: <strong>identification, authentication, authorization, and accountability</strong>. It is not exam pedantry. It is a useful way to understand where trust is being established, where access is being granted, and where control quietly breaks down.</p>
-
-<p>For software engineers and security-minded builders, this is one of the most practical IAM lessons in the whole series.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" alt="Illustration showing identity flowing through identification, authentication, authorization, and accountability before access is granted." />
-  <figcaption>Good IAM does not stop at login. It carries trust, access decisions, and traceability all the way through the request.</figcaption>
-</figure>
-
-<h2 id="the-four-ideas-cissp-wants-you-to-keep-separate">The four ideas CISSP wants you to keep separate</h2>
-
-<p>One reason IAM gets blurry is that people collapse multiple decisions into the word “auth.”</p>
-
-<p>CISSP is trying to make you more precise.</p>
-
-<h3 id="1-identification-who-is-claiming-to-be-here">1. Identification: who is claiming to be here?</h3>
-
-<p>Identification is the claim.</p>
-
-<p>A user enters a username, selects an account, presents an email address, or a workload presents a service identity. At this point, the system has not yet decided the claim is true. It has only been told which identity is being asserted.</p>
-
-<h3 id="2-authentication-how-much-confidence-do-we-have-in-the-claim">2. Authentication: how much confidence do we have in the claim?</h3>
-
-<p>Authentication is the proof step.</p>
-
-<p>This is where the system evaluates one or more authenticators such as:</p>
-
-<ul>
-  <li>a password or passphrase</li>
-  <li>a one-time code</li>
-  <li>a smart card or certificate</li>
-  <li>a passkey or hardware-backed cryptographic key</li>
-  <li>a biometric used as part of multi-factor authentication</li>
-</ul>
-
-<p>Strong authentication reduces uncertainty. It does <strong>not</strong> automatically decide what the subject should be allowed to do next.</p>
-
-<h3 id="3-authorization-what-is-this-identity-allowed-to-do-right-now">3. Authorization: what is this identity allowed to do right now?</h3>
-
-<p>Authorization is the access decision.</p>
-
-<p>This is where the system determines whether the authenticated user, service, or process can actually perform the requested action on the specific resource in question. That decision may depend on:</p>
-
-<ul>
-  <li>role</li>
-  <li>group membership</li>
-  <li>data ownership</li>
-  <li>device or network context</li>
-  <li>sensitivity of the action</li>
-  <li>time, location, tenant, or business workflow rules</li>
-</ul>
-
-<p>This is where least privilege becomes real.</p>
-
-<h3 id="4-accountability-can-we-trace-the-action-and-hold-it-to-process">4. Accountability: can we trace the action and hold it to process?</h3>
-
-<p>Accountability is what makes actions attributable and reviewable.</p>
-
-<p>It depends on things like:</p>
-
-<ul>
-  <li>unique identities rather than shared accounts</li>
-  <li>durable logs and audit trails</li>
-  <li>clear approval paths</li>
-  <li>separation of duties for sensitive actions</li>
-  <li>evidence that a specific user approved or executed a change</li>
-</ul>
-
-<p>Without accountability, an organization struggles to investigate abuse, mistakes, or fraud even if authentication itself was strong.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/four-as.svg" alt="Diagram distinguishing identification, authentication, authorization, and accountability with simple definitions." />
-  <figcaption>The four ideas work together, but they solve different problems and fail in different ways.</figcaption>
-</figure>
-
-<h2 id="why-authentication-gets-too-much-credit">Why authentication gets too much credit</h2>
-
-<p>A lot of security conversations stall out at the login screen.</p>
-
-<p>Teams say things like:</p>
-
-<ul>
-  <li>“We already have MFA.”</li>
-  <li>“It goes through our SSO provider.”</li>
-  <li>“Only employees can reach that page.”</li>
-  <li>“The user is authenticated, so the request is trusted.”</li>
-</ul>
-
-<p>Those statements may be partially true and still lead to a weak design.</p>
-
-<p>Authentication answers a narrow question: <strong>is this subject likely to be who it claims to be?</strong></p>
-
-<p>It does not answer:</p>
-
-<ul>
-  <li>should this user see this specific customer record?</li>
-  <li>should this session still be trusted for a high-risk action?</li>
-  <li>does this service account really need write access here?</li>
-  <li>can we prove who approved and executed a privileged change?</li>
-</ul>
-
-<p>That is why strong login can coexist with weak security outcomes. Too many organizations improve identity proof at the front door while leaving the interior permissions too broad and the audit trail too thin.</p>
-
-<h2 id="a-realistic-example-the-support-dashboard-that-trusts-the-wrong-thing">A realistic example: the support dashboard that trusts the wrong thing</h2>
-
-<p>Imagine a customer support platform used only by employees.</p>
-
-<p>The company does several things right:</p>
-
-<ul>
-  <li>staff sign in through a central identity provider</li>
-  <li>MFA is enabled</li>
-  <li>sessions expire properly</li>
-  <li>suspicious sign-ins are monitored</li>
-</ul>
-
-<p>So far, so good.</p>
-
-<p>But inside the application, almost every support agent can:</p>
-
-<ul>
-  <li>search any customer account</li>
-  <li>view sensitive profile data</li>
-  <li>revoke MFA methods</li>
-  <li>issue refunds</li>
-  <li>export case history</li>
-</ul>
-
-<p>Nothing about that problem is fixed by saying “the employee was authenticated.”</p>
-
-<p>The employee probably <strong>was</strong> authenticated. The real issue is that the application translated a successful login into overly broad access.</p>
-
-<p>A stronger design would separate the decisions more carefully:</p>
-
-<ul>
-  <li>ordinary support agents can view only the cases assigned to them or their queue</li>
-  <li>especially sensitive records require additional justification or elevated approval</li>
-  <li>token resets or refund actions require step-up authentication</li>
-  <li>high-risk actions are logged with enough detail to support investigation</li>
-  <li>no one person can request, approve, and execute the full sensitive workflow alone</li>
-</ul>
-
-<p>That is a much more mature IAM story. The difference is not better branding around MFA. It is better authorization and accountability discipline.</p>
-
-<h2 id="what-strong-iam-looks-like-in-real-systems">What strong IAM looks like in real systems</h2>
-
-<p>Good IAM is less about one shiny control and more about a stack of ordinary decisions made well.</p>
-
-<h3 id="start-with-identity-lifecycle-discipline">Start with identity lifecycle discipline</h3>
-
-<p>Access problems often begin before the first live request.</p>
-
-<p>Joiner, mover, and leaver processes matter because stale entitlements accumulate quietly. If a role changed six months ago but the old access never came off, the system is already carrying unnecessary exposure.</p>
-
-<h3 id="enforce-authorization-at-the-resource-boundary">Enforce authorization at the resource boundary</h3>
-
-<p>Being on the internal network, behind a VPN, or already signed in should not be treated as a blanket permission model.</p>
-
-<p>Applications and APIs should make access decisions where the resource is actually touched. That is especially important in multi-tenant SaaS systems, internal admin tools, and service-to-service communication.</p>
-
-<h3 id="use-step-up-controls-for-higher-risk-actions">Use step-up controls for higher-risk actions</h3>
-
-<p>Not every action deserves the same level of trust.</p>
-
-<p>Viewing your own dashboard is different from changing payroll information, exporting regulated data, or disabling security settings. Mature systems often require stronger proof or additional approval when the action carries more business risk.</p>
-
-<h3 id="limit-standing-privilege">Limit standing privilege</h3>
-
-<p>Privileged access that is always on becomes an attacker’s shortcut.</p>
-
-<p>That is true for administrators, developers, service accounts, and automation identities. Just-in-time access, time-boxed elevation, and narrower machine permissions reduce blast radius far more effectively than broad permanent rights with a promise to “monitor everything.”</p>
-
-<h3 id="make-actions-attributable">Make actions attributable</h3>
-
-<p>If a shared admin account performs a critical action, the organization has already lost something important even before an incident occurs. Unique identities, approval records, and tamper-resistant logs are what turn access control into something governable.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/step-up-access.svg" alt="Side-by-side flow comparing ordinary low-risk access with high-risk actions that require step-up authentication, approval, and audit logging." />
-  <figcaption>Good IAM scales trust with risk instead of treating every authenticated session as equally safe.</figcaption>
-</figure>
-
-<h2 id="where-passkeys-and-phishing-resistant-mfa-fit">Where passkeys and phishing-resistant MFA fit</h2>
-
-<p>This is one of those CISSP topics where established principles and current industry direction line up nicely.</p>
-
-<p>The established part is old and stable:</p>
-
-<ul>
-  <li>identify the subject clearly</li>
-  <li>authenticate with appropriate assurance</li>
-  <li>authorize based on business need and least privilege</li>
-  <li>preserve accountability through logging and process control</li>
-</ul>
-
-<p>The newer emphasis is in <strong>how</strong> organizations strengthen authentication.</p>
-
-<p>Current NIST digital identity guidance continues to push toward higher-assurance, phishing-resistant options for stronger environments. That is one reason passkeys and other cryptographic authenticators matter so much right now. They are better at resisting replay and phishing than passwords, SMS codes, or approval-fatigue patterns alone.</p>
-
-<p>But this is the important qualifier: <strong>better authentication does not replace authorization design</strong>.</p>
-
-<p>A passkey can make it much harder for the wrong person to log in as me. It does not decide whether my account should be able to export every customer record, approve its own privileged exception, or keep broad standing access forever.</p>
-
-<p>That is the mistake CISSP is quietly trying to keep people from making.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, this topic often hides inside a best-answer pattern.</p>
-
-<p>CISSP usually wants you to think like the person responsible for business risk, not just like the person configuring a login prompt.</p>
-
-<p>That means the stronger answer often does one or more of the following:</p>
-
-<ul>
-  <li>separates authentication from authorization cleanly</li>
-  <li>reduces privileges to the minimum necessary level</li>
-  <li>adds accountability and approval to sensitive actions</li>
-  <li>favors centralized control and review over ad hoc exceptions</li>
-  <li>picks the response that improves overall governance, not just one technical step</li>
-</ul>
-
-<p>If a question describes fraud, excessive access, or misuse after login, the best answer is often not simply “enable MFA” in isolation. It may be tighter authorization, better separation of duties, more appropriate recertification, or stronger accountability for privileged activity.</p>
-
-<h2 id="a-practical-checklist-for-engineers-and-cissp-candidates">A practical checklist for engineers and CISSP candidates</h2>
-
-<p>A few questions help keep this topic grounded:</p>
-
-<ul>
-  <li>What identity is being claimed here?</li>
-  <li>How is that claim being authenticated?</li>
-  <li>What exact resource or action is being authorized?</li>
-  <li>Is the access still appropriate for the user’s current role?</li>
-  <li>Would this action deserve step-up authentication or approval?</li>
-  <li>If something goes wrong, can we tell who did what and when?</li>
-  <li>Are we relying on network location or prior login more than we should?</li>
-</ul>
-
-<p>That is the kind of reasoning that improves both architecture reviews and exam answers.</p>
-
-<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
-
-<p>A lot of insecure systems are not failing because nobody implemented login.</p>
-
-<p>They fail because the organization stopped thinking once the login succeeded.</p>
-
-<p>CISSP is right to keep identification, authentication, authorization, and accountability separate because each one answers a different risk question. The systems that handle those questions distinctly tend to be safer, easier to govern, and easier to explain after something goes wrong.</p>
-
-<p>If you are studying too, this is one of those topics worth learning as a model for real systems, not just as a vocabulary list.</p>
-
-<hr />
-
-<p><em>Post 9 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn why authentication is not authorization in CISSP and real-world IAM, including identification, MFA, accountability, and step-up access decisions.
-
-**SEO keyword ideas:**
-1. CISSP authentication vs authorization
-2. identification authentication authorization accountability explained
-3. CISSP IAM domain 5 study guide
-4. phishing resistant MFA and passkeys CISSP
-5. least privilege and accountability in IAM -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="authentication" /><category term="authorization" /><category term="accountability" /><category term="mfa" /><category term="passkeys" /><summary type="html"><![CDATA[A strong login does not guarantee a safe system. This CISSP-focused guide explains identification, authentication, authorization, and accountability in real-world IAM design. Post 9 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-authentication-is-not-authorization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. IAM lifecycle management best practices -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="identity-lifecycle" /><category term="provisioning" /><category term="deprovisioning" /><category term="least-privilege" /><category term="zero-trust" /><summary type="html"><![CDATA[Many access-control failures start long before an incident—when access is granted too broadly, reviewed too rarely, or removed too late. This CISSP-focused guide explains identity lifecycle management, joiners/movers/leavers, and why access reviews still matter. Post 10 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-provisioning-deprovisioning-identity-lifecycle/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

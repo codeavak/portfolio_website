@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Fragile versus disciplined evidence handling</title>
+  <desc id="desc">Side-by-side comparison showing weak evidence handling with missing timestamps and edited originals versus disciplined handling with preserved originals, hashes, and documented handoffs.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Same Incident, Different Confidence</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Evidence handling discipline determines how much trust survives the investigation.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="70" y="150" width="380" height="320" rx="18" fill="#111827" stroke="#f87171"/>
+    <text x="260" y="192" text-anchor="middle" fill="#fecaca" font-size="24" font-weight="700">Fragile handling</text>
+    <text x="105" y="240" fill="#e5e7eb" font-size="18">• screenshots in chat</text>
+    <text x="105" y="278" fill="#e5e7eb" font-size="18">• edited or filtered original export</text>
+    <text x="105" y="316" fill="#e5e7eb" font-size="18">• missing timestamps or timezone notes</text>
+    <text x="105" y="354" fill="#e5e7eb" font-size="18">• unclear ownership and handoffs</text>
+    <text x="105" y="392" fill="#e5e7eb" font-size="18">• broad access in shared folders</text>
+
+    <rect x="550" y="150" width="380" height="320" rx="18" fill="#111827" stroke="#22c55e"/>
+    <text x="740" y="192" text-anchor="middle" fill="#bbf7d0" font-size="24" font-weight="700">Defensible handling</text>
+    <text x="585" y="240" fill="#e5e7eb" font-size="18">• source and collection method logged</text>
+    <text x="585" y="278" fill="#e5e7eb" font-size="18">• preserved original plus working copy</text>
+    <text x="585" y="316" fill="#e5e7eb" font-size="18">• integrity check captured</text>
+    <text x="585" y="354" fill="#e5e7eb" font-size="18">• restricted storage and access</text>
+    <text x="585" y="392" fill="#e5e7eb" font-size="18">• documented transfers and analysis</text>
+  </g>
+
+  <line x1="500" y1="145" x2="500" y2="475" stroke="#334155" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <rect x="180" y="510" width="640" height="46" rx="12" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="539" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="17">Trust in findings depends on trust in the evidence path.</text>
+</svg>

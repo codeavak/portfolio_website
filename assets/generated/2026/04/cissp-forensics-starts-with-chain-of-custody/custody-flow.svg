@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Documented evidence flow</title>
+  <desc id="desc">Flow diagram showing digital evidence moving through identification, collection, hashing, secure storage, controlled handoff, and analysis on a copy.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Documented Evidence Flow</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">A practical chain of custody protects confidence before analysis gets deep.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="60" y="170" width="130" height="74" rx="16" fill="#111827" stroke="#34d399"/>
+    <text x="125" y="201" text-anchor="middle" fill="#bbf7d0">1. Identify</text>
+    <text x="125" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">relevant artifact</text>
+
+    <rect x="215" y="170" width="130" height="74" rx="16" fill="#111827" stroke="#60a5fa"/>
+    <text x="280" y="201" text-anchor="middle" fill="#bfdbfe">2. Collect</text>
+    <text x="280" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">record source + time</text>
+
+    <rect x="370" y="170" width="130" height="74" rx="16" fill="#111827" stroke="#f59e0b"/>
+    <text x="435" y="201" text-anchor="middle" fill="#fde68a">3. Hash</text>
+    <text x="435" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">label and verify</text>
+
+    <rect x="525" y="170" width="130" height="74" rx="16" fill="#111827" stroke="#f87171"/>
+    <text x="590" y="201" text-anchor="middle" fill="#fecaca">4. Preserve</text>
+    <text x="590" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">secure original</text>
+
+    <rect x="680" y="170" width="130" height="74" rx="16" fill="#111827" stroke="#a78bfa"/>
+    <text x="745" y="201" text-anchor="middle" fill="#ddd6fe">5. Transfer</text>
+    <text x="745" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">document handoff</text>
+
+    <rect x="835" y="170" width="105" height="74" rx="16" fill="#111827" stroke="#22c55e"/>
+    <text x="887" y="201" text-anchor="middle" fill="#bbf7d0">6. Analyze</text>
+    <text x="887" y="224" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="500">work on copy</text>
+  </g>
+
+  <g stroke-width="4" fill="none">
+    <line x1="190" y1="207" x2="215" y2="207" stroke="#60a5fa"/>
+    <line x1="345" y1="207" x2="370" y2="207" stroke="#f59e0b"/>
+    <line x1="500" y1="207" x2="525" y2="207" stroke="#f87171"/>
+    <line x1="655" y1="207" x2="680" y2="207" stroke="#a78bfa"/>
+    <line x1="810" y1="207" x2="835" y2="207" stroke="#22c55e"/>
+  </g>
+
+  <rect x="90" y="320" width="820" height="180" rx="20" fill="#111827" stroke="#334155"/>
+  <text x="500" y="364" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">What the record should show</text>
+  <text x="135" y="410" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="18">• source system and collection method</text>
+  <text x="135" y="445" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="18">• date, time, timezone, and collector</text>
+  <text x="520" y="410" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="18">• integrity check or hash where appropriate</text>
+  <text x="520" y="445" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="18">• every transfer, access, and analysis step</text>
+
+  <rect x="225" y="526" width="550" height="42" rx="12" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="553" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="16">Preserve originals. Document every touch.</text>
+</svg>

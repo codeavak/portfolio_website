@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Forensics starts with chain of custody hero image</title>
+  <desc id="desc">Editorial illustration showing digital evidence being identified, preserved, documented, and handed off for forensic analysis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08101d"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#09111f" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#12233f" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="95" r="145" fill="#60a5fa" opacity="0.10"/>
+  <circle cx="155" cy="525" r="170" fill="#22c55e" opacity="0.08"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)" stroke="#93c5fd" stroke-opacity="0.22"/>
+
+  <text x="100" y="145" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CISSP #19</text>
+  <text x="100" y="205" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Forensics Starts With</text>
+  <text x="100" y="250" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Chain of Custody</text>
+  <text x="100" y="304" fill="#c7dbff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Preserve integrity, document handoffs, and analyze with confidence.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    <rect x="660" y="108" width="138" height="54" rx="12" fill="#111827" stroke="#34d399"/>
+    <text x="729" y="141" text-anchor="middle" fill="#bbf7d0">Identify</text>
+
+    <rect x="846" y="108" width="138" height="54" rx="12" fill="#111827" stroke="#60a5fa"/>
+    <text x="915" y="141" text-anchor="middle" fill="#bfdbfe">Preserve</text>
+
+    <rect x="753" y="205" width="138" height="54" rx="12" fill="#111827" stroke="#f59e0b"/>
+    <text x="822" y="238" text-anchor="middle" fill="#fde68a">Document</text>
+
+    <rect x="660" y="302" width="138" height="54" rx="12" fill="#111827" stroke="#f87171"/>
+    <text x="729" y="335" text-anchor="middle" fill="#fecaca">Transfer</text>
+
+    <rect x="846" y="302" width="138" height="54" rx="12" fill="#111827" stroke="#a78bfa"/>
+    <text x="915" y="335" text-anchor="middle" fill="#ddd6fe">Analyze</text>
+
+    <circle cx="822" cy="430" r="60" fill="#0f172a" stroke="#22c55e" stroke-width="3"/>
+    <text x="822" y="420" text-anchor="middle" fill="#f8fafc">Trusted</text>
+    <text x="822" y="445" text-anchor="middle" fill="#f8fafc">evidence</text>
+
+    <line x1="798" y1="135" x2="846" y2="135" stroke="#60a5fa" stroke-width="4"/>
+    <line x1="915" y1="162" x2="860" y2="205" stroke="#f59e0b" stroke-width="4"/>
+    <line x1="790" y1="259" x2="736" y2="302" stroke="#f87171" stroke-width="4"/>
+    <line x1="798" y1="329" x2="846" y2="329" stroke="#a78bfa" stroke-width="4"/>
+    <line x1="915" y1="356" x2="854" y2="390" stroke="#22c55e" stroke-width="4"/>
+  </g>
+</svg>
