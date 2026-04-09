@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Emergency change review loop</title>
+  <desc id="desc">Loop diagram showing how an emergency change can become long-term risk if temporary exceptions are not reviewed and cleaned up.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">The Emergency Change Trap</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Urgent fixes are sometimes necessary. The danger is leaving the loop open afterward.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    <circle cx="260" cy="250" r="74" fill="#111827" stroke="#f59e0b" stroke-width="4"/>
+    <text x="260" y="244" text-anchor="middle" fill="#fde68a">Emergency</text>
+    <text x="260" y="266" text-anchor="middle" fill="#fde68a">change</text>
+
+    <circle cx="500" cy="160" r="74" fill="#111827" stroke="#60a5fa" stroke-width="4"/>
+    <text x="500" y="154" text-anchor="middle" fill="#bfdbfe">Temporary</text>
+    <text x="500" y="176" text-anchor="middle" fill="#bfdbfe">exception</text>
+
+    <circle cx="740" cy="250" r="74" fill="#111827" stroke="#f87171" stroke-width="4"/>
+    <text x="740" y="244" text-anchor="middle" fill="#fecaca">Missed</text>
+    <text x="740" y="266" text-anchor="middle" fill="#fecaca">review</text>
+
+    <circle cx="620" cy="430" r="74" fill="#111827" stroke="#a78bfa" stroke-width="4"/>
+    <text x="620" y="424" text-anchor="middle" fill="#ddd6fe">Config</text>
+    <text x="620" y="446" text-anchor="middle" fill="#ddd6fe">drift</text>
+
+    <circle cx="380" cy="430" r="74" fill="#111827" stroke="#22c55e" stroke-width="4"/>
+    <text x="380" y="424" text-anchor="middle" fill="#bbf7d0">Review &amp;</text>
+    <text x="380" y="446" text-anchor="middle" fill="#bbf7d0">correct</text>
+
+    <path d="M330 220 C380 180, 410 165, 425 162" fill="none" stroke="#94a3b8" stroke-width="4"/>
+    <path d="M575 185 C640 210, 675 225, 690 240" fill="none" stroke="#94a3b8" stroke-width="4"/>
+    <path d="M720 320 C700 360, 675 390, 660 405" fill="none" stroke="#94a3b8" stroke-width="4"/>
+    <path d="M555 460 C500 475, 455 475, 430 460" fill="none" stroke="#94a3b8" stroke-width="4"/>
+    <path d="M330 405 C290 365, 270 325, 260 324" fill="none" stroke="#94a3b8" stroke-width="4"/>
+  </g>
+
+  <rect x="180" y="510" width="640" height="50" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="500" y="541" text-anchor="middle" fill="#e5e7eb" font-family="Segoe UI, Arial, sans-serif" font-size="16">Temporary changes need an owner, an expiry, and a retrospective review.</text>
+</svg>
