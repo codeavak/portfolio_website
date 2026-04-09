@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #17: Change Management Is a Security Control, Not a CAB Ritual | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-08T12:17:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-7" />
+      
+        <meta property="article:tag" content="change-management" />
+      
+        <meta property="article:tag" content="configuration-management" />
+      
+        <meta property="article:tag" content="security-operations" />
+      
+        <meta property="article:tag" content="baselines" />
+      
+    
+    <meta property="og:title" content="CISSP #17: Change Management Is a Security Control, Not a CAB Ritual" />
+    <meta property="og:description" content="Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #17: Change Management Is a Security Control, Not a CAB Ritual" />
+    <meta name="twitter:description" content="Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #17: Change Management Is a Security Control, Not a CAB Ritual",
+        "description": "Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-08T12:17:00+00:00",
+        "dateModified": "2026-04-08T12:17:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-08T12:17:00+00:00">April 8, 2026</time>
+              <h1 class="post-title">CISSP #17: Change Management Is a Security Control, Not a CAB Ritual</h1>
+              
+                <p class="post-dek">Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-7</span>
+                  
+                    <span class="chip">change-management</span>
+                  
+                    <span class="chip">configuration-management</span>
+                  
+                    <span class="chip">security-operations</span>
+                  
+                    <span class="chip">baselines</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Some of the most avoidable security incidents do not start with advanced malware.
+They start with an ordinary change.</p>
+
+<p>A temporary firewall rule stays open longer than intended. A privileged exception gets added to solve an outage and never gets reviewed. A rushed release bypasses normal testing because “we just need to get production back.” The breach story or availability incident may show up later, but the control failure often begins here.</p>
+
+<p>As I work through CISSP topics, this is one of the concepts that looks administrative until you have to clean up after it. Then it becomes obvious: <strong>change management is not just operations hygiene. It is a security control.</strong></p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" alt="Illustration showing a secure change workflow with request, review, testing, approval, deployment, and validation around a protected production environment." />
+  <figcaption>Secure systems do not stay trustworthy by accident. They stay trustworthy because change is controlled.</figcaption>
+</figure>
+
+<h2 id="why-cissp-cares-about-change-management">Why CISSP cares about change management</h2>
+
+<p>CISSP repeatedly pushes you toward a risk-based, business-aware answer. That means recognizing that security is not only about blocking attackers. It is also about keeping systems in a known, approved, supportable state.</p>
+
+<p>Uncontrolled change undermines that in several ways:</p>
+
+<ul>
+  <li>it breaks secure baselines</li>
+  <li>it creates configuration drift no one intended</li>
+  <li>it weakens accountability because nobody knows who changed what and why</li>
+  <li>it increases the odds of downtime, data exposure, or failed detection</li>
+  <li>it makes recovery harder because the environment no longer matches documented expectations</li>
+</ul>
+
+<p>This is also where <strong>configuration management</strong> and <strong>change management</strong> fit together.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Main question</th>
+      <th>Practical purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Configuration management</strong></td>
+      <td>What should the approved state of the system be?</td>
+      <td>Establishes baselines, inventories important components, and helps detect drift</td>
+    </tr>
+    <tr>
+      <td><strong>Change management</strong></td>
+      <td>How do we safely move from one approved state to another?</td>
+      <td>Requires analysis, authorization, testing, implementation control, and validation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That distinction matters for the exam and for real life. A secure baseline is useful. A secure baseline that can be changed casually without review does not stay secure for long.</p>
+
+<p>NIST’s guidance on security-focused configuration management and the Configuration Management family in SP 800-53 reinforce the same durable ideas: define approved states, control changes, document them, and monitor for unauthorized deviation.</p>
+
+<h2 id="good-change-control-is-not-just-bureaucracy">Good change control is not just bureaucracy</h2>
+
+<p>The phrase “change management” can make engineers think of slow meetings, overloaded ticket queues, and a CAB that exists mostly to delay obvious work.</p>
+
+<p>That is the bad version.</p>
+
+<p>The good version is much simpler: <strong>make meaningful changes in a way that is authorized, tested, reversible, and visible.</strong></p>
+
+<p>That usually includes:</p>
+
+<ol>
+  <li><strong>A clear request</strong>
+    <ul>
+      <li>What is changing?</li>
+      <li>Why is it needed?</li>
+      <li>What business service or security objective is affected?</li>
+    </ul>
+  </li>
+  <li><strong>Impact and risk analysis</strong>
+    <ul>
+      <li>Could this affect confidentiality, integrity, or availability?</li>
+      <li>Does it change network exposure, identity rules, logging, or data flows?</li>
+      <li>What depends on this system that could break quietly?</li>
+    </ul>
+  </li>
+  <li><strong>Testing before production</strong>
+    <ul>
+      <li>Has it been validated somewhere safer than live customer traffic?</li>
+      <li>Did we test both the desired outcome and likely failure conditions?</li>
+    </ul>
+  </li>
+  <li><strong>Appropriate approval</strong>
+    <ul>
+      <li>Not every change needs the same level of ceremony.</li>
+      <li>But the right owner should understand and accept the risk.</li>
+    </ul>
+  </li>
+  <li><strong>Implementation control</strong>
+    <ul>
+      <li>Who is allowed to make the change?</li>
+      <li>During what window?</li>
+      <li>With what level of access?</li>
+    </ul>
+  </li>
+  <li><strong>Rollback planning</strong>
+    <ul>
+      <li>If the change fails, how do we restore a known good state quickly?</li>
+    </ul>
+  </li>
+  <li><strong>Post-change validation and documentation</strong>
+    <ul>
+      <li>Did the intended result happen?</li>
+      <li>Were logs, alerts, and dependent services checked afterward?</li>
+      <li>Is the record good enough for accountability and troubleshooting?</li>
+    </ul>
+  </li>
+</ol>
+
+<p>That is not ritual for its own sake. That is how you reduce surprise.</p>
+
+<h2 id="the-security-failures-hidden-inside-temporary-changes">The security failures hidden inside “temporary” changes</h2>
+
+<p>One reason this topic matters so much is that high-risk changes often look small when they are first proposed.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li>a “temporary” any-to-any firewall rule for troubleshooting</li>
+  <li>an emergency service account permission increase</li>
+  <li>a monitoring exclusion to reduce alert noise during a release</li>
+  <li>a quick change to an MFA or recovery setting because a VIP is locked out</li>
+  <li>a production hotfix applied manually and never codified into the normal pipeline</li>
+</ul>
+
+<p>Each of these can be justified in the moment. The danger is not always the initial decision. The danger is the lack of expiration, review, validation, and cleanup.</p>
+
+<p>This is why mature teams treat emergency changes as <strong>expedited</strong>, not <strong>exempt</strong>.</p>
+
+<p>In good environments, an emergency change still gets:</p>
+
+<ul>
+  <li>a narrow purpose</li>
+  <li>limited duration</li>
+  <li>documented ownership</li>
+  <li>retrospective review</li>
+  <li>cleanup or permanent normalization afterward</li>
+</ul>
+
+<p>If the organization skips that last part, temporary exceptions become permanent attack surface.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/change-control-flow.svg" alt="Flow diagram showing request, risk review, testing, approval, implementation, validation, and documentation in a secure change process." />
+  <figcaption>Healthy change control is a flow: request, assess, test, approve, implement, validate, and record.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-outage-fix-that-becomes-a-security-incident">A realistic scenario: the outage fix that becomes a security incident</h2>
+
+<p>Imagine a company loses connectivity between an internal service and a partner system during a high-pressure release window. An engineer widens a firewall rule and relaxes an identity condition to restore service quickly. The immediate problem is resolved, everyone moves on, and the emergency ticket is closed with minimal detail.</p>
+
+<p>Weeks later, the relaxed rule is still in place.
+A previously restricted administrative path is now reachable from a wider source range.
+Logs show the change happened, but no one revisited whether it should still exist.</p>
+
+<p>Eventually, someone outside the original change window discovers the exposure.</p>
+
+<p>The root problem was not “the firewall was bad.”
+It was not even necessarily “the engineer made a reckless decision.”</p>
+
+<p>The root problem was that the organization treated change as a speed event instead of a controlled risk decision.</p>
+
+<p>A stronger process would have required:</p>
+
+<ul>
+  <li>clearer impact analysis before widening access</li>
+  <li>a time limit or expiration on the exception</li>
+  <li>post-change validation against the intended security baseline</li>
+  <li>a retrospective review to decide whether the emergency change should be rolled back, redesigned, or formalized safely</li>
+</ul>
+
+<p>This is exactly the kind of situation CISSP wants you to reason about. The secure answer is rarely “ban change.” It is “control change so urgent decisions do not silently become long-term weaknesses.”</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-remain-true">Established principles that remain true</h3>
+
+<p>These ideas have been stable for years:</p>
+
+<ul>
+  <li>only authorized changes should reach production</li>
+  <li>security baselines should be documented and maintained</li>
+  <li>separation of duties and least privilege matter during implementation</li>
+  <li>there should be an audit trail of who changed what, when, and why</li>
+  <li>every important change should be validated, not just deployed</li>
+</ul>
+
+<p>Those principles are durable because they protect both security and reliability.</p>
+
+<h3 id="what-looks-more-modern-in-practice">What looks more modern in practice</h3>
+
+<p>What has changed is <strong>how</strong> good teams implement those principles.</p>
+
+<p>In older environments, change control often meant large manual review boards and slower release cycles. In modern cloud and platform teams, the better pattern is often:</p>
+
+<ul>
+  <li>infrastructure as code instead of ad hoc console changes</li>
+  <li>peer-reviewed pull requests instead of undocumented manual edits</li>
+  <li>automated testing and policy checks in CI/CD pipelines</li>
+  <li>drift detection to flag unauthorized configuration changes</li>
+  <li>temporary privileged access instead of standing admin rights</li>
+  <li>fast emergency fixes with required retrospective review</li>
+</ul>
+
+<p>That is an important distinction.</p>
+
+<p><strong>Good change management is not anti-speed. It is anti-uncontrolled change.</strong></p>
+
+<p>In fact, automation often makes change both faster and safer because the path becomes more repeatable and more observable.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, this topic is not about memorizing one favorite process diagram. It is about understanding the control objective.</p>
+
+<p>CISSP wants you to recognize that change management helps preserve:</p>
+
+<ul>
+  <li>system integrity</li>
+  <li>service availability</li>
+  <li>accountability</li>
+  <li>traceability</li>
+  <li>compliance with approved baselines and policies</li>
+</ul>
+
+<p>If a question asks about reducing risk from unauthorized or harmful changes, the best answer often includes some combination of:</p>
+
+<ul>
+  <li>formal change control</li>
+  <li>testing before production</li>
+  <li>proper approval and documentation</li>
+  <li>rollback planning</li>
+  <li>post-change review</li>
+  <li>configuration management and baseline control</li>
+</ul>
+
+<p>The exam mindset is usually broader than “who touches the ticket.” It asks what most reduces organizational risk.</p>
+
+<h2 id="practical-checklist-for-engineering-teams">Practical checklist for engineering teams</h2>
+
+<p>If you want the real-world version, these are the questions worth asking before a change goes live:</p>
+
+<ul>
+  <li><strong>What security-sensitive behavior could this change affect?</strong></li>
+  <li><strong>Are we changing network exposure, authentication, authorization, logging, encryption, or data handling?</strong></li>
+  <li><strong>Has the change been tested in a way that would catch the most likely failure mode?</strong></li>
+  <li><strong>Do we know who approved it and who owns the outcome afterward?</strong></li>
+  <li><strong>Is there a rollback path to a known good state?</strong></li>
+  <li><strong>If this is an emergency change, when is the retrospective review scheduled?</strong></li>
+  <li><strong>How will we confirm the system still matches the intended baseline after the change?</strong></li>
+</ul>
+
+<p>And one more question that matters more than people think:</p>
+
+<ul>
+  <li><strong>If this temporary exception is still in place 30 days from now, who will notice?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/emergency-change-loop.svg" alt="Loop diagram showing emergency change, temporary exception, missed review, configuration drift, increased exposure, and retrospective correction." />
+  <figcaption>Emergency changes are sometimes necessary. The risk comes when no one closes the loop afterward.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Configuration management defines the approved state. Change management governs how you safely move away from it and back into control.</strong></p>
+
+<p>That is why this topic matters so much. Security programs do not fail only because attackers are clever. They also fail because normal operational changes slowly erode the conditions that were supposed to keep the environment trustworthy.</p>
+
+<p>A secure system is not just built securely once.
+It stays secure because change stays accountable.</p>
+
+<p>If you are working through CISSP too, this is one of those areas worth learning beyond the exam. It shows up everywhere real systems drift, break, and get exposed.</p>
+
+<p><strong>Meta description:</strong> Learn why CISSP treats change management as a security control and how baselines, approvals, testing, rollback, and validation prevent avoidable risk.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP change management security control</li>
+  <li>configuration management vs change management CISSP</li>
+  <li>security-focused change control best practices</li>
+  <li>emergency change management cybersecurity</li>
+  <li>secure configuration baseline and drift detection</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

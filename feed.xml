@@ -1,4 +1,291 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-07T18:08:16+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #16: More Logs Do Not Mean Better Monitoring</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/" rel="alternate" type="text/html" title="CISSP #16: More Logs Do Not Mean Better Monitoring" /><published>2026-04-07T12:45:00+00:00</published><updated>2026-04-07T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/"><![CDATA[<p>A lot of organizations have no shortage of logs. What they lack is <strong>useful signal</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T00:56:17+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #17: Change Management Is a Security Control, Not a CAB Ritual</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/" rel="alternate" type="text/html" title="CISSP #17: Change Management Is a Security Control, Not a CAB Ritual" /><published>2026-04-08T12:17:00+00:00</published><updated>2026-04-08T12:17:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/"><![CDATA[<p>Some of the most avoidable security incidents do not start with advanced malware.
+They start with an ordinary change.</p>
+
+<p>A temporary firewall rule stays open longer than intended. A privileged exception gets added to solve an outage and never gets reviewed. A rushed release bypasses normal testing because “we just need to get production back.” The breach story or availability incident may show up later, but the control failure often begins here.</p>
+
+<p>As I work through CISSP topics, this is one of the concepts that looks administrative until you have to clean up after it. Then it becomes obvious: <strong>change management is not just operations hygiene. It is a security control.</strong></p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" alt="Illustration showing a secure change workflow with request, review, testing, approval, deployment, and validation around a protected production environment." />
+  <figcaption>Secure systems do not stay trustworthy by accident. They stay trustworthy because change is controlled.</figcaption>
+</figure>
+
+<h2 id="why-cissp-cares-about-change-management">Why CISSP cares about change management</h2>
+
+<p>CISSP repeatedly pushes you toward a risk-based, business-aware answer. That means recognizing that security is not only about blocking attackers. It is also about keeping systems in a known, approved, supportable state.</p>
+
+<p>Uncontrolled change undermines that in several ways:</p>
+
+<ul>
+  <li>it breaks secure baselines</li>
+  <li>it creates configuration drift no one intended</li>
+  <li>it weakens accountability because nobody knows who changed what and why</li>
+  <li>it increases the odds of downtime, data exposure, or failed detection</li>
+  <li>it makes recovery harder because the environment no longer matches documented expectations</li>
+</ul>
+
+<p>This is also where <strong>configuration management</strong> and <strong>change management</strong> fit together.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Main question</th>
+      <th>Practical purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Configuration management</strong></td>
+      <td>What should the approved state of the system be?</td>
+      <td>Establishes baselines, inventories important components, and helps detect drift</td>
+    </tr>
+    <tr>
+      <td><strong>Change management</strong></td>
+      <td>How do we safely move from one approved state to another?</td>
+      <td>Requires analysis, authorization, testing, implementation control, and validation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That distinction matters for the exam and for real life. A secure baseline is useful. A secure baseline that can be changed casually without review does not stay secure for long.</p>
+
+<p>NIST’s guidance on security-focused configuration management and the Configuration Management family in SP 800-53 reinforce the same durable ideas: define approved states, control changes, document them, and monitor for unauthorized deviation.</p>
+
+<h2 id="good-change-control-is-not-just-bureaucracy">Good change control is not just bureaucracy</h2>
+
+<p>The phrase “change management” can make engineers think of slow meetings, overloaded ticket queues, and a CAB that exists mostly to delay obvious work.</p>
+
+<p>That is the bad version.</p>
+
+<p>The good version is much simpler: <strong>make meaningful changes in a way that is authorized, tested, reversible, and visible.</strong></p>
+
+<p>That usually includes:</p>
+
+<ol>
+  <li><strong>A clear request</strong>
+    <ul>
+      <li>What is changing?</li>
+      <li>Why is it needed?</li>
+      <li>What business service or security objective is affected?</li>
+    </ul>
+  </li>
+  <li><strong>Impact and risk analysis</strong>
+    <ul>
+      <li>Could this affect confidentiality, integrity, or availability?</li>
+      <li>Does it change network exposure, identity rules, logging, or data flows?</li>
+      <li>What depends on this system that could break quietly?</li>
+    </ul>
+  </li>
+  <li><strong>Testing before production</strong>
+    <ul>
+      <li>Has it been validated somewhere safer than live customer traffic?</li>
+      <li>Did we test both the desired outcome and likely failure conditions?</li>
+    </ul>
+  </li>
+  <li><strong>Appropriate approval</strong>
+    <ul>
+      <li>Not every change needs the same level of ceremony.</li>
+      <li>But the right owner should understand and accept the risk.</li>
+    </ul>
+  </li>
+  <li><strong>Implementation control</strong>
+    <ul>
+      <li>Who is allowed to make the change?</li>
+      <li>During what window?</li>
+      <li>With what level of access?</li>
+    </ul>
+  </li>
+  <li><strong>Rollback planning</strong>
+    <ul>
+      <li>If the change fails, how do we restore a known good state quickly?</li>
+    </ul>
+  </li>
+  <li><strong>Post-change validation and documentation</strong>
+    <ul>
+      <li>Did the intended result happen?</li>
+      <li>Were logs, alerts, and dependent services checked afterward?</li>
+      <li>Is the record good enough for accountability and troubleshooting?</li>
+    </ul>
+  </li>
+</ol>
+
+<p>That is not ritual for its own sake. That is how you reduce surprise.</p>
+
+<h2 id="the-security-failures-hidden-inside-temporary-changes">The security failures hidden inside “temporary” changes</h2>
+
+<p>One reason this topic matters so much is that high-risk changes often look small when they are first proposed.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li>a “temporary” any-to-any firewall rule for troubleshooting</li>
+  <li>an emergency service account permission increase</li>
+  <li>a monitoring exclusion to reduce alert noise during a release</li>
+  <li>a quick change to an MFA or recovery setting because a VIP is locked out</li>
+  <li>a production hotfix applied manually and never codified into the normal pipeline</li>
+</ul>
+
+<p>Each of these can be justified in the moment. The danger is not always the initial decision. The danger is the lack of expiration, review, validation, and cleanup.</p>
+
+<p>This is why mature teams treat emergency changes as <strong>expedited</strong>, not <strong>exempt</strong>.</p>
+
+<p>In good environments, an emergency change still gets:</p>
+
+<ul>
+  <li>a narrow purpose</li>
+  <li>limited duration</li>
+  <li>documented ownership</li>
+  <li>retrospective review</li>
+  <li>cleanup or permanent normalization afterward</li>
+</ul>
+
+<p>If the organization skips that last part, temporary exceptions become permanent attack surface.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/change-control-flow.svg" alt="Flow diagram showing request, risk review, testing, approval, implementation, validation, and documentation in a secure change process." />
+  <figcaption>Healthy change control is a flow: request, assess, test, approve, implement, validate, and record.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-outage-fix-that-becomes-a-security-incident">A realistic scenario: the outage fix that becomes a security incident</h2>
+
+<p>Imagine a company loses connectivity between an internal service and a partner system during a high-pressure release window. An engineer widens a firewall rule and relaxes an identity condition to restore service quickly. The immediate problem is resolved, everyone moves on, and the emergency ticket is closed with minimal detail.</p>
+
+<p>Weeks later, the relaxed rule is still in place.
+A previously restricted administrative path is now reachable from a wider source range.
+Logs show the change happened, but no one revisited whether it should still exist.</p>
+
+<p>Eventually, someone outside the original change window discovers the exposure.</p>
+
+<p>The root problem was not “the firewall was bad.”
+It was not even necessarily “the engineer made a reckless decision.”</p>
+
+<p>The root problem was that the organization treated change as a speed event instead of a controlled risk decision.</p>
+
+<p>A stronger process would have required:</p>
+
+<ul>
+  <li>clearer impact analysis before widening access</li>
+  <li>a time limit or expiration on the exception</li>
+  <li>post-change validation against the intended security baseline</li>
+  <li>a retrospective review to decide whether the emergency change should be rolled back, redesigned, or formalized safely</li>
+</ul>
+
+<p>This is exactly the kind of situation CISSP wants you to reason about. The secure answer is rarely “ban change.” It is “control change so urgent decisions do not silently become long-term weaknesses.”</p>
+
+<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
+
+<h3 id="established-principles-that-remain-true">Established principles that remain true</h3>
+
+<p>These ideas have been stable for years:</p>
+
+<ul>
+  <li>only authorized changes should reach production</li>
+  <li>security baselines should be documented and maintained</li>
+  <li>separation of duties and least privilege matter during implementation</li>
+  <li>there should be an audit trail of who changed what, when, and why</li>
+  <li>every important change should be validated, not just deployed</li>
+</ul>
+
+<p>Those principles are durable because they protect both security and reliability.</p>
+
+<h3 id="what-looks-more-modern-in-practice">What looks more modern in practice</h3>
+
+<p>What has changed is <strong>how</strong> good teams implement those principles.</p>
+
+<p>In older environments, change control often meant large manual review boards and slower release cycles. In modern cloud and platform teams, the better pattern is often:</p>
+
+<ul>
+  <li>infrastructure as code instead of ad hoc console changes</li>
+  <li>peer-reviewed pull requests instead of undocumented manual edits</li>
+  <li>automated testing and policy checks in CI/CD pipelines</li>
+  <li>drift detection to flag unauthorized configuration changes</li>
+  <li>temporary privileged access instead of standing admin rights</li>
+  <li>fast emergency fixes with required retrospective review</li>
+</ul>
+
+<p>That is an important distinction.</p>
+
+<p><strong>Good change management is not anti-speed. It is anti-uncontrolled change.</strong></p>
+
+<p>In fact, automation often makes change both faster and safer because the path becomes more repeatable and more observable.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>On the exam, this topic is not about memorizing one favorite process diagram. It is about understanding the control objective.</p>
+
+<p>CISSP wants you to recognize that change management helps preserve:</p>
+
+<ul>
+  <li>system integrity</li>
+  <li>service availability</li>
+  <li>accountability</li>
+  <li>traceability</li>
+  <li>compliance with approved baselines and policies</li>
+</ul>
+
+<p>If a question asks about reducing risk from unauthorized or harmful changes, the best answer often includes some combination of:</p>
+
+<ul>
+  <li>formal change control</li>
+  <li>testing before production</li>
+  <li>proper approval and documentation</li>
+  <li>rollback planning</li>
+  <li>post-change review</li>
+  <li>configuration management and baseline control</li>
+</ul>
+
+<p>The exam mindset is usually broader than “who touches the ticket.” It asks what most reduces organizational risk.</p>
+
+<h2 id="practical-checklist-for-engineering-teams">Practical checklist for engineering teams</h2>
+
+<p>If you want the real-world version, these are the questions worth asking before a change goes live:</p>
+
+<ul>
+  <li><strong>What security-sensitive behavior could this change affect?</strong></li>
+  <li><strong>Are we changing network exposure, authentication, authorization, logging, encryption, or data handling?</strong></li>
+  <li><strong>Has the change been tested in a way that would catch the most likely failure mode?</strong></li>
+  <li><strong>Do we know who approved it and who owns the outcome afterward?</strong></li>
+  <li><strong>Is there a rollback path to a known good state?</strong></li>
+  <li><strong>If this is an emergency change, when is the retrospective review scheduled?</strong></li>
+  <li><strong>How will we confirm the system still matches the intended baseline after the change?</strong></li>
+</ul>
+
+<p>And one more question that matters more than people think:</p>
+
+<ul>
+  <li><strong>If this temporary exception is still in place 30 days from now, who will notice?</strong></li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/emergency-change-loop.svg" alt="Loop diagram showing emergency change, temporary exception, missed review, configuration drift, increased exposure, and retrospective correction." />
+  <figcaption>Emergency changes are sometimes necessary. The risk comes when no one closes the loop afterward.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Configuration management defines the approved state. Change management governs how you safely move away from it and back into control.</strong></p>
+
+<p>That is why this topic matters so much. Security programs do not fail only because attackers are clever. They also fail because normal operational changes slowly erode the conditions that were supposed to keep the environment trustworthy.</p>
+
+<p>A secure system is not just built securely once.
+It stays secure because change stays accountable.</p>
+
+<p>If you are working through CISSP too, this is one of those areas worth learning beyond the exam. It shows up everywhere real systems drift, break, and get exposed.</p>
+
+<p><strong>Meta description:</strong> Learn why CISSP treats change management as a security control and how baselines, approvals, testing, rollback, and validation prevent avoidable risk.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP change management security control</li>
+  <li>configuration management vs change management CISSP</li>
+  <li>security-focused change control best practices</li>
+  <li>emergency change management cybersecurity</li>
+  <li>secure configuration baseline and drift detection</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="change-management" /><category term="configuration-management" /><category term="security-operations" /><category term="baselines" /><summary type="html"><![CDATA[Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #16: More Logs Do Not Mean Better Monitoring</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/" rel="alternate" type="text/html" title="CISSP #16: More Logs Do Not Mean Better Monitoring" /><published>2026-04-07T12:45:00+00:00</published><updated>2026-04-07T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-more-logs-do-not-mean-better-monitoring/"><![CDATA[<p>A lot of organizations have no shortage of logs. What they lack is <strong>useful signal</strong>.</p>
 
 <p>That is one of the more practical CISSP lessons in Domain 6. Logging, monitoring, baselining, and anomaly detection are all important. But simply collecting more data does not automatically create better visibility. In some environments, it does the opposite: it buries the meaningful events under a flood of low-value noise.</p>
 
@@ -2085,165 +2372,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 2. secure by design for software engineers
 3. fail safe defaults complete mediation CISSP
 4. CISSP domain 3 security architecture concepts
-5. trust boundaries and attack surface reduction -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="secure-design" /><category term="secure-by-design" /><category term="trust-boundaries" /><category term="software-engineering" /><summary type="html"><![CDATA[CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #7: Defense in Depth Is What Keeps One Failure from Becoming an Incident</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/" rel="alternate" type="text/html" title="CISSP #7: Defense in Depth Is What Keeps One Failure from Becoming an Incident" /><published>2026-04-03T12:07:00+00:00</published><updated>2026-04-03T12:07:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-defense-in-depth-layered-security/"><![CDATA[<p>A lot of security plans quietly depend on one thing working perfectly.</p>
-
-<p>The firewall has to block it. MFA has to stop it. The code review has to catch it. The admin approval flow has to work every time. Real systems do not stay that neat for very long.</p>
-
-<p>People make mistakes. Configurations drift. Attackers look for the one gap the team assumed was “good enough.” That is why defense in depth remains one of the most durable ideas in CISSP and in real security work: it assumes that any single control can fail, and it designs accordingly.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" alt="Layered security diagram showing identity, application, data, monitoring, and recovery controls surrounding a business system." />
-  <figcaption>Defense in depth is what keeps one miss, one mistake, or one bypass from turning into a full incident.</figcaption>
-</figure>
-
-<h2 id="defense-in-depth-is-not-buy-more-tools">Defense in depth is not “buy more tools”</h2>
-
-<p>Defense in depth means using <strong>multiple layers of protection</strong> so that the failure of one safeguard does not automatically become the failure of the whole system.</p>
-
-<p>That does not mean adding random products until the architecture is hard to explain. Good layering is more disciplined than that. It asks whether the organization has meaningful protection across several dimensions:</p>
-
-<ul>
-  <li><strong>administrative controls</strong> such as policy, approval, separation of duties, and training</li>
-  <li><strong>technical controls</strong> such as authentication, authorization, segmentation, encryption, and logging</li>
-  <li><strong>physical controls</strong> where they matter, including facility and device protections</li>
-  <li><strong>preventive, detective, and corrective</strong> measures rather than a single kind of control</li>
-</ul>
-
-<p>This is one reason CISSP likes the concept so much. It reflects mature security thinking: assume imperfection, reduce single points of failure, and design for resilience rather than wishful certainty.</p>
-
-<h2 id="why-this-still-matters-in-cloud-saas-and-ai-heavy-environments">Why this still matters in cloud, SaaS, and AI-heavy environments</h2>
-
-<p>The principle itself is not new. What has changed is where the layers live.</p>
-
-<p>In older mental models, security discussions often revolved around the network perimeter. In modern environments, the control plane is far more distributed. Identity systems, cloud permissions, SaaS admin consoles, CI/CD pipelines, secrets stores, and endpoint posture all influence whether an attacker can move deeper into the environment.</p>
-
-<p>That is where current guidance still lines up well with the classic CISSP approach. NIST CSF 2.0 continues to frame cybersecurity as risk reduction across the organization, and NIST SP 800-207 describes zero trust as a shift away from assuming static, network-based trust. Neither idea replaces defense in depth. They make it more necessary.</p>
-
-<p>A modern layered model often includes:</p>
-
-<ul>
-  <li>strong identity verification and phishing-resistant MFA where possible</li>
-  <li>least privilege and just-in-time elevation for privileged tasks</li>
-  <li>secure configuration baselines and infrastructure guardrails</li>
-  <li>application-layer authorization instead of trusting network location alone</li>
-  <li>logging, alerting, and retention that support real investigation</li>
-  <li>tested backup and recovery paths when prevention does not hold</li>
-</ul>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/control-layers.svg" alt="Stacked control layers showing governance, identity, application, data, monitoring, and recovery working together." />
-  <figcaption>The important question is not whether you have one control. It is whether the controls meaningfully support each other.</figcaption>
-</figure>
-
-<h2 id="a-realistic-example-one-compromised-identity-very-different-outcomes">A realistic example: one compromised identity, very different outcomes</h2>
-
-<p>Imagine a support engineer at a SaaS company clicks a convincing phishing link and unintentionally hands over a valid session token.</p>
-
-<p>If the organization is relying on a single layer, the attacker may now have a direct path into customer-impacting systems. From there, the attacker might browse internal tools, access sensitive tickets, escalate to privileged roles, disable monitoring, or pivot toward production resources.</p>
-
-<p>Now imagine the same situation in an environment built with defense in depth in mind.</p>
-
-<p>The identity is still compromised, which is serious. But several other layers start reducing the damage:</p>
-
-<ul>
-  <li>the engineer’s role is limited by least privilege</li>
-  <li>privileged actions require step-up authentication or a separate admin flow</li>
-  <li>internal tools enforce additional authorization checks</li>
-  <li>sensitive systems are segmented and not broadly reachable</li>
-  <li>high-risk changes generate alerts in a logging system the engineer cannot quietly disable</li>
-  <li>incident response playbooks support rapid token revocation and containment</li>
-</ul>
-
-<p>The phishing event still matters. But it no longer guarantees full organizational exposure.</p>
-
-<p>That is the real value of defense in depth. It does not promise that nothing bad will happen. It makes the outcome smaller, slower, noisier, and easier to contain.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, defense in depth is rarely about choosing a slogan. It is usually part of a broader best-answer pattern.</p>
-
-<p>CISSP wants you to recognize that strong security programs:</p>
-
-<ul>
-  <li>avoid dependence on one control or one person</li>
-  <li>use layers that address different parts of the risk</li>
-  <li>combine people, process, and technology instead of over-trusting any single one</li>
-  <li>balance prevention with detection and recovery</li>
-  <li>reduce business risk without pretending that perfect prevention exists</li>
-</ul>
-
-<p>That is why a layered answer often beats a narrower one.</p>
-
-<p>If a question asks how to protect a sensitive system, the strongest answer usually does more than say “install a firewall” or “enable logging.” It reflects a design mindset that assumes controls can fail and that accountability, visibility, and recovery matter too.</p>
-
-<h2 id="common-mistakes-teams-make-when-they-think-they-are-doing-layering">Common mistakes teams make when they think they are doing layering</h2>
-
-<p>A lot of environments look layered on paper but remain fragile in practice.</p>
-
-<h3 id="1-every-layer-depends-on-the-same-identity-plane">1. Every layer depends on the same identity plane</h3>
-
-<p>If one privileged identity can change the cloud configuration, disable logging, weaken security tooling, and access the secrets store, the environment may have many products but still too little separation.</p>
-
-<h3 id="2-the-controls-are-duplicates-not-layers">2. The controls are duplicates, not layers</h3>
-
-<p>Buying two tools that do roughly the same thing is not the same as designing complementary protections. Real layers should catch different failure modes.</p>
-
-<h3 id="3-detection-exists-but-response-is-weak">3. Detection exists, but response is weak</h3>
-
-<p>Many teams are better at generating alerts than acting on them. A detective control without an operational response path is helpful, but incomplete.</p>
-
-<h3 id="4-exceptions-quietly-punch-through-everything">4. Exceptions quietly punch through everything</h3>
-
-<p>Temporary access, emergency firewall rules, broad service accounts, or unreviewed integrations can undermine several layers at once. This is one of the most common ways mature-looking environments become easier to compromise than they appear.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/attack-path.svg" alt="Comparison showing a single-control environment versus a layered-control environment interrupting an attacker path." />
-  <figcaption>Layering works best when each control interrupts a different stage of the attack path.</figcaption>
-</figure>
-
-<h2 id="what-good-defense-in-depth-looks-like-in-ordinary-organizations">What good defense in depth looks like in ordinary organizations</h2>
-
-<p>It usually looks less dramatic than conference talks make it sound.</p>
-
-<p>A mature organization often improves layering through steady, unglamorous decisions:</p>
-
-<ul>
-  <li>review privileged access and remove standing rights that are no longer justified</li>
-  <li>separate daily-use identities from high-risk administrative activity</li>
-  <li>protect critical systems with more than one approval or verification step</li>
-  <li>enforce authorization checks at the application and data levels, not just at the edge</li>
-  <li>centralize logs in a place that is hard for an attacker to tamper with</li>
-  <li>rehearse recovery so backups are not just a comforting idea</li>
-</ul>
-
-<p>None of those steps is flashy on its own. Together, they make the environment far more resilient.</p>
-
-<h2 id="the-practical-question-worth-remembering">The practical question worth remembering</h2>
-
-<p>If you are studying for CISSP, one question is worth carrying into almost every architecture and operations topic:</p>
-
-<p><strong>If this control fails, what still stands?</strong></p>
-
-<p>That question improves exam judgment because it pushes you toward layered, risk-based answers. It also improves real-world security because it forces the team to stop treating one safeguard as a magic guarantee.</p>
-
-<p>The more I work through CISSP material, the more this seems to be the pattern underneath a lot of the certification: mature security is not built on optimism. It is built on thoughtful design that expects failure, limits blast radius, and keeps the business able to recover.</p>
-
-<p>Defense in depth is one of the clearest examples of that mindset.</p>
-
-<p>If you are studying too, this is one of those ideas worth understanding beyond the flashcard definition.</p>
-
-<hr />
-
-<p><em>Post 7 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Learn how defense in depth works in CISSP and real-world security, including layered controls for cloud, SaaS, identity, detection, and recovery.
-
-**SEO keyword ideas:**
-1. CISSP defense in depth explained
-2. defense in depth layered security examples
-3. zero trust vs defense in depth
-4. CISSP security architecture principles
-5. layered security controls for cloud environments -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="security-architecture" /><category term="defense-in-depth" /><category term="layered-security" /><category term="zero-trust" /><summary type="html"><![CDATA[Defense in depth is a classic CISSP principle because real systems never fail in just one place. This practical guide explains layered security for modern cloud, SaaS, and identity-centric environments. Post 7 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-defense-in-depth-layered-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+5. trust boundaries and attack surface reduction -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="secure-design" /><category term="secure-by-design" /><category term="trust-boundaries" /><category term="software-engineering" /><summary type="html"><![CDATA[CISSP Domain 3 is not just about terminology. Secure design principles explain how secure defaults, complete mediation, trust boundaries, and reduced attack surface prevent ordinary mistakes from becoming serious incidents. Post 8 of 60 in my CISSP study series.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-design-principles-secure-by-default/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

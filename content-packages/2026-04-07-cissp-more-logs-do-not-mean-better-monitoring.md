@@ -29,8 +29,8 @@
 
 ### Credible references used for framing
 
-- NIST SP 800-92, *Guide to Computer Security Log Management*
-- NIST SP 800-137, *Information Security Continuous Monitoring (ISCM)*
+- NIST SP 800-92, _Guide to Computer Security Log Management_
+- NIST SP 800-137, _Information Security Continuous Monitoring (ISCM)_
 - OWASP Logging Cheat Sheet
 
 ---
@@ -297,6 +297,7 @@ The mistake is assuming more data automatically means better security.
 It doesn’t.
 
 If the team cannot answer:
+
 - what happened
 - who was involved
 - whether this is normal
