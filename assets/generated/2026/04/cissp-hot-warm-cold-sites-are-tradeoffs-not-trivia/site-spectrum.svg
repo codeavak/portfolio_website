@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Recovery site spectrum</title>
+  <desc id="desc">Comparison diagram showing hot, warm, and cold site options across readiness, effort, and cost.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">The Recovery Site Spectrum</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">More readiness usually means less downtime and more ongoing cost.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+    <rect x="70" y="160" width="250" height="290" rx="18" fill="#111827" stroke="#22c55e"/>
+    <text x="195" y="200" text-anchor="middle" fill="#bbf7d0" font-size="24">Hot site</text>
+    <text x="100" y="245" fill="#cbd5e1">• most pre-staged capability</text>
+    <text x="100" y="278" fill="#cbd5e1">• fastest restoration path</text>
+    <text x="100" y="311" fill="#cbd5e1">• highest ongoing cost</text>
+    <text x="100" y="360" fill="#bbf7d0">Best fit:</text>
+    <text x="100" y="390" fill="#cbd5e1">critical services with tight</text>
+    <text x="100" y="417" fill="#cbd5e1">downtime tolerance</text>
+
+    <rect x="375" y="160" width="250" height="290" rx="18" fill="#111827" stroke="#f59e0b"/>
+    <text x="500" y="200" text-anchor="middle" fill="#fde68a" font-size="24">Warm site</text>
+    <text x="405" y="245" fill="#cbd5e1">• partial pre-staging</text>
+    <text x="405" y="278" fill="#cbd5e1">• some restore work remains</text>
+    <text x="405" y="311" fill="#cbd5e1">• middle-ground cost</text>
+    <text x="405" y="360" fill="#fde68a">Best fit:</text>
+    <text x="405" y="390" fill="#cbd5e1">important systems that can</text>
+    <text x="405" y="417" fill="#cbd5e1">tolerate moderate delay</text>
+
+    <rect x="680" y="160" width="250" height="290" rx="18" fill="#111827" stroke="#60a5fa"/>
+    <text x="805" y="200" text-anchor="middle" fill="#bfdbfe" font-size="24">Cold site</text>
+    <text x="710" y="245" fill="#cbd5e1">• basic facility or space</text>
+    <text x="710" y="278" fill="#cbd5e1">• most setup happens later</text>
+    <text x="710" y="311" fill="#cbd5e1">• lowest ongoing cost</text>
+    <text x="710" y="360" fill="#bfdbfe">Best fit:</text>
+    <text x="710" y="390" fill="#cbd5e1">lower-priority workloads with</text>
+    <text x="710" y="417" fill="#cbd5e1">more downtime tolerance</text>
+  </g>
+
+  <rect x="175" y="500" width="650" height="38" rx="10" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="524" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="15">The right answer is the one that matches business impact honestly.</text>
+</svg>

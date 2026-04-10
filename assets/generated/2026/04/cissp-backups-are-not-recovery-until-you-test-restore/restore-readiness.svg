@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Restore readiness stack</title>
+  <desc id="desc">Layered diagram showing recovery readiness through business priorities, isolated copies, runbooks and credentials, restore drills, and validation before resuming service.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">A Practical Restore Readiness Stack</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Recovery works when business priorities, isolation, access, and practice reinforce each other.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="220" y="460" width="560" height="58" rx="14" fill="#111827" stroke="#22c55e"/>
+    <text x="500" y="496" text-anchor="middle" fill="#bbf7d0">Recovery validation and business signoff</text>
+
+    <rect x="245" y="380" width="510" height="58" rx="14" fill="#111827" stroke="#a78bfa"/>
+    <text x="500" y="416" text-anchor="middle" fill="#ddd6fe">Restore drills, tabletop exercises, and evidence</text>
+
+    <rect x="270" y="300" width="460" height="58" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="500" y="336" text-anchor="middle" fill="#bfdbfe">Runbooks, credentials, certificates, and ownership</text>
+
+    <rect x="295" y="220" width="410" height="58" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="500" y="256" text-anchor="middle" fill="#fde68a">Isolated backup copies and clean rebuild paths</text>
+
+    <rect x="320" y="140" width="360" height="58" rx="14" fill="#111827" stroke="#34d399"/>
+    <text x="500" y="176" text-anchor="middle" fill="#bbf7d0">BIA priorities with approved RPO and RTO</text>
+  </g>
+
+  <rect x="235" y="540" width="530" height="34" rx="10" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="562" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="15">If one layer is missing, the restore may still fail under pressure.</text>
+</svg>
