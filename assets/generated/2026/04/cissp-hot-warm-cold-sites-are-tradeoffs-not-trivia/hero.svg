@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hot, warm, and cold sites are tradeoffs not trivia hero image</title>
+  <desc id="desc">Editorial illustration comparing hot, warm, and cold recovery site options across speed, readiness, and cost.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08101d"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#09111f" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#12233f" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="105" r="150" fill="#60a5fa" opacity="0.10"/>
+  <circle cx="140" cy="520" r="170" fill="#f59e0b" opacity="0.07"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)" stroke="#93c5fd" stroke-opacity="0.22"/>
+
+  <text x="96" y="145" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CISSP #22</text>
+  <text x="96" y="205" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700">Hot, Warm, and Cold Sites</text>
+  <text x="96" y="250" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700">Are Tradeoffs, Not Trivia</text>
+  <text x="96" y="304" fill="#c7dbff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Recovery readiness is a business decision about downtime, cost, and effort.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    <rect x="650" y="145" width="120" height="210" rx="16" fill="#111827" stroke="#22c55e"/>
+    <text x="710" y="182" text-anchor="middle" fill="#bbf7d0">Hot</text>
+    <rect x="675" y="205" width="70" height="120" rx="10" fill="#22c55e" opacity="0.75"/>
+    <text x="710" y="348" text-anchor="middle" fill="#bbf7d0" font-size="13">fast / high $</text>
+
+    <rect x="800" y="145" width="120" height="210" rx="16" fill="#111827" stroke="#f59e0b"/>
+    <text x="860" y="182" text-anchor="middle" fill="#fde68a">Warm</text>
+    <rect x="825" y="235" width="70" height="90" rx="10" fill="#f59e0b" opacity="0.75"/>
+    <text x="860" y="348" text-anchor="middle" fill="#fde68a" font-size="13">balanced</text>
+
+    <rect x="950" y="145" width="120" height="210" rx="16" fill="#111827" stroke="#60a5fa"/>
+    <text x="1010" y="182" text-anchor="middle" fill="#bfdbfe">Cold</text>
+    <rect x="975" y="265" width="70" height="60" rx="10" fill="#60a5fa" opacity="0.75"/>
+    <text x="1010" y="348" text-anchor="middle" fill="#bfdbfe" font-size="13">slow / low $</text>
+  </g>
+
+  <rect x="96" y="368" width="410" height="108" rx="18" fill="#0b1220" stroke="#475569"/>
+  <text x="122" y="402" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">What really drives the choice</text>
+  <text x="122" y="432" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">• Business impact and approved RTO/RPO</text>
+  <text x="122" y="457" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">• How much capability is ready before the outage</text>
+</svg>

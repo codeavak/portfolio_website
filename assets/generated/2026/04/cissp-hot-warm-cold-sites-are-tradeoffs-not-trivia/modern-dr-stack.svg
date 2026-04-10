@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Modern DR stack</title>
+  <desc id="desc">Layered diagram showing disaster recovery readiness through business impact analysis, pre-staged environments, identity access, dependency mapping, and testing.</desc>
+  <rect width="1000" height="600" fill="#0f172a" rx="24"/>
+  <text x="60" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Modern Recovery Readiness Stack</text>
+  <text x="60" y="102" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="18">Site choice only works when the surrounding recovery system is disciplined too.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="220" y="460" width="560" height="58" rx="14" fill="#111827" stroke="#22c55e"/>
+    <text x="500" y="496" text-anchor="middle" fill="#bbf7d0">Recovery testing, validation, and lessons learned</text>
+
+    <rect x="245" y="380" width="510" height="58" rx="14" fill="#111827" stroke="#a78bfa"/>
+    <text x="500" y="416" text-anchor="middle" fill="#ddd6fe">Dependency mapping, restore order, and runbooks</text>
+
+    <rect x="270" y="300" width="460" height="58" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="500" y="336" text-anchor="middle" fill="#bfdbfe">Identity access, secrets, network, and connectivity</text>
+
+    <rect x="295" y="220" width="410" height="58" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="500" y="256" text-anchor="middle" fill="#fde68a">Pre-staged alternate environment or recovery site</text>
+
+    <rect x="320" y="140" width="360" height="58" rx="14" fill="#111827" stroke="#34d399"/>
+    <text x="500" y="176" text-anchor="middle" fill="#bbf7d0">BIA with approved RTO and RPO targets</text>
+  </g>
+
+  <rect x="220" y="540" width="560" height="34" rx="10" fill="#0b1220" stroke="#475569"/>
+  <text x="500" y="562" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="15">A “hot” environment that is untested or blocked by dependencies is not truly hot in practice.</text>
+</svg>

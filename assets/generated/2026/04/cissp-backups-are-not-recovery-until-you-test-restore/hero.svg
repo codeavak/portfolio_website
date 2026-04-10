@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Backups are not recovery until you test the restore hero image</title>
+  <desc id="desc">Editorial illustration showing protected backup copies moving through a tested restore path into a recovered business service.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08101d"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#09111f" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#10233d" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="96" r="145" fill="#60a5fa" opacity="0.10"/>
+  <circle cx="135" cy="528" r="160" fill="#22c55e" opacity="0.08"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)" stroke="#93c5fd" stroke-opacity="0.22"/>
+
+  <text x="96" y="145" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CISSP #21</text>
+  <text x="96" y="205" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="39" font-weight="700">Backups Are Not Recovery</text>
+  <text x="96" y="250" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="39" font-weight="700">Until You Test the Restore</text>
+  <text x="96" y="304" fill="#c7dbff" font-family="Segoe UI, Arial, sans-serif" font-size="22">A green dashboard is not enough. Recovery has to work under pressure.</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">
+    <rect x="670" y="110" width="170" height="58" rx="14" fill="#111827" stroke="#22c55e"/>
+    <text x="755" y="145" text-anchor="middle" fill="#bbf7d0">Protected copies</text>
+
+    <rect x="670" y="240" width="170" height="58" rx="14" fill="#111827" stroke="#60a5fa"/>
+    <text x="755" y="275" text-anchor="middle" fill="#bfdbfe">Tested restore</text>
+
+    <rect x="900" y="175" width="170" height="58" rx="14" fill="#111827" stroke="#f59e0b"/>
+    <text x="985" y="210" text-anchor="middle" fill="#fde68a">Clean rebuild</text>
+
+    <rect x="720" y="390" width="170" height="58" rx="14" fill="#111827" stroke="#a78bfa"/>
+    <text x="805" y="425" text-anchor="middle" fill="#ddd6fe">Recovered service</text>
+  </g>
+
+  <g stroke-width="4" fill="none">
+    <line x1="755" y1="168" x2="755" y2="240" stroke="#60a5fa"/>
+    <line x1="840" y1="205" x2="900" y2="204" stroke="#f59e0b"/>
+    <line x1="755" y1="298" x2="805" y2="390" stroke="#a78bfa"/>
+    <line x1="985" y1="233" x2="860" y2="390" stroke="#34d399"/>
+  </g>
+
+  <rect x="96" y="360" width="360" height="110" rx="18" fill="#0b1220" stroke="#475569"/>
+  <text x="120" y="395" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">What matters in practice</text>
+  <text x="120" y="425" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">• Recovery priorities tied to business impact</text>
+  <text x="120" y="450" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">• Isolated copies and documented access</text>
+  <text x="120" y="475" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="16">• Restore drills that prove the path works</text>
+</svg>

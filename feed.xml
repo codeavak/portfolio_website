@@ -1,4 +1,486 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-09T19:32:57+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #20: Single Points of Failure Are Security Risks Too</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/" rel="alternate" type="text/html" title="CISSP #20: Single Points of Failure Are Security Risks Too" /><published>2026-04-09T12:20:00+00:00</published><updated>2026-04-09T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/"><![CDATA[<p>It is easy to think of a single point of failure as an infrastructure diagram problem.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-10T22:44:14+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #22: Hot, Warm, and Cold Sites Are Tradeoffs, Not Trivia</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/" rel="alternate" type="text/html" title="CISSP #22: Hot, Warm, and Cold Sites Are Tradeoffs, Not Trivia" /><published>2026-04-10T12:22:00+00:00</published><updated>2026-04-10T12:22:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/"><![CDATA[<p>A lot of CISSP topics sound dry until you imagine being the person who has to make the decision for real.</p>
+
+<p>“Hot site, warm site, cold site” is a perfect example.
+It can sound like an old exam taxonomy that belongs in flashcards and nowhere else.</p>
+
+<p>But once a critical service is down, the question becomes painfully practical:</p>
+
+<ul>
+  <li>how fast do we need to be running again?</li>
+  <li>what data loss is acceptable?</li>
+  <li>what can the business afford to pay for readiness before the outage happens?</li>
+  <li>what delays are still tolerable when the pressure is real?</li>
+</ul>
+
+<p>That is why this topic matters more than it first appears. <strong>Recovery sites are not trivia terms. They are business decisions about downtime, cost, and resilience.</strong></p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" alt="Illustration comparing hot, warm, and cold recovery site options across readiness, cost, and recovery speed for a critical business service." />
+  <figcaption>The right recovery site is the one that fits business impact, not the one with the most impressive label.</figcaption>
+</figure>
+
+<h2 id="why-cissp-cares-about-recovery-sites">Why CISSP cares about recovery sites</h2>
+
+<p>CISSP consistently asks you to think beyond the technology label and focus on the control objective.
+In this case, the objective is straightforward: <strong>keep critical business functions available within acceptable limits after disruption.</strong></p>
+
+<p>Recovery sites are one way organizations do that.
+They provide an alternate place or alternate environment from which systems and services can resume when the primary environment is unavailable.</p>
+
+<p>That connects directly to familiar continuity ideas:</p>
+
+<ul>
+  <li><strong>RTO</strong>: how quickly a system or service must be restored</li>
+  <li><strong>RPO</strong>: how much data loss is acceptable</li>
+  <li><strong>BIA</strong>: which processes and systems matter most first</li>
+  <li><strong>cost justification</strong>: how much readiness the business is willing to fund before a disruption happens</li>
+</ul>
+
+<p>The point is not to memorize site labels in isolation.
+The point is to understand that each option represents a different level of pre-positioned capability.</p>
+
+<h2 id="the-simple-mental-model-readiness-versus-cost">The simple mental model: readiness versus cost</h2>
+
+<p>The classic labels still help because they represent a spectrum.
+A site that is more ready to assume operations quickly usually costs more to maintain.
+A site that costs less usually requires more setup, more recovery work, and more downtime when the event actually happens.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site type</th>
+      <th>Practical meaning</th>
+      <th>Speed</th>
+      <th>Cost</th>
+      <th>Typical fit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hot site</strong></td>
+      <td>Alternate environment is largely ready to run, with infrastructure, connectivity, and often current or near-current data available</td>
+      <td>Fastest</td>
+      <td>Highest</td>
+      <td>High-impact services with strict downtime tolerance</td>
+    </tr>
+    <tr>
+      <td><strong>Warm site</strong></td>
+      <td>Partially prepared environment with some infrastructure and data restoration work still required</td>
+      <td>Moderate</td>
+      <td>Medium</td>
+      <td>Important systems that can tolerate some delay</td>
+    </tr>
+    <tr>
+      <td><strong>Cold site</strong></td>
+      <td>Basic facility or space with minimal preinstalled capability; recovery work starts after the event</td>
+      <td>Slowest</td>
+      <td>Lowest</td>
+      <td>Lower-priority services or environments with more downtime tolerance</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That is the core of the topic.
+A hot site buys time with money.
+A cold site saves money by accepting more recovery delay and more operational effort later.
+A warm site lives somewhere in the middle.</p>
+
+<p>This is why the best answer in CISSP is often not “choose the most powerful option.”
+It is “choose the option that best matches business impact.”</p>
+
+<h2 id="what-each-option-looks-like-in-real-life">What each option looks like in real life</h2>
+
+<h3 id="hot-site">Hot site</h3>
+
+<p>A hot site is the closest thing to “ready now.”
+It usually has the infrastructure, connectivity, and operational setup required to resume service quickly.
+In modern environments, that might mean a second region, prebuilt failover capacity, replicated workloads, or an alternate processing environment that can take traffic quickly.</p>
+
+<p>The obvious benefit is speed.
+The obvious cost is that you are paying for readiness before you know whether you will need it.</p>
+
+<p>That only makes sense when the business impact justifies it.
+If every hour of downtime means major revenue loss, regulatory exposure, safety concerns, or serious customer harm, faster recovery is usually worth more than the extra cost.</p>
+
+<h3 id="warm-site">Warm site</h3>
+
+<p>A warm site has meaningful preparation, but not enough to resume operations immediately.
+You still need some restoration, synchronization, or configuration steps before the service is ready.</p>
+
+<p>This is often a practical compromise.
+You reduce recovery time materially without paying for full hot-site readiness for every workload.</p>
+
+<p>Many organizations live here for a lot of systems because the economics are more realistic.
+The key is to be honest about the remaining recovery steps instead of pretending “warm” is automatically fast enough.</p>
+
+<h3 id="cold-site">Cold site</h3>
+
+<p>A cold site gives you the least readiness and therefore the slowest recovery.
+It may provide space, power, network access, or a basic alternate location, but the heavy lifting still comes later.</p>
+
+<p>That is not automatically bad.
+For lower-priority processes, it may be perfectly rational.</p>
+
+<p>The problem starts when a cold-site-style strategy is attached to a service with very tight downtime expectations.
+That mismatch is where continuity plans stop being credible.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/site-spectrum.svg" alt="Comparison chart showing hot, warm, and cold recovery sites across readiness, restoration effort, and cost." />
+  <figcaption>These options describe tradeoffs in readiness and effort, not just old terminology.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-when-the-wrong-site-choice-becomes-obvious">A realistic scenario: when the wrong site choice becomes obvious</h2>
+
+<p>Imagine an online payment platform that leadership expects to recover within a few hours after a major outage.
+The service supports customer transactions, settlement timing, and incident communications with partners.</p>
+
+<p>Now imagine the actual recovery design is much closer to a cold site than anyone admits:</p>
+
+<ul>
+  <li>infrastructure has to be rebuilt manually</li>
+  <li>key integrations depend on separate configuration work</li>
+  <li>data restoration is possible, but sequencing is unclear</li>
+  <li>identity, secrets, and certificate dependencies have not been rehearsed under pressure</li>
+</ul>
+
+<p>At that point, the organization does not really have a fast recovery option.
+It has a slow recovery option described with optimistic language.</p>
+
+<p>That is exactly the kind of gap CISSP wants you to notice.
+The control is not what the plan calls it.
+The control is what the organization can actually do within the required timeframe.</p>
+
+<p>Now flip the scenario.
+Suppose the workload is an internal archive or a reporting environment that can stay down for a day or two without serious business damage.
+A hot site might be excessive there.
+A warm or cold approach could be entirely reasonable if the recovery targets are honest and documented.</p>
+
+<h2 id="what-the-exam-is-really-testing">What the exam is really testing</h2>
+
+<p>This is one of those topics where the exam mindset is more valuable than the vocabulary.
+CISSP is usually asking whether you can apply <strong>risk-based judgment</strong>.</p>
+
+<p>The strongest answer tends to align with some combination of:</p>
+
+<ul>
+  <li>criticality of the business function</li>
+  <li>acceptable downtime and data loss</li>
+  <li>dependency mapping and restore order</li>
+  <li>cost versus benefit</li>
+  <li>practical recoverability rather than theoretical intent</li>
+</ul>
+
+<p>That means a hot site is not “best” in every case.
+It is best when the business need supports that level of readiness.
+Likewise, a cold site is not “bad” in every case.
+It is bad when it is misaligned with the required recovery objective.</p>
+
+<p>That is a very CISSP pattern: pick the answer that best protects the mission, not the answer that sounds most impressive.</p>
+
+<h2 id="the-classic-terms-still-matter-but-the-modern-implementation-has-changed">The classic terms still matter, but the modern implementation has changed</h2>
+
+<p>The labels are old.
+The underlying decision is still current.</p>
+
+<p>Today, organizations often implement these ideas through:</p>
+
+<ul>
+  <li>cloud failover regions</li>
+  <li>infrastructure-as-code rebuilds</li>
+  <li>replicated databases and storage snapshots</li>
+  <li>SaaS continuity options</li>
+  <li>alternate identity and administrative access paths</li>
+  <li>pre-staged network and security controls in a recovery environment</li>
+</ul>
+
+<p>So even if nobody on your team literally says “warm site,” the tradeoff still exists.
+You are still deciding how much capacity, configuration, data, and access readiness to maintain in advance.</p>
+
+<p>That is why the classic CISSP vocabulary still has value.
+It gives a clean way to reason about readiness levels even when the technology stack looks modern.</p>
+
+<p>One caution, though: <strong>the cloud does not automatically turn every recovery design into a hot site.</strong>
+If failover steps are manual, dependencies are undocumented, identity paths are fragile, or validation takes hours, the real recovery behavior may be warmer or colder than the architecture slide suggests.</p>
+
+<h2 id="a-few-related-terms-worth-remembering">A few related terms worth remembering</h2>
+
+<p>You may also see other classic recovery options mentioned around this topic, such as:</p>
+
+<ul>
+  <li><strong>mobile sites</strong></li>
+  <li><strong>reciprocal agreements</strong></li>
+  <li><strong>service bureaus or subscription services</strong></li>
+</ul>
+
+<p>Those are useful to recognize, but the bigger lesson remains the same.
+They are all attempts to balance cost, readiness, and availability.</p>
+
+<p>If you understand the main logic of alternate processing capability, the vocabulary becomes much easier to place.</p>
+
+<h2 id="practical-questions-teams-should-ask">Practical questions teams should ask</h2>
+
+<p>If you want the real-world version, these are better questions than “do we have a DR site?”</p>
+
+<ol>
+  <li><strong>Which services actually justify near-immediate recovery?</strong></li>
+  <li><strong>What are the approved <code class="language-plaintext highlighter-rouge">RTO</code> and <code class="language-plaintext highlighter-rouge">RPO</code> targets for those services?</strong></li>
+  <li><strong>How much recovery capability is pre-positioned versus built under pressure?</strong></li>
+  <li><strong>Have we tested failover and restoration in a way that reflects real dependencies?</strong></li>
+  <li><strong>Are identity, secrets, network controls, and third-party integrations included in the recovery plan?</strong></li>
+  <li><strong>Would the business still consider this strategy acceptable during a stressful outage, not just during planning meetings?</strong></li>
+</ol>
+
+<p>Those questions usually reveal whether the site choice is truly aligned with business need or just historically inherited.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/modern-dr-stack.svg" alt="Layered diagram showing modern disaster recovery readiness through business impact analysis, pre-staged environments, identity access, dependency mapping, and recovery testing." />
+  <figcaption>Modern recovery capability is layered: site choice is only one part of the design.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Hot, warm, and cold sites are really shorthand for how much recovery time, effort, and cost the organization is accepting.</strong></p>
+
+<p>Once that clicks, the topic stops feeling like memorization trivia.
+It becomes a practical continuity decision.</p>
+
+<p>The right answer is not always the fastest or the cheapest.
+It is the one that honestly matches the business impact, the downtime tolerance, and the level of readiness the organization is prepared to maintain.</p>
+
+<p>If you want a practical exercise, pick one critical service and ask a blunt question: if the primary environment disappeared this afternoon, is our alternate setup truly hot, warm, or cold in practice?
+That conversation usually surfaces more truth than the architecture diagram does.</p>
+
+<p><strong>Meta description:</strong> Learn what hot, warm, and cold recovery sites really mean in CISSP and in practice, including the tradeoffs between cost, readiness, downtime, and resilience.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP hot warm cold sites explained</li>
+  <li>disaster recovery site types comparison</li>
+  <li>hot site vs warm site vs cold site</li>
+  <li>CISSP disaster recovery practical guide</li>
+  <li>recovery site tradeoffs business continuity</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="disaster-recovery" /><category term="recovery-sites" /><category term="availability" /><category term="resilience" /><summary type="html"><![CDATA[Recovery sites are not old-school memorization trivia. This CISSP-focused guide explains how hot, warm, and cold sites reflect real business tradeoffs around downtime, cost, and operational readiness.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #21: Backups Are Not Recovery Until You Test the Restore</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/" rel="alternate" type="text/html" title="CISSP #21: Backups Are Not Recovery Until You Test the Restore" /><published>2026-04-10T12:21:00+00:00</published><updated>2026-04-10T12:21:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/"><![CDATA[<p>It is comforting to say, “we have backups.”</p>
+
+<p>It sounds responsible. It reassures leadership. It closes a lot of awkward risk conversations quickly.</p>
+
+<p>But during an outage, a ransomware event, or a bad change, the real questions are harsher:</p>
+
+<ul>
+  <li>Can we restore the right system in time?</li>
+  <li>How much data can we afford to lose?</li>
+  <li>Are the backup copies still trustworthy?</li>
+  <li>Do we know the order of recovery, the credentials required, and the dependencies that have to come back first?</li>
+</ul>
+
+<p>This is one of those CISSP lessons that lands hard in real life: <strong>a backup is not the same thing as a recovery capability.</strong> A backup is only one ingredient. The control becomes real when the organization can restore critical systems and data within acceptable business limits.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" alt="Illustration showing protected backup copies flowing through a restore process into a recovered business service, emphasizing that restore testing matters." />
+  <figcaption>A backup becomes a real control only when the restore path is trusted and rehearsed.</figcaption>
+</figure>
+
+<h2 id="why-cissp-ties-backups-to-business-impact">Why CISSP ties backups to business impact</h2>
+
+<p>The exam is not interested in backups as a storage hobby.
+It is testing whether you can connect technical recovery decisions to business requirements.</p>
+
+<p>That is why backup conversations are really about:</p>
+
+<ul>
+  <li><strong>RPO</strong>: how much recent data loss the business can tolerate</li>
+  <li><strong>RTO</strong>: how quickly the service must come back</li>
+  <li><strong>system criticality</strong>: which functions are restored first</li>
+  <li><strong>integrity</strong>: whether the recovery source is clean and trustworthy</li>
+  <li><strong>ownership</strong>: who has the authority, access, and runbooks to make recovery happen</li>
+</ul>
+
+<p>A nightly copy can still be a weak control if the business needs a much shorter <code class="language-plaintext highlighter-rouge">RPO</code>, or if the restore process takes longer than the acceptable <code class="language-plaintext highlighter-rouge">RTO</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recovery concept</th>
+      <th>Question it answers</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>RPO</strong></td>
+      <td>How much data can we afford to lose?</td>
+      <td>Drives backup frequency, replication, and logging strategy</td>
+    </tr>
+    <tr>
+      <td><strong>RTO</strong></td>
+      <td>How fast must service return?</td>
+      <td>Drives architecture, automation, and staffing</td>
+    </tr>
+    <tr>
+      <td><strong>Isolation</strong></td>
+      <td>Can an attacker or admin mistake destroy the recovery source too?</td>
+      <td>Protects recoverability during compromise</td>
+    </tr>
+    <tr>
+      <td><strong>Restore testing</strong></td>
+      <td>Have we proven we can recover?</td>
+      <td>Converts backup theory into operational evidence</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Full, incremental, and differential backups still matter.
+But CISSP is usually aiming at the larger question: <strong>does the organization have a recovery capability that fits the mission?</strong></p>
+
+<h2 id="where-backup-strategies-fail-in-practice">Where backup strategies fail in practice</h2>
+
+<p>Most failed recoveries do not happen because nobody bought storage.
+They happen because the team quietly assumed that successful backup jobs meant successful restoration.</p>
+
+<p>A few common gaps show up over and over:</p>
+
+<ul>
+  <li>backups exist, but nobody has restored the most critical application end to end recently</li>
+  <li>the data is backed up, but the secrets, certificates, configuration, or infrastructure templates are not</li>
+  <li>restore access depends on the same identity path that is unavailable during the incident</li>
+  <li>backup repositories are online and reachable enough for ransomware or a privileged mistake to damage them too</li>
+  <li>the team knows how to restore a server, but not how to recover the business service in the right order</li>
+</ul>
+
+<p>That last distinction matters.
+A server coming back online is not the same thing as the application being usable.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/recovery-path.svg" alt="Flow diagram showing backup copies moving through isolation, clean rebuild, data and configuration restore, and service validation before business recovery." />
+  <figcaption>Recovery has stages. A successful backup job does not validate the whole chain.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-green-dashboard-that-still-misses-the-rto">A realistic scenario: the green dashboard that still misses the <code class="language-plaintext highlighter-rouge">RTO</code></h2>
+
+<p>Imagine a company that proudly reports nightly backups for its core customer platform.
+The backup dashboard is green. Retention looks fine. Storage costs are under control.</p>
+
+<p>Then a ransomware incident hits the virtualization layer and several application servers.
+Now the organization learns what it actually has.</p>
+
+<ul>
+  <li>the backup system is domain-connected and needs the same admin path that is currently restricted</li>
+  <li>the database can be restored, but the application secrets and certificate chain were documented badly</li>
+  <li>the recovery team is unsure which supporting service has to come back first</li>
+  <li>validation steps are informal, so nobody is certain when the service is genuinely safe to reopen</li>
+</ul>
+
+<p>Technically, backups existed.
+Operationally, recovery was still fragile.</p>
+
+<p>This is why CISSP thinking tends to emphasize contingency planning, disaster recovery, and business impact analysis together.
+The goal is not simply to keep copies of data.
+It is to restore essential capability in a controlled, prioritized way.</p>
+
+<h2 id="established-principles-vs-what-feels-more-current-now">Established principles vs what feels more current now</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<p>The fundamentals here are not new, and that is part of the point:</p>
+
+<ul>
+  <li>perform a <strong>business impact analysis</strong> to identify critical systems and acceptable downtime</li>
+  <li>align backup frequency and retention with <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code></li>
+  <li>keep protected copies offsite or otherwise separated from the primary failure domain</li>
+  <li>test restores regularly instead of trusting job success reports</li>
+  <li>document procedures, dependencies, and responsible roles before an emergency</li>
+  <li>protect backup administration with strong access control and separation of duties</li>
+</ul>
+
+<p>Those ideas have been solid for years because they work.</p>
+
+<h3 id="what-feels-more-current-in-practice">What feels more current in practice</h3>
+
+<p>The modern wrinkle is that recovery planning now has to assume more hostile conditions.</p>
+
+<p>Ransomware and cloud concentration risk have made several ideas more important:</p>
+
+<ul>
+  <li><strong>offline or strongly isolated backups</strong> so attackers cannot easily encrypt or delete the recovery source</li>
+  <li><strong>immutable or object-locked storage</strong> where it fits the environment and retention needs</li>
+  <li><strong>golden images and infrastructure-as-code templates</strong> to rebuild clean systems faster</li>
+  <li><strong>recovery to a known-clean environment</strong> rather than blindly restoring into the same compromised conditions</li>
+  <li><strong>business-prioritized restoration</strong> based on dependency maps, not guesswork under pressure</li>
+</ul>
+
+<p>That is consistent with current CISA ransomware guidance and the NIST habit of framing resilience inside enterprise risk management.
+The theme is not “buy more backup products.”
+It is <strong>prove you can recover the right things safely and in order.</strong></p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP questions on backups are rarely asking for your favorite storage platform.
+They are testing judgment.</p>
+
+<p>The strongest answer is often the one that best preserves business operations and reduces recovery uncertainty.</p>
+
+<p>That usually means thinking in this order:</p>
+
+<ol>
+  <li>identify what is most critical</li>
+  <li>protect the integrity and availability of recovery sources</li>
+  <li>contain the incident if compromise is still active</li>
+  <li>restore from known-good backups in the right priority order</li>
+  <li>validate the recovery before declaring success</li>
+</ol>
+
+<p>That is also why “restore from backup immediately” can be an exam trap during an active incident.
+If the environment is still compromised, blind restoration may only reintroduce the problem or destroy useful evidence.
+In real practice, and usually on the exam, containment and informed recovery beat panic-driven recovery.</p>
+
+<h2 id="practical-questions-worth-asking-now">Practical questions worth asking now</h2>
+
+<p>If you want the real-world version, these are better questions than “are backups enabled?”</p>
+
+<ol>
+  <li><strong>Which business services must be restored first, and what do they depend on?</strong></li>
+  <li><strong>Do we have approved <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code> targets, or are we just guessing?</strong></li>
+  <li><strong>Are backup copies separated enough from production and ordinary admin paths?</strong></li>
+  <li><strong>Have we performed an end-to-end restore exercise for a critical service recently?</strong></li>
+  <li><strong>Do we have the keys, secrets, certificates, licenses, and runbooks needed to make the restore useful?</strong></li>
+  <li><strong>Can we restore into a clean environment and verify integrity before reopening service?</strong></li>
+  <li><strong>Who owns the decision to say recovery is complete?</strong></li>
+</ol>
+
+<p>If any of those answers are vague, the organization probably has less recovery capability than it thinks.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/restore-readiness.svg" alt="Layered diagram showing recovery readiness through business priorities, isolated copies, documented runbooks, restore drills, and validation before resuming service." />
+  <figcaption>Recovery readiness is layered: priorities, isolation, procedures, access, and practice all matter.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Backups reduce risk only when restore is tested, prioritized, and trusted.</strong></p>
+
+<p>That is the difference between a comforting dashboard and a real control.</p>
+
+<p>A mature team does not only count backup jobs.
+It rehearses recovery, protects the recovery path, and knows what “good enough to resume business” actually means.</p>
+
+<p>If you want a practical exercise, pick one critical system and run a restore walkthrough or tabletop this quarter.
+The gap between “we have backups” and “we can recover” becomes obvious very quickly — and that is exactly why the exercise is worth doing.</p>
+
+<p><strong>Meta description:</strong> Learn why CISSP treats backups as part of recovery capability, not just storage. A practical guide to restore testing, RPO, RTO, offline copies, and recovery priorities.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP backup and recovery explained</li>
+  <li>RPO and RTO restore testing</li>
+  <li>backups are not recovery</li>
+  <li>ransomware resilient backup strategy</li>
+  <li>disaster recovery restore best practices</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="backups" /><category term="recovery" /><category term="resilience" /><category term="ransomware" /><summary type="html"><![CDATA[A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #20: Single Points of Failure Are Security Risks Too</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/" rel="alternate" type="text/html" title="CISSP #20: Single Points of Failure Are Security Risks Too" /><published>2026-04-09T12:20:00+00:00</published><updated>2026-04-09T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/"><![CDATA[<p>It is easy to think of a single point of failure as an infrastructure diagram problem.
 One database instance. One identity provider. One admin who knows how the restore process actually works.</p>
 
 <p>Then one routine outage or one bad change hits, and the organization discovers that its “secure” environment only worked while that one dependency stayed alive.</p>
@@ -2045,388 +2527,4 @@ If biometric data is exposed or the matching pipeline is compromised, the proble
 3. biometrics privacy and security tradeoffs
 4. fingerprint and facial recognition security
 5. NIST biometric authentication guidance
--->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="biometrics" /><category term="authentication" /><category term="far" /><category term="frr" /><category term="privacy" /><summary type="html"><![CDATA[Biometric authentication can improve convenience and raise assurance in the right design, but it is never magic. This CISSP-focused guide explains FAR, FRR, CER, privacy tradeoffs, liveness detection, and why biometrics should be treated as one factor in a broader identity system.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-biometrics-tradeoffs-error-rates/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-biometrics-tradeoffs-error-rates/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #12: MFA Is Not Enough if Recovery Flows Are Weak</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows/" rel="alternate" type="text/html" title="CISSP #12: MFA Is Not Enough if Recovery Flows Are Weak" /><published>2026-04-05T12:25:00+00:00</published><updated>2026-04-05T12:25:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-mfa-weak-recovery-flows/"><![CDATA[<p>MFA deserves its reputation.</p>
-
-<p>It meaningfully raises the cost of account takeover and reduces the damage from weak, reused, or phished passwords. But many real incidents do not come from attackers defeating MFA head-on. They come from attackers routing around it through factor resets, account recovery, or a help-desk process that was easier to fool than the login screen.</p>
-
-<p>That is exactly why CISSP treats identity as more than a sign-in feature. The exam mindset is broader: assurance, lifecycle, accountability, and business risk.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" alt="Illustration showing a secure MFA front door and a weaker account recovery side door in an identity system." />
-  <figcaption>Strong MFA helps, but the real strength of the identity system is limited by enrollment, recovery, and factor-change controls.</figcaption>
-</figure>
-
-<h2 id="why-mfa-still-matters">Why MFA still matters</h2>
-
-<p>MFA remains one of the most practical security improvements an organization can make.</p>
-
-<p>If a password is reused, breached, or phished, a second factor often stops the attacker from converting that knowledge into a live session. That is real value, and it is one reason current guidance increasingly favors stronger, phishing-resistant authentication options such as passkeys, hardware security keys, and other cryptographic methods.</p>
-
-<p>CISSP wants you to understand the principle, not just memorize the acronym:</p>
-
-<ul>
-  <li>one factor is not enough for many meaningful risk scenarios</li>
-  <li>two instances of the same factor are not true MFA</li>
-  <li>stronger assurance should match higher business impact</li>
-  <li>authentication strength does not remove the need for sound authorization and accountability</li>
-</ul>
-
-<p>That last point is where a lot of systems drift into false confidence.</p>
-
-<h2 id="the-quiet-weak-spot-recovery-and-factor-replacement">The quiet weak spot: recovery and factor replacement</h2>
-
-<p>A secure login path is only one path into an account.</p>
-
-<p>If a user can also regain access by clicking a weak email reset link, receiving a low-assurance SMS fallback, answering poor verification questions, or persuading a support agent to register a new device too easily, then the system’s real assurance drops to match that weaker path.</p>
-
-<p>In other words, <strong>account recovery is authentication under pressure</strong>.</p>
-
-<p>That framing is very aligned with CISSP thinking. You are not just protecting the happy path. You are protecting the exceptional path too:</p>
-
-<ul>
-  <li>lost phone or token</li>
-  <li>new device enrollment</li>
-  <li>authenticator replacement</li>
-  <li>locked account recovery</li>
-  <li>disabling MFA for a user who claims they are stuck</li>
-</ul>
-
-<p>These are exactly the moments when business urgency and user frustration can tempt teams into weakening controls.</p>
-
-<p>NIST’s current digital identity guidance makes this explicit. It treats authenticator binding, recovery, invalidation, and notification as lifecycle events that deserve real security design. That is the right mental model.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/recovery-gap.svg" alt="Diagram showing attackers blocked at an MFA prompt but succeeding through an easier recovery and factor reset path." />
-  <figcaption>Attackers often do not beat MFA directly. They look for a weaker recovery or factor-change process beside it.</figcaption>
-</figure>
-
-<h2 id="what-phishing-resistant-really-means">What “phishing-resistant” really means</h2>
-
-<p>This phrase matters more now than it did a few years ago.</p>
-
-<p>Phishing-resistant authentication is not just “more prompts” or “extra friction.” It refers to authentication methods that are cryptographically bound to the legitimate service so the credential or authenticator output cannot be easily captured and replayed by a fake site.</p>
-
-<p>That is why passkeys and modern WebAuthn-based flows are getting so much attention. They improve user experience and reduce the likelihood that a user can be tricked into handing reusable secrets to an attacker.</p>
-
-<p>NIST SP 800-63-4 now requires verifiers at <strong>AAL2</strong> to offer at least one phishing-resistant option and requires phishing-resistant, non-exportable cryptographic authenticators at <strong>AAL3</strong>.</p>
-
-<p>That does not make TOTP or SMS useless. It places them correctly.</p>
-
-<ul>
-  <li>TOTP is still materially better than password-only login.</li>
-  <li>SMS may still exist in some environments as a transitional or lower-assurance option.</li>
-  <li>But neither should be mistaken for the strongest answer, and PSTN-based methods are increasingly treated as a risk-accepted compromise rather than the target state.</li>
-</ul>
-
-<p>For CISSP, the lesson is not “memorize the latest product trend.” The lesson is to reason about assurance and attack paths.</p>
-
-<h2 id="a-realistic-scenario-mfa-was-present-assurance-was-not">A realistic scenario: MFA was present, assurance was not</h2>
-
-<p>Imagine a company that does several things right:</p>
-
-<ul>
-  <li>workforce access goes through SSO</li>
-  <li>MFA is enforced</li>
-  <li>suspicious logins are monitored</li>
-  <li>privileged access is supposed to be controlled centrally</li>
-</ul>
-
-<p>An attacker phishes an employee password.</p>
-
-<p>The first login attempt fails because the attacker cannot satisfy the second factor. So they change tactics. They initiate the “lost phone” path and exploit a weak recovery workflow:</p>
-
-<ul>
-  <li>the support process verifies only easily obtained details</li>
-  <li>a new factor can be registered too quickly</li>
-  <li>the original user receives only a weak or delayed notification</li>
-  <li>the system allows high-risk actions immediately after recovery</li>
-</ul>
-
-<p>The attacker gets access anyway.</p>
-
-<p>That incident should not be described as “MFA failed.” A more accurate root cause is that the organization protected the primary sign-in path better than it protected the recovery path.</p>
-
-<p>This is one of the most useful CISSP lessons in Domain 5: the real question is not whether one control exists, but whether the whole identity lifecycle preserves appropriate assurance.</p>
-
-<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
-
-<h3 id="established-principles-that-stay-stable">Established principles that stay stable</h3>
-
-<p>These are the durable ideas CISSP keeps returning to:</p>
-
-<ul>
-  <li>unique identification</li>
-  <li>strong authentication appropriate to risk</li>
-  <li>least privilege after login</li>
-  <li>separation of duties for sensitive changes</li>
-  <li>accountability through notifications, logging, and review</li>
-</ul>
-
-<p>Those ideas do not age out.</p>
-
-<h3 id="current-direction-that-matters-in-practice">Current direction that matters in practice</h3>
-
-<p>The implementation details continue to evolve:</p>
-
-<ul>
-  <li>phishing-resistant methods such as passkeys are becoming more common and more realistic at scale</li>
-  <li>security questions are no longer treated as a strong or modern answer</li>
-  <li>SMS and voice remain weaker options with known social engineering and interception risk</li>
-  <li>syncable authenticators improve usability, but high-assurance environments still need to think carefully about device trust, backup paths, and recovery of the sync fabric itself</li>
-</ul>
-
-<p>The theme is consistent: stronger authentication is good, but lifecycle and recovery design must keep up.</p>
-
-<h2 id="practical-checklist-for-engineering-teams">Practical checklist for engineering teams</h2>
-
-<p>If you want the practical version instead of the exam version, these are the controls worth reviewing:</p>
-
-<ul>
-  <li><strong>Offer more than one enrolled authenticator or recovery method</strong> for important accounts so users are not pushed into unsafe exceptions.</li>
-  <li><strong>Require reauthentication with an existing factor</strong> before allowing factor replacement, email changes, or MFA disablement.</li>
-  <li><strong>Prefer phishing-resistant authentication</strong> for admins, security-sensitive roles, and higher-risk workflows, and make it broadly available where possible.</li>
-  <li><strong>Treat help-desk recovery as a privileged workflow</strong>, not a customer service shortcut.</li>
-  <li><strong>Send out-of-band notifications</strong> for authenticator binding, recovery, and major account changes.</li>
-  <li><strong>Apply step-up authentication</strong> for high-risk actions such as disabling MFA, exporting sensitive data, or approving financial changes.</li>
-  <li><strong>Time-box or temporarily restrict privileged activity</strong> immediately after recovery or factor changes.</li>
-  <li><strong>Log identity lifecycle events well enough to investigate later</strong>, including factor enrollment, recovery requests, and administrative overrides.</li>
-</ul>
-
-<p>These are not glamorous controls. They are often the difference between an identity program that looks mature and one that actually is.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/control-stack.svg" alt="Stacked control diagram showing phishing-resistant sign-in, step-up authentication, secure recovery, and notifications and audit." />
-  <figcaption>Mature identity security is layered: stronger sign-in, stronger recovery, stronger step-up, and stronger accountability.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>MFA is a valuable control. It is just not a magic property that automatically survives weak recovery design.</p>
-
-<p>The true strength of an identity system is usually closer to the <strong>weakest account lifecycle path</strong> than to the strongest login demo.</p>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep: <strong>strong authentication is only as trustworthy as enrollment, recovery, and high-risk change control.</strong></p>
-
-<hr />
-
-<p><em>Post 12 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** MFA improves login security, but weak reset and recovery workflows can still lead to account compromise. Learn the CISSP mindset for phishing-resistant authentication and safer recovery design.
-
-**SEO keyword ideas:**
-1. CISSP MFA account recovery
-2. phishing resistant authentication CISSP
-3. passkeys and MFA security
-4. secure account recovery design
-5. identity lifecycle security controls
--->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="mfa" /><category term="passkeys" /><category term="account-recovery" /><category term="phishing-resistant-authentication" /><summary type="html"><![CDATA[MFA blocks a lot of attacks, but weak reset and recovery processes can quietly undo the benefit. This CISSP-focused guide explains phishing-resistant authentication, safer factor changes, and why identity recovery deserves security design attention.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mfa-weak-recovery-flows/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #11: Federation and SSO Do Not Remove Trust Boundaries</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/" rel="alternate" type="text/html" title="CISSP #11: Federation and SSO Do Not Remove Trust Boundaries" /><published>2026-04-05T12:10:00+00:00</published><updated>2026-04-05T12:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-federation-sso-trust-boundaries/"><![CDATA[<p>Single sign-on is one of the most useful conveniences in modern security architecture.</p>
-
-<p>It is also one of the easiest places to overestimate what has been solved.</p>
-
-<p>Teams often implement federation, centralize login at an identity provider, and then quietly assume downstream applications are now “covered.” But CISSP thinking is more disciplined than that. Federation can centralize authentication, improve consistency, and reduce credential sprawl. It does not eliminate trust boundaries, authorization mistakes, or accountability gaps.</p>
-
-<p>That distinction matters in exams and even more in real systems.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" alt="Visual showing user device, identity provider, and relying applications separated by trust boundaries in a federated SSO architecture." />
-  <figcaption>Federation can transfer authentication assurance, but each relying system still owns access decisions and accountability.</figcaption>
-</figure>
-
-<h2 id="why-this-topic-is-easy-to-misunderstand">Why this topic is easy to misunderstand</h2>
-
-<p>Federation and SSO are often sold as architectural simplification.</p>
-
-<p>That is true at one level:</p>
-
-<ul>
-  <li>fewer passwords to manage</li>
-  <li>centralized policy controls</li>
-  <li>smoother user experience</li>
-  <li>stronger authentication options applied in one place</li>
-</ul>
-
-<p>But simplification at the login layer does not automatically simplify access risk. In many incidents, the identity provider did its job. The failure happened later: claims were trusted too broadly, roles were mapped carelessly, token handling was weak, or privileged actions were not independently controlled.</p>
-
-<p>CISSP expects you to reason through that shared responsibility, not just admire the convenience layer.</p>
-
-<h2 id="quick-grounding-federation-terms-that-actually-matter">Quick grounding: federation terms that actually matter</h2>
-
-<p>You do not need protocol trivia to reason well here, but you do need conceptual clarity.</p>
-
-<ul>
-  <li><strong>Identity provider (IdP):</strong> system that authenticates the subject and issues an assertion or token.</li>
-  <li><strong>Relying party/service provider (RP/SP):</strong> application or API that accepts the assertion and grants or denies access.</li>
-  <li><strong>Assertion/token:</strong> signed identity and context data used by the relying system.</li>
-  <li><strong>Trust relationship:</strong> explicit agreement about issuer, keys, audience, attributes, and assurance expectations.</li>
-</ul>
-
-<p>Whether the stack is SAML, OpenID Connect, or another federation pattern, the security question is similar: what trust is being transferred, what trust is being assumed, and where are the decision boundaries?</p>
-
-<h2 id="what-federation-solves-well">What federation solves well</h2>
-
-<p>Federation can be a strong control when designed deliberately.</p>
-
-<h3 id="1-stronger-and-more-consistent-authentication">1. Stronger and more consistent authentication</h3>
-
-<p>A central identity platform can enforce better authenticator policy than dozens of disconnected applications. This is where current guidance around phishing-resistant authentication options, such as passkeys and WebAuthn-based flows, has practical impact.</p>
-
-<h3 id="2-cleaner-credential-lifecycle">2. Cleaner credential lifecycle</h3>
-
-<p>Without federation, every application can become its own credential store and attack surface. Federation reduces password duplication and can improve account lifecycle consistency.</p>
-
-<h3 id="3-better-policy-centralization">3. Better policy centralization</h3>
-
-<p>Conditional access, baseline session controls, and account protections are easier to manage when identity decisions are not fragmented across every app team.</p>
-
-<p>These are real gains.</p>
-
-<p>They are still not the same thing as complete access security.</p>
-
-<h2 id="what-federation-does-not-solve-for-you">What federation does not solve for you</h2>
-
-<h3 id="1-authorization-quality-inside-each-relying-app">1. Authorization quality inside each relying app</h3>
-
-<p>The IdP can say who the user is and provide claims. It usually does not own the final business authorization model in every application.</p>
-
-<p>If an app maps one broad group to “full admin” because it is convenient, federation does not rescue that decision.</p>
-
-<h3 id="2-token-and-session-hygiene-everywhere">2. Token and session hygiene everywhere</h3>
-
-<p>Relying systems still need to validate signature, issuer, audience, expiry, and other token constraints correctly. They still need sane session behavior, revocation logic, and replay resistance where relevant.</p>
-
-<p>Weak local implementation can undermine strong central authentication.</p>
-
-<h3 id="3-accountability-for-sensitive-actions">3. Accountability for sensitive actions</h3>
-
-<p>A signed-in user is not a full audit strategy. Sensitive workflows still need attributable action logging, approval discipline, and separation of duties where business risk requires it.</p>
-
-<h3 id="4-business-context-access-decisions">4. Business-context access decisions</h3>
-
-<p>An IdP rarely knows every domain-specific rule: legal hold constraints, customer data residency restrictions, high-value transaction thresholds, or dual-control requirements.</p>
-
-<p>Those decisions belong where business context lives.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/federation-flow.svg" alt="Federated transaction flow showing request, redirect to identity provider, token validation, and authorization checks in relying systems." />
-  <figcaption>Federated login is a transaction chain. Controls fail when teams secure the redirect but skip downstream validation and authorization checks.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-authentication-was-fine-trust-mapping-was-not">A realistic scenario: authentication was fine, trust mapping was not</h2>
-
-<p>Consider an enterprise with a mature identity platform and MFA required for workforce access.</p>
-
-<p>A newly integrated internal application accepts IdP-issued tokens and maps a high-level claim to local roles. The mapping was rushed during launch:</p>
-
-<ul>
-  <li>users in a broad business unit claim are treated as power users</li>
-  <li>admin functions are hidden in UI but not strongly gated in backend APIs</li>
-  <li>token validation checks signature and expiry but ignores intended audience nuances</li>
-  <li>high-risk actions are logged minimally</li>
-</ul>
-
-<p>An attacker compromises a legitimate employee session through endpoint malware.</p>
-
-<p>The IdP did authenticate correctly. MFA policy was not bypassed. Federation worked exactly as designed.</p>
-
-<p>The exploit path appears in the relying application:</p>
-
-<ul>
-  <li>overbroad claim-to-role mapping grants excessive capability</li>
-  <li>weak backend authorization permits sensitive operations</li>
-  <li>audit records are insufficient for rapid attribution</li>
-</ul>
-
-<p>Root cause is not “SSO is broken.” Root cause is misplaced trust and incomplete control ownership after authentication.</p>
-
-<p>This is a very CISSP-style lesson: controls are evaluated as a system, not as isolated checkboxes.</p>
-
-<h2 id="exam-mindset-best-answer-thinking-for-federation-questions">Exam mindset: best-answer thinking for federation questions</h2>
-
-<p>CISSP questions in this area often test whether you can distinguish centralized authentication from distributed authorization responsibility.</p>
-
-<p>The stronger answer typically:</p>
-
-<ul>
-  <li>validates trust assumptions explicitly, not implicitly</li>
-  <li>enforces least privilege at the resource boundary</li>
-  <li>treats high-risk actions with stronger control (step-up, dual control, tighter review)</li>
-  <li>maintains accountability through durable, attributable logging</li>
-  <li>aligns identity controls with business risk and governance expectations</li>
-</ul>
-
-<p>If an option sounds like “we use SSO, therefore access is secure,” it is usually incomplete.</p>
-
-<h2 id="established-principles-vs-recent-developments">Established principles vs recent developments</h2>
-
-<h3 id="established-principles-stable">Established principles (stable)</h3>
-
-<ul>
-  <li>least privilege</li>
-  <li>separation of duties</li>
-  <li>need to know</li>
-  <li>explicit trust relationships</li>
-  <li>defense in depth across authentication, authorization, and accountability</li>
-</ul>
-
-<p>These are long-standing security disciplines and core CISSP ground.</p>
-
-<h3 id="recent-direction-evolving-implementation">Recent direction (evolving implementation)</h3>
-
-<p>Identity architecture keeps moving toward stronger phishing resistance, tighter session controls, and policy-driven access decisions. NIST digital identity guidance and zero trust framing continue to emphasize that identity confidence and resource access are related but distinct decisions.</p>
-
-<p>Practically, teams are also dealing with more machine identities, API-to-API trust, and federated access beyond one enterprise boundary. That increases the value of explicit token hygiene, clear audience constraints, key management discipline, and short-lived privilege where possible.</p>
-
-<p>None of this replaces foundational CISSP principles. It operationalizes them at current scale.</p>
-
-<h2 id="practical-control-checklist-for-engineering-teams">Practical control checklist for engineering teams</h2>
-
-<p>When reviewing federated integrations, these questions expose real risk quickly:</p>
-
-<ul>
-  <li>Which assertions or claims are trusted, and why?</li>
-  <li>Is token validation complete: signature, issuer, audience, expiration, and replay protections where needed?</li>
-  <li>Are claims mapped to local privileges narrowly, or translated into overbroad roles?</li>
-  <li>Does backend authorization independently enforce policy, or trust UI visibility rules?</li>
-  <li>Which actions require step-up authentication or additional approval?</li>
-  <li>Can you correlate identity event, session context, and sensitive action in logs?</li>
-  <li>How quickly can access be revoked for both workforce and third-party identities?</li>
-  <li>Who owns periodic review of claim mappings and trust configuration drift?</li>
-</ul>
-
-<p>If these answers are vague, the architecture may be secure on paper but fragile in practice.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/trust-boundary-matrix.svg" alt="Matrix showing trust boundary ownership in federation across authentication, authorization, session controls, and accountability." />
-  <figcaption>Federation is shared responsibility by design. The cleanest way to reduce risk is to define ownership by trust boundary and verify it regularly.</figcaption>
-</figure>
-
-<h2 id="the-pattern-worth-remembering">The pattern worth remembering</h2>
-
-<p>Federation is valuable. SSO is valuable.</p>
-
-<p>But neither one is a permission model.</p>
-
-<p>The identity provider authenticates and issues trust signals. Every relying application and API still must interpret those signals safely, enforce least privilege, and preserve accountability for high-impact actions.</p>
-
-<p>That is the deeper CISSP takeaway: convenience controls are useful, but risk is managed at decision boundaries.</p>
-
-<p>If you are studying, keep this mental model: <strong>authentication can be centralized, but responsibility for authorization and accountability remains distributed.</strong></p>
-
-<hr />
-
-<p><em>Post 11 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<!--
-**Meta description:** Federation and SSO improve login security and usability, but they do not remove trust boundaries. Learn the CISSP mindset for token trust, authorization, and accountability.
-
-**SEO keyword ideas:**
-1. CISSP federation and SSO
-2. SSO trust boundaries security
-3. identity provider relying party authorization
-4. SAML OIDC security best practices
-5. federated identity access control -->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="federation" /><category term="sso" /><category term="saml" /><category term="oidc" /><category term="zero-trust" /><category term="authorization" /><summary type="html"><![CDATA[Federated identity and SSO improve usability, but they do not eliminate authorization risk. This CISSP-focused guide explains trust boundaries, token hygiene, and shared responsibility across IdPs and relying parties.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-federation-sso-trust-boundaries/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+-->]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-5" /><category term="iam" /><category term="biometrics" /><category term="authentication" /><category term="far" /><category term="frr" /><category term="privacy" /><summary type="html"><![CDATA[Biometric authentication can improve convenience and raise assurance in the right design, but it is never magic. This CISSP-focused guide explains FAR, FRR, CER, privacy tradeoffs, liveness detection, and why biometrics should be treated as one factor in a broader identity system.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-biometrics-tradeoffs-error-rates/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-biometrics-tradeoffs-error-rates/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

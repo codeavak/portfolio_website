@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #21: Backups Are Not Recovery Until You Test the Restore | Johnny Avakian Portfolio</title>
+    <meta name="description" content="A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-10T12:21:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-7" />
+      
+        <meta property="article:tag" content="backups" />
+      
+        <meta property="article:tag" content="recovery" />
+      
+        <meta property="article:tag" content="resilience" />
+      
+        <meta property="article:tag" content="ransomware" />
+      
+    
+    <meta property="og:title" content="CISSP #21: Backups Are Not Recovery Until You Test the Restore" />
+    <meta property="og:description" content="A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #21: Backups Are Not Recovery Until You Test the Restore" />
+    <meta name="twitter:description" content="A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #21: Backups Are Not Recovery Until You Test the Restore",
+        "description": "A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-10T12:21:00+00:00",
+        "dateModified": "2026-04-10T12:21:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-10T12:21:00+00:00">April 10, 2026</time>
+              <h1 class="post-title">CISSP #21: Backups Are Not Recovery Until You Test the Restore</h1>
+              
+                <p class="post-dek">A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-7</span>
+                  
+                    <span class="chip">backups</span>
+                  
+                    <span class="chip">recovery</span>
+                  
+                    <span class="chip">resilience</span>
+                  
+                    <span class="chip">ransomware</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>It is comforting to say, “we have backups.”</p>
+
+<p>It sounds responsible. It reassures leadership. It closes a lot of awkward risk conversations quickly.</p>
+
+<p>But during an outage, a ransomware event, or a bad change, the real questions are harsher:</p>
+
+<ul>
+  <li>Can we restore the right system in time?</li>
+  <li>How much data can we afford to lose?</li>
+  <li>Are the backup copies still trustworthy?</li>
+  <li>Do we know the order of recovery, the credentials required, and the dependencies that have to come back first?</li>
+</ul>
+
+<p>This is one of those CISSP lessons that lands hard in real life: <strong>a backup is not the same thing as a recovery capability.</strong> A backup is only one ingredient. The control becomes real when the organization can restore critical systems and data within acceptable business limits.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" alt="Illustration showing protected backup copies flowing through a restore process into a recovered business service, emphasizing that restore testing matters." />
+  <figcaption>A backup becomes a real control only when the restore path is trusted and rehearsed.</figcaption>
+</figure>
+
+<h2 id="why-cissp-ties-backups-to-business-impact">Why CISSP ties backups to business impact</h2>
+
+<p>The exam is not interested in backups as a storage hobby.
+It is testing whether you can connect technical recovery decisions to business requirements.</p>
+
+<p>That is why backup conversations are really about:</p>
+
+<ul>
+  <li><strong>RPO</strong>: how much recent data loss the business can tolerate</li>
+  <li><strong>RTO</strong>: how quickly the service must come back</li>
+  <li><strong>system criticality</strong>: which functions are restored first</li>
+  <li><strong>integrity</strong>: whether the recovery source is clean and trustworthy</li>
+  <li><strong>ownership</strong>: who has the authority, access, and runbooks to make recovery happen</li>
+</ul>
+
+<p>A nightly copy can still be a weak control if the business needs a much shorter <code class="language-plaintext highlighter-rouge">RPO</code>, or if the restore process takes longer than the acceptable <code class="language-plaintext highlighter-rouge">RTO</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recovery concept</th>
+      <th>Question it answers</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>RPO</strong></td>
+      <td>How much data can we afford to lose?</td>
+      <td>Drives backup frequency, replication, and logging strategy</td>
+    </tr>
+    <tr>
+      <td><strong>RTO</strong></td>
+      <td>How fast must service return?</td>
+      <td>Drives architecture, automation, and staffing</td>
+    </tr>
+    <tr>
+      <td><strong>Isolation</strong></td>
+      <td>Can an attacker or admin mistake destroy the recovery source too?</td>
+      <td>Protects recoverability during compromise</td>
+    </tr>
+    <tr>
+      <td><strong>Restore testing</strong></td>
+      <td>Have we proven we can recover?</td>
+      <td>Converts backup theory into operational evidence</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Full, incremental, and differential backups still matter.
+But CISSP is usually aiming at the larger question: <strong>does the organization have a recovery capability that fits the mission?</strong></p>
+
+<h2 id="where-backup-strategies-fail-in-practice">Where backup strategies fail in practice</h2>
+
+<p>Most failed recoveries do not happen because nobody bought storage.
+They happen because the team quietly assumed that successful backup jobs meant successful restoration.</p>
+
+<p>A few common gaps show up over and over:</p>
+
+<ul>
+  <li>backups exist, but nobody has restored the most critical application end to end recently</li>
+  <li>the data is backed up, but the secrets, certificates, configuration, or infrastructure templates are not</li>
+  <li>restore access depends on the same identity path that is unavailable during the incident</li>
+  <li>backup repositories are online and reachable enough for ransomware or a privileged mistake to damage them too</li>
+  <li>the team knows how to restore a server, but not how to recover the business service in the right order</li>
+</ul>
+
+<p>That last distinction matters.
+A server coming back online is not the same thing as the application being usable.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/recovery-path.svg" alt="Flow diagram showing backup copies moving through isolation, clean rebuild, data and configuration restore, and service validation before business recovery." />
+  <figcaption>Recovery has stages. A successful backup job does not validate the whole chain.</figcaption>
+</figure>
+
+<h2 id="a-realistic-scenario-the-green-dashboard-that-still-misses-the-rto">A realistic scenario: the green dashboard that still misses the <code class="language-plaintext highlighter-rouge">RTO</code></h2>
+
+<p>Imagine a company that proudly reports nightly backups for its core customer platform.
+The backup dashboard is green. Retention looks fine. Storage costs are under control.</p>
+
+<p>Then a ransomware incident hits the virtualization layer and several application servers.
+Now the organization learns what it actually has.</p>
+
+<ul>
+  <li>the backup system is domain-connected and needs the same admin path that is currently restricted</li>
+  <li>the database can be restored, but the application secrets and certificate chain were documented badly</li>
+  <li>the recovery team is unsure which supporting service has to come back first</li>
+  <li>validation steps are informal, so nobody is certain when the service is genuinely safe to reopen</li>
+</ul>
+
+<p>Technically, backups existed.
+Operationally, recovery was still fragile.</p>
+
+<p>This is why CISSP thinking tends to emphasize contingency planning, disaster recovery, and business impact analysis together.
+The goal is not simply to keep copies of data.
+It is to restore essential capability in a controlled, prioritized way.</p>
+
+<h2 id="established-principles-vs-what-feels-more-current-now">Established principles vs what feels more current now</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<p>The fundamentals here are not new, and that is part of the point:</p>
+
+<ul>
+  <li>perform a <strong>business impact analysis</strong> to identify critical systems and acceptable downtime</li>
+  <li>align backup frequency and retention with <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code></li>
+  <li>keep protected copies offsite or otherwise separated from the primary failure domain</li>
+  <li>test restores regularly instead of trusting job success reports</li>
+  <li>document procedures, dependencies, and responsible roles before an emergency</li>
+  <li>protect backup administration with strong access control and separation of duties</li>
+</ul>
+
+<p>Those ideas have been solid for years because they work.</p>
+
+<h3 id="what-feels-more-current-in-practice">What feels more current in practice</h3>
+
+<p>The modern wrinkle is that recovery planning now has to assume more hostile conditions.</p>
+
+<p>Ransomware and cloud concentration risk have made several ideas more important:</p>
+
+<ul>
+  <li><strong>offline or strongly isolated backups</strong> so attackers cannot easily encrypt or delete the recovery source</li>
+  <li><strong>immutable or object-locked storage</strong> where it fits the environment and retention needs</li>
+  <li><strong>golden images and infrastructure-as-code templates</strong> to rebuild clean systems faster</li>
+  <li><strong>recovery to a known-clean environment</strong> rather than blindly restoring into the same compromised conditions</li>
+  <li><strong>business-prioritized restoration</strong> based on dependency maps, not guesswork under pressure</li>
+</ul>
+
+<p>That is consistent with current CISA ransomware guidance and the NIST habit of framing resilience inside enterprise risk management.
+The theme is not “buy more backup products.”
+It is <strong>prove you can recover the right things safely and in order.</strong></p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
+
+<p>CISSP questions on backups are rarely asking for your favorite storage platform.
+They are testing judgment.</p>
+
+<p>The strongest answer is often the one that best preserves business operations and reduces recovery uncertainty.</p>
+
+<p>That usually means thinking in this order:</p>
+
+<ol>
+  <li>identify what is most critical</li>
+  <li>protect the integrity and availability of recovery sources</li>
+  <li>contain the incident if compromise is still active</li>
+  <li>restore from known-good backups in the right priority order</li>
+  <li>validate the recovery before declaring success</li>
+</ol>
+
+<p>That is also why “restore from backup immediately” can be an exam trap during an active incident.
+If the environment is still compromised, blind restoration may only reintroduce the problem or destroy useful evidence.
+In real practice, and usually on the exam, containment and informed recovery beat panic-driven recovery.</p>
+
+<h2 id="practical-questions-worth-asking-now">Practical questions worth asking now</h2>
+
+<p>If you want the real-world version, these are better questions than “are backups enabled?”</p>
+
+<ol>
+  <li><strong>Which business services must be restored first, and what do they depend on?</strong></li>
+  <li><strong>Do we have approved <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code> targets, or are we just guessing?</strong></li>
+  <li><strong>Are backup copies separated enough from production and ordinary admin paths?</strong></li>
+  <li><strong>Have we performed an end-to-end restore exercise for a critical service recently?</strong></li>
+  <li><strong>Do we have the keys, secrets, certificates, licenses, and runbooks needed to make the restore useful?</strong></li>
+  <li><strong>Can we restore into a clean environment and verify integrity before reopening service?</strong></li>
+  <li><strong>Who owns the decision to say recovery is complete?</strong></li>
+</ol>
+
+<p>If any of those answers are vague, the organization probably has less recovery capability than it thinks.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/restore-readiness.svg" alt="Layered diagram showing recovery readiness through business priorities, isolated copies, documented runbooks, restore drills, and validation before resuming service." />
+  <figcaption>Recovery readiness is layered: priorities, isolation, procedures, access, and practice all matter.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
+
+<p><strong>Backups reduce risk only when restore is tested, prioritized, and trusted.</strong></p>
+
+<p>That is the difference between a comforting dashboard and a real control.</p>
+
+<p>A mature team does not only count backup jobs.
+It rehearses recovery, protects the recovery path, and knows what “good enough to resume business” actually means.</p>
+
+<p>If you want a practical exercise, pick one critical system and run a restore walkthrough or tabletop this quarter.
+The gap between “we have backups” and “we can recover” becomes obvious very quickly — and that is exactly why the exercise is worth doing.</p>
+
+<p><strong>Meta description:</strong> Learn why CISSP treats backups as part of recovery capability, not just storage. A practical guide to restore testing, RPO, RTO, offline copies, and recovery priorities.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP backup and recovery explained</li>
+  <li>RPO and RTO restore testing</li>
+  <li>backups are not recovery</li>
+  <li>ransomware resilient backup strategy</li>
+  <li>disaster recovery restore best practices</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
