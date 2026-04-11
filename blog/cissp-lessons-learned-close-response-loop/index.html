@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #24: Lessons Learned Close the Response Loop | Johnny Avakian Portfolio</title>
+    <meta name="description" content="A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-11T14:20:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-7" />
+      
+        <meta property="article:tag" content="incident-response" />
+      
+        <meta property="article:tag" content="lessons-learned" />
+      
+        <meta property="article:tag" content="governance" />
+      
+        <meta property="article:tag" content="resilience" />
+      
+    
+    <meta property="og:title" content="CISSP #24: Lessons Learned Close the Response Loop" />
+    <meta property="og:description" content="A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #24: Lessons Learned Close the Response Loop" />
+    <meta name="twitter:description" content="A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #24: Lessons Learned Close the Response Loop",
+        "description": "A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-11T14:20:00+00:00",
+        "dateModified": "2026-04-11T14:20:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-11T14:20:00+00:00">April 11, 2026</time>
+              <h1 class="post-title">CISSP #24: Lessons Learned Close the Response Loop</h1>
+              
+                <p class="post-dek">A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-7</span>
+                  
+                    <span class="chip">incident-response</span>
+                  
+                    <span class="chip">lessons-learned</span>
+                  
+                    <span class="chip">governance</span>
+                  
+                    <span class="chip">resilience</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>It is easy to treat incident response as finished once containment and recovery are complete.
+Systems come back, leadership pressure drops, and everyone moves to the next urgent item.</p>
+
+<p>That is understandable.
+It is also where many organizations silently lock in repeat failures.</p>
+
+<p>CISSP emphasizes this for a reason: response maturity is not defined only by how teams handle the live incident.
+It is also defined by whether the organization can convert incident evidence into measurable control improvements.</p>
+
+<p>That is the real purpose of lessons learned.
+Not a postmortem for optics, and not a blame session.
+A disciplined mechanism for reducing the chance of repeating the same damage pattern.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" alt="Illustration showing incident response feeding into after-action review, owned remediation, and control retesting." />
+  <figcaption>The response loop is only closed when findings become verified improvements.</figcaption>
+</figure>
+
+<h2 id="why-this-matters-in-cissp-and-in-real-organizations">Why this matters in CISSP and in real organizations</h2>
+
+<p>CISSP frequently tests the idea that security is governance plus execution, not policy text alone.
+You can have a documented incident response process, yet still be operationally weak if lessons learned never become owned actions.</p>
+
+<p>In practical terms, a weak lessons-learned discipline leads to familiar patterns:</p>
+
+<ul>
+  <li>escalation confusion appears in multiple incidents</li>
+  <li>legal and communication decisions are delayed for the same reasons each time</li>
+  <li>recovery runbooks remain incomplete despite repeated evidence</li>
+  <li>third-party or identity dependencies fail in predictable ways</li>
+  <li>teams improve temporarily in memory but not structurally in controls</li>
+</ul>
+
+<p>A strong lessons-learned process does the opposite.
+It turns incident stress into institutional memory with accountability.</p>
+
+<p>That is exactly the kind of business-aware, risk-based thinking CISSP rewards.</p>
+
+<h2 id="what-lessons-learned-should-produce">What lessons learned should produce</h2>
+
+<p>A useful after-action review should produce three concrete outputs:</p>
+
+<ol>
+  <li>
+    <p><strong>Validated incident narrative</strong>
+A fact-based timeline of what happened, what was known at each point, and which decisions were made.</p>
+  </li>
+  <li>
+    <p><strong>Root-cause themes, not just symptoms</strong>
+Clear categorization of where failures were technical, procedural, organizational, or dependency-driven.</p>
+  </li>
+  <li>
+    <p><strong>Owned remediation with validation criteria</strong>
+Actions tied to risk reduction, with named owners, due dates, and an explicit retest plan.</p>
+  </li>
+</ol>
+
+<p>If one of these outputs is missing, the organization is usually documenting activity rather than improving capability.</p>
+
+<h2 id="a-realistic-scenario-good-response-weak-learning-loop">A realistic scenario: good response, weak learning loop</h2>
+
+<p>Imagine a mid-sized services firm handling a credential abuse incident.
+The SOC detected anomalous authentications quickly, containment started within an hour, and no confirmed data exfiltration occurred.</p>
+
+<p>On paper, this looks like a success.
+But during the review, deeper issues emerge:</p>
+
+<ul>
+  <li>break-glass approvals were delayed because authority boundaries were unclear</li>
+  <li>backup restore confidence existed, but restore sequencing was inconsistent across teams</li>
+  <li>customer communication drafts were prepared late because legal trigger conditions were interpreted differently</li>
+  <li>one critical third-party contact was outdated, slowing coordinated action</li>
+</ul>
+
+<p>None of this invalidates the successful containment.
+But it does reveal that the organization depended on improvisation more than design.</p>
+
+<p>Without disciplined lessons learned, these same issues are likely to recur under higher-pressure conditions.
+With disciplined follow-through, they become precise remediation targets.</p>
+
+<h2 id="established-principles-versus-current-pressure">Established principles versus current pressure</h2>
+
+<h3 id="established-principles-that-still-hold">Established principles that still hold</h3>
+
+<p>The fundamentals are durable:</p>
+
+<ul>
+  <li>perform post-incident review while evidence and decision context are still accessible</li>
+  <li>separate factual timeline from assumptions and opinions</li>
+  <li>identify contributing factors across people, process, and technology</li>
+  <li>assign corrective actions with accountability</li>
+  <li>update plans, runbooks, and training</li>
+  <li>test whether changes work before declaring closure</li>
+</ul>
+
+<p>These principles align with long-standing incident handling guidance and CISSP control-oriented thinking.</p>
+
+<h3 id="what-is-sharper-in-current-practice">What is sharper in current practice</h3>
+
+<p>Modern environments make this discipline more important, not less:</p>
+
+<ul>
+  <li>cloud and SaaS dependencies increase hidden coupling</li>
+  <li>legal and regulatory communication windows are less forgiving</li>
+  <li>identity and access dependencies can become incident multipliers</li>
+  <li>executives and customers expect faster, clearer status updates</li>
+  <li>third-party concentration risk can dominate recovery timelines</li>
+</ul>
+
+<p>Because of this, lessons learned should include dependency mapping and decision-governance quality, not just technical findings.</p>
+
+<h2 id="running-an-after-action-review-that-produces-value">Running an after-action review that produces value</h2>
+
+<p>A practical model that works well:</p>
+
+<h3 id="1-set-objective-boundaries">1. Set objective boundaries</h3>
+
+<p>Define scope before discussion starts:</p>
+
+<ul>
+  <li>which incident window is in scope</li>
+  <li>which systems and business functions are included</li>
+  <li>what questions must be answered</li>
+</ul>
+
+<p>This prevents sessions from drifting into broad complaints or unrelated architecture debates.</p>
+
+<h3 id="2-reconstruct-the-timeline-with-evidence">2. Reconstruct the timeline with evidence</h3>
+
+<p>Use logs, tickets, communication records, and command history to anchor facts.
+At each decision point, capture:</p>
+
+<ul>
+  <li>what was known at that moment</li>
+  <li>what options were considered</li>
+  <li>who had authority</li>
+  <li>why a decision path was chosen</li>
+</ul>
+
+<p>This step matters because hindsight bias can make teams rewrite history unconsciously.
+Evidence protects learning quality.</p>
+
+<h3 id="3-classify-findings-into-meaningful-themes">3. Classify findings into meaningful themes</h3>
+
+<p>Avoid a flat list of disconnected observations.
+Group findings into categories such as:</p>
+
+<ul>
+  <li>detection and triage quality</li>
+  <li>containment decision speed</li>
+  <li>communication and legal coordination</li>
+  <li>recovery procedure readiness</li>
+  <li>dependency and vendor resilience</li>
+  <li>role clarity and escalation design</li>
+</ul>
+
+<p>This structure helps leadership prioritize remediation by business risk, not by who spoke first in the review.</p>
+
+<h3 id="4-translate-findings-into-actionable-remediation">4. Translate findings into actionable remediation</h3>
+
+<p>A finding without ownership is noise.
+Each action should include:</p>
+
+<ul>
+  <li>specific change to be made</li>
+  <li>accountable owner</li>
+  <li>due date</li>
+  <li>expected risk reduction</li>
+  <li>evidence required to mark complete</li>
+</ul>
+
+<p>This is where many programs fail.
+They produce thoughtful analysis, then lose momentum before converting it into controlled change.</p>
+
+<h3 id="5-verify-through-retest">5. Verify through retest</h3>
+
+<p>Completion in a tracker is not proof.
+Retest at least part of the scenario or control path to confirm improvement under realistic pressure.</p>
+
+<p>If incident response is a loop, retest is what closes it.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/review-to-remediation.svg" alt="Pipeline showing evidence, root-cause themes, assigned actions, control updates, and retesting." />
+  <figcaption>Lessons learned should move from evidence to validated remediation, not stop at documentation.</figcaption>
+</figure>
+
+<h2 id="common-anti-patterns-that-weaken-lessons-learned">Common anti-patterns that weaken lessons learned</h2>
+
+<p>Even capable teams fall into these traps:</p>
+
+<ul>
+  <li><strong>too abstract:</strong> findings like “improve communication” without defining what changes</li>
+  <li><strong>no ownership:</strong> action items assigned to teams, not accountable individuals</li>
+  <li><strong>no priority logic:</strong> low-impact items consume attention while high-risk items wait</li>
+  <li><strong>no deadline discipline:</strong> remediation windows drift and urgency decays</li>
+  <li><strong>no policy/runbook integration:</strong> lessons remain in presentation slides rather than control artifacts</li>
+  <li><strong>no retest:</strong> teams assume fixes worked without verification</li>
+</ul>
+
+<p>CISSP-style reasoning is useful here: controls should be evaluated by whether they reduce business risk, not by whether they look complete in governance documentation.</p>
+
+<h2 id="measuring-whether-lessons-learned-are-working">Measuring whether lessons learned are working</h2>
+
+<p>If you want to make progress visible to leadership, track indicators that reflect execution quality:</p>
+
+<ul>
+  <li>percentage of findings converted to owner-assigned actions</li>
+  <li>median time from review completion to action assignment</li>
+  <li>percentage of actions completed by due date</li>
+  <li>proportion of completed actions validated through retest</li>
+  <li>recurrence rate of similar failure themes across incidents</li>
+  <li>trend in decision-clarity and coordination speed across exercise and incident cycles</li>
+</ul>
+
+<p>These metrics are not about scoring teams.
+They are about making resilience improvement observable and manageable.</p>
+
+<h2 id="what-the-exam-is-usually-testing-in-this-area">What the exam is usually testing in this area</h2>
+
+<p>When CISSP asks about post-incident activity, the strongest answer tends to emphasize organizational improvement over narrative closure.</p>
+
+<p>In exam language, that often means favoring options that:</p>
+
+<ul>
+  <li>identify root causes and contributing factors</li>
+  <li>update policies, standards, and procedures accordingly</li>
+  <li>assign accountability for remediation</li>
+  <li>improve future response capability</li>
+</ul>
+
+<p>What the exam usually does not reward is a purely technical narrow answer that ignores governance, communication, and business impact.</p>
+
+<p>In real life, the same principle applies.
+A technically correct remediation can still fail if ownership, authority, and communication design are weak.</p>
+
+<h2 id="practical-questions-for-your-next-review-cycle">Practical questions for your next review cycle</h2>
+
+<ol>
+  <li><strong>Are we reconstructing decisions from evidence, or from memory and opinion?</strong></li>
+  <li><strong>Which findings represent recurring risk themes rather than one-off mistakes?</strong></li>
+  <li><strong>Does every action have one accountable owner and a due date?</strong></li>
+  <li><strong>Are we ranking actions by business impact reduction, not convenience?</strong></li>
+  <li><strong>Which updates must land in policy, runbooks, and training to persist?</strong></li>
+  <li><strong>How are we verifying that remediations work under realistic conditions?</strong></li>
+</ol>
+
+<p>Those questions keep the session grounded in outcomes.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/ownership-matrix.svg" alt="Matrix mapping post-incident findings to owners, due dates, risk reduced, and validation approach." />
+  <figcaption>Ownership plus validation is what turns incident insight into durable control improvement.</figcaption>
+</figure>
+
+<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
+
+<p>If you are studying for CISSP, keep this frame simple:</p>
+
+<p><strong>Incident response is not complete at containment. It is complete when lessons learned produce verified changes that reduce future impact.</strong></p>
+
+<p>That is the difference between incident handling as event management and incident handling as capability development.</p>
+
+<p>If your team already runs after-action reviews, one useful next step is to audit your last three incidents for recurring themes and closure quality.
+You will usually find one or two systemic improvements that are worth prioritizing immediately.</p>
+
+<p><strong>Meta description:</strong> A practical CISSP guide to post-incident lessons learned, including after-action review structure, remediation ownership, and validation that changes reduce future risk.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP lessons learned incident response</li>
+  <li>post incident review cybersecurity guide</li>
+  <li>after action review security incidents</li>
+  <li>incident response remediation tracking</li>
+  <li>CISSP domain 7 continuous improvement</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

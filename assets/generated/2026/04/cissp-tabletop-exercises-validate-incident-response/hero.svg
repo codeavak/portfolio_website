@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP tabletop exercise illustration</title>
+  <desc id="desc">A coordinated tabletop incident exercise with business, security, legal, and operations tracks connected to response outcomes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f2e"/>
+      <stop offset="100%" stop-color="#143b4a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+    <style>
+      .label{font:600 26px 'Segoe UI',Tahoma,sans-serif;fill:#eaf6ff}
+      .small{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#d7ebf7}
+      .title{font:700 56px 'Segoe UI',Tahoma,sans-serif;fill:#f7fcff}
+      .pill{font:600 20px 'Segoe UI',Tahoma,sans-serif;fill:#082233}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1320" cy="160" r="230" fill="#58c1a8" opacity="0.14"/>
+  <circle cx="190" cy="740" r="280" fill="#4da0ff" opacity="0.14"/>
+
+  <text x="90" y="120" class="title">Tabletop Exercises Validate Response</text>
+  <text x="90" y="162" class="small">CISSP #23 | Moving from documented plans to proven coordination</text>
+
+  <rect x="85" y="220" width="1430" height="560" rx="26" fill="url(#panel)" stroke="#b8e0f5" stroke-opacity="0.35"/>
+
+  <rect x="145" y="300" width="250" height="110" rx="18" fill="#84d2f6"/>
+  <text x="180" y="348" class="pill">Security Ops</text>
+  <text x="174" y="376" class="pill">Detection, triage</text>
+
+  <rect x="145" y="470" width="250" height="110" rx="18" fill="#a6e3ba"/>
+  <text x="193" y="518" class="pill">IT Ops</text>
+  <text x="180" y="546" class="pill">Recovery actions</text>
+
+  <rect x="145" y="640" width="250" height="110" rx="18" fill="#f7d998"/>
+  <text x="165" y="688" class="pill">Business Lead</text>
+  <text x="178" y="716" class="pill">Impact decisions</text>
+
+  <rect x="675" y="430" width="260" height="140" rx="22" fill="#ffffff"/>
+  <text x="748" y="484" class="pill">Scenario</text>
+  <text x="721" y="516" class="pill">Facilitated Exercise</text>
+
+  <rect x="1130" y="300" width="300" height="110" rx="18" fill="#7bd6cf"/>
+  <text x="1180" y="348" class="pill">Decision Clarity</text>
+  <text x="1185" y="376" class="pill">Roles and authority</text>
+
+  <rect x="1130" y="470" width="300" height="110" rx="18" fill="#99c7ff"/>
+  <text x="1180" y="518" class="pill">Runbook Gaps</text>
+  <text x="1180" y="546" class="pill">Dependencies exposed</text>
+
+  <rect x="1130" y="640" width="300" height="110" rx="18" fill="#ffc7a6"/>
+  <text x="1160" y="688" class="pill">Prioritized Actions</text>
+  <text x="1188" y="716" class="pill">Owners and due dates</text>
+
+  <path d="M395 355 C520 355, 560 440, 675 480" stroke="#caecff" stroke-width="7" fill="none"/>
+  <path d="M395 525 C520 525, 560 510, 675 500" stroke="#caecff" stroke-width="7" fill="none"/>
+  <path d="M395 695 C520 695, 560 560, 675 520" stroke="#caecff" stroke-width="7" fill="none"/>
+
+  <path d="M935 500 C1025 500, 1048 355, 1130 355" stroke="#caecff" stroke-width="7" fill="none"/>
+  <path d="M935 500 C1035 500, 1048 525, 1130 525" stroke="#caecff" stroke-width="7" fill="none"/>
+  <path d="M935 500 C1025 500, 1048 695, 1130 695" stroke="#caecff" stroke-width="7" fill="none"/>
+
+  <text x="92" y="842" class="label">Exercise outputs should feed measurable control improvements, not stay in slide decks.</text>
+</svg>

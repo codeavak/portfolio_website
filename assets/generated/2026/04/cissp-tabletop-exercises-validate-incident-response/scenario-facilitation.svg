@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario facilitation board</title>
+  <desc id="desc">A facilitation board showing inject timeline, role decisions, and post-exercise action tracking.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102437"/>
+      <stop offset="100%" stop-color="#1a3345"/>
+    </linearGradient>
+    <style>
+      .h{font:700 44px 'Segoe UI',Tahoma,sans-serif;fill:#f4fbff}
+      .t{font:600 22px 'Segoe UI',Tahoma,sans-serif;fill:#e9f6ff}
+      .s{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#d0e9f7}
+      .k{font:600 18px 'Segoe UI',Tahoma,sans-serif;fill:#062230}
+    </style>
+  </defs>
+  <rect width="1400" height="840" fill="url(#bg)"/>
+  <text x="70" y="90" class="h">Facilitated Incident Scenario Board</text>
+
+  <rect x="70" y="130" width="1260" height="640" rx="24" fill="#ffffff" fill-opacity="0.08" stroke="#9fd3ed" stroke-opacity="0.4"/>
+
+  <rect x="110" y="185" width="380" height="540" rx="18" fill="#77c8f2"/>
+  <text x="150" y="228" class="k">Inject Timeline</text>
+  <text x="140" y="270" class="k">08:10 suspicious login burst</text>
+  <text x="140" y="306" class="k">08:25 endpoint beaconing</text>
+  <text x="140" y="342" class="k">08:50 legal notification question</text>
+  <text x="140" y="378" class="k">09:15 backup integrity concern</text>
+  <text x="140" y="414" class="k">09:40 executive media inquiry</text>
+  <text x="140" y="450" class="k">10:05 customer impact escalates</text>
+
+  <rect x="525" y="185" width="360" height="260" rx="18" fill="#9ee2c4"/>
+  <text x="585" y="228" class="k">Decision Checkpoints</text>
+  <text x="560" y="270" class="k">Contain now or gather more evidence?</text>
+  <text x="560" y="306" class="k">Who approves external comms?</text>
+  <text x="560" y="342" class="k">When does legal trigger begin?</text>
+  <text x="560" y="378" class="k">What is break-glass threshold?</text>
+
+  <rect x="525" y="465" width="360" height="260" rx="18" fill="#ffd9a8"/>
+  <text x="625" y="508" class="k">Observed Gaps</text>
+  <text x="560" y="550" class="k">- unclear chain of authority</text>
+  <text x="560" y="586" class="k">- dependency map outdated</text>
+  <text x="560" y="622" class="k">- no tested legal handoff</text>
+  <text x="560" y="658" class="k">- missing backup validation step</text>
+
+  <rect x="920" y="185" width="360" height="540" rx="18" fill="#b7c8ff"/>
+  <text x="990" y="228" class="k">Action Register</text>
+  <text x="955" y="275" class="k">Owner | Action | Due</text>
+  <text x="955" y="312" class="k">SOC lead | isolate runbook update | 14d</text>
+  <text x="955" y="349" class="k">IT ops | restore drill cadence | 21d</text>
+  <text x="955" y="386" class="k">Legal | notification matrix | 10d</text>
+  <text x="955" y="423" class="k">CISO | authority memo refresh | 7d</text>
+  <text x="955" y="460" class="k">PMO | retest scenario #2 | 30d</text>
+
+  <text x="120" y="810" class="t">Good tabletop exercises produce accountable change, not just discussion notes.</text>
+</svg>

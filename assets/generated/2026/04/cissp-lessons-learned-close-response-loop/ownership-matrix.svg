@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Lessons learned ownership matrix</title>
+  <desc id="desc">A matrix mapping findings to owners, due dates, and validation status after an incident review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132737"/>
+      <stop offset="100%" stop-color="#1f3b4b"/>
+    </linearGradient>
+    <style>
+      .h{font:700 42px 'Segoe UI',Tahoma,sans-serif;fill:#f2fbff}
+      .th{font:700 20px 'Segoe UI',Tahoma,sans-serif;fill:#052232}
+      .td{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#0b2b3d}
+      .cap{font:600 20px 'Segoe UI',Tahoma,sans-serif;fill:#d4ecf9}
+    </style>
+  </defs>
+  <rect width="1400" height="840" fill="url(#bg)"/>
+  <text x="70" y="90" class="h">Post-Incident Ownership Matrix</text>
+
+  <rect x="70" y="140" width="1260" height="600" rx="20" fill="#ffffff" fill-opacity="0.1" stroke="#a2d4eb" stroke-opacity="0.4"/>
+
+  <rect x="110" y="190" width="1180" height="62" fill="#8fd0f3"/>
+  <text x="145" y="230" class="th">Finding</text>
+  <text x="520" y="230" class="th">Owner</text>
+  <text x="710" y="230" class="th">Due</text>
+  <text x="845" y="230" class="th">Risk Reduced</text>
+  <text x="1085" y="230" class="th">Validation</text>
+
+  <rect x="110" y="252" width="1180" height="84" fill="#b8e6ff"/>
+  <text x="145" y="302" class="td">Containment authority unclear after hour 1</text>
+  <text x="520" y="302" class="td">CISO office</text>
+  <text x="710" y="302" class="td">14d</text>
+  <text x="845" y="302" class="td">Decision delay</text>
+  <text x="1085" y="302" class="td">Retest scenario A</text>
+
+  <rect x="110" y="336" width="1180" height="84" fill="#d5f0ff"/>
+  <text x="145" y="386" class="td">Backup restore sequencing not documented</text>
+  <text x="520" y="386" class="td">IT operations</text>
+  <text x="710" y="386" class="td">21d</text>
+  <text x="845" y="386" class="td">Recovery lag</text>
+  <text x="1085" y="386" class="td">Restore drill</text>
+
+  <rect x="110" y="420" width="1180" height="84" fill="#b8e6ff"/>
+  <text x="145" y="470" class="td">Legal notification threshold interpreted differently</text>
+  <text x="520" y="470" class="td">Legal lead</text>
+  <text x="710" y="470" class="td">10d</text>
+  <text x="845" y="470" class="td">Compliance risk</text>
+  <text x="1085" y="470" class="td">Policy walkthrough</text>
+
+  <rect x="110" y="504" width="1180" height="84" fill="#d5f0ff"/>
+  <text x="145" y="554" class="td">Third-party escalation contact outdated</text>
+  <text x="520" y="554" class="td">Vendor mgmt</text>
+  <text x="710" y="554" class="td">7d</text>
+  <text x="845" y="554" class="td">Service outage</text>
+  <text x="1085" y="554" class="td">Contact test</text>
+
+  <text x="70" y="795" class="cap">Findings become security value only when ownership, deadlines, and validation are explicit.</text>
+</svg>
