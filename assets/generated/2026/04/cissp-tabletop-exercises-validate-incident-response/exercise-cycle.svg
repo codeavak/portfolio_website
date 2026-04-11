@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Tabletop exercise cycle</title>
+  <desc id="desc">A six-step cycle from scenario design to measurable remediation for incident response tabletop exercises.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4fbff"/>
+      <stop offset="100%" stop-color="#deeff7"/>
+    </linearGradient>
+    <style>
+      .h{font:700 46px 'Segoe UI',Tahoma,sans-serif;fill:#11324a}
+      .t{font:600 24px 'Segoe UI',Tahoma,sans-serif;fill:#12384f}
+      .s{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#20495e}
+    </style>
+  </defs>
+  <rect width="1400" height="840" fill="url(#bg)"/>
+  <text x="70" y="95" class="h">Tabletop Exercise Improvement Cycle</text>
+
+  <circle cx="700" cy="440" r="220" fill="#ffffff" stroke="#7fb3cf" stroke-width="5"/>
+  <circle cx="700" cy="440" r="84" fill="#2e6f95"/>
+  <text x="665" y="430" style="font:700 22px 'Segoe UI',Tahoma,sans-serif;fill:#ffffff">IR</text>
+  <text x="632" y="460" style="font:700 22px 'Segoe UI',Tahoma,sans-serif;fill:#ffffff">Readiness</text>
+
+  <g>
+    <rect x="615" y="120" width="170" height="90" rx="18" fill="#95d5f2"/>
+    <text x="646" y="160" class="t">1. Scope</text>
+    <text x="636" y="185" class="s">Critical systems</text>
+  </g>
+
+  <g>
+    <rect x="920" y="250" width="230" height="90" rx="18" fill="#a7e8c6"/>
+    <text x="962" y="290" class="t">2. Build Scenario</text>
+    <text x="958" y="315" class="s">Realistic injects</text>
+  </g>
+
+  <g>
+    <rect x="950" y="520" width="240" height="90" rx="18" fill="#ffe3a6"/>
+    <text x="1008" y="560" class="t">3. Exercise</text>
+    <text x="983" y="585" class="s">Role-based decisions</text>
+  </g>
+
+  <g>
+    <rect x="630" y="660" width="220" height="90" rx="18" fill="#ffc9b2"/>
+    <text x="667" y="700" class="t">4. Capture Gaps</text>
+    <text x="677" y="725" class="s">Evidence, blockers</text>
+  </g>
+
+  <g>
+    <rect x="250" y="520" width="240" height="90" rx="18" fill="#cdb8ff"/>
+    <text x="298" y="560" class="t">5. Assign Fixes</text>
+    <text x="304" y="585" class="s">Owners, due dates</text>
+  </g>
+
+  <g>
+    <rect x="220" y="250" width="220" height="90" rx="18" fill="#8ce0d3"/>
+    <text x="256" y="290" class="t">6. Re-test</text>
+    <text x="251" y="315" class="s">Measure progress</text>
+  </g>
+
+  <path d="M700 210 C840 210, 920 250, 920 295" stroke="#2e6f95" stroke-width="5" fill="none"/>
+  <path d="M1035 340 C1100 410, 1100 490, 1070 520" stroke="#2e6f95" stroke-width="5" fill="none"/>
+  <path d="M950 610 C900 650, 840 680, 740 680" stroke="#2e6f95" stroke-width="5" fill="none"/>
+  <path d="M630 705 C500 705, 420 660, 380 610" stroke="#2e6f95" stroke-width="5" fill="none"/>
+  <path d="M250 520 C220 470, 220 380, 280 340" stroke="#2e6f95" stroke-width="5" fill="none"/>
+  <path d="M330 250 C390 205, 500 190, 615 185" stroke="#2e6f95" stroke-width="5" fill="none"/>
+</svg>

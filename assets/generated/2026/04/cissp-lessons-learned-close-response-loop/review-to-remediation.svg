@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Review to remediation pipeline</title>
+  <desc id="desc">A pipeline showing lessons learned progressing from evidence to assigned remediation and validation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fcff"/>
+      <stop offset="100%" stop-color="#e2f0f8"/>
+    </linearGradient>
+    <style>
+      .h{font:700 44px 'Segoe UI',Tahoma,sans-serif;fill:#11324a}
+      .t{font:600 22px 'Segoe UI',Tahoma,sans-serif;fill:#0d2c40}
+      .s{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#224a60}
+    </style>
+  </defs>
+  <rect width="1400" height="840" fill="url(#bg)"/>
+  <text x="72" y="92" class="h">From Lessons Learned To Measurable Remediation</text>
+
+  <rect x="90" y="220" width="220" height="120" rx="16" fill="#98d5f3"/>
+  <text x="138" y="275" class="t">Evidence</text>
+  <text x="122" y="305" class="s">Timeline, decisions</text>
+
+  <rect x="360" y="220" width="230" height="120" rx="16" fill="#9fe7c4"/>
+  <text x="404" y="275" class="t">Themes</text>
+  <text x="398" y="305" class="s">Root causes</text>
+
+  <rect x="640" y="220" width="230" height="120" rx="16" fill="#ffe2a5"/>
+  <text x="693" y="275" class="t">Actions</text>
+  <text x="670" y="305" class="s">Owner + due date</text>
+
+  <rect x="920" y="220" width="220" height="120" rx="16" fill="#c4cfff"/>
+  <text x="972" y="275" class="t">Control</text>
+  <text x="962" y="305" class="s">Policy updates</text>
+
+  <rect x="1180" y="220" width="150" height="120" rx="16" fill="#ffc9b7"/>
+  <text x="1213" y="275" class="t">Re-test</text>
+  <text x="1208" y="305" class="s">Verify</text>
+
+  <path d="M310 280 L360 280" stroke="#1d5f85" stroke-width="6"/>
+  <path d="M590 280 L640 280" stroke="#1d5f85" stroke-width="6"/>
+  <path d="M870 280 L920 280" stroke="#1d5f85" stroke-width="6"/>
+  <path d="M1140 280 L1180 280" stroke="#1d5f85" stroke-width="6"/>
+
+  <rect x="180" y="430" width="1040" height="280" rx="20" fill="#ffffff" stroke="#8ab7d0" stroke-width="3"/>
+  <text x="220" y="485" class="t">What to avoid:</text>
+  <text x="220" y="525" class="s">- vague findings with no owner</text>
+  <text x="220" y="560" class="s">- action items disconnected from risk impact</text>
+  <text x="220" y="595" class="s">- no follow-up validation cycle</text>
+  <text x="220" y="650" class="t">What good looks like:</text>
+  <text x="220" y="690" class="s">- remediation tied to concrete failure modes and business impact</text>
+</svg>

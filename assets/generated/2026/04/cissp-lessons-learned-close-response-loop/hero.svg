@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Lessons learned closes the response loop</title>
+  <desc id="desc">A visual of incident response feeding into lessons learned, ownership, and control improvement.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2230"/>
+      <stop offset="100%" stop-color="#1d3b46"/>
+    </linearGradient>
+    <style>
+      .title{font:700 56px 'Segoe UI',Tahoma,sans-serif;fill:#f4fbff}
+      .sub{font:500 24px 'Segoe UI',Tahoma,sans-serif;fill:#d9edf8}
+      .k{font:600 24px 'Segoe UI',Tahoma,sans-serif;fill:#072231}
+      .cap{font:600 22px 'Segoe UI',Tahoma,sans-serif;fill:#d5ecf9}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1430" cy="150" r="210" fill="#72d9bd" opacity="0.14"/>
+  <circle cx="180" cy="760" r="260" fill="#7db9ff" opacity="0.12"/>
+
+  <text x="90" y="120" class="title">Lessons Learned Close The Loop</text>
+  <text x="90" y="160" class="sub">CISSP #24 | Response maturity is measured by what changes after the incident</text>
+
+  <rect x="95" y="240" width="1410" height="540" rx="24" fill="#ffffff" fill-opacity="0.08" stroke="#a7d8ee" stroke-opacity="0.4"/>
+
+  <rect x="170" y="370" width="260" height="120" rx="18" fill="#8ed0f4"/>
+  <text x="225" y="425" class="k">Incident</text>
+  <text x="218" y="455" class="k">Response</text>
+
+  <rect x="560" y="300" width="280" height="120" rx="18" fill="#9fe8c5"/>
+  <text x="630" y="355" class="k">After-Action</text>
+  <text x="625" y="385" class="k">Review</text>
+
+  <rect x="560" y="530" width="280" height="120" rx="18" fill="#ffdca8"/>
+  <text x="632" y="585" class="k">Root Cause</text>
+  <text x="629" y="615" class="k">Themes</text>
+
+  <rect x="980" y="300" width="330" height="120" rx="18" fill="#b9c8ff"/>
+  <text x="1070" y="355" class="k">Action Owners</text>
+  <text x="1062" y="385" class="k">and Dates</text>
+
+  <rect x="980" y="530" width="330" height="120" rx="18" fill="#ffcab6"/>
+  <text x="1055" y="585" class="k">Control Updates</text>
+  <text x="1068" y="615" class="k">and Re-test</text>
+
+  <path d="M430 430 C500 430, 510 360, 560 360" stroke="#d4eefc" stroke-width="7" fill="none"/>
+  <path d="M430 430 C500 430, 510 590, 560 590" stroke="#d4eefc" stroke-width="7" fill="none"/>
+  <path d="M840 360 C900 360, 930 360, 980 360" stroke="#d4eefc" stroke-width="7" fill="none"/>
+  <path d="M840 590 C900 590, 930 590, 980 590" stroke="#d4eefc" stroke-width="7" fill="none"/>
+  <path d="M1310 590 C1360 590, 1360 430, 1310 430" stroke="#d4eefc" stroke-width="7" fill="none"/>
+  <polygon points="1290,430 1318,418 1318,442" fill="#d4eefc"/>
+
+  <text x="95" y="835" class="cap">The goal is not a perfect report. The goal is fewer repeated failures and faster, cleaner response next time.</text>
+</svg>
