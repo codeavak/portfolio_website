@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">MTD and RTO timeline</title>
+  <desc id="desc">Incident timeline showing recovery milestones for multiple services relative to MTD boundary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101f2c"/>
+      <stop offset="100%" stop-color="#244860"/>
+    </linearGradient>
+    <style>
+      .title{font:700 48px 'Segoe UI',Tahoma,sans-serif;fill:#f3fbff}
+      .sub{font:500 20px 'Segoe UI',Tahoma,sans-serif;fill:#d1e8f4}
+      .axis{font:600 20px 'Segoe UI',Tahoma,sans-serif;fill:#e8f6ff}
+      .label{font:700 21px 'Segoe UI',Tahoma,sans-serif;fill:#0a2838}
+      .small{font:500 17px 'Segoe UI',Tahoma,sans-serif;fill:#0a2838}
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="70" y="92" class="title">Recovery Timeline Against MTD</text>
+  <text x="70" y="128" class="sub">Track milestones to verify safety margin before business tolerance expires</text>
+
+  <line x1="120" y1="430" x2="1270" y2="430" stroke="#d8eefb" stroke-width="6"/>
+  <line x1="120" y1="410" x2="120" y2="690" stroke="#d8eefb" stroke-width="4"/>
+
+  <text x="90" y="740" class="axis">Incident start</text>
+  <text x="1220" y="740" class="axis">MTD boundary</text>
+  <line x1="1230" y1="300" x2="1230" y2="690" stroke="#ffcc9f" stroke-width="8"/>
+
+  <rect x="260" y="300" width="250" height="90" rx="14" fill="#90dbf2"/>
+  <text x="290" y="340" class="label">Checkout RTO</text>
+  <text x="290" y="368" class="small">Target: 45m</text>
+  <line x1="385" y1="390" x2="385" y2="430" stroke="#90dbf2" stroke-width="6"/>
+
+  <rect x="500" y="500" width="270" height="90" rx="14" fill="#a5e4bf"/>
+  <text x="530" y="540" class="label">Fulfillment RTO</text>
+  <text x="530" y="568" class="small">Target: 90m</text>
+  <line x1="635" y1="500" x2="635" y2="430" stroke="#a5e4bf" stroke-width="6"/>
+
+  <rect x="760" y="300" width="260" height="90" rx="14" fill="#f4dda1"/>
+  <text x="790" y="340" class="label">Support RTO</text>
+  <text x="790" y="368" class="small">Target: 2h</text>
+  <line x1="890" y1="390" x2="890" y2="430" stroke="#f4dda1" stroke-width="6"/>
+
+  <rect x="980" y="500" width="220" height="90" rx="14" fill="#ffc9ae"/>
+  <text x="1010" y="540" class="label">Analytics</text>
+  <text x="1010" y="568" class="small">Target: 12h</text>
+  <line x1="1090" y1="500" x2="1090" y2="430" stroke="#ffc9ae" stroke-width="6"/>
+
+  <path d="M120 250 C350 210, 700 210, 1220 250" stroke="#ffdcb5" stroke-width="6" fill="none" stroke-dasharray="10 8"/>
+  <text x="520" y="235" class="axis">Safety margin zone before MTD</text>
+</svg>

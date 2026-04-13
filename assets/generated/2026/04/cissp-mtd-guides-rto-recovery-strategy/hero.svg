@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">MTD and RTO strategy map</title>
+  <desc id="desc">Visual map of maximum tolerable downtime as an outer boundary with service-level recovery objectives inside.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102430"/>
+      <stop offset="100%" stop-color="#195066"/>
+    </linearGradient>
+    <style>
+      .title{font:700 54px 'Segoe UI',Tahoma,sans-serif;fill:#f3fcff}
+      .sub{font:500 22px 'Segoe UI',Tahoma,sans-serif;fill:#d3e9f4}
+      .label{font:700 24px 'Segoe UI',Tahoma,sans-serif;fill:#0a2838}
+      .small{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#0a2838}
+      .foot{font:600 24px 'Segoe UI',Tahoma,sans-serif;fill:#e7f6ff}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1350" cy="170" r="230" fill="#64c7b3" opacity="0.18"/>
+  <circle cx="180" cy="760" r="260" fill="#60adff" opacity="0.14"/>
+
+  <text x="90" y="118" class="title">MTD Guides RTO and Recovery Strategy</text>
+  <text x="90" y="158" class="sub">CISSP #26 | Boundary first, target second</text>
+
+  <rect x="110" y="230" width="1380" height="560" rx="30" fill="none" stroke="#ffd8a6" stroke-width="10"/>
+  <text x="130" y="278" class="label" fill="#ffe6bf">MTD / MAO business tolerance boundary</text>
+
+  <rect x="220" y="330" width="320" height="120" rx="18" fill="#8fddf2"/>
+  <text x="255" y="380" class="label">Checkout Service</text>
+  <text x="255" y="412" class="small">RTO 45m | RPO 5m</text>
+
+  <rect x="220" y="500" width="320" height="120" rx="18" fill="#a8e6be"/>
+  <text x="255" y="550" class="label">Fulfillment Core</text>
+  <text x="255" y="582" class="small">RTO 90m | RPO 15m</text>
+
+  <rect x="220" y="670" width="320" height="90" rx="18" fill="#f5dea2"/>
+  <text x="255" y="724" class="label">Analytics</text>
+  <text x="370" y="724" class="small">RTO 12h | RPO 2h</text>
+
+  <rect x="760" y="420" width="320" height="170" rx="20" fill="#ffffff"/>
+  <text x="810" y="486" class="label">Decision Rule</text>
+  <text x="810" y="520" class="small">RTO must be inside MTD</text>
+  <text x="810" y="550" class="small">with tested safety margin</text>
+
+  <rect x="1180" y="340" width="250" height="120" rx="18" fill="#7fd4cc"/>
+  <text x="1215" y="390" class="label">Priority 1</text>
+  <text x="1215" y="422" class="small">Revenue flow</text>
+
+  <rect x="1180" y="500" width="250" height="120" rx="18" fill="#95c6ff"/>
+  <text x="1215" y="550" class="label">Priority 2</text>
+  <text x="1215" y="582" class="small">Operations stability</text>
+
+  <rect x="1180" y="660" width="250" height="100" rx="18" fill="#ffc9ad"/>
+  <text x="1215" y="712" class="label">Priority 3</text>
+  <text x="1215" y="740" class="small">Deferred workloads</text>
+
+  <path d="M540 390 C650 390, 690 460, 760 500" stroke="#d7effc" stroke-width="7" fill="none"/>
+  <path d="M540 560 C650 560, 690 530, 760 520" stroke="#d7effc" stroke-width="7" fill="none"/>
+  <path d="M540 715 C650 715, 690 570, 760 540" stroke="#d7effc" stroke-width="7" fill="none"/>
+
+  <path d="M1080 510 C1128 500, 1140 400, 1180 400" stroke="#d7effc" stroke-width="7" fill="none"/>
+  <path d="M1080 510 C1134 510, 1140 560, 1180 560" stroke="#d7effc" stroke-width="7" fill="none"/>
+  <path d="M1080 510 C1128 520, 1140 710, 1180 710" stroke="#d7effc" stroke-width="7" fill="none"/>
+
+  <text x="90" y="845" class="foot">Resilient plans use business boundaries to drive technical recovery targets.</text>
+</svg>
