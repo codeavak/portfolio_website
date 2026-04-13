@@ -76,13 +76,13 @@ That is exactly the kind of business-aware, risk-based thinking CISSP rewards.
 A useful after-action review should produce three concrete outputs:
 
 1. **Validated incident narrative**
-A fact-based timeline of what happened, what was known at each point, and which decisions were made.
+   A fact-based timeline of what happened, what was known at each point, and which decisions were made.
 
 2. **Root-cause themes, not just symptoms**
-Clear categorization of where failures were technical, procedural, organizational, or dependency-driven.
+   Clear categorization of where failures were technical, procedural, organizational, or dependency-driven.
 
 3. **Owned remediation with validation criteria**
-Actions tied to risk reduction, with named owners, due dates, and an explicit retest plan.
+   Actions tied to risk reduction, with named owners, due dates, and an explicit retest plan.
 
 If one of these outputs is missing, the organization is usually documenting activity rather than improving capability.
 

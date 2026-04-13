@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Recovery validation loop</title>
+  <desc id="desc">Five-step continuous loop for validating RTO and RPO through testing and remediation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#122332"/>
+      <stop offset="100%" stop-color="#1b4b60"/>
+    </linearGradient>
+    <style>
+      .title{font:700 50px 'Segoe UI',Tahoma,sans-serif;fill:#f4fcff}
+      .sub{font:500 22px 'Segoe UI',Tahoma,sans-serif;fill:#d5eaf4}
+      .node{font:700 24px 'Segoe UI',Tahoma,sans-serif;fill:#072638}
+      .text{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#072638}
+      .foot{font:600 24px 'Segoe UI',Tahoma,sans-serif;fill:#e9f8ff}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d7effb"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <circle cx="1180" cy="150" r="200" fill="#67c7b2" opacity="0.16"/>
+  <circle cx="170" cy="760" r="220" fill="#5aabff" opacity="0.14"/>
+
+  <text x="70" y="98" class="title">Recovery Validation Loop</text>
+  <text x="70" y="136" class="sub">RTO/RPO targets become credible only when tested and improved repeatedly</text>
+
+  <rect x="530" y="360" width="340" height="180" rx="22" fill="#ffffff"/>
+  <text x="610" y="430" class="node">Measured Readiness</text>
+  <text x="620" y="465" class="text">Evidence over assumptions</text>
+
+  <rect x="170" y="260" width="260" height="120" rx="18" fill="#91dcf2"/>
+  <text x="210" y="315" class="node">1. Define</text>
+  <text x="210" y="345" class="text">RTO and RPO</text>
+
+  <rect x="920" y="260" width="260" height="120" rx="18" fill="#a6e4bf"/>
+  <text x="960" y="315" class="node">2. Test</text>
+  <text x="960" y="345" class="text">tabletop + technical</text>
+
+  <rect x="1020" y="560" width="260" height="120" rx="18" fill="#f6dea5"/>
+  <text x="1060" y="615" class="node">3. Measure</text>
+  <text x="1060" y="645" class="text">actual outcomes</text>
+
+  <rect x="630" y="690" width="260" height="120" rx="18" fill="#98c7ff"/>
+  <text x="670" y="745" class="node">4. Remediate</text>
+  <text x="670" y="775" class="text">owners + due dates</text>
+
+  <rect x="250" y="560" width="260" height="120" rx="18" fill="#ffc8ae"/>
+  <text x="290" y="615" class="node">5. Re-test</text>
+  <text x="290" y="645" class="text">verify improvement</text>
+
+  <path d="M430 320 C500 320, 520 390, 530 420" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M870 420 C900 390, 915 340, 920 320" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M1050 380 C1120 430, 1145 505, 1148 560" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M1020 680 C980 720, 930 740, 890 748" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M630 748 C560 760, 470 730, 450 680" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M360 560 C330 510, 325 430, 355 380" stroke="#d7effb" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="70" y="844" class="foot">Set targets, test reality, remediate gaps, then measure again.</text>
+</svg>

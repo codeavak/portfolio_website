@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">RTO RPO service matrix</title>
+  <desc id="desc">A matrix mapping business services by recovery time and recovery point strictness with strategy guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1d2a"/>
+      <stop offset="100%" stop-color="#23435b"/>
+    </linearGradient>
+    <style>
+      .title{font:700 48px 'Segoe UI',Tahoma,sans-serif;fill:#f2fbff}
+      .sub{font:500 20px 'Segoe UI',Tahoma,sans-serif;fill:#d2e8f4}
+      .axis{font:600 24px 'Segoe UI',Tahoma,sans-serif;fill:#e8f6ff}
+      .boxTitle{font:700 24px 'Segoe UI',Tahoma,sans-serif;fill:#082538}
+      .boxText{font:500 18px 'Segoe UI',Tahoma,sans-serif;fill:#082538}
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="70" y="92" class="title">RTO/RPO Prioritization Matrix</text>
+  <text x="70" y="128" class="sub">Use business impact to choose proportionate recovery strategy</text>
+
+  <rect x="170" y="200" width="980" height="560" fill="#ffffff" fill-opacity="0.08" stroke="#d4ecf9" stroke-opacity="0.4"/>
+  <line x1="170" y1="480" x2="1150" y2="480" stroke="#d4ecf9" stroke-opacity="0.4" stroke-width="2"/>
+  <line x1="660" y1="200" x2="660" y2="760" stroke="#d4ecf9" stroke-opacity="0.4" stroke-width="2"/>
+
+  <text x="52" y="485" transform="rotate(-90 52 485)" class="axis">RTO strictness</text>
+  <text x="530" y="830" class="axis">RPO strictness</text>
+
+  <rect x="205" y="235" width="420" height="210" rx="18" fill="#8fd8f0"/>
+  <text x="235" y="285" class="boxTitle">Critical Tier</text>
+  <text x="235" y="320" class="boxText">Examples: payments, auth core</text>
+  <text x="235" y="350" class="boxText">Guidance: active failover,</text>
+  <text x="235" y="380" class="boxText">high-frequency replication</text>
+  <text x="235" y="410" class="boxText">and pre-approved runbooks</text>
+
+  <rect x="695" y="235" width="420" height="210" rx="18" fill="#9fe2c0"/>
+  <text x="725" y="285" class="boxTitle">Important Tier</text>
+  <text x="725" y="320" class="boxText">Examples: customer support</text>
+  <text x="725" y="350" class="boxText">Guidance: warm standby,</text>
+  <text x="725" y="380" class="boxText">scripted restore sequencing</text>
+  <text x="725" y="410" class="boxText">with tested dependencies</text>
+
+  <rect x="205" y="515" width="420" height="210" rx="18" fill="#f5dda3"/>
+  <text x="235" y="565" class="boxTitle">Standard Tier</text>
+  <text x="235" y="600" class="boxText">Examples: internal portals</text>
+  <text x="235" y="630" class="boxText">Guidance: scheduled backups,</text>
+  <text x="235" y="660" class="boxText">manual restoration playbook</text>
+  <text x="235" y="690" class="boxText">with periodic exercises</text>
+
+  <rect x="695" y="515" width="420" height="210" rx="18" fill="#ffc7ae"/>
+  <text x="725" y="565" class="boxTitle">Deferred Tier</text>
+  <text x="725" y="600" class="boxText">Examples: noncritical analytics</text>
+  <text x="725" y="630" class="boxText">Guidance: cost-optimized restore</text>
+  <text x="725" y="660" class="boxText">and clear communication of</text>
+  <text x="725" y="690" class="boxText">longer recovery expectations</text>
+</svg>
