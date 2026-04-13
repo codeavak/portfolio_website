@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-13T13:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="domain-3" />
+      
+        <meta property="article:tag" content="cryptography" />
+      
+        <meta property="article:tag" content="encryption" />
+      
+        <meta property="article:tag" content="digital-signatures" />
+      
+        <meta property="article:tag" content="tls" />
+      
+        <meta property="article:tag" content="key-management" />
+      
+    
+    <meta property="og:title" content="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" />
+    <meta property="og:description" content="Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" />
+    <meta name="twitter:description" content="Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything",
+        "description": "Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-13T13:00:00+00:00",
+        "dateModified": "2026-04-13T13:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">security • cissp</div>
+              
+              <time class="post-date" datetime="2026-04-13T13:00:00+00:00">April 13, 2026</time>
+              <h1 class="post-title">CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything</h1>
+              
+                <p class="post-dek">Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">domain-3</span>
+                  
+                    <span class="chip">cryptography</span>
+                  
+                    <span class="chip">encryption</span>
+                  
+                    <span class="chip">digital-signatures</span>
+                  
+                    <span class="chip">tls</span>
+                  
+                    <span class="chip">key-management</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Developers use cryptographic tools constantly without thinking about them.</p>
+
+<p>You hash passwords before storing them. Your API calls go over TLS. You sign tokens, verify certificates, and see references to AES-256 or SHA-256 in documentation without stopping to reason carefully about what those choices actually provide.</p>
+
+<p>That works very well — until you need to make a cryptographic decision yourself, evaluate whether a system design is sound, or answer a CISSP question about which primitive provides non-repudiation and why.</p>
+
+<p>Cryptography is not a single thing. It is a collection of distinct primitives, each solving a specific problem. The practical skill — for engineers and for the CISSP exam — is knowing which primitive addresses which problem, what it does not address, and how the primitives combine in the protocols you already rely on.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" alt="Diagram mapping four cryptographic goals — confidentiality, integrity, authenticity, and non-repudiation — to the primitives that address each one: symmetric encryption, hashing, HMAC, and digital signatures." />
+  <figcaption>Cryptography is a set of tools. Each primitive solves a specific problem. Knowing which is which is more useful than memorizing algorithm names.</figcaption>
+</figure>
+
+<h2 id="start-with-the-goals-not-the-algorithms">Start with the goals, not the algorithms</h2>
+
+<p>The right entry point is not AES or RSA. It is the security properties you are trying to achieve.</p>
+
+<p><strong>Confidentiality:</strong> Only the intended recipient can read the data.</p>
+
+<p><strong>Integrity:</strong> The data has not been altered in transit or at rest.</p>
+
+<p><strong>Authenticity:</strong> The data came from the expected sender.</p>
+
+<p><strong>Non-repudiation:</strong> The sender cannot later deny having sent the data.</p>
+
+<p>These are distinct properties. No single cryptographic primitive provides all of them. A system that needs all four requires a combination of tools.</p>
+
+<p>This framing is exactly what CISSP tests: given a scenario, which property applies, and which primitive delivers it?</p>
+
+<h2 id="encryption-addresses-confidentiality--nothing-else-by-default">Encryption addresses confidentiality — nothing else by default</h2>
+
+<p>Encryption transforms plaintext into ciphertext that can only be reversed with the correct key. Its purpose is confidentiality: preventing unauthorized parties from reading the data.</p>
+
+<p>Encryption alone does not verify that the ciphertext was unmodified. It does not prove who sent it. It does not prevent the sender from denying they sent it.</p>
+
+<p>Two families of encryption matter for CISSP:</p>
+
+<h3 id="symmetric-encryption">Symmetric encryption</h3>
+
+<p>One key is used for both encryption and decryption. AES (Advanced Encryption Standard) is the dominant example in modern systems.</p>
+
+<p>Symmetric encryption is fast and efficient — appropriate for bulk data encryption. But it requires that both parties already share the same key. Getting that key to the other party securely is the key distribution problem, and it is the fundamental limitation of symmetric encryption.</p>
+
+<h3 id="asymmetric-encryption">Asymmetric encryption</h3>
+
+<p>Two mathematically linked keys: a public key and a private key. Data encrypted with one key can only be decrypted with the other. RSA and elliptic curve cryptography are the common examples.</p>
+
+<p>The public key can be distributed freely. The private key is kept secret by its owner.</p>
+
+<p>Asymmetric encryption solves key distribution: you can encrypt a message using my public key, and only I can decrypt it with my private key. We never needed a prior secure channel to share a secret.</p>
+
+<p>The tradeoff: asymmetric operations are computationally expensive relative to symmetric operations. They are not suited for encrypting large volumes of data.</p>
+
+<h3 id="the-hybrid-model">The hybrid model</h3>
+
+<p>Real protocols combine both. Asymmetric cryptography is used to securely exchange a symmetric session key. Symmetric encryption then handles the actual data.</p>
+
+<p>TLS is the canonical example. During the handshake, asymmetric cryptography establishes a shared session key. All subsequent traffic is encrypted with that symmetric key. You get key distribution without a pre-shared secret, and bulk encryption without the overhead of asymmetric operations on every byte.</p>
+
+<p>This is the design pattern worth internalizing. It appears in TLS, in PGP, in S/MIME, and in most well-designed encryption protocols.</p>
+
+<h2 id="hashing-addresses-integrity--not-confidentiality-not-authenticity">Hashing addresses integrity — not confidentiality, not authenticity</h2>
+
+<p>A hash function takes arbitrary input and produces a fixed-length digest. SHA-256 produces a 256-bit output regardless of whether the input is a single character or a multi-gigabyte file.</p>
+
+<p>Hash functions are one-directional: you cannot recover the input from the hash. They are also deterministic: the same input always produces the same hash.</p>
+
+<p>Hashing verifies integrity. If the hash of a downloaded file matches the published hash, the file has not been modified in transit.</p>
+
+<p>What hashing does not provide: authenticity. Anyone can compute a hash. If an attacker can modify a file and also replace the published hash, integrity checking fails. Hashing on its own is only useful when the hash value arrives through a trusted channel or is protected by a separate mechanism.</p>
+
+<p>One common engineering mistake is treating hashing and encryption as interchangeable for password storage. They are not:</p>
+
+<ul>
+  <li><strong>Encrypting passwords</strong> means the original value can be recovered if you have the key. You should never need to recover the original password.</li>
+  <li><strong>Hashing passwords</strong> with a slow, salted algorithm like bcrypt or Argon2 means the original cannot be recovered. You re-hash the login attempt and compare. That is the correct property.</li>
+</ul>
+
+<p>SHA-256(password) directly is also insufficient — unsalted hashes are vulnerable to precomputation attacks (rainbow tables). Password hashing requires purpose-built algorithms with built-in salt and computational cost.</p>
+
+<h2 id="hmac-adds-authenticity-to-integrity">HMAC adds authenticity to integrity</h2>
+
+<p>A Message Authentication Code (MAC) — specifically HMAC (Hash-based MAC) — combines a hash function with a shared secret key. The output can only be produced by someone who holds the key.</p>
+
+<p>This provides:</p>
+
+<ul>
+  <li><strong>Integrity:</strong> The message has not been modified.</li>
+  <li><strong>Authenticity:</strong> The message was created by a party that holds the secret key.</li>
+</ul>
+
+<p>HMAC is used in signed JWTs when using HS256, in API request signing, and in various protocol-level message verification schemes.</p>
+
+<p>What it does not provide: <strong>non-repudiation</strong>. Because both the sender and receiver share the same key, either party could have generated the MAC. The receiver cannot prove to a third party that the sender — and not the receiver — created it.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/mac-vs-signature.svg" alt="Side-by-side comparison: HMAC using a shared secret key proves integrity and authenticity but not non-repudiation. Digital signature using an asymmetric key pair proves integrity, authenticity, and non-repudiation." />
+  <figcaption>HMAC and digital signatures both verify who sent a message — but only digital signatures provide non-repudiation because only one party holds the signing key.</figcaption>
+</figure>
+
+<h2 id="digital-signatures-add-non-repudiation">Digital signatures add non-repudiation</h2>
+
+<p>Digital signatures use asymmetric cryptography in the reverse direction from encryption.</p>
+
+<ul>
+  <li>The sender signs with their <strong>private key</strong>.</li>
+  <li>Anyone with the sender’s <strong>public key</strong> can verify the signature.</li>
+</ul>
+
+<p>Because only the sender holds the private key, the signature can only have been produced by them. This provides:</p>
+
+<ul>
+  <li><strong>Integrity:</strong> The signed content has not been altered.</li>
+  <li><strong>Authenticity:</strong> The content was signed by the private key holder.</li>
+  <li><strong>Non-repudiation:</strong> The private key holder cannot credibly deny having signed it — no one else could have produced that signature.</li>
+</ul>
+
+<p>Digital signatures are used in code signing, certificate chains (a certificate is a signed binding of a public key to an identity), document signing, and asymmetric JWT signing (RS256, ES256).</p>
+
+<p>CISSP reasoning: if a scenario requires non-repudiation, the answer involves asymmetric cryptography and digital signatures, not HMAC with a shared secret.</p>
+
+<h2 id="the-hybrid-model-in-practice-how-tls-actually-works">The hybrid model in practice: how TLS actually works</h2>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/tls-handshake.svg" alt="Simplified TLS handshake diagram showing asymmetric key exchange establishing a shared symmetric session key, which then encrypts all subsequent data." />
+  <figcaption>TLS uses asymmetric cryptography to solve key distribution and symmetric cryptography for bulk data. The hybrid model gets the best of both primitives.</figcaption>
+</figure>
+
+<p>Each HTTPS connection demonstrates the hybrid model:</p>
+
+<ol>
+  <li>The server presents a certificate (its public key signed by a Certificate Authority).</li>
+  <li>The client verifies the certificate chain and trusts the server’s public key.</li>
+  <li>Asymmetric cryptography is used to establish a shared session key — without transmitting it in plaintext.</li>
+  <li>All subsequent data is encrypted with that symmetric session key.</li>
+</ol>
+
+<p>The result: key distribution is solved without a pre-shared secret. Bulk data is encrypted efficiently. Both primitives contribute what they do well.</p>
+
+<h2 id="key-management-is-where-things-actually-go-wrong">Key management is where things actually go wrong</h2>
+
+<p>The algorithms in use today — AES, RSA, ECDH, SHA-256 — are well understood and implemented in well-audited libraries. Algorithmic failures in production are rare.</p>
+
+<p>What is common: key management failures.</p>
+
+<ul>
+  <li>Keys stored in source code, configuration files, or environment variables without sufficient access control.</li>
+  <li>Keys never rotated, so a compromise from a previous period still affects current data.</li>
+  <li>Certificate expiration causing outages, because certificate lifecycle management was not treated as an operational discipline.</li>
+  <li>Encryption keys stored in a system that is itself insufficiently secured.</li>
+</ul>
+
+<p>CISSP covers key management as a substantial component of the cryptography domain:</p>
+
+<ul>
+  <li><strong>Key generation:</strong> Keys must be generated with sufficient entropy. Weak generation is a systemic weakness, not just a one-time error.</li>
+  <li><strong>Key distribution:</strong> How keys reach the parties that need them. The asymmetric exchange model exists specifically to solve this.</li>
+  <li><strong>Key storage:</strong> Hardware Security Modules (HSMs) are the enterprise answer for protecting high-value keys in tamper-resistant hardware.</li>
+  <li><strong>Key rotation and revocation:</strong> Keys should have defined lifetimes. When compromised, they must be revocable. Certificate Revocation Lists (CRLs) and OCSP provide this for public key infrastructure.</li>
+  <li><strong>Key destruction:</strong> Secure deletion at end of life, to prevent key recovery from decommissioned hardware or storage media.</li>
+</ul>
+
+<p>The pattern: the cryptographic primitives rarely fail. The processes around the keys routinely do.</p>
+
+<h2 id="what-cissp-tests-on-cryptography">What CISSP tests on cryptography</h2>
+
+<p>CISSP does not ask you to implement AES or generate key pairs in code. It tests your ability to reason about cryptographic systems and match choices to requirements.</p>
+
+<p>Common exam scenario types:</p>
+
+<p><strong>“Which of the following provides non-repudiation?”</strong>
+Digital signatures (asymmetric). Not HMAC. Not symmetric encryption.</p>
+
+<p><strong>“A file is encrypted with the recipient’s public key. What does this ensure?”</strong>
+Confidentiality — only the recipient’s private key decrypts it. It does not prove who sent the file or that it was unmodified in transit.</p>
+
+<p><strong>“What is the primary limitation of symmetric encryption?”</strong>
+Key distribution. Both parties need the same shared key, but getting it to them securely is the challenge.</p>
+
+<p><strong>“Which is most appropriate for encrypting a 5GB backup file?”</strong>
+Symmetric encryption (AES). Asymmetric operations are computationally inappropriate for bulk data at scale.</p>
+
+<p><strong>“An organization needs to verify that software was released by the expected vendor.”</strong>
+Digital signatures / code signing. The vendor’s private key signs the artifact. The public key verifies it without exposing the private key.</p>
+
+<p>The exam mindset: match the security property required to the primitive that delivers it.</p>
+
+<h2 id="the-reference-table">The reference table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primitive</th>
+      <th>Provides</th>
+      <th>Does not provide</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Symmetric encryption (AES)</td>
+      <td>Confidentiality</td>
+      <td>Key distribution, integrity, authenticity</td>
+    </tr>
+    <tr>
+      <td>Asymmetric encryption (RSA, ECC)</td>
+      <td>Confidentiality, key distribution</td>
+      <td>Efficiency at bulk scale</td>
+    </tr>
+    <tr>
+      <td>Hashing (SHA-256)</td>
+      <td>Integrity</td>
+      <td>Authenticity, non-repudiation</td>
+    </tr>
+    <tr>
+      <td>HMAC</td>
+      <td>Integrity, authenticity</td>
+      <td>Non-repudiation</td>
+    </tr>
+    <tr>
+      <td>Digital signature</td>
+      <td>Integrity, authenticity, non-repudiation</td>
+      <td>Bulk confidentiality</td>
+    </tr>
+    <tr>
+      <td>Hybrid encryption (TLS model)</td>
+      <td>Confidentiality + key distribution</td>
+      <td><em>(combines symmetric and asymmetric)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-practical-takeaway">The practical takeaway</h2>
+
+<p>Cryptography is not magic, and it is not a single control. It is a set of tools with precise, limited guarantees.</p>
+
+<p>When you look at a system design — a token signing scheme, a file encryption approach, a message integrity mechanism — you should be able to trace each security property to the control that provides it. Gaps in that mapping are vulnerabilities.</p>
+
+<p>For the CISSP exam: understand the primitives, understand what each provides and does not provide, and reason about which one fits each scenario. The exam tests that reasoning — not your ability to name algorithm specifications or write cryptographic code.</p>
+
+<p>For production systems: use well-maintained libraries, reviewed protocols, and treat key management as an ongoing operational discipline, not a configuration step you visit once during initial setup.</p>
+
+<hr />
+
+<p><em>This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering.</em></p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

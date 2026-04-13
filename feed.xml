@@ -1,4 +1,398 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-13T01:55:52+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #26: MTD Guides RTO and Recovery Strategy</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy/" rel="alternate" type="text/html" title="CISSP #26: MTD Guides RTO and Recovery Strategy" /><published>2026-04-12T13:20:00+00:00</published><updated>2026-04-12T13:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy/"><![CDATA[<p>One of the easiest ways to weaken a continuity program is to blur business tolerance language with technical recovery targets.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-13T17:52:02+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" rel="alternate" type="text/html" title="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" /><published>2026-04-13T13:00:00+00:00</published><updated>2026-04-13T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/"><![CDATA[<p>Developers use cryptographic tools constantly without thinking about them.</p>
+
+<p>You hash passwords before storing them. Your API calls go over TLS. You sign tokens, verify certificates, and see references to AES-256 or SHA-256 in documentation without stopping to reason carefully about what those choices actually provide.</p>
+
+<p>That works very well — until you need to make a cryptographic decision yourself, evaluate whether a system design is sound, or answer a CISSP question about which primitive provides non-repudiation and why.</p>
+
+<p>Cryptography is not a single thing. It is a collection of distinct primitives, each solving a specific problem. The practical skill — for engineers and for the CISSP exam — is knowing which primitive addresses which problem, what it does not address, and how the primitives combine in the protocols you already rely on.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" alt="Diagram mapping four cryptographic goals — confidentiality, integrity, authenticity, and non-repudiation — to the primitives that address each one: symmetric encryption, hashing, HMAC, and digital signatures." />
+  <figcaption>Cryptography is a set of tools. Each primitive solves a specific problem. Knowing which is which is more useful than memorizing algorithm names.</figcaption>
+</figure>
+
+<h2 id="start-with-the-goals-not-the-algorithms">Start with the goals, not the algorithms</h2>
+
+<p>The right entry point is not AES or RSA. It is the security properties you are trying to achieve.</p>
+
+<p><strong>Confidentiality:</strong> Only the intended recipient can read the data.</p>
+
+<p><strong>Integrity:</strong> The data has not been altered in transit or at rest.</p>
+
+<p><strong>Authenticity:</strong> The data came from the expected sender.</p>
+
+<p><strong>Non-repudiation:</strong> The sender cannot later deny having sent the data.</p>
+
+<p>These are distinct properties. No single cryptographic primitive provides all of them. A system that needs all four requires a combination of tools.</p>
+
+<p>This framing is exactly what CISSP tests: given a scenario, which property applies, and which primitive delivers it?</p>
+
+<h2 id="encryption-addresses-confidentiality--nothing-else-by-default">Encryption addresses confidentiality — nothing else by default</h2>
+
+<p>Encryption transforms plaintext into ciphertext that can only be reversed with the correct key. Its purpose is confidentiality: preventing unauthorized parties from reading the data.</p>
+
+<p>Encryption alone does not verify that the ciphertext was unmodified. It does not prove who sent it. It does not prevent the sender from denying they sent it.</p>
+
+<p>Two families of encryption matter for CISSP:</p>
+
+<h3 id="symmetric-encryption">Symmetric encryption</h3>
+
+<p>One key is used for both encryption and decryption. AES (Advanced Encryption Standard) is the dominant example in modern systems.</p>
+
+<p>Symmetric encryption is fast and efficient — appropriate for bulk data encryption. But it requires that both parties already share the same key. Getting that key to the other party securely is the key distribution problem, and it is the fundamental limitation of symmetric encryption.</p>
+
+<h3 id="asymmetric-encryption">Asymmetric encryption</h3>
+
+<p>Two mathematically linked keys: a public key and a private key. Data encrypted with one key can only be decrypted with the other. RSA and elliptic curve cryptography are the common examples.</p>
+
+<p>The public key can be distributed freely. The private key is kept secret by its owner.</p>
+
+<p>Asymmetric encryption solves key distribution: you can encrypt a message using my public key, and only I can decrypt it with my private key. We never needed a prior secure channel to share a secret.</p>
+
+<p>The tradeoff: asymmetric operations are computationally expensive relative to symmetric operations. They are not suited for encrypting large volumes of data.</p>
+
+<h3 id="the-hybrid-model">The hybrid model</h3>
+
+<p>Real protocols combine both. Asymmetric cryptography is used to securely exchange a symmetric session key. Symmetric encryption then handles the actual data.</p>
+
+<p>TLS is the canonical example. During the handshake, asymmetric cryptography establishes a shared session key. All subsequent traffic is encrypted with that symmetric key. You get key distribution without a pre-shared secret, and bulk encryption without the overhead of asymmetric operations on every byte.</p>
+
+<p>This is the design pattern worth internalizing. It appears in TLS, in PGP, in S/MIME, and in most well-designed encryption protocols.</p>
+
+<h2 id="hashing-addresses-integrity--not-confidentiality-not-authenticity">Hashing addresses integrity — not confidentiality, not authenticity</h2>
+
+<p>A hash function takes arbitrary input and produces a fixed-length digest. SHA-256 produces a 256-bit output regardless of whether the input is a single character or a multi-gigabyte file.</p>
+
+<p>Hash functions are one-directional: you cannot recover the input from the hash. They are also deterministic: the same input always produces the same hash.</p>
+
+<p>Hashing verifies integrity. If the hash of a downloaded file matches the published hash, the file has not been modified in transit.</p>
+
+<p>What hashing does not provide: authenticity. Anyone can compute a hash. If an attacker can modify a file and also replace the published hash, integrity checking fails. Hashing on its own is only useful when the hash value arrives through a trusted channel or is protected by a separate mechanism.</p>
+
+<p>One common engineering mistake is treating hashing and encryption as interchangeable for password storage. They are not:</p>
+
+<ul>
+  <li><strong>Encrypting passwords</strong> means the original value can be recovered if you have the key. You should never need to recover the original password.</li>
+  <li><strong>Hashing passwords</strong> with a slow, salted algorithm like bcrypt or Argon2 means the original cannot be recovered. You re-hash the login attempt and compare. That is the correct property.</li>
+</ul>
+
+<p>SHA-256(password) directly is also insufficient — unsalted hashes are vulnerable to precomputation attacks (rainbow tables). Password hashing requires purpose-built algorithms with built-in salt and computational cost.</p>
+
+<h2 id="hmac-adds-authenticity-to-integrity">HMAC adds authenticity to integrity</h2>
+
+<p>A Message Authentication Code (MAC) — specifically HMAC (Hash-based MAC) — combines a hash function with a shared secret key. The output can only be produced by someone who holds the key.</p>
+
+<p>This provides:</p>
+
+<ul>
+  <li><strong>Integrity:</strong> The message has not been modified.</li>
+  <li><strong>Authenticity:</strong> The message was created by a party that holds the secret key.</li>
+</ul>
+
+<p>HMAC is used in signed JWTs when using HS256, in API request signing, and in various protocol-level message verification schemes.</p>
+
+<p>What it does not provide: <strong>non-repudiation</strong>. Because both the sender and receiver share the same key, either party could have generated the MAC. The receiver cannot prove to a third party that the sender — and not the receiver — created it.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/mac-vs-signature.svg" alt="Side-by-side comparison: HMAC using a shared secret key proves integrity and authenticity but not non-repudiation. Digital signature using an asymmetric key pair proves integrity, authenticity, and non-repudiation." />
+  <figcaption>HMAC and digital signatures both verify who sent a message — but only digital signatures provide non-repudiation because only one party holds the signing key.</figcaption>
+</figure>
+
+<h2 id="digital-signatures-add-non-repudiation">Digital signatures add non-repudiation</h2>
+
+<p>Digital signatures use asymmetric cryptography in the reverse direction from encryption.</p>
+
+<ul>
+  <li>The sender signs with their <strong>private key</strong>.</li>
+  <li>Anyone with the sender’s <strong>public key</strong> can verify the signature.</li>
+</ul>
+
+<p>Because only the sender holds the private key, the signature can only have been produced by them. This provides:</p>
+
+<ul>
+  <li><strong>Integrity:</strong> The signed content has not been altered.</li>
+  <li><strong>Authenticity:</strong> The content was signed by the private key holder.</li>
+  <li><strong>Non-repudiation:</strong> The private key holder cannot credibly deny having signed it — no one else could have produced that signature.</li>
+</ul>
+
+<p>Digital signatures are used in code signing, certificate chains (a certificate is a signed binding of a public key to an identity), document signing, and asymmetric JWT signing (RS256, ES256).</p>
+
+<p>CISSP reasoning: if a scenario requires non-repudiation, the answer involves asymmetric cryptography and digital signatures, not HMAC with a shared secret.</p>
+
+<h2 id="the-hybrid-model-in-practice-how-tls-actually-works">The hybrid model in practice: how TLS actually works</h2>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/tls-handshake.svg" alt="Simplified TLS handshake diagram showing asymmetric key exchange establishing a shared symmetric session key, which then encrypts all subsequent data." />
+  <figcaption>TLS uses asymmetric cryptography to solve key distribution and symmetric cryptography for bulk data. The hybrid model gets the best of both primitives.</figcaption>
+</figure>
+
+<p>Each HTTPS connection demonstrates the hybrid model:</p>
+
+<ol>
+  <li>The server presents a certificate (its public key signed by a Certificate Authority).</li>
+  <li>The client verifies the certificate chain and trusts the server’s public key.</li>
+  <li>Asymmetric cryptography is used to establish a shared session key — without transmitting it in plaintext.</li>
+  <li>All subsequent data is encrypted with that symmetric session key.</li>
+</ol>
+
+<p>The result: key distribution is solved without a pre-shared secret. Bulk data is encrypted efficiently. Both primitives contribute what they do well.</p>
+
+<h2 id="key-management-is-where-things-actually-go-wrong">Key management is where things actually go wrong</h2>
+
+<p>The algorithms in use today — AES, RSA, ECDH, SHA-256 — are well understood and implemented in well-audited libraries. Algorithmic failures in production are rare.</p>
+
+<p>What is common: key management failures.</p>
+
+<ul>
+  <li>Keys stored in source code, configuration files, or environment variables without sufficient access control.</li>
+  <li>Keys never rotated, so a compromise from a previous period still affects current data.</li>
+  <li>Certificate expiration causing outages, because certificate lifecycle management was not treated as an operational discipline.</li>
+  <li>Encryption keys stored in a system that is itself insufficiently secured.</li>
+</ul>
+
+<p>CISSP covers key management as a substantial component of the cryptography domain:</p>
+
+<ul>
+  <li><strong>Key generation:</strong> Keys must be generated with sufficient entropy. Weak generation is a systemic weakness, not just a one-time error.</li>
+  <li><strong>Key distribution:</strong> How keys reach the parties that need them. The asymmetric exchange model exists specifically to solve this.</li>
+  <li><strong>Key storage:</strong> Hardware Security Modules (HSMs) are the enterprise answer for protecting high-value keys in tamper-resistant hardware.</li>
+  <li><strong>Key rotation and revocation:</strong> Keys should have defined lifetimes. When compromised, they must be revocable. Certificate Revocation Lists (CRLs) and OCSP provide this for public key infrastructure.</li>
+  <li><strong>Key destruction:</strong> Secure deletion at end of life, to prevent key recovery from decommissioned hardware or storage media.</li>
+</ul>
+
+<p>The pattern: the cryptographic primitives rarely fail. The processes around the keys routinely do.</p>
+
+<h2 id="what-cissp-tests-on-cryptography">What CISSP tests on cryptography</h2>
+
+<p>CISSP does not ask you to implement AES or generate key pairs in code. It tests your ability to reason about cryptographic systems and match choices to requirements.</p>
+
+<p>Common exam scenario types:</p>
+
+<p><strong>“Which of the following provides non-repudiation?”</strong>
+Digital signatures (asymmetric). Not HMAC. Not symmetric encryption.</p>
+
+<p><strong>“A file is encrypted with the recipient’s public key. What does this ensure?”</strong>
+Confidentiality — only the recipient’s private key decrypts it. It does not prove who sent the file or that it was unmodified in transit.</p>
+
+<p><strong>“What is the primary limitation of symmetric encryption?”</strong>
+Key distribution. Both parties need the same shared key, but getting it to them securely is the challenge.</p>
+
+<p><strong>“Which is most appropriate for encrypting a 5GB backup file?”</strong>
+Symmetric encryption (AES). Asymmetric operations are computationally inappropriate for bulk data at scale.</p>
+
+<p><strong>“An organization needs to verify that software was released by the expected vendor.”</strong>
+Digital signatures / code signing. The vendor’s private key signs the artifact. The public key verifies it without exposing the private key.</p>
+
+<p>The exam mindset: match the security property required to the primitive that delivers it.</p>
+
+<h2 id="the-reference-table">The reference table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primitive</th>
+      <th>Provides</th>
+      <th>Does not provide</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Symmetric encryption (AES)</td>
+      <td>Confidentiality</td>
+      <td>Key distribution, integrity, authenticity</td>
+    </tr>
+    <tr>
+      <td>Asymmetric encryption (RSA, ECC)</td>
+      <td>Confidentiality, key distribution</td>
+      <td>Efficiency at bulk scale</td>
+    </tr>
+    <tr>
+      <td>Hashing (SHA-256)</td>
+      <td>Integrity</td>
+      <td>Authenticity, non-repudiation</td>
+    </tr>
+    <tr>
+      <td>HMAC</td>
+      <td>Integrity, authenticity</td>
+      <td>Non-repudiation</td>
+    </tr>
+    <tr>
+      <td>Digital signature</td>
+      <td>Integrity, authenticity, non-repudiation</td>
+      <td>Bulk confidentiality</td>
+    </tr>
+    <tr>
+      <td>Hybrid encryption (TLS model)</td>
+      <td>Confidentiality + key distribution</td>
+      <td><em>(combines symmetric and asymmetric)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-practical-takeaway">The practical takeaway</h2>
+
+<p>Cryptography is not magic, and it is not a single control. It is a set of tools with precise, limited guarantees.</p>
+
+<p>When you look at a system design — a token signing scheme, a file encryption approach, a message integrity mechanism — you should be able to trace each security property to the control that provides it. Gaps in that mapping are vulnerabilities.</p>
+
+<p>For the CISSP exam: understand the primitives, understand what each provides and does not provide, and reason about which one fits each scenario. The exam tests that reasoning — not your ability to name algorithm specifications or write cryptographic code.</p>
+
+<p>For production systems: use well-maintained libraries, reviewed protocols, and treat key management as an ongoing operational discipline, not a configuration step you visit once during initial setup.</p>
+
+<hr />
+
+<p><em>This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering.</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="cryptography" /><category term="encryption" /><category term="digital-signatures" /><category term="tls" /><category term="key-management" /><summary type="html"><![CDATA[Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #27: Network Segmentation Limits the Blast Radius</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-network-segmentation-limits-blast-radius/" rel="alternate" type="text/html" title="CISSP #27: Network Segmentation Limits the Blast Radius" /><published>2026-04-13T12:00:00+00:00</published><updated>2026-04-13T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-network-segmentation-limits-blast-radius</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-network-segmentation-limits-blast-radius/"><![CDATA[<p>Breaches happen.</p>
+
+<p>That sentence is not pessimism. It is the risk premise that should sit behind every network architecture decision.</p>
+
+<p>Once you accept it, the interesting question is not “how do we stop every attacker?” It is “if something inside this network is compromised, how much damage can it do before we contain it?”</p>
+
+<p>That question has a name: blast radius.</p>
+
+<p>And the architectural answer to blast radius control is network segmentation.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-network-segmentation-limits-blast-radius/hero.svg" alt="Two diagrams side by side: a flat network where a compromised laptop can reach every resource, and a segmented network where the same compromise is contained within a single zone." />
+  <figcaption>Flat networks fail completely when any node is compromised. Segmented networks limit how far that failure can propagate.</figcaption>
+</figure>
+
+<h2 id="the-flat-network-problem">The flat network problem</h2>
+
+<p>A flat network is one where all hosts share the same broadcast domain and can communicate directly. There are no meaningful internal boundaries.</p>
+
+<p>In a flat network, a compromised workstation can often reach:</p>
+
+<ul>
+  <li>the file server</li>
+  <li>the database</li>
+  <li>the backup system</li>
+  <li>the domain controller</li>
+  <li>whatever sensitive function the organization runs</li>
+</ul>
+
+<p>This is not a theoretical concern. The majority of damaging breaches involve lateral movement: the attacker enters through one weak point and then navigates freely toward higher-value targets. The initial entry point is rarely the prize. The movement after it is.</p>
+
+<p>Flat networks are still common. They exist in legacy environments, in networks that grew organically, and in systems where convenience consistently beat security discipline. CISSP does not expect you to solve organizational inertia. It does expect you to understand why flat networks are a risk and what a properly segmented architecture looks like instead.</p>
+
+<h2 id="what-segmentation-actually-means">What segmentation actually means</h2>
+
+<p>Segmentation is the practice of dividing a network into zones with enforced boundaries between them.</p>
+
+<p>Not VLANs alone. Not routing rules. Enforced boundaries — meaning that traffic crossing a zone boundary passes through a control point that can inspect, allow, or deny it.</p>
+
+<p>The goal is not to make internal communication impossible. Most real systems require services to talk to each other. The goal is to ensure that every zone crossing is a deliberate policy decision, not an architectural accident.</p>
+
+<p>A segmented network answers questions like:</p>
+
+<ul>
+  <li>Can the web tier make direct database connections, or does it only talk to the application tier?</li>
+  <li>Can a workstation on the general staff network reach the invoicing system directly?</li>
+  <li>Does a breach in the e-commerce platform affect the payroll system?</li>
+</ul>
+
+<p>If the answer to any of those is “yes, by default,” the segmentation model has a gap.</p>
+
+<h2 id="the-classic-security-zone-model">The classic security zone model</h2>
+
+<p>The standard security zone model establishes tiers of trust with explicit enforcement between them.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-network-segmentation-limits-blast-radius/zone-model.svg" alt="A four-layer zone diagram: external zone, DMZ, internal zone, and restricted zone, with firewall checkpoints drawn at each boundary transition." />
+  <figcaption>Each zone boundary is a deliberate policy decision. What can cross it, and under what conditions, defines the security model.</figcaption>
+</figure>
+
+<p><strong>External (untrusted):</strong> The public internet. No implicit trust. Traffic entering from here is scrutinized.</p>
+
+<p><strong>DMZ (demilitarized zone):</strong> A semi-trusted segment. Public-facing services — web servers, edge APIs, mail relays — live here. External users can reach these services. But a compromise in the DMZ should not grant direct access to the internal network.</p>
+
+<p><strong>Internal:</strong> General corporate or application network. Users, workstations, and internal services. Trust is higher than the DMZ but not unconditional.</p>
+
+<p><strong>Restricted:</strong> High-value or high-sensitivity assets. Databases, secrets management systems, financial processing, sensitive data stores. Access is tightly controlled and explicitly granted, never assumed.</p>
+
+<p>The DMZ exists specifically because some services must be reachable externally while the internal network must not be. A compromised web server in the DMZ should be a bad day — not a catastrophic one. If the DMZ is properly isolated, the damage stops there.</p>
+
+<p>CISSP will test whether you understand the <em>why</em> behind the DMZ, not just the <em>what</em>. The DMZ does not protect the web server. It protects everything else from the web server.</p>
+
+<h2 id="vlans-are-logical-separation-not-security-enforcement">VLANs are logical separation, not security enforcement</h2>
+
+<p>VLANs are commonly misunderstood as a security control. They separate broadcast domains and reduce collision traffic. They do not enforce security policy on their own.</p>
+
+<p>VLAN hopping — where traffic jumps from one VLAN to another — is a known attack technique, typically achieved through double-tagging or rogue trunk negotiation on misconfigured switches.</p>
+
+<p>More practically, a VLAN with no firewall at the crossing point gives you logical separation without enforced boundaries. Traffic crossing from one VLAN to another passes through a router, but whether that crossing is actually controlled depends on whether firewall rules or ACLs sit on that path.</p>
+
+<p>The rule for CISSP questions about segmentation:</p>
+
+<ul>
+  <li>VLANs reduce broadcast scope and assist with organization, but do not constitute security enforcement on their own.</li>
+  <li>Firewall controls at zone crossings — inspecting traffic by source, destination, protocol, and state — constitute enforcement.</li>
+  <li>The question to ask: if a host in VLAN A is compromised, what can it reach in VLAN B, and what actually controls that answer?</li>
+</ul>
+
+<h2 id="microsegmentation-extends-the-model-east-west">Microsegmentation extends the model east-west</h2>
+
+<p>Traditional network security was predominantly perimeter-focused. Strong controls on what enters and leaves the network. Inside the perimeter, east-west traffic moved with fewer restrictions.</p>
+
+<p>That model worked when most threats came from outside. It fails when threats originate inside — from phishing, insider risk, compromised cloud workloads, or lateral movement from an already-breached endpoint.</p>
+
+<p>Microsegmentation applies policy at the individual workload or service level. Instead of a single trust boundary around the perimeter, you define what each service is allowed to communicate with. A payment processing service can reach the database it needs. It cannot reach the HR system. The HR system cannot reach the payment database.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-network-segmentation-limits-blast-radius/microsegmentation.svg" alt="Comparison of north-south perimeter control versus east-west microsegmentation, showing how granular policy between services limits lateral movement." />
+  <figcaption>Protecting the perimeter controls what enters. Microsegmentation controls what moves after something gets in.</figcaption>
+</figure>
+
+<p>Cloud environments and software-defined networking make microsegmentation practical in ways that were harder to achieve in purely physical infrastructure. Security groups, Kubernetes network policies, and service mesh configurations are all implementations of this principle.</p>
+
+<p>Zero trust architecture takes it further still: every request must be authenticated and authorized, regardless of where it originates. Being on an internal network grants nothing by itself. This is the logical end of the segmentation progression — from “external vs. internal” to “contextual trust for every connection.”</p>
+
+<p>CISSP awareness here means understanding the spectrum: perimeter → segmented zones → microsegmented services → zero trust. Each step limits blast radius more tightly. Each step also increases design and operational overhead. The right point on that spectrum depends on the risk tolerance and asset value of what you are protecting.</p>
+
+<h2 id="what-cissp-tests-on-segmentation">What CISSP tests on segmentation</h2>
+
+<p>The exam frames network segmentation as a <em>risk management decision</em>, not a technical configuration task.</p>
+
+<p>Common themes in CISSP questions:</p>
+
+<p><strong>Purpose, not mechanics:</strong> Why does a DMZ exist? Not because it is best practice — because it limits the consequences of a breach in a publicly reachable service. The exam rewards answers that explain the risk rationale, not the firewall rule syntax.</p>
+
+<p><strong>Placement decisions:</strong> Where should a web server sit? Where should a database sit? Which control goes <em>between</em> them? These questions test zone architecture understanding, not implementation details.</p>
+
+<p><strong>Blast radius thinking:</strong> If a specific system is compromised, what can the attacker now reach? CISSP questions ask you to evaluate scenarios and determine whether a proposed architecture adequately limits exposure.</p>
+
+<p><strong>Vocabulary:</strong> Know these terms cold — DMZ, screened subnet, bastion host, screening router, stateful inspection firewall, network access control — and know the relationships between them, not just the definitions.</p>
+
+<p>The mindset shift: stop asking whether the firewall is correctly configured, and start asking whether the architecture, if compromised at any single point, contains the damage to an acceptable scope.</p>
+
+<h2 id="the-engineering-translation">The engineering translation</h2>
+
+<p>If you build systems that handle sensitive data, segmentation is already your responsibility whether you use that vocabulary or not.</p>
+
+<p>Ask yourself:</p>
+
+<ul>
+  <li>Can the web-facing component of your application make a direct connection to the database?</li>
+  <li>Can a compromised container in your deployment communicate with your secrets store without any access control layer in between?</li>
+  <li>If an attacker takes over the application service account, how many systems does that account have access to?</li>
+  <li>Does your staging environment have network paths that could reach production systems?</li>
+</ul>
+
+<p>Those are segmentation questions. The security engineering answer in each case starts with: design so that a compromise at this point cannot reach that point without explicit, enforced permission.</p>
+
+<p>CISSP makes this explicit as architecture. It is worth applying before the breach, not only as a lesson learned after one.</p>
+
+<h2 id="the-principle-that-holds-across-every-scale">The principle that holds across every scale</h2>
+
+<p>Segmentation does not require a large budget or a complex SDN platform. It requires discipline at the architecture level: decide what should talk to what, enforce those decisions at explicit chokepoints, and revisit the assumptions whenever the system changes significantly.</p>
+
+<p>The value is not an impenetrable network. The value is a network where a breach becomes an incident measured in hours and contained within a zone — not a catastrophe measured in weeks and limited only by what the attacker chose to exfiltrate.</p>
+
+<p>Design like a breach is already underway somewhere inside.
+Build the boundaries that make the answer manageable.</p>
+
+<hr />
+
+<p><em>This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 4: Communication and Network Security.</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-4" /><category term="network-security" /><category term="segmentation" /><category term="defense-in-depth" /><category term="microsegmentation" /><summary type="html"><![CDATA[Segmentation is not a firewall rule. It is an architectural decision about how far a compromise can travel—and the answer matters far more after a breach than before one.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-network-segmentation-limits-blast-radius/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-network-segmentation-limits-blast-radius/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #26: MTD Guides RTO and Recovery Strategy</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy/" rel="alternate" type="text/html" title="CISSP #26: MTD Guides RTO and Recovery Strategy" /><published>2026-04-12T13:20:00+00:00</published><updated>2026-04-12T13:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-mtd-guides-rto-recovery-strategy/"><![CDATA[<p>One of the easiest ways to weaken a continuity program is to blur business tolerance language with technical recovery targets.
 That confusion shows up constantly in real environments and in CISSP-style questions.</p>
 
 <p>Teams say they have clear RTO values, but they cannot explain whether those values are truly acceptable to the business.
@@ -1979,531 +2373,4 @@ It is careful preservation, documentation, and control from the start.</p>
   <li>chain of custody in incident response</li>
   <li>preserve digital evidence and integrity</li>
   <li>CISSP forensic investigation process</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="chain-of-custody" /><category term="digital-forensics" /><category term="incident-response" /><category term="evidence-handling" /><summary type="html"><![CDATA[Digital evidence only helps if you can prove it stayed authentic. This CISSP-focused guide explains why chain of custody starts before deep forensic analysis and how disciplined evidence handling protects investigations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #18: Patching Is Not Vulnerability Management</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/" rel="alternate" type="text/html" title="CISSP #18: Patching Is Not Vulnerability Management" /><published>2026-04-08T12:18:00+00:00</published><updated>2026-04-08T12:18:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-patching-is-not-vulnerability-management/"><![CDATA[<p>One of the easiest ways to look productive in security is to say, <strong>“We patched 95% of our critical vulnerabilities.”</strong></p>
-
-<p>That can be good news.
-It is not the same thing as saying you reduced the most important risk.</p>
-
-<p>This is one of the ideas that keeps showing up as I work through CISSP material: the exam keeps pulling you away from tool output and back toward judgment. A scanner can generate a long list of findings. A patching team can close a long list of tickets. But <strong>vulnerability management</strong> is the broader discipline that decides what matters most, what needs to happen first, what can wait briefly, and what needs a control other than a patch.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-patching-is-not-vulnerability-management/hero.svg" alt="Illustration showing a vulnerability management workflow moving from discovery and prioritization to testing, remediation, and verification around a protected production environment." />
-  <figcaption>Good programs do not just patch fast. They identify, prioritize, remediate, and verify based on risk.</figcaption>
-</figure>
-
-<h2 id="why-teams-keep-mixing-these-up">Why teams keep mixing these up</h2>
-
-<p>The confusion is understandable.</p>
-
-<p>Many vulnerabilities are remediated by patches, updates, or firmware fixes. So in day-to-day conversation, people often talk as if “patching” and “vulnerability management” are interchangeable.</p>
-
-<p>They are not.</p>
-
-<p>Patching is one response mechanism. Vulnerability management is the full decision process around exposure and remediation.</p>
-
-<p>Here is the practical difference:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Discipline</th>
-      <th>Main question</th>
-      <th>Practical purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Patch management</strong></td>
-      <td>How do we acquire, test, deploy, and verify software or firmware updates safely?</td>
-      <td>Keeps systems current and reduces exposure to known issues through controlled updates</td>
-    </tr>
-    <tr>
-      <td><strong>Vulnerability management</strong></td>
-      <td>Which weaknesses create the most important risk, and what is the right remediation path for each?</td>
-      <td>Identifies, validates, prioritizes, mitigates, tracks exceptions, and verifies risk reduction</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>That difference matters because not every important vulnerability is solved by “patch it immediately,” and not every available patch should be deployed without context.</p>
-
-<p>NIST’s patch management guidance reinforces that patching itself is already a lifecycle of identifying, prioritizing, installing, and verifying updates. Vulnerability management is even broader because it includes the risk decisions around <strong>what to address first and how</strong>.</p>
-
-<h2 id="severity-is-a-signal-not-a-decision">Severity is a signal, not a decision</h2>
-
-<p>This is where many teams get trapped.</p>
-
-<p>They treat a severity score as if it were the whole story.</p>
-
-<p>A high CVSS score is useful, but it does not automatically answer:</p>
-
-<ul>
-  <li>is the asset internet-facing?</li>
-  <li>is the vulnerability already being exploited in the wild?</li>
-  <li>is the system business-critical?</li>
-  <li>are compensating controls already reducing the practical risk?</li>
-  <li>would immediate patching create a serious availability issue if it is poorly tested?</li>
-</ul>
-
-<p>That is why the most mature programs do not prioritize from severity alone. They use severity as one input among several.</p>
-
-<p>A more useful risk conversation usually includes:</p>
-
-<ul>
-  <li><strong>asset criticality</strong> — what happens if this system is compromised or unavailable?</li>
-  <li><strong>exposure</strong> — is the vulnerable service reachable from the internet, partners, insiders, or only a tightly controlled segment?</li>
-  <li><strong>exploitability</strong> — is this weakness theoretical, or is there active exploitation or a practical exploit path?</li>
-  <li><strong>compensating controls</strong> — are segmentation, WAF rules, MFA, application allowlisting, or other controls already reducing the immediate risk?</li>
-  <li><strong>remediation feasibility</strong> — is there a tested patch, a configuration change, or only a temporary workaround?</li>
-</ul>
-
-<p>The real lesson is simple: <strong>severity helps you notice. Context helps you decide.</strong></p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-patching-is-not-vulnerability-management/severity-vs-risk.svg" alt="Comparison diagram showing that severity alone is only one input and that real vulnerability risk depends on exposure, exploit activity, asset criticality, and compensating controls." />
-  <figcaption>Severity matters, but risk prioritization depends on business context, exposure, and exploit reality.</figcaption>
-</figure>
-
-<h2 id="when-the-best-response-is-not-just-a-patch">When the best response is not just a patch</h2>
-
-<p>Another reason the distinction matters is that patching is not always the only or immediate answer.</p>
-
-<p>Sometimes the right first move is:</p>
-
-<ul>
-  <li>disabling a vulnerable service</li>
-  <li>tightening firewall rules or network segmentation</li>
-  <li>rotating credentials or keys</li>
-  <li>changing a risky configuration</li>
-  <li>taking an exposed system temporarily offline</li>
-  <li>adding monitoring for exploit attempts while a proper fix is prepared</li>
-</ul>
-
-<p>This does <strong>not</strong> mean avoiding patching.
-It means understanding that vulnerability management is about reducing risk responsibly, not blindly applying updates without considering impact, timing, or operational reality.</p>
-
-<p>There are also cases where a patch is available but must still be tested carefully because the affected system supports a critical business function. CISSP tends to reward the answer that balances security with availability and disciplined change control, especially for high-value production systems.</p>
-
-<h2 id="a-realistic-scenario-which-issue-goes-first">A realistic scenario: which issue goes first?</h2>
-
-<p>Imagine a team has two urgent findings on the same day:</p>
-
-<ol>
-  <li>A <strong>critical</strong> CVSS vulnerability on an isolated internal lab server with no sensitive data and no inbound exposure.</li>
-  <li>A <strong>high</strong> severity vulnerability on an internet-facing edge device that is widely used and already showing signs of active exploitation across the industry.</li>
-</ol>
-
-<p>If a team thinks only in terms of patch counts and raw score, it may jump on the critical item first.</p>
-
-<p>A better vulnerability management approach asks:</p>
-
-<ul>
-  <li>Which asset has the larger business impact if compromised?</li>
-  <li>Which weakness is more reachable by an attacker?</li>
-  <li>Which one is more likely to be exploited right now?</li>
-  <li>What compensating controls already exist for each system?</li>
-</ul>
-
-<p>In many real environments, the internet-facing issue becomes the first priority even if its numeric score is slightly lower.</p>
-
-<p>That is the kind of reasoning CISSP expects. The best answer is usually not the most mechanical one. It is the one that reduces real organizational risk fastest.</p>
-
-<h2 id="dashboards-can-create-false-comfort">Dashboards can create false comfort</h2>
-
-<p>Security dashboards are useful, but they can also mislead teams into managing what is easiest to count instead of what matters most.</p>
-
-<p>A dashboard full of “criticals closed” can look impressive while important exposure remains because:</p>
-
-<ul>
-  <li>the closed items were on low-value or lightly exposed systems</li>
-  <li>the riskiest exceptions were deferred repeatedly</li>
-  <li>patch verification was weak</li>
-  <li>unsupported assets stayed in place with no meaningful compensating control</li>
-  <li>teams measured ticket closure instead of exposure reduction</li>
-</ul>
-
-<p>That is why vulnerability management needs more than a scanner and an SLA chart. It needs asset knowledge, ownership, business context, and follow-through.</p>
-
-<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
-
-<h3 id="established-principles-that-remain-true">Established principles that remain true</h3>
-
-<p>These ideas are stable and worth knowing cold:</p>
-
-<ul>
-  <li>maintain an accurate asset inventory</li>
-  <li>identify and assess vulnerabilities continuously</li>
-  <li>prioritize remediation based on risk, not noise</li>
-  <li>test changes before production where appropriate</li>
-  <li>verify that remediation actually succeeded</li>
-  <li>document exceptions and review them instead of letting them live forever</li>
-</ul>
-
-<p>Those principles have not changed because they are still how mature security programs reduce avoidable risk.</p>
-
-<h3 id="what-looks-more-current-in-practice">What looks more current in practice</h3>
-
-<p>What has evolved is the quality of prioritization.</p>
-
-<p>Modern teams are more likely to combine:</p>
-
-<ul>
-  <li>vulnerability scanning results</li>
-  <li>asset criticality and business context</li>
-  <li>exploit intelligence such as known exploited vulnerability tracking</li>
-  <li>automated patch orchestration for lower-risk routine updates</li>
-  <li>compensating controls when immediate patching is not possible</li>
-  <li>tighter reporting on exception age and ownership</li>
-</ul>
-
-<p>This is a healthier direction because it pushes teams away from “patch everything with the highest score first” and toward <strong>risk-informed action</strong>.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>CISSP is not asking whether you know how to run a scanner.
-It is asking whether you understand how security decisions should be made.</p>
-
-<p>If a question asks how to address vulnerability exposure, the strongest answer usually reflects some combination of:</p>
-
-<ul>
-  <li>assessing the vulnerability in context</li>
-  <li>prioritizing by risk and business impact</li>
-  <li>using patching, configuration changes, segmentation, or other compensating controls appropriately</li>
-  <li>following disciplined change management</li>
-  <li>verifying the fix and tracking residual risk</li>
-</ul>
-
-<p>The exam mindset is rarely “close the ticket fastest.”
-It is “reduce the right risk with the right control.”</p>
-
-<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
-
-<p>If you want the real-world version, these are the questions worth asking when a new vulnerability hits the queue:</p>
-
-<ul>
-  <li><strong>What asset is affected, and how important is it to the business?</strong></li>
-  <li><strong>How exposed is it really?</strong></li>
-  <li><strong>Is there evidence of active exploitation or a practical exploit path?</strong></li>
-  <li><strong>Is a patch available, and has it been tested for this environment?</strong></li>
-  <li><strong>If patching cannot happen immediately, what compensating control reduces the risk now?</strong></li>
-  <li><strong>Who owns the remediation and the exception if it is delayed?</strong></li>
-  <li><strong>How will we verify that the risk actually went down afterward?</strong></li>
-</ul>
-
-<p>That last question matters more than people think.</p>
-
-<p>A ticket closed in a system is not the same as a vulnerability truly remediated in production.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-patching-is-not-vulnerability-management/remediation-loop.svg" alt="Loop diagram showing vulnerability discovery, validation, prioritization, remediation, verification, and exception review as a continuous security process." />
-  <figcaption>Good vulnerability management is a loop: discover, validate, prioritize, remediate, verify, and review exceptions.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
-
-<p><strong>Patch management is how you deploy updates. Vulnerability management is how you decide what risk to reduce first and what control to use.</strong></p>
-
-<p>That distinction matters because organizations do not get safer just by closing the largest number of tickets. They get safer when they reduce the most meaningful exposure with discipline and context.</p>
-
-<p>That is a much better way to think, both for the exam and for real engineering work.</p>
-
-<p><strong>Meta description:</strong> Learn why patching is not the same as vulnerability management and how CISSP expects risk-based prioritization using asset context, exposure, exploitability, and verification.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP patch management vs vulnerability management</li>
-  <li>risk based vulnerability management explained</li>
-  <li>CVSS vs real risk cybersecurity</li>
-  <li>security patch prioritization best practices</li>
-  <li>CISSP vulnerability remediation and compensating controls</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="vulnerability-management" /><category term="patch-management" /><category term="risk-prioritization" /><category term="cve" /><summary type="html"><![CDATA[A dashboard full of critical CVEs does not tell you what matters most first. This CISSP-focused guide explains why vulnerability management is a risk-prioritization discipline, not just a race to patch.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-patching-is-not-vulnerability-management/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-patching-is-not-vulnerability-management/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #17: Change Management Is a Security Control, Not a CAB Ritual</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/" rel="alternate" type="text/html" title="CISSP #17: Change Management Is a Security Control, Not a CAB Ritual" /><published>2026-04-08T12:17:00+00:00</published><updated>2026-04-08T12:17:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-change-management-security-control/"><![CDATA[<p>Some of the most avoidable security incidents do not start with advanced malware.
-They start with an ordinary change.</p>
-
-<p>A temporary firewall rule stays open longer than intended. A privileged exception gets added to solve an outage and never gets reviewed. A rushed release bypasses normal testing because “we just need to get production back.” The breach story or availability incident may show up later, but the control failure often begins here.</p>
-
-<p>As I work through CISSP topics, this is one of the concepts that looks administrative until you have to clean up after it. Then it becomes obvious: <strong>change management is not just operations hygiene. It is a security control.</strong></p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" alt="Illustration showing a secure change workflow with request, review, testing, approval, deployment, and validation around a protected production environment." />
-  <figcaption>Secure systems do not stay trustworthy by accident. They stay trustworthy because change is controlled.</figcaption>
-</figure>
-
-<h2 id="why-cissp-cares-about-change-management">Why CISSP cares about change management</h2>
-
-<p>CISSP repeatedly pushes you toward a risk-based, business-aware answer. That means recognizing that security is not only about blocking attackers. It is also about keeping systems in a known, approved, supportable state.</p>
-
-<p>Uncontrolled change undermines that in several ways:</p>
-
-<ul>
-  <li>it breaks secure baselines</li>
-  <li>it creates configuration drift no one intended</li>
-  <li>it weakens accountability because nobody knows who changed what and why</li>
-  <li>it increases the odds of downtime, data exposure, or failed detection</li>
-  <li>it makes recovery harder because the environment no longer matches documented expectations</li>
-</ul>
-
-<p>This is also where <strong>configuration management</strong> and <strong>change management</strong> fit together.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Discipline</th>
-      <th>Main question</th>
-      <th>Practical purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Configuration management</strong></td>
-      <td>What should the approved state of the system be?</td>
-      <td>Establishes baselines, inventories important components, and helps detect drift</td>
-    </tr>
-    <tr>
-      <td><strong>Change management</strong></td>
-      <td>How do we safely move from one approved state to another?</td>
-      <td>Requires analysis, authorization, testing, implementation control, and validation</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>That distinction matters for the exam and for real life. A secure baseline is useful. A secure baseline that can be changed casually without review does not stay secure for long.</p>
-
-<p>NIST’s guidance on security-focused configuration management and the Configuration Management family in SP 800-53 reinforce the same durable ideas: define approved states, control changes, document them, and monitor for unauthorized deviation.</p>
-
-<h2 id="good-change-control-is-not-just-bureaucracy">Good change control is not just bureaucracy</h2>
-
-<p>The phrase “change management” can make engineers think of slow meetings, overloaded ticket queues, and a CAB that exists mostly to delay obvious work.</p>
-
-<p>That is the bad version.</p>
-
-<p>The good version is much simpler: <strong>make meaningful changes in a way that is authorized, tested, reversible, and visible.</strong></p>
-
-<p>That usually includes:</p>
-
-<ol>
-  <li><strong>A clear request</strong>
-    <ul>
-      <li>What is changing?</li>
-      <li>Why is it needed?</li>
-      <li>What business service or security objective is affected?</li>
-    </ul>
-  </li>
-  <li><strong>Impact and risk analysis</strong>
-    <ul>
-      <li>Could this affect confidentiality, integrity, or availability?</li>
-      <li>Does it change network exposure, identity rules, logging, or data flows?</li>
-      <li>What depends on this system that could break quietly?</li>
-    </ul>
-  </li>
-  <li><strong>Testing before production</strong>
-    <ul>
-      <li>Has it been validated somewhere safer than live customer traffic?</li>
-      <li>Did we test both the desired outcome and likely failure conditions?</li>
-    </ul>
-  </li>
-  <li><strong>Appropriate approval</strong>
-    <ul>
-      <li>Not every change needs the same level of ceremony.</li>
-      <li>But the right owner should understand and accept the risk.</li>
-    </ul>
-  </li>
-  <li><strong>Implementation control</strong>
-    <ul>
-      <li>Who is allowed to make the change?</li>
-      <li>During what window?</li>
-      <li>With what level of access?</li>
-    </ul>
-  </li>
-  <li><strong>Rollback planning</strong>
-    <ul>
-      <li>If the change fails, how do we restore a known good state quickly?</li>
-    </ul>
-  </li>
-  <li><strong>Post-change validation and documentation</strong>
-    <ul>
-      <li>Did the intended result happen?</li>
-      <li>Were logs, alerts, and dependent services checked afterward?</li>
-      <li>Is the record good enough for accountability and troubleshooting?</li>
-    </ul>
-  </li>
-</ol>
-
-<p>That is not ritual for its own sake. That is how you reduce surprise.</p>
-
-<h2 id="the-security-failures-hidden-inside-temporary-changes">The security failures hidden inside “temporary” changes</h2>
-
-<p>One reason this topic matters so much is that high-risk changes often look small when they are first proposed.</p>
-
-<p>Examples:</p>
-
-<ul>
-  <li>a “temporary” any-to-any firewall rule for troubleshooting</li>
-  <li>an emergency service account permission increase</li>
-  <li>a monitoring exclusion to reduce alert noise during a release</li>
-  <li>a quick change to an MFA or recovery setting because a VIP is locked out</li>
-  <li>a production hotfix applied manually and never codified into the normal pipeline</li>
-</ul>
-
-<p>Each of these can be justified in the moment. The danger is not always the initial decision. The danger is the lack of expiration, review, validation, and cleanup.</p>
-
-<p>This is why mature teams treat emergency changes as <strong>expedited</strong>, not <strong>exempt</strong>.</p>
-
-<p>In good environments, an emergency change still gets:</p>
-
-<ul>
-  <li>a narrow purpose</li>
-  <li>limited duration</li>
-  <li>documented ownership</li>
-  <li>retrospective review</li>
-  <li>cleanup or permanent normalization afterward</li>
-</ul>
-
-<p>If the organization skips that last part, temporary exceptions become permanent attack surface.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/change-control-flow.svg" alt="Flow diagram showing request, risk review, testing, approval, implementation, validation, and documentation in a secure change process." />
-  <figcaption>Healthy change control is a flow: request, assess, test, approve, implement, validate, and record.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-the-outage-fix-that-becomes-a-security-incident">A realistic scenario: the outage fix that becomes a security incident</h2>
-
-<p>Imagine a company loses connectivity between an internal service and a partner system during a high-pressure release window. An engineer widens a firewall rule and relaxes an identity condition to restore service quickly. The immediate problem is resolved, everyone moves on, and the emergency ticket is closed with minimal detail.</p>
-
-<p>Weeks later, the relaxed rule is still in place.
-A previously restricted administrative path is now reachable from a wider source range.
-Logs show the change happened, but no one revisited whether it should still exist.</p>
-
-<p>Eventually, someone outside the original change window discovers the exposure.</p>
-
-<p>The root problem was not “the firewall was bad.”
-It was not even necessarily “the engineer made a reckless decision.”</p>
-
-<p>The root problem was that the organization treated change as a speed event instead of a controlled risk decision.</p>
-
-<p>A stronger process would have required:</p>
-
-<ul>
-  <li>clearer impact analysis before widening access</li>
-  <li>a time limit or expiration on the exception</li>
-  <li>post-change validation against the intended security baseline</li>
-  <li>a retrospective review to decide whether the emergency change should be rolled back, redesigned, or formalized safely</li>
-</ul>
-
-<p>This is exactly the kind of situation CISSP wants you to reason about. The secure answer is rarely “ban change.” It is “control change so urgent decisions do not silently become long-term weaknesses.”</p>
-
-<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
-
-<h3 id="established-principles-that-remain-true">Established principles that remain true</h3>
-
-<p>These ideas have been stable for years:</p>
-
-<ul>
-  <li>only authorized changes should reach production</li>
-  <li>security baselines should be documented and maintained</li>
-  <li>separation of duties and least privilege matter during implementation</li>
-  <li>there should be an audit trail of who changed what, when, and why</li>
-  <li>every important change should be validated, not just deployed</li>
-</ul>
-
-<p>Those principles are durable because they protect both security and reliability.</p>
-
-<h3 id="what-looks-more-modern-in-practice">What looks more modern in practice</h3>
-
-<p>What has changed is <strong>how</strong> good teams implement those principles.</p>
-
-<p>In older environments, change control often meant large manual review boards and slower release cycles. In modern cloud and platform teams, the better pattern is often:</p>
-
-<ul>
-  <li>infrastructure as code instead of ad hoc console changes</li>
-  <li>peer-reviewed pull requests instead of undocumented manual edits</li>
-  <li>automated testing and policy checks in CI/CD pipelines</li>
-  <li>drift detection to flag unauthorized configuration changes</li>
-  <li>temporary privileged access instead of standing admin rights</li>
-  <li>fast emergency fixes with required retrospective review</li>
-</ul>
-
-<p>That is an important distinction.</p>
-
-<p><strong>Good change management is not anti-speed. It is anti-uncontrolled change.</strong></p>
-
-<p>In fact, automation often makes change both faster and safer because the path becomes more repeatable and more observable.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>On the exam, this topic is not about memorizing one favorite process diagram. It is about understanding the control objective.</p>
-
-<p>CISSP wants you to recognize that change management helps preserve:</p>
-
-<ul>
-  <li>system integrity</li>
-  <li>service availability</li>
-  <li>accountability</li>
-  <li>traceability</li>
-  <li>compliance with approved baselines and policies</li>
-</ul>
-
-<p>If a question asks about reducing risk from unauthorized or harmful changes, the best answer often includes some combination of:</p>
-
-<ul>
-  <li>formal change control</li>
-  <li>testing before production</li>
-  <li>proper approval and documentation</li>
-  <li>rollback planning</li>
-  <li>post-change review</li>
-  <li>configuration management and baseline control</li>
-</ul>
-
-<p>The exam mindset is usually broader than “who touches the ticket.” It asks what most reduces organizational risk.</p>
-
-<h2 id="practical-checklist-for-engineering-teams">Practical checklist for engineering teams</h2>
-
-<p>If you want the real-world version, these are the questions worth asking before a change goes live:</p>
-
-<ul>
-  <li><strong>What security-sensitive behavior could this change affect?</strong></li>
-  <li><strong>Are we changing network exposure, authentication, authorization, logging, encryption, or data handling?</strong></li>
-  <li><strong>Has the change been tested in a way that would catch the most likely failure mode?</strong></li>
-  <li><strong>Do we know who approved it and who owns the outcome afterward?</strong></li>
-  <li><strong>Is there a rollback path to a known good state?</strong></li>
-  <li><strong>If this is an emergency change, when is the retrospective review scheduled?</strong></li>
-  <li><strong>How will we confirm the system still matches the intended baseline after the change?</strong></li>
-</ul>
-
-<p>And one more question that matters more than people think:</p>
-
-<ul>
-  <li><strong>If this temporary exception is still in place 30 days from now, who will notice?</strong></li>
-</ul>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/emergency-change-loop.svg" alt="Loop diagram showing emergency change, temporary exception, missed review, configuration drift, increased exposure, and retrospective correction." />
-  <figcaption>Emergency changes are sometimes necessary. The risk comes when no one closes the loop afterward.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
-
-<p><strong>Configuration management defines the approved state. Change management governs how you safely move away from it and back into control.</strong></p>
-
-<p>That is why this topic matters so much. Security programs do not fail only because attackers are clever. They also fail because normal operational changes slowly erode the conditions that were supposed to keep the environment trustworthy.</p>
-
-<p>A secure system is not just built securely once.
-It stays secure because change stays accountable.</p>
-
-<p>If you are working through CISSP too, this is one of those areas worth learning beyond the exam. It shows up everywhere real systems drift, break, and get exposed.</p>
-
-<p><strong>Meta description:</strong> Learn why CISSP treats change management as a security control and how baselines, approvals, testing, rollback, and validation prevent avoidable risk.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP change management security control</li>
-  <li>configuration management vs change management CISSP</li>
-  <li>security-focused change control best practices</li>
-  <li>emergency change management cybersecurity</li>
-  <li>secure configuration baseline and drift detection</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="change-management" /><category term="configuration-management" /><category term="security-operations" /><category term="baselines" /><summary type="html"><![CDATA[Temporary exceptions, rushed deploys, and undocumented changes create real security risk. This CISSP-focused guide explains why change management is a security control, not just an operations process.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-change-management-security-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="chain-of-custody" /><category term="digital-forensics" /><category term="incident-response" /><category term="evidence-handling" /><summary type="html"><![CDATA[Digital evidence only helps if you can prove it stayed authentic. This CISSP-focused guide explains why chain of custody starts before deep forensic analysis and how disciplined evidence handling protects investigations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
