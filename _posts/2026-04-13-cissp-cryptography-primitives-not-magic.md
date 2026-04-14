@@ -3,7 +3,16 @@ layout: post
 title: "CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything"
 date: 2026-04-13 13:00:00 +0000
 categories: [security, cissp]
-tags: [cissp, domain-3, cryptography, encryption, digital-signatures, tls, key-management]
+tags:
+  [
+    cissp,
+    domain-3,
+    cryptography,
+    encryption,
+    digital-signatures,
+    tls,
+    key-management,
+  ]
 excerpt: "Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture."
 image: /assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg
 ---
@@ -183,14 +192,14 @@ The exam mindset: match the security property required to the primitive that del
 
 ## The reference table
 
-| Primitive | Provides | Does not provide |
-|---|---|---|
-| Symmetric encryption (AES) | Confidentiality | Key distribution, integrity, authenticity |
-| Asymmetric encryption (RSA, ECC) | Confidentiality, key distribution | Efficiency at bulk scale |
-| Hashing (SHA-256) | Integrity | Authenticity, non-repudiation |
-| HMAC | Integrity, authenticity | Non-repudiation |
-| Digital signature | Integrity, authenticity, non-repudiation | Bulk confidentiality |
-| Hybrid encryption (TLS model) | Confidentiality + key distribution | *(combines symmetric and asymmetric)* |
+| Primitive                        | Provides                                 | Does not provide                          |
+| -------------------------------- | ---------------------------------------- | ----------------------------------------- |
+| Symmetric encryption (AES)       | Confidentiality                          | Key distribution, integrity, authenticity |
+| Asymmetric encryption (RSA, ECC) | Confidentiality, key distribution        | Efficiency at bulk scale                  |
+| Hashing (SHA-256)                | Integrity                                | Authenticity, non-repudiation             |
+| HMAC                             | Integrity, authenticity                  | Non-repudiation                           |
+| Digital signature                | Integrity, authenticity, non-repudiation | Bulk confidentiality                      |
+| Hybrid encryption (TLS model)    | Confidentiality + key distribution       | _(combines symmetric and asymmetric)_     |
 
 ## The practical takeaway
 
@@ -204,4 +213,4 @@ For production systems: use well-maintained libraries, reviewed protocols, and t
 
 ---
 
-*This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering.*
+_This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering._
