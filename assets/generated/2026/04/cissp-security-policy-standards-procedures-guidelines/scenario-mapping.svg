@@ -1,0 +1,23 @@
+<!-- Inline Image 2 SVG: Scenario Mapping -->
+<svg width="600" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="30" width="520" height="50" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="300" y="60" font-size="20" text-anchor="middle" fill="#2d3e50">Device Onboarding</text>
+  <text x="60" y="90" font-size="16" fill="#2d3e50">Policy:</text>
+  <text x="140" y="90" font-size="16" fill="#2d3e50">Devices must be secured before use</text>
+  <text x="60" y="110" font-size="16" fill="#2d3e50">Standard:</text>
+  <text x="140" y="110" font-size="16" fill="#2d3e50">All devices require endpoint protection</text>
+  <text x="60" y="130" font-size="16" fill="#2d3e50">Procedure:</text>
+  <text x="140" y="130" font-size="16" fill="#2d3e50">Steps to install endpoint software</text>
+  <text x="60" y="150" font-size="16" fill="#2d3e50">Guideline:</text>
+  <text x="140" y="150" font-size="16" fill="#2d3e50">Prefer centralized management</text>
+  <rect x="40" y="180" width="520" height="50" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="300" y="210" font-size="20" text-anchor="middle" fill="#2d3e50">Remote Work</text>
+  <text x="60" y="240" font-size="16" fill="#2d3e50">Policy:</text>
+  <text x="140" y="240" font-size="16" fill="#2d3e50">Protect company data offsite</text>
+  <text x="60" y="260" font-size="16" fill="#2d3e50">Standard:</text>
+  <text x="140" y="260" font-size="16" fill="#2d3e50">VPN required for remote access</text>
+  <text x="60" y="280" font-size="16" fill="#2d3e50">Procedure:</text>
+  <text x="140" y="280" font-size="16" fill="#2d3e50">How to set up VPN client</text>
+  <text x="60" y="300" font-size="16" fill="#2d3e50">Guideline:</text>
+  <text x="140" y="300" font-size="16" fill="#2d3e50">Use company-approved Wi-Fi</text>
+</svg>

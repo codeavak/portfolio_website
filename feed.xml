@@ -1,4 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-14T04:20:24+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" rel="alternate" type="text/html" title="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" /><published>2026-04-13T13:00:00+00:00</published><updated>2026-04-13T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/"><![CDATA[<p>Developers use cryptographic tools constantly without thinking about them.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-14T20:17:24+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
+
+<p>Most engineers and managers can name a few controls—firewalls, access reviews, backups—but fewer can explain why controls are grouped into types, how those types interact, and why the distinction matters for both exam questions and real-world risk reduction.</p>
+
+<p>This post breaks down the classic control types—preventive, detective, corrective (plus deterrent and compensating)—with practical examples, exam mindset tips, and guidance for applying them in layered security architectures.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" alt="Layered diagram showing preventive, detective, and corrective controls as concentric rings around business assets." />
+  <figcaption>Security controls work best in layers. Each type addresses a different stage of risk.</figcaption>
+</figure>
+
+<h2 id="why-control-types-matter-for-cissp-and-for-real-risk">Why control types matter (for CISSP and for real risk)</h2>
+
+<p>CISSP exam questions love to test your understanding of control types—not just definitions, but how to apply them in context. In practice, knowing the difference helps you design defenses that do more than just check a compliance box.</p>
+
+<ul>
+  <li><strong>Preventive controls</strong> try to stop incidents before they happen.</li>
+  <li><strong>Detective controls</strong> identify and alert when something goes wrong.</li>
+  <li><strong>Corrective controls</strong> restore normal operations after an incident.</li>
+  <li><strong>Deterrent controls</strong> discourage unwanted actions (often psychological or policy-based).</li>
+  <li><strong>Compensating controls</strong> fill gaps when primary controls are impractical.</li>
+</ul>
+
+<p>The exam will often ask: “Which control is best in this scenario?” The right answer depends on the risk, the business context, and what other controls are already in place.</p>
+
+<h2 id="the-classic-trio-preventive-detective-corrective">The classic trio: Preventive, Detective, Corrective</h2>
+
+<h3 id="preventive-controls">Preventive controls</h3>
+
+<p>These are your first line of defense. Their job is to block threats before damage occurs.</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>Firewalls (block unauthorized network traffic)</li>
+  <li>Access control lists (restrict who can access what)</li>
+  <li>Security awareness training (reduce risky behavior)</li>
+  <li>Physical locks and badge readers</li>
+  <li>Encryption (prevents data disclosure if stolen)</li>
+</ul>
+
+<p><strong>Exam tip:</strong> Preventive controls are proactive. They do not wait for an incident—they try to make it impossible or much harder.</p>
+
+<h3 id="detective-controls">Detective controls</h3>
+
+<p>These controls do not stop incidents, but they tell you when something has happened (or is happening).</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>Intrusion detection systems (IDS)</li>
+  <li>Security event logging and monitoring</li>
+  <li>CCTV cameras</li>
+  <li>File integrity monitoring</li>
+  <li>Audit trails</li>
+</ul>
+
+<p><strong>Exam tip:</strong> Detective controls are about visibility. They are essential for incident response, compliance, and continuous improvement.</p>
+
+<h3 id="corrective-controls">Corrective controls</h3>
+
+<p>These controls help you recover from an incident and restore normal operations.</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>Backups and restore procedures</li>
+  <li>Incident response plans</li>
+  <li>Patch management (after a vulnerability is exploited)</li>
+  <li>Removing malware from infected systems</li>
+  <li>Updating firewall rules after a breach</li>
+</ul>
+
+<p><strong>Exam tip:</strong> Corrective controls are about minimizing impact and learning from incidents. They often work hand-in-hand with detective controls.</p>
+
+<h2 id="beyond-the-basics-deterrent-and-compensating-controls">Beyond the basics: Deterrent and Compensating controls</h2>
+
+<h3 id="deterrent-controls">Deterrent controls</h3>
+
+<p>These controls discourage attackers or insiders from attempting unwanted actions, often by increasing the perceived risk of detection or punishment.</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>Warning signs (“Area under surveillance”)</li>
+  <li>Security policies with clear consequences</li>
+  <li>Visible security guards</li>
+  <li>Legal agreements and NDAs</li>
+</ul>
+
+<h3 id="compensating-controls">Compensating controls</h3>
+
+<p>When a primary control is not feasible (due to cost, legacy systems, or business constraints), compensating controls provide an alternative way to reduce risk.</p>
+
+<p><strong>Examples:</strong></p>
+
+<ul>
+  <li>Increased monitoring when strong authentication is not possible</li>
+  <li>Manual reviews when automated controls are lacking</li>
+  <li>Segmentation to limit exposure when full encryption is impractical</li>
+</ul>
+
+<h2 id="how-control-types-interact-in-layered-security">How control types interact in layered security</h2>
+
+<p>No single control is perfect. Real security comes from layering different types so that the failure of one does not mean total compromise.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline1.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc." />
+  <figcaption>Most real-world controls serve more than one purpose. Layering is what makes them effective.</figcaption>
+</figure>
+
+<p><strong>Example scenario:</strong></p>
+
+<ul>
+  <li>Preventive: A firewall blocks most attacks.</li>
+  <li>Detective: An IDS alerts when suspicious traffic is detected.</li>
+  <li>Corrective: An incident response plan guides containment and recovery.</li>
+  <li>Deterrent: Security policy and visible monitoring discourage insider threats.</li>
+  <li>Compensating: Manual log reviews fill gaps when automated alerting is not available.</li>
+</ul>
+
+<h2 id="exam-mindset-best-answer-thinking">Exam mindset: Best-answer thinking</h2>
+
+<p>CISSP questions often present scenarios where multiple controls could apply. The “best” answer is usually the one that:</p>
+
+<ul>
+  <li>Addresses the risk most directly</li>
+  <li>Fits the business context</li>
+  <li>Complements existing controls</li>
+  <li>Follows the principle of defense in depth</li>
+</ul>
+
+<p><strong>Watch for traps:</strong> Sometimes a control can be both preventive and detective (e.g., security cameras). The exam may want you to pick the primary function in the scenario.</p>
+
+<h2 id="practical-tips-for-engineers-and-leaders">Practical tips for engineers and leaders</h2>
+
+<ul>
+  <li>Always ask: What is this control actually doing? Is it stopping, detecting, correcting, deterring, or compensating?</li>
+  <li>Map your controls to types to identify gaps and overlaps.</li>
+  <li>Use layered controls to reduce reliance on any single safeguard.</li>
+  <li>Document compensating controls clearly for audits and risk acceptance.</li>
+  <li>Review and update controls as threats and business needs evolve.</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline2.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident." />
+  <figcaption>Controls work together: prevention blocks, detection alerts, correction restores.</figcaption>
+</figure>
+
+<h2 id="subtle-cta">Subtle CTA</h2>
+
+<p>If you are preparing for CISSP or building a security program, take time to map your controls by type. It is one of the fastest ways to spot weaknesses and improve your defense-in-depth strategy.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong>
+A practical CISSP guide to security control types—preventive, detective, corrective, deterrent, and compensating—with real-world examples, exam tips, and advice for building layered defenses.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ul>
+  <li>security control types</li>
+  <li>preventive detective corrective controls</li>
+  <li>CISSP control classification</li>
+  <li>defense in depth</li>
+  <li>compensating controls</li>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="domain-3" /><category term="security-controls" /><category term="preventive" /><category term="detective" /><category term="corrective" /><category term="defense-in-depth" /><category term="risk-management" /><summary type="html"><![CDATA[Security controls are not just technical tools—they are the backbone of risk management. Understanding preventive, detective, and corrective controls (and their real-world overlap) is essential for CISSP success and practical security leadership.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" rel="alternate" type="text/html" title="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" /><published>2026-04-13T13:00:00+00:00</published><updated>2026-04-13T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/"><![CDATA[<p>Developers use cryptographic tools constantly without thinking about them.</p>
 
 <p>You hash passwords before storing them. Your API calls go over TLS. You sign tokens, verify certificates, and see references to AES-256 or SHA-256 in documentation without stopping to reason carefully about what those choices actually provide.</p>
 
@@ -2120,257 +2286,4 @@ Not because every system must be engineered to perfection, but because critical 
   <li>redundancy and failover best practices</li>
   <li>single points of failure security risk</li>
   <li>CISSP availability domain practical guide</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="availability" /><category term="resilience" /><category term="redundancy" /><category term="failover" /><summary type="html"><![CDATA[A single fragile dependency can turn a manageable issue into a business outage. This CISSP-focused guide explains why single points of failure belong in security thinking, not just infrastructure diagrams.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #19: Forensics Starts With Chain of Custody</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/" rel="alternate" type="text/html" title="CISSP #19: Forensics Starts With Chain of Custody" /><published>2026-04-09T12:19:00+00:00</published><updated>2026-04-09T12:19:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-forensics-starts-with-chain-of-custody/"><![CDATA[<p>If an incident turns serious, the first failure is often not technical.
-It is procedural.</p>
-
-<p>A screenshot dropped into chat, a log file copied to someone’s laptop, a disk image saved with no hash, and suddenly the team has “evidence” that nobody can confidently defend later.</p>
-
-<p>This is one of the quieter CISSP lessons that matters a lot in real life: <strong>forensics is not only about finding facts. It is also about preserving trust in the facts.</strong> That is where <strong>chain of custody</strong> comes in. If you cannot show who collected an artifact, how it was preserved, who accessed it, and whether it changed, even good evidence becomes harder to rely on.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" alt="Illustration showing a digital evidence workflow moving from identification and preservation to documented handoff and forensic analysis." />
-  <figcaption>Forensics works best when evidence handling is disciplined before deep analysis even begins.</figcaption>
-</figure>
-
-<h2 id="what-chain-of-custody-actually-means">What chain of custody actually means</h2>
-
-<p>At a practical level, chain of custody is the documented history of evidence from the moment it is identified until it is preserved, transferred, analyzed, and eventually presented.</p>
-
-<p>It answers questions like:</p>
-
-<ul>
-  <li>what exactly was collected</li>
-  <li>when and where it was collected</li>
-  <li>which system or device it came from</li>
-  <li>who handled it at each step</li>
-  <li>how integrity was protected</li>
-  <li>whether the original remained unchanged</li>
-</ul>
-
-<p>That can sound like paperwork.
-It is better to think of it as an <strong>integrity control</strong>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Step</th>
-      <th>Core question</th>
-      <th>Why it matters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Identify</strong></td>
-      <td>What artifact matters?</td>
-      <td>Reduces noise and preserves what is actually relevant</td>
-    </tr>
-    <tr>
-      <td><strong>Collect</strong></td>
-      <td>How was it acquired?</td>
-      <td>Helps avoid contamination or accidental alteration</td>
-    </tr>
-    <tr>
-      <td><strong>Hash and label</strong></td>
-      <td>Is this still the same item later?</td>
-      <td>Supports integrity verification</td>
-    </tr>
-    <tr>
-      <td><strong>Transfer and store</strong></td>
-      <td>Who had access and when?</td>
-      <td>Protects accountability and limits doubt</td>
-    </tr>
-    <tr>
-      <td><strong>Analyze</strong></td>
-      <td>What was done to the working copy?</td>
-      <td>Preserves the original for validation and review</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The big idea is simple: <strong>forensics explains what happened, but chain of custody helps prove the evidence is still trustworthy.</strong></p>
-
-<h2 id="why-this-matters-beyond-courtrooms">Why this matters beyond courtrooms</h2>
-
-<p>A lot of engineers hear “chain of custody” and think of criminal cases or courtroom dramas.
-That is too narrow.</p>
-
-<p>In practice, organizations benefit from disciplined evidence handling long before anything becomes a legal case.
-It matters for:</p>
-
-<ul>
-  <li>internal investigations into misuse or unauthorized access</li>
-  <li>HR or disciplinary reviews</li>
-  <li>third-party and insurance inquiries</li>
-  <li>regulatory or audit follow-up</li>
-  <li>executive decision-making during a serious incident</li>
-  <li>possible later escalation to law enforcement or outside counsel</li>
-</ul>
-
-<p>Even if the evidence never leaves the company, leaders still need confidence that the findings are credible.
-If three analysts touched the same exported log file, nobody recorded the handoffs, and the timestamps are inconsistent, the investigation becomes harder to trust.</p>
-
-<p>That is why CISSP tends to reward answers that <strong>preserve evidence and process first</strong>, not just answers that rush into technical analysis.</p>
-
-<h2 id="what-breaks-the-chain-in-practice">What breaks the chain in practice</h2>
-
-<p>Most evidence problems do not come from sophisticated attackers.
-They come from ordinary shortcuts taken during stressful incidents.</p>
-
-<p>Common failure patterns include:</p>
-
-<ul>
-  <li>copying logs or files without recording the source system and collection time</li>
-  <li>analyzing the original artifact instead of a preserved copy</li>
-  <li>renaming or reformatting exports without documenting what changed</li>
-  <li>allowing multiple responders to access the same evidence with no handoff record</li>
-  <li>saving sensitive artifacts in chat threads, inboxes, or broadly shared folders</li>
-  <li>missing time synchronization across systems, which makes event reconstruction much weaker</li>
-</ul>
-
-<p>This is one reason mature teams prepare investigation procedures before they need them.
-Under pressure, people naturally optimize for speed. Good incident handling makes sure speed does not destroy confidence.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/custody-flow.svg" alt="Flow diagram showing digital evidence moving through identification, collection, hashing, secure storage, controlled transfer, and analysis on a copy." />
-  <figcaption>Document the flow early: identify, collect, hash, preserve, transfer, and analyze on a copy.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-the-admin-account-mystery">A realistic scenario: the admin account mystery</h2>
-
-<p>Imagine a suspicious privileged login appears on a production system at 2:13 a.m.
-The team now needs to know whether it was a legitimate emergency action, an internal mistake, or a compromise.</p>
-
-<p>A weak response looks like this:</p>
-
-<ul>
-  <li>one responder exports logs to a personal desktop</li>
-  <li>another filters and edits that export before saving it again</li>
-  <li>screenshots are shared in chat with no source references</li>
-  <li>cloud audit timestamps are compared against server time with no note about timezone differences</li>
-  <li>nobody records who handled which artifact or when</li>
-</ul>
-
-<p>The team may still reach the correct technical conclusion.
-But now the investigation has avoidable doubt around accuracy, sequence, and integrity.</p>
-
-<p>A stronger response looks different:</p>
-
-<ul>
-  <li>the original log source and export method are recorded</li>
-  <li>timestamps and timezone context are captured up front</li>
-  <li>evidence files are hashed where appropriate</li>
-  <li>the original is preserved in a restricted location</li>
-  <li>analysis happens on a working copy</li>
-  <li>each handoff is documented</li>
-</ul>
-
-<p>That second approach is not slower in any harmful way.
-It is just more disciplined.
-And discipline is often what separates a credible investigation from a messy one.</p>
-
-<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
-
-<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
-
-<p>The fundamentals here have held up well over time:</p>
-
-<ul>
-  <li>preserve relevant evidence as early as possible</li>
-  <li>document who collected it, when, where, and how</li>
-  <li>protect originals from unnecessary change</li>
-  <li>use integrity verification such as hashes where appropriate</li>
-  <li>limit access and record transfers or handoffs</li>
-  <li>coordinate with legal, HR, compliance, or leadership when the situation warrants it</li>
-</ul>
-
-<p>NIST guidance on integrating forensic techniques into incident response has emphasized these ideas for years because they are still foundational.</p>
-
-<h3 id="what-looks-more-current-in-practice">What looks more current in practice</h3>
-
-<p>What has changed is the environment around the evidence.</p>
-
-<p>NIST SP 800-61 Rev. 3, finalized in 2025, frames incident response more clearly as part of broader cybersecurity risk management. That fits modern reality: evidence no longer lives only on one workstation or one server.</p>
-
-<p>Today, teams often need to collect and correlate artifacts from:</p>
-
-<ul>
-  <li>cloud control planes</li>
-  <li>SaaS audit logs</li>
-  <li>identity providers</li>
-  <li>EDR platforms</li>
-  <li>containers and orchestration layers</li>
-  <li>collaboration systems and ticketing tools</li>
-</ul>
-
-<p>That makes chain of custody more operationally complicated.
-Now the team must also think about export methods, retention windows, API access, immutable storage, and time synchronization across distributed systems.</p>
-
-<p>The principle is still the same.
-The collection surface is just wider.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>CISSP usually is not asking whether you can perform a deep forensic carve-out by hand.
-It is asking whether you understand the <strong>right security decision sequence</strong>.</p>
-
-<p>If a question points toward an investigation, the strongest answer often includes some version of:</p>
-
-<ul>
-  <li>preserve evidence</li>
-  <li>maintain chain of custody</li>
-  <li>follow incident response procedures</li>
-  <li>involve the right stakeholders</li>
-  <li>analyze in a controlled and documented way</li>
-</ul>
-
-<p>The exam mindset is usually not “touch everything quickly and figure it out later.”
-It is “protect the integrity of the investigation while reducing business risk responsibly.”</p>
-
-<p>That is especially true when questions involve potential fraud, insider misuse, legal exposure, or disciplinary action.
-In those situations, a technically clever answer can still be the wrong answer if it ignores evidence handling discipline.</p>
-
-<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
-
-<p>If you want the real-world version, this is the checklist worth keeping nearby:</p>
-
-<ol>
-  <li><strong>Define in advance who is authorized to collect evidence.</strong></li>
-  <li><strong>Record source, system, date, time, collector, and reason for collection.</strong></li>
-  <li><strong>Preserve the original artifact and work from a copy when feasible.</strong></li>
-  <li><strong>Use integrity checks such as hashes when appropriate for the media and process.</strong></li>
-  <li><strong>Restrict access to evidence and document every handoff.</strong></li>
-  <li><strong>Keep time synchronized across key systems so event reconstruction is meaningful.</strong></li>
-  <li><strong>Coordinate with legal, HR, privacy, or leadership when the incident could have formal consequences.</strong></li>
-  <li><strong>Review the case afterward for retention, logging, or procedure gaps.</strong></li>
-</ol>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/evidence-integrity.svg" alt="Side-by-side comparison showing fragile evidence handling with missing timestamps and edited originals versus disciplined handling with preserved source data, hashes, and documented handoffs." />
-  <figcaption>The same incident can produce very different confidence depending on how evidence is handled.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
-
-<p><strong>Forensics tells you what happened. Chain of custody helps you prove the evidence remained trustworthy.</strong></p>
-
-<p>That distinction matters because investigations do not fail only when teams miss a clue.
-They also fail when teams cannot defend how the evidence was handled.</p>
-
-<p>Good incident response is not just fast analysis.
-It is careful preservation, documentation, and control from the start.</p>
-
-<p>That is a better way to think for the exam and a better way to operate in real engineering environments.</p>
-
-<p><strong>Meta description:</strong> Learn why chain of custody matters for CISSP and real-world incident response, including evidence preservation, integrity checks, documented handoffs, and disciplined forensic handling.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP chain of custody explained</li>
-  <li>digital forensics evidence handling best practices</li>
-  <li>chain of custody in incident response</li>
-  <li>preserve digital evidence and integrity</li>
-  <li>CISSP forensic investigation process</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="chain-of-custody" /><category term="digital-forensics" /><category term="incident-response" /><category term="evidence-handling" /><summary type="html"><![CDATA[Digital evidence only helps if you can prove it stayed authentic. This CISSP-focused guide explains why chain of custody starts before deep forensic analysis and how disciplined evidence handling protects investigations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-forensics-starts-with-chain-of-custody/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="availability" /><category term="resilience" /><category term="redundancy" /><category term="failover" /><summary type="html"><![CDATA[A single fragile dependency can turn a manageable issue into a business outage. This CISSP-focused guide explains why single points of failure belong in security thinking, not just infrastructure diagrams.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

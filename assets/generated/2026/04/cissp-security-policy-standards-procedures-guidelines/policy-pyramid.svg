@@ -1,0 +1,14 @@
+<!-- Inline Image 1 SVG: Policy to Practice Flow -->
+<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="30" width="520" height="40" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="300" y="58" font-size="20" text-anchor="middle" fill="#2d3e50">Policy: Protect company data</text>
+  <polygon points="300,70 310,90 290,90" fill="#b3c6e0"/>
+  <rect x="80" y="90" width="440" height="36" fill="#b3c6e0" stroke="#2d3e50" stroke-width="2" rx="8"/>
+  <text x="300" y="115" font-size="18" text-anchor="middle" fill="#2d3e50">Standard: VPN required for remote access</text>
+  <polygon points="300,126 310,146 290,146" fill="#8faacc"/>
+  <rect x="120" y="146" width="360" height="32" fill="#8faacc" stroke="#2d3e50" stroke-width="2" rx="8"/>
+  <text x="300" y="168" font-size="16" text-anchor="middle" fill="#2d3e50">Procedure: How to set up VPN client</text>
+  <polygon points="300,178 310,198 290,198" fill="#6d8bb3"/>
+  <rect x="160" y="198" width="280" height="20" fill="#6d8bb3" stroke="#2d3e50" stroke-width="2" rx="8"/>
+  <text x="300" y="212" font-size="14" text-anchor="middle" fill="#fff">Guideline: Use company-approved Wi-Fi</text>
+</svg>
