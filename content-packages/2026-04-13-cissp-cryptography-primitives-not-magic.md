@@ -228,14 +228,14 @@ The exam mindset: match the security property to the primitive, match the primit
 
 ## The table worth keeping in mind
 
-| Primitive | Provides | Does not provide |
-|---|---|---|
-| Symmetric encryption (AES) | Confidentiality | Key distribution, integrity, authenticity |
-| Asymmetric encryption (RSA, ECC) | Confidentiality, key distribution | Efficiency at scale |
-| Hashing (SHA-256) | Integrity | Authenticity, non-repudiation |
-| HMAC | Integrity, authenticity | Non-repudiation |
-| Digital signature | Integrity, authenticity, non-repudiation | Bulk confidentiality |
-| Hybrid encryption (TLS model) | Confidentiality + key distribution | *(combines the first two)* |
+| Primitive                        | Provides                                 | Does not provide                          |
+| -------------------------------- | ---------------------------------------- | ----------------------------------------- |
+| Symmetric encryption (AES)       | Confidentiality                          | Key distribution, integrity, authenticity |
+| Asymmetric encryption (RSA, ECC) | Confidentiality, key distribution        | Efficiency at scale                       |
+| Hashing (SHA-256)                | Integrity                                | Authenticity, non-repudiation             |
+| HMAC                             | Integrity, authenticity                  | Non-repudiation                           |
+| Digital signature                | Integrity, authenticity, non-repudiation | Bulk confidentiality                      |
+| Hybrid encryption (TLS model)    | Confidentiality + key distribution       | _(combines the first two)_                |
 
 <figure>
   <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/tls-handshake.svg" alt="Simplified TLS handshake diagram showing asymmetric key exchange establishing a shared symmetric session key, which then encrypts all subsequent data.">
@@ -261,14 +261,14 @@ Cryptography is not magic. It is a set of tools with precise guarantees. Enginee
 
 ---
 
-*This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering.*
+_This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering._
 
-<!--
----
+## <!--
 
 **Meta description:** Cryptography covers symmetric and asymmetric encryption, hashing, HMAC, and digital signatures — each providing different security properties. This post maps each primitive to what it does and does not guarantee, with CISSP exam framing and engineering examples.
 
 **SEO keyword ideas:**
+
 - symmetric vs asymmetric encryption explained
 - CISSP cryptography domain 3
 - digital signatures vs HMAC non-repudiation
@@ -315,21 +315,25 @@ What is one place in a system you've worked on where the cryptographic primitive
 ## 5. Extra content assets
 
 ### Hero image
+
 - **File:** `/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg`
 - **Alt text:** Diagram mapping four cryptographic goals — confidentiality, integrity, authenticity, and non-repudiation — to the primitives that address each one.
 - **Caption:** Cryptography is a set of tools. Each primitive solves a specific problem. Knowing which is which is more useful than memorizing algorithm names.
 
 ### Inline image 1 (MAC vs signature)
+
 - **File:** `/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/mac-vs-signature.svg`
 - **Alt text:** Side-by-side comparison of HMAC and digital signature workflows and what each provides.
 - **Caption:** HMAC and digital signatures both verify who sent a message — but only digital signatures provide non-repudiation.
 
 ### Inline image 2 (TLS handshake)
+
 - **File:** `/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/tls-handshake.svg`
 - **Alt text:** Simplified TLS handshake diagram showing asymmetric key exchange followed by symmetric session encryption.
 - **Caption:** TLS uses asymmetric cryptography to solve key distribution and symmetric cryptography for bulk data.
 
 ### Social snippets
+
 - "Cryptography is not a single control. It is a set of primitives, each addressing a specific security property."
 - "HMAC proves who sent a message — but both parties can produce the MAC. That is why digital signatures exist."
 - "TLS is the hybrid model in practice: asymmetric for key exchange, symmetric for everything after."
