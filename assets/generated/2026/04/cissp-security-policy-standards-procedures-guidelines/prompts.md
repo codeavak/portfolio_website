@@ -1,13 +1,19 @@
 # Image Prompts for CISSP #30: Security Policy, Standards, Procedures, and Guidelines
 
+## Generation Notes
+
+- Intended script: scripts/make_blog_image.py
+- Model target: gpt-image-1
+- Environment fallback used: manual SVG assets because OPENAI_API_KEY was not available locally
+
 ## Hero Image Prompt
 
-A clean, modern SVG illustration showing a layered document stack labeled "Policy," "Standard," "Procedure," and "Guideline," with arrows flowing from top (Policy) to bottom (Guideline). The background should subtly suggest organizational structure (e.g., faint building or network lines). Professional, credible, and visually clear.
+Professional editorial illustration, wide 3:2 composition. Theme: governance clarity in cybersecurity documentation. Show a layered stack labeled Policy, Standards, Procedures, Guidelines with directional flow from leadership intent to operational execution. Include subtle enterprise motifs (network lines, document icons, shield outline) with restrained blue-gray and slate palette. High contrast, clean, no logos, no watermark.
 
 ## Inline Image 1 Prompt
 
-A flowchart-style SVG showing the relationship: Policy → Standard → Procedure → Guideline, with brief definitions under each. Use icons for each (e.g., gavel for Policy, checklist for Standard, gear for Procedure, lightbulb for Guideline).
+Minimal infographic for technical blog. Visualize hierarchy and decision logic: Policy -> Standards -> Procedures -> Guidelines. Add short helper labels: intent, mandatory baseline, repeatable steps, recommended practice. Keep style crisp and readable on mobile, simple iconography, no clutter.
 
 ## Inline Image 2 Prompt
 
-A practical scenario diagram: a security incident response process, with callouts showing which parts are governed by Policy, Standard, Procedure, and Guideline. Use simple icons and clear labels.
+Scenario mapping graphic for remote access security. Four sections labeled Policy, Standards, Procedures, Guidelines with example entries for MFA, privileged access, logging, and user communication. Design for readability in article body, calm professional color scheme, clean lines.
