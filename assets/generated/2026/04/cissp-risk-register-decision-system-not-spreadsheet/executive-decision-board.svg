@@ -1,0 +1,46 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Executive risk decision board</title>
+  <desc id="desc">Dashboard showing risk ownership, acceptance expiry, escalation, and treatment progress.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="820" fill="url(#bg)"/>
+  <text x="60" y="78" font-size="46" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Executive Risk Decision View</text>
+
+  <rect x="60" y="118" width="1080" height="76" rx="12" fill="#0f172a"/>
+  <text x="90" y="166" font-size="30" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Top Residual Risks</text>
+
+  <rect x="60" y="220" width="1080" height="70" rx="10" fill="#dbeafe"/>
+  <text x="90" y="265" font-size="24" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Risk</text>
+  <text x="540" y="265" font-size="24" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Owner</text>
+  <text x="700" y="265" font-size="24" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Acceptance Expiry</text>
+  <text x="930" y="265" font-size="24" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Escalation</text>
+
+  <rect x="60" y="310" width="1080" height="90" rx="10" fill="white" stroke="#cbd5e1"/>
+  <text x="90" y="364" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Privileged account review gap</text>
+  <text x="540" y="364" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">IAM Lead</text>
+  <text x="700" y="364" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2026-05-15</text>
+  <rect x="930" y="333" width="180" height="40" rx="18" fill="#16a34a"/>
+  <text x="1020" y="359" text-anchor="middle" font-size="21" font-weight="700" fill="#fff" font-family="Segoe UI, Arial, sans-serif">No</text>
+
+  <rect x="60" y="420" width="1080" height="90" rx="10" fill="white" stroke="#cbd5e1"/>
+  <text x="90" y="474" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Legacy VPN without phishing-resistant MFA</text>
+  <text x="540" y="474" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Infra Director</text>
+  <text x="700" y="474" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2026-04-20</text>
+  <rect x="930" y="443" width="180" height="40" rx="18" fill="#dc2626"/>
+  <text x="1020" y="469" text-anchor="middle" font-size="21" font-weight="700" fill="#fff" font-family="Segoe UI, Arial, sans-serif">Yes</text>
+
+  <rect x="60" y="530" width="1080" height="90" rx="10" fill="white" stroke="#cbd5e1"/>
+  <text x="90" y="584" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Unverified third-party recovery objective claims</text>
+  <text x="540" y="584" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Vendor Manager</text>
+  <text x="700" y="584" font-size="23" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2026-05-30</text>
+  <rect x="930" y="553" width="180" height="40" rx="18" fill="#f59e0b"/>
+  <text x="1020" y="579" text-anchor="middle" font-size="21" font-weight="700" fill="#111827" font-family="Segoe UI, Arial, sans-serif">Pending</text>
+
+  <text x="60" y="690" font-size="32" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Governance signal:</text>
+  <text x="320" y="690" font-size="28" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Overdue expiries and unresolved escalations indicate decision latency risk.</text>
+</svg>

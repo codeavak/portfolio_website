@@ -1,106 +1,581 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-15T04:34:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/" rel="alternate" type="text/html" title="CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action" /><published>2026-04-15T12:00:00+00:00</published><updated>2026-04-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-15T14:02:05+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP: The Risk Register Is a Decision System, Not a Spreadsheet</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-risk-register-decision-system-not-spreadsheet/" rel="alternate" type="text/html" title="CISSP: The Risk Register Is a Decision System, Not a Spreadsheet" /><published>2026-04-15T12:30:00+00:00</published><updated>2026-04-15T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-risk-register-decision-system-not-spreadsheet</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-risk-register-decision-system-not-spreadsheet/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/hero.svg" alt="Risk register shown as a decision system connecting risk owners, treatment choices, and governance decisions" class="blog-hero" /></p>
 
-<h1 id="security-policy-standards-procedures-and-guidelines-from-theory-to-practice">Security Policy, Standards, Procedures, and Guidelines: From Theory to Practice</h1>
+<h1 id="the-risk-register-is-not-documentation-debt">The Risk Register Is Not Documentation Debt</h1>
 
-<p>Security programs succeed or fail on clarity of intent and execution. The CISSP exam—and real-world security—demands you understand how policy, standards, procedures, and guidelines work together to turn strategy into action.</p>
+<p>Many teams say they have a risk register, but what they really have is a list.</p>
 
-<h2 id="why-this-matters-exam-and-reality">Why This Matters (Exam and Reality)</h2>
+<p>Rows exist. Fields are populated. Maybe there is even color coding. But no one can answer the two questions that matter most: what decision is needed now, and who must make it.</p>
 
-<p>The exam tests your ability to distinguish these terms and apply them in scenarios. In practice, confusion here leads to gaps, audit findings, and failed initiatives. Clear documentation is a foundation for security maturity.</p>
+<p>From a CISSP perspective, this is an important distinction. The exam does not reward decorative process artifacts. It rewards risk-based reasoning in business context. In real practice, the same rule applies. A register only creates value when it helps leadership allocate attention, budget, and accountability.</p>
 
-<hr />
+<h2 id="why-this-matters-for-cissp-and-real-operations">Why This Matters for CISSP and Real Operations</h2>
 
-<h2 id="the-four-pillars-definitions-and-relationships">The Four Pillars: Definitions and Relationships</h2>
+<p>A mature risk program is not just about identifying threats. It is about consistent risk treatment decisions over time.</p>
 
-<h3 id="security-policy">Security Policy</h3>
+<p>That means your register should support:</p>
 
 <ul>
-  <li><strong>What:</strong> High-level statement of management intent, direction, and commitment</li>
-  <li><strong>Who:</strong> Approved by senior leadership</li>
-  <li><strong>Why:</strong> Sets the tone and priorities for the entire organization</li>
-  <li><strong>Example:</strong> “All company data must be protected against unauthorized access.”</li>
+  <li>prioritization across competing risks</li>
+  <li>explicit ownership and accountability</li>
+  <li>treatment decisions tied to business constraints</li>
+  <li>escalation when risk exceeds authority thresholds</li>
+  <li>evidence that decisions were deliberate and reviewed</li>
 </ul>
+
+<p>When those capabilities are missing, the register becomes historical trivia. Incidents still happen, but with the added penalty of “we already knew this risk” and no credible proof of action.</p>
+
+<h2 id="what-the-exam-tests-vs-what-practice-demands">What the Exam Tests vs What Practice Demands</h2>
+
+<h3 id="what-the-cissp-exam-tends-to-test">What the CISSP exam tends to test</h3>
+
+<p>The exam often checks whether you can select the best governance action when multiple technical actions are plausible.</p>
+
+<p>Typical pattern:</p>
+
+<ul>
+  <li>risk is identified</li>
+  <li>controls are possible</li>
+  <li>ownership or authority is unclear</li>
+  <li>best answer is the one that re-establishes governance order</li>
+</ul>
+
+<p>In many scenarios, the right move is not “deploy tool X first.” It is assigning ownership, selecting treatment, and escalating based on risk appetite and tolerance.</p>
+
+<h3 id="what-practice-demands">What practice demands</h3>
+
+<p>Practice requires a register that stays useful after the first workshop. That depends on operational mechanics:</p>
+
+<ul>
+  <li>cadence: regular review with actual decision authority present</li>
+  <li>hygiene: stale items closed or revalidated, not endlessly rolled forward</li>
+  <li>traceability: decision date, approver, rationale, and next review date</li>
+  <li>actionability: clear treatment plan and measurable completion state</li>
+</ul>
+
+<p>If your register cannot survive contact with delivery pressure, it is not a decision system.</p>
+
+<h2 id="the-core-structure-of-a-useful-risk-register">The Core Structure of a Useful Risk Register</h2>
+
+<p>Different frameworks use different formats, but strong registers share common fields.</p>
+
+<h3 id="1-risk-statement">1. Risk statement</h3>
+
+<p>Describe the condition, cause, and impact in plain language.</p>
+
+<p>Weak: “Credential risk.”</p>
+
+<p>Better: “If service account credentials remain long-lived and shared across automation jobs, unauthorized reuse could allow lateral movement and unauthorized changes in production systems.”</p>
+
+<h3 id="2-asset-and-business-context">2. Asset and business context</h3>
+
+<p>Tie risk to business outcomes, not just technical components.</p>
+
+<ul>
+  <li>affected service or process</li>
+  <li>criticality to revenue, operations, safety, or legal obligations</li>
+  <li>dependency map (upstream/downstream impact)</li>
+</ul>
+
+<h3 id="3-owner-and-authority-level">3. Owner and authority level</h3>
+
+<p>Every risk needs one accountable owner.</p>
+
+<p>Also define authority boundaries:</p>
+
+<ul>
+  <li>who can accept low/medium risk</li>
+  <li>when director/CISO/executive approval is required</li>
+  <li>what triggers board-level visibility</li>
+</ul>
+
+<h3 id="4-assessment-and-uncertainty-notes">4. Assessment and uncertainty notes</h3>
+
+<p>Use a consistent method for likelihood, impact, and residual risk. Include a short uncertainty note when data quality is weak.</p>
+
+<p>This improves honesty and avoids false precision.</p>
+
+<h3 id="5-treatment-decision">5. Treatment decision</h3>
+
+<p>Each risk should have one explicit decision state:</p>
+
+<ul>
+  <li>mitigate</li>
+  <li>transfer</li>
+  <li>avoid</li>
+  <li>accept</li>
+</ul>
+
+<p>And each decision should include rationale in business terms.</p>
+
+<h3 id="6-time-bound-workflow">6. Time-bound workflow</h3>
+
+<p>At minimum:</p>
+
+<ul>
+  <li>target decision date</li>
+  <li>treatment completion target</li>
+  <li>review frequency</li>
+  <li>expiration date for accepted risks</li>
+</ul>
+
+<p>Time boundaries prevent “temporary” risk acceptance from becoming permanent drift.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/risk-register-lifecycle.svg" alt="Lifecycle diagram showing risk identification, analysis, treatment decision, implementation, and review loop" class="inline-img" /></p>
+
+<h2 id="the-decision-logic-most-teams-miss">The Decision Logic Most Teams Miss</h2>
+
+<p>A good register does not only answer “how bad is this risk?” It answers “who must decide, by when, under what constraints?”</p>
+
+<p>A practical decision flow:</p>
+
+<ol>
+  <li>Identify and describe the risk in business-impact terms.</li>
+  <li>Estimate inherent risk and current control effectiveness.</li>
+  <li>Determine residual risk.</li>
+  <li>Compare residual risk to appetite/tolerance thresholds.</li>
+  <li>Route to the right authority level for decision.</li>
+  <li>Record decision, rationale, compensating controls, and review date.</li>
+</ol>
+
+<p>This keeps technical teams from silently carrying risks that require executive tradeoff decisions.</p>
+
+<h2 id="scenario-public-facing-api-with-weak-key-governance">Scenario: Public-Facing API With Weak Key Governance</h2>
+
+<p>Consider a customer-facing API where keys are stored in CI variables, rotated manually, and reused across environments.</p>
+
+<h3 id="weak-register-behavior">Weak register behavior</h3>
+
+<ul>
+  <li>entry says “API key management”</li>
+  <li>owner is blank or generic team alias</li>
+  <li>status says “in progress” for months</li>
+  <li>no acceptance rationale, no escalation, no deadline</li>
+</ul>
+
+<p>Outcome: everyone agrees it is risky, no one is accountable for the decision.</p>
+
+<h3 id="strong-register-behavior">Strong register behavior</h3>
+
+<ul>
+  <li>risk statement includes likely abuse path and customer impact</li>
+  <li>owner is named engineering manager with security architect as advisor</li>
+  <li>residual risk exceeds tolerance for external-facing systems</li>
+  <li>treatment chosen: mitigate in two phases</li>
+  <li>phase 1: move secrets to managed vault, enforce environment separation</li>
+  <li>phase 2: automate rotation and short-lived credentials</li>
+  <li>if phase 1 misses deadline: temporary acceptance requires CISO sign-off and explicit compensating controls</li>
+</ul>
+
+<p>Outcome: no ambiguity about who decides and what “done” means.</p>
+
+<h2 id="established-principles-and-recent-developments">Established Principles and Recent Developments</h2>
+
+<h3 id="established-principles">Established principles</h3>
+
+<p>The fundamentals are stable:</p>
+
+<ul>
+  <li>risk assessment and treatment are recurring, not one-time events</li>
+  <li>decisions should be made at the correct authority tier</li>
+  <li>residual risk must be explicit before acceptance</li>
+  <li>governance artifacts must support accountability, not documentation volume</li>
+</ul>
+
+<p>This aligns with long-standing guidance in sources like NIST SP 800-30 and broader risk governance models.</p>
+
+<h3 id="recent-developments">Recent developments</h3>
+
+<p>What changed is execution pressure and integration demand:</p>
+
+<ul>
+  <li>CSF 2.0 reinforced enterprise-level governance framing and practical implementation resources.</li>
+  <li>Organizations are expected to align cybersecurity risk with enterprise risk language more consistently.</li>
+  <li>More teams now operate in fast delivery environments where review cycles must keep up with deployment velocity.</li>
+</ul>
+
+<p>The result: static quarterly spreadsheets are increasingly inadequate. Decision latency is now a measurable risk in itself.</p>
+
+<h2 id="common-failure-patterns">Common Failure Patterns</h2>
+
+<h3 id="1-register-as-a-backlog-clone">1. Register as a backlog clone</h3>
+
+<p>Security risks are tracked like engineering tickets with no decision authority mapping.</p>
+
+<p>Fix: add explicit approver level and escalation trigger fields.</p>
+
+<h3 id="2-risk-acceptance-with-no-expiration">2. Risk acceptance with no expiration</h3>
+
+<p>Accepted risks remain open indefinitely without revalidation.</p>
+
+<p>Fix: enforce acceptance expiry and automatic re-review workflow.</p>
+
+<h3 id="3-metrics-that-reward-activity-not-risk-reduction">3. Metrics that reward activity, not risk reduction</h3>
+
+<p>Teams report “number of risks logged” and “number of meetings held.”</p>
+
+<p>Fix: measure decision lead time, overdue high-risk items, treatment completion rate, and residual-risk trend.</p>
+
+<h3 id="4-ownership-by-committee">4. Ownership by committee</h3>
+
+<p>“Security team” is listed as owner for everything.</p>
+
+<p>Fix: assign single accountable owner per item, with advisors listed separately.</p>
+
+<h2 id="practical-dashboard-metrics-for-leadership">Practical Dashboard Metrics for Leadership</h2>
+
+<p>If you want your register to influence executive behavior, measure what helps decision quality:</p>
+
+<ul>
+  <li>median time from risk identification to decision</li>
+  <li>percent of high residual risks with current owner and approved treatment</li>
+  <li>count of accepted risks past expiry date</li>
+  <li>trend of top 10 residual risks quarter over quarter</li>
+  <li>number of escalations resolved at correct authority level</li>
+</ul>
+
+<p>These metrics are simple, but they reveal whether governance is functioning or stalled.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/executive-decision-board.svg" alt="Executive decision board view of risk register showing ownership, expiry, and escalation indicators" class="inline-img" /></p>
+
+<h2 id="how-to-upgrade-an-existing-register-in-30-days">How to Upgrade an Existing Register in 30 Days</h2>
+
+<p>You do not need a platform migration first. Start with structure and discipline.</p>
+
+<h3 id="week-1-normalize-fields">Week 1: Normalize fields</h3>
+
+<p>Standardize risk statement format, owner, authority level, treatment decision, and review date.</p>
+
+<h3 id="week-2-enforce-ownership-and-expiry">Week 2: Enforce ownership and expiry</h3>
+
+<p>No owner, no entry. No acceptance expiry, no accepted state.</p>
+
+<h3 id="week-3-add-escalation-rules">Week 3: Add escalation rules</h3>
+
+<p>Define thresholds that force director/CISO/executive review.</p>
+
+<h3 id="week-4-run-decision-review-cadence">Week 4: Run decision review cadence</h3>
+
+<p>Hold a focused meeting with real decision makers. Close stale items, escalate unresolved items, and capture rationale.</p>
+
+<p>Most organizations improve significantly with this alone.</p>
+
+<h2 id="final-takeaway">Final Takeaway</h2>
+
+<p>For CISSP candidates, the key lesson is this: risk management is a decision discipline, not a form-filling exercise.</p>
+
+<p>For engineering and security leaders, the same principle scales. If your register cannot reliably route risk to the right decision maker with clear time bounds, you do not have risk governance. You have inventory.</p>
+
+<p>Turn the register into a decision system, and the quality of your security outcomes will improve faster than most control catalogs can.</p>
+
+<h2 id="meta-description">Meta Description</h2>
+
+<p>CISSP-focused guide on transforming a risk register from static spreadsheet into a decision system with ownership, treatment logic, escalation rules, and practical governance metrics.</p>
+
+<h2 id="seo-keyword-ideas">SEO Keyword Ideas</h2>
+
+<ol>
+  <li>CISSP risk register best practices</li>
+  <li>cybersecurity risk register decision making</li>
+  <li>risk acceptance expiration governance</li>
+  <li>residual risk escalation model</li>
+  <li>enterprise security risk tracking framework</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Risk" /><category term="CISSP" /><category term="risk register" /><category term="risk management" /><category term="governance" /><category term="security leadership" /><category term="enterprise risk" /><summary type="html"><![CDATA[A practical CISSP guide to using risk registers as decision systems: ownership, treatment choices, escalation logic, and metrics that help leaders act before risk becomes incident.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP: Security Policy, Standards, Procedures, and Guidelines Without the Confusion</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/" rel="alternate" type="text/html" title="CISSP: Security Policy, Standards, Procedures, and Guidelines Without the Confusion" /><published>2026-04-15T12:00:00+00:00</published><updated>2026-04-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" /></p>
+
+<h1 id="security-policy-standards-procedures-and-guidelines-the-difference-that-prevents-security-drift">Security Policy, Standards, Procedures, and Guidelines: The Difference That Prevents Security Drift</h1>
+
+<p>One of the easiest ways to weaken a security program is to blur these four terms.</p>
+
+<p>When policy, standards, procedures, and guidelines get mixed together, teams ship contradictory controls, auditors find gaps, and incident response slows down exactly when speed matters. The CISSP exam tests this distinction directly, but the deeper value is operational: this is how you turn leadership intent into repeatable, defensible execution.</p>
+
+<h2 id="why-this-topic-matters-more-than-it-looks">Why This Topic Matters More Than It Looks</h2>
+
+<p>At first glance, this feels like vocabulary. In practice, it is governance architecture.</p>
+
+<p>Most security programs do not fail because people never heard of encryption or least privilege. They fail because the organization cannot answer basic questions consistently:</p>
+
+<ul>
+  <li>What is mandatory versus recommended?</li>
+  <li>Who has authority to approve exceptions?</li>
+  <li>Which team owns implementation details?</li>
+  <li>How do we prove that controls are applied the same way across systems?</li>
+</ul>
+
+<p>The policy-standard-procedure-guideline stack answers those questions.</p>
+
+<p>For CISSP, this is also a classic best-answer domain. You may see multiple options that are technically true, but only one that reflects proper governance order.</p>
+
+<h2 id="the-four-layers-clearly-defined">The Four Layers, Clearly Defined</h2>
+
+<h3 id="1-policy-management-intent">1. Policy: Management Intent</h3>
+
+<p>Policy is high-level direction formally approved by senior leadership. It states what must be achieved and why it matters to the business.</p>
+
+<p>Good policies are:</p>
+
+<ul>
+  <li>concise</li>
+  <li>business-aligned</li>
+  <li>technology-agnostic where possible</li>
+  <li>enforceable through supporting artifacts</li>
+</ul>
+
+<p>Example:</p>
+
+<p>“The organization will protect sensitive information from unauthorized access, alteration, and disclosure across its lifecycle.”</p>
+
+<p>Notice what this does not include: cipher suites, exact tooling, or click-by-click instructions. Those belong lower in the stack.</p>
+
+<h3 id="2-standards-mandatory-requirements">2. Standards: Mandatory Requirements</h3>
+
+<p>Standards translate policy into measurable, mandatory rules.</p>
+
+<p>If policy says “protect data,” standards define the minimum acceptable implementation baseline. Standards are where consistency is created across teams and platforms.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Data at rest must be encrypted using approved cryptographic modules.</li>
+  <li>Privileged accounts must use phishing-resistant MFA for administrative interfaces.</li>
+  <li>Production systems must send security logs to a centralized logging platform.</li>
+</ul>
+
+<p>Standards should be testable. If a statement cannot be assessed, it is probably still a policy aspiration, not a standard.</p>
+
+<h3 id="3-procedures-repeatable-how-to-steps">3. Procedures: Repeatable How-To Steps</h3>
+
+<p>Procedures describe exactly how to execute a task in a defined context.</p>
+
+<p>If standards are “what must be done,” procedures are “how this team does it safely every time.” They are role-based and operational.</p>
+
+<p>Example procedure scope:</p>
+
+<ul>
+  <li>requesting and approving admin access</li>
+  <li>deploying endpoint security controls</li>
+  <li>rotating service account credentials</li>
+  <li>restoring a critical database from backup</li>
+</ul>
+
+<p>Procedure quality directly affects incident handling and audit readiness because this is where humans interact with controls under pressure.</p>
+
+<h3 id="4-guidelines-recommended-practice">4. Guidelines: Recommended Practice</h3>
+
+<p>Guidelines are non-mandatory recommendations that help teams make better decisions in varied contexts.</p>
+
+<p>They are useful when strict uniformity is not possible or not worth the cost.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Prefer short-lived credentials over long-lived secrets for automation.</li>
+  <li>Use feature flags to reduce blast radius during security-sensitive releases.</li>
+  <li>Prioritize designs that simplify evidence collection for investigations.</li>
+</ul>
+
+<p>Guidelines are not weak policy. They are intentional flexibility.</p>
+
+<h2 id="how-the-layers-work-together">How the Layers Work Together</h2>
+
+<p>Think in flow, not in documents:</p>
+
+<p>Policy -&gt; Standards -&gt; Procedures -&gt; Guidelines</p>
+
+<p>Each layer answers a different question:</p>
+
+<ul>
+  <li>Policy: What does leadership require?</li>
+  <li>Standards: What is the minimum acceptable control baseline?</li>
+  <li>Procedures: How does a team execute safely and consistently?</li>
+  <li>Guidelines: What recommendations improve decisions where discretion is needed?</li>
+</ul>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/policy-pyramid.svg" alt="Policy standards procedures guidelines relationship diagram" class="inline-img" /></p>
+
+<p>When these layers are cleanly separated, organizations can update implementation details without rewriting strategic intent, and can revise standards without retraining every team from scratch.</p>
+
+<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP Exam Is Really Testing Here</h2>
+
+<p>CISSP questions in this area usually test judgment under governance constraints.</p>
+
+<p>A common pattern:</p>
+
+<ul>
+  <li>The scenario includes confusion, inconsistency, or a control gap.</li>
+  <li>Multiple answers are plausible technical actions.</li>
+  <li>The best answer is often the one that establishes or fixes governance order first.</li>
+</ul>
+
+<p>Examples of exam-safe reasoning:</p>
+
+<ul>
+  <li>If there is no top-level direction, policy-level action usually comes before control-level tuning.</li>
+  <li>If teams implement security differently, standards are often the missing mechanism.</li>
+  <li>If controls exist but execution is inconsistent, procedures are likely weak or absent.</li>
+  <li>If teams need adaptability in non-critical areas, guidelines are appropriate.</li>
+</ul>
+
+<p>In other words, the exam rewards structure, not heroics.</p>
+
+<h2 id="practice-reality-where-organizations-commonly-get-this-wrong">Practice Reality: Where Organizations Commonly Get This Wrong</h2>
+
+<h3 id="failure-pattern-1-policy-that-is-actually-a-procedure">Failure Pattern 1: “Policy” That Is Actually a Procedure</h3>
+
+<p>Teams publish a long document labeled “policy” full of step-by-step instructions. Six months later it is outdated, ignored, and impossible to enforce.</p>
+
+<p>Why it fails:</p>
+
+<ul>
+  <li>policy becomes brittle</li>
+  <li>ownership is unclear</li>
+  <li>updates require leadership-level change control for minor operational edits</li>
+</ul>
+
+<p>Fix:</p>
+
+<ul>
+  <li>keep policy principle-based</li>
+  <li>move implementation specifics into standards and procedures</li>
+</ul>
+
+<h3 id="failure-pattern-2-standards-without-exception-handling">Failure Pattern 2: Standards Without Exception Handling</h3>
+
+<p>A strict baseline is published, but no formal exception workflow exists. Teams quietly bypass controls to ship work.</p>
+
+<p>Why it fails:</p>
+
+<ul>
+  <li>governance appears strong on paper but weak in practice</li>
+  <li>risk decisions become invisible</li>
+</ul>
+
+<p>Fix:</p>
+
+<ul>
+  <li>require documented exception requests, compensating controls, approval authority, and expiration dates</li>
+</ul>
+
+<h3 id="failure-pattern-3-procedures-as-tribal-knowledge">Failure Pattern 3: Procedures as Tribal Knowledge</h3>
+
+<p>Critical security actions exist only in senior engineer memory.</p>
+
+<p>Why it fails:</p>
+
+<ul>
+  <li>incident response slows during off-hours</li>
+  <li>control operation is inconsistent</li>
+  <li>audit evidence is weak</li>
+</ul>
+
+<p>Fix:</p>
+
+<ul>
+  <li>document procedures where execution risk is high</li>
+  <li>test them through tabletop exercises and operational drills</li>
+</ul>
+
+<h3 id="failure-pattern-4-guidelines-misused-as-soft-requirements">Failure Pattern 4: Guidelines Misused as Soft Requirements</h3>
+
+<p>Organizations call something a guideline but punish teams for deviating.</p>
+
+<p>Why it fails:</p>
+
+<ul>
+  <li>teams stop trusting classification language</li>
+  <li>accountability and enforcement become arbitrary</li>
+</ul>
+
+<p>Fix:</p>
+
+<ul>
+  <li>if it is mandatory, classify it as a standard</li>
+  <li>if it is optional, preserve discretion and explain tradeoffs</li>
+</ul>
+
+<h2 id="practical-mapping-example-remote-access-hardening">Practical Mapping Example: Remote Access Hardening</h2>
+
+<p>Use one business scenario to see the stack in action.</p>
+
+<h3 id="policy">Policy</h3>
+
+<p>Remote access to organizational resources must protect confidentiality, integrity, and availability of business data.</p>
 
 <h3 id="standards">Standards</h3>
 
 <ul>
-  <li><strong>What:</strong> Mandatory rules or technical baselines that support policy</li>
-  <li><strong>Who:</strong> Defined by security, approved by management</li>
-  <li><strong>Why:</strong> Ensure consistency and interoperability</li>
-  <li><strong>Example:</strong> “All laptops must use full-disk encryption with AES-256.”</li>
+  <li>MFA is required for all remote access sessions.</li>
+  <li>Administrative remote access requires phishing-resistant factors.</li>
+  <li>Remote session logs must be centrally retained per retention policy.</li>
 </ul>
 
 <h3 id="procedures">Procedures</h3>
 
 <ul>
-  <li><strong>What:</strong> Step-by-step instructions for carrying out standards and policy</li>
-  <li><strong>Who:</strong> Written by process owners, followed by staff</li>
-  <li><strong>Why:</strong> Enable repeatable, auditable actions</li>
-  <li><strong>Example:</strong> “How to enroll a new laptop in the encryption system.”</li>
+  <li>Enrollment steps for approved MFA authenticators</li>
+  <li>Access provisioning workflow with manager and security approval</li>
+  <li>Lost-device recovery and account re-verification workflow</li>
 </ul>
 
 <h3 id="guidelines">Guidelines</h3>
 
 <ul>
-  <li><strong>What:</strong> Recommended practices, not mandatory</li>
-  <li><strong>Who:</strong> Written by subject matter experts</li>
-  <li><strong>Why:</strong> Allow flexibility and professional judgment</li>
-  <li><strong>Example:</strong> “When possible, use multi-factor authentication for remote access.”</li>
+  <li>Prefer managed devices for privileged access.</li>
+  <li>Use network segmentation for high-risk administrative paths.</li>
+  <li>Conduct periodic user communication to reduce support load during control rollouts.</li>
 </ul>
 
-<hr />
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/scenario-mapping.svg" alt="Remote access scenario mapped to policy standards procedures and guidelines" class="inline-img" /></p>
 
-<h2 id="how-they-fit-together">How They Fit Together</h2>
+<p>This structure makes it clear what is non-negotiable and what is context-driven.</p>
 
-<p>A strong security program starts with policy, which is supported by standards, implemented through procedures, and enhanced by guidelines. Think of it as a pyramid:</p>
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
 
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/policy-pyramid.svg" alt="Policy Standards Procedures Guidelines Pyramid" class="inline-img" /></p>
+<p>This model itself is established. The hierarchy has been foundational in governance and risk management for years and aligns with how major frameworks discuss control intent and implementation.</p>
 
-<hr />
-
-<h2 id="real-world-scenarios">Real-World Scenarios</h2>
-
-<h3 id="scenario-1-new-device-onboarding">Scenario 1: New Device Onboarding</h3>
+<p>What has evolved recently is how quickly organizations must operationalize and cross-map these layers:</p>
 
 <ul>
-  <li><strong>Policy:</strong> Devices must be secured before use</li>
-  <li><strong>Standard:</strong> All devices require endpoint protection</li>
-  <li><strong>Procedure:</strong> Steps to install and configure endpoint software</li>
-  <li><strong>Guideline:</strong> Prefer solutions with centralized management</li>
+  <li>More frequent control updates and framework revisions (for example, NIST control catalog updates and supporting crosswalks).</li>
+  <li>Increased pressure to align governance across security, privacy, and software delivery teams.</li>
+  <li>More scrutiny on proving control effectiveness, not just documenting control existence.</li>
 </ul>
 
-<h3 id="scenario-2-remote-work-expansion">Scenario 2: Remote Work Expansion</h3>
+<p>The practical implication: clear document taxonomy is no longer “compliance polish.” It is a scaling mechanism.</p>
+
+<h2 id="a-simple-quality-check-you-can-apply-this-week">A Simple Quality Check You Can Apply This Week</h2>
+
+<p>Pick one high-impact control area, such as privileged access, backup restoration, or vulnerability management. Then verify:</p>
+
+<ol>
+  <li>There is a short, approved policy statement.</li>
+  <li>Mandatory standards are explicit and testable.</li>
+  <li>Procedures are current and executable by the intended role.</li>
+  <li>Guidelines are clearly labeled as recommendations.</li>
+  <li>Exception handling is documented, approved, and time-bounded.</li>
+</ol>
+
+<p>If one layer is missing, the control is weaker than it looks.</p>
+
+<h2 id="final-takeaway">Final Takeaway</h2>
+
+<p>If you are studying for CISSP, memorize definitions, but practice judgment. The exam is not asking whether you can recite four terms. It is asking whether you can apply governance logic under real constraints.</p>
+
+<p>If you are running security in engineering environments, this hierarchy gives you leverage: less ambiguity, cleaner accountability, faster onboarding, stronger evidence, and fewer unpleasant surprises during incidents.</p>
+
+<p>Subtle discipline in documentation design is often the difference between performative security and reliable security.</p>
+
+<h2 id="meta-description">Meta Description</h2>
+
+<p>CISSP-focused guide to security policy, standards, procedures, and guidelines with practical examples, exam mindset, and implementation pitfalls to help teams build clearer and more reliable security governance.</p>
+
+<h2 id="seo-keyword-ideas">SEO Keyword Ideas</h2>
 
 <ul>
-  <li><strong>Policy:</strong> Protect company data offsite</li>
-  <li><strong>Standard:</strong> VPN required for remote access</li>
-  <li><strong>Procedure:</strong> How to set up VPN client</li>
-  <li><strong>Guideline:</strong> Use company-approved Wi-Fi when possible</li>
-</ul>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/scenario-mapping.svg" alt="Policy to Practice Scenario Mapping" class="inline-img" /></p>
-
-<hr />
-
-<h2 id="exam-mindset-best-answer-reasoning">Exam Mindset: Best-Answer Reasoning</h2>
-
-<ul>
-  <li>The exam may blur lines—focus on the primary purpose and audience</li>
-  <li>Policy is always top-level intent; standards are mandatory; procedures are how-tos; guidelines are suggestions</li>
-  <li>In practice, keep documentation clear, current, and accessible</li>
-</ul>
-
-<hr />
-
-<h2 id="subtle-cta">Subtle CTA</h2>
-
-<p>If you want your security program to work, start by mapping your documentation to these four pillars. Clarity here drives real results—and exam success.</p>
-
-<hr />
-
-<p><em>Meta description: CISSP guide to security policy, standards, procedures, and guidelines. Definitions, relationships, real-world examples, and exam tips for security leaders and CISSP candidates. Keywords: CISSP, security policy, standards, procedures, guidelines, governance.</em></p>
-
-<!-- SEO keyword ideas: CISSP security policy, security standards, security procedures, security guidelines, policy pyramid, security governance -->]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="security policy" /><category term="standards" /><category term="procedures" /><category term="guidelines" /><category term="governance" /><category term="exam" /><summary type="html"><![CDATA[A practical guide to understanding and applying security policy, standards, procedures, and guidelines—how they fit together, why they matter, and how to use them for both CISSP exam success and real-world security leadership.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
+  <li>CISSP policy standards procedures guidelines</li>
+  <li>security governance document hierarchy</li>
+  <li>difference between policy and standard in cybersecurity</li>
+  <li>CISSP exam governance best answer strategy</li>
+  <li>security control implementation documentation</li>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="security policy" /><category term="standards" /><category term="procedures" /><category term="guidelines" /><category term="governance" /><category term="risk" /><category term="exam" /><summary type="html"><![CDATA[A practical CISSP study guide to policy, standards, procedures, and guidelines, with exam reasoning, real-world implementation advice, and common failure patterns to avoid.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
 
 <p>Most engineers and managers can name a few controls—firewalls, access reviews, backups—but fewer can explain why controls are grouped into types, how those types interact, and why the distinction matters for both exam questions and real-world risk reduction.</p>
 
@@ -1934,222 +2409,4 @@ That conversation usually surfaces more truth than the architecture diagram does
   <li>hot site vs warm site vs cold site</li>
   <li>CISSP disaster recovery practical guide</li>
   <li>recovery site tradeoffs business continuity</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="disaster-recovery" /><category term="recovery-sites" /><category term="availability" /><category term="resilience" /><summary type="html"><![CDATA[Recovery sites are not old-school memorization trivia. This CISSP-focused guide explains how hot, warm, and cold sites reflect real business tradeoffs around downtime, cost, and operational readiness.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #21: Backups Are Not Recovery Until You Test the Restore</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/" rel="alternate" type="text/html" title="CISSP #21: Backups Are Not Recovery Until You Test the Restore" /><published>2026-04-10T12:21:00+00:00</published><updated>2026-04-10T12:21:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-backups-are-not-recovery-until-you-test-restore/"><![CDATA[<p>It is comforting to say, “we have backups.”</p>
-
-<p>It sounds responsible. It reassures leadership. It closes a lot of awkward risk conversations quickly.</p>
-
-<p>But during an outage, a ransomware event, or a bad change, the real questions are harsher:</p>
-
-<ul>
-  <li>Can we restore the right system in time?</li>
-  <li>How much data can we afford to lose?</li>
-  <li>Are the backup copies still trustworthy?</li>
-  <li>Do we know the order of recovery, the credentials required, and the dependencies that have to come back first?</li>
-</ul>
-
-<p>This is one of those CISSP lessons that lands hard in real life: <strong>a backup is not the same thing as a recovery capability.</strong> A backup is only one ingredient. The control becomes real when the organization can restore critical systems and data within acceptable business limits.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" alt="Illustration showing protected backup copies flowing through a restore process into a recovered business service, emphasizing that restore testing matters." />
-  <figcaption>A backup becomes a real control only when the restore path is trusted and rehearsed.</figcaption>
-</figure>
-
-<h2 id="why-cissp-ties-backups-to-business-impact">Why CISSP ties backups to business impact</h2>
-
-<p>The exam is not interested in backups as a storage hobby.
-It is testing whether you can connect technical recovery decisions to business requirements.</p>
-
-<p>That is why backup conversations are really about:</p>
-
-<ul>
-  <li><strong>RPO</strong>: how much recent data loss the business can tolerate</li>
-  <li><strong>RTO</strong>: how quickly the service must come back</li>
-  <li><strong>system criticality</strong>: which functions are restored first</li>
-  <li><strong>integrity</strong>: whether the recovery source is clean and trustworthy</li>
-  <li><strong>ownership</strong>: who has the authority, access, and runbooks to make recovery happen</li>
-</ul>
-
-<p>A nightly copy can still be a weak control if the business needs a much shorter <code class="language-plaintext highlighter-rouge">RPO</code>, or if the restore process takes longer than the acceptable <code class="language-plaintext highlighter-rouge">RTO</code>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Recovery concept</th>
-      <th>Question it answers</th>
-      <th>Why it matters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>RPO</strong></td>
-      <td>How much data can we afford to lose?</td>
-      <td>Drives backup frequency, replication, and logging strategy</td>
-    </tr>
-    <tr>
-      <td><strong>RTO</strong></td>
-      <td>How fast must service return?</td>
-      <td>Drives architecture, automation, and staffing</td>
-    </tr>
-    <tr>
-      <td><strong>Isolation</strong></td>
-      <td>Can an attacker or admin mistake destroy the recovery source too?</td>
-      <td>Protects recoverability during compromise</td>
-    </tr>
-    <tr>
-      <td><strong>Restore testing</strong></td>
-      <td>Have we proven we can recover?</td>
-      <td>Converts backup theory into operational evidence</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Full, incremental, and differential backups still matter.
-But CISSP is usually aiming at the larger question: <strong>does the organization have a recovery capability that fits the mission?</strong></p>
-
-<h2 id="where-backup-strategies-fail-in-practice">Where backup strategies fail in practice</h2>
-
-<p>Most failed recoveries do not happen because nobody bought storage.
-They happen because the team quietly assumed that successful backup jobs meant successful restoration.</p>
-
-<p>A few common gaps show up over and over:</p>
-
-<ul>
-  <li>backups exist, but nobody has restored the most critical application end to end recently</li>
-  <li>the data is backed up, but the secrets, certificates, configuration, or infrastructure templates are not</li>
-  <li>restore access depends on the same identity path that is unavailable during the incident</li>
-  <li>backup repositories are online and reachable enough for ransomware or a privileged mistake to damage them too</li>
-  <li>the team knows how to restore a server, but not how to recover the business service in the right order</li>
-</ul>
-
-<p>That last distinction matters.
-A server coming back online is not the same thing as the application being usable.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/recovery-path.svg" alt="Flow diagram showing backup copies moving through isolation, clean rebuild, data and configuration restore, and service validation before business recovery." />
-  <figcaption>Recovery has stages. A successful backup job does not validate the whole chain.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-the-green-dashboard-that-still-misses-the-rto">A realistic scenario: the green dashboard that still misses the <code class="language-plaintext highlighter-rouge">RTO</code></h2>
-
-<p>Imagine a company that proudly reports nightly backups for its core customer platform.
-The backup dashboard is green. Retention looks fine. Storage costs are under control.</p>
-
-<p>Then a ransomware incident hits the virtualization layer and several application servers.
-Now the organization learns what it actually has.</p>
-
-<ul>
-  <li>the backup system is domain-connected and needs the same admin path that is currently restricted</li>
-  <li>the database can be restored, but the application secrets and certificate chain were documented badly</li>
-  <li>the recovery team is unsure which supporting service has to come back first</li>
-  <li>validation steps are informal, so nobody is certain when the service is genuinely safe to reopen</li>
-</ul>
-
-<p>Technically, backups existed.
-Operationally, recovery was still fragile.</p>
-
-<p>This is why CISSP thinking tends to emphasize contingency planning, disaster recovery, and business impact analysis together.
-The goal is not simply to keep copies of data.
-It is to restore essential capability in a controlled, prioritized way.</p>
-
-<h2 id="established-principles-vs-what-feels-more-current-now">Established principles vs what feels more current now</h2>
-
-<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
-
-<p>The fundamentals here are not new, and that is part of the point:</p>
-
-<ul>
-  <li>perform a <strong>business impact analysis</strong> to identify critical systems and acceptable downtime</li>
-  <li>align backup frequency and retention with <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code></li>
-  <li>keep protected copies offsite or otherwise separated from the primary failure domain</li>
-  <li>test restores regularly instead of trusting job success reports</li>
-  <li>document procedures, dependencies, and responsible roles before an emergency</li>
-  <li>protect backup administration with strong access control and separation of duties</li>
-</ul>
-
-<p>Those ideas have been solid for years because they work.</p>
-
-<h3 id="what-feels-more-current-in-practice">What feels more current in practice</h3>
-
-<p>The modern wrinkle is that recovery planning now has to assume more hostile conditions.</p>
-
-<p>Ransomware and cloud concentration risk have made several ideas more important:</p>
-
-<ul>
-  <li><strong>offline or strongly isolated backups</strong> so attackers cannot easily encrypt or delete the recovery source</li>
-  <li><strong>immutable or object-locked storage</strong> where it fits the environment and retention needs</li>
-  <li><strong>golden images and infrastructure-as-code templates</strong> to rebuild clean systems faster</li>
-  <li><strong>recovery to a known-clean environment</strong> rather than blindly restoring into the same compromised conditions</li>
-  <li><strong>business-prioritized restoration</strong> based on dependency maps, not guesswork under pressure</li>
-</ul>
-
-<p>That is consistent with current CISA ransomware guidance and the NIST habit of framing resilience inside enterprise risk management.
-The theme is not “buy more backup products.”
-It is <strong>prove you can recover the right things safely and in order.</strong></p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>CISSP questions on backups are rarely asking for your favorite storage platform.
-They are testing judgment.</p>
-
-<p>The strongest answer is often the one that best preserves business operations and reduces recovery uncertainty.</p>
-
-<p>That usually means thinking in this order:</p>
-
-<ol>
-  <li>identify what is most critical</li>
-  <li>protect the integrity and availability of recovery sources</li>
-  <li>contain the incident if compromise is still active</li>
-  <li>restore from known-good backups in the right priority order</li>
-  <li>validate the recovery before declaring success</li>
-</ol>
-
-<p>That is also why “restore from backup immediately” can be an exam trap during an active incident.
-If the environment is still compromised, blind restoration may only reintroduce the problem or destroy useful evidence.
-In real practice, and usually on the exam, containment and informed recovery beat panic-driven recovery.</p>
-
-<h2 id="practical-questions-worth-asking-now">Practical questions worth asking now</h2>
-
-<p>If you want the real-world version, these are better questions than “are backups enabled?”</p>
-
-<ol>
-  <li><strong>Which business services must be restored first, and what do they depend on?</strong></li>
-  <li><strong>Do we have approved <code class="language-plaintext highlighter-rouge">RPO</code> and <code class="language-plaintext highlighter-rouge">RTO</code> targets, or are we just guessing?</strong></li>
-  <li><strong>Are backup copies separated enough from production and ordinary admin paths?</strong></li>
-  <li><strong>Have we performed an end-to-end restore exercise for a critical service recently?</strong></li>
-  <li><strong>Do we have the keys, secrets, certificates, licenses, and runbooks needed to make the restore useful?</strong></li>
-  <li><strong>Can we restore into a clean environment and verify integrity before reopening service?</strong></li>
-  <li><strong>Who owns the decision to say recovery is complete?</strong></li>
-</ol>
-
-<p>If any of those answers are vague, the organization probably has less recovery capability than it thinks.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/restore-readiness.svg" alt="Layered diagram showing recovery readiness through business priorities, isolated copies, documented runbooks, restore drills, and validation before resuming service." />
-  <figcaption>Recovery readiness is layered: priorities, isolation, procedures, access, and practice all matter.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
-
-<p><strong>Backups reduce risk only when restore is tested, prioritized, and trusted.</strong></p>
-
-<p>That is the difference between a comforting dashboard and a real control.</p>
-
-<p>A mature team does not only count backup jobs.
-It rehearses recovery, protects the recovery path, and knows what “good enough to resume business” actually means.</p>
-
-<p>If you want a practical exercise, pick one critical system and run a restore walkthrough or tabletop this quarter.
-The gap between “we have backups” and “we can recover” becomes obvious very quickly — and that is exactly why the exercise is worth doing.</p>
-
-<p><strong>Meta description:</strong> Learn why CISSP treats backups as part of recovery capability, not just storage. A practical guide to restore testing, RPO, RTO, offline copies, and recovery priorities.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP backup and recovery explained</li>
-  <li>RPO and RTO restore testing</li>
-  <li>backups are not recovery</li>
-  <li>ransomware resilient backup strategy</li>
-  <li>disaster recovery restore best practices</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="backups" /><category term="recovery" /><category term="resilience" /><category term="ransomware" /><summary type="html"><![CDATA[A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="disaster-recovery" /><category term="recovery-sites" /><category term="availability" /><category term="resilience" /><summary type="html"><![CDATA[Recovery sites are not old-school memorization trivia. This CISSP-focused guide explains how hot, warm, and cold sites reflect real business tradeoffs around downtime, cost, and operational readiness.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hot-warm-cold-sites-are-tradeoffs-not-trivia/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

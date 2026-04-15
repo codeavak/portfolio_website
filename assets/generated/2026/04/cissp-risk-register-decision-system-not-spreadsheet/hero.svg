@@ -1,0 +1,59 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Risk register decision system</title>
+  <desc id="desc">A visual of a risk register driving ownership, treatment, and escalation decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <circle cx="1320" cy="170" r="190" fill="#93c5fd" fill-opacity="0.22"/>
+  <circle cx="220" cy="900" r="250" fill="#7dd3fc" fill-opacity="0.18"/>
+
+  <text x="96" y="130" font-size="66" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">CISSP #31: Risk Register as Decision System</text>
+  <text x="96" y="186" font-size="32" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Ownership, treatment, escalation, and review in one governance loop</text>
+
+  <g filter="url(#shadow)">
+    <rect x="150" y="250" width="1236" height="620" rx="28" fill="white"/>
+    <rect x="150" y="250" width="1236" height="90" rx="28" fill="url(#card)"/>
+  </g>
+
+  <text x="200" y="308" font-size="34" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Risk Register Decision Board</text>
+  <text x="1030" y="308" font-size="24" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Updated: 2026-04-15</text>
+
+  <rect x="200" y="380" width="1136" height="64" rx="12" fill="#eff6ff"/>
+  <text x="230" y="422" font-size="28" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Risk</text>
+  <text x="650" y="422" font-size="28" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Owner</text>
+  <text x="860" y="422" font-size="28" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Treatment</text>
+  <text x="1100" y="422" font-size="28" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Escalation</text>
+
+  <rect x="200" y="468" width="1136" height="94" rx="12" fill="#f8fafc" stroke="#d1d5db"/>
+  <text x="230" y="522" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">API key reuse across prod and test</text>
+  <text x="650" y="522" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Eng Manager</text>
+  <text x="860" y="522" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Mitigate</text>
+  <rect x="1090" y="490" width="212" height="44" rx="20" fill="#dc2626"/>
+  <text x="1196" y="519" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="Segoe UI, Arial, sans-serif">CISO Review</text>
+
+  <rect x="200" y="582" width="1136" height="94" rx="12" fill="#f8fafc" stroke="#d1d5db"/>
+  <text x="230" y="636" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Legacy admin portal without MFA</text>
+  <text x="650" y="636" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">IT Director</text>
+  <text x="860" y="636" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Avoid</text>
+  <rect x="1090" y="604" width="212" height="44" rx="20" fill="#f59e0b"/>
+  <text x="1196" y="633" text-anchor="middle" font-size="22" font-weight="700" fill="#111827" font-family="Segoe UI, Arial, sans-serif">Exec Decision</text>
+
+  <rect x="200" y="696" width="1136" height="94" rx="12" fill="#f8fafc" stroke="#d1d5db"/>
+  <text x="230" y="750" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Third-party SOC evidence gap</text>
+  <text x="650" y="750" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Vendor Lead</text>
+  <text x="860" y="750" font-size="24" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Transfer</text>
+  <rect x="1090" y="718" width="212" height="44" rx="20" fill="#16a34a"/>
+  <text x="1196" y="747" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="Segoe UI, Arial, sans-serif">Within Threshold</text>
+</svg>

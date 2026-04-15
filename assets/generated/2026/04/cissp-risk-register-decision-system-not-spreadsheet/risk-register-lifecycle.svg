@@ -1,0 +1,45 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Risk register lifecycle</title>
+  <desc id="desc">A loop showing identify, assess, decide, implement, and review stages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="70" y="78" font-size="44" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Risk Register Lifecycle</text>
+
+  <rect x="90" y="140" width="220" height="110" rx="18" fill="#0f172a"/>
+  <text x="200" y="198" text-anchor="middle" font-size="30" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Identify</text>
+  <text x="200" y="230" text-anchor="middle" font-size="20" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Risk statement</text>
+
+  <rect x="370" y="140" width="220" height="110" rx="18" fill="#1d4ed8"/>
+  <text x="480" y="198" text-anchor="middle" font-size="30" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Assess</text>
+  <text x="480" y="230" text-anchor="middle" font-size="20" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Likelihood x impact</text>
+
+  <rect x="650" y="140" width="220" height="110" rx="18" fill="#0284c7"/>
+  <text x="760" y="198" text-anchor="middle" font-size="30" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Decide</text>
+  <text x="760" y="230" text-anchor="middle" font-size="20" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif">Treat or escalate</text>
+
+  <rect x="930" y="140" width="220" height="110" rx="18" fill="#0ea5e9"/>
+  <text x="1040" y="198" text-anchor="middle" font-size="30" font-weight="700" fill="#082f49" font-family="Segoe UI, Arial, sans-serif">Implement</text>
+  <text x="1040" y="230" text-anchor="middle" font-size="20" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif">Controls and owners</text>
+
+  <line x1="310" y1="195" x2="370" y2="195" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="195" x2="650" y2="195" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="870" y1="195" x2="930" y2="195" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="420" y="430" width="360" height="140" rx="24" fill="#111827"/>
+  <text x="600" y="498" text-anchor="middle" font-size="34" font-weight="700" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif">Review Residual Risk</text>
+  <text x="600" y="536" text-anchor="middle" font-size="24" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Re-score, re-approve, or re-escalate</text>
+
+  <path d="M1040 260 C1080 360, 920 620, 760 620" fill="none" stroke="#334155" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M420 620 C250 620, 120 400, 150 260" fill="none" stroke="#334155" stroke-width="6" marker-end="url(#arrow)"/>
+
+  <text x="600" y="700" text-anchor="middle" font-size="28" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Decision quality improves when this loop is time-bound and owner-driven.</text>
+</svg>

@@ -1,14 +1,36 @@
-<!-- Inline Image 1 SVG: Policy to Practice Flow -->
-<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
-  <rect x="40" y="30" width="520" height="40" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="10"/>
-  <text x="300" y="58" font-size="20" text-anchor="middle" fill="#2d3e50">Policy: Protect company data</text>
-  <polygon points="300,70 310,90 290,90" fill="#b3c6e0"/>
-  <rect x="80" y="90" width="440" height="36" fill="#b3c6e0" stroke="#2d3e50" stroke-width="2" rx="8"/>
-  <text x="300" y="115" font-size="18" text-anchor="middle" fill="#2d3e50">Standard: VPN required for remote access</text>
-  <polygon points="300,126 310,146 290,146" fill="#8faacc"/>
-  <rect x="120" y="146" width="360" height="32" fill="#8faacc" stroke="#2d3e50" stroke-width="2" rx="8"/>
-  <text x="300" y="168" font-size="16" text-anchor="middle" fill="#2d3e50">Procedure: How to set up VPN client</text>
-  <polygon points="300,178 310,198 290,198" fill="#6d8bb3"/>
-  <rect x="160" y="198" width="280" height="20" fill="#6d8bb3" stroke="#2d3e50" stroke-width="2" rx="8"/>
-  <text x="300" y="212" font-size="14" text-anchor="middle" fill="#fff">Guideline: Use company-approved Wi-Fi</text>
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">Policy to guideline flow</title>
+  <desc id="flowDesc">Flow diagram showing policy, standards, procedures, and guidelines with short definitions.</desc>
+  <defs>
+    <linearGradient id="flowBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#flowBg)"/>
+  <text x="70" y="78" font-size="44" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Policy to Practice Mapping</text>
+
+  <rect x="70" y="130" width="1060" height="120" rx="16" fill="#0f172a"/>
+  <text x="100" y="185" font-size="36" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Policy</text>
+  <text x="330" y="185" font-size="30" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Management intent and direction</text>
+
+  <line x1="600" y1="260" x2="600" y2="315" stroke="#334155" stroke-width="6" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="325" width="1060" height="100" rx="16" fill="#075985"/>
+  <text x="100" y="385" font-size="34" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Standards</text>
+  <text x="370" y="385" font-size="28" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif">Mandatory and testable baseline</text>
+
+  <line x1="600" y1="435" x2="600" y2="490" stroke="#334155" stroke-width="6" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="500" width="1060" height="90" rx="16" fill="#0284c7"/>
+  <text x="100" y="556" font-size="32" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Procedures</text>
+  <text x="380" y="556" font-size="27" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif">Step-by-step operational execution</text>
+
+  <rect x="70" y="610" width="1060" height="70" rx="16" fill="#7dd3fc"/>
+  <text x="100" y="654" font-size="30" font-weight="700" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif">Guidelines</text>
+  <text x="330" y="654" font-size="26" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Recommended practice for context and judgment</text>
 </svg>
