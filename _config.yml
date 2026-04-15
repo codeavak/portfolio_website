@@ -21,3 +21,6 @@ utterances_issue_term: "pathname"
 utterances_label: "blog-comment"
 exclude:
   - "assets/Johnny's Chronicles/"
+
+# Allow future-dated posts to be shown
+future: true

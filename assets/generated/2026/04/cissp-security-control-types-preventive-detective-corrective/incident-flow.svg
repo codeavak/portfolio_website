@@ -1,0 +1,14 @@
+<!-- Inline Image 2 SVG: Security Incident Lifecycle -->
+<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="60" width="160" height="60" fill="#b3c6e0" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="120" y="95" font-size="18" text-anchor="middle" fill="#2d3e50">Preventive</text>
+  <rect x="220" y="60" width="160" height="60" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="300" y="95" font-size="18" text-anchor="middle" fill="#2d3e50">Detective</text>
+  <rect x="400" y="60" width="160" height="60" fill="#8faacc" stroke="#2d3e50" stroke-width="2" rx="10"/>
+  <text x="480" y="95" font-size="18" text-anchor="middle" fill="#fff">Corrective</text>
+  <polygon points="200,90 220,90 220,100 200,100" fill="#2d3e50"/>
+  <polygon points="380,90 400,90 400,100 380,100" fill="#2d3e50"/>
+  <text x="120" y="130" font-size="14" text-anchor="middle" fill="#2d3e50">Blocks Threat</text>
+  <text x="300" y="130" font-size="14" text-anchor="middle" fill="#2d3e50">Identifies Breach</text>
+  <text x="480" y="130" font-size="14" text-anchor="middle" fill="#fff">Restores Ops</text>
+</svg>
