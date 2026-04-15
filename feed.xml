@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-15T00:40:29+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/" rel="alternate" type="text/html" title="CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action" /><published>2026-04-15T12:00:00+00:00</published><updated>2026-04-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-15T04:34:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/" rel="alternate" type="text/html" title="CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action" /><published>2026-04-15T12:00:00+00:00</published><updated>2026-04-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" /></p>
 
 <h1 id="security-policy-standards-procedures-and-guidelines-from-theory-to-practice">Security Policy, Standards, Procedures, and Guidelines: From Theory to Practice</h1>
 
@@ -207,7 +207,7 @@
 <p>No single control is perfect. Real security comes from layering different types so that the failure of one does not mean total compromise.</p>
 
 <figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline1.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc." />
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/matrix.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc." />
   <figcaption>Most real-world controls serve more than one purpose. Layering is what makes them effective.</figcaption>
 </figure>
 
@@ -245,7 +245,7 @@
 </ul>
 
 <figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline2.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident." />
+  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/incident-flow.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident." />
   <figcaption>Controls work together: prevention blocks, detection alerts, correction restores.</figcaption>
 </figure>
 
