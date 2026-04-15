@@ -1,0 +1,21 @@
+<!-- Inline Image 1 SVG: Security Control Matrix -->
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="520" height="180" fill="#e0e7ef" stroke="#2d3e50" stroke-width="2" rx="12"/>
+  <text x="300" y="70" font-size="20" text-anchor="middle" fill="#2d3e50">Security Control Types Matrix</text>
+  <text x="120" y="110" font-size="16" fill="#2d3e50">Firewall</text>
+  <text x="220" y="110" font-size="16" fill="#2d3e50">Preventive</text>
+  <text x="120" y="140" font-size="16" fill="#2d3e50">IDS</text>
+  <text x="220" y="140" font-size="16" fill="#2d3e50">Detective</text>
+  <text x="120" y="170" font-size="16" fill="#2d3e50">Backup</text>
+  <text x="220" y="170" font-size="16" fill="#2d3e50">Corrective</text>
+  <text x="120" y="200" font-size="16" fill="#2d3e50">CCTV</text>
+  <text x="220" y="200" font-size="16" fill="#2d3e50">Detective</text>
+  <text x="350" y="110" font-size="16" fill="#2d3e50">Access Logs</text>
+  <text x="470" y="110" font-size="16" fill="#2d3e50">Detective</text>
+  <text x="350" y="140" font-size="16" fill="#2d3e50">Incident Response</text>
+  <text x="470" y="140" font-size="16" fill="#2d3e50">Corrective</text>
+  <text x="350" y="170" font-size="16" fill="#2d3e50">Warning Banner</text>
+  <text x="470" y="170" font-size="16" fill="#2d3e50">Deterrent</text>
+  <text x="350" y="200" font-size="16" fill="#2d3e50">Manual Review</text>
+  <text x="470" y="200" font-size="16" fill="#2d3e50">Compensating</text>
+</svg>

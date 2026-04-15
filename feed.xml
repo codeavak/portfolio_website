@@ -1,4 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-14T20:17:24+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-15T00:40:29+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/" rel="alternate" type="text/html" title="CISSP: Security Policy, Standards, Procedures, and Guidelines—Turning Intent Into Action" /><published>2026-04-15T12:00:00+00:00</published><updated>2026-04-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-policy-standards-procedures-guidelines/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" /></p>
+
+<h1 id="security-policy-standards-procedures-and-guidelines-from-theory-to-practice">Security Policy, Standards, Procedures, and Guidelines: From Theory to Practice</h1>
+
+<p>Security programs succeed or fail on clarity of intent and execution. The CISSP exam—and real-world security—demands you understand how policy, standards, procedures, and guidelines work together to turn strategy into action.</p>
+
+<h2 id="why-this-matters-exam-and-reality">Why This Matters (Exam and Reality)</h2>
+
+<p>The exam tests your ability to distinguish these terms and apply them in scenarios. In practice, confusion here leads to gaps, audit findings, and failed initiatives. Clear documentation is a foundation for security maturity.</p>
+
+<hr />
+
+<h2 id="the-four-pillars-definitions-and-relationships">The Four Pillars: Definitions and Relationships</h2>
+
+<h3 id="security-policy">Security Policy</h3>
+
+<ul>
+  <li><strong>What:</strong> High-level statement of management intent, direction, and commitment</li>
+  <li><strong>Who:</strong> Approved by senior leadership</li>
+  <li><strong>Why:</strong> Sets the tone and priorities for the entire organization</li>
+  <li><strong>Example:</strong> “All company data must be protected against unauthorized access.”</li>
+</ul>
+
+<h3 id="standards">Standards</h3>
+
+<ul>
+  <li><strong>What:</strong> Mandatory rules or technical baselines that support policy</li>
+  <li><strong>Who:</strong> Defined by security, approved by management</li>
+  <li><strong>Why:</strong> Ensure consistency and interoperability</li>
+  <li><strong>Example:</strong> “All laptops must use full-disk encryption with AES-256.”</li>
+</ul>
+
+<h3 id="procedures">Procedures</h3>
+
+<ul>
+  <li><strong>What:</strong> Step-by-step instructions for carrying out standards and policy</li>
+  <li><strong>Who:</strong> Written by process owners, followed by staff</li>
+  <li><strong>Why:</strong> Enable repeatable, auditable actions</li>
+  <li><strong>Example:</strong> “How to enroll a new laptop in the encryption system.”</li>
+</ul>
+
+<h3 id="guidelines">Guidelines</h3>
+
+<ul>
+  <li><strong>What:</strong> Recommended practices, not mandatory</li>
+  <li><strong>Who:</strong> Written by subject matter experts</li>
+  <li><strong>Why:</strong> Allow flexibility and professional judgment</li>
+  <li><strong>Example:</strong> “When possible, use multi-factor authentication for remote access.”</li>
+</ul>
+
+<hr />
+
+<h2 id="how-they-fit-together">How They Fit Together</h2>
+
+<p>A strong security program starts with policy, which is supported by standards, implemented through procedures, and enhanced by guidelines. Think of it as a pyramid:</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/policy-pyramid.svg" alt="Policy Standards Procedures Guidelines Pyramid" class="inline-img" /></p>
+
+<hr />
+
+<h2 id="real-world-scenarios">Real-World Scenarios</h2>
+
+<h3 id="scenario-1-new-device-onboarding">Scenario 1: New Device Onboarding</h3>
+
+<ul>
+  <li><strong>Policy:</strong> Devices must be secured before use</li>
+  <li><strong>Standard:</strong> All devices require endpoint protection</li>
+  <li><strong>Procedure:</strong> Steps to install and configure endpoint software</li>
+  <li><strong>Guideline:</strong> Prefer solutions with centralized management</li>
+</ul>
+
+<h3 id="scenario-2-remote-work-expansion">Scenario 2: Remote Work Expansion</h3>
+
+<ul>
+  <li><strong>Policy:</strong> Protect company data offsite</li>
+  <li><strong>Standard:</strong> VPN required for remote access</li>
+  <li><strong>Procedure:</strong> How to set up VPN client</li>
+  <li><strong>Guideline:</strong> Use company-approved Wi-Fi when possible</li>
+</ul>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/scenario-mapping.svg" alt="Policy to Practice Scenario Mapping" class="inline-img" /></p>
+
+<hr />
+
+<h2 id="exam-mindset-best-answer-reasoning">Exam Mindset: Best-Answer Reasoning</h2>
+
+<ul>
+  <li>The exam may blur lines—focus on the primary purpose and audience</li>
+  <li>Policy is always top-level intent; standards are mandatory; procedures are how-tos; guidelines are suggestions</li>
+  <li>In practice, keep documentation clear, current, and accessible</li>
+</ul>
+
+<hr />
+
+<h2 id="subtle-cta">Subtle CTA</h2>
+
+<p>If you want your security program to work, start by mapping your documentation to these four pillars. Clarity here drives real results—and exam success.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP guide to security policy, standards, procedures, and guidelines. Definitions, relationships, real-world examples, and exam tips for security leaders and CISSP candidates. Keywords: CISSP, security policy, standards, procedures, guidelines, governance.</em></p>
+
+<!-- SEO keyword ideas: CISSP security policy, security standards, security procedures, security guidelines, policy pyramid, security governance -->]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="security policy" /><category term="standards" /><category term="procedures" /><category term="guidelines" /><category term="governance" /><category term="exam" /><summary type="html"><![CDATA[A practical guide to understanding and applying security policy, standards, procedures, and guidelines—how they fit together, why they matter, and how to use them for both CISSP exam success and real-world security leadership.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
 
 <p>Most engineers and managers can name a few controls—firewalls, access reviews, backups—but fewer can explain why controls are grouped into types, how those types interact, and why the distinction matters for both exam questions and real-world risk reduction.</p>
 
@@ -2050,240 +2152,4 @@ The gap between “we have backups” and “we can recover” becomes obvious v
   <li>backups are not recovery</li>
   <li>ransomware resilient backup strategy</li>
   <li>disaster recovery restore best practices</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="backups" /><category term="recovery" /><category term="resilience" /><category term="ransomware" /><summary type="html"><![CDATA[A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #20: Single Points of Failure Are Security Risks Too</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/" rel="alternate" type="text/html" title="CISSP #20: Single Points of Failure Are Security Risks Too" /><published>2026-04-09T12:20:00+00:00</published><updated>2026-04-09T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-single-points-of-failure-security-risk/"><![CDATA[<p>It is easy to think of a single point of failure as an infrastructure diagram problem.
-One database instance. One identity provider. One admin who knows how the restore process actually works.</p>
-
-<p>Then one routine outage or one bad change hits, and the organization discovers that its “secure” environment only worked while that one dependency stayed alive.</p>
-
-<p>This is another CISSP lesson that feels simple until you see it in the real world: <strong>availability is part of security, and resilience is rarely accidental.</strong> If one failure can take down a critical service, block administrative access, or slow incident response at the worst moment, that is not just an operations issue. It is a security risk.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" alt="Illustration showing a critical business service depending on several paths, with one highlighted fragile dependency representing a single point of failure." />
-  <figcaption>One fragile dependency can turn a normal fault into a real security and business problem.</figcaption>
-</figure>
-
-<h2 id="why-cissp-treats-availability-as-a-security-concern">Why CISSP treats availability as a security concern</h2>
-
-<p>A lot of engineers naturally associate security with confidentiality and access control first.
-CISSP keeps pushing a broader view: <strong>the CIA triad includes availability for a reason</strong>.</p>
-
-<p>If a system is unavailable when the business needs it, the harm can be very real:</p>
-
-<ul>
-  <li>customers cannot transact</li>
-  <li>operations cannot continue</li>
-  <li>responders cannot access tools during an incident</li>
-  <li>administrators cannot authenticate to fix the problem</li>
-  <li>monitoring and logging pipelines may go dark right when evidence matters most</li>
-</ul>
-
-<p>This is why the exam so often rewards answers that reduce business impact, preserve resilience, and keep essential functions operating.
-It is not enough to lock systems down.
-They also need to keep working through realistic failure conditions.</p>
-
-<h2 id="what-a-single-point-of-failure-really-looks-like">What a single point of failure really looks like</h2>
-
-<p>A single point of failure is any component, dependency, or person whose failure can stop a critical function by itself.</p>
-
-<p>That definition is broader than many teams first assume.
-It is not only about a lonely physical server in a rack.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Area</th>
-      <th>Example</th>
-      <th>What fails when it breaks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Infrastructure</strong></td>
-      <td>one database instance, one load balancer, one region</td>
-      <td>the application or service becomes unavailable</td>
-    </tr>
-    <tr>
-      <td><strong>Identity</strong></td>
-      <td>one SSO platform, one MFA provider, one break-glass path nobody has tested</td>
-      <td>admins and users may be locked out</td>
-    </tr>
-    <tr>
-      <td><strong>Operations</strong></td>
-      <td>one person who knows recovery steps, one approval bottleneck</td>
-      <td>response slows or stops under pressure</td>
-    </tr>
-    <tr>
-      <td><strong>Dependencies</strong></td>
-      <td>one DNS provider, one payment API, one secrets store, one CI/CD path</td>
-      <td>supporting services fail even if the app itself is healthy</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The important point is that <strong>redundancy on paper is not the same thing as resilience in practice</strong>.
-Two application servers do not help much if both rely on the same fragile database, the same identity dependency, or the same untested recovery path.</p>
-
-<p>This is one reason mature architectures are evaluated by <strong>failure domains</strong>, not by box count.
-If the same underlying dependency can take out every path that matters, the organization still has a single point of failure.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/spof-map.svg" alt="Comparison diagram showing a fragile service path with one shared dependency versus a more resilient design with alternate paths and redundancy." />
-  <figcaption>Real resilience comes from removing shared failure points, not just adding more boxes.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-the-identity-outage-during-an-incident">A realistic scenario: the identity outage during an incident</h2>
-
-<p>Imagine a company is working through a serious security event.
-Suspicious activity is spreading, responders need privileged access, and leadership wants fast containment.</p>
-
-<p>Now add one more problem: the organization’s cloud console access, VPN, admin tools, and incident communications all depend on one identity platform and one MFA flow.
-That provider has a service disruption.</p>
-
-<p>Suddenly the incident response team has a second incident:</p>
-
-<ul>
-  <li>administrators cannot sign in normally</li>
-  <li>privileged actions are delayed</li>
-  <li>emergency changes require workarounds nobody has tested recently</li>
-  <li>containment slows while business pressure rises</li>
-</ul>
-
-<p>Nothing about that failure is theoretical.
-It is exactly the kind of situation where availability and security stop being separate conversations.</p>
-
-<p>A better design would not necessarily mean infinite duplication of everything.
-It would mean looking at the business impact and providing reasonable resilience:</p>
-
-<ul>
-  <li>tested break-glass access for emergencies</li>
-  <li>documented alternate communication paths</li>
-  <li>independent recovery procedures</li>
-  <li>failover or alternative access for critical control planes where justified</li>
-</ul>
-
-<p>That is the CISSP mindset in practice: reduce the risk that one ordinary failure becomes a much larger organizational problem.</p>
-
-<h2 id="the-hard-part-single-points-of-failure-can-be-people-and-process-too">The hard part: single points of failure can be people and process too</h2>
-
-<p>This is where many teams miss the point.</p>
-
-<p>They look for hardware redundancy but overlook operational fragility.
-A few common examples:</p>
-
-<ul>
-  <li>only one engineer knows how the backup restore sequence really works</li>
-  <li>only one manager can approve the change needed to fail over</li>
-  <li>only one vendor contact can trigger emergency support</li>
-  <li>only one undocumented script rotates certificates correctly</li>
-</ul>
-
-<p>Those are still single points of failure.
-They just live in people and process instead of infrastructure.</p>
-
-<p>CISSP often tests this broader perspective well.
-The best answer is rarely just “buy another device.”
-It is usually something closer to <strong>design for resilience across people, process, and technology</strong>.</p>
-
-<h2 id="established-principles-vs-current-direction">Established principles vs current direction</h2>
-
-<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
-
-<p>The fundamentals here are stable and worth knowing cold:</p>
-
-<ul>
-  <li>identify critical systems and dependencies</li>
-  <li>eliminate or reduce single points of failure where the business impact justifies it</li>
-  <li>use redundancy, fault tolerance, and failover thoughtfully</li>
-  <li>maintain contingency and recovery procedures</li>
-  <li>test failover, backup restoration, and emergency access instead of assuming they work</li>
-  <li>align resilience decisions to business impact and recovery needs</li>
-</ul>
-
-<p>That is not glamorous advice.
-It is still how mature environments stay available when normal things go wrong.</p>
-
-<h3 id="what-looks-more-current-in-practice">What looks more current in practice</h3>
-
-<p>What has changed is where single points of failure now hide.</p>
-
-<p>Modern systems often depend on:</p>
-
-<ul>
-  <li>one identity provider for most access paths</li>
-  <li>one cloud region or one shared control plane</li>
-  <li>one SaaS platform for ticketing, collaboration, or monitoring</li>
-  <li>one secrets management or CI/CD service</li>
-  <li>one DNS or CDN provider for public reachability</li>
-</ul>
-
-<p>In other words, the architecture diagram may look distributed while the <strong>operational dependency graph</strong> is not.</p>
-
-<p>NIST CSF 2.0 continues to frame cybersecurity as part of enterprise risk management, and that is the right lens here. A single point of failure is not only a technical weakness. It is a business risk concentration.</p>
-
-<p>That is why modern resilience discussions increasingly include third-party concentration risk, recovery exercises, and alternate access planning — not just extra hardware.</p>
-
-<h2 id="what-the-cissp-exam-is-really-testing-here">What the CISSP exam is really testing here</h2>
-
-<p>CISSP usually is not asking whether you can recite a vendor’s high-availability feature list.
-It is asking whether you understand the security objective.</p>
-
-<p>If a question is really about keeping critical services running or minimizing business impact, the strongest answer often reflects some combination of:</p>
-
-<ul>
-  <li>identifying the critical dependency</li>
-  <li>reducing or removing the single point of failure</li>
-  <li>providing redundancy or alternate processing paths</li>
-  <li>testing recovery and failover procedures</li>
-  <li>using risk-based judgment instead of overengineering everything equally</li>
-</ul>
-
-<p>That last point matters.
-Not every system needs multi-region failover and multiple vendors.
-But high-impact functions should not quietly depend on one fragile element that nobody has challenged.</p>
-
-<p>The exam mindset is usually: <strong>protect the mission by improving resilience where failure would hurt most</strong>.</p>
-
-<h2 id="practical-checklist-for-teams">Practical checklist for teams</h2>
-
-<p>If you want the real-world version, these are the questions worth asking:</p>
-
-<ol>
-  <li><strong>What one thing could stop this service, process, or access path by itself?</strong></li>
-  <li><strong>If that thing fails during an incident, what business or security function breaks next?</strong></li>
-  <li><strong>Do we have tested alternate access for admins and responders?</strong></li>
-  <li><strong>Have we separated critical paths across independent failure domains where it makes sense?</strong></li>
-  <li><strong>Can we actually restore, fail over, or continue manually under pressure?</strong></li>
-  <li><strong>Are key runbooks, approvals, and recovery steps owned by more than one person?</strong></li>
-  <li><strong>Which third-party dependencies deserve explicit resilience review because of concentration risk?</strong></li>
-</ol>
-
-<p>The goal is not perfection.
-It is to stop being surprised by the same avoidable fragility over and over.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/resilience-stack.svg" alt="Layered diagram showing resilient design through redundancy, alternate access, tested failover, documented runbooks, and ownership across people and technology." />
-  <figcaption>Good resilience is layered: architecture, access, procedures, and testing all matter.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, this is the memory hook I would keep:</p>
-
-<p><strong>A single point of failure is not just an infrastructure smell. It is a security risk when one failure can stop a critical business or security function.</strong></p>
-
-<p>That is why availability belongs inside serious security thinking.
-Not because every system must be engineered to perfection, but because critical functions should not depend on hope, one person, or one fragile service.</p>
-
-<p>That is a better way to think for the exam and a better way to build systems in real life.</p>
-
-<p><strong>Meta description:</strong> Learn why single points of failure are security risks too, and how CISSP approaches availability, resilience, failover, redundancy, and business impact.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP single point of failure explained</li>
-  <li>availability and resilience cybersecurity</li>
-  <li>redundancy and failover best practices</li>
-  <li>single points of failure security risk</li>
-  <li>CISSP availability domain practical guide</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="availability" /><category term="resilience" /><category term="redundancy" /><category term="failover" /><summary type="html"><![CDATA[A single fragile dependency can turn a manageable issue into a business outage. This CISSP-focused guide explains why single points of failure belong in security thinking, not just infrastructure diagrams.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-single-points-of-failure-security-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="backups" /><category term="recovery" /><category term="resilience" /><category term="ransomware" /><summary type="html"><![CDATA[A green backup dashboard can still hide a failed recovery strategy. This CISSP-focused guide explains why restore testing, offline copies, and recovery priorities matter more than backup volume alone.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-backups-are-not-recovery-until-you-test-restore/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
