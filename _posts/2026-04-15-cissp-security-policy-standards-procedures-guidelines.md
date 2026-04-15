@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CISSP: Security Policy, Standards, Procedures, and Guidelines Without the Confusion"
+title: "CISSP #30: Security Policy, Standards, Procedures, and Guidelines Without the Confusion"
 date: 2026-04-15 12:00:00 +0000
 categories: [CISSP, Security, Governance]
 tags:
@@ -20,7 +20,7 @@ image: /assets/generated/2026/04/cissp-security-policy-standards-procedures-guid
 
 <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" alt="Security Policy Hierarchy Hero" class="blog-hero" />
 
-# Security Policy, Standards, Procedures, and Guidelines: The Difference That Prevents Security Drift
+# CISSP #30: Security Policy, Standards, Procedures, and Guidelines: The Difference That Prevents Security Drift
 
 One of the easiest ways to weaken a security program is to blur these four terms.
 

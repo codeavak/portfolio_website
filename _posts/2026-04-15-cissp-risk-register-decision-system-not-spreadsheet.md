@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CISSP: The Risk Register Is a Decision System, Not a Spreadsheet"
+title: "CISSP #31: The Risk Register Is a Decision System, Not a Spreadsheet"
 date: 2026-04-15 12:30:00 +0000
 categories: [CISSP, Security, Risk]
 tags:
@@ -18,7 +18,7 @@ image: /assets/generated/2026/04/cissp-risk-register-decision-system-not-spreads
 
 <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-risk-register-decision-system-not-spreadsheet/hero.svg" alt="Risk register shown as a decision system connecting risk owners, treatment choices, and governance decisions" class="blog-hero" />
 
-# The Risk Register Is Not Documentation Debt
+# CISSP #31: The Risk Register Is Not Documentation Debt
 
 Many teams say they have a risk register, but what they really have is a list.
 
