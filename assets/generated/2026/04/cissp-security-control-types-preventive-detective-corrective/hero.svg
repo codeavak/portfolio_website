@@ -7,10 +7,13 @@
   <text x="300" y="140" font-size="22" text-anchor="middle" fill="#2d3e50">Preventive</text>
   <text x="300" y="200" font-size="22" text-anchor="middle" fill="#2d3e50">Detective</text>
   <text x="300" y="250" font-size="22" text-anchor="middle" fill="#fff">Corrective</text>
-  <g>
-    <image href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><text x='0' y='20' font-size='20'>&#128274;</text></svg>" x="250" y="110" height="30" width="30"/>
-    <image href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><text x='0' y='20' font-size='20'>&#128269;</text></svg>" x="340" y="180" height="30" width="30"/>
-    <image href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><text x='0' y='20' font-size='20'>&#128295;</text></svg>" x="270" y="230" height="30" width="30"/>
+  <g fill="none" stroke="#2d3e50" stroke-width="2">
+    <rect x="232" y="108" width="16" height="14" rx="2"/>
+    <path d="M236 108V103C236 99 239 96 243 96C247 96 250 99 250 103V108"/>
+    <circle cx="355" cy="194" r="8"/>
+    <line x1="361" y1="200" x2="370" y2="209"/>
+    <path d="M280 232L294 246"/>
+    <path d="M289 223L303 237"/>
   </g>
   <text x="300" y="370" font-size="16" text-anchor="middle" fill="#2d3e50">Layered: Preventive, Detective, Corrective</text>
 </svg>

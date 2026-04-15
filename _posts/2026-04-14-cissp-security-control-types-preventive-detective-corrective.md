@@ -114,7 +114,7 @@ When a primary control is not feasible (due to cost, legacy systems, or business
 No single control is perfect. Real security comes from layering different types so that the failure of one does not mean total compromise.
 
 <figure>
-  <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline1.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc.">
+  <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/matrix.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc.">
   <figcaption>Most real-world controls serve more than one purpose. Layering is what makes them effective.</figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ CISSP questions often present scenarios where multiple controls could apply. The
 - Review and update controls as threats and business needs evolve.
 
 <figure>
-  <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/inline2.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident.">
+  <img src="{{ site.baseurl }}/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/incident-flow.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident.">
   <figcaption>Controls work together: prevention blocks, detection alerts, correction restores.</figcaption>
 </figure>
 
