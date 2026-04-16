@@ -1,0 +1,53 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RBAC and ABAC access control models</title>
+  <desc id="desc">A visual comparing role-based and attribute-based authorization with a hybrid policy decision layer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="rbac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="abac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <circle cx="1290" cy="180" r="210" fill="#93c5fd" fill-opacity="0.18"/>
+  <circle cx="240" cy="900" r="250" fill="#67e8f9" fill-opacity="0.18"/>
+
+  <text x="98" y="120" font-size="60" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">CISSP #33</text>
+  <text x="98" y="190" font-size="50" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">RBAC vs ABAC</text>
+  <text x="98" y="242" font-size="34" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Why hybrid authorization decisions scale better</text>
+
+  <g filter="url(#shadow)">
+    <rect x="140" y="330" width="520" height="520" rx="28" fill="url(#rbac)"/>
+    <rect x="876" y="330" width="520" height="520" rx="28" fill="url(#abac)"/>
+    <rect x="625" y="460" width="286" height="280" rx="24" fill="#e2e8f0" stroke="#334155" stroke-width="4"/>
+  </g>
+
+  <text x="400" y="402" text-anchor="middle" font-size="46" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">RBAC</text>
+  <text x="400" y="456" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">User -> Role -> Permission</text>
+  <text x="400" y="530" text-anchor="middle" font-size="28" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif">Stable job functions</text>
+  <text x="400" y="580" text-anchor="middle" font-size="28" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif">Simple administration</text>
+  <text x="400" y="630" text-anchor="middle" font-size="28" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif">Strong audit mapping</text>
+
+  <text x="1136" y="402" text-anchor="middle" font-size="46" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">ABAC</text>
+  <text x="1136" y="456" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Policy over attributes</text>
+  <text x="1136" y="530" text-anchor="middle" font-size="28" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif">Context-aware decisions</text>
+  <text x="1136" y="580" text-anchor="middle" font-size="28" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif">Fine-grained conditions</text>
+  <text x="1136" y="630" text-anchor="middle" font-size="28" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif">Higher policy complexity</text>
+
+  <text x="768" y="540" text-anchor="middle" font-size="34" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">POLICY</text>
+  <text x="768" y="585" text-anchor="middle" font-size="34" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">DECISION</text>
+  <text x="768" y="630" text-anchor="middle" font-size="34" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">POINT</text>
+
+  <path d="M660 560 L625 560" stroke="#0f172a" stroke-width="7"/>
+  <path d="M876 560 L911 560" stroke="#0f172a" stroke-width="7"/>
+</svg>

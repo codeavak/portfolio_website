@@ -1,0 +1,49 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Third-party assurance cycle</title>
+  <desc id="desc">Diagram showing ongoing third-party risk activities: verify, detect, decide, remediate, and review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#ecfeff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0f172a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="60" y="78" font-size="44" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Continuous Third-Party Assurance Cycle</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="28" fill="#f8fafc">
+    <rect x="90" y="160" width="220" height="90" rx="14" fill="#0f172a"/>
+    <text x="200" y="215" text-anchor="middle">VERIFY</text>
+
+    <rect x="370" y="160" width="220" height="90" rx="14" fill="#1d4ed8"/>
+    <text x="480" y="215" text-anchor="middle">DETECT</text>
+
+    <rect x="650" y="160" width="220" height="90" rx="14" fill="#0369a1"/>
+    <text x="760" y="215" text-anchor="middle">DECIDE</text>
+
+    <rect x="930" y="160" width="220" height="90" rx="14" fill="#0f766e"/>
+    <text x="1040" y="215" text-anchor="middle">REMEDIATE</text>
+
+    <rect x="510" y="520" width="220" height="90" rx="14" fill="#075985"/>
+    <text x="620" y="575" text-anchor="middle">REVIEW</text>
+  </g>
+
+  <g stroke="#0f172a" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <line x1="310" y1="205" x2="370" y2="205"/>
+    <line x1="590" y1="205" x2="650" y2="205"/>
+    <line x1="870" y1="205" x2="930" y2="205"/>
+    <path d="M1040 250 C1040 350 800 450 710 520"/>
+    <path d="M510 565 C390 520 250 420 200 250"/>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#334155">
+    <text x="90" y="310">Validate inventories, criticality, and data flows.</text>
+    <text x="90" y="350">Collect evidence from audits, incidents, and control checks.</text>
+    <text x="90" y="390">Route decisions using predefined escalation thresholds.</text>
+    <text x="90" y="430">Track corrective actions to closure with clear owners.</text>
+    <text x="90" y="470">Re-score risk and update contracts or compensating controls.</text>
+  </g>
+</svg>
