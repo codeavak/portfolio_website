@@ -1,0 +1,41 @@
+<svg width="1200" height="860" viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RBAC and ABAC model comparison</title>
+  <desc id="desc">Comparison table of RBAC and ABAC strengths, limitations, and practical best-fit scenarios.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="860" fill="url(#bg)"/>
+  <text x="60" y="74" font-size="44" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">RBAC vs ABAC: Practical Comparison</text>
+
+  <rect x="60" y="120" width="1080" height="90" rx="12" fill="#0f172a"/>
+  <text x="110" y="175" font-size="32" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Dimension</text>
+  <text x="430" y="175" font-size="32" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">RBAC</text>
+  <text x="810" y="175" font-size="32" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">ABAC</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a">
+    <rect x="60" y="230" width="1080" height="110" rx="12" fill="#dbeafe"/>
+    <text x="110" y="295">Administration</text>
+    <text x="430" y="295">Role catalog and entitlement mapping</text>
+    <text x="810" y="295">Policy and attribute quality management</text>
+
+    <rect x="60" y="356" width="1080" height="110" rx="12" fill="#ccfbf1"/>
+    <text x="110" y="421">Granularity</text>
+    <text x="430" y="421">Coarse to medium</text>
+    <text x="810" y="421">Fine-grained contextual decisions</text>
+
+    <rect x="60" y="482" width="1080" height="110" rx="12" fill="#dbeafe"/>
+    <text x="110" y="547">Auditability</text>
+    <text x="430" y="547">Direct role-to-job traceability</text>
+    <text x="810" y="547">Requires policy decision transparency</text>
+
+    <rect x="60" y="608" width="1080" height="110" rx="12" fill="#ccfbf1"/>
+    <text x="110" y="673">Best-fit usage</text>
+    <text x="430" y="673">Stable workforce and repeatable duties</text>
+    <text x="810" y="673">Dynamic risk and data sensitivity controls</text>
+  </g>
+
+  <text x="60" y="792" font-size="28" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Most mature programs use RBAC for baseline governance and ABAC for high-risk contextual enforcement.</text>
+</svg>
