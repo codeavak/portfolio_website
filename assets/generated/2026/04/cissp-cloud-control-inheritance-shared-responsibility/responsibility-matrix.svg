@@ -1,0 +1,46 @@
+<svg width="1200" height="840" viewBox="0 0 1200 840" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Shared responsibility control matrix</title>
+  <desc id="desc">Matrix mapping control areas to provider-owned, customer-owned, and shared responsibilities across cloud services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="840" fill="url(#bg)"/>
+  <text x="60" y="74" font-size="42" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Cloud Control Responsibility Matrix</text>
+
+  <rect x="60" y="118" width="1080" height="86" rx="12" fill="#0f172a"/>
+  <text x="92" y="171" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Control Area</text>
+  <text x="490" y="171" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Provider</text>
+  <text x="720" y="171" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Customer</text>
+  <text x="935" y="171" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Shared</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a">
+    <rect x="60" y="220" width="1080" height="98" rx="12" fill="#dbeafe"/>
+    <text x="92" y="278">Physical datacenter security</text>
+    <text x="540" y="278">Primary owner</text>
+    <text x="760" y="278">-</text>
+    <text x="965" y="278">Assurance review</text>
+
+    <rect x="60" y="332" width="1080" height="98" rx="12" fill="#ccfbf1"/>
+    <text x="92" y="390">Identity and access policies</text>
+    <text x="540" y="390">Platform capabilities</text>
+    <text x="760" y="390">Primary owner</text>
+    <text x="965" y="390">Implementation checks</text>
+
+    <rect x="60" y="444" width="1080" height="98" rx="12" fill="#dbeafe"/>
+    <text x="92" y="502">Data encryption and key lifecycle</text>
+    <text x="540" y="502">Service options</text>
+    <text x="760" y="502">Key policy owner</text>
+    <text x="965" y="502">Operational evidence</text>
+
+    <rect x="60" y="556" width="1080" height="98" rx="12" fill="#ccfbf1"/>
+    <text x="92" y="614">Logging, detection, and response</text>
+    <text x="540" y="614">Telemetry sources</text>
+    <text x="760" y="614">Primary response owner</text>
+    <text x="965" y="614">Escalation playbooks</text>
+  </g>
+
+  <text x="60" y="744" font-size="28" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Shared responsibility is useful only when each control has one accountable owner and verifiable evidence.</text>
+</svg>

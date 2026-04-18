@@ -1,0 +1,49 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Threat modeling as a design control</title>
+  <desc id="desc">Visual showing threat modeling integrated into architecture and delivery instead of treated as a late security checklist.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <circle cx="1260" cy="170" r="220" fill="#93c5fd" fill-opacity="0.2"/>
+  <circle cx="220" cy="900" r="260" fill="#67e8f9" fill-opacity="0.16"/>
+
+  <text x="104" y="132" font-size="62" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">CISSP #34</text>
+  <text x="104" y="206" font-size="52" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Threat Modeling Is a Design Control</text>
+  <text x="104" y="258" font-size="34" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Not a one-time meeting before release</text>
+
+  <g filter="url(#shadow)">
+    <rect x="146" y="332" width="570" height="520" rx="28" fill="url(#left)"/>
+    <rect x="820" y="332" width="570" height="520" rx="28" fill="url(#right)"/>
+  </g>
+
+  <text x="430" y="402" text-anchor="middle" font-size="42" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">LATE CHECKLIST</text>
+  <text x="430" y="462" text-anchor="middle" font-size="28" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Architecture fixed</text>
+  <text x="430" y="508" text-anchor="middle" font-size="28" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Mitigations expensive</text>
+  <text x="430" y="554" text-anchor="middle" font-size="28" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Security debt grows</text>
+  <text x="430" y="600" text-anchor="middle" font-size="28" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif">Findings become tickets</text>
+
+  <text x="1106" y="402" text-anchor="middle" font-size="42" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">DESIGN LOOP</text>
+  <text x="1106" y="462" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Model during design</text>
+  <text x="1106" y="508" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Prioritize by risk</text>
+  <text x="1106" y="554" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Implement controls early</text>
+  <text x="1106" y="600" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Revisit on change</text>
+
+  <path d="M716 592 C770 592 770 592 820 592" stroke="#0f172a" stroke-width="8" fill="none"/>
+  <path d="M801 572 L826 592 L801 612" stroke="#0f172a" stroke-width="8" fill="none"/>
+</svg>
