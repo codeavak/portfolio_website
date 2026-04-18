@@ -1,4 +1,447 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-16T19:50:53+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/" rel="alternate" type="text/html" title="CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design" /><published>2026-04-16T12:45:00+00:00</published><updated>2026-04-16T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-rbac-vs-abac-hybrid-access-control/hero.svg" alt="Visual comparing RBAC and ABAC with a central policy decision layer for hybrid authorization" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-18T12:41:08+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility/" rel="alternate" type="text/html" title="CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security" /><published>2026-04-17T12:40:00+00:00</published><updated>2026-04-17T12:40:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" alt="Cloud shared responsibility model showing provider and customer control ownership" class="blog-hero" /></p>
+
+<h1 id="cissp-35-shared-responsibility-is-not-shared-accountability-in-cloud-security">CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security</h1>
+
+<p>Cloud programs often fail in a predictable way: everyone agrees responsibility is shared, and no one can show who is accountable for a specific control when an incident occurs.</p>
+
+<p>That sounds like semantics until response time, audit scrutiny, or a customer-impacting event makes ownership gaps expensive.</p>
+
+<p>From a CISSP perspective, this topic is really about governance discipline under modern architecture conditions. Shared responsibility is real. Shared accountability is usually a governance failure.</p>
+
+<h2 id="why-this-matters-for-cissp-and-real-operations">Why This Matters for CISSP and Real Operations</h2>
+
+<p>The exam consistently rewards risk-based ownership logic: identify the control objective, determine who has authority to implement and verify it, and ensure decisions align with business risk tolerance.</p>
+
+<p>In cloud environments, that means resisting a common mental shortcut: “the provider handles security.”</p>
+
+<p>Providers secure substantial parts of the stack. Customers still own security outcomes tied to how services are configured, accessed, monitored, and governed.</p>
+
+<p>If control ownership is vague, three things happen quickly:</p>
+
+<ul>
+  <li>misconfigurations persist because remediation authority is unclear</li>
+  <li>inherited controls are assumed rather than verified</li>
+  <li>evidence quality collapses when leadership needs timely assurance</li>
+</ul>
+
+<h2 id="what-the-exam-tests-vs-what-practice-demands">What the Exam Tests vs What Practice Demands</h2>
+
+<h3 id="what-cissp-tends-to-test">What CISSP tends to test</h3>
+
+<p>CISSP scenarios around cloud security generally test whether you can reason through ownership and control intent, not whether you can recite a provider feature list.</p>
+
+<p>Typical pattern:</p>
+
+<ul>
+  <li>a cloud risk exists</li>
+  <li>multiple controls appear possible</li>
+  <li>ownership boundaries are unclear</li>
+  <li>best answer identifies accountable governance action before technical detail</li>
+</ul>
+
+<p>The strongest answer is usually the one that restores explicit accountability and measurable control verification.</p>
+
+<h3 id="what-practice-demands">What practice demands</h3>
+
+<p>Practice demands continuous clarity, not one-time architecture slides.</p>
+
+<p>Control ownership shifts by service model and implementation pattern:</p>
+
+<ul>
+  <li>in IaaS, customer teams carry more hardening and monitoring responsibility</li>
+  <li>in PaaS, the provider handles more platform operations, but customer policy and data controls remain critical</li>
+  <li>in SaaS, technical depth may be abstracted, yet identity governance, data handling, and response readiness remain customer obligations</li>
+</ul>
+
+<p>This is where many teams confuse reduced operational burden with reduced accountability.</p>
+
+<h2 id="control-inheritance-is-useful-but-not-automatic">Control Inheritance Is Useful but Not Automatic</h2>
+
+<p>Control inheritance is a valid governance mechanism: you can rely on provider-implemented controls for portions of your assurance obligations.</p>
+
+<p>But inheritance has conditions:</p>
+
+<ul>
+  <li>scope must be explicit (which controls, for which services, under which conditions)</li>
+  <li>assumptions must be documented and periodically revalidated</li>
+  <li>residual customer responsibilities must be mapped to owners and evidence</li>
+</ul>
+
+<p>Inheritance reduces duplicated effort. It does not eliminate the need for customer-side control decisions.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/responsibility-matrix.svg" alt="Matrix mapping cloud control areas across provider, customer, and shared responsibility" class="inline-img" /></p>
+
+<h2 id="a-realistic-scenario-customer-data-export-in-saas">A Realistic Scenario: Customer Data Export in SaaS</h2>
+
+<p>Imagine a team rolls out a SaaS analytics platform with broad data export capability for operations staff.</p>
+
+<p>Provider posture is strong:</p>
+
+<ul>
+  <li>audited infrastructure controls</li>
+  <li>hardened service operations</li>
+  <li>published attestation reports</li>
+</ul>
+
+<p>The customer still faces risk if local governance is weak.</p>
+
+<h3 id="what-goes-wrong">What goes wrong</h3>
+
+<ul>
+  <li>role assignments are too broad for export actions</li>
+  <li>alerting exists but no one owns triage for abnormal downloads</li>
+  <li>key policy for sensitive exports is inconsistent across teams</li>
+  <li>incident playbooks assume the provider handles all forensics steps</li>
+</ul>
+
+<h3 id="what-disciplined-ownership-looks-like">What disciplined ownership looks like</h3>
+
+<ul>
+  <li>business owner approves export entitlement model</li>
+  <li>IAM owner enforces least privilege and review cadence</li>
+  <li>security operations owner monitors detection signals and escalation thresholds</li>
+  <li>legal/compliance owner maps provider evidence and customer evidence into one assurance view</li>
+</ul>
+
+<p>Outcome: clear accountability chain, faster decisions, better audit defensibility.</p>
+
+<h2 id="established-principles-and-recent-developments">Established Principles and Recent Developments</h2>
+
+<h3 id="established-principles">Established principles</h3>
+
+<p>Core principles are stable:</p>
+
+<ul>
+  <li>security accountability remains with the organization using the service</li>
+  <li>control objectives require explicit ownership and verification</li>
+  <li>risk decisions must include residual exposure after inherited controls</li>
+  <li>governance artifacts must support decisions, not just satisfy documentation checklists</li>
+</ul>
+
+<p>These principles align with longstanding CISSP reasoning and control catalog frameworks.</p>
+
+<h3 id="recent-developments">Recent developments</h3>
+
+<p>Execution expectations keep increasing:</p>
+
+<ul>
+  <li>CSF 2.0 continues to reinforce integration of cybersecurity with enterprise risk governance and implementation resources.</li>
+  <li>NIST SP 800-53 updates (including Release 5.2.0 notes) continue refining controls relevant to system acquisition, software assurance, and monitoring expectations.</li>
+  <li>Multi-cloud and SaaS-heavy operating models increase reliance on inherited controls, which raises the importance of evidence mapping and ownership rigor.</li>
+</ul>
+
+<p>The trend is clear: fewer organizations can afford “trust us” governance in cloud assurance.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/evidence-chain.svg" alt="Flow from control ownership to evidence capture, governance review, and remediation in cloud security" class="inline-img" /></p>
+
+<h2 id="common-failure-patterns">Common Failure Patterns</h2>
+
+<h3 id="1-responsibility-matrix-without-authority-mapping">1. Responsibility matrix without authority mapping</h3>
+
+<p>Roles are listed, but approval and remediation authority are not defined.</p>
+
+<p>Fix: map each critical control to one accountable owner with decision authority.</p>
+
+<h3 id="2-provider-evidence-accepted-without-scope-checks">2. Provider evidence accepted without scope checks</h3>
+
+<p>Attestation documents are treated as universal proof.</p>
+
+<p>Fix: map evidence to the exact services and configurations in your environment.</p>
+
+<h3 id="3-customer-controls-treated-as-operational-details">3. Customer controls treated as operational details</h3>
+
+<p>Identity, data policy, and monitoring decisions are left to informal team habits.</p>
+
+<p>Fix: define governance requirements and enforce them through measurable review cycles.</p>
+
+<h3 id="4-incident-response-assumptions-are-misaligned">4. Incident response assumptions are misaligned</h3>
+
+<p>During incidents, teams discover unclear provider-customer handoffs.</p>
+
+<p>Fix: test shared response playbooks and evidence exchange expectations before crisis conditions.</p>
+
+<h2 id="practical-metrics-for-leadership">Practical Metrics for Leadership</h2>
+
+<p>To assess whether shared responsibility is working, track outcomes that reveal ownership quality:</p>
+
+<ul>
+  <li>percent of critical cloud controls with a named accountable owner</li>
+  <li>percent of inherited controls with current scope validation</li>
+  <li>mean time to close control ownership gaps found in reviews</li>
+  <li>percentage of high-risk SaaS/IaaS services with tested shared-response playbooks</li>
+  <li>audit findings tied to ambiguous provider-customer boundaries</li>
+</ul>
+
+<p>These metrics provide governance signal, not activity noise.</p>
+
+<h2 id="a-30-day-improvement-plan">A 30-Day Improvement Plan</h2>
+
+<h3 id="week-1-build-a-control-ownership-baseline">Week 1: Build a control ownership baseline</h3>
+
+<p>For top cloud services, document provider-owned, customer-owned, and shared controls with accountable owners.</p>
+
+<h3 id="week-2-map-evidence-to-each-control">Week 2: Map evidence to each control</h3>
+
+<p>Link provider attestations and customer operational evidence to specific control statements.</p>
+
+<h3 id="week-3-validate-incident-and-escalation-paths">Week 3: Validate incident and escalation paths</h3>
+
+<p>Run one tabletop focused on provider-customer handoffs and decision timing.</p>
+
+<h3 id="week-4-close-ownership-and-evidence-gaps">Week 4: Close ownership and evidence gaps</h3>
+
+<p>Remediate controls lacking authority clarity, verification cadence, or audit-ready evidence.</p>
+
+<h2 id="final-takeaway">Final Takeaway</h2>
+
+<p>For CISSP candidates, the key lesson is simple: shared responsibility changes implementation boundaries, not accountability.</p>
+
+<p>For engineering and security leaders, the practical standard is higher: if no single owner can explain control intent, evidence, and remediation authority, the control is not truly governed.</p>
+
+<p>Cloud security matures fastest when inherited controls and customer controls are managed as one evidence-backed decision system.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP-focused guide to cloud shared responsibility and control inheritance, with practical governance patterns for ownership clarity, evidence mapping, and incident readiness.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP cloud shared responsibility</li>
+  <li>control inheritance cloud security</li>
+  <li>cloud accountability governance model</li>
+  <li>provider customer security ownership</li>
+  <li>cloud control evidence mapping</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Cloud" /><category term="CISSP" /><category term="cloud security" /><category term="shared responsibility" /><category term="control inheritance" /><category term="governance" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to cloud shared responsibility and control inheritance: what providers own, what customers still own, and how to prove accountability with evidence.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control/" rel="alternate" type="text/html" title="CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony" /><published>2026-04-17T12:20:00+00:00</published><updated>2026-04-17T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" alt="Threat modeling integrated into design lifecycle versus late checklist approach" class="blog-hero" /></p>
+
+<h1 id="cissp-34-threat-modeling-is-a-design-control-not-a-security-ceremony">CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony</h1>
+
+<p>Threat modeling is one of those security practices everyone says they do and very few teams do in a way that changes design decisions.</p>
+
+<p>Most organizations can produce a diagram, a spreadsheet, or a meeting invite labeled “threat model review.” But when an incident happens, the same questions appear: why did we trust this boundary, why was this action path unprotected, and why did no one challenge this assumption before release?</p>
+
+<p>That gap is exactly why this topic matters for CISSP and for real engineering work. Threat modeling is not documentation theater. It is a design-time control for reducing avoidable security debt.</p>
+
+<h2 id="why-this-matters-for-cissp-and-real-operations">Why This Matters for CISSP and Real Operations</h2>
+
+<p>On the exam, security decisions are evaluated in business and risk context. In real systems, the same principle applies: the cheapest time to reduce security risk is before architecture hardens around risky assumptions.</p>
+
+<p>Threat modeling helps teams do four high-value things consistently:</p>
+
+<ul>
+  <li>identify what is truly valuable in the system</li>
+  <li>surface realistic failure and abuse paths</li>
+  <li>choose proportionate controls before implementation locks in</li>
+  <li>validate whether mitigations actually close meaningful risk</li>
+</ul>
+
+<p>When these steps happen early, teams spend less time converting late findings into emergency roadmaps.</p>
+
+<h2 id="what-the-exam-tests-vs-what-practice-demands">What the Exam Tests vs What Practice Demands</h2>
+
+<h3 id="what-cissp-typically-tests">What CISSP typically tests</h3>
+
+<p>CISSP questions usually reward answers that prioritize structured, risk-based reasoning over ad hoc fixes.</p>
+
+<p>Typical pattern:</p>
+
+<ul>
+  <li>system design has unresolved trust or control assumptions</li>
+  <li>several controls could be added late</li>
+  <li>strongest answer addresses root design risk, ownership, and control intent</li>
+</ul>
+
+<p>The exam mindset is clear: controls are stronger when they are designed deliberately, not attached reactively.</p>
+
+<h3 id="what-practice-demands">What practice demands</h3>
+
+<p>Practice demands repeatability under delivery pressure.</p>
+
+<p>Teams shipping weekly or daily do not need perfect models. They need a lightweight process that can run often and influence decisions while change is still cheap.</p>
+
+<p>The most useful models are not the largest ones. They are the ones that keep pace with real architecture changes.</p>
+
+<h2 id="the-four-questions-that-keep-threat-modeling-practical">The Four Questions That Keep Threat Modeling Practical</h2>
+
+<p>OWASP’s common framework remains useful because it is simple and durable:</p>
+
+<ol>
+  <li>What are we working on?</li>
+  <li>What can go wrong?</li>
+  <li>What are we going to do about it?</li>
+  <li>Did we do a good enough job?</li>
+</ol>
+
+<p>If a modeling exercise cannot answer those four questions clearly, it is probably drifting into artifact production rather than risk reduction.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/four-question-loop.svg" alt="Four-question threat modeling loop showing scope, threats, mitigations, and validation" class="inline-img" /></p>
+
+<h2 id="where-teams-go-wrong">Where Teams Go Wrong</h2>
+
+<p>Threat modeling fails less from bad intent and more from weak integration.</p>
+
+<h3 id="1-running-it-only-once-before-release">1. Running it only once before release</h3>
+
+<p>A one-time review cannot reflect evolving trust boundaries, new dependencies, or changed business workflows.</p>
+
+<h3 id="2-confusing-tool-output-with-risk-decisions">2. Confusing tool output with risk decisions</h3>
+
+<p>Automated rule engines can help discover common threat patterns, but they do not replace context-based prioritization.</p>
+
+<h3 id="3-producing-findings-without-ownership">3. Producing findings without ownership</h3>
+
+<p>If threats are identified but not mapped to owners, deadlines, and verification evidence, the model becomes archival.</p>
+
+<h3 id="4-over-modeling-low-value-surfaces">4. Over-modeling low-value surfaces</h3>
+
+<p>Teams spend hours on low-impact scenarios while high-risk integration paths remain weakly analyzed.</p>
+
+<h2 id="a-realistic-engineering-scenario">A Realistic Engineering Scenario</h2>
+
+<p>Imagine a team shipping a new customer support feature that allows privileged agents to retrieve account histories through an internal API.</p>
+
+<p>Architecture looks straightforward:</p>
+
+<ul>
+  <li>web app sends request to support API</li>
+  <li>support API queries customer records service</li>
+  <li>exported results can be downloaded for case handling</li>
+</ul>
+
+<p>Without a threat model, the discussion centers on delivery speed and happy-path functionality.</p>
+
+<p>A focused threat model quickly changes the conversation.</p>
+
+<h3 id="what-can-go-wrong">What can go wrong</h3>
+
+<ul>
+  <li>replayed tokens reused across services</li>
+  <li>over-broad support roles exporting more data than required</li>
+  <li>weak auditability for emergency overrides</li>
+  <li>webhook impersonation from third-party case integrations</li>
+</ul>
+
+<h3 id="what-are-we-going-to-do-about-it">What are we going to do about it</h3>
+
+<ul>
+  <li>enforce audience and token lifetime constraints</li>
+  <li>require just-in-time elevation for export actions</li>
+  <li>add immutable logs with reason codes for high-risk events</li>
+  <li>sign and verify webhook payloads with strict trust validation</li>
+</ul>
+
+<h3 id="did-we-do-enough">Did we do enough</h3>
+
+<p>Verification is defined up front:</p>
+
+<ul>
+  <li>control tests in CI for auth and trust checks</li>
+  <li>production telemetry for denied risky actions</li>
+  <li>periodic access recertification for support roles</li>
+</ul>
+
+<p>Same product. Better risk posture. Less surprise debt.</p>
+
+<h2 id="threat-modeling-as-a-delivery-control">Threat Modeling as a Delivery Control</h2>
+
+<p>Threat modeling works best when treated like architecture review and test planning: part of normal engineering flow.</p>
+
+<p>A practical cadence:</p>
+
+<ul>
+  <li>run a baseline model for new systems</li>
+  <li>run delta models for major feature or trust-boundary changes</li>
+  <li>revisit after incidents, major dependency changes, or platform migrations</li>
+</ul>
+
+<p>This aligns with secure SDLC thinking in frameworks like NIST SSDF, where security practices are integrated into development workflows rather than isolated at the end.</p>
+
+<h2 id="established-principles-and-recent-developments">Established Principles and Recent Developments</h2>
+
+<h3 id="established-principles">Established principles</h3>
+
+<p>Threat modeling fundamentals have remained consistent for years:</p>
+
+<ul>
+  <li>start from assets, trust boundaries, and assumptions</li>
+  <li>identify plausible abuse and failure paths</li>
+  <li>map threats to mitigations and residual risk decisions</li>
+  <li>verify that controls are implemented and effective</li>
+</ul>
+
+<p>These principles match core CISSP reasoning: deliberate, risk-aware design decisions supported by accountability.</p>
+
+<h3 id="recent-developments">Recent developments</h3>
+
+<p>What has changed is operating context and speed:</p>
+
+<ul>
+  <li>modern architectures have more APIs, integrations, and identity-mediated trust paths</li>
+  <li>deployment frequency is higher, so stale models decay faster</li>
+  <li>tooling has improved model generation and collaboration, but governance discipline still determines quality</li>
+</ul>
+
+<p>In other words, the need for threat modeling has increased, but success still depends on clear ownership and decision rigor.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/control-mapping-board.svg" alt="Threat modeling board that maps threats to control decisions, owners, and evidence" class="inline-img" /></p>
+
+<h2 id="metrics-that-show-whether-it-is-working">Metrics That Show Whether It Is Working</h2>
+
+<p>If leadership wants to know whether threat modeling creates value, avoid vanity metrics like number of diagrams created.</p>
+
+<p>Track outcomes that reflect decision quality:</p>
+
+<ul>
+  <li>percentage of high-risk features modeled before implementation</li>
+  <li>median time from identified threat to control decision</li>
+  <li>percentage of modeled high-risk threats with assigned owner and verification evidence</li>
+  <li>recurring incident root causes that were previously identified but unmitigated</li>
+  <li>control verification pass rate for threat-derived requirements</li>
+</ul>
+
+<p>These indicators reveal whether modeling is influencing architecture and operations, not just documentation volume.</p>
+
+<h2 id="a-30-day-upgrade-plan">A 30-Day Upgrade Plan</h2>
+
+<p>You can materially improve threat modeling in one month without buying a platform.</p>
+
+<h3 id="week-1-define-scope-and-trigger-events">Week 1: Define scope and trigger events</h3>
+
+<p>Choose the highest-risk product areas and set clear triggers for when a model refresh is required.</p>
+
+<h3 id="week-2-standardize-a-lightweight-template">Week 2: Standardize a lightweight template</h3>
+
+<p>Capture assets, trust boundaries, top threats, mitigation decisions, owners, and validation plans in one consistent format.</p>
+
+<h3 id="week-3-connect-to-delivery-workflow">Week 3: Connect to delivery workflow</h3>
+
+<p>Require threat-derived controls to appear as explicit engineering work with acceptance criteria.</p>
+
+<h3 id="week-4-review-outcomes-and-close-gaps">Week 4: Review outcomes and close gaps</h3>
+
+<p>Check whether high-risk threats were mitigated, accepted with authority, or missed. Feed lessons back into architecture and process.</p>
+
+<h2 id="final-takeaway">Final Takeaway</h2>
+
+<p>For CISSP candidates, threat modeling is best understood as structured risk analysis during design, not as a post-design security formality.</p>
+
+<p>For engineering leaders, the practical standard is simple: if your model does not produce clear control decisions, owners, and verification evidence, it is not yet a control.</p>
+
+<p>Treat threat modeling as an engineering habit, and it will steadily reduce the class of incidents that should have been preventable.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP-focused guide to threat modeling as a design control, including practical workflows, common failure patterns, and measurable ways to improve secure design decisions.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP threat modeling guide</li>
+  <li>threat modeling in secure SDLC</li>
+  <li>STRIDE and design risk analysis</li>
+  <li>secure design control for engineers</li>
+  <li>threat model to control mapping</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Engineering" /><category term="CISSP" /><category term="threat modeling" /><category term="secure design" /><category term="STRIDE" /><category term="secure SDLC" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to threat modeling as an engineering control: when to run it, how to make it actionable, and how to avoid checklist theater.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/" rel="alternate" type="text/html" title="CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design" /><published>2026-04-16T12:45:00+00:00</published><updated>2026-04-16T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-rbac-vs-abac-hybrid-access-control/hero.svg" alt="Visual comparing RBAC and ABAC with a central policy decision layer for hybrid authorization" class="blog-hero" /></p>
 
 <h1 id="cissp-33-rbac-vs-abac-is-the-wrong-fight-hybrid-access-control-is-the-better-design">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</h1>
 
@@ -1910,508 +2353,4 @@ It is also one of the fastest ways to improve continuity quality in real systems
   <li>recovery time objective business impact analysis</li>
   <li>disaster recovery target alignment</li>
   <li>continuity strategy for security leaders</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="domain-7" /><category term="business-continuity" /><category term="mtd" /><category term="rto" /><summary type="html"><![CDATA[MTD is the business boundary for disruption tolerance. RTO is the technical target inside that boundary. Confusing the two leads to fragile recovery plans and poor prioritization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mtd-guides-rto-recovery-strategy/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mtd-guides-rto-recovery-strategy/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #25: RTO and RPO Drive Recovery Priorities</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-rto-rpo-drive-recovery-priorities/" rel="alternate" type="text/html" title="CISSP #25: RTO and RPO Drive Recovery Priorities" /><published>2026-04-12T12:40:00+00:00</published><updated>2026-04-12T12:40:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-rto-rpo-drive-recovery-priorities</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-rto-rpo-drive-recovery-priorities/"><![CDATA[<p>People often discuss RTO and RPO as if they are technical values that infrastructure teams can pick in isolation.
-That framing causes expensive mistakes.</p>
-
-<p>In practice, RTO and RPO are business commitments with technical consequences.
-They determine what gets restored first, what architecture investments are justified, and what level of operational pain the organization is willing to tolerate.</p>
-
-<p>For CISSP, this is an important mindset shift.
-The exam does not reward answers that optimize one server or one tool.
-It rewards risk-aware decisions that align security and continuity controls with business priorities.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-rto-rpo-drive-recovery-priorities/hero.svg" alt="Diagram showing business services, recovery time objective, and recovery point objective feeding prioritized recovery plans." />
-  <figcaption>RTO and RPO should flow from business impact, then shape recovery architecture and operational playbooks.</figcaption>
-</figure>
-
-<h2 id="start-with-clear-definitions-that-teams-actually-use">Start with clear definitions that teams actually use</h2>
-
-<p>You cannot run a resilient recovery program if stakeholders use the same terms to mean different things.</p>
-
-<p>At a practical level:</p>
-
-<ul>
-  <li><strong>RTO (Recovery Time Objective):</strong> the maximum acceptable time a service can be unavailable after disruption</li>
-  <li><strong>RPO (Recovery Point Objective):</strong> the maximum acceptable data loss measured as time between the last recoverable point and the disruption</li>
-</ul>
-
-<p>Simple example:</p>
-
-<ul>
-  <li>If payroll has an RTO of four hours, the organization accepts up to four hours of outage before impact becomes unacceptable.</li>
-  <li>If payroll has an RPO of fifteen minutes, the organization accepts up to fifteen minutes of data loss.</li>
-</ul>
-
-<p>These are not merely technical targets.
-They are risk tolerances expressed in operational terms.</p>
-
-<h2 id="why-cissp-treats-rto-and-rpo-as-governance-decisions">Why CISSP treats RTO and RPO as governance decisions</h2>
-
-<p>CISSP consistently emphasizes business context, not control theater.
-RTO and RPO fit that pattern because they force executive and process decisions before technology decisions.</p>
-
-<p>A reliable sequence is:</p>
-
-<ol>
-  <li>Identify critical business processes and dependencies.</li>
-  <li>Perform business impact analysis (BIA).</li>
-  <li>Define acceptable downtime and data loss by process.</li>
-  <li>Translate those tolerances into service-level recovery targets.</li>
-  <li>Design technical and procedural controls to meet those targets.</li>
-</ol>
-
-<p>When organizations skip the first three steps, they usually end up with one of two bad outcomes:</p>
-
-<ul>
-  <li>over-engineering everything at high cost</li>
-  <li>under-protecting mission-critical services while believing they are covered</li>
-</ul>
-
-<p>From both exam and real-world perspectives, the strongest approach is to justify recovery targets with impact analysis, legal obligations, customer commitments, and risk appetite.</p>
-
-<h2 id="established-principles-versus-modern-operating-reality">Established principles versus modern operating reality</h2>
-
-<h3 id="established-principles-that-still-hold">Established principles that still hold</h3>
-
-<p>Some continuity principles have not changed and still drive good decisions:</p>
-
-<ul>
-  <li>critical processes must be prioritized before supporting systems</li>
-  <li>dependencies must be mapped, including people, vendors, identities, and facilities</li>
-  <li>recovery goals must be documented, communicated, and tested</li>
-  <li>tabletop and technical exercises should validate whether targets are realistic</li>
-  <li>lessons learned should update plans and assumptions continuously</li>
-</ul>
-
-<p>These principles are stable because they reflect how organizations actually fail during crises: confusion, hidden dependencies, and unclear priorities.</p>
-
-<h3 id="what-modern-environments-changed">What modern environments changed</h3>
-
-<p>Recent operating patterns increase the gap between stated recovery goals and actual recovery capability:</p>
-
-<ul>
-  <li>cloud and SaaS concentration means one third-party outage can affect many business processes at once</li>
-  <li>identity providers and control planes are frequently single points of operational dependency</li>
-  <li>distributed teams and remote administration increase coordination complexity under time pressure</li>
-  <li>legal notification timelines and customer expectations increase pressure to make fast, defensible decisions</li>
-</ul>
-
-<p>As a result, continuity programs now need stronger cross-functional modeling.
-It is not enough to know whether a database can be restored.
-You also need to know whether identity, networking, communications, legal workflow, and approval paths are available when it matters.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-rto-rpo-drive-recovery-priorities/rto-rpo-matrix.svg" alt="RTO and RPO matrix classifying business services into critical, important, and standard tiers with recovery strategy guidance." />
-  <figcaption>A practical RTO/RPO matrix helps teams choose proportionate controls instead of treating every workload the same.</figcaption>
-</figure>
-
-<h2 id="a-realistic-scenario-payment-outage-and-the-illusion-of-equal-priority">A realistic scenario: payment outage and the illusion of equal priority</h2>
-
-<p>Imagine a SaaS company hit by a regional cloud disruption.
-At 09:05, the customer payment API, analytics dashboard, and internal reporting pipeline are all unavailable.</p>
-
-<p>Without pre-defined recovery objectives, teams often default to the loudest stakeholder.
-That usually creates chaotic sequencing and delayed restoration of truly critical services.</p>
-
-<p>Now compare that to an organization with explicit objectives:</p>
-
-<ul>
-  <li>Payment API: RTO 30 minutes, RPO 5 minutes</li>
-  <li>Customer support knowledge base: RTO 2 hours, RPO 30 minutes</li>
-  <li>Internal reporting pipeline: RTO 24 hours, RPO 4 hours</li>
-</ul>
-
-<p>In this model, response decisions become clear:</p>
-
-<ul>
-  <li>restore payment path first, even if analytics remains degraded</li>
-  <li>allocate most senior responders to controls that protect payment data integrity</li>
-  <li>defer low-impact reporting restoration until customer-facing operations stabilize</li>
-</ul>
-
-<p>This is the difference between activity and strategy.
-RTO and RPO create a decision framework that reduces improvisation under pressure.</p>
-
-<h2 id="common-implementation-mistakes-that-break-recovery">Common implementation mistakes that break recovery</h2>
-
-<p>Many recovery plans look complete until the first major incident exposes hidden assumptions.</p>
-
-<p>Frequent problems include:</p>
-
-<ul>
-  <li>assigning identical RTO/RPO values to every service for political simplicity</li>
-  <li>setting aggressive targets without funding architecture, staffing, or testing to support them</li>
-  <li>focusing only on backup frequency while ignoring restoration bottlenecks</li>
-  <li>defining objectives at the application level but ignoring upstream identity and network dependencies</li>
-  <li>failing to align third-party contracts with required recovery objectives</li>
-</ul>
-
-<p>A useful litmus test:
-If teams cannot explain why a service has its current target, the target is probably not usable.</p>
-
-<h2 id="turning-objectives-into-architecture-and-process">Turning objectives into architecture and process</h2>
-
-<p>The value of RTO and RPO appears when they directly influence design and operations.</p>
-
-<p>Examples of objective-driven decisions:</p>
-
-<ul>
-  <li>low RTO workloads may require active-active patterns, automation, and pre-approved failover actions</li>
-  <li>low RPO workloads may require near-real-time replication, transaction integrity controls, and tighter backup cadence</li>
-  <li>moderate targets may justify simpler warm-standby approaches with documented manual steps</li>
-  <li>high-tolerance workloads can remain on cost-efficient restore-on-demand models</li>
-</ul>
-
-<p>None of these choices is universally correct.
-Correctness depends on business impact and risk tolerance.</p>
-
-<p>For CISSP thinking, this is a classic best-answer pattern:
-choose the control set that achieves required risk reduction at an appropriate cost and complexity.</p>
-
-<h2 id="testing-whether-your-objectives-are-real">Testing whether your objectives are real</h2>
-
-<p>A recovery target that has never been tested is a hypothesis.</p>
-
-<p>A strong validation loop includes:</p>
-
-<ol>
-  <li><strong>Tabletop validation:</strong> test decision rights, escalation, and communication paths.</li>
-  <li><strong>Technical recovery test:</strong> verify restore sequencing, automation, and dependency readiness.</li>
-  <li><strong>Evidence capture:</strong> record actual recovery time and measured data loss.</li>
-  <li><strong>Gap remediation:</strong> assign owners and deadlines for every significant miss.</li>
-  <li><strong>Re-test cycle:</strong> confirm that changes improved measurable outcomes.</li>
-</ol>
-
-<p>This aligns with both exam logic and operational maturity.
-Controls are not complete when written; they are complete when repeatedly demonstrated.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-rto-rpo-drive-recovery-priorities/recovery-validation-loop.svg" alt="Continuous recovery validation loop from objective definition through testing, evidence, remediation, and retesting." />
-  <figcaption>Recovery readiness improves only when RTO/RPO targets are measured, missed, corrected, and validated again.</figcaption>
-</figure>
-
-<h2 id="what-the-exam-is-really-testing-with-rto-and-rpo-questions">What the exam is really testing with RTO and RPO questions</h2>
-
-<p>CISSP items on continuity and recovery often look technical, but the strongest answer is usually managerial and risk-based.</p>
-
-<p>In practice, that means prioritizing answers that:</p>
-
-<ul>
-  <li>start from business impact and mission-critical functions</li>
-  <li>recognize interdependencies instead of isolated systems</li>
-  <li>balance confidentiality, integrity, and availability in context</li>
-  <li>include governance, ownership, and testing, not just tooling</li>
-  <li>reduce organizational risk rather than optimize one component</li>
-</ul>
-
-<p>That is also how strong security leaders operate in real incidents.
-They do not ask “Which recovery tool is best?”
-They ask “Which decision path protects essential business outcomes with acceptable risk?”</p>
-
-<h2 id="practical-questions-to-ask-this-quarter">Practical questions to ask this quarter</h2>
-
-<ol>
-  <li>Which three business services would create the highest impact if unavailable for two hours?</li>
-  <li>Are their current RTO and RPO values documented with clear business justification?</li>
-  <li>Which shared dependencies could prevent meeting those values in a real event?</li>
-  <li>Do vendor agreements and internal ownership models support the stated targets?</li>
-  <li>When was the last time measured test results confirmed the targets were achievable?</li>
-  <li>Which unresolved gaps still rely on assumption rather than evidence?</li>
-</ol>
-
-<p>If these answers are unclear, the organization has an opportunity to improve before the next disruption decides for you.</p>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>Treat RTO and RPO as business risk language, not infrastructure jargon.
-Once those objectives are clear, architecture and response priorities become far easier to justify and execute.</p>
-
-<p>For CISSP candidates, that framing helps with exam questions.
-For working engineers and security teams, it helps prevent the kind of recovery drift that only becomes visible during the worst possible day.</p>
-
-<p><strong>Meta description:</strong> CISSP-focused guide to RTO and RPO as business-driven recovery objectives, with practical scenarios, implementation pitfalls, and testing strategies for resilient operations.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP RTO and RPO explained</li>
-  <li>recovery time objective vs recovery point objective</li>
-  <li>business impact analysis recovery targets</li>
-  <li>disaster recovery prioritization framework</li>
-  <li>continuity planning for security leaders</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="business-continuity" /><category term="disaster-recovery" /><category term="rto" /><category term="rpo" /><summary type="html"><![CDATA[RTO and RPO are not backup settings. They are business decisions that determine recovery sequencing, architecture choices, and risk tradeoffs during real incidents.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-rto-rpo-drive-recovery-priorities/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-rto-rpo-drive-recovery-priorities/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #24: Lessons Learned Close the Response Loop</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop/" rel="alternate" type="text/html" title="CISSP #24: Lessons Learned Close the Response Loop" /><published>2026-04-11T14:20:00+00:00</published><updated>2026-04-11T14:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-lessons-learned-close-response-loop/"><![CDATA[<p>It is easy to treat incident response as finished once containment and recovery are complete.
-Systems come back, leadership pressure drops, and everyone moves to the next urgent item.</p>
-
-<p>That is understandable.
-It is also where many organizations silently lock in repeat failures.</p>
-
-<p>CISSP emphasizes this for a reason: response maturity is not defined only by how teams handle the live incident.
-It is also defined by whether the organization can convert incident evidence into measurable control improvements.</p>
-
-<p>That is the real purpose of lessons learned.
-Not a postmortem for optics, and not a blame session.
-A disciplined mechanism for reducing the chance of repeating the same damage pattern.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" alt="Illustration showing incident response feeding into after-action review, owned remediation, and control retesting." />
-  <figcaption>The response loop is only closed when findings become verified improvements.</figcaption>
-</figure>
-
-<h2 id="why-this-matters-in-cissp-and-in-real-organizations">Why this matters in CISSP and in real organizations</h2>
-
-<p>CISSP frequently tests the idea that security is governance plus execution, not policy text alone.
-You can have a documented incident response process, yet still be operationally weak if lessons learned never become owned actions.</p>
-
-<p>In practical terms, a weak lessons-learned discipline leads to familiar patterns:</p>
-
-<ul>
-  <li>escalation confusion appears in multiple incidents</li>
-  <li>legal and communication decisions are delayed for the same reasons each time</li>
-  <li>recovery runbooks remain incomplete despite repeated evidence</li>
-  <li>third-party or identity dependencies fail in predictable ways</li>
-  <li>teams improve temporarily in memory but not structurally in controls</li>
-</ul>
-
-<p>A strong lessons-learned process does the opposite.
-It turns incident stress into institutional memory with accountability.</p>
-
-<p>That is exactly the kind of business-aware, risk-based thinking CISSP rewards.</p>
-
-<h2 id="what-lessons-learned-should-produce">What lessons learned should produce</h2>
-
-<p>A useful after-action review should produce three concrete outputs:</p>
-
-<ol>
-  <li>
-    <p><strong>Validated incident narrative</strong>
-A fact-based timeline of what happened, what was known at each point, and which decisions were made.</p>
-  </li>
-  <li>
-    <p><strong>Root-cause themes, not just symptoms</strong>
-Clear categorization of where failures were technical, procedural, organizational, or dependency-driven.</p>
-  </li>
-  <li>
-    <p><strong>Owned remediation with validation criteria</strong>
-Actions tied to risk reduction, with named owners, due dates, and an explicit retest plan.</p>
-  </li>
-</ol>
-
-<p>If one of these outputs is missing, the organization is usually documenting activity rather than improving capability.</p>
-
-<h2 id="a-realistic-scenario-good-response-weak-learning-loop">A realistic scenario: good response, weak learning loop</h2>
-
-<p>Imagine a mid-sized services firm handling a credential abuse incident.
-The SOC detected anomalous authentications quickly, containment started within an hour, and no confirmed data exfiltration occurred.</p>
-
-<p>On paper, this looks like a success.
-But during the review, deeper issues emerge:</p>
-
-<ul>
-  <li>break-glass approvals were delayed because authority boundaries were unclear</li>
-  <li>backup restore confidence existed, but restore sequencing was inconsistent across teams</li>
-  <li>customer communication drafts were prepared late because legal trigger conditions were interpreted differently</li>
-  <li>one critical third-party contact was outdated, slowing coordinated action</li>
-</ul>
-
-<p>None of this invalidates the successful containment.
-But it does reveal that the organization depended on improvisation more than design.</p>
-
-<p>Without disciplined lessons learned, these same issues are likely to recur under higher-pressure conditions.
-With disciplined follow-through, they become precise remediation targets.</p>
-
-<h2 id="established-principles-versus-current-pressure">Established principles versus current pressure</h2>
-
-<h3 id="established-principles-that-still-hold">Established principles that still hold</h3>
-
-<p>The fundamentals are durable:</p>
-
-<ul>
-  <li>perform post-incident review while evidence and decision context are still accessible</li>
-  <li>separate factual timeline from assumptions and opinions</li>
-  <li>identify contributing factors across people, process, and technology</li>
-  <li>assign corrective actions with accountability</li>
-  <li>update plans, runbooks, and training</li>
-  <li>test whether changes work before declaring closure</li>
-</ul>
-
-<p>These principles align with long-standing incident handling guidance and CISSP control-oriented thinking.</p>
-
-<h3 id="what-is-sharper-in-current-practice">What is sharper in current practice</h3>
-
-<p>Modern environments make this discipline more important, not less:</p>
-
-<ul>
-  <li>cloud and SaaS dependencies increase hidden coupling</li>
-  <li>legal and regulatory communication windows are less forgiving</li>
-  <li>identity and access dependencies can become incident multipliers</li>
-  <li>executives and customers expect faster, clearer status updates</li>
-  <li>third-party concentration risk can dominate recovery timelines</li>
-</ul>
-
-<p>Because of this, lessons learned should include dependency mapping and decision-governance quality, not just technical findings.</p>
-
-<h2 id="running-an-after-action-review-that-produces-value">Running an after-action review that produces value</h2>
-
-<p>A practical model that works well:</p>
-
-<h3 id="1-set-objective-boundaries">1. Set objective boundaries</h3>
-
-<p>Define scope before discussion starts:</p>
-
-<ul>
-  <li>which incident window is in scope</li>
-  <li>which systems and business functions are included</li>
-  <li>what questions must be answered</li>
-</ul>
-
-<p>This prevents sessions from drifting into broad complaints or unrelated architecture debates.</p>
-
-<h3 id="2-reconstruct-the-timeline-with-evidence">2. Reconstruct the timeline with evidence</h3>
-
-<p>Use logs, tickets, communication records, and command history to anchor facts.
-At each decision point, capture:</p>
-
-<ul>
-  <li>what was known at that moment</li>
-  <li>what options were considered</li>
-  <li>who had authority</li>
-  <li>why a decision path was chosen</li>
-</ul>
-
-<p>This step matters because hindsight bias can make teams rewrite history unconsciously.
-Evidence protects learning quality.</p>
-
-<h3 id="3-classify-findings-into-meaningful-themes">3. Classify findings into meaningful themes</h3>
-
-<p>Avoid a flat list of disconnected observations.
-Group findings into categories such as:</p>
-
-<ul>
-  <li>detection and triage quality</li>
-  <li>containment decision speed</li>
-  <li>communication and legal coordination</li>
-  <li>recovery procedure readiness</li>
-  <li>dependency and vendor resilience</li>
-  <li>role clarity and escalation design</li>
-</ul>
-
-<p>This structure helps leadership prioritize remediation by business risk, not by who spoke first in the review.</p>
-
-<h3 id="4-translate-findings-into-actionable-remediation">4. Translate findings into actionable remediation</h3>
-
-<p>A finding without ownership is noise.
-Each action should include:</p>
-
-<ul>
-  <li>specific change to be made</li>
-  <li>accountable owner</li>
-  <li>due date</li>
-  <li>expected risk reduction</li>
-  <li>evidence required to mark complete</li>
-</ul>
-
-<p>This is where many programs fail.
-They produce thoughtful analysis, then lose momentum before converting it into controlled change.</p>
-
-<h3 id="5-verify-through-retest">5. Verify through retest</h3>
-
-<p>Completion in a tracker is not proof.
-Retest at least part of the scenario or control path to confirm improvement under realistic pressure.</p>
-
-<p>If incident response is a loop, retest is what closes it.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/review-to-remediation.svg" alt="Pipeline showing evidence, root-cause themes, assigned actions, control updates, and retesting." />
-  <figcaption>Lessons learned should move from evidence to validated remediation, not stop at documentation.</figcaption>
-</figure>
-
-<h2 id="common-anti-patterns-that-weaken-lessons-learned">Common anti-patterns that weaken lessons learned</h2>
-
-<p>Even capable teams fall into these traps:</p>
-
-<ul>
-  <li><strong>too abstract:</strong> findings like “improve communication” without defining what changes</li>
-  <li><strong>no ownership:</strong> action items assigned to teams, not accountable individuals</li>
-  <li><strong>no priority logic:</strong> low-impact items consume attention while high-risk items wait</li>
-  <li><strong>no deadline discipline:</strong> remediation windows drift and urgency decays</li>
-  <li><strong>no policy/runbook integration:</strong> lessons remain in presentation slides rather than control artifacts</li>
-  <li><strong>no retest:</strong> teams assume fixes worked without verification</li>
-</ul>
-
-<p>CISSP-style reasoning is useful here: controls should be evaluated by whether they reduce business risk, not by whether they look complete in governance documentation.</p>
-
-<h2 id="measuring-whether-lessons-learned-are-working">Measuring whether lessons learned are working</h2>
-
-<p>If you want to make progress visible to leadership, track indicators that reflect execution quality:</p>
-
-<ul>
-  <li>percentage of findings converted to owner-assigned actions</li>
-  <li>median time from review completion to action assignment</li>
-  <li>percentage of actions completed by due date</li>
-  <li>proportion of completed actions validated through retest</li>
-  <li>recurrence rate of similar failure themes across incidents</li>
-  <li>trend in decision-clarity and coordination speed across exercise and incident cycles</li>
-</ul>
-
-<p>These metrics are not about scoring teams.
-They are about making resilience improvement observable and manageable.</p>
-
-<h2 id="what-the-exam-is-usually-testing-in-this-area">What the exam is usually testing in this area</h2>
-
-<p>When CISSP asks about post-incident activity, the strongest answer tends to emphasize organizational improvement over narrative closure.</p>
-
-<p>In exam language, that often means favoring options that:</p>
-
-<ul>
-  <li>identify root causes and contributing factors</li>
-  <li>update policies, standards, and procedures accordingly</li>
-  <li>assign accountability for remediation</li>
-  <li>improve future response capability</li>
-</ul>
-
-<p>What the exam usually does not reward is a purely technical narrow answer that ignores governance, communication, and business impact.</p>
-
-<p>In real life, the same principle applies.
-A technically correct remediation can still fail if ownership, authority, and communication design are weak.</p>
-
-<h2 id="practical-questions-for-your-next-review-cycle">Practical questions for your next review cycle</h2>
-
-<ol>
-  <li><strong>Are we reconstructing decisions from evidence, or from memory and opinion?</strong></li>
-  <li><strong>Which findings represent recurring risk themes rather than one-off mistakes?</strong></li>
-  <li><strong>Does every action have one accountable owner and a due date?</strong></li>
-  <li><strong>Are we ranking actions by business impact reduction, not convenience?</strong></li>
-  <li><strong>Which updates must land in policy, runbooks, and training to persist?</strong></li>
-  <li><strong>How are we verifying that remediations work under realistic conditions?</strong></li>
-</ol>
-
-<p>Those questions keep the session grounded in outcomes.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/ownership-matrix.svg" alt="Matrix mapping post-incident findings to owners, due dates, risk reduced, and validation approach." />
-  <figcaption>Ownership plus validation is what turns incident insight into durable control improvement.</figcaption>
-</figure>
-
-<h2 id="the-mental-model-worth-keeping">The mental model worth keeping</h2>
-
-<p>If you are studying for CISSP, keep this frame simple:</p>
-
-<p><strong>Incident response is not complete at containment. It is complete when lessons learned produce verified changes that reduce future impact.</strong></p>
-
-<p>That is the difference between incident handling as event management and incident handling as capability development.</p>
-
-<p>If your team already runs after-action reviews, one useful next step is to audit your last three incidents for recurring themes and closure quality.
-You will usually find one or two systemic improvements that are worth prioritizing immediately.</p>
-
-<p><strong>Meta description:</strong> A practical CISSP guide to post-incident lessons learned, including after-action review structure, remediation ownership, and validation that changes reduce future risk.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP lessons learned incident response</li>
-  <li>post incident review cybersecurity guide</li>
-  <li>after action review security incidents</li>
-  <li>incident response remediation tracking</li>
-  <li>CISSP domain 7 continuous improvement</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-7" /><category term="incident-response" /><category term="lessons-learned" /><category term="governance" /><category term="resilience" /><summary type="html"><![CDATA[A practical CISSP guide to post-incident lessons learned: how to run useful after-action reviews, assign ownership, and verify that corrective actions reduce real risk.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-lessons-learned-close-response-loop/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="domain-7" /><category term="business-continuity" /><category term="mtd" /><category term="rto" /><summary type="html"><![CDATA[MTD is the business boundary for disruption tolerance. RTO is the technical target inside that boundary. Confusing the two leads to fragile recovery plans and poor prioritization.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mtd-guides-rto-recovery-strategy/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-mtd-guides-rto-recovery-strategy/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
