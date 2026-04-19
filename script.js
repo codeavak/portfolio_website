@@ -438,6 +438,35 @@ const initBlogIndex = () => {
     return;
   }
 
+  const parseCardDate = (card) => {
+    const dateText = (card.dataset.date || '').trim();
+    const timestamp = dateText ? Date.parse(`${dateText}T00:00:00Z`) : Number.NaN;
+    return Number.isNaN(timestamp) ? 0 : timestamp;
+  };
+
+  const parseCisspNumber = (card) => {
+    const titleText = card.querySelector('h2')?.textContent || '';
+    const match = titleText.match(/CISSP\s*#(\d+)/i);
+    return match ? Number.parseInt(match[1], 10) : null;
+  };
+
+  cards.sort((a, b) => {
+    const dateDelta = parseCardDate(b) - parseCardDate(a);
+    if (dateDelta !== 0) {
+      return dateDelta;
+    }
+
+    const aCissp = parseCisspNumber(a);
+    const bCissp = parseCisspNumber(b);
+    if (aCissp !== null && bCissp !== null && aCissp !== bCissp) {
+      return aCissp - bCissp;
+    }
+
+    return 0;
+  });
+
+  cards.forEach((card) => postsGrid.appendChild(card));
+
   const keywordList = document.getElementById('blogKeywordList');
   const filterToggle = document.getElementById('blogFilterToggle');
   const filterPanel = document.getElementById('blogFilterPanel');
