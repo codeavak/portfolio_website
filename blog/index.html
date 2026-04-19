@@ -7,7 +7,10 @@ title: Blog
   <div class="container">
     <div class="blog-header-intro">
       <h1>Blog</h1>
-      <p>Technical posts on enterprise engineering, security, and agentic workflows.</p>
+      <p>
+        Technical posts on enterprise engineering, security, and agentic
+        workflows.
+      </p>
     </div>
     <button
       id="blogFilterToggle"
@@ -19,13 +22,19 @@ title: Blog
       Filter posts
     </button>
 
-    <section class="blog-controls is-collapsed" id="blogFilterPanel" aria-label="Blog filters">
+    <section
+      class="blog-controls is-collapsed"
+      id="blogFilterPanel"
+      aria-label="Blog filters"
+    >
       <div class="blog-filter-row">
         <label for="blogDateFrom">From</label>
         <input id="blogDateFrom" type="date" />
         <label for="blogDateTo">To</label>
         <input id="blogDateTo" type="date" />
-        <button id="blogClearFilters" type="button" class="blog-clear-button">Clear filters</button>
+        <button id="blogClearFilters" type="button" class="blog-clear-button">
+          Clear filters
+        </button>
       </div>
       <div class="blog-keyword-list" id="blogKeywordList"></div>
       <p class="blog-results-meta" id="blogResultsMeta" aria-live="polite"></p>
@@ -33,33 +42,65 @@ title: Blog
 
     <div class="blog-posts-grid" id="blogPostsGrid">
       {% for post in site.posts %}
-        <article class="blog-post-card" data-tags="{% if post.tags %}{{ post.tags | join: '|' | downcase }}{% endif %}" data-date="{{ post.date | date: '%Y-%m-%d' }}" data-timestamp="{{ post.date | date: '%s' }}">
-          {% if post.image %}
-            <div class="blog-post-image-container">
-              <img src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}" class="blog-post-image" />
-            </div>
-          {% endif %}
-          <div class="blog-post-content">
-            <time class="blog-post-date">Published by Johnny on {{ post.date | date: "%B %d, %Y" }}</time>
-            <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="blog-post-excerpt">{{ post.excerpt | strip_html }}</p>
-            {% if post.tags %}
-              <div class="blog-post-tag-row">
-                {% for tag in post.tags %}
-                  <button class="blog-post-tag" type="button" data-tag="{{ tag | downcase }}">{{ tag }}</button>
-                {% endfor %}
-              </div>
-            {% endif %}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="blog-read-more">Read full article →</a>
+      <article
+        class="blog-post-card"
+        data-tags="{% if post.tags %}{{ post.tags | join: '|' | downcase }}{% endif %}"
+        data-date="{{ post.date | date: '%Y-%m-%d' }}"
+        data-timestamp="{{ post.date | date: '%s' }}"
+        {% if post.title contains 'CISSP #' %}
+        data-cissp="{{ post.title | split: 'CISSP #' | last | split: ':' | first | strip }}"
+        {% endif %}
+      >
+        {% if post.image %}
+        <div class="blog-post-image-container">
+          <img
+            src="{{ site.baseurl }}{{ post.image }}"
+            alt="{{ post.title }}"
+            class="blog-post-image"
+          />
+        </div>
+        {% endif %}
+        <div class="blog-post-content">
+          <time class="blog-post-date"
+            >Published by Johnny on {{ post.date | date: "%B %d, %Y" }}</time
+          >
+          <h2>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <p class="blog-post-excerpt">{{ post.excerpt | strip_html }}</p>
+          {% if post.tags %}
+          <div class="blog-post-tag-row">
+            {% for tag in post.tags %}
+            <button
+              class="blog-post-tag"
+              type="button"
+              data-tag="{{ tag | downcase }}"
+            >
+              {{ tag }}
+            </button>
+            {% endfor %}
           </div>
-        </article>
+          {% endif %}
+          <a href="{{ site.baseurl }}{{ post.url }}" class="blog-read-more"
+            >Read full article →</a
+          >
+        </div>
+      </article>
       {% endfor %}
     </div>
 
-    <nav class="blog-pagination" id="blogPagination" aria-label="Blog pagination">
-      <button id="blogPrevPage" type="button" class="blog-page-button">Previous</button>
+    <nav
+      class="blog-pagination"
+      id="blogPagination"
+      aria-label="Blog pagination"
+    >
+      <button id="blogPrevPage" type="button" class="blog-page-button">
+        Previous
+      </button>
       <span id="blogPageInfo" class="blog-page-info">Page 1 of 1</span>
-      <button id="blogNextPage" type="button" class="blog-page-button">Next</button>
+      <button id="blogNextPage" type="button" class="blog-page-button">
+        Next
+      </button>
     </nav>
   </div>
 </section>
