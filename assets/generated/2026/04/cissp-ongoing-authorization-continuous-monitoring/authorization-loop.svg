@@ -1,0 +1,44 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ongoing authorization loop</title>
+  <desc id="desc">Lifecycle showing monitor, assess, decide, remediate, and verify as a recurring authorization process.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0f172a"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="60" y="80" font-size="42" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Ongoing Authorization Decision Loop</text>
+
+  <rect x="90" y="170" width="220" height="90" rx="14" fill="#0f172a"/>
+  <text x="200" y="225" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Monitor</text>
+
+  <rect x="360" y="170" width="220" height="90" rx="14" fill="#1e3a8a"/>
+  <text x="470" y="225" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Assess</text>
+
+  <rect x="630" y="170" width="220" height="90" rx="14" fill="#0369a1"/>
+  <text x="740" y="225" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Decide</text>
+
+  <rect x="900" y="170" width="220" height="90" rx="14" fill="#0f766e"/>
+  <text x="1010" y="225" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Authorize</text>
+
+  <rect x="360" y="450" width="220" height="90" rx="14" fill="#7c2d12"/>
+  <text x="470" y="505" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Remediate</text>
+
+  <rect x="630" y="450" width="220" height="90" rx="14" fill="#0f172a"/>
+  <text x="740" y="505" text-anchor="middle" font-size="26" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Verify</text>
+
+  <g stroke="#0f172a" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <line x1="310" y1="215" x2="360" y2="215"/>
+    <line x1="580" y1="215" x2="630" y2="215"/>
+    <line x1="850" y1="215" x2="900" y2="215"/>
+    <path d="M1010 260 C1010 350 860 410 770 450"/>
+    <line x1="630" y1="495" x2="580" y2="495"/>
+    <path d="M360 495 C260 450 180 360 180 260"/>
+  </g>
+
+  <text x="60" y="700" font-size="27" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Authorization maturity improves when evidence and decisions loop continuously, not annually.</text>
+</svg>

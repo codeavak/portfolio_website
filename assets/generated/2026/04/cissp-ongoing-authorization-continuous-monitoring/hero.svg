@@ -1,0 +1,47 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ongoing authorization and continuous monitoring</title>
+  <desc id="desc">Illustration of continuous control evidence flow replacing point-in-time compliance snapshots.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <circle cx="1250" cy="185" r="220" fill="#93c5fd" fill-opacity="0.2"/>
+  <circle cx="230" cy="900" r="250" fill="#67e8f9" fill-opacity="0.15"/>
+
+  <text x="96" y="130" font-size="60" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">CISSP #37</text>
+  <text x="96" y="205" font-size="50" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Ongoing Authorization Needs</text>
+  <text x="96" y="258" font-size="50" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Continuous Evidence</text>
+
+  <g filter="url(#shadow)">
+    <rect x="150" y="340" width="560" height="500" rx="28" fill="url(#left)"/>
+    <rect x="826" y="340" width="560" height="500" rx="28" fill="url(#right)"/>
+  </g>
+
+  <text x="430" y="410" text-anchor="middle" font-size="40" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">POINT-IN-TIME</text>
+  <text x="430" y="462" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Annual snapshot</text>
+  <text x="430" y="506" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Delayed risk signal</text>
+  <text x="430" y="550" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Control drift hidden</text>
+
+  <text x="1106" y="410" text-anchor="middle" font-size="40" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">ONGOING AUTH</text>
+  <text x="1106" y="462" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Continuous monitoring</text>
+  <text x="1106" y="506" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Near-real-time evidence</text>
+  <text x="1106" y="550" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Rapid risk decisions</text>
+
+  <path d="M705 590 C760 590 770 590 826 590" stroke="#0f172a" stroke-width="8" fill="none"/>
+  <path d="M807 570 L832 590 L807 610" stroke="#0f172a" stroke-width="8" fill="none"/>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Data residency and sovereignty governance</title>
+  <desc id="desc">Illustration showing data flows across regions with legal and governance boundaries for residency and jurisdiction decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="regionA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="regionB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <circle cx="1250" cy="180" r="220" fill="#93c5fd" fill-opacity="0.2"/>
+  <circle cx="240" cy="900" r="250" fill="#67e8f9" fill-opacity="0.15"/>
+
+  <text x="96" y="130" font-size="62" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">CISSP #36</text>
+  <text x="96" y="205" font-size="50" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Data Residency and Sovereignty</text>
+  <text x="96" y="258" font-size="34" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Are governance decisions, not storage-region checkboxes</text>
+
+  <g filter="url(#shadow)">
+    <rect x="150" y="340" width="560" height="500" rx="28" fill="url(#regionA)"/>
+    <rect x="826" y="340" width="560" height="500" rx="28" fill="url(#regionB)"/>
+    <rect x="630" y="525" width="280" height="140" rx="20" fill="#e2e8f0" stroke="#334155" stroke-width="4"/>
+  </g>
+
+  <text x="430" y="410" text-anchor="middle" font-size="42" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">REGION A</text>
+  <text x="430" y="468" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Primary data store</text>
+  <text x="430" y="512" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Local processing rules</text>
+  <text x="430" y="556" text-anchor="middle" font-size="28" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif">Retention obligations</text>
+
+  <text x="1106" y="410" text-anchor="middle" font-size="42" font-weight="700" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">REGION B</text>
+  <text x="1106" y="468" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Support and analytics access</text>
+  <text x="1106" y="512" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Transfer safeguards</text>
+  <text x="1106" y="556" text-anchor="middle" font-size="28" fill="#ccfbf1" font-family="Segoe UI, Arial, sans-serif">Contract + legal controls</text>
+
+  <text x="770" y="575" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">GOVERNANCE</text>
+  <text x="770" y="615" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">BOUNDARY</text>
+
+  <path d="M710 595 L630 595" stroke="#0f172a" stroke-width="7"/>
+  <path d="M910 595 L990 595" stroke="#0f172a" stroke-width="7"/>
+</svg>
