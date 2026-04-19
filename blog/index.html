@@ -33,7 +33,7 @@ title: Blog
 
     <div class="blog-posts-grid" id="blogPostsGrid">
       {% for post in site.posts %}
-        <article class="blog-post-card" data-tags="{% if post.tags %}{{ post.tags | join: '|' | downcase }}{% endif %}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+        <article class="blog-post-card" data-tags="{% if post.tags %}{{ post.tags | join: '|' | downcase }}{% endif %}" data-date="{{ post.date | date: '%Y-%m-%d' }}" data-timestamp="{{ post.date | date: '%s' }}">
           {% if post.image %}
             <div class="blog-post-image-container">
               <img src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}" class="blog-post-image" />
