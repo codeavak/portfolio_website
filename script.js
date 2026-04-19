@@ -481,11 +481,15 @@ const initBlogIndex = () => {
   }
 
   const parseCardDate = (card) => {
+    const epochText = (card.dataset.timestamp || "").trim();
+    const epoch = Number.parseInt(epochText, 10);
+    if (Number.isFinite(epoch)) {
+      return epoch;
+    }
+
     const dateText = (card.dataset.date || "").trim();
-    const timestamp = dateText
-      ? Date.parse(`${dateText}T00:00:00Z`)
-      : Number.NaN;
-    return Number.isNaN(timestamp) ? 0 : timestamp;
+    const timestamp = dateText ? Date.parse(`${dateText}T00:00:00Z`) : Number.NaN;
+    return Number.isNaN(timestamp) ? 0 : Math.floor(timestamp / 1000);
   };
 
   const parseCisspNumber = (card) => {
