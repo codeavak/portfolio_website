@@ -488,11 +488,19 @@ const initBlogIndex = () => {
     }
 
     const dateText = (card.dataset.date || "").trim();
-    const timestamp = dateText ? Date.parse(`${dateText}T00:00:00Z`) : Number.NaN;
+    const timestamp = dateText
+      ? Date.parse(`${dateText}T00:00:00Z`)
+      : Number.NaN;
     return Number.isNaN(timestamp) ? 0 : Math.floor(timestamp / 1000);
   };
 
   const parseCisspNumber = (card) => {
+    const seriesText = (card.dataset.cissp || "").trim();
+    const seriesNumber = Number.parseInt(seriesText, 10);
+    if (Number.isFinite(seriesNumber)) {
+      return seriesNumber;
+    }
+
     const titleText = card.querySelector("h2")?.textContent || "";
     const match = titleText.match(/CISSP\s*#(\d+)/i);
     return match ? Number.parseInt(match[1], 10) : null;
