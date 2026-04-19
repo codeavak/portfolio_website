@@ -237,7 +237,7 @@ How does your team connect monitoring data to real authorization decisions today
 
 ## Jekyll post file
 
-- `_posts/2026-04-18-cissp-ongoing-authorization-continuous-monitoring.md`
+- `_posts/2026-04-17-cissp-ongoing-authorization-continuous-monitoring.md`
 
 ## Image assets
 

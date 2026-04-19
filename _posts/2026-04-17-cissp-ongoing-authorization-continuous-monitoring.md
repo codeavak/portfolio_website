@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CISSP #37: Ongoing Authorization and Continuous Monitoring in Real Systems"
-date: 2026-04-18 12:00:00 +0000
+date: 2026-04-17 12:00:00 +0000
 categories: [CISSP, Governance, Risk]
 tags:
   [
