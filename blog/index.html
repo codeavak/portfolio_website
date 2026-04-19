@@ -41,7 +41,8 @@ title: Blog
     </section>
 
     <div class="blog-posts-grid" id="blogPostsGrid">
-      {% for post in site.posts %}
+      {% assign ordered_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in ordered_posts %}
       <article
         class="blog-post-card"
         data-tags="{% if post.tags %}{{ post.tags | join: '|' | downcase }}{% endif %}"
