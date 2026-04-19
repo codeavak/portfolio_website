@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
-    {% assign page_title = page.title | default: site.title %}
-    {% assign page_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines %}
-    {% assign page_image = page.image | default: site.social_image %}
-    {% assign canonical_url = site.url | append: site.baseurl | append: page.url | replace: 'index.html', '' %}
+    {% assign page_title = page.title | default: site.title %} {% assign
+    page_description = page.description | default: page.excerpt | default:
+    site.description | strip_html | strip_newlines %} {% assign page_image =
+    page.image | default: site.social_image %} {% assign canonical_url =
+    site.url | append: site.baseurl | append: page.url | replace: 'index.html',
+    '' %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page_title }} | {{ site.title }}</title>
@@ -18,20 +20,33 @@
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:site_name" content="{{ site.title | escape }}" />
     {% if page_image %}
-      <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page_image }}" />
+    <meta
+      property="og:image"
+      content="{{ site.url }}{{ site.baseurl }}{{ page_image }}"
+    />
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ page_title | escape }}" />
-    <meta name="twitter:description" content="{{ page_description | escape }}" />
+    <meta
+      name="twitter:description"
+      content="{{ page_description | escape }}"
+    />
     {% if page_image %}
-      <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page_image }}" />
-    {% endif %}
-
-    {% assign asset_version = site.time | date: '%s' %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v={{ asset_version }}" />
+    <meta
+      name="twitter:image"
+      content="{{ site.url }}{{ site.baseurl }}{{ page_image }}"
+    />
+    {% endif %} {% assign asset_version = site.time | date: '%s' %}
+    <link
+      rel="stylesheet"
+      href="{{ site.baseurl }}/styles.css?v={{ asset_version }}"
+    />
     <link rel="icon" href="{{ site.baseurl }}/favicon.ico" />
-    <script src="{{ site.baseurl }}/script.js?v={{ asset_version }}" defer></script>
+    <script
+      src="{{ site.baseurl }}/script.js?v={{ asset_version }}"
+      defer
+    ></script>
   </head>
   <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
@@ -40,17 +55,25 @@
     <div class="page">
       <header class="blog-header">
         <div class="container">
-          <a href="{{ site.baseurl }}/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <a href="{{ site.baseurl }}/" class="brand"
+            >Johnny Avakian · Senior Software Engineer</a
+          >
           <nav>
-            <a href="{{ site.baseurl }}/blog/">Blog</a> · <a href="{{ site.baseurl }}/">Portfolio</a>
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+            <a href="{{ site.baseurl }}/blog/">Blog</a> ·
+            <a href="{{ site.baseurl }}/">Portfolio</a>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Toggle light and dark theme"
+            >
               <span id="themeIcon">☾</span>
               <span id="themeLabel">Dark mode</span>
             </button>
           </nav>
         </div>
       </header>
-      <main class="container blog-content"> {{ content }} </main>
+      <main class="container blog-content">{{ content }}</main>
       <footer class="container blog-footer">
         <p>© {{ site.time | date: "%Y" }} Johnny Avakian</p>
       </footer>
