@@ -1,4 +1,456 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-19T05:51:48+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/" rel="alternate" type="text/html" title="CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns" /><published>2026-04-18T12:55:00+00:00</published><updated>2026-04-18T12:55:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" alt="Data residency and sovereignty governance across regional boundaries" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-20T03:54:03+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #39: Secure Baselines and Configuration Drift Control</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/" rel="alternate" type="text/html" title="CISSP #39: Secure Baselines and Configuration Drift Control" /><published>2026-04-19T14:10:00+00:00</published><updated>2026-04-19T14:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/hero.svg" alt="CISSP #39 secure baselines and configuration drift control" class="blog-hero" /></p>
+
+<p>Most teams can answer this question quickly:</p>
+
+<p>“Do we have a hardening standard?”</p>
+
+<p>Fewer can answer this one with confidence:</p>
+
+<p>“How much of production still matches it today?”</p>
+
+<p>That gap is where configuration drift turns policy into theater.</p>
+
+<p>A secure baseline is not a PDF, a one-time build checklist, or a clean screenshot from a launch week audit. In CISSP terms, it is part of a governance and control system that should reduce risk over time.</p>
+
+<p>If your baseline cannot survive normal operational change, it is not a control. It is a memory.</p>
+
+<h2 id="why-baselines-fail-in-real-environments">Why Baselines Fail in Real Environments</h2>
+
+<p>Baselines usually fail for operational reasons, not conceptual ones.</p>
+
+<p>Common patterns:</p>
+
+<ol>
+  <li>Standards are defined once but not versioned like living artifacts.</li>
+  <li>Exceptions are granted but never revalidated.</li>
+  <li>Monitoring checks for availability and performance, not control integrity.</li>
+  <li>Ownership is unclear when drift appears.</li>
+  <li>Teams optimize for deployment speed and assume someone else is watching control decay.</li>
+</ol>
+
+<p>This is why CISSP framing matters. Security is not only selecting controls. It is ensuring controls are implemented, monitored, measured, and corrected.</p>
+
+<p>Without that loop, baseline discipline degrades quietly until an incident or audit exposes it.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<p>Established principle:</p>
+
+<p>Configuration management has long been foundational to system security. NIST guidance has emphasized documenting secure configurations, controlling changes, and validating the security impact of deviations for years.</p>
+
+<p>Recent development:</p>
+
+<p>Cloud-native operations and rapid delivery models have dramatically increased change frequency. Infrastructure-as-code, ephemeral workloads, and decentralized service ownership make drift faster, less visible, and more distributed than in traditional static estates.</p>
+
+<p>Another practical signal is the maturity push from current frameworks and benchmarks. NIST CSF 2.0 continues to emphasize governance and continuous improvement, and CIS Benchmarks remain widely used as baseline anchors. The core principle is old. The operating tempo is new.</p>
+
+<h2 id="baseline-as-code-not-baseline-as-document">Baseline as Code, Not Baseline as Document</h2>
+
+<p>Treat secure baselines like production code.</p>
+
+<p>That means:</p>
+
+<ol>
+  <li>Version-controlled definitions.</li>
+  <li>Peer review for control-impacting changes.</li>
+  <li>Automated validation in delivery pipelines.</li>
+  <li>Clear traceability between policy statement and technical enforcement.</li>
+</ol>
+
+<p>If your policy says “administrative interfaces must be restricted,” your baseline artifact should encode the exact implementation pattern and include an automated check that fails non-compliant builds.</p>
+
+<p>This shift matters because documents describe intention. Code enforces behavior.</p>
+
+<h2 id="the-drift-control-loop-you-actually-need">The Drift Control Loop You Actually Need</h2>
+
+<p>A practical baseline strategy is circular, not linear.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/baseline-to-drift-loop.svg" alt="Secure baseline and drift response loop" /></p>
+
+<p>A durable loop has six motions:</p>
+
+<ol>
+  <li>Define baseline: select control requirements by asset class and risk profile.</li>
+  <li>Deploy standard: apply hardened configurations through approved automation paths.</li>
+  <li>Monitor configuration state: continuously compare runtime state to approved baseline.</li>
+  <li>Detect and classify drift: separate expected variation from risky deviation.</li>
+  <li>Remediate or approve exception: either restore baseline or document temporary risk acceptance.</li>
+  <li>Update baseline policy: feed valid operational learning back into the standard.</li>
+</ol>
+
+<p>Most organizations stop at step 2 and assume they are done. Control maturity starts at step 3.</p>
+
+<h2 id="drift-is-not-always-bad-but-it-is-always-a-decision">Drift Is Not Always Bad, But It Is Always a Decision</h2>
+
+<p>Not all drift is negligent or harmful.</p>
+
+<p>Sometimes drift is intentional and justified:</p>
+
+<ol>
+  <li>Emergency mitigation during a live incident.</li>
+  <li>Temporary compatibility requirement for a critical dependency.</li>
+  <li>Approved pilot architecture with compensating controls.</li>
+</ol>
+
+<p>The problem is not change itself. The problem is unmanaged change without time bounds, owner accountability, or review discipline.</p>
+
+<p>A useful rule:</p>
+
+<p>If a deviation cannot be tied to an owner, a reason, and an expiration date, treat it as uncontrolled risk.</p>
+
+<p>That rule works well for both exam scenarios and production governance.</p>
+
+<h2 id="build-a-risk-based-drift-triage-model">Build a Risk-Based Drift Triage Model</h2>
+
+<p>Alert volume alone does not improve posture. Prioritization does.</p>
+
+<p>Use a matrix that maps drift findings to impact, urgency, owner, and response action.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/drift-priority-matrix.svg" alt="Configuration drift priority matrix" /></p>
+
+<p>Your triage model should include:</p>
+
+<ol>
+  <li>Business impact: what control objective is degraded and what exposure expands.</li>
+  <li>Exploitability context: whether the drift creates practical attack opportunity.</li>
+  <li>Asset criticality: whether the affected system handles sensitive workflows or data.</li>
+  <li>Time sensitivity: how quickly the deviation must be corrected.</li>
+  <li>Execution owner: which team has authority and capability to respond.</li>
+</ol>
+
+<p>This avoids two common failures:</p>
+
+<ol>
+  <li>Treating every drift event as equally urgent.</li>
+  <li>Normalizing high-risk drift because the queue is always full.</li>
+</ol>
+
+<h2 id="metrics-that-reveal-real-baseline-maturity">Metrics That Reveal Real Baseline Maturity</h2>
+
+<p>Many dashboards track the number of findings and call that progress.</p>
+
+<p>Mature programs track control behavior over time.</p>
+
+<p>Practical metrics:</p>
+
+<ol>
+  <li>Baseline coverage rate: percentage of in-scope assets mapped to an approved baseline.</li>
+  <li>Drift detection latency: median time between deviation introduction and detection.</li>
+  <li>Drift remediation time: median time from detection to verified correction.</li>
+  <li>Exception aging: percentage of approved exceptions past expiration.</li>
+  <li>Repeat drift rate: frequency of recurring deviations on the same control.</li>
+  <li>Change-introduced drift ratio: proportion of drift linked to authorized change events.</li>
+</ol>
+
+<p>These measures force productive questions:</p>
+
+<ol>
+  <li>Are we detecting quickly enough?</li>
+  <li>Are we fixing what matters first?</li>
+  <li>Are exceptions temporary in reality, or permanent by neglect?</li>
+</ol>
+
+<h2 id="governance-and-roles-where-most-programs-break">Governance and Roles: Where Most Programs Break</h2>
+
+<p>Baseline and drift programs fail when accountability is implicit.</p>
+
+<p>Define role boundaries clearly:</p>
+
+<ol>
+  <li>Security architecture sets control intent and minimum requirements.</li>
+  <li>Platform engineering codifies baseline patterns and enforcement guardrails.</li>
+  <li>Service owners implement approved patterns and own exception requests.</li>
+  <li>Risk and compliance validate evidence quality and exception governance.</li>
+  <li>Leadership resolves priority conflicts when security and delivery objectives collide.</li>
+</ol>
+
+<p>CISSP repeatedly emphasizes management responsibility for risk decisions. That applies here directly. Engineering teams should not carry unmanaged residual risk because governance avoided explicit calls.</p>
+
+<h2 id="a-practical-30-day-upgrade-plan">A Practical 30-Day Upgrade Plan</h2>
+
+<p>You do not need a large transformation program to start improving baseline control quality.</p>
+
+<h3 id="week-1-define-scope-and-ownership">Week 1: Define Scope and Ownership</h3>
+
+<ol>
+  <li>Select one high-impact asset class (for example, internet-facing workloads).</li>
+  <li>Assign baseline owner, enforcement owner, and exception approver.</li>
+  <li>Document current baseline source and identify gaps.</li>
+</ol>
+
+<h3 id="week-2-wire-basic-detection">Week 2: Wire Basic Detection</h3>
+
+<ol>
+  <li>Implement automated runtime-to-baseline comparison.</li>
+  <li>Classify findings by impact and asset criticality.</li>
+  <li>Route alerts to named owners, not generic queues.</li>
+</ol>
+
+<h3 id="week-3-tighten-exception-discipline">Week 3: Tighten Exception Discipline</h3>
+
+<ol>
+  <li>Require reason, owner, compensating control, and expiry for every exception.</li>
+  <li>Review all existing exceptions for validity.</li>
+  <li>Auto-escalate expired exceptions.</li>
+</ol>
+
+<h3 id="week-4-measure-and-drill">Week 4: Measure and Drill</h3>
+
+<ol>
+  <li>Track detection latency and remediation time for one week.</li>
+  <li>Run a tabletop on high-risk drift in a critical service.</li>
+  <li>Record lessons and update baseline definitions.</li>
+</ol>
+
+<p>This four-week cycle creates momentum because it improves both technical control quality and governance behavior.</p>
+
+<h2 id="cissp-exam-lens-vs-operational-reality">CISSP Exam Lens vs Operational Reality</h2>
+
+<p>For exam scenarios, the best answer usually favors structured, risk-based, and sustainable control action over ad hoc technical fixes.</p>
+
+<p>In operational reality, the same logic still wins:</p>
+
+<ol>
+  <li>Prefer repeatable controls over heroic response.</li>
+  <li>Prioritize high-impact deviations first.</li>
+  <li>Make risk ownership explicit.</li>
+  <li>Keep exception handling disciplined and time-bound.</li>
+</ol>
+
+<p>That alignment is useful. CISSP is not disconnected from engineering life when you apply it as control design plus operational execution.</p>
+
+<h2 id="final-reflection">Final Reflection</h2>
+
+<p>Secure baselines are valuable, but only if they remain true after the environment changes.</p>
+
+<p>Configuration drift is not a niche problem for compliance teams. It is a daily reliability, security, and governance challenge for engineering organizations.</p>
+
+<p>If you want one practical improvement this month, start with this:</p>
+
+<p>Build one baseline control loop for one high-risk asset class, then measure drift detection and remediation speed every week.</p>
+
+<p>That move alone turns baseline work from paperwork into a real risk control.</p>
+
+<p><strong>Meta description:</strong> CISSP #39 explains how to build secure baselines that hold over time through configuration drift detection, risk-based triage, disciplined exception handling, and measurable remediation.</p>
+
+<p><strong>SEO keyword ideas:</strong> secure baseline management CISSP, configuration drift control framework, hardening standards in cloud operations, CIS Benchmarks implementation strategy, NIST configuration management security controls</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Operations" /><category term="Configuration Management" /><category term="CISSP" /><category term="Baselines" /><category term="Configuration Drift" /><category term="Hardening" /><category term="Governance" /><summary type="html"><![CDATA[A practical CISSP guide to secure baselines and configuration drift: how to turn hardening standards into continuous controls that survive real operational change.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #38: Certificate Lifecycle and Revocation Are Operational Controls</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-certificate-lifecycle-revocation-operations/" rel="alternate" type="text/html" title="CISSP #38: Certificate Lifecycle and Revocation Are Operational Controls" /><published>2026-04-19T12:20:00+00:00</published><updated>2026-04-19T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-certificate-lifecycle-revocation-operations</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-certificate-lifecycle-revocation-operations/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" alt="CISSP #38 certificate lifecycle and revocation operations" class="blog-hero" /></p>
+
+<p>In CISSP study, PKI can look like clean diagrams and tidy terminology.</p>
+
+<p>In production, certificates are closer to operational debt unless you treat them like living control assets.</p>
+
+<p>That gap matters. Expired certificates trigger outages. Weak ownership around issuance creates blind spots. Slow revocation increases blast radius after key compromise. Teams often discover these realities under incident pressure instead of during normal governance.</p>
+
+<p>For the exam, certificate and revocation concepts are grounded in trust, assurance, and key management discipline.</p>
+
+<p>For real systems, they are also reliability controls.</p>
+
+<p>If your organization is cloud-heavy, API-heavy, and machine-identity-heavy, this is no longer a niche PKI conversation.</p>
+
+<p>It is daily engineering hygiene.</p>
+
+<h2 id="why-certificate-problems-are-usually-governance-problems">Why Certificate Problems Are Usually Governance Problems</h2>
+
+<p>Most outages blamed on “certificate issues” are not caused by cryptography itself.</p>
+
+<p>They come from lifecycle failure.</p>
+
+<p>Common patterns:</p>
+
+<ol>
+  <li>Unknown inventory: teams cannot answer where certificates are used or who owns them.</li>
+  <li>Renewal theater: alerts exist, but no accountable owner acts before expiration.</li>
+  <li>Inconsistent issuance controls: ad hoc CA usage creates weak trust boundaries.</li>
+  <li>Revocation paralysis: compromise is suspected, but there is no fast, tested response path.</li>
+</ol>
+
+<p>This is why CISSP framing is useful. Security controls are people, process, and technology together. Certificate tooling without operating discipline is just delayed risk.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<p>Established principle:</p>
+
+<p>X.509 trust models, certificate path validation, and revocation mechanisms have long required disciplined management. Key material has always needed lifecycle controls, not one-time setup.</p>
+
+<p>Recent development:</p>
+
+<p>Machine identity growth and highly automated delivery have compressed tolerances. More certificates are issued, rotated, and validated across services than many teams realize. At the same time, guidance has continued to emphasize modern key-management rigor and digital identity assurance updates.</p>
+
+<p>One concrete signal: NIST SP 800-57 Part 1 Rev. 5 (final) remains a foundational reference for lifecycle key management discipline, and digital identity guidance has evolved with newer revisions replacing older baselines.</p>
+
+<p>The concept is old. The operational pressure is newer and much higher.</p>
+
+<h2 id="the-lifecycle-you-should-actually-run">The Lifecycle You Should Actually Run</h2>
+
+<p>Treat certificates as a control loop with explicit ownership and evidence.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/lifecycle-loop.svg" alt="Certificate lifecycle control loop" /></p>
+
+<p>A practical lifecycle has six motions:</p>
+
+<ol>
+  <li>Inventory: know every cert, trust chain, environment, and owner.</li>
+  <li>Issue: enforce policy for key length, validity period, and approved issuers.</li>
+  <li>Deploy: track where certs terminate traffic and what services depend on them.</li>
+  <li>Monitor: measure expiry risk, chain health, and issuance anomalies continuously.</li>
+  <li>Renew: automate renewal and verify successful deployment before old cert expiry.</li>
+  <li>Revoke and recover: trigger fast replacement when compromise or mis-issuance occurs.</li>
+</ol>
+
+<p>If any one of these is weak, assurance drops fast.</p>
+
+<h2 id="what-the-exam-emphasizes-vs-what-operations-demand">What the Exam Emphasizes vs What Operations Demand</h2>
+
+<p>CISSP exam reasoning often emphasizes managerial correctness:</p>
+
+<ol>
+  <li>Use formal policy.</li>
+  <li>Apply least privilege and separation of duties to CA and key processes.</li>
+  <li>Prefer defense-in-depth and explicit risk ownership.</li>
+  <li>Choose actions that reduce organizational risk, not only technical noise.</li>
+</ol>
+
+<p>Operations add hard constraints:</p>
+
+<ol>
+  <li>You need real-time inventory, not annual inventories.</li>
+  <li>You need tested renewal pipelines, not reminder emails.</li>
+  <li>You need revocation playbooks with escalation authority pre-defined.</li>
+  <li>You need audit evidence that ties decisions to controls and incidents.</li>
+</ol>
+
+<p>Both perspectives are valid. The strongest teams use exam-grade governance language to justify practical engineering work that keeps systems alive.</p>
+
+<h2 id="revocation-is-a-response-function-not-a-checkbox">Revocation Is a Response Function, Not a Checkbox</h2>
+
+<p>Revocation is frequently misunderstood as a purely PKI admin task.</p>
+
+<p>In practice, revocation is an incident-response decision with business impact.</p>
+
+<p>When private-key compromise, mis-issuance, or trust abuse is suspected, delays matter. The question is no longer “Do we support revocation?” It becomes “How quickly can we contain trust abuse without causing uncontrolled downtime?”</p>
+
+<p>Use a decision matrix so teams are not improvising under pressure.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/revocation-decision-matrix.svg" alt="Certificate revocation decision matrix" /></p>
+
+<p>Key design points:</p>
+
+<ol>
+  <li>Trigger clarity: define specific conditions that initiate immediate revocation.</li>
+  <li>Authority clarity: identify who can approve emergency revocation.</li>
+  <li>Replacement readiness: maintain pre-tested reissue and redeploy paths.</li>
+  <li>Communication discipline: align security, platform, and service owners during execution.</li>
+</ol>
+
+<p>This turns revocation from panic to controlled response.</p>
+
+<h2 id="certificate-policy-without-operations-is-fragile">Certificate Policy Without Operations Is Fragile</h2>
+
+<p>Many organizations have PKI policy documents that describe ideal states but do not drive day-to-day behavior.</p>
+
+<p>To make policy useful, map each requirement to an observable control signal.</p>
+
+<p>Examples:</p>
+
+<ol>
+  <li>
+    <p>Policy says keys rotate by defined interval.
+Actionable evidence: automated report of key age distribution and exceptions.</p>
+  </li>
+  <li>
+    <p>Policy says only approved CAs may issue production certs.
+Actionable evidence: issuance logs mapped to approved CA list with exception alerts.</p>
+  </li>
+  <li>
+    <p>Policy says revocation must occur promptly for compromise.
+Actionable evidence: incident timeline showing detection-to-revocation and revocation-to-redeployment elapsed time.</p>
+  </li>
+</ol>
+
+<p>This is where auditability improves because controls can be validated continuously, not reconstructed after failure.</p>
+
+<h2 id="metrics-that-actually-show-maturity">Metrics That Actually Show Maturity</h2>
+
+<p>If you want to know whether certificate governance is improving, track a small set of operationally meaningful indicators.</p>
+
+<p>Useful examples:</p>
+
+<ol>
+  <li>Inventory coverage rate: percentage of active certificates with a named owner and service mapping.</li>
+  <li>Renewal success rate: percentage of renewals completed and validated before expiry windows.</li>
+  <li>Emergency revocation time: elapsed time from compromise detection to full replacement deployment.</li>
+  <li>Unauthorized issuance count: number of certificates issued outside approved policy paths.</li>
+  <li>Trust-chain incident rate: count of production incidents tied to chain validation or distribution failures.</li>
+</ol>
+
+<p>These metrics are valuable because they are hard to game. They force conversation about ownership, control strength, and response quality instead of presentation-friendly dashboards.</p>
+
+<h2 id="a-practical-30-day-upgrade-plan">A Practical 30-Day Upgrade Plan</h2>
+
+<p>You do not need a major PKI transformation program to start improving.</p>
+
+<h3 id="week-1-baseline-visibility">Week 1: Baseline Visibility</h3>
+
+<ol>
+  <li>Build a certificate inventory for one critical platform.</li>
+  <li>Add ownership metadata (team, service, environment, escalation contact).</li>
+  <li>Identify untracked certificates and unknown issuers.</li>
+</ol>
+
+<h3 id="week-2-enforce-issuance-boundaries">Week 2: Enforce Issuance Boundaries</h3>
+
+<ol>
+  <li>Document approved issuing paths.</li>
+  <li>Block or alert on unapproved issuer usage.</li>
+  <li>Define maximum validity windows by environment risk.</li>
+</ol>
+
+<h3 id="week-3-automate-renewal-and-verification">Week 3: Automate Renewal and Verification</h3>
+
+<ol>
+  <li>Automate renewal for high-volume service certificates.</li>
+  <li>Add deployment verification checks after renewal.</li>
+  <li>Create alerts for renewal failure, not just upcoming expiration.</li>
+</ol>
+
+<h3 id="week-4-drill-revocation-readiness">Week 4: Drill Revocation Readiness</h3>
+
+<ol>
+  <li>Run a tabletop for suspected key compromise.</li>
+  <li>Measure elapsed time from detection to replacement deployment.</li>
+  <li>Capture gaps in authority, tooling, and communication.</li>
+</ol>
+
+<p>At the end of one month, your team should have fewer unknowns, fewer avoidable expirations, and a more credible incident response path.</p>
+
+<h2 id="cissp-takeaways-to-keep-clear">CISSP Takeaways to Keep Clear</h2>
+
+<p>When answering scenario questions, keep these anchors in mind:</p>
+
+<ol>
+  <li>Certificate trust is a lifecycle governance topic, not only a crypto topic.</li>
+  <li>Revocation supports risk reduction, but only if distribution and validation are operationally effective.</li>
+  <li>Key management controls must be explicit, measurable, and accountable.</li>
+  <li>Best answers usually favor organizationally sustainable risk controls over one-off technical fixes.</li>
+</ol>
+
+<p>That last point is where CISSP best-answer logic and mature engineering practice align well.</p>
+
+<h2 id="final-reflection">Final Reflection</h2>
+
+<p>Certificate and revocation failures are rarely mysterious.</p>
+
+<p>They are usually symptoms of ownership gaps, weak lifecycle process, or untested response mechanisms.</p>
+
+<p>The positive part is this: those are fixable.</p>
+
+<p>If you want one high-leverage improvement, start with an authoritative inventory plus a tested revocation playbook for your highest-impact services.</p>
+
+<p>That single move improves both security posture and operational resilience.</p>
+
+<p><strong>Meta description:</strong> CISSP #38 explains certificate lifecycle and revocation as operational security controls, with practical guidance for inventory, renewal automation, and incident-driven revocation response.</p>
+
+<p><strong>SEO keyword ideas:</strong> certificate lifecycle management CISSP, PKI revocation operations, X.509 governance controls, key management lifecycle security, certificate outage prevention</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="PKI" /><category term="Operations" /><category term="CISSP" /><category term="PKI" /><category term="Certificates" /><category term="Revocation" /><category term="Key Management" /><summary type="html"><![CDATA[A practical CISSP guide to certificate lifecycle operations: inventory, issuance, renewal, revocation, and incident response discipline that prevents avoidable outages and trust failures.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/" rel="alternate" type="text/html" title="CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns" /><published>2026-04-18T12:55:00+00:00</published><updated>2026-04-18T12:55:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" alt="Data residency and sovereignty governance across regional boundaries" class="blog-hero" /></p>
 
 <h1 id="cissp-36-data-residency-and-sovereignty-are-governance-decisions-not-storage-dropdowns">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</h1>
 
@@ -1987,413 +2439,4 @@
   <li>difference between policy and standard in cybersecurity</li>
   <li>CISSP exam governance best answer strategy</li>
   <li>security control implementation documentation</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="security policy" /><category term="standards" /><category term="procedures" /><category term="guidelines" /><category term="governance" /><category term="risk" /><category term="exam" /><summary type="html"><![CDATA[A practical CISSP study guide to policy, standards, procedures, and guidelines, with exam reasoning, real-world implementation advice, and common failure patterns to avoid.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/" rel="alternate" type="text/html" title="CISSP #29: Security Control Types — Preventive, Detective, and Corrective in Practice" /><published>2026-04-14T12:00:00+00:00</published><updated>2026-04-14T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-control-types-preventive-detective-corrective/"><![CDATA[<p>Security controls are the backbone of every security program, but they are also one of the most misunderstood topics in CISSP and in real organizations.</p>
-
-<p>Most engineers and managers can name a few controls—firewalls, access reviews, backups—but fewer can explain why controls are grouped into types, how those types interact, and why the distinction matters for both exam questions and real-world risk reduction.</p>
-
-<p>This post breaks down the classic control types—preventive, detective, corrective (plus deterrent and compensating)—with practical examples, exam mindset tips, and guidance for applying them in layered security architectures.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" alt="Layered diagram showing preventive, detective, and corrective controls as concentric rings around business assets." />
-  <figcaption>Security controls work best in layers. Each type addresses a different stage of risk.</figcaption>
-</figure>
-
-<h2 id="why-control-types-matter-for-cissp-and-for-real-risk">Why control types matter (for CISSP and for real risk)</h2>
-
-<p>CISSP exam questions love to test your understanding of control types—not just definitions, but how to apply them in context. In practice, knowing the difference helps you design defenses that do more than just check a compliance box.</p>
-
-<ul>
-  <li><strong>Preventive controls</strong> try to stop incidents before they happen.</li>
-  <li><strong>Detective controls</strong> identify and alert when something goes wrong.</li>
-  <li><strong>Corrective controls</strong> restore normal operations after an incident.</li>
-  <li><strong>Deterrent controls</strong> discourage unwanted actions (often psychological or policy-based).</li>
-  <li><strong>Compensating controls</strong> fill gaps when primary controls are impractical.</li>
-</ul>
-
-<p>The exam will often ask: “Which control is best in this scenario?” The right answer depends on the risk, the business context, and what other controls are already in place.</p>
-
-<h2 id="the-classic-trio-preventive-detective-corrective">The classic trio: Preventive, Detective, Corrective</h2>
-
-<h3 id="preventive-controls">Preventive controls</h3>
-
-<p>These are your first line of defense. Their job is to block threats before damage occurs.</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>Firewalls (block unauthorized network traffic)</li>
-  <li>Access control lists (restrict who can access what)</li>
-  <li>Security awareness training (reduce risky behavior)</li>
-  <li>Physical locks and badge readers</li>
-  <li>Encryption (prevents data disclosure if stolen)</li>
-</ul>
-
-<p><strong>Exam tip:</strong> Preventive controls are proactive. They do not wait for an incident—they try to make it impossible or much harder.</p>
-
-<h3 id="detective-controls">Detective controls</h3>
-
-<p>These controls do not stop incidents, but they tell you when something has happened (or is happening).</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>Intrusion detection systems (IDS)</li>
-  <li>Security event logging and monitoring</li>
-  <li>CCTV cameras</li>
-  <li>File integrity monitoring</li>
-  <li>Audit trails</li>
-</ul>
-
-<p><strong>Exam tip:</strong> Detective controls are about visibility. They are essential for incident response, compliance, and continuous improvement.</p>
-
-<h3 id="corrective-controls">Corrective controls</h3>
-
-<p>These controls help you recover from an incident and restore normal operations.</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>Backups and restore procedures</li>
-  <li>Incident response plans</li>
-  <li>Patch management (after a vulnerability is exploited)</li>
-  <li>Removing malware from infected systems</li>
-  <li>Updating firewall rules after a breach</li>
-</ul>
-
-<p><strong>Exam tip:</strong> Corrective controls are about minimizing impact and learning from incidents. They often work hand-in-hand with detective controls.</p>
-
-<h2 id="beyond-the-basics-deterrent-and-compensating-controls">Beyond the basics: Deterrent and Compensating controls</h2>
-
-<h3 id="deterrent-controls">Deterrent controls</h3>
-
-<p>These controls discourage attackers or insiders from attempting unwanted actions, often by increasing the perceived risk of detection or punishment.</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>Warning signs (“Area under surveillance”)</li>
-  <li>Security policies with clear consequences</li>
-  <li>Visible security guards</li>
-  <li>Legal agreements and NDAs</li>
-</ul>
-
-<h3 id="compensating-controls">Compensating controls</h3>
-
-<p>When a primary control is not feasible (due to cost, legacy systems, or business constraints), compensating controls provide an alternative way to reduce risk.</p>
-
-<p><strong>Examples:</strong></p>
-
-<ul>
-  <li>Increased monitoring when strong authentication is not possible</li>
-  <li>Manual reviews when automated controls are lacking</li>
-  <li>Segmentation to limit exposure when full encryption is impractical</li>
-</ul>
-
-<h2 id="how-control-types-interact-in-layered-security">How control types interact in layered security</h2>
-
-<p>No single control is perfect. Real security comes from layering different types so that the failure of one does not mean total compromise.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/matrix.svg" alt="Matrix mapping common controls to their types: firewall (preventive), IDS (detective), backup (corrective), etc." />
-  <figcaption>Most real-world controls serve more than one purpose. Layering is what makes them effective.</figcaption>
-</figure>
-
-<p><strong>Example scenario:</strong></p>
-
-<ul>
-  <li>Preventive: A firewall blocks most attacks.</li>
-  <li>Detective: An IDS alerts when suspicious traffic is detected.</li>
-  <li>Corrective: An incident response plan guides containment and recovery.</li>
-  <li>Deterrent: Security policy and visible monitoring discourage insider threats.</li>
-  <li>Compensating: Manual log reviews fill gaps when automated alerting is not available.</li>
-</ul>
-
-<h2 id="exam-mindset-best-answer-thinking">Exam mindset: Best-answer thinking</h2>
-
-<p>CISSP questions often present scenarios where multiple controls could apply. The “best” answer is usually the one that:</p>
-
-<ul>
-  <li>Addresses the risk most directly</li>
-  <li>Fits the business context</li>
-  <li>Complements existing controls</li>
-  <li>Follows the principle of defense in depth</li>
-</ul>
-
-<p><strong>Watch for traps:</strong> Sometimes a control can be both preventive and detective (e.g., security cameras). The exam may want you to pick the primary function in the scenario.</p>
-
-<h2 id="practical-tips-for-engineers-and-leaders">Practical tips for engineers and leaders</h2>
-
-<ul>
-  <li>Always ask: What is this control actually doing? Is it stopping, detecting, correcting, deterring, or compensating?</li>
-  <li>Map your controls to types to identify gaps and overlaps.</li>
-  <li>Use layered controls to reduce reliance on any single safeguard.</li>
-  <li>Document compensating controls clearly for audits and risk acceptance.</li>
-  <li>Review and update controls as threats and business needs evolve.</li>
-</ul>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/incident-flow.svg" alt="Flowchart showing preventive, detective, and corrective controls in the lifecycle of a security incident." />
-  <figcaption>Controls work together: prevention blocks, detection alerts, correction restores.</figcaption>
-</figure>
-
-<h2 id="subtle-cta">Subtle CTA</h2>
-
-<p>If you are preparing for CISSP or building a security program, take time to map your controls by type. It is one of the fastest ways to spot weaknesses and improve your defense-in-depth strategy.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong>
-A practical CISSP guide to security control types—preventive, detective, corrective, deterrent, and compensating—with real-world examples, exam tips, and advice for building layered defenses.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ul>
-  <li>security control types</li>
-  <li>preventive detective corrective controls</li>
-  <li>CISSP control classification</li>
-  <li>defense in depth</li>
-  <li>compensating controls</li>
-</ul>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-1" /><category term="domain-3" /><category term="security-controls" /><category term="preventive" /><category term="detective" /><category term="corrective" /><category term="defense-in-depth" /><category term="risk-management" /><summary type="html"><![CDATA[Security controls are not just technical tools—they are the backbone of risk management. Understanding preventive, detective, and corrective controls (and their real-world overlap) is essential for CISSP success and practical security leadership.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-control-types-preventive-detective-corrective/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/" rel="alternate" type="text/html" title="CISSP #28: Cryptography Is Not Magic — Understanding the Primitives That Secure Everything" /><published>2026-04-13T13:00:00+00:00</published><updated>2026-04-13T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cryptography-primitives-not-magic/"><![CDATA[<p>Developers use cryptographic tools constantly without thinking about them.</p>
-
-<p>You hash passwords before storing them. Your API calls go over TLS. You sign tokens, verify certificates, and see references to AES-256 or SHA-256 in documentation without stopping to reason carefully about what those choices actually provide.</p>
-
-<p>That works very well — until you need to make a cryptographic decision yourself, evaluate whether a system design is sound, or answer a CISSP question about which primitive provides non-repudiation and why.</p>
-
-<p>Cryptography is not a single thing. It is a collection of distinct primitives, each solving a specific problem. The practical skill — for engineers and for the CISSP exam — is knowing which primitive addresses which problem, what it does not address, and how the primitives combine in the protocols you already rely on.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" alt="Diagram mapping four cryptographic goals — confidentiality, integrity, authenticity, and non-repudiation — to the primitives that address each one: symmetric encryption, hashing, HMAC, and digital signatures." />
-  <figcaption>Cryptography is a set of tools. Each primitive solves a specific problem. Knowing which is which is more useful than memorizing algorithm names.</figcaption>
-</figure>
-
-<h2 id="start-with-the-goals-not-the-algorithms">Start with the goals, not the algorithms</h2>
-
-<p>The right entry point is not AES or RSA. It is the security properties you are trying to achieve.</p>
-
-<p><strong>Confidentiality:</strong> Only the intended recipient can read the data.</p>
-
-<p><strong>Integrity:</strong> The data has not been altered in transit or at rest.</p>
-
-<p><strong>Authenticity:</strong> The data came from the expected sender.</p>
-
-<p><strong>Non-repudiation:</strong> The sender cannot later deny having sent the data.</p>
-
-<p>These are distinct properties. No single cryptographic primitive provides all of them. A system that needs all four requires a combination of tools.</p>
-
-<p>This framing is exactly what CISSP tests: given a scenario, which property applies, and which primitive delivers it?</p>
-
-<h2 id="encryption-addresses-confidentiality--nothing-else-by-default">Encryption addresses confidentiality — nothing else by default</h2>
-
-<p>Encryption transforms plaintext into ciphertext that can only be reversed with the correct key. Its purpose is confidentiality: preventing unauthorized parties from reading the data.</p>
-
-<p>Encryption alone does not verify that the ciphertext was unmodified. It does not prove who sent it. It does not prevent the sender from denying they sent it.</p>
-
-<p>Two families of encryption matter for CISSP:</p>
-
-<h3 id="symmetric-encryption">Symmetric encryption</h3>
-
-<p>One key is used for both encryption and decryption. AES (Advanced Encryption Standard) is the dominant example in modern systems.</p>
-
-<p>Symmetric encryption is fast and efficient — appropriate for bulk data encryption. But it requires that both parties already share the same key. Getting that key to the other party securely is the key distribution problem, and it is the fundamental limitation of symmetric encryption.</p>
-
-<h3 id="asymmetric-encryption">Asymmetric encryption</h3>
-
-<p>Two mathematically linked keys: a public key and a private key. Data encrypted with one key can only be decrypted with the other. RSA and elliptic curve cryptography are the common examples.</p>
-
-<p>The public key can be distributed freely. The private key is kept secret by its owner.</p>
-
-<p>Asymmetric encryption solves key distribution: you can encrypt a message using my public key, and only I can decrypt it with my private key. We never needed a prior secure channel to share a secret.</p>
-
-<p>The tradeoff: asymmetric operations are computationally expensive relative to symmetric operations. They are not suited for encrypting large volumes of data.</p>
-
-<h3 id="the-hybrid-model">The hybrid model</h3>
-
-<p>Real protocols combine both. Asymmetric cryptography is used to securely exchange a symmetric session key. Symmetric encryption then handles the actual data.</p>
-
-<p>TLS is the canonical example. During the handshake, asymmetric cryptography establishes a shared session key. All subsequent traffic is encrypted with that symmetric key. You get key distribution without a pre-shared secret, and bulk encryption without the overhead of asymmetric operations on every byte.</p>
-
-<p>This is the design pattern worth internalizing. It appears in TLS, in PGP, in S/MIME, and in most well-designed encryption protocols.</p>
-
-<h2 id="hashing-addresses-integrity--not-confidentiality-not-authenticity">Hashing addresses integrity — not confidentiality, not authenticity</h2>
-
-<p>A hash function takes arbitrary input and produces a fixed-length digest. SHA-256 produces a 256-bit output regardless of whether the input is a single character or a multi-gigabyte file.</p>
-
-<p>Hash functions are one-directional: you cannot recover the input from the hash. They are also deterministic: the same input always produces the same hash.</p>
-
-<p>Hashing verifies integrity. If the hash of a downloaded file matches the published hash, the file has not been modified in transit.</p>
-
-<p>What hashing does not provide: authenticity. Anyone can compute a hash. If an attacker can modify a file and also replace the published hash, integrity checking fails. Hashing on its own is only useful when the hash value arrives through a trusted channel or is protected by a separate mechanism.</p>
-
-<p>One common engineering mistake is treating hashing and encryption as interchangeable for password storage. They are not:</p>
-
-<ul>
-  <li><strong>Encrypting passwords</strong> means the original value can be recovered if you have the key. You should never need to recover the original password.</li>
-  <li><strong>Hashing passwords</strong> with a slow, salted algorithm like bcrypt or Argon2 means the original cannot be recovered. You re-hash the login attempt and compare. That is the correct property.</li>
-</ul>
-
-<p>SHA-256(password) directly is also insufficient — unsalted hashes are vulnerable to precomputation attacks (rainbow tables). Password hashing requires purpose-built algorithms with built-in salt and computational cost.</p>
-
-<h2 id="hmac-adds-authenticity-to-integrity">HMAC adds authenticity to integrity</h2>
-
-<p>A Message Authentication Code (MAC) — specifically HMAC (Hash-based MAC) — combines a hash function with a shared secret key. The output can only be produced by someone who holds the key.</p>
-
-<p>This provides:</p>
-
-<ul>
-  <li><strong>Integrity:</strong> The message has not been modified.</li>
-  <li><strong>Authenticity:</strong> The message was created by a party that holds the secret key.</li>
-</ul>
-
-<p>HMAC is used in signed JWTs when using HS256, in API request signing, and in various protocol-level message verification schemes.</p>
-
-<p>What it does not provide: <strong>non-repudiation</strong>. Because both the sender and receiver share the same key, either party could have generated the MAC. The receiver cannot prove to a third party that the sender — and not the receiver — created it.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/mac-vs-signature.svg" alt="Side-by-side comparison: HMAC using a shared secret key proves integrity and authenticity but not non-repudiation. Digital signature using an asymmetric key pair proves integrity, authenticity, and non-repudiation." />
-  <figcaption>HMAC and digital signatures both verify who sent a message — but only digital signatures provide non-repudiation because only one party holds the signing key.</figcaption>
-</figure>
-
-<h2 id="digital-signatures-add-non-repudiation">Digital signatures add non-repudiation</h2>
-
-<p>Digital signatures use asymmetric cryptography in the reverse direction from encryption.</p>
-
-<ul>
-  <li>The sender signs with their <strong>private key</strong>.</li>
-  <li>Anyone with the sender’s <strong>public key</strong> can verify the signature.</li>
-</ul>
-
-<p>Because only the sender holds the private key, the signature can only have been produced by them. This provides:</p>
-
-<ul>
-  <li><strong>Integrity:</strong> The signed content has not been altered.</li>
-  <li><strong>Authenticity:</strong> The content was signed by the private key holder.</li>
-  <li><strong>Non-repudiation:</strong> The private key holder cannot credibly deny having signed it — no one else could have produced that signature.</li>
-</ul>
-
-<p>Digital signatures are used in code signing, certificate chains (a certificate is a signed binding of a public key to an identity), document signing, and asymmetric JWT signing (RS256, ES256).</p>
-
-<p>CISSP reasoning: if a scenario requires non-repudiation, the answer involves asymmetric cryptography and digital signatures, not HMAC with a shared secret.</p>
-
-<h2 id="the-hybrid-model-in-practice-how-tls-actually-works">The hybrid model in practice: how TLS actually works</h2>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/tls-handshake.svg" alt="Simplified TLS handshake diagram showing asymmetric key exchange establishing a shared symmetric session key, which then encrypts all subsequent data." />
-  <figcaption>TLS uses asymmetric cryptography to solve key distribution and symmetric cryptography for bulk data. The hybrid model gets the best of both primitives.</figcaption>
-</figure>
-
-<p>Each HTTPS connection demonstrates the hybrid model:</p>
-
-<ol>
-  <li>The server presents a certificate (its public key signed by a Certificate Authority).</li>
-  <li>The client verifies the certificate chain and trusts the server’s public key.</li>
-  <li>Asymmetric cryptography is used to establish a shared session key — without transmitting it in plaintext.</li>
-  <li>All subsequent data is encrypted with that symmetric session key.</li>
-</ol>
-
-<p>The result: key distribution is solved without a pre-shared secret. Bulk data is encrypted efficiently. Both primitives contribute what they do well.</p>
-
-<h2 id="key-management-is-where-things-actually-go-wrong">Key management is where things actually go wrong</h2>
-
-<p>The algorithms in use today — AES, RSA, ECDH, SHA-256 — are well understood and implemented in well-audited libraries. Algorithmic failures in production are rare.</p>
-
-<p>What is common: key management failures.</p>
-
-<ul>
-  <li>Keys stored in source code, configuration files, or environment variables without sufficient access control.</li>
-  <li>Keys never rotated, so a compromise from a previous period still affects current data.</li>
-  <li>Certificate expiration causing outages, because certificate lifecycle management was not treated as an operational discipline.</li>
-  <li>Encryption keys stored in a system that is itself insufficiently secured.</li>
-</ul>
-
-<p>CISSP covers key management as a substantial component of the cryptography domain:</p>
-
-<ul>
-  <li><strong>Key generation:</strong> Keys must be generated with sufficient entropy. Weak generation is a systemic weakness, not just a one-time error.</li>
-  <li><strong>Key distribution:</strong> How keys reach the parties that need them. The asymmetric exchange model exists specifically to solve this.</li>
-  <li><strong>Key storage:</strong> Hardware Security Modules (HSMs) are the enterprise answer for protecting high-value keys in tamper-resistant hardware.</li>
-  <li><strong>Key rotation and revocation:</strong> Keys should have defined lifetimes. When compromised, they must be revocable. Certificate Revocation Lists (CRLs) and OCSP provide this for public key infrastructure.</li>
-  <li><strong>Key destruction:</strong> Secure deletion at end of life, to prevent key recovery from decommissioned hardware or storage media.</li>
-</ul>
-
-<p>The pattern: the cryptographic primitives rarely fail. The processes around the keys routinely do.</p>
-
-<h2 id="what-cissp-tests-on-cryptography">What CISSP tests on cryptography</h2>
-
-<p>CISSP does not ask you to implement AES or generate key pairs in code. It tests your ability to reason about cryptographic systems and match choices to requirements.</p>
-
-<p>Common exam scenario types:</p>
-
-<p><strong>“Which of the following provides non-repudiation?”</strong>
-Digital signatures (asymmetric). Not HMAC. Not symmetric encryption.</p>
-
-<p><strong>“A file is encrypted with the recipient’s public key. What does this ensure?”</strong>
-Confidentiality — only the recipient’s private key decrypts it. It does not prove who sent the file or that it was unmodified in transit.</p>
-
-<p><strong>“What is the primary limitation of symmetric encryption?”</strong>
-Key distribution. Both parties need the same shared key, but getting it to them securely is the challenge.</p>
-
-<p><strong>“Which is most appropriate for encrypting a 5GB backup file?”</strong>
-Symmetric encryption (AES). Asymmetric operations are computationally inappropriate for bulk data at scale.</p>
-
-<p><strong>“An organization needs to verify that software was released by the expected vendor.”</strong>
-Digital signatures / code signing. The vendor’s private key signs the artifact. The public key verifies it without exposing the private key.</p>
-
-<p>The exam mindset: match the security property required to the primitive that delivers it.</p>
-
-<h2 id="the-reference-table">The reference table</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Primitive</th>
-      <th>Provides</th>
-      <th>Does not provide</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Symmetric encryption (AES)</td>
-      <td>Confidentiality</td>
-      <td>Key distribution, integrity, authenticity</td>
-    </tr>
-    <tr>
-      <td>Asymmetric encryption (RSA, ECC)</td>
-      <td>Confidentiality, key distribution</td>
-      <td>Efficiency at bulk scale</td>
-    </tr>
-    <tr>
-      <td>Hashing (SHA-256)</td>
-      <td>Integrity</td>
-      <td>Authenticity, non-repudiation</td>
-    </tr>
-    <tr>
-      <td>HMAC</td>
-      <td>Integrity, authenticity</td>
-      <td>Non-repudiation</td>
-    </tr>
-    <tr>
-      <td>Digital signature</td>
-      <td>Integrity, authenticity, non-repudiation</td>
-      <td>Bulk confidentiality</td>
-    </tr>
-    <tr>
-      <td>Hybrid encryption (TLS model)</td>
-      <td>Confidentiality + key distribution</td>
-      <td><em>(combines symmetric and asymmetric)</em></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="the-practical-takeaway">The practical takeaway</h2>
-
-<p>Cryptography is not magic, and it is not a single control. It is a set of tools with precise, limited guarantees.</p>
-
-<p>When you look at a system design — a token signing scheme, a file encryption approach, a message integrity mechanism — you should be able to trace each security property to the control that provides it. Gaps in that mapping are vulnerabilities.</p>
-
-<p>For the CISSP exam: understand the primitives, understand what each provides and does not provide, and reason about which one fits each scenario. The exam tests that reasoning — not your ability to name algorithm specifications or write cryptographic code.</p>
-
-<p>For production systems: use well-maintained libraries, reviewed protocols, and treat key management as an ongoing operational discipline, not a configuration step you visit once during initial setup.</p>
-
-<hr />
-
-<p><em>This post is part of my CISSP study series — working through the domains and writing up what actually sticks. Domain 3: Security Architecture and Engineering.</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="security" /><category term="cissp" /><category term="cissp" /><category term="domain-3" /><category term="cryptography" /><category term="encryption" /><category term="digital-signatures" /><category term="tls" /><category term="key-management" /><summary type="html"><![CDATA[Cryptography is not a single control. It is a set of primitives — symmetric encryption, hashing, HMAC, digital signatures — each providing distinct guarantees. Knowing which primitive provides which property is the foundation of sound security architecture.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cryptography-primitives-not-magic/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="security policy" /><category term="standards" /><category term="procedures" /><category term="guidelines" /><category term="governance" /><category term="risk" /><category term="exam" /><summary type="html"><![CDATA[A practical CISSP study guide to policy, standards, procedures, and guidelines, with exam reasoning, real-world implementation advice, and common failure patterns to avoid.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-policy-standards-procedures-guidelines/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
