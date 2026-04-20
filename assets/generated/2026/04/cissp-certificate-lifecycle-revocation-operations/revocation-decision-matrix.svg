@@ -1,0 +1,51 @@
+<svg width="1200" height="860" viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Certificate revocation decision matrix</title>
+  <desc id="desc">A matrix mapping incident triggers to revocation urgency, owner, and containment action.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="860" fill="url(#bg)"/>
+  <text x="60" y="74" font-size="42" font-weight="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif">Revocation Decision Matrix</text>
+
+  <rect x="60" y="120" width="1080" height="90" rx="12" fill="#0f172a"/>
+  <text x="92" y="174" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Trigger</text>
+  <text x="420" y="174" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Risk</text>
+  <text x="570" y="174" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Urgency</text>
+  <text x="740" y="174" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Owner</text>
+  <text x="915" y="174" font-size="28" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif">Action</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="23" fill="#0f172a">
+    <rect x="60" y="230" width="1080" height="102" rx="12" fill="#fee2e2"/>
+    <text x="92" y="292">Private key compromise suspected</text>
+    <text x="420" y="292">Critical</text>
+    <text x="570" y="292">Immediate</text>
+    <text x="740" y="292">PKI On-call</text>
+    <text x="915" y="292">Revoke + rotate</text>
+
+    <rect x="60" y="345" width="1080" height="102" rx="12" fill="#fef3c7"/>
+    <text x="92" y="407">Unapproved cert issuance detected</text>
+    <text x="420" y="407">High</text>
+    <text x="570" y="407">Same day</text>
+    <text x="740" y="407">Security Eng</text>
+    <text x="915" y="407">Contain CA scope</text>
+
+    <rect x="60" y="460" width="1080" height="102" rx="12" fill="#dbeafe"/>
+    <text x="92" y="522">Cert expiration under 7 days</text>
+    <text x="420" y="522">Medium</text>
+    <text x="570" y="522">24 hours</text>
+    <text x="740" y="522">Service Owner</text>
+    <text x="915" y="522">Renew + verify</text>
+
+    <rect x="60" y="575" width="1080" height="102" rx="12" fill="#dcfce7"/>
+    <text x="92" y="637">Routine key age threshold crossed</text>
+    <text x="420" y="637">Low</text>
+    <text x="570" y="637">Planned</text>
+    <text x="740" y="637">Platform Team</text>
+    <text x="915" y="637">Rotate per policy</text>
+  </g>
+
+  <text x="60" y="792" font-size="27" fill="#334155" font-family="Segoe UI, Arial, sans-serif">Fast, owned revocation decisions reduce blast radius and improve trust continuity during incidents.</text>
+</svg>
