@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-20T04:01:58+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #39: Secure Baselines and Configuration Drift Control</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/" rel="alternate" type="text/html" title="CISSP #39: Secure Baselines and Configuration Drift Control" /><published>2026-04-19T14:10:00+00:00</published><updated>2026-04-19T14:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/hero.svg" alt="CISSP #39 secure baselines and configuration drift control" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-20T04:09:38+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #39: Secure Baselines and Configuration Drift Control</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/" rel="alternate" type="text/html" title="CISSP #39: Secure Baselines and Configuration Drift Control" /><published>2026-04-19T14:10:00+00:00</published><updated>2026-04-19T14:10:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-baselines-configuration-drift/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-secure-baselines-configuration-drift/hero.svg" alt="CISSP #39 secure baselines and configuration drift control" class="blog-hero" /></p>
 
 <p>Most teams can answer this question quickly:</p>
 
@@ -450,7 +450,220 @@ Actionable evidence: incident timeline showing detection-to-revocation and revoc
 
 <p><strong>Meta description:</strong> CISSP #38 explains certificate lifecycle and revocation as operational security controls, with practical guidance for inventory, renewal automation, and incident-driven revocation response.</p>
 
-<p><strong>SEO keyword ideas:</strong> certificate lifecycle management CISSP, PKI revocation operations, X.509 governance controls, key management lifecycle security, certificate outage prevention</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="PKI" /><category term="Operations" /><category term="CISSP" /><category term="PKI" /><category term="Certificates" /><category term="Revocation" /><category term="Key Management" /><summary type="html"><![CDATA[A practical CISSP guide to certificate lifecycle operations: inventory, issuance, renewal, revocation, and incident response discipline that prevents avoidable outages and trust failures.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/" rel="alternate" type="text/html" title="CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns" /><published>2026-04-18T12:55:00+00:00</published><updated>2026-04-18T12:55:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" alt="Data residency and sovereignty governance across regional boundaries" class="blog-hero" /></p>
+<p><strong>SEO keyword ideas:</strong> certificate lifecycle management CISSP, PKI revocation operations, X.509 governance controls, key management lifecycle security, certificate outage prevention</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="PKI" /><category term="Operations" /><category term="CISSP" /><category term="PKI" /><category term="Certificates" /><category term="Revocation" /><category term="Key Management" /><summary type="html"><![CDATA[A practical CISSP guide to certificate lifecycle operations: inventory, issuance, renewal, revocation, and incident response discipline that prevents avoidable outages and trust failures.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-certificate-lifecycle-revocation-operations/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #37: Ongoing Authorization and Continuous Monitoring in Real Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring/" rel="alternate" type="text/html" title="CISSP #37: Ongoing Authorization and Continuous Monitoring in Real Systems" /><published>2026-04-19T11:50:00+00:00</published><updated>2026-04-19T11:50:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring/"><![CDATA[<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" alt="CISSP #37 hero image" /></p>
+
+<p>Most organizations still operate with a hidden assumption: if a system passed a major assessment last year, it is probably still acceptable today.</p>
+
+<p>That assumption breaks quickly in modern environments.</p>
+
+<p>Infrastructure changes weekly. Identities change daily. Dependencies update continuously. Vendors modify backend architectures without calling your risk committee first. Attackers do not wait for your next formal review window.</p>
+
+<p>This is why ongoing authorization matters in both CISSP exam thinking and real-world governance. It shifts authorization from a one-time milestone to a living decision based on current evidence.</p>
+
+<p>In practical terms, ongoing authorization means this:</p>
+
+<ol>
+  <li>You define a risk posture that is acceptable for system operation.</li>
+  <li>You continuously monitor controls and threat signals.</li>
+  <li>You reassess whether the current state still fits that acceptable posture.</li>
+  <li>You update authorization decisions as conditions change.</li>
+</ol>
+
+<p>That sounds simple. Execution is where most teams struggle.</p>
+
+<h2 id="why-point-in-time-authorization-fails-in-practice">Why Point-in-Time Authorization Fails in Practice</h2>
+
+<p>Traditional authorization cycles usually produce strong documentation and weak timing.</p>
+
+<p>Teams spend months assembling artifacts, performing assessments, and briefing authorizing officials. By the time a package is approved, part of the evidence is already stale. The organization gets compliance confidence, but not necessarily risk confidence.</p>
+
+<p>Common failure patterns include:</p>
+
+<ol>
+  <li>Control drift after approval: Baselines degrade as systems evolve.</li>
+  <li>Monitoring without decision integration: Alerts exist, but governance actions do not follow.</li>
+  <li>Ownership confusion: Security, platform, and application teams each assume someone else is accountable.</li>
+  <li>Escalation latency: Known issues wait for quarterly meetings instead of risk-triggered decisions.</li>
+</ol>
+
+<p>CISSP candidates often see authorization framed as a lifecycle concept, and that framing is critical. Authorization is not a certificate hanging on a wall. It is a leadership commitment to keep risk decisions aligned with system reality.</p>
+
+<h2 id="established-principle-vs-recent-development">Established Principle vs Recent Development</h2>
+
+<p>Established principle:</p>
+
+<p>Risk-based authorization has always been about informed decision-making by accountable leaders. Longstanding frameworks emphasize balancing mission needs with security risk and documenting that rationale.</p>
+
+<p>Recent development:</p>
+
+<p>The pace of cloud-native delivery, expanded supply chain interdependence, and stronger regulatory scrutiny make periodic-only authorization less defensible. Organizations are increasingly expected to show that risk decisions track current control evidence, not just annual attestation artifacts.</p>
+
+<p>That distinction is important for credibility. The concept is not new. The operational urgency is.</p>
+
+<h2 id="ongoing-authorization-as-a-decision-loop">Ongoing Authorization as a Decision Loop</h2>
+
+<p>A practical mental model is a recurring decision loop:</p>
+
+<ol>
+  <li>Monitor: Collect meaningful control and threat signals.</li>
+  <li>Assess: Determine whether current performance still meets intent.</li>
+  <li>Decide: Evaluate impact to mission and risk appetite.</li>
+  <li>Authorize: Continue, conditionally continue, limit, or suspend operation.</li>
+  <li>Remediate: Execute targeted risk reduction actions.</li>
+  <li>Verify: Confirm remediation effectiveness and feed results back.</li>
+</ol>
+
+<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/authorization-loop.svg" alt="Ongoing authorization loop" /></p>
+
+<p>The key design point is that authorization becomes an output of continuous monitoring, not a separate bureaucratic exercise.</p>
+
+<h2 id="what-evidence-actually-matters">What Evidence Actually Matters</h2>
+
+<p>Many monitoring programs drown in metrics and still miss decision-grade evidence.</p>
+
+<p>For ongoing authorization, evidence should be selected based on whether it helps answer one question:</p>
+
+<p>Is this system still operating within acceptable risk boundaries?</p>
+
+<p>Useful evidence usually has five qualities:</p>
+
+<ol>
+  <li>Timely: Updated at a cadence aligned with risk volatility.</li>
+  <li>Traceable: Linked to specific controls, owners, and systems.</li>
+  <li>Comparable: Measurable against thresholds or baselines.</li>
+  <li>Actionable: Clearly tied to a potential governance response.</li>
+  <li>Auditable: Retainable with integrity for internal and external review.</li>
+</ol>
+
+<p>Examples of high-value signals:</p>
+
+<ol>
+  <li>Identity governance health: orphaned privileged accounts, stale access certifications.</li>
+  <li>Patch and configuration compliance trends on critical assets.</li>
+  <li>Detection fidelity and unresolved high-severity alert backlog.</li>
+  <li>Data protection failures: key management exceptions, unapproved data egress patterns.</li>
+  <li>Third-party control deterioration for integrated services.</li>
+</ol>
+
+<p>Examples of low-value signals:</p>
+
+<ol>
+  <li>Activity dashboards with no thresholds or owners.</li>
+  <li>Security scores that cannot be traced to technical evidence.</li>
+  <li>Metrics generated for reporting aesthetics instead of risk decisions.</li>
+</ol>
+
+<h2 id="governance-design-who-decides-and-when">Governance Design: Who Decides and When</h2>
+
+<p>A common anti-pattern is collecting evidence continuously but making decisions sporadically.</p>
+
+<p>Ongoing authorization requires explicit governance triggers, such as:</p>
+
+<ol>
+  <li>Material control degradation in critical control families.</li>
+  <li>Significant architecture change affecting trust boundaries.</li>
+  <li>Major incident indicating control design weakness.</li>
+  <li>Third-party change introducing new inherited risk.</li>
+  <li>Regulatory or contractual change requiring control posture adjustment.</li>
+</ol>
+
+<p>When a trigger fires, the organization should not debate process ownership from scratch. Decision authority must already be clear.</p>
+
+<p>Practical ownership model:</p>
+
+<ol>
+  <li>System owner: accountable for operational risk acceptance and remediation prioritization.</li>
+  <li>Security function: provides independent assessment and control health interpretation.</li>
+  <li>Platform and engineering teams: implement corrective changes and evidence capture.</li>
+  <li>Authorizing official or delegated authority: issues updated operating decision.</li>
+</ol>
+
+<p>If these roles are ambiguous, ongoing authorization degrades into endless status meetings.</p>
+
+<h2 id="building-a-useful-continuous-monitoring-dashboard">Building a Useful Continuous Monitoring Dashboard</h2>
+
+<p>Dashboards can be useful or performative. The difference is decision context.</p>
+
+<p>A decision-grade dashboard should include:</p>
+
+<ol>
+  <li>Control objective and mapped requirement.</li>
+  <li>Current status and trend direction.</li>
+  <li>Named owner with SLA for response.</li>
+  <li>Trigger threshold for governance escalation.</li>
+  <li>Required action and due date.</li>
+</ol>
+
+<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/evidence-dashboard.svg" alt="Continuous monitoring evidence dashboard" /></p>
+
+<p>This is where many security programs mature: not by adding more tooling, but by making existing telemetry accountable to authorization decisions.</p>
+
+<h2 id="a-practical-30-day-start-plan">A Practical 30-Day Start Plan</h2>
+
+<p>If your organization is still operating mostly on periodic approvals, you can start without a major transformation program.</p>
+
+<h3 id="week-1-define-critical-scope">Week 1: Define Critical Scope</h3>
+
+<ol>
+  <li>Select one business-critical system.</li>
+  <li>Document current authorization basis and key assumptions.</li>
+  <li>Identify the top control areas where drift would materially change risk.</li>
+</ol>
+
+<h3 id="week-2-build-evidence-mapping">Week 2: Build Evidence Mapping</h3>
+
+<ol>
+  <li>Map each critical control area to one or two high-signal indicators.</li>
+  <li>Assign control owners and evidence sources.</li>
+  <li>Set threshold definitions for green, amber, and red states.</li>
+</ol>
+
+<h3 id="week-3-establish-decision-triggers">Week 3: Establish Decision Triggers</h3>
+
+<ol>
+  <li>Define escalation criteria for governance review.</li>
+  <li>Confirm decision authority and response SLAs.</li>
+  <li>Test one scenario: simulate a control deterioration event.</li>
+</ol>
+
+<h3 id="week-4-run-the-loop">Week 4: Run the Loop</h3>
+
+<ol>
+  <li>Review evidence in an authorization-focused forum.</li>
+  <li>Make one explicit operating decision (continue, conditionally continue, or constrain).</li>
+  <li>Capture lessons and adjust thresholds.</li>
+</ol>
+
+<p>After one cycle, you will expose where ownership, telemetry quality, or escalation paths need reinforcement.</p>
+
+<h2 id="cissp-exam-angle-what-to-remember">CISSP Exam Angle: What to Remember</h2>
+
+<p>For exam reasoning, keep these anchors clear:</p>
+
+<ol>
+  <li>Authorization is risk-based and leadership-accountable.</li>
+  <li>Continuous monitoring informs risk decisions throughout the system lifecycle.</li>
+  <li>Governance quality depends on clear roles, evidence integrity, and timely reassessment.</li>
+  <li>The objective is not perfect security; it is defensible, ongoing risk management aligned to mission.</li>
+</ol>
+
+<p>If a scenario question contrasts annual certification artifacts with current risk intelligence, the stronger answer usually favors lifecycle-based, evidence-driven authorization decisions.</p>
+
+<h2 id="final-reflection">Final Reflection</h2>
+
+<p>Security leaders are rarely judged only on whether controls existed on paper. They are judged on whether risk decisions stayed accurate as reality changed.</p>
+
+<p>Ongoing authorization is how mature organizations close that gap.</p>
+
+<p>It turns monitoring into governance, governance into accountable action, and action into credible resilience.</p>
+
+<p>If your program still treats authorization as a point-in-time event, the most practical next move is not another policy draft. It is one monitored system, one explicit trigger model, and one recurring decision loop run with discipline.</p>
+
+<p>That is where confidence starts becoming real.</p>
+
+<p><strong>Meta description:</strong> CISSP #37 explains how ongoing authorization and continuous monitoring improve governance by turning current control evidence into timely, defensible risk decisions.</p>
+
+<p><strong>SEO keyword ideas:</strong> ongoing authorization CISSP, continuous monitoring governance, risk-based authorization lifecycle, RMF authorization decision process, security control evidence dashboard</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Governance" /><category term="Risk" /><category term="CISSP" /><category term="Ongoing Authorization" /><category term="Continuous Monitoring" /><category term="RMF" /><category term="Security Governance" /><summary type="html"><![CDATA[Ongoing authorization is not paperwork overhead. It is how security leaders make defensible risk decisions using current control evidence instead of stale annual snapshots.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/" rel="alternate" type="text/html" title="CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns" /><published>2026-04-18T12:55:00+00:00</published><updated>2026-04-18T12:55:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-residency-sovereignty-jurisdiction-risk/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" alt="Data residency and sovereignty governance across regional boundaries" class="blog-hero" /></p>
 
 <h1 id="cissp-36-data-residency-and-sovereignty-are-governance-decisions-not-storage-dropdowns">CISSP #36: Data Residency and Sovereignty Are Governance Decisions, Not Storage Dropdowns</h1>
 
@@ -1122,220 +1335,7 @@ Actionable evidence: incident timeline showing detection-to-revocation and revoc
   <li>STRIDE and design risk analysis</li>
   <li>secure design control for engineers</li>
   <li>threat model to control mapping</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Engineering" /><category term="CISSP" /><category term="threat modeling" /><category term="secure design" /><category term="STRIDE" /><category term="secure SDLC" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to threat modeling as an engineering control: when to run it, how to make it actionable, and how to avoid checklist theater.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #37: Ongoing Authorization and Continuous Monitoring in Real Systems</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring/" rel="alternate" type="text/html" title="CISSP #37: Ongoing Authorization and Continuous Monitoring in Real Systems" /><published>2026-04-17T12:00:00+00:00</published><updated>2026-04-17T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-ongoing-authorization-continuous-monitoring/"><![CDATA[<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" alt="CISSP #37 hero image" /></p>
-
-<p>Most organizations still operate with a hidden assumption: if a system passed a major assessment last year, it is probably still acceptable today.</p>
-
-<p>That assumption breaks quickly in modern environments.</p>
-
-<p>Infrastructure changes weekly. Identities change daily. Dependencies update continuously. Vendors modify backend architectures without calling your risk committee first. Attackers do not wait for your next formal review window.</p>
-
-<p>This is why ongoing authorization matters in both CISSP exam thinking and real-world governance. It shifts authorization from a one-time milestone to a living decision based on current evidence.</p>
-
-<p>In practical terms, ongoing authorization means this:</p>
-
-<ol>
-  <li>You define a risk posture that is acceptable for system operation.</li>
-  <li>You continuously monitor controls and threat signals.</li>
-  <li>You reassess whether the current state still fits that acceptable posture.</li>
-  <li>You update authorization decisions as conditions change.</li>
-</ol>
-
-<p>That sounds simple. Execution is where most teams struggle.</p>
-
-<h2 id="why-point-in-time-authorization-fails-in-practice">Why Point-in-Time Authorization Fails in Practice</h2>
-
-<p>Traditional authorization cycles usually produce strong documentation and weak timing.</p>
-
-<p>Teams spend months assembling artifacts, performing assessments, and briefing authorizing officials. By the time a package is approved, part of the evidence is already stale. The organization gets compliance confidence, but not necessarily risk confidence.</p>
-
-<p>Common failure patterns include:</p>
-
-<ol>
-  <li>Control drift after approval: Baselines degrade as systems evolve.</li>
-  <li>Monitoring without decision integration: Alerts exist, but governance actions do not follow.</li>
-  <li>Ownership confusion: Security, platform, and application teams each assume someone else is accountable.</li>
-  <li>Escalation latency: Known issues wait for quarterly meetings instead of risk-triggered decisions.</li>
-</ol>
-
-<p>CISSP candidates often see authorization framed as a lifecycle concept, and that framing is critical. Authorization is not a certificate hanging on a wall. It is a leadership commitment to keep risk decisions aligned with system reality.</p>
-
-<h2 id="established-principle-vs-recent-development">Established Principle vs Recent Development</h2>
-
-<p>Established principle:</p>
-
-<p>Risk-based authorization has always been about informed decision-making by accountable leaders. Longstanding frameworks emphasize balancing mission needs with security risk and documenting that rationale.</p>
-
-<p>Recent development:</p>
-
-<p>The pace of cloud-native delivery, expanded supply chain interdependence, and stronger regulatory scrutiny make periodic-only authorization less defensible. Organizations are increasingly expected to show that risk decisions track current control evidence, not just annual attestation artifacts.</p>
-
-<p>That distinction is important for credibility. The concept is not new. The operational urgency is.</p>
-
-<h2 id="ongoing-authorization-as-a-decision-loop">Ongoing Authorization as a Decision Loop</h2>
-
-<p>A practical mental model is a recurring decision loop:</p>
-
-<ol>
-  <li>Monitor: Collect meaningful control and threat signals.</li>
-  <li>Assess: Determine whether current performance still meets intent.</li>
-  <li>Decide: Evaluate impact to mission and risk appetite.</li>
-  <li>Authorize: Continue, conditionally continue, limit, or suspend operation.</li>
-  <li>Remediate: Execute targeted risk reduction actions.</li>
-  <li>Verify: Confirm remediation effectiveness and feed results back.</li>
-</ol>
-
-<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/authorization-loop.svg" alt="Ongoing authorization loop" /></p>
-
-<p>The key design point is that authorization becomes an output of continuous monitoring, not a separate bureaucratic exercise.</p>
-
-<h2 id="what-evidence-actually-matters">What Evidence Actually Matters</h2>
-
-<p>Many monitoring programs drown in metrics and still miss decision-grade evidence.</p>
-
-<p>For ongoing authorization, evidence should be selected based on whether it helps answer one question:</p>
-
-<p>Is this system still operating within acceptable risk boundaries?</p>
-
-<p>Useful evidence usually has five qualities:</p>
-
-<ol>
-  <li>Timely: Updated at a cadence aligned with risk volatility.</li>
-  <li>Traceable: Linked to specific controls, owners, and systems.</li>
-  <li>Comparable: Measurable against thresholds or baselines.</li>
-  <li>Actionable: Clearly tied to a potential governance response.</li>
-  <li>Auditable: Retainable with integrity for internal and external review.</li>
-</ol>
-
-<p>Examples of high-value signals:</p>
-
-<ol>
-  <li>Identity governance health: orphaned privileged accounts, stale access certifications.</li>
-  <li>Patch and configuration compliance trends on critical assets.</li>
-  <li>Detection fidelity and unresolved high-severity alert backlog.</li>
-  <li>Data protection failures: key management exceptions, unapproved data egress patterns.</li>
-  <li>Third-party control deterioration for integrated services.</li>
-</ol>
-
-<p>Examples of low-value signals:</p>
-
-<ol>
-  <li>Activity dashboards with no thresholds or owners.</li>
-  <li>Security scores that cannot be traced to technical evidence.</li>
-  <li>Metrics generated for reporting aesthetics instead of risk decisions.</li>
-</ol>
-
-<h2 id="governance-design-who-decides-and-when">Governance Design: Who Decides and When</h2>
-
-<p>A common anti-pattern is collecting evidence continuously but making decisions sporadically.</p>
-
-<p>Ongoing authorization requires explicit governance triggers, such as:</p>
-
-<ol>
-  <li>Material control degradation in critical control families.</li>
-  <li>Significant architecture change affecting trust boundaries.</li>
-  <li>Major incident indicating control design weakness.</li>
-  <li>Third-party change introducing new inherited risk.</li>
-  <li>Regulatory or contractual change requiring control posture adjustment.</li>
-</ol>
-
-<p>When a trigger fires, the organization should not debate process ownership from scratch. Decision authority must already be clear.</p>
-
-<p>Practical ownership model:</p>
-
-<ol>
-  <li>System owner: accountable for operational risk acceptance and remediation prioritization.</li>
-  <li>Security function: provides independent assessment and control health interpretation.</li>
-  <li>Platform and engineering teams: implement corrective changes and evidence capture.</li>
-  <li>Authorizing official or delegated authority: issues updated operating decision.</li>
-</ol>
-
-<p>If these roles are ambiguous, ongoing authorization degrades into endless status meetings.</p>
-
-<h2 id="building-a-useful-continuous-monitoring-dashboard">Building a Useful Continuous Monitoring Dashboard</h2>
-
-<p>Dashboards can be useful or performative. The difference is decision context.</p>
-
-<p>A decision-grade dashboard should include:</p>
-
-<ol>
-  <li>Control objective and mapped requirement.</li>
-  <li>Current status and trend direction.</li>
-  <li>Named owner with SLA for response.</li>
-  <li>Trigger threshold for governance escalation.</li>
-  <li>Required action and due date.</li>
-</ol>
-
-<p><img src="/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/evidence-dashboard.svg" alt="Continuous monitoring evidence dashboard" /></p>
-
-<p>This is where many security programs mature: not by adding more tooling, but by making existing telemetry accountable to authorization decisions.</p>
-
-<h2 id="a-practical-30-day-start-plan">A Practical 30-Day Start Plan</h2>
-
-<p>If your organization is still operating mostly on periodic approvals, you can start without a major transformation program.</p>
-
-<h3 id="week-1-define-critical-scope">Week 1: Define Critical Scope</h3>
-
-<ol>
-  <li>Select one business-critical system.</li>
-  <li>Document current authorization basis and key assumptions.</li>
-  <li>Identify the top control areas where drift would materially change risk.</li>
-</ol>
-
-<h3 id="week-2-build-evidence-mapping">Week 2: Build Evidence Mapping</h3>
-
-<ol>
-  <li>Map each critical control area to one or two high-signal indicators.</li>
-  <li>Assign control owners and evidence sources.</li>
-  <li>Set threshold definitions for green, amber, and red states.</li>
-</ol>
-
-<h3 id="week-3-establish-decision-triggers">Week 3: Establish Decision Triggers</h3>
-
-<ol>
-  <li>Define escalation criteria for governance review.</li>
-  <li>Confirm decision authority and response SLAs.</li>
-  <li>Test one scenario: simulate a control deterioration event.</li>
-</ol>
-
-<h3 id="week-4-run-the-loop">Week 4: Run the Loop</h3>
-
-<ol>
-  <li>Review evidence in an authorization-focused forum.</li>
-  <li>Make one explicit operating decision (continue, conditionally continue, or constrain).</li>
-  <li>Capture lessons and adjust thresholds.</li>
-</ol>
-
-<p>After one cycle, you will expose where ownership, telemetry quality, or escalation paths need reinforcement.</p>
-
-<h2 id="cissp-exam-angle-what-to-remember">CISSP Exam Angle: What to Remember</h2>
-
-<p>For exam reasoning, keep these anchors clear:</p>
-
-<ol>
-  <li>Authorization is risk-based and leadership-accountable.</li>
-  <li>Continuous monitoring informs risk decisions throughout the system lifecycle.</li>
-  <li>Governance quality depends on clear roles, evidence integrity, and timely reassessment.</li>
-  <li>The objective is not perfect security; it is defensible, ongoing risk management aligned to mission.</li>
-</ol>
-
-<p>If a scenario question contrasts annual certification artifacts with current risk intelligence, the stronger answer usually favors lifecycle-based, evidence-driven authorization decisions.</p>
-
-<h2 id="final-reflection">Final Reflection</h2>
-
-<p>Security leaders are rarely judged only on whether controls existed on paper. They are judged on whether risk decisions stayed accurate as reality changed.</p>
-
-<p>Ongoing authorization is how mature organizations close that gap.</p>
-
-<p>It turns monitoring into governance, governance into accountable action, and action into credible resilience.</p>
-
-<p>If your program still treats authorization as a point-in-time event, the most practical next move is not another policy draft. It is one monitored system, one explicit trigger model, and one recurring decision loop run with discipline.</p>
-
-<p>That is where confidence starts becoming real.</p>
-
-<p><strong>Meta description:</strong> CISSP #37 explains how ongoing authorization and continuous monitoring improve governance by turning current control evidence into timely, defensible risk decisions.</p>
-
-<p><strong>SEO keyword ideas:</strong> ongoing authorization CISSP, continuous monitoring governance, risk-based authorization lifecycle, RMF authorization decision process, security control evidence dashboard</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Governance" /><category term="Risk" /><category term="CISSP" /><category term="Ongoing Authorization" /><category term="Continuous Monitoring" /><category term="RMF" /><category term="Security Governance" /><summary type="html"><![CDATA[Ongoing authorization is not paperwork overhead. It is how security leaders make defensible risk decisions using current control evidence instead of stale annual snapshots.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-ongoing-authorization-continuous-monitoring/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/" rel="alternate" type="text/html" title="CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design" /><published>2026-04-16T12:45:00+00:00</published><updated>2026-04-16T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-rbac-vs-abac-hybrid-access-control/hero.svg" alt="Visual comparing RBAC and ABAC with a central policy decision layer for hybrid authorization" class="blog-hero" /></p>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Engineering" /><category term="CISSP" /><category term="threat modeling" /><category term="secure design" /><category term="STRIDE" /><category term="secure SDLC" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to threat modeling as an engineering control: when to run it, how to make it actionable, and how to avoid checklist theater.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/" rel="alternate" type="text/html" title="CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design" /><published>2026-04-16T12:45:00+00:00</published><updated>2026-04-16T12:45:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-rbac-vs-abac-hybrid-access-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-rbac-vs-abac-hybrid-access-control/hero.svg" alt="Visual comparing RBAC and ABAC with a central policy decision layer for hybrid authorization" class="blog-hero" /></p>
 
 <h1 id="cissp-33-rbac-vs-abac-is-the-wrong-fight-hybrid-access-control-is-the-better-design">CISSP #33: RBAC vs ABAC Is the Wrong Fight, Hybrid Access Control Is the Better Design</h1>
 
