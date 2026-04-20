@@ -515,7 +515,7 @@ const initBlogIndex = () => {
     const aCissp = parseCisspNumber(a);
     const bCissp = parseCisspNumber(b);
     if (aCissp !== null && bCissp !== null && aCissp !== bCissp) {
-      return aCissp - bCissp;
+      return bCissp - aCissp;
     }
 
     return 0;
@@ -718,6 +718,14 @@ const initBlogIndex = () => {
       const expanded = filterToggle.getAttribute("aria-expanded") === "true";
       setFilterPanelState(!expanded);
     });
+  }
+
+  // Clear browser-restored date values so first render always shows all posts.
+  if (dateFromInput) {
+    dateFromInput.value = "";
+  }
+  if (dateToInput) {
+    dateToInput.value = "";
   }
 
   postsGrid.addEventListener("click", (event) => {
