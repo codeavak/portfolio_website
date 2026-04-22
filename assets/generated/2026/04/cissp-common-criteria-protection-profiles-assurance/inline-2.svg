@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="420" fill="url(#bg2)"/>
+  <text x="500" y="40" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">ASSURANCE HAS BOUNDARIES</text>
+
+  <rect x="40" y="82" width="280" height="278" rx="12" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="180" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2ecc71">WHAT COMMON CRITERIA CAN TELL YOU</text>
+  <text x="70" y="160" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Defined security functions</text>
+  <text x="70" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Evaluation under stated assumptions</text>
+  <text x="70" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Independent assurance evidence</text>
+  <text x="70" y="286" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Rigor level of the review</text>
+
+  <rect x="360" y="82" width="280" height="278" rx="12" fill="#2a0a0a" stroke="#ff4d4d" stroke-width="2"/>
+  <text x="500" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ff8080">WHAT IT CANNOT GUARANTEE</text>
+  <text x="390" y="160" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Secure deployment by default</text>
+  <text x="390" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Correct production configuration</text>
+  <text x="390" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">No future vulnerabilities</text>
+  <text x="390" y="286" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Safety outside evaluated scope</text>
+
+  <rect x="680" y="82" width="280" height="278" rx="12" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <text x="820" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#7ab8e8">WHAT OPERATIONS STILL MUST DO</text>
+  <text x="710" y="160" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Harden configuration</text>
+  <text x="710" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Patch and monitor continuously</text>
+  <text x="710" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Validate environment assumptions</text>
+  <text x="710" y="286" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Layer controls around the product</text>
+
+  <text x="500" y="398" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #43</text>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="256" x2="1536" y2="256"/><line x1="0" y1="512" x2="1536" y2="512"/>
+    <line x1="0" y1="768" x2="1536" y2="768"/>
+    <line x1="384" y1="0" x2="384" y2="1024"/><line x1="768" y1="0" x2="768" y2="1024"/>
+    <line x1="1152" y1="0" x2="1152" y2="1024"/>
+  </g>
+
+  <!-- Title -->
+  <text x="768" y="68" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="700" fill="#e8f4fd" letter-spacing="2">FORMAL SECURITY MODELS</text>
+  <text x="768" y="108" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#7ab8e8" letter-spacing="4">CISSP DOMAIN 3  ·  ACCESS CONTROL FOUNDATIONS</text>
+
+  <!-- Card 1: Bell-LaPadula (top-left) -->
+  <rect x="80" y="148" width="620" height="340" rx="14" fill="#0f2240" stroke="#1a7ccf" stroke-width="2.5" filter="url(#glow)"/>
+  <rect x="80" y="148" width="620" height="5" rx="3" fill="#1a7ccf"/>
+  <!-- Lock icon -->
+  <rect x="164" y="198" width="52" height="40" rx="6" fill="#1a7ccf"/>
+  <path d="M172 198 Q172 174 190 174 Q208 174 208 198" stroke="#4da6ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="190" cy="218" r="6" fill="white"/>
+  <rect x="187" y="218" width="6" height="12" fill="white"/>
+  <text x="320" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#e8f4fd">BELL-LaPADULA</text>
+  <text x="320" y="240" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4da6ff" letter-spacing="2">CONFIDENTIALITY</text>
+  <line x1="100" y1="260" x2="680" y2="260" stroke="#1a7ccf" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="190" y="295" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">No Read Up</text>
+  <text x="190" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Cannot read above your clearance level</text>
+  <text x="190" y="358" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">No Write Down</text>
+  <text x="190" y="383" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Cannot write to lower classification</text>
+  <text x="190" y="421" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4da6ff" font-style="italic">Designed for military multilevel security</text>
+  <text x="190" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#3a6a9a">Limitation: does not address integrity</text>
+
+  <!-- Card 2: Biba (top-right) -->
+  <rect x="836" y="148" width="620" height="340" rx="14" fill="#0f2240" stroke="#1a7ccf" stroke-width="2.5" filter="url(#glow)"/>
+  <rect x="836" y="148" width="620" height="5" rx="3" fill="#0a8a3a"/>
+  <!-- Shield icon -->
+  <path d="M916 196 L940 204 L940 226 Q940 244 916 252 Q892 244 892 226 L892 204 Z" fill="#0a8a3a" stroke="#2ecc71" stroke-width="2"/>
+  <polyline points="905,228 914,237 930,218" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1076" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#e8f4fd">BIBA</text>
+  <text x="1076" y="240" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2ecc71" letter-spacing="2">INTEGRITY</text>
+  <line x1="856" y1="260" x2="1436" y2="260" stroke="#0a8a3a" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="946" y="295" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">No Read Down</text>
+  <text x="946" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Cannot read below your integrity level</text>
+  <text x="946" y="358" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">No Write Up</text>
+  <text x="946" y="383" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Cannot write to higher integrity level</text>
+  <text x="946" y="421" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2ecc71" font-style="italic">Inverts Bell-LaPadula — protects data quality</text>
+  <text x="946" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#3a6a9a">Fits financial and commercial systems</text>
+
+  <!-- Card 3: Clark-Wilson (bottom-left) -->
+  <rect x="80" y="536" width="620" height="340" rx="14" fill="#0f2240" stroke="#1a7ccf" stroke-width="2.5" filter="url(#glow)"/>
+  <rect x="80" y="536" width="620" height="5" rx="3" fill="#d4a017"/>
+  <!-- Workflow/process icon -->
+  <rect x="150" y="584" width="30" height="24" rx="4" fill="#d4a017" opacity="0.85"/>
+  <line x1="180" y1="596" x2="198" y2="596" stroke="#d4a017" stroke-width="2.5"/>
+  <rect x="198" y="584" width="30" height="24" rx="4" fill="#d4a017" opacity="0.7"/>
+  <line x1="228" y1="596" x2="246" y2="596" stroke="#d4a017" stroke-width="2.5"/>
+  <rect x="246" y="584" width="30" height="24" rx="4" fill="#d4a017" opacity="0.55"/>
+  <text x="320" y="598" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#e8f4fd">CLARK-WILSON</text>
+  <text x="320" y="626" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#d4a017" letter-spacing="2">COMMERCIAL INTEGRITY</text>
+  <line x1="100" y1="646" x2="680" y2="646" stroke="#a07810" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="190" y="682" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">CDIs + Transformation Procedures</text>
+  <text x="190" y="706" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Modifications only through validated procedures</text>
+  <text x="190" y="744" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">Separation of Duties enforced</text>
+  <text x="190" y="769" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">No single subject completes sensitive transaction</text>
+  <text x="190" y="808" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#d4a017" font-style="italic">Finance / healthcare / compliance systems</text>
+  <text x="190" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#3a6a9a">Most engineers implement this without the label</text>
+
+  <!-- Card 4: Brewer-Nash (bottom-right) -->
+  <rect x="836" y="536" width="620" height="340" rx="14" fill="#0f2240" stroke="#1a7ccf" stroke-width="2.5" filter="url(#glow)"/>
+  <rect x="836" y="536" width="620" height="5" rx="3" fill="#9b4dca"/>
+  <!-- Wall/barrier icon -->
+  <rect x="892" y="582" width="20" height="44" rx="2" fill="#9b4dca" opacity="0.9"/>
+  <rect x="916" y="582" width="20" height="44" rx="2" fill="#9b4dca" opacity="0.7"/>
+  <rect x="940" y="582" width="20" height="44" rx="2" fill="#9b4dca" opacity="0.5"/>
+  <line x1="964" y1="582" x2="964" y2="626" stroke="#cc80ff" stroke-width="3" stroke-dasharray="4,3"/>
+  <text x="1076" y="598" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#e8f4fd">BREWER-NASH</text>
+  <text x="1076" y="626" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#cc80ff" letter-spacing="2">CONFLICT OF INTEREST</text>
+  <line x1="856" y1="646" x2="1436" y2="646" stroke="#6a2a9a" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="946" y="682" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">Chinese Wall model</text>
+  <text x="946" y="706" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Access to competitor data blocked dynamically</text>
+  <text x="946" y="744" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#7ab8e8">Wall grows as access history grows</text>
+  <text x="946" y="769" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#5a8ab0">Subject cannot serve competing interests</text>
+  <text x="946" y="808" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#cc80ff" font-style="italic">Investment banking information barriers</text>
+  <text x="946" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#3a6a9a">Legal / consulting conflict-of-interest controls</text>
+
+  <!-- Footer -->
+  <text x="768" y="990" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d5a8a" letter-spacing="4">CISSP SERIES  ·  POST #41</text>
+</svg>

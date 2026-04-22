@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="430" fill="url(#bg2)"/>
+  <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">REFERENCE MONITOR PROPERTIES IN PRACTICE</text>
+
+  <rect x="40" y="78" width="280" height="290" rx="12" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <text x="180" y="110" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#7ab8e8">PROPERTIES</text>
+  <text x="70" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#e8f4fd">Tamperproof</text>
+  <text x="70" y="174" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#5a8ab0">Protected from unauthorized change</text>
+  <text x="70" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#e8f4fd">Always Invoked</text>
+  <text x="70" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#5a8ab0">Every access attempt passes through it</text>
+  <text x="70" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#e8f4fd">Verifiable</text>
+  <text x="70" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#5a8ab0">Small enough to test and reason about</text>
+
+  <rect x="360" y="78" width="280" height="290" rx="12" fill="#2a0a0a" stroke="#ff4d4d" stroke-width="2"/>
+  <text x="500" y="110" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ff8080">FAILURE MODES</text>
+  <text x="390" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Bypass path</text>
+  <text x="390" y="174" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#d59a9a">Debug, batch, or direct access skips checks</text>
+  <text x="390" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Overgrown trust base</text>
+  <text x="390" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#d59a9a">Too many privileged components to trust</text>
+  <text x="390" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Scattered authorization</text>
+  <text x="390" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#d59a9a">Hidden exceptions reduce assurance</text>
+
+  <rect x="680" y="78" width="280" height="290" rx="12" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="820" y="110" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2ecc71">MODERN EXAMPLES</text>
+  <text x="710" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Hypervisor isolation</text>
+  <text x="710" y="196" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Secure boot chain</text>
+  <text x="710" y="242" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">Identity / policy engine</text>
+  <text x="710" y="288" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">TPM or HSM-backed trust</text>
+
+  <text x="500" y="408" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #42</text>
+</svg>

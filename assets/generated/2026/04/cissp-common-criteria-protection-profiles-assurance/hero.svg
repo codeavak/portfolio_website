@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="128" x2="1536" y2="128"/><line x1="0" y1="256" x2="1536" y2="256"/><line x1="0" y1="384" x2="1536" y2="384"/>
+    <line x1="0" y1="512" x2="1536" y2="512"/><line x1="0" y1="640" x2="1536" y2="640"/><line x1="0" y1="768" x2="1536" y2="768"/><line x1="0" y1="896" x2="1536" y2="896"/>
+    <line x1="192" y1="0" x2="192" y2="1024"/><line x1="384" y1="0" x2="384" y2="1024"/><line x1="576" y1="0" x2="576" y2="1024"/>
+    <line x1="768" y1="0" x2="768" y2="1024"/><line x1="960" y1="0" x2="960" y2="1024"/><line x1="1152" y1="0" x2="1152" y2="1024"/><line x1="1344" y1="0" x2="1344" y2="1024"/>
+  </g>
+  <text x="768" y="74" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="700" fill="#e8f4fd" letter-spacing="2">COMMON CRITERIA</text>
+  <text x="768" y="112" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#7ab8e8" letter-spacing="4">PROTECTION PROFILE  ·  SECURITY TARGET  ·  ASSURANCE</text>
+
+  <rect x="578" y="310" width="380" height="280" rx="18" fill="#0f2240" stroke="#4da6ff" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="768" y="366" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#e8f4fd">EVALUATED PRODUCT</text>
+  <text x="768" y="402" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#7ab8e8">Assurance is bounded by the target and assumptions</text>
+  <circle cx="768" cy="485" r="52" fill="#0a8a3a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="768" y="478" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">EAL</text>
+  <text x="768" y="502" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">1-7</text>
+  <text x="768" y="548" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#5a8ab0">Evaluation rigor, not a universal security score</text>
+
+  <rect x="196" y="380" width="250" height="140" rx="14" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="321" y="430" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#e8f4fd">PROTECTION</text>
+  <text x="321" y="458" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#e8f4fd">PROFILE</text>
+  <text x="321" y="490" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Generic requirements for a product type</text>
+
+  <rect x="1090" y="380" width="250" height="140" rx="14" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="1215" y="430" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#e8f4fd">SECURITY</text>
+  <text x="1215" y="458" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#e8f4fd">TARGET</text>
+  <text x="1215" y="490" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Specific claims for one evaluated product</text>
+
+  <line x1="446" y1="450" x2="578" y2="450" stroke="#4da6ff" stroke-width="3"/>
+  <line x1="958" y1="450" x2="1090" y2="450" stroke="#4da6ff" stroke-width="3"/>
+
+  <text x="768" y="988" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d5a8a" letter-spacing="4">CISSP SERIES  ·  POST #43</text>
+</svg>

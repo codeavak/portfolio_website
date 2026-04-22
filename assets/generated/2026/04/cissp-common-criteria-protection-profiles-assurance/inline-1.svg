@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="360" fill="url(#bg1)"/>
+  <text x="500" y="40" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">COMMON CRITERIA STRUCTURE</text>
+
+  <rect x="50" y="110" width="250" height="150" rx="12" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="175" y="155" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">PROTECTION PROFILE</text>
+  <text x="175" y="186" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Implementation-independent</text>
+  <text x="175" y="208" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">requirements for product type</text>
+
+  <line x1="300" y1="185" x2="392" y2="185" stroke="#4da6ff" stroke-width="3" marker-end="url(#arrowB)"/>
+
+  <rect x="392" y="110" width="216" height="150" rx="12" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <text x="500" y="155" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">SECURITY TARGET</text>
+  <text x="500" y="186" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Product-specific</text>
+  <text x="500" y="208" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">claims and scope</text>
+
+  <line x1="608" y1="185" x2="700" y2="185" stroke="#4da6ff" stroke-width="3" marker-end="url(#arrowB)"/>
+
+  <rect x="700" y="110" width="250" height="150" rx="12" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="825" y="155" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">EVALUATED PRODUCT</text>
+  <text x="825" y="186" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Tested against stated</text>
+  <text x="825" y="208" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">target and assurance evidence</text>
+
+  <text x="500" y="324" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #43</text>
+</svg>
