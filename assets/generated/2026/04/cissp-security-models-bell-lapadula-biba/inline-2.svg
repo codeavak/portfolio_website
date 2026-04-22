@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrowB" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 9 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="380" fill="url(#bg2)"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">WHICH SECURITY MODEL APPLIES?</text>
+
+  <!-- Root question box -->
+  <rect x="360" y="56" width="280" height="50" rx="8" fill="#0f2a45" stroke="#4da6ff" stroke-width="2"/>
+  <text x="500" y="85" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#e8f4fd">What is the primary concern?</text>
+
+  <!-- Branch lines from root -->
+  <line x1="500" y1="106" x2="500" y2="130" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="110" y1="130" x2="890" y2="130" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="110" y1="130" x2="110" y2="162" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="370" y1="130" x2="370" y2="162" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="630" y1="130" x2="630" y2="162" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="890" y1="130" x2="890" y2="162" stroke="#4da6ff" stroke-width="1.5"/>
+
+  <!-- Branch labels -->
+  <text x="110" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Confidentiality /</text>
+  <text x="110" y="163" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">classification</text>
+  <text x="370" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Integrity /</text>
+  <text x="370" y="163" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">formal levels</text>
+  <text x="630" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Integrity via</text>
+  <text x="630" y="163" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">process control</text>
+  <text x="890" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Conflict of</text>
+  <text x="890" y="163" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">interest</text>
+
+  <!-- Card 1: Bell-LaPadula -->
+  <rect x="30" y="182" width="160" height="130" rx="8" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <rect x="30" y="182" width="160" height="5" rx="3" fill="#1a7ccf"/>
+  <text x="110" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#e8f4fd">Bell-LaPadula</text>
+  <text x="110" y="232" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4da6ff">NO READ UP</text>
+  <text x="110" y="252" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4da6ff">NO WRITE DOWN</text>
+  <text x="110" y="278" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Military / government</text>
+  <text x="110" y="296" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">classification systems</text>
+
+  <!-- Card 2: Biba -->
+  <rect x="290" y="182" width="160" height="130" rx="8" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <rect x="290" y="182" width="160" height="5" rx="3" fill="#0a8a3a"/>
+  <text x="370" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#e8f4fd">Biba</text>
+  <text x="370" y="232" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#2ecc71">NO READ DOWN</text>
+  <text x="370" y="252" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#2ecc71">NO WRITE UP</text>
+  <text x="370" y="278" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Protect records from</text>
+  <text x="370" y="296" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">untrusted sources</text>
+
+  <!-- Card 3: Clark-Wilson -->
+  <rect x="550" y="182" width="160" height="130" rx="8" fill="#1a1800" stroke="#d4a017" stroke-width="2"/>
+  <rect x="550" y="182" width="160" height="5" rx="3" fill="#d4a017"/>
+  <text x="630" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#e8f4fd">Clark-Wilson</text>
+  <text x="630" y="232" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#d4a017">CDIs + TPs</text>
+  <text x="630" y="252" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#d4a017">SEP. OF DUTIES</text>
+  <text x="630" y="278" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Finance / healthcare</text>
+  <text x="630" y="296" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">workflow-based systems</text>
+
+  <!-- Card 4: Brewer-Nash -->
+  <rect x="810" y="182" width="160" height="130" rx="8" fill="#180d2a" stroke="#9b4dca" stroke-width="2"/>
+  <rect x="810" y="182" width="160" height="5" rx="3" fill="#9b4dca"/>
+  <text x="890" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#e8f4fd">Brewer-Nash</text>
+  <text x="890" y="232" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#cc80ff">DYNAMIC WALL</text>
+  <text x="890" y="252" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#cc80ff">GROWS ON ACCESS</text>
+  <text x="890" y="278" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Investment banking</text>
+  <text x="890" y="296" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">legal / consulting</text>
+
+  <!-- Exam tip -->
+  <rect x="160" y="340" width="680" height="28" rx="6" fill="#0f2240" stroke="#4da6ff" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="500" y="358" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Exam tip: reading DOWN is allowed under Bell-LaPadula — only reading UP and writing DOWN are blocked.</text>
+</svg>

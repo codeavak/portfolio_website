@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #40: Zero Trust Architecture — Never Trust, Always Verify | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Zero Trust is not a product or a marketing slogan. It is a security architecture principle that recognizes the network perimeter is gone — and designs accordingly." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-zero-trust-architecture-never-trust-always-verify/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-20T12:10:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Zero Trust" />
+      
+        <meta property="article:tag" content="Network Security" />
+      
+        <meta property="article:tag" content="Identity" />
+      
+        <meta property="article:tag" content="Microsegmentation" />
+      
+    
+    <meta property="og:title" content="CISSP #40: Zero Trust Architecture — Never Trust, Always Verify" />
+    <meta property="og:description" content="Zero Trust is not a product or a marketing slogan. It is a security architecture principle that recognizes the network perimeter is gone — and designs accordingly." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-zero-trust-architecture-never-trust-always-verify/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #40: Zero Trust Architecture — Never Trust, Always Verify" />
+    <meta name="twitter:description" content="Zero Trust is not a product or a marketing slogan. It is a security architecture principle that recognizes the network perimeter is gone — and designs accordingly." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #40: Zero Trust Architecture — Never Trust, Always Verify",
+        "description": "Zero Trust is not a product or a marketing slogan. It is a security architecture principle that recognizes the network perimeter is gone — and designs accordingly.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-20T12:10:00+00:00",
+        "dateModified": "2026-04-20T12:10:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-zero-trust-architecture-never-trust-always-verify/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Security Architecture • Access Control</div>
+              
+              <time class="post-date" datetime="2026-04-20T12:10:00+00:00">April 20, 2026</time>
+              <h1 class="post-title">CISSP #40: Zero Trust Architecture — Never Trust, Always Verify</h1>
+              
+                <p class="post-dek">Zero Trust is not a product or a marketing slogan. It is a security architecture principle that recognizes the network perimeter is gone — and designs accordingly.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Zero Trust</span>
+                  
+                    <span class="chip">Network Security</span>
+                  
+                    <span class="chip">Identity</span>
+                  
+                    <span class="chip">Microsegmentation</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/hero.svg" alt="CISSP #40 Zero Trust Architecture — Never Trust, Always Verify" class="blog-hero" /></p>
+
+<p>“We trust it because it’s inside the network.”</p>
+
+<p>That sentence built enterprise security for two decades. It also aged very poorly.</p>
+
+<p>Zero Trust is the architectural response to that failure. And if you are studying for the CISSP — or designing real systems — it is one of the most important mental models to internalize, because it reframes where trust comes from and what work it actually requires.</p>
+
+<h2 id="the-problem-zero-trust-solves">The Problem Zero Trust Solves</h2>
+
+<p>Traditional perimeter-based security works like a castle and moat. If you are inside the walls, you are trusted. If you are outside, you are not.</p>
+
+<p>That model breaks under several conditions that are now routine:</p>
+
+<ul>
+  <li>Remote users connecting over VPN or directly to cloud services</li>
+  <li>Third-party contractors and vendors with internal network access</li>
+  <li>Compromised endpoints that are inside the network but hostile</li>
+  <li>Lateral movement after initial breach — where an attacker who lands on one machine moves freely to others</li>
+  <li>Cloud workloads that have no meaningful “perimeter” at all</li>
+</ul>
+
+<p>The perimeter did not disappear overnight. It eroded over years as mobile devices, SaaS platforms, cloud infrastructure, and remote work reshaped where work actually happens. Zero Trust is not a trend. It is a structural response to structural change.</p>
+
+<h2 id="what-zero-trust-actually-means">What Zero Trust Actually Means</h2>
+
+<p>The term comes from a 2010 Forrester Research model by John Kindervag. The core principle is exactly what it sounds like: no entity — user, device, service, or network segment — is automatically trusted based on network location alone.</p>
+
+<p>Every access request must be verified. Every session must be authorized against policy. Verification is continuous, not one-time.</p>
+
+<p>NIST SP 800-207 formalized the concept with seven tenets that are worth knowing for the CISSP exam and for practical application:</p>
+
+<ol>
+  <li>All data sources and computing services are considered resources.</li>
+  <li>All communication is secured regardless of network location.</li>
+  <li>Access to individual resources is granted per-session.</li>
+  <li>Access to resources is determined by dynamic policy.</li>
+  <li>The enterprise monitors and measures the integrity and security posture of all owned and associate assets.</li>
+  <li>All resource authentication and authorization are dynamic and strictly enforced before access is allowed.</li>
+  <li>The enterprise collects as much information as possible about the current state of assets, network infrastructure, and communications, and uses it to improve its security posture.</li>
+</ol>
+
+<p>None of these tenets require a specific product. They describe a way of thinking about trust and access.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/inline-1.svg" alt="Zero Trust core components: identity, device health, policy engine, and resource access" class="blog-inline" /></p>
+
+<h2 id="the-three-core-pillars">The Three Core Pillars</h2>
+
+<p>Zero Trust implementations vary by organization, but they consistently rely on three pillars:</p>
+
+<h3 id="identity-verification">Identity Verification</h3>
+
+<p>If network location is no longer a trust signal, identity must carry that weight. Strong identity verification means:</p>
+
+<ul>
+  <li>Multi-factor authentication for all users, not just privileged ones</li>
+  <li>Continuous session validation — not just at login</li>
+  <li>Risk-based authentication that escalates requirements based on context (unusual location, new device, sensitive resource)</li>
+  <li>Privileged access managed separately with tighter controls</li>
+</ul>
+
+<p>Identity is the new perimeter. It is also the most common attack surface. Credential compromise remains one of the leading initial access techniques in breach data.</p>
+
+<h3 id="device-health">Device Health</h3>
+
+<p>Knowing who is requesting access is not enough. Knowing what device they are using matters too. A valid credential coming from a compromised endpoint is still a risk.</p>
+
+<p>Zero Trust architectures assess device health as part of access decisions:</p>
+
+<ul>
+  <li>Is the device managed and enrolled?</li>
+  <li>Is the OS and endpoint security software current?</li>
+  <li>Does the device meet the security posture required for the requested resource?</li>
+</ul>
+
+<p>This is where endpoint detection and response (EDR), mobile device management (MDM), and compliance policies integrate into access control decisions.</p>
+
+<h3 id="microsegmentation">Microsegmentation</h3>
+
+<p>Even when a user and device are verified, access should be scoped as narrowly as possible. Microsegmentation divides the network (or workload environment) into small, policy-controlled zones.</p>
+
+<p>Rather than allowing a verified user to reach everything on the internal network, microsegmentation ensures they can reach only the specific resources their role requires. If one segment is compromised, lateral movement is contained.</p>
+
+<p>In practice, microsegmentation is implemented at the network layer (software-defined networking), the application layer, or with workload-aware policy engines in cloud environments.</p>
+
+<h2 id="the-policy-engine">The Policy Engine</h2>
+
+<p>Tying these pillars together is a centralized policy engine — sometimes called a Policy Decision Point (PDP) in Zero Trust architecture. It evaluates every access request against policy and context before granting access.</p>
+
+<p>The policy engine considers:</p>
+
+<ul>
+  <li>User identity and role</li>
+  <li>Device health and compliance state</li>
+  <li>Data classification of the resource being accessed</li>
+  <li>Time, location, and behavioral signals</li>
+  <li>Sensitivity of the requested action</li>
+</ul>
+
+<p>Access is granted for the session, not permanently. When context changes — the device falls out of compliance, the session exceeds a time limit, behavior deviates — access is revoked or re-challenged.</p>
+
+<p>This is a significant departure from traditional models where group membership alone determined access, and that access was permanent until removed.</p>
+
+<h2 id="what-the-cissp-exam-expects-you-to-know">What the CISSP Exam Expects You to Know</h2>
+
+<p>The CISSP exam covers Zero Trust primarily in Domain 3 (Security Architecture and Engineering) and Domain 4 (Communication and Network Security), but its principles touch most domains.</p>
+
+<p>Key exam concepts:</p>
+
+<ul>
+  <li>Zero Trust is an architecture philosophy, not a product category</li>
+  <li>It applies to users, devices, services, and network segments equally</li>
+  <li>NIST SP 800-207 is the authoritative framework — know it exists even if you do not memorize every tenet</li>
+  <li>The exam favors the principle over implementation specifics — think about what Zero Trust is trying to achieve, not which vendor product achieves it</li>
+  <li>Microsegmentation, continuous verification, and least-privilege access are directly aligned with Zero Trust and each has its own exam weight in related domains</li>
+</ul>
+
+<p>The exam tests understanding, not product knowledge. If a scenario describes implicit trust based on network location, that should raise a flag for you — Zero Trust would reject that design.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-zero-trust-architecture-never-trust-always-verify/inline-2.svg" alt="Zero Trust policy enforcement: per-session access decisions based on identity, device, and context" class="blog-inline" /></p>
+
+<h2 id="the-gap-between-principle-and-practice">The Gap Between Principle and Practice</h2>
+
+<p>Zero Trust sounds clean in architecture diagrams. In real organizations, it is a multi-year transformation, not a switch you flip.</p>
+
+<p>Common friction points:</p>
+
+<p><strong>Legacy systems</strong>: Older applications were not designed to participate in dynamic access decisions. They may not support modern authentication protocols, making Zero Trust integration complex or require compensating controls.</p>
+
+<p><strong>Cultural resistance</strong>: Engineers and operations teams accustomed to broad internal network access often push back on scoped, re-authenticated sessions. The productivity perception is real even when the security benefit is equally real.</p>
+
+<p><strong>Incomplete visibility</strong>: Zero Trust depends on telemetry. Continuous verification requires continuous monitoring. Organizations with immature logging and monitoring pipelines cannot enforce dynamic policy effectively because they lack the signal.</p>
+
+<p><strong>Vendor confusion</strong>: “Zero Trust” became a marketing term. Products with that label do not automatically produce a Zero Trust architecture. The framework is the goal; the products are implementation tools. This distinction matters both on the exam and in practice.</p>
+
+<p>None of this means Zero Trust is unachievable. It means it requires honest scoping, a phased roadmap, and executive support. Starting with identity and privileged access, then expanding to device compliance and microsegmentation, is a credible path.</p>
+
+<h2 id="why-this-matters-beyond-the-exam">Why This Matters Beyond the Exam</h2>
+
+<p>Zero Trust is not academic. Government mandates, regulatory frameworks, and enterprise security programs increasingly require it by name. The U.S. federal government’s executive order on cybersecurity and subsequent OMB guidance mandated Zero Trust adoption across federal agencies. Industries handling sensitive data are seeing it appear in audit checklists and vendor requirements.</p>
+
+<p>For engineers, the practical takeaway is straightforward: stop designing systems that grant permanent implicit access based on network location. Design for explicit, scoped, re-evaluated access. Build systems that can participate in identity-aware access decisions. Log and monitor access in ways that can feed policy engines.</p>
+
+<p>That is not just good security architecture. It is the direction the industry has committed to.</p>
+
+<hr />
+
+<p>Security architecture questions on the CISSP often reward the mindset more than the memorized fact. Zero Trust is the clearest example of that dynamic: once you understand what it is trying to solve, most of the implementation and evaluation questions become much more approachable.</p>
+
+<p><em>If you found this post useful, the rest of the series covers CISSP domains in a similar format — practical breakdowns meant to build genuine understanding alongside exam readiness.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical CISSP guide to Zero Trust Architecture — what it is, why the perimeter model failed, the three pillars, NIST SP 800-207, and what the exam actually tests.</p>
+
+<p><strong>SEO keywords:</strong> CISSP Zero Trust Architecture, Zero Trust security model, NIST SP 800-207, microsegmentation Zero Trust, never trust always verify CISSP</p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

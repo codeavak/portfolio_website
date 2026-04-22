@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="380" fill="url(#bg1)"/>
+
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">THREE PILLARS OF ZERO TRUST</text>
+
+  <!-- Pillar 1: Identity -->
+  <rect x="60" y="70" width="220" height="200" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <!-- Person icon -->
+  <circle cx="170" cy="130" r="28" fill="#1a7ccf" opacity="0.9"/>
+  <circle cx="170" cy="118" r="12" fill="#e8f4fd"/>
+  <path d="M145 148 Q170 136 195 148" stroke="#e8f4fd" stroke-width="2.5" fill="none"/>
+  <!-- Shield -->
+  <path d="M185 100 L199 105 L199 118 Q199 127 185 133 Q171 127 171 118 L171 105 Z" fill="#4da6ff" opacity="0.9"/>
+  <text x="185" y="121" text-anchor="middle" font-family="Arial" font-size="12" fill="white" font-weight="bold">✓</text>
+  <text x="170" y="195" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">IDENTITY</text>
+  <text x="170" y="218" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">MFA + Continuous</text>
+  <text x="170" y="236" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Session Validation</text>
+
+  <!-- Arrow 1 -->
+  <line x1="280" y1="170" x2="350" y2="170" stroke="#4da6ff" stroke-width="2" marker-end="url(#arrowB)"/>
+
+  <!-- Pillar 2: Device Health -->
+  <rect x="360" y="70" width="220" height="200" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <!-- Laptop icon -->
+  <rect x="425" y="110" width="70" height="46" rx="4" fill="#1a7ccf" opacity="0.85"/>
+  <rect x="410" y="156" width="100" height="8" rx="4" fill="#1a7ccf" opacity="0.6"/>
+  <!-- Checkmark -->
+  <circle cx="478" cy="133" r="14" fill="#0a8a3a" opacity="0.9"/>
+  <polyline points="470,133 476,140 488,124" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470" y="195" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">DEVICE</text>
+  <text x="470" y="215" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">HEALTH</text>
+  <text x="470" y="240" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Managed · Compliant</text>
+  <text x="470" y="258" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Posture-Checked</text>
+
+  <!-- Arrow 2 -->
+  <line x1="580" y1="170" x2="650" y2="170" stroke="#4da6ff" stroke-width="2" marker-end="url(#arrowB)"/>
+
+  <!-- Pillar 3: Microsegmentation -->
+  <rect x="660" y="70" width="220" height="200" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <!-- Grid icon -->
+  <rect x="696" y="100" width="38" height="38" rx="3" fill="#1a7ccf" opacity="0.7"/>
+  <rect x="740" y="100" width="38" height="38" rx="3" fill="#1a7ccf" opacity="0.5"/>
+  <rect x="696" y="144" width="38" height="38" rx="3" fill="#1a7ccf" opacity="0.5"/>
+  <rect x="740" y="144" width="38" height="38" rx="3" fill="#1a7ccf" opacity="0.7"/>
+  <!-- Wall lines between cells -->
+  <line x1="738" y1="100" x2="738" y2="138" stroke="#ff4d4d" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <line x1="738" y1="144" x2="738" y2="182" stroke="#ff4d4d" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <line x1="696" y1="142" x2="778" y2="142" stroke="#ff4d4d" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <text x="770" y="195" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">MICRO-</text>
+  <text x="770" y="215" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">SEGMENTATION</text>
+  <text x="770" y="240" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Scoped Access</text>
+  <text x="770" y="258" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Contained Blast Radius</text>
+
+  <!-- Converge arrows to Policy Engine -->
+  <line x1="170" y1="270" x2="170" y2="310" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="470" y1="270" x2="470" y2="310" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="770" y1="270" x2="770" y2="310" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="170" y1="310" x2="770" y2="310" stroke="#4da6ff" stroke-width="1.5"/>
+  <line x1="470" y1="310" x2="470" y2="348" stroke="#4da6ff" stroke-width="2" marker-end="url(#arrowB)"/>
+
+  <!-- Policy Engine label -->
+  <rect x="360" y="348" width="220" height="24" rx="6" fill="#1a7ccf" opacity="0.35" stroke="#4da6ff" stroke-width="1"/>
+  <text x="470" y="364" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#e8f4fd" font-weight="600">POLICY ENGINE DECISION</text>
+</svg>

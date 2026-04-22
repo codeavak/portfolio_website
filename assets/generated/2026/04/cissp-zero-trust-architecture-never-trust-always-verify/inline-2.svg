@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" width="1000" height="340">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowR2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ff4d4d"/>
+    </marker>
+    <marker id="arrowB2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="340" fill="url(#bg2)"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">PER-SESSION ACCESS DECISION MODEL</text>
+
+  <!-- User node -->
+  <circle cx="100" cy="170" r="52" fill="#0f2a45" stroke="#4da6ff" stroke-width="2"/>
+  <circle cx="100" cy="158" r="16" fill="#4da6ff"/>
+  <path d="M76 186 Q100 174 124 186" stroke="#4da6ff" stroke-width="2.5" fill="none"/>
+  <text x="100" y="242" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7ab8e8">USER</text>
+  <text x="100" y="260" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#5a8ab0">Access Request</text>
+
+  <!-- Arrow: user to PDP -->
+  <line x1="155" y1="170" x2="335" y2="170" stroke="#4da6ff" stroke-width="2" marker-end="url(#arrowB2)"/>
+  <text x="245" y="158" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Request</text>
+
+  <!-- PDP (diamond) -->
+  <polygon points="420,100 510,170 420,240 330,170" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2.5"/>
+  <text x="420" y="165" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#e8f4fd">POLICY</text>
+  <text x="420" y="182" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#e8f4fd">DECISION</text>
+  <text x="420" y="198" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#4da6ff">POINT</text>
+
+  <!-- Input signals (top) -->
+  <rect x="520" y="60" width="150" height="36" rx="6" fill="#0d2a3a" stroke="#1a7ccf" stroke-width="1.5"/>
+  <text x="595" y="82" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Identity Check</text>
+  <line x1="520" y1="78" x2="505" y2="140" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <rect x="520" y="152" width="150" height="36" rx="6" fill="#0d2a3a" stroke="#1a7ccf" stroke-width="1.5"/>
+  <text x="595" y="174" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Device Health</text>
+  <line x1="520" y1="170" x2="510" y2="170" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <rect x="520" y="244" width="150" height="36" rx="6" fill="#0d2a3a" stroke="#1a7ccf" stroke-width="1.5"/>
+  <text x="595" y="266" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7ab8e8">Context / Behavior</text>
+  <line x1="520" y1="262" x2="505" y2="202" stroke="#4da6ff" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- Granted path -->
+  <line x1="510" y1="148" x2="700" y2="120" stroke="#2ecc71" stroke-width="2.5" marker-end="url(#arrowG)"/>
+  <text x="610" y="120" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2ecc71">GRANTED</text>
+  <rect x="700" y="88" width="180" height="64" rx="8" fill="#0a2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="790" y="118" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#2ecc71">Protected</text>
+  <text x="790" y="138" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2ecc71">Resource</text>
+  <text x="790" y="170" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Session-scoped access only</text>
+
+  <!-- Rejected path -->
+  <line x1="510" y1="194" x2="700" y2="240" stroke="#ff4d4d" stroke-width="2.5" marker-end="url(#arrowR2)"/>
+  <text x="610" y="234" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ff4d4d">DENIED</text>
+  <rect x="700" y="218" width="180" height="64" rx="8" fill="#2a0a0a" stroke="#ff4d4d" stroke-width="2"/>
+  <text x="790" y="248" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#ff4d4d">Access</text>
+  <text x="790" y="268" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ff4d4d">Rejected</text>
+  <text x="790" y="296" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#5a8ab0">Policy not satisfied</text>
+
+  <!-- Footer -->
+  <text x="500" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #40  ·  ZERO TRUST</text>
+</svg>
