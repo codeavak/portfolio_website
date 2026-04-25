@@ -3,7 +3,8 @@ layout: post
 title: "CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee"
 date: 2026-04-21 14:20:00 +0000
 categories: [CISSP, Security Architecture, Assurance]
-tags: [CISSP, Common Criteria, Protection Profiles, Security Assurance, Domain 3]
+tags:
+  [CISSP, Common Criteria, Protection Profiles, Security Assurance, Domain 3]
 excerpt: "Common Criteria gives a framework for evaluating security products, but evaluation is not the same thing as real-world safety. The CISSP exam expects you to understand what Common Criteria does, what a Protection Profile is, and where assurance stops."
 image: /assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg
 ---
@@ -229,7 +230,7 @@ Common Criteria matters because it teaches a mature security habit: separate ind
 
 The CISSP is testing whether you understand that difference.
 
-*If you are following the series through Domain 3, this topic fits directly after trusted systems, security models, and reference monitor concepts. Together they form the assurance side of architecture, not just the control side.*
+_If you are following the series through Domain 3, this topic fits directly after trusted systems, security models, and reference monitor concepts. Together they form the assurance side of architecture, not just the control side._
 
 ---
 
