@@ -54,7 +54,7 @@
 
 ## 3. Detailed Blog Post
 
-*(See `_posts/2026-04-21-cissp-common-criteria-protection-profiles-assurance.md`)*
+_(See `_posts/2026-04-21-cissp-common-criteria-protection-profiles-assurance.md`)_
 
 ---
 

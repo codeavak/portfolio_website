@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="360" fill="url(#bg1)"/>
+  <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">STARTUP INTEGRITY FLOW</text>
+
+  <rect x="40" y="110" width="150" height="120" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="115" y="156" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#e8f4fd">FIRMWARE</text>
+
+  <rect x="240" y="110" width="150" height="120" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="315" y="156" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#e8f4fd">BOOTLOADER</text>
+
+  <rect x="440" y="110" width="150" height="120" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="515" y="156" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#e8f4fd">KERNEL</text>
+
+  <rect x="640" y="110" width="150" height="120" rx="10" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2"/>
+  <text x="715" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#e8f4fd">OS</text>
+  <text x="715" y="174" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#e8f4fd">SERVICES</text>
+
+  <rect x="820" y="95" width="140" height="150" rx="10" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="890" y="145" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#e8f4fd">TPM</text>
+  <text x="890" y="170" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">Measurements</text>
+  <text x="890" y="190" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7ab8e8">PCR Evidence</text>
+
+  <line x1="190" y1="170" x2="240" y2="170" stroke="#4da6ff" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <line x1="390" y1="170" x2="440" y2="170" stroke="#4da6ff" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <line x1="590" y1="170" x2="640" y2="170" stroke="#4da6ff" stroke-width="2.5" marker-end="url(#arrowB)"/>
+
+  <line x1="115" y1="230" x2="860" y2="230" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowB)"/>
+  <text x="260" y="254" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2ecc71">MEASURED BOOT: record each stage into TPM</text>
+
+  <line x1="115" y1="110" x2="715" y2="110" stroke="#ffb347" stroke-width="2"/>
+  <text x="260" y="100" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffcf85">SECURE BOOT: enforce signature trust before execution</text>
+
+  <text x="500" y="336" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #44</text>
+</svg>

@@ -1,4 +1,504 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-22T05:10:01+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/" rel="alternate" type="text/html" title="CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" /><published>2026-04-21T14:20:00+00:00</published><updated>2026-04-21T14:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" alt="CISSP #43 Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-04-25T06:41:43+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #45: Data in Use Protection and Confidential Computing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/" rel="alternate" type="text/html" title="CISSP #45: Data in Use Protection and Confidential Computing" /><published>2026-04-24T14:40:00+00:00</published><updated>2026-04-24T14:40:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" alt="CISSP #45 Data in Use Protection and Confidential Computing" class="blog-hero" /></p>
+
+<p>Most security discussions still organize data protection around two states:</p>
+
+<ul>
+  <li>data at rest</li>
+  <li>data in transit</li>
+</ul>
+
+<p>That framing is useful, but incomplete.</p>
+
+<p>The hardest state to protect is often <strong>data in use</strong>: the moment data is being processed in memory, where business value is created and where many traditional encryption assumptions stop helping.</p>
+
+<p>For CISSP candidates and working engineers, this is an important mindset shift. Encryption at rest and in transit can be strong and still leave critical trust gaps during execution.</p>
+
+<h2 id="the-third-state-of-data">The Third State of Data</h2>
+
+<p>CISSP Domain 3 and Domain 7 both push candidates to think in lifecycle terms. Data protection is not one control. It is coordinated protection across states.</p>
+
+<p>At a high level:</p>
+
+<ul>
+  <li><strong>Data at rest</strong> is protected by storage encryption, key management, and access controls.</li>
+  <li><strong>Data in transit</strong> is protected by protocol security (for example TLS), integrity checks, and endpoint authentication.</li>
+  <li><strong>Data in use</strong> is exposed to runtime context: process memory, CPU execution, privileged software layers, and sometimes co-tenancy risk.</li>
+</ul>
+
+<p>The third state matters because decryption has to happen somewhere for computation to occur. The question becomes: what do you trust while that computation runs?</p>
+
+<p>That question sits directly at the intersection of architecture, assurance, and risk management.</p>
+
+<h2 id="why-data-in-use-is-hard">Why Data in Use Is Hard</h2>
+
+<p>At rest and in transit protections are mostly boundary controls. They protect data before access and during movement.</p>
+
+<p>Data in use is different. Once data is loaded for processing, protection depends on runtime trust assumptions, including:</p>
+
+<ul>
+  <li>operating system integrity</li>
+  <li>hypervisor isolation</li>
+  <li>privileged admin access paths</li>
+  <li>process-level memory safety</li>
+  <li>debugger and dump controls</li>
+  <li>workload placement and tenancy context</li>
+</ul>
+
+<p>If any of these assumptions fail, encryption controls that looked excellent in policy may provide limited real protection at runtime.</p>
+
+<p>This is why mature architectures avoid treating encryption as a blanket answer. Encryption is essential, but trust during execution requires additional controls.</p>
+
+<h2 id="the-exam-perspective-people-process-technology-balance">The Exam Perspective: People, Process, Technology Balance</h2>
+
+<p>The CISSP exam often avoids purely technical answers when risk and governance are involved.</p>
+
+<p>If a scenario highlights sensitive processing risk in shared or semi-trusted environments, the best answer usually combines:</p>
+
+<ul>
+  <li>technical controls for runtime protection</li>
+  <li>policy constraints for privileged operations</li>
+  <li>monitoring and attestation evidence</li>
+  <li>risk-based decisions about where specific workloads may execute</li>
+</ul>
+
+<p>In other words, the exam mindset is not “pick one crypto feature.” It is “design the trust model end to end.”</p>
+
+<h2 id="confidential-computing-a-practical-response">Confidential Computing: A Practical Response</h2>
+
+<p><strong>Confidential computing</strong> is a design approach that aims to protect data in use by isolating workloads in hardware-backed trusted execution environments (TEEs), reducing exposure even from privileged platform layers.</p>
+
+<p>Different technologies implement this differently, but the architectural intent is consistent:</p>
+
+<ul>
+  <li>isolate sensitive computation</li>
+  <li>protect memory region boundaries</li>
+  <li>reduce reliance on broad host trust</li>
+  <li>provide attestation evidence about workload state</li>
+</ul>
+
+<p>From a CISSP viewpoint, this fits naturally with trusted computing base minimization and assurance concepts: shrink what must be trusted, verify what is running, and bind decisions to evidence.</p>
+
+<p>It is not a silver bullet, but it is a meaningful improvement over “trust everything below the application by default.”</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-1.svg" alt="Data security states and where confidential computing addresses data in use risk" class="blog-inline" /></p>
+
+<h2 id="attestation-and-trust-decisions">Attestation and Trust Decisions</h2>
+
+<p>A recurring theme in modern architecture is that trust should be evidence-driven.</p>
+
+<p>Attestation helps answer questions like:</p>
+
+<ul>
+  <li>Is this workload running in an expected protected environment?</li>
+  <li>Is the boot/runtime state aligned with policy?</li>
+  <li>Should secrets be released to this instance?</li>
+</ul>
+
+<p>In practical systems, attestation value appears when it is connected to policy outcomes:</p>
+
+<ul>
+  <li>release keys only to validated workloads</li>
+  <li>block sensitive operations when integrity evidence is missing</li>
+  <li>downgrade privileges when trust posture changes</li>
+</ul>
+
+<p>Without policy linkage, attestation can degrade into telemetry without control impact.</p>
+
+<p>The exam will often reward answers that convert evidence into enforceable decisions.</p>
+
+<h2 id="what-confidential-computing-does-not-solve">What Confidential Computing Does Not Solve</h2>
+
+<p>This is a critical nuance.</p>
+
+<p>Confidential computing improves protection of in-use data under specific threat assumptions, but it does not eliminate broader security responsibilities.</p>
+
+<p>It does not remove the need for:</p>
+
+<ul>
+  <li>secure coding and input validation</li>
+  <li>identity and authorization controls</li>
+  <li>key lifecycle governance</li>
+  <li>logging and monitoring discipline</li>
+  <li>patching and vulnerability management</li>
+  <li>legal and contractual controls for cloud/shared environments</li>
+</ul>
+
+<p>A workload can run inside a protected execution context and still produce insecure outcomes if application logic, access control, or business process design is weak.</p>
+
+<p>The CISSP best-answer logic consistently favors this kind of balanced thinking.</p>
+
+<h2 id="a-concrete-enterprise-scenario">A Concrete Enterprise Scenario</h2>
+
+<p>Consider a team processing highly sensitive financial analytics in a shared cloud environment.</p>
+
+<p>Traditional controls:</p>
+
+<ul>
+  <li>encrypt storage volumes</li>
+  <li>enforce TLS for service-to-service traffic</li>
+  <li>restrict IAM roles</li>
+</ul>
+
+<p>Those are necessary, but leadership still asks:</p>
+
+<p>“How do we reduce exposure while values are decrypted and processed?”</p>
+
+<p>A stronger architecture might add:</p>
+
+<ul>
+  <li>confidential-computing-capable workload placement</li>
+  <li>attestation-based secret release</li>
+  <li>restricted admin pathways for sensitive nodes</li>
+  <li>policy that blocks execution in non-attested runtime states</li>
+</ul>
+
+<p>This is not about chasing a trend. It is about reducing trust in broad infrastructure layers and making trust decisions explicit.</p>
+
+<h2 id="data-lifecycle-thinking-beyond-checklists">Data Lifecycle Thinking Beyond Checklists</h2>
+
+<p>Many teams can state controls by category. Fewer can show how controls compose across lifecycle transitions.</p>
+
+<p>A practical data-lifecycle view asks:</p>
+
+<ol>
+  <li>Where is data created?</li>
+  <li>Where is it transformed?</li>
+  <li>Where is it exposed in plaintext?</li>
+  <li>What trust assumptions exist at each stage?</li>
+  <li>Which assumptions are validated versus merely hoped for?</li>
+</ol>
+
+<p>Data in use becomes the most revealing stage because it forces trust assumptions into the open.</p>
+
+<p>This is one reason architects with strong CISSP-style reasoning are valuable. They move conversations from control inventory to trust design.</p>
+
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+
+<p>Three misconceptions appear frequently.</p>
+
+<h3 id="we-use-tls-and-disk-encryption-so-we-are-covered">“We use TLS and disk encryption, so we are covered.”</h3>
+
+<p>Those controls protect two states. They do not fully address runtime memory exposure and privileged execution risk.</p>
+
+<h3 id="confidential-computing-means-we-can-ignore-host-security">“Confidential computing means we can ignore host security.”</h3>
+
+<p>No. It reduces some host-trust assumptions for specific workloads. It does not make surrounding platform security irrelevant.</p>
+
+<h3 id="attestation-equals-absolute-trust">“Attestation equals absolute trust.”</h3>
+
+<p>Attestation gives evidence under defined conditions. It must still be evaluated against policy, scope, freshness, and risk tolerance.</p>
+
+<h2 id="exam-relevant-comparisons">Exam-Relevant Comparisons</h2>
+
+<p>For CISSP question framing, the following distinctions are useful:</p>
+
+<ul>
+  <li>Encryption at rest protects stored data media state.</li>
+  <li>Encryption in transit protects communication channels.</li>
+  <li>Confidential computing targets runtime execution trust boundaries.</li>
+  <li>Attestation supports trust decisions using integrity evidence.</li>
+</ul>
+
+<p>If a scenario specifically calls out concern about privileged infrastructure visibility into active computation, answers focused only on transit/storage encryption are often incomplete.</p>
+
+<p>The better answer addresses runtime trust reduction and evidence-based control.</p>
+
+<h2 id="operational-considerations-before-adoption">Operational Considerations Before Adoption</h2>
+
+<p>When evaluating confidential computing capabilities, mature teams typically ask:</p>
+
+<ul>
+  <li>Which workloads actually require in-use protection beyond standard controls?</li>
+  <li>What threat model justifies the complexity?</li>
+  <li>How will attestation evidence be consumed in policy engines?</li>
+  <li>What performance and compatibility tradeoffs exist?</li>
+  <li>How do incident response and forensics workflows adapt?</li>
+</ul>
+
+<p>These are not blockers. They are architecture hygiene.</p>
+
+<p>Security controls are strongest when matched to explicit business risk and integrated into existing operational discipline.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-2.svg" alt="Enforcement path linking attestation evidence to secret release and workload policy decisions" class="blog-inline" /></p>
+
+<h2 id="why-this-topic-is-increasingly-important">Why This Topic Is Increasingly Important</h2>
+
+<p>As AI workloads, analytics pipelines, and cross-organization processing increase, so does pressure to process sensitive data in external or shared environments.</p>
+
+<p>That changes the trust equation.</p>
+
+<p>Organizations need controls that let them compute on sensitive data while reducing reliance on broad administrator trust assumptions and improving evidence quality for governance and audit.</p>
+
+<p>Data in use protection and confidential computing are increasingly part of that answer.</p>
+
+<p>For CISSP learners, the bigger lesson is architectural: choose controls based on state-specific risk and verifiable trust, not generic “encrypted therefore safe” narratives.</p>
+
+<h2 id="a-practical-heuristic">A Practical Heuristic</h2>
+
+<p>When evaluating any architecture claiming strong data protection, ask:</p>
+
+<ol>
+  <li>How is data protected at rest?</li>
+  <li>How is data protected in transit?</li>
+  <li>What protects data while being processed?</li>
+  <li>What evidence proves runtime trust state?</li>
+  <li>How does policy respond when trust evidence is missing?</li>
+</ol>
+
+<p>If question 3 through 5 have weak answers, the architecture likely has a data-in-use blind spot.</p>
+
+<hr />
+
+<p>CISSP Domain 3 rewards candidates who can reason beyond control checklists. Data in use protection is one of the clearest places where that matters. Confidential computing and attestation are not universal answers, but they are strong tools when your threat model includes runtime trust concerns.</p>
+
+<p>The real skill is mapping protection controls to data state, validating assumptions, and turning trust evidence into enforceable decisions.</p>
+
+<p><em>If you are following this series, this post builds directly on the previous entries about root of trust, startup integrity, and assurance boundaries.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical CISSP guide to data in use protection and confidential computing. Learn how runtime trust differs from at-rest and in-transit security, and why attestation-driven policy matters.</p>
+
+<p><strong>SEO keywords:</strong> CISSP data in use protection, confidential computing CISSP, attestation security architecture, data lifecycle security CISSP, CISSP Domain 3 runtime trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Data Security" /><category term="CISSP" /><category term="Data in Use" /><category term="Confidential Computing" /><category term="Attestation" /><category term="Encryption" /><category term="Domain 3" /><summary type="html"><![CDATA[Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #44: Hardware Root of Trust, Secure Boot, and Why Startup Integrity Matters</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm/" rel="alternate" type="text/html" title="CISSP #44: Hardware Root of Trust, Secure Boot, and Why Startup Integrity Matters" /><published>2026-04-24T12:30:00+00:00</published><updated>2026-04-24T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" alt="CISSP #44 Hardware Root of Trust, Secure Boot, and TPM-backed startup integrity" class="blog-hero" /></p>
+
+<p>Most security programs spend serious effort on identity, patching, endpoint controls, and network defense.</p>
+
+<p>All of that assumes one thing is already true:</p>
+
+<p>The platform actually started in a trustworthy state.</p>
+
+<p>If that assumption fails, many downstream controls can be bypassed, blinded, or quietly subverted before they even run. That is why hardware root of trust and boot integrity concepts matter in CISSP Domain 3, and why they matter even more in real environments where firmware and supply-chain threats are no longer edge cases.</p>
+
+<h2 id="the-trust-problem-at-startup">The Trust Problem at Startup</h2>
+
+<p>Security controls do not start all at once. Systems boot in sequence.</p>
+
+<p>Firmware initializes hardware. Bootloaders launch operating systems. Kernel-mode components initialize before user-mode defenses. Security software and monitoring agents come later.</p>
+
+<p>An attacker that can tamper with early boot components can often persist below the visibility of traditional endpoint controls. At that point, you are trying to enforce policy on top of a compromised foundation.</p>
+
+<p>This is the core reason startup integrity matters: if your initial trust anchor is weak, everything above it inherits that weakness.</p>
+
+<h2 id="what-hardware-root-of-trust-means">What “Hardware Root of Trust” Means</h2>
+
+<p>A <strong>hardware root of trust</strong> is a minimally trusted hardware-based component that provides a secure foundation for verifying platform integrity.</p>
+
+<p>In practice, it acts as a trust anchor that software components can rely on for operations such as:</p>
+
+<ul>
+  <li>secure key storage</li>
+  <li>platform identity and attestation</li>
+  <li>measurement recording</li>
+  <li>cryptographic verification of startup components</li>
+</ul>
+
+<p>For CISSP purposes, the key idea is architectural, not vendor-specific: you want trust anchored in hardware that is harder to tamper with than ordinary software.</p>
+
+<p>Without a root of trust, verification mechanisms can become circular. Software verifies software using software that may already be compromised.</p>
+
+<p>With a root of trust, you can at least establish a defensible starting point.</p>
+
+<h2 id="secure-boot-enforcing-integrity-at-launch">Secure Boot: Enforcing Integrity at Launch</h2>
+
+<p><strong>Secure Boot</strong> is an enforcement mechanism that ensures only trusted, signed boot components are executed during startup.</p>
+
+<p>At a high level:</p>
+
+<ol>
+  <li>Firmware checks the signature of the next boot component.</li>
+  <li>If valid and trusted, execution continues.</li>
+  <li>If invalid or untrusted, startup is blocked or moved to recovery policy.</li>
+</ol>
+
+<p>This is often described as a chain of trust. Each stage verifies the next before handing over control.</p>
+
+<p>Secure Boot is powerful because it converts integrity checking into a gate, not just an audit. If verification fails, code does not run.</p>
+
+<p>That is a fundamental difference from controls that only detect compromise after execution.</p>
+
+<h2 id="measured-boot-recording-integrity-for-later-decision-making">Measured Boot: Recording Integrity for Later Decision-Making</h2>
+
+<p>Secure Boot and measured boot are related but not identical.</p>
+
+<p><strong>Measured Boot</strong> records measurements (typically cryptographic hashes) of startup components into protected registers, usually in a TPM.</p>
+
+<p>Measured Boot is about evidence, not immediate execution blocking. It creates an integrity record that can be used later for:</p>
+
+<ul>
+  <li>local policy decisions</li>
+  <li>remote attestation</li>
+  <li>compliance and trust evaluation</li>
+</ul>
+
+<p>In simple terms:</p>
+
+<ul>
+  <li><strong>Secure Boot</strong> asks: “Should this component be allowed to run right now?”</li>
+  <li><strong>Measured Boot</strong> asks: “What exactly ran, and can I prove it?”</li>
+</ul>
+
+<p>Strong architectures often use both.</p>
+
+<h2 id="tpm-why-it-matters-in-this-model">TPM: Why It Matters in This Model</h2>
+
+<p>A <strong>Trusted Platform Module (TPM)</strong> is a hardware security component commonly used to store cryptographic material and integrity measurements in protected form.</p>
+
+<p>For CISSP-level understanding, TPM value typically appears in three areas:</p>
+
+<ul>
+  <li>protected key operations and storage</li>
+  <li>platform measurements (for measured boot and attestation)</li>
+  <li>supporting device identity and trust decisions</li>
+</ul>
+
+<p>TPM does not magically make a platform secure by itself. It enables higher-assurance trust workflows when integrated correctly with boot validation, operating system policy, and enterprise control planes.</p>
+
+<p>Think of TPM as an enabler for trustworthy evidence and key protection, not a standalone defense strategy.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/inline-1.svg" alt="Secure Boot and Measured Boot flow from firmware to OS with TPM measurements" class="blog-inline" /></p>
+
+<h2 id="what-the-cissp-exam-typically-tests">What the CISSP Exam Typically Tests</h2>
+
+<p>The exam usually focuses on reasoning rather than command-level implementation details.</p>
+
+<p>You are likely to see scenario questions around:</p>
+
+<ul>
+  <li>why trust anchored in hardware is preferable to software-only trust</li>
+  <li>what control prevents unsigned boot components from executing</li>
+  <li>how startup integrity evidence can be used in enterprise decisions</li>
+  <li>why attestation and measured startup state matter in modern architecture</li>
+</ul>
+
+<p>A typical exam-friendly interpretation:</p>
+
+<ul>
+  <li>If the requirement is “prevent unauthorized boot code from running,” Secure Boot is central.</li>
+  <li>If the requirement is “prove what booted and evaluate trust state,” measured boot and attestation concepts are central.</li>
+  <li>If the question asks for foundational trust component supporting these capabilities, hardware root of trust and TPM are the likely conceptual anchors.</li>
+</ul>
+
+<p>The best-answer mindset still applies: choose the control that addresses the earliest feasible point of compromise and provides business-relevant assurance.</p>
+
+<h2 id="real-world-failure-modes">Real-World Failure Modes</h2>
+
+<p>Understanding failure modes helps bridge exam theory and production reality.</p>
+
+<h3 id="1-misconfiguration-of-trust-policy">1. Misconfiguration of Trust Policy</h3>
+
+<p>Secure Boot enabled in name only can still fail operationally if trust stores, key management, and update policies are weak or inconsistent.</p>
+
+<p>Controls that look strong in architecture diagrams often degrade through emergency exceptions, unmanaged certificates, or poor lifecycle processes.</p>
+
+<h3 id="2-firmware-and-supply-chain-risk">2. Firmware and Supply-Chain Risk</h3>
+
+<p>If early firmware is malicious or compromised in update channels, downstream signed components can still execute in a compromised context.</p>
+
+<p>This is why firmware governance, update signing, and vendor trust management are operational requirements, not optional enhancements.</p>
+
+<h3 id="3-attestation-without-enforcement">3. Attestation Without Enforcement</h3>
+
+<p>Organizations may collect measurement evidence but fail to connect it to access policy. That turns attestation into observability without consequence.</p>
+
+<p>Evidence should influence decisions, such as device access tier, workload placement, or conditional access posture.</p>
+
+<h3 id="4-assuming-hardware-means-invulnerable">4. Assuming Hardware Means Invulnerable</h3>
+
+<p>Hardware roots raise assurance but do not eliminate risk. Side-channel issues, implementation flaws, key lifecycle mistakes, and policy misdesign still matter.</p>
+
+<p>The right framing is risk reduction with stronger trust foundations, not absolute immunity.</p>
+
+<h2 id="where-this-fits-in-modern-architecture">Where This Fits in Modern Architecture</h2>
+
+<p>These concepts are no longer niche. They are increasingly part of baseline enterprise architecture in:</p>
+
+<ul>
+  <li>endpoint management and conditional access</li>
+  <li>zero trust device posture evaluation</li>
+  <li>confidential computing and attested workloads</li>
+  <li>cloud and hybrid fleet integrity validation</li>
+  <li>regulated environments requiring stronger evidence of platform trust</li>
+</ul>
+
+<p>In cloud-heavy environments, the same architectural question appears in new form:</p>
+
+<p>“What evidence do I have that the compute environment is in an expected state before I trust workload secrets or sensitive operations to it?”</p>
+
+<p>That is still a root-of-trust question.</p>
+
+<h2 id="secure-boot-measured-boot-and-operations">Secure Boot, Measured Boot, and Operations</h2>
+
+<p>One of the most useful mental models for engineers is to map each mechanism to its operational role:</p>
+
+<ul>
+  <li><strong>Secure Boot</strong>: integrity enforcement at startup</li>
+  <li><strong>Measured Boot</strong>: integrity evidence collection</li>
+  <li><strong>TPM-backed attestation</strong>: trust communication</li>
+  <li><strong>Policy engine</strong>: decision and response</li>
+</ul>
+
+<p>When these are integrated, organizations can make better risk decisions such as:</p>
+
+<ul>
+  <li>restricting privileged access from devices with unexpected boot state</li>
+  <li>quarantining endpoints with failed integrity measurements</li>
+  <li>controlling secret release to workloads based on attestation posture</li>
+</ul>
+
+<p>That is where architecture becomes business control, not just technical purity.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/inline-2.svg" alt="Assurance boundaries: enforcement, evidence, and policy decisions in startup integrity" class="blog-inline" /></p>
+
+<h2 id="common-misunderstandings-to-avoid">Common Misunderstandings to Avoid</h2>
+
+<p>Three misconceptions show up often in both exam prep and implementation discussions.</p>
+
+<p><strong>“Secure Boot and measured boot are the same.”</strong>
+They are complementary but different. One enforces execution decisions; the other records state.</p>
+
+<p><strong>“TPM alone solves boot integrity.”</strong>
+TPM is part of a trust architecture. Without policy integration, lifecycle management, and operating controls, it cannot deliver full assurance value.</p>
+
+<p><strong>“If signed, it is safe.”</strong>
+Signatures prove origin and integrity relative to trust anchors, not business suitability. Trust decisions still require governance and key lifecycle discipline.</p>
+
+<h2 id="a-practical-cissp-oriented-heuristic">A Practical CISSP-Oriented Heuristic</h2>
+
+<p>When reviewing startup integrity in a scenario, ask:</p>
+
+<ol>
+  <li>What is the first trusted anchor?</li>
+  <li>What prevents unauthorized code from executing early?</li>
+  <li>What evidence proves what actually ran?</li>
+  <li>How is that evidence used in policy decisions?</li>
+  <li>What happens when expected integrity is missing?</li>
+</ol>
+
+<p>If a design cannot answer those five questions clearly, its startup trust story is probably weak.</p>
+
+<h2 id="why-this-topic-is-growing-in-importance">Why This Topic Is Growing in Importance</h2>
+
+<p>As attackers move lower in the stack and organizations rely more on remote, cloud, and hybrid control planes, startup trust is becoming a strategic control, not an implementation detail.</p>
+
+<p>Security leaders increasingly need confidence that endpoint, server, and workload platforms are trustworthy before granting access, releasing secrets, or processing sensitive data.</p>
+
+<p>That confidence has to come from defensible evidence and enforcement, not assumptions.</p>
+
+<p>Hardware root of trust, Secure Boot, and measured integrity mechanisms are how that confidence becomes technically credible.</p>
+
+<hr />
+
+<p>CISSP Domain 3 is full of concepts that sound abstract until you connect them to real control design. Startup integrity is one of the clearest examples: security is only as reliable as the trustworthiness of the platform enforcing it.</p>
+
+<p>If you can reason from root of trust to enforcement to attestation to policy, you are already thinking at the right level for both the exam and enterprise architecture.</p>
+
+<p><em>If you are following this CISSP series, this post pairs naturally with the prior entries on trusted computing base, reference monitor concepts, and assurance frameworks.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical CISSP guide to hardware root of trust, Secure Boot, measured boot, and TPM-backed startup integrity. Learn what the exam tests and how these controls work in modern architectures.</p>
+
+<p><strong>SEO keywords:</strong> CISSP hardware root of trust, Secure Boot measured boot TPM CISSP, startup integrity security architecture, TPM attestation CISSP, CISSP Domain 3 platform trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Platform Security" /><category term="CISSP" /><category term="TPM" /><category term="Secure Boot" /><category term="Measured Boot" /><category term="Hardware Root of Trust" /><category term="Domain 3" /><summary type="html"><![CDATA[Software security controls assume the platform is trustworthy. Hardware root of trust, Secure Boot, and TPM-backed measurement are what make that trust defensible from the first instruction executed.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/" rel="alternate" type="text/html" title="CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" /><published>2026-04-21T14:20:00+00:00</published><updated>2026-04-21T14:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" alt="CISSP #43 Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" class="blog-hero" /></p>
 
 <p>Security teams like products that come with evidence.</p>
 
@@ -1687,447 +2187,4 @@ Actionable evidence: incident timeline showing detection-to-revocation and revoc
   <li>jurisdiction risk cloud security</li>
   <li>data residency control evidence mapping</li>
   <li>privacy and security governance for global SaaS</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="data residency" /><category term="data sovereignty" /><category term="jurisdiction risk" /><category term="privacy governance" /><category term="cloud security" /><summary type="html"><![CDATA[A practical CISSP guide to data residency and sovereignty: how to evaluate jurisdiction risk, control cross-border transfers, and build evidence-backed governance.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility/" rel="alternate" type="text/html" title="CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security" /><published>2026-04-17T12:40:00+00:00</published><updated>2026-04-17T12:40:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-cloud-control-inheritance-shared-responsibility/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" alt="Cloud shared responsibility model showing provider and customer control ownership" class="blog-hero" /></p>
-
-<h1 id="cissp-35-shared-responsibility-is-not-shared-accountability-in-cloud-security">CISSP #35: Shared Responsibility Is Not Shared Accountability in Cloud Security</h1>
-
-<p>Cloud programs often fail in a predictable way: everyone agrees responsibility is shared, and no one can show who is accountable for a specific control when an incident occurs.</p>
-
-<p>That sounds like semantics until response time, audit scrutiny, or a customer-impacting event makes ownership gaps expensive.</p>
-
-<p>From a CISSP perspective, this topic is really about governance discipline under modern architecture conditions. Shared responsibility is real. Shared accountability is usually a governance failure.</p>
-
-<h2 id="why-this-matters-for-cissp-and-real-operations">Why This Matters for CISSP and Real Operations</h2>
-
-<p>The exam consistently rewards risk-based ownership logic: identify the control objective, determine who has authority to implement and verify it, and ensure decisions align with business risk tolerance.</p>
-
-<p>In cloud environments, that means resisting a common mental shortcut: “the provider handles security.”</p>
-
-<p>Providers secure substantial parts of the stack. Customers still own security outcomes tied to how services are configured, accessed, monitored, and governed.</p>
-
-<p>If control ownership is vague, three things happen quickly:</p>
-
-<ul>
-  <li>misconfigurations persist because remediation authority is unclear</li>
-  <li>inherited controls are assumed rather than verified</li>
-  <li>evidence quality collapses when leadership needs timely assurance</li>
-</ul>
-
-<h2 id="what-the-exam-tests-vs-what-practice-demands">What the Exam Tests vs What Practice Demands</h2>
-
-<h3 id="what-cissp-tends-to-test">What CISSP tends to test</h3>
-
-<p>CISSP scenarios around cloud security generally test whether you can reason through ownership and control intent, not whether you can recite a provider feature list.</p>
-
-<p>Typical pattern:</p>
-
-<ul>
-  <li>a cloud risk exists</li>
-  <li>multiple controls appear possible</li>
-  <li>ownership boundaries are unclear</li>
-  <li>best answer identifies accountable governance action before technical detail</li>
-</ul>
-
-<p>The strongest answer is usually the one that restores explicit accountability and measurable control verification.</p>
-
-<h3 id="what-practice-demands">What practice demands</h3>
-
-<p>Practice demands continuous clarity, not one-time architecture slides.</p>
-
-<p>Control ownership shifts by service model and implementation pattern:</p>
-
-<ul>
-  <li>in IaaS, customer teams carry more hardening and monitoring responsibility</li>
-  <li>in PaaS, the provider handles more platform operations, but customer policy and data controls remain critical</li>
-  <li>in SaaS, technical depth may be abstracted, yet identity governance, data handling, and response readiness remain customer obligations</li>
-</ul>
-
-<p>This is where many teams confuse reduced operational burden with reduced accountability.</p>
-
-<h2 id="control-inheritance-is-useful-but-not-automatic">Control Inheritance Is Useful but Not Automatic</h2>
-
-<p>Control inheritance is a valid governance mechanism: you can rely on provider-implemented controls for portions of your assurance obligations.</p>
-
-<p>But inheritance has conditions:</p>
-
-<ul>
-  <li>scope must be explicit (which controls, for which services, under which conditions)</li>
-  <li>assumptions must be documented and periodically revalidated</li>
-  <li>residual customer responsibilities must be mapped to owners and evidence</li>
-</ul>
-
-<p>Inheritance reduces duplicated effort. It does not eliminate the need for customer-side control decisions.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/responsibility-matrix.svg" alt="Matrix mapping cloud control areas across provider, customer, and shared responsibility" class="inline-img" /></p>
-
-<h2 id="a-realistic-scenario-customer-data-export-in-saas">A Realistic Scenario: Customer Data Export in SaaS</h2>
-
-<p>Imagine a team rolls out a SaaS analytics platform with broad data export capability for operations staff.</p>
-
-<p>Provider posture is strong:</p>
-
-<ul>
-  <li>audited infrastructure controls</li>
-  <li>hardened service operations</li>
-  <li>published attestation reports</li>
-</ul>
-
-<p>The customer still faces risk if local governance is weak.</p>
-
-<h3 id="what-goes-wrong">What goes wrong</h3>
-
-<ul>
-  <li>role assignments are too broad for export actions</li>
-  <li>alerting exists but no one owns triage for abnormal downloads</li>
-  <li>key policy for sensitive exports is inconsistent across teams</li>
-  <li>incident playbooks assume the provider handles all forensics steps</li>
-</ul>
-
-<h3 id="what-disciplined-ownership-looks-like">What disciplined ownership looks like</h3>
-
-<ul>
-  <li>business owner approves export entitlement model</li>
-  <li>IAM owner enforces least privilege and review cadence</li>
-  <li>security operations owner monitors detection signals and escalation thresholds</li>
-  <li>legal/compliance owner maps provider evidence and customer evidence into one assurance view</li>
-</ul>
-
-<p>Outcome: clear accountability chain, faster decisions, better audit defensibility.</p>
-
-<h2 id="established-principles-and-recent-developments">Established Principles and Recent Developments</h2>
-
-<h3 id="established-principles">Established principles</h3>
-
-<p>Core principles are stable:</p>
-
-<ul>
-  <li>security accountability remains with the organization using the service</li>
-  <li>control objectives require explicit ownership and verification</li>
-  <li>risk decisions must include residual exposure after inherited controls</li>
-  <li>governance artifacts must support decisions, not just satisfy documentation checklists</li>
-</ul>
-
-<p>These principles align with longstanding CISSP reasoning and control catalog frameworks.</p>
-
-<h3 id="recent-developments">Recent developments</h3>
-
-<p>Execution expectations keep increasing:</p>
-
-<ul>
-  <li>CSF 2.0 continues to reinforce integration of cybersecurity with enterprise risk governance and implementation resources.</li>
-  <li>NIST SP 800-53 updates (including Release 5.2.0 notes) continue refining controls relevant to system acquisition, software assurance, and monitoring expectations.</li>
-  <li>Multi-cloud and SaaS-heavy operating models increase reliance on inherited controls, which raises the importance of evidence mapping and ownership rigor.</li>
-</ul>
-
-<p>The trend is clear: fewer organizations can afford “trust us” governance in cloud assurance.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/evidence-chain.svg" alt="Flow from control ownership to evidence capture, governance review, and remediation in cloud security" class="inline-img" /></p>
-
-<h2 id="common-failure-patterns">Common Failure Patterns</h2>
-
-<h3 id="1-responsibility-matrix-without-authority-mapping">1. Responsibility matrix without authority mapping</h3>
-
-<p>Roles are listed, but approval and remediation authority are not defined.</p>
-
-<p>Fix: map each critical control to one accountable owner with decision authority.</p>
-
-<h3 id="2-provider-evidence-accepted-without-scope-checks">2. Provider evidence accepted without scope checks</h3>
-
-<p>Attestation documents are treated as universal proof.</p>
-
-<p>Fix: map evidence to the exact services and configurations in your environment.</p>
-
-<h3 id="3-customer-controls-treated-as-operational-details">3. Customer controls treated as operational details</h3>
-
-<p>Identity, data policy, and monitoring decisions are left to informal team habits.</p>
-
-<p>Fix: define governance requirements and enforce them through measurable review cycles.</p>
-
-<h3 id="4-incident-response-assumptions-are-misaligned">4. Incident response assumptions are misaligned</h3>
-
-<p>During incidents, teams discover unclear provider-customer handoffs.</p>
-
-<p>Fix: test shared response playbooks and evidence exchange expectations before crisis conditions.</p>
-
-<h2 id="practical-metrics-for-leadership">Practical Metrics for Leadership</h2>
-
-<p>To assess whether shared responsibility is working, track outcomes that reveal ownership quality:</p>
-
-<ul>
-  <li>percent of critical cloud controls with a named accountable owner</li>
-  <li>percent of inherited controls with current scope validation</li>
-  <li>mean time to close control ownership gaps found in reviews</li>
-  <li>percentage of high-risk SaaS/IaaS services with tested shared-response playbooks</li>
-  <li>audit findings tied to ambiguous provider-customer boundaries</li>
-</ul>
-
-<p>These metrics provide governance signal, not activity noise.</p>
-
-<h2 id="a-30-day-improvement-plan">A 30-Day Improvement Plan</h2>
-
-<h3 id="week-1-build-a-control-ownership-baseline">Week 1: Build a control ownership baseline</h3>
-
-<p>For top cloud services, document provider-owned, customer-owned, and shared controls with accountable owners.</p>
-
-<h3 id="week-2-map-evidence-to-each-control">Week 2: Map evidence to each control</h3>
-
-<p>Link provider attestations and customer operational evidence to specific control statements.</p>
-
-<h3 id="week-3-validate-incident-and-escalation-paths">Week 3: Validate incident and escalation paths</h3>
-
-<p>Run one tabletop focused on provider-customer handoffs and decision timing.</p>
-
-<h3 id="week-4-close-ownership-and-evidence-gaps">Week 4: Close ownership and evidence gaps</h3>
-
-<p>Remediate controls lacking authority clarity, verification cadence, or audit-ready evidence.</p>
-
-<h2 id="final-takeaway">Final Takeaway</h2>
-
-<p>For CISSP candidates, the key lesson is simple: shared responsibility changes implementation boundaries, not accountability.</p>
-
-<p>For engineering and security leaders, the practical standard is higher: if no single owner can explain control intent, evidence, and remediation authority, the control is not truly governed.</p>
-
-<p>Cloud security matures fastest when inherited controls and customer controls are managed as one evidence-backed decision system.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP-focused guide to cloud shared responsibility and control inheritance, with practical governance patterns for ownership clarity, evidence mapping, and incident readiness.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP cloud shared responsibility</li>
-  <li>control inheritance cloud security</li>
-  <li>cloud accountability governance model</li>
-  <li>provider customer security ownership</li>
-  <li>cloud control evidence mapping</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Cloud" /><category term="CISSP" /><category term="cloud security" /><category term="shared responsibility" /><category term="control inheritance" /><category term="governance" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to cloud shared responsibility and control inheritance: what providers own, what customers still own, and how to prove accountability with evidence.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-cloud-control-inheritance-shared-responsibility/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control/" rel="alternate" type="text/html" title="CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony" /><published>2026-04-17T12:20:00+00:00</published><updated>2026-04-17T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-threat-modeling-design-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" alt="Threat modeling integrated into design lifecycle versus late checklist approach" class="blog-hero" /></p>
-
-<h1 id="cissp-34-threat-modeling-is-a-design-control-not-a-security-ceremony">CISSP #34: Threat Modeling Is a Design Control, Not a Security Ceremony</h1>
-
-<p>Threat modeling is one of those security practices everyone says they do and very few teams do in a way that changes design decisions.</p>
-
-<p>Most organizations can produce a diagram, a spreadsheet, or a meeting invite labeled “threat model review.” But when an incident happens, the same questions appear: why did we trust this boundary, why was this action path unprotected, and why did no one challenge this assumption before release?</p>
-
-<p>That gap is exactly why this topic matters for CISSP and for real engineering work. Threat modeling is not documentation theater. It is a design-time control for reducing avoidable security debt.</p>
-
-<h2 id="why-this-matters-for-cissp-and-real-operations">Why This Matters for CISSP and Real Operations</h2>
-
-<p>On the exam, security decisions are evaluated in business and risk context. In real systems, the same principle applies: the cheapest time to reduce security risk is before architecture hardens around risky assumptions.</p>
-
-<p>Threat modeling helps teams do four high-value things consistently:</p>
-
-<ul>
-  <li>identify what is truly valuable in the system</li>
-  <li>surface realistic failure and abuse paths</li>
-  <li>choose proportionate controls before implementation locks in</li>
-  <li>validate whether mitigations actually close meaningful risk</li>
-</ul>
-
-<p>When these steps happen early, teams spend less time converting late findings into emergency roadmaps.</p>
-
-<h2 id="what-the-exam-tests-vs-what-practice-demands">What the Exam Tests vs What Practice Demands</h2>
-
-<h3 id="what-cissp-typically-tests">What CISSP typically tests</h3>
-
-<p>CISSP questions usually reward answers that prioritize structured, risk-based reasoning over ad hoc fixes.</p>
-
-<p>Typical pattern:</p>
-
-<ul>
-  <li>system design has unresolved trust or control assumptions</li>
-  <li>several controls could be added late</li>
-  <li>strongest answer addresses root design risk, ownership, and control intent</li>
-</ul>
-
-<p>The exam mindset is clear: controls are stronger when they are designed deliberately, not attached reactively.</p>
-
-<h3 id="what-practice-demands">What practice demands</h3>
-
-<p>Practice demands repeatability under delivery pressure.</p>
-
-<p>Teams shipping weekly or daily do not need perfect models. They need a lightweight process that can run often and influence decisions while change is still cheap.</p>
-
-<p>The most useful models are not the largest ones. They are the ones that keep pace with real architecture changes.</p>
-
-<h2 id="the-four-questions-that-keep-threat-modeling-practical">The Four Questions That Keep Threat Modeling Practical</h2>
-
-<p>OWASP’s common framework remains useful because it is simple and durable:</p>
-
-<ol>
-  <li>What are we working on?</li>
-  <li>What can go wrong?</li>
-  <li>What are we going to do about it?</li>
-  <li>Did we do a good enough job?</li>
-</ol>
-
-<p>If a modeling exercise cannot answer those four questions clearly, it is probably drifting into artifact production rather than risk reduction.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/four-question-loop.svg" alt="Four-question threat modeling loop showing scope, threats, mitigations, and validation" class="inline-img" /></p>
-
-<h2 id="where-teams-go-wrong">Where Teams Go Wrong</h2>
-
-<p>Threat modeling fails less from bad intent and more from weak integration.</p>
-
-<h3 id="1-running-it-only-once-before-release">1. Running it only once before release</h3>
-
-<p>A one-time review cannot reflect evolving trust boundaries, new dependencies, or changed business workflows.</p>
-
-<h3 id="2-confusing-tool-output-with-risk-decisions">2. Confusing tool output with risk decisions</h3>
-
-<p>Automated rule engines can help discover common threat patterns, but they do not replace context-based prioritization.</p>
-
-<h3 id="3-producing-findings-without-ownership">3. Producing findings without ownership</h3>
-
-<p>If threats are identified but not mapped to owners, deadlines, and verification evidence, the model becomes archival.</p>
-
-<h3 id="4-over-modeling-low-value-surfaces">4. Over-modeling low-value surfaces</h3>
-
-<p>Teams spend hours on low-impact scenarios while high-risk integration paths remain weakly analyzed.</p>
-
-<h2 id="a-realistic-engineering-scenario">A Realistic Engineering Scenario</h2>
-
-<p>Imagine a team shipping a new customer support feature that allows privileged agents to retrieve account histories through an internal API.</p>
-
-<p>Architecture looks straightforward:</p>
-
-<ul>
-  <li>web app sends request to support API</li>
-  <li>support API queries customer records service</li>
-  <li>exported results can be downloaded for case handling</li>
-</ul>
-
-<p>Without a threat model, the discussion centers on delivery speed and happy-path functionality.</p>
-
-<p>A focused threat model quickly changes the conversation.</p>
-
-<h3 id="what-can-go-wrong">What can go wrong</h3>
-
-<ul>
-  <li>replayed tokens reused across services</li>
-  <li>over-broad support roles exporting more data than required</li>
-  <li>weak auditability for emergency overrides</li>
-  <li>webhook impersonation from third-party case integrations</li>
-</ul>
-
-<h3 id="what-are-we-going-to-do-about-it">What are we going to do about it</h3>
-
-<ul>
-  <li>enforce audience and token lifetime constraints</li>
-  <li>require just-in-time elevation for export actions</li>
-  <li>add immutable logs with reason codes for high-risk events</li>
-  <li>sign and verify webhook payloads with strict trust validation</li>
-</ul>
-
-<h3 id="did-we-do-enough">Did we do enough</h3>
-
-<p>Verification is defined up front:</p>
-
-<ul>
-  <li>control tests in CI for auth and trust checks</li>
-  <li>production telemetry for denied risky actions</li>
-  <li>periodic access recertification for support roles</li>
-</ul>
-
-<p>Same product. Better risk posture. Less surprise debt.</p>
-
-<h2 id="threat-modeling-as-a-delivery-control">Threat Modeling as a Delivery Control</h2>
-
-<p>Threat modeling works best when treated like architecture review and test planning: part of normal engineering flow.</p>
-
-<p>A practical cadence:</p>
-
-<ul>
-  <li>run a baseline model for new systems</li>
-  <li>run delta models for major feature or trust-boundary changes</li>
-  <li>revisit after incidents, major dependency changes, or platform migrations</li>
-</ul>
-
-<p>This aligns with secure SDLC thinking in frameworks like NIST SSDF, where security practices are integrated into development workflows rather than isolated at the end.</p>
-
-<h2 id="established-principles-and-recent-developments">Established Principles and Recent Developments</h2>
-
-<h3 id="established-principles">Established principles</h3>
-
-<p>Threat modeling fundamentals have remained consistent for years:</p>
-
-<ul>
-  <li>start from assets, trust boundaries, and assumptions</li>
-  <li>identify plausible abuse and failure paths</li>
-  <li>map threats to mitigations and residual risk decisions</li>
-  <li>verify that controls are implemented and effective</li>
-</ul>
-
-<p>These principles match core CISSP reasoning: deliberate, risk-aware design decisions supported by accountability.</p>
-
-<h3 id="recent-developments">Recent developments</h3>
-
-<p>What has changed is operating context and speed:</p>
-
-<ul>
-  <li>modern architectures have more APIs, integrations, and identity-mediated trust paths</li>
-  <li>deployment frequency is higher, so stale models decay faster</li>
-  <li>tooling has improved model generation and collaboration, but governance discipline still determines quality</li>
-</ul>
-
-<p>In other words, the need for threat modeling has increased, but success still depends on clear ownership and decision rigor.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/control-mapping-board.svg" alt="Threat modeling board that maps threats to control decisions, owners, and evidence" class="inline-img" /></p>
-
-<h2 id="metrics-that-show-whether-it-is-working">Metrics That Show Whether It Is Working</h2>
-
-<p>If leadership wants to know whether threat modeling creates value, avoid vanity metrics like number of diagrams created.</p>
-
-<p>Track outcomes that reflect decision quality:</p>
-
-<ul>
-  <li>percentage of high-risk features modeled before implementation</li>
-  <li>median time from identified threat to control decision</li>
-  <li>percentage of modeled high-risk threats with assigned owner and verification evidence</li>
-  <li>recurring incident root causes that were previously identified but unmitigated</li>
-  <li>control verification pass rate for threat-derived requirements</li>
-</ul>
-
-<p>These indicators reveal whether modeling is influencing architecture and operations, not just documentation volume.</p>
-
-<h2 id="a-30-day-upgrade-plan">A 30-Day Upgrade Plan</h2>
-
-<p>You can materially improve threat modeling in one month without buying a platform.</p>
-
-<h3 id="week-1-define-scope-and-trigger-events">Week 1: Define scope and trigger events</h3>
-
-<p>Choose the highest-risk product areas and set clear triggers for when a model refresh is required.</p>
-
-<h3 id="week-2-standardize-a-lightweight-template">Week 2: Standardize a lightweight template</h3>
-
-<p>Capture assets, trust boundaries, top threats, mitigation decisions, owners, and validation plans in one consistent format.</p>
-
-<h3 id="week-3-connect-to-delivery-workflow">Week 3: Connect to delivery workflow</h3>
-
-<p>Require threat-derived controls to appear as explicit engineering work with acceptance criteria.</p>
-
-<h3 id="week-4-review-outcomes-and-close-gaps">Week 4: Review outcomes and close gaps</h3>
-
-<p>Check whether high-risk threats were mitigated, accepted with authority, or missed. Feed lessons back into architecture and process.</p>
-
-<h2 id="final-takeaway">Final Takeaway</h2>
-
-<p>For CISSP candidates, threat modeling is best understood as structured risk analysis during design, not as a post-design security formality.</p>
-
-<p>For engineering leaders, the practical standard is simple: if your model does not produce clear control decisions, owners, and verification evidence, it is not yet a control.</p>
-
-<p>Treat threat modeling as an engineering habit, and it will steadily reduce the class of incidents that should have been preventable.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP-focused guide to threat modeling as a design control, including practical workflows, common failure patterns, and measurable ways to improve secure design decisions.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP threat modeling guide</li>
-  <li>threat modeling in secure SDLC</li>
-  <li>STRIDE and design risk analysis</li>
-  <li>secure design control for engineers</li>
-  <li>threat model to control mapping</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Engineering" /><category term="CISSP" /><category term="threat modeling" /><category term="secure design" /><category term="STRIDE" /><category term="secure SDLC" /><category term="risk management" /><summary type="html"><![CDATA[A practical CISSP guide to threat modeling as an engineering control: when to run it, how to make it actionable, and how to avoid checklist theater.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-threat-modeling-design-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security" /><category term="Governance" /><category term="CISSP" /><category term="data residency" /><category term="data sovereignty" /><category term="jurisdiction risk" /><category term="privacy governance" /><category term="cloud security" /><summary type="html"><![CDATA[A practical CISSP guide to data residency and sovereignty: how to evaluate jurisdiction risk, control cross-border transfers, and build evidence-backed governance.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-residency-sovereignty-jurisdiction-risk/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -53,7 +53,7 @@
 
 ## 3. Detailed Blog Post
 
-*(See `_posts/2026-04-21-cissp-trusted-computing-base-security-kernel-reference-monitor.md`)*
+_(See `_posts/2026-04-21-cissp-trusted-computing-base-security-kernel-reference-monitor.md`)_
 
 ---
 

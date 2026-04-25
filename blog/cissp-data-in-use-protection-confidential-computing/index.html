@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #45: Data in Use Protection and Confidential Computing | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-24T14:40:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Data in Use" />
+      
+        <meta property="article:tag" content="Confidential Computing" />
+      
+        <meta property="article:tag" content="Attestation" />
+      
+        <meta property="article:tag" content="Encryption" />
+      
+        <meta property="article:tag" content="Domain 3" />
+      
+    
+    <meta property="og:title" content="CISSP #45: Data in Use Protection and Confidential Computing" />
+    <meta property="og:description" content="Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #45: Data in Use Protection and Confidential Computing" />
+    <meta name="twitter:description" content="Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #45: Data in Use Protection and Confidential Computing",
+        "description": "Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-04-24T14:40:00+00:00",
+        "dateModified": "2026-04-24T14:40:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Security Architecture • Data Security</div>
+              
+              <time class="post-date" datetime="2026-04-24T14:40:00+00:00">April 24, 2026</time>
+              <h1 class="post-title">CISSP #45: Data in Use Protection and Confidential Computing</h1>
+              
+                <p class="post-dek">Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Data in Use</span>
+                  
+                    <span class="chip">Confidential Computing</span>
+                  
+                    <span class="chip">Attestation</span>
+                  
+                    <span class="chip">Encryption</span>
+                  
+                    <span class="chip">Domain 3</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" alt="CISSP #45 Data in Use Protection and Confidential Computing" class="blog-hero" /></p>
+
+<p>Most security discussions still organize data protection around two states:</p>
+
+<ul>
+  <li>data at rest</li>
+  <li>data in transit</li>
+</ul>
+
+<p>That framing is useful, but incomplete.</p>
+
+<p>The hardest state to protect is often <strong>data in use</strong>: the moment data is being processed in memory, where business value is created and where many traditional encryption assumptions stop helping.</p>
+
+<p>For CISSP candidates and working engineers, this is an important mindset shift. Encryption at rest and in transit can be strong and still leave critical trust gaps during execution.</p>
+
+<h2 id="the-third-state-of-data">The Third State of Data</h2>
+
+<p>CISSP Domain 3 and Domain 7 both push candidates to think in lifecycle terms. Data protection is not one control. It is coordinated protection across states.</p>
+
+<p>At a high level:</p>
+
+<ul>
+  <li><strong>Data at rest</strong> is protected by storage encryption, key management, and access controls.</li>
+  <li><strong>Data in transit</strong> is protected by protocol security (for example TLS), integrity checks, and endpoint authentication.</li>
+  <li><strong>Data in use</strong> is exposed to runtime context: process memory, CPU execution, privileged software layers, and sometimes co-tenancy risk.</li>
+</ul>
+
+<p>The third state matters because decryption has to happen somewhere for computation to occur. The question becomes: what do you trust while that computation runs?</p>
+
+<p>That question sits directly at the intersection of architecture, assurance, and risk management.</p>
+
+<h2 id="why-data-in-use-is-hard">Why Data in Use Is Hard</h2>
+
+<p>At rest and in transit protections are mostly boundary controls. They protect data before access and during movement.</p>
+
+<p>Data in use is different. Once data is loaded for processing, protection depends on runtime trust assumptions, including:</p>
+
+<ul>
+  <li>operating system integrity</li>
+  <li>hypervisor isolation</li>
+  <li>privileged admin access paths</li>
+  <li>process-level memory safety</li>
+  <li>debugger and dump controls</li>
+  <li>workload placement and tenancy context</li>
+</ul>
+
+<p>If any of these assumptions fail, encryption controls that looked excellent in policy may provide limited real protection at runtime.</p>
+
+<p>This is why mature architectures avoid treating encryption as a blanket answer. Encryption is essential, but trust during execution requires additional controls.</p>
+
+<h2 id="the-exam-perspective-people-process-technology-balance">The Exam Perspective: People, Process, Technology Balance</h2>
+
+<p>The CISSP exam often avoids purely technical answers when risk and governance are involved.</p>
+
+<p>If a scenario highlights sensitive processing risk in shared or semi-trusted environments, the best answer usually combines:</p>
+
+<ul>
+  <li>technical controls for runtime protection</li>
+  <li>policy constraints for privileged operations</li>
+  <li>monitoring and attestation evidence</li>
+  <li>risk-based decisions about where specific workloads may execute</li>
+</ul>
+
+<p>In other words, the exam mindset is not “pick one crypto feature.” It is “design the trust model end to end.”</p>
+
+<h2 id="confidential-computing-a-practical-response">Confidential Computing: A Practical Response</h2>
+
+<p><strong>Confidential computing</strong> is a design approach that aims to protect data in use by isolating workloads in hardware-backed trusted execution environments (TEEs), reducing exposure even from privileged platform layers.</p>
+
+<p>Different technologies implement this differently, but the architectural intent is consistent:</p>
+
+<ul>
+  <li>isolate sensitive computation</li>
+  <li>protect memory region boundaries</li>
+  <li>reduce reliance on broad host trust</li>
+  <li>provide attestation evidence about workload state</li>
+</ul>
+
+<p>From a CISSP viewpoint, this fits naturally with trusted computing base minimization and assurance concepts: shrink what must be trusted, verify what is running, and bind decisions to evidence.</p>
+
+<p>It is not a silver bullet, but it is a meaningful improvement over “trust everything below the application by default.”</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-1.svg" alt="Data security states and where confidential computing addresses data in use risk" class="blog-inline" /></p>
+
+<h2 id="attestation-and-trust-decisions">Attestation and Trust Decisions</h2>
+
+<p>A recurring theme in modern architecture is that trust should be evidence-driven.</p>
+
+<p>Attestation helps answer questions like:</p>
+
+<ul>
+  <li>Is this workload running in an expected protected environment?</li>
+  <li>Is the boot/runtime state aligned with policy?</li>
+  <li>Should secrets be released to this instance?</li>
+</ul>
+
+<p>In practical systems, attestation value appears when it is connected to policy outcomes:</p>
+
+<ul>
+  <li>release keys only to validated workloads</li>
+  <li>block sensitive operations when integrity evidence is missing</li>
+  <li>downgrade privileges when trust posture changes</li>
+</ul>
+
+<p>Without policy linkage, attestation can degrade into telemetry without control impact.</p>
+
+<p>The exam will often reward answers that convert evidence into enforceable decisions.</p>
+
+<h2 id="what-confidential-computing-does-not-solve">What Confidential Computing Does Not Solve</h2>
+
+<p>This is a critical nuance.</p>
+
+<p>Confidential computing improves protection of in-use data under specific threat assumptions, but it does not eliminate broader security responsibilities.</p>
+
+<p>It does not remove the need for:</p>
+
+<ul>
+  <li>secure coding and input validation</li>
+  <li>identity and authorization controls</li>
+  <li>key lifecycle governance</li>
+  <li>logging and monitoring discipline</li>
+  <li>patching and vulnerability management</li>
+  <li>legal and contractual controls for cloud/shared environments</li>
+</ul>
+
+<p>A workload can run inside a protected execution context and still produce insecure outcomes if application logic, access control, or business process design is weak.</p>
+
+<p>The CISSP best-answer logic consistently favors this kind of balanced thinking.</p>
+
+<h2 id="a-concrete-enterprise-scenario">A Concrete Enterprise Scenario</h2>
+
+<p>Consider a team processing highly sensitive financial analytics in a shared cloud environment.</p>
+
+<p>Traditional controls:</p>
+
+<ul>
+  <li>encrypt storage volumes</li>
+  <li>enforce TLS for service-to-service traffic</li>
+  <li>restrict IAM roles</li>
+</ul>
+
+<p>Those are necessary, but leadership still asks:</p>
+
+<p>“How do we reduce exposure while values are decrypted and processed?”</p>
+
+<p>A stronger architecture might add:</p>
+
+<ul>
+  <li>confidential-computing-capable workload placement</li>
+  <li>attestation-based secret release</li>
+  <li>restricted admin pathways for sensitive nodes</li>
+  <li>policy that blocks execution in non-attested runtime states</li>
+</ul>
+
+<p>This is not about chasing a trend. It is about reducing trust in broad infrastructure layers and making trust decisions explicit.</p>
+
+<h2 id="data-lifecycle-thinking-beyond-checklists">Data Lifecycle Thinking Beyond Checklists</h2>
+
+<p>Many teams can state controls by category. Fewer can show how controls compose across lifecycle transitions.</p>
+
+<p>A practical data-lifecycle view asks:</p>
+
+<ol>
+  <li>Where is data created?</li>
+  <li>Where is it transformed?</li>
+  <li>Where is it exposed in plaintext?</li>
+  <li>What trust assumptions exist at each stage?</li>
+  <li>Which assumptions are validated versus merely hoped for?</li>
+</ol>
+
+<p>Data in use becomes the most revealing stage because it forces trust assumptions into the open.</p>
+
+<p>This is one reason architects with strong CISSP-style reasoning are valuable. They move conversations from control inventory to trust design.</p>
+
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+
+<p>Three misconceptions appear frequently.</p>
+
+<h3 id="we-use-tls-and-disk-encryption-so-we-are-covered">“We use TLS and disk encryption, so we are covered.”</h3>
+
+<p>Those controls protect two states. They do not fully address runtime memory exposure and privileged execution risk.</p>
+
+<h3 id="confidential-computing-means-we-can-ignore-host-security">“Confidential computing means we can ignore host security.”</h3>
+
+<p>No. It reduces some host-trust assumptions for specific workloads. It does not make surrounding platform security irrelevant.</p>
+
+<h3 id="attestation-equals-absolute-trust">“Attestation equals absolute trust.”</h3>
+
+<p>Attestation gives evidence under defined conditions. It must still be evaluated against policy, scope, freshness, and risk tolerance.</p>
+
+<h2 id="exam-relevant-comparisons">Exam-Relevant Comparisons</h2>
+
+<p>For CISSP question framing, the following distinctions are useful:</p>
+
+<ul>
+  <li>Encryption at rest protects stored data media state.</li>
+  <li>Encryption in transit protects communication channels.</li>
+  <li>Confidential computing targets runtime execution trust boundaries.</li>
+  <li>Attestation supports trust decisions using integrity evidence.</li>
+</ul>
+
+<p>If a scenario specifically calls out concern about privileged infrastructure visibility into active computation, answers focused only on transit/storage encryption are often incomplete.</p>
+
+<p>The better answer addresses runtime trust reduction and evidence-based control.</p>
+
+<h2 id="operational-considerations-before-adoption">Operational Considerations Before Adoption</h2>
+
+<p>When evaluating confidential computing capabilities, mature teams typically ask:</p>
+
+<ul>
+  <li>Which workloads actually require in-use protection beyond standard controls?</li>
+  <li>What threat model justifies the complexity?</li>
+  <li>How will attestation evidence be consumed in policy engines?</li>
+  <li>What performance and compatibility tradeoffs exist?</li>
+  <li>How do incident response and forensics workflows adapt?</li>
+</ul>
+
+<p>These are not blockers. They are architecture hygiene.</p>
+
+<p>Security controls are strongest when matched to explicit business risk and integrated into existing operational discipline.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-2.svg" alt="Enforcement path linking attestation evidence to secret release and workload policy decisions" class="blog-inline" /></p>
+
+<h2 id="why-this-topic-is-increasingly-important">Why This Topic Is Increasingly Important</h2>
+
+<p>As AI workloads, analytics pipelines, and cross-organization processing increase, so does pressure to process sensitive data in external or shared environments.</p>
+
+<p>That changes the trust equation.</p>
+
+<p>Organizations need controls that let them compute on sensitive data while reducing reliance on broad administrator trust assumptions and improving evidence quality for governance and audit.</p>
+
+<p>Data in use protection and confidential computing are increasingly part of that answer.</p>
+
+<p>For CISSP learners, the bigger lesson is architectural: choose controls based on state-specific risk and verifiable trust, not generic “encrypted therefore safe” narratives.</p>
+
+<h2 id="a-practical-heuristic">A Practical Heuristic</h2>
+
+<p>When evaluating any architecture claiming strong data protection, ask:</p>
+
+<ol>
+  <li>How is data protected at rest?</li>
+  <li>How is data protected in transit?</li>
+  <li>What protects data while being processed?</li>
+  <li>What evidence proves runtime trust state?</li>
+  <li>How does policy respond when trust evidence is missing?</li>
+</ol>
+
+<p>If question 3 through 5 have weak answers, the architecture likely has a data-in-use blind spot.</p>
+
+<hr />
+
+<p>CISSP Domain 3 rewards candidates who can reason beyond control checklists. Data in use protection is one of the clearest places where that matters. Confidential computing and attestation are not universal answers, but they are strong tools when your threat model includes runtime trust concerns.</p>
+
+<p>The real skill is mapping protection controls to data state, validating assumptions, and turning trust evidence into enforceable decisions.</p>
+
+<p><em>If you are following this series, this post builds directly on the previous entries about root of trust, startup integrity, and assurance boundaries.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical CISSP guide to data in use protection and confidential computing. Learn how runtime trust differs from at-rest and in-transit security, and why attestation-driven policy matters.</p>
+
+<p><strong>SEO keywords:</strong> CISSP data in use protection, confidential computing CISSP, attestation security architecture, data lifecycle security CISSP, CISSP Domain 3 runtime trust</p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

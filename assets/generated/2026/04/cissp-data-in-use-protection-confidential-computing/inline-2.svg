@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="400" fill="url(#bg2)"/>
+  <text x="500" y="40" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#e8f4fd" letter-spacing="2">ATTESTATION-DRIVEN POLICY DECISIONS</text>
+
+  <rect x="60" y="96" width="260" height="240" rx="12" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="190" y="128" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2ecc71">EVIDENCE INPUTS</text>
+  <text x="90" y="170" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Runtime attestation</text>
+  <text x="90" y="206" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Boot measurement state</text>
+  <text x="90" y="242" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Trust policy metadata</text>
+
+  <rect x="370" y="96" width="260" height="240" rx="12" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <text x="500" y="128" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#7ab8e8">DECISION ENGINE</text>
+  <text x="400" y="170" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Evaluate trust claims</text>
+  <text x="400" y="206" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Check policy conditions</text>
+  <text x="400" y="242" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Generate enforcement action</text>
+
+  <rect x="680" y="96" width="260" height="240" rx="12" fill="#2a0a0a" stroke="#ff4d4d" stroke-width="2"/>
+  <text x="810" y="128" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ff8080">OUTCOME</text>
+  <text x="710" y="170" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Allow secret release</text>
+  <text x="710" y="206" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Restrict workload access</text>
+  <text x="710" y="242" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffffff">Deny / quarantine</text>
+
+  <line x1="320" y1="216" x2="370" y2="216" stroke="#4da6ff" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <line x1="630" y1="216" x2="680" y2="216" stroke="#4da6ff" stroke-width="2.5" marker-end="url(#arrowB)"/>
+
+  <text x="500" y="380" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#2d5a8a" letter-spacing="3">CISSP SERIES  ·  POST #45</text>
+</svg>

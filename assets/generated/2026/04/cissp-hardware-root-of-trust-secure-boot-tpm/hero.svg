@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4da6ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.35">
+    <line x1="0" y1="128" x2="1536" y2="128"/><line x1="0" y1="256" x2="1536" y2="256"/><line x1="0" y1="384" x2="1536" y2="384"/>
+    <line x1="0" y1="512" x2="1536" y2="512"/><line x1="0" y1="640" x2="1536" y2="640"/><line x1="0" y1="768" x2="1536" y2="768"/><line x1="0" y1="896" x2="1536" y2="896"/>
+    <line x1="192" y1="0" x2="192" y2="1024"/><line x1="384" y1="0" x2="384" y2="1024"/><line x1="576" y1="0" x2="576" y2="1024"/>
+    <line x1="768" y1="0" x2="768" y2="1024"/><line x1="960" y1="0" x2="960" y2="1024"/><line x1="1152" y1="0" x2="1152" y2="1024"/><line x1="1344" y1="0" x2="1344" y2="1024"/>
+  </g>
+
+  <text x="768" y="76" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="700" fill="#e8f4fd" letter-spacing="2">HARDWARE ROOT OF TRUST</text>
+  <text x="768" y="114" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#7ab8e8" letter-spacing="4">SECURE BOOT  ·  MEASURED BOOT  ·  TPM</text>
+
+  <rect x="140" y="700" width="1256" height="190" rx="20" fill="#0f2a45" stroke="#1a7ccf" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="768" y="760" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#e8f4fd">HARDWARE ROOT OF TRUST</text>
+  <text x="768" y="792" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#7ab8e8">Foundational anchor for startup integrity and key protection</text>
+
+  <rect x="280" y="470" width="976" height="170" rx="18" fill="#10233d" stroke="#4da6ff" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="768" y="536" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#e8f4fd">SECURE BOOT ENFORCEMENT</text>
+  <text x="768" y="568" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#7ab8e8">Only trusted, signed startup components execute</text>
+
+  <rect x="430" y="250" width="676" height="160" rx="16" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="768" y="308" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#e8f4fd">TPM MEASURED EVIDENCE</text>
+  <text x="768" y="338" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#7ab8e8">Boot measurements support attestation and trust decisions</text>
+
+  <line x1="768" y1="700" x2="768" y2="640" stroke="#4da6ff" stroke-width="4" marker-end="url(#arrowB)"/>
+  <line x1="768" y1="470" x2="768" y2="410" stroke="#4da6ff" stroke-width="4" marker-end="url(#arrowB)"/>
+
+  <circle cx="1210" cy="316" r="58" fill="#0a8a3a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="1210" y="312" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">ATTEST</text>
+  <text x="1210" y="334" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">STATE</text>
+
+  <text x="768" y="988" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d5a8a" letter-spacing="4">CISSP SERIES  ·  POST #44</text>
+</svg>
