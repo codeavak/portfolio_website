@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#162840;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+
+  <text x="768" y="78" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="700" fill="#e8f4fd" letter-spacing="2">DATA REMANENCE CONTROL</text>
+  <text x="768" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#7ab8e8" letter-spacing="4">CLEAR  ·  PURGE  ·  DESTROY</text>
+
+  <circle cx="768" cy="540" r="280" fill="none" stroke="#1a7ccf" stroke-width="22" filter="url(#glow)"/>
+
+  <rect x="668" y="250" width="200" height="68" rx="10" fill="#0f2240" stroke="#4da6ff" stroke-width="2"/>
+  <text x="768" y="293" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#e8f4fd">RETAIN</text>
+
+  <rect x="1040" y="500" width="220" height="68" rx="10" fill="#0f2a1a" stroke="#2ecc71" stroke-width="2"/>
+  <text x="1150" y="543" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#e8f4fd">ARCHIVE</text>
+
+  <rect x="668" y="812" width="200" height="68" rx="10" fill="#2a220d" stroke="#ffb347" stroke-width="2"/>
+  <text x="768" y="855" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#e8f4fd">HOLD</text>
+
+  <rect x="276" y="500" width="220" height="68" rx="10" fill="#2a0a0a" stroke="#ff4d4d" stroke-width="2"/>
+  <text x="386" y="543" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#e8f4fd">DISPOSE</text>
+
+  <circle cx="768" cy="540" r="106" fill="#0f2a45" stroke="#4da6ff" stroke-width="2.5"/>
+  <path d="M768 478 L820 498 L820 548 Q820 593 768 617 Q716 593 716 548 L716 498 Z" fill="#0a8a3a" stroke="#2ecc71" stroke-width="2"/>
+  <polyline points="741,548 763,572 803,523" stroke="white" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="768" y="660" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7ab8e8">VERIFIED SANITIZATION</text>
+
+  <text x="768" y="988" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d5a8a" letter-spacing="4">CISSP SERIES  ·  POST #47</text>
+</svg>
