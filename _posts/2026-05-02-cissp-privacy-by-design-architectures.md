@@ -14,10 +14,10 @@ tags:
     Domain 2,
   ]
 excerpt: "Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches."
-image: /assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg
+image: /assets/generated/2026/05/cissp-privacy-by-design-architectures/hero-v2.svg
 ---
 
-<img src="{{ site.baseurl }}/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg" alt="CISSP #50 Privacy by Design and privacy-preserving architectures" class="blog-hero" />
+<img src="{{ site.baseurl }}/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero-v2.svg" alt="CISSP #50 Privacy by Design and privacy-preserving architectures" class="blog-hero" />
 
 I'm working through CISSP and writing these posts as a way to study and share what actually sticks. This post digs into Privacy by Design—a concept that separates experienced security architects from those who think privacy is something you bolt on once you've built the system.
 
@@ -131,7 +131,7 @@ Useful but has known limitations; newer techniques like differential privacy are
 
 ## The Architectural Trade-Offs
 
-<img src="{{ site.baseurl }}/assets/generated/2026/05/cissp-privacy-by-design-architectures/data-separation.svg" alt="Data Separation Pattern: Personal data and operational data flowing through separate systems" class="blog-inline" />
+<img src="{{ site.baseurl }}/assets/generated/2026/05/cissp-privacy-by-design-architectures/data-separation-v2.svg" alt="Data Separation Pattern: Personal data and operational data flowing through separate systems" class="blog-inline" />
 
 Implementing Privacy by Design isn't free. The tensions are real:
 

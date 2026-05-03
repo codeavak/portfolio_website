@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" role="img" aria-label="Data Separation Pattern: Personal and operational data in separate flows">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="700" fill="url(#bgGrad)"/>
+  <text x="700" y="45" font-size="36" font-weight="700" fill="#0f172a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Data Separation Architecture Pattern</text>
+  <text x="700" y="75" font-size="16" font-weight="400" fill="#64748b" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Keep personal and operational data in separate, independently controlled pipelines</text>
+  <g>
+    <text x="280" y="120" font-size="18" font-weight="700" fill="#be185d" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Personal Data Pipeline</text>
+    <line x1="120" y1="135" x2="440" y2="135" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
+    <rect x="120" y="160" width="320" height="90" rx="10" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <text x="280" y="195" font-size="16" font-weight="700" fill="#be185d" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">User Identity Data</text>
+    <text x="280" y="220" font-size="13" fill="#831843" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Names, emails, accounts</text>
+    <text x="280" y="240" font-size="12" fill="#9f1239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Limited access required</text>
+    <line x1="280" y1="250" x2="280" y2="290" stroke="#ec4899" stroke-width="2"/>
+    <polygon points="280,295 277,285 283,285" fill="#ec4899"/>
+    <rect x="120" y="295" width="320" height="90" rx="10" fill="#ec4899" opacity="0.15" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <text x="280" y="330" font-size="16" font-weight="700" fill="#be185d" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">End-to-End Encryption</text>
+    <text x="280" y="355" font-size="13" fill="#831843" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">AES-256, encrypted at rest</text>
+    <text x="280" y="375" font-size="12" fill="#9f1239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Key separation enforced</text>
+    <line x1="280" y1="385" x2="280" y2="425" stroke="#ec4899" stroke-width="2"/>
+    <polygon points="280,430 277,420 283,420" fill="#ec4899"/>
+    <rect x="120" y="430" width="320" height="90" rx="10" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <text x="280" y="465" font-size="16" font-weight="700" fill="#be185d" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Isolated Storage</text>
+    <text x="280" y="490" font-size="13" fill="#831843" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Strict access controls</text>
+    <text x="280" y="510" font-size="12" fill="#9f1239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Purge policies enforced</text>
+  </g>
+  <line x1="700" y1="100" x2="700" y2="650" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="5,5" opacity="0.6"/>
+  <text x="700" y="690" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Separate Pipelines = Reduced Risk</text>
+  <g>
+    <text x="1120" y="120" font-size="18" font-weight="700" fill="#1e40af" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Operational Data Pipeline</text>
+    <line x1="960" y1="135" x2="1280" y2="135" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+    <rect x="960" y="160" width="320" height="90" rx="10" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1120" y="195" font-size="16" font-weight="700" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Operational Events</text>
+    <text x="1120" y="220" font-size="13" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Logs, metrics, behavior</text>
+    <text x="1120" y="240" font-size="12" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">No PII embedded</text>
+    <line x1="1120" y1="250" x2="1120" y2="290" stroke="#3b82f6" stroke-width="2"/>
+    <polygon points="1120,295 1117,285 1123,285" fill="#3b82f6"/>
+    <rect x="960" y="295" width="320" height="90" rx="10" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1120" y="330" font-size="16" font-weight="700" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Aggregated Analytics</text>
+    <text x="1120" y="355" font-size="13" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Differential privacy applied</text>
+    <text x="1120" y="375" font-size="12" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Broader access allowed</text>
+    <line x1="1120" y1="385" x2="1120" y2="425" stroke="#3b82f6" stroke-width="2"/>
+    <polygon points="1120,430 1117,420 1123,420" fill="#3b82f6"/>
+    <rect x="960" y="430" width="320" height="90" rx="10" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1120" y="465" font-size="16" font-weight="700" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Retention Window</text>
+    <text x="1120" y="490" font-size="13" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">90 days aggregate data</text>
+    <text x="1120" y="510" font-size="12" fill="#1e3a8a" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Auto-purge after retention</text>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="13">
+    <rect x="80" y="580" width="240" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="200" y="605" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Blast Radius Limited</text>
+    <text x="200" y="630" font-size="12" fill="#065f46" text-anchor="middle">Breach of one pipeline</text>
+    <text x="200" y="648" font-size="12" fill="#065f46" text-anchor="middle">doesn't expose the other</text>
+    <rect x="1080" y="580" width="240" height="80" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="1200" y="605" font-size="14" font-weight="700" fill="#b45309" text-anchor="middle">Compliance Easier</text>
+    <text x="1200" y="630" font-size="12" fill="#7c2d12" text-anchor="middle">PII controls separate from</text>
+    <text x="1200" y="648" font-size="12" fill="#7c2d12" text-anchor="middle">analytics governance</text>
+  </g>
+</svg>
