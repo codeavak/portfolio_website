@@ -104,36 +104,3 @@
     <text x="1200" y="648" font-size="12" fill="#7c2d12" text-anchor="middle">analytics governance</text>
   </g>
 </svg>
-    <text x="1250" y="135" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Events &amp;</text>
-    <text x="1250" y="160" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Analytics</text>
-    
-    <!-- Arrow down -->
-    <line x1="1250" y1="180" x2="1250" y2="220" stroke="#3b82f6" stroke-width="2"/>
-    <defs>
-      <marker id="arrowEnd2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6" />
-      </marker>
-    </defs>
-    
-    <!-- Hashing box -->
-    <rect x="1150" y="220" width="200" height="80" rx="8" fill="#3b82f6" opacity="0.25" stroke="#3b82f6" stroke-width="2"/>
-    <text x="1250" y="255" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">User IDs</text>
-    <text x="1250" y="280" font-size="12" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Hashed</text>
-    
-    <!-- Arrow down -->
-    <line x1="1250" y1="300" x2="1250" y2="340" stroke="#3b82f6" stroke-width="2"/>
-    
-    <!-- Storage box -->
-    <rect x="1150" y="340" width="200" height="80" rx="8" fill="#3b82f6" opacity="0.35" stroke="#3b82f6" stroke-width="2"/>
-    <text x="1250" y="375" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Analytics</text>
-    <text x="1250" y="400" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Platform</text>
-    
-    <!-- Label -->
-    <text x="1250" y="530" font-size="13" font-weight="600" fill="#1e40af" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Operational Data Pipeline</text>
-    <text x="1250" y="555" font-size="11" fill="#084594" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Aggregated, no personal data</text>
-  </g>
-  
-  <!-- Center divider line -->
-  <line x1="700" y1="80" x2="700" y2="580" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
-  <text x="700" y="590" font-size="12" fill="#475569" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Separate Systems</text>
-</svg>

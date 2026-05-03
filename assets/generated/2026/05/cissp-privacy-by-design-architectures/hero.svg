@@ -46,7 +46,7 @@
     <text x="1170" y="162" font-size="16" font-weight="600" fill="#d8b4fe" text-anchor="middle">Encryption</text>
     
     <rect x="880" y="40" width="280" height="50" rx="6" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="1"/>
-    <text x="1020" y="72" font-size="16" font-weight="600" fill="#93c5fd" text-anchor="middle">Audit & Transparency</text>
+    <text x="1020" y="72" font-size="16" font-weight="600" fill="#93c5fd" text-anchor="middle">Audit &amp; Transparency</text>
     
     <rect x="200" y="350" width="220" height="50" rx="6" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="1"/>
     <text x="310" y="382" font-size="16" font-weight="600" fill="#fda4af" text-anchor="middle">User Control</text>
