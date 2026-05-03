@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Operational DLP cycle">
+  <rect width="1200" height="700" fill="#0F172A" />
+
+  <text x="600" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" fill="#E2E8F0">Operational DLP Cycle</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle">
+    <circle cx="600" cy="170" r="84" fill="#1D4ED8" />
+    <text x="600" y="177" fill="#FFFFFF">Classify</text>
+
+    <circle cx="920" cy="290" r="84" fill="#0EA5A5" />
+    <text x="920" y="297" fill="#FFFFFF">Monitor</text>
+
+    <circle cx="920" cy="520" r="84" fill="#16A34A" />
+    <text x="920" y="527" fill="#FFFFFF">Coach /</text>
+    <text x="920" y="555" fill="#FFFFFF">Prevent</text>
+
+    <circle cx="600" cy="610" r="84" fill="#CA8A04" />
+    <text x="600" y="617" fill="#FFFFFF">Investigate</text>
+
+    <circle cx="280" cy="520" r="84" fill="#DC2626" />
+    <text x="280" y="527" fill="#FFFFFF">Exception</text>
+
+    <circle cx="280" cy="290" r="84" fill="#7C3AED" />
+    <text x="280" y="297" fill="#FFFFFF">Tune</text>
+  </g>
+
+  <g stroke="#93C5FD" stroke-width="6" fill="none" opacity="0.9">
+    <path d="M672 195 L850 262" />
+    <path d="M920 374 L920 436" />
+    <path d="M850 560 L672 602" />
+    <path d="M528 602 L350 560" />
+    <path d="M280 436 L280 374" />
+    <path d="M350 262 L528 195" />
+  </g>
+
+  <rect x="280" y="640" width="640" height="38" rx="19" fill="#334155" />
+  <text x="600" y="666" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#E2E8F0">Evidence, ownership, and metrics make DLP sustainable</text>
+</svg>

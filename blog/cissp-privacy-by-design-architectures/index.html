@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #50: Privacy by Design and Privacy-Preserving Architectures | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-02T13:20:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Privacy by Design" />
+      
+        <meta property="article:tag" content="Privacy Engineering" />
+      
+        <meta property="article:tag" content="Data Protection" />
+      
+        <meta property="article:tag" content="Architecture" />
+      
+        <meta property="article:tag" content="Domain 1" />
+      
+        <meta property="article:tag" content="Domain 2" />
+      
+    
+    <meta property="og:title" content="CISSP #50: Privacy by Design and Privacy-Preserving Architectures" />
+    <meta property="og:description" content="Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #50: Privacy by Design and Privacy-Preserving Architectures" />
+    <meta name="twitter:description" content="Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #50: Privacy by Design and Privacy-Preserving Architectures",
+        "description": "Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-02T13:20:00+00:00",
+        "dateModified": "2026-05-02T13:20:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Privacy • Architecture • Data Security</div>
+              
+              <time class="post-date" datetime="2026-05-02T13:20:00+00:00">May 2, 2026</time>
+              <h1 class="post-title">CISSP #50: Privacy by Design and Privacy-Preserving Architectures</h1>
+              
+                <p class="post-dek">Privacy by Design transforms privacy from a compliance checkbox into an architectural principle. Learn how to structure systems where privacy limitations are built in from day one, explore privacy-preserving technologies, and understand the real trade-offs that separate resilient systems from reactive patches.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Privacy by Design</span>
+                  
+                    <span class="chip">Privacy Engineering</span>
+                  
+                    <span class="chip">Data Protection</span>
+                  
+                    <span class="chip">Architecture</span>
+                  
+                    <span class="chip">Domain 1</span>
+                  
+                    <span class="chip">Domain 2</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero.svg" alt="CISSP #50 Privacy by Design and privacy-preserving architectures" class="blog-hero" /></p>
+
+<p>I’m working through CISSP and writing these posts as a way to study and share what actually sticks. This post digs into Privacy by Design—a concept that separates experienced security architects from those who think privacy is something you bolt on once you’ve built the system.</p>
+
+<h2 id="the-core-problem-privacy-as-afterthought">The Core Problem: Privacy as Afterthought</h2>
+
+<p>Most systems are designed for functionality and performance first, then security is layered on, and privacy is often an afterthought.</p>
+
+<p>A team collects user behavior data to build personalization features. Later, a privacy lawyer flags GDPR concerns. Now they need to add encryption, implement data retention purges, and rework consent flows. The architecture was never designed to separate personal data flows from operational data. Privacy controls end up scattered, brittle, and expensive to maintain.</p>
+
+<p>From a CISSP perspective, this is a governance failure—but one that starts in architecture.</p>
+
+<p>Privacy by Design inverts the approach: instead of asking “what data can we legally keep?” after building, you ask “what architecture ensures we only handle what we need?” before you build.</p>
+
+<p>It sounds good in principle. In practice, it requires real trade-offs: technical complexity, upfront design cost, ongoing architectural discipline, and sometimes reduced feature richness or analytics depth.</p>
+
+<p>The executives who understand this trade-off and make Privacy by Design a priority tend to have more resilient systems and lower breach liability. Those who don’t end up paying more later—in incident response, compliance remediation, or reputation damage.</p>
+
+<h2 id="privacy-by-design-seven-foundational-principles">Privacy by Design: Seven Foundational Principles</h2>
+
+<p>Ann Cavoukian’s Privacy by Design framework, now embedded in ISO/IEC 27001 and required by GDPR Article 25, rests on seven principles:</p>
+
+<p><strong>1. Proactive, Not Reactive</strong></p>
+
+<p>Privacy should be built in from the start, not retrofitted after problems surface or breaches occur. Reactive privacy is expensive and incomplete; proactive privacy is structural.</p>
+
+<p>In practice, this means threat modeling that includes privacy risks alongside security risks. A feature that enables user tracking is a threat model concern from day one, not something discovered during compliance review.</p>
+
+<p><strong>2. Privacy by Default</strong></p>
+
+<p>The system’s default configuration should offer maximum privacy protection. Users should opt in to data sharing, not opt out. The highest level of privacy should be the path of least friction.</p>
+
+<p>Example: A notification service defaults to no tracking, minimal retention, and no third-party sharing. If a user wants analytics or personalization, they explicitly enable it.</p>
+
+<p>Contrast this with many systems where privacy is the hard mode—you have to find obscure settings to disable telemetry or data collection.</p>
+
+<p><strong>3. Privacy Embedded in Design</strong></p>
+
+<p>Privacy isn’t a feature module bolted onto the side. It’s woven into the core architecture: data models, API design, authorization logic, and storage decisions.</p>
+
+<p>This is technical and organizational. It means security architects are involved in feature design, data flows are modeled with privacy in mind, and code review includes privacy checks.</p>
+
+<p><strong>4. End-to-End Security</strong></p>
+
+<p>Privacy controls must span the full lifecycle: data collection, transmission, processing, storage, access, and deletion.</p>
+
+<p>A system that encrypts data at rest but logs all access patterns in unencrypted logs hasn’t achieved end-to-end privacy. All the pieces must work together.</p>
+
+<p><strong>5. Visibility and Transparency</strong></p>
+
+<p>Users and system operators must understand what data exists, how it’s used, and why. This is both an ethical principle and a practical one—transparency enables people to make informed decisions and helps operators audit whether the system still meets its privacy goals as it evolves.</p>
+
+<p>In CISSP terms, this includes documentation, audit trails, and clear communication of privacy policies.</p>
+
+<p><strong>6. User-Centric</strong></p>
+
+<p>Users should be able to understand and control their data. Privacy controls should be designed from the user’s perspective, not the organization’s.</p>
+
+<p>This is harder than it sounds. Many privacy UIs are deliberately obscure. User-centric design means user experience researchers, security architects, and product managers collaborating to make privacy controls intuitive.</p>
+
+<p><strong>7. Collaborative</strong></p>
+
+<p>Privacy is not solely a legal or security function. It requires engineering, product, governance, and business teams aligned on privacy as a shared goal.</p>
+
+<p>When privacy is only “security’s problem,” it becomes a constraint that engineering resents and works around. When it’s collaborative, privacy becomes part of how the whole team thinks.</p>
+
+<h2 id="privacy-preserving-technologies-where-theory-meets-practice">Privacy-Preserving Technologies: Where Theory Meets Practice</h2>
+
+<p>Principles are necessary but not sufficient. How do you actually implement them?</p>
+
+<p>Privacy-preserving technologies are the technical tools that enable Privacy by Design. The key ones:</p>
+
+<p><strong>Encryption (Traditional and Modern)</strong></p>
+
+<p>Encryption is foundational: data encrypted at rest and in transit can’t be read by attackers. But it’s not magic. The system must still handle encryption keys securely, and encrypted data still leaves patterns that can leak information.</p>
+
+<p>Example: A financial system encrypted with a simple per-user key leaks the number of transactions and their timing—which can reveal customer behavior even without seeing amounts.</p>
+
+<p><strong>Differential Privacy</strong></p>
+
+<p>Differential privacy is a mathematical framework for releasing aggregate statistics (like “average user age”) without revealing information about any specific individual.</p>
+
+<p>Example: Instead of releasing a histogram of exact ages, you release slightly noisy data: “the average age is approximately 32, plus or minus 5.” The noise is calibrated so that an attacker cannot reverse-engineer individual values.</p>
+
+<p>This is increasingly used in analytics, machine learning, and census data. Expensive, requires statistical expertise, but enables real insights while maintaining privacy.</p>
+
+<p><strong>Homomorphic Encryption</strong></p>
+
+<p>This is cryptography that lets you compute on encrypted data without decrypting it first.</p>
+
+<p>Example: A cloud service could compute average salary on encrypted payroll data—the result is correct and encrypted—without the cloud operator ever seeing individual salaries.</p>
+
+<p>Powerful but computationally expensive. Practical use is still limited but growing.</p>
+
+<p><strong>Secure Multi-Party Computation (MPC)</strong></p>
+
+<p>Multiple parties collaborate on a computation (like aggregating bids in an auction) such that each party learns only the agreed output, not the inputs from others.</p>
+
+<p>Used in high-security financial systems and privacy-critical analytics.</p>
+
+<p><strong>Federated Learning</strong></p>
+
+<p>Train machine learning models on distributed data without centralizing raw data. Each participant trains locally, then shares only model updates (not data) with a central server.</p>
+
+<p>Reduces centralization of personal data and is becoming standard for privacy-sensitive ML.</p>
+
+<p><strong>K-Anonymity and T-Closeness</strong></p>
+
+<p>Data masking techniques that ensure no individual can be uniquely identified from a dataset by linking quasi-identifiers.</p>
+
+<p>Useful but has known limitations; newer techniques like differential privacy are generally preferred for strong privacy guarantees.</p>
+
+<h2 id="the-architectural-trade-offs">The Architectural Trade-Offs</h2>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/data-separation.svg" alt="Data Separation Pattern: Personal data and operational data flowing through separate systems" class="blog-inline" /></p>
+
+<p>Implementing Privacy by Design isn’t free. The tensions are real:</p>
+
+<p><strong>Privacy vs. Observability</strong></p>
+
+<p>To debug a production issue, you want detailed logs. To maintain privacy, you minimize what you log. The balance requires careful design: you log enough to operate and respond to incidents, but not so much that personal data becomes centralized in logs.</p>
+
+<p>Solution: Structured logging that separates operational data (request latency, error rates) from personal data (user identifiers, request contents). Use separate retention policies.</p>
+
+<p><strong>Privacy vs. Personalization</strong></p>
+
+<p>Personalization engines often need detailed user behavior data. Privacy-preserving personalization (like federated learning for recommendations) is less mature and more expensive than centralized approaches.</p>
+
+<p>The business decision: Do we want to invest in privacy-preserving personalization, or do we accept lower personalization in service of privacy?</p>
+
+<p><strong>Privacy vs. Analytics</strong></p>
+
+<p>Data analytics requires data. Privacy requires minimizing data exposure. Differential privacy and other techniques bridge this gap but add cost and some accuracy loss.</p>
+
+<p><strong>Upfront Cost</strong></p>
+
+<p>Privacy by Design requires more architecture design, security reviews, and sometimes more complex code. This costs more upfront than building first and patching privacy later.</p>
+
+<p>But the long-term total cost of ownership is usually lower because you avoid expensive retrofits, breach response, and compliance remediation.</p>
+
+<h2 id="practical-application-three-architectural-patterns">Practical Application: Three Architectural Patterns</h2>
+
+<p>How do you actually implement this?</p>
+
+<p><strong>Pattern 1: Data Separation</strong></p>
+
+<p>Separate personal data (names, emails, identifiers) from operational data (analytics, metadata) at the architectural level. They flow through different systems, have different retention, and different access controls.</p>
+
+<p>Example: A SaaS platform keeps user contact info in a tightly controlled identity service. It sends only user IDs and event types to analytics. No personal data enters the analytics pipeline.</p>
+
+<p>This simplifies compliance, limits breach impact, and makes privacy controls concrete rather than procedural.</p>
+
+<p><strong>Pattern 2: Encryption Boundaries</strong></p>
+
+<p>Identify which data must be encrypted end-to-end (from user device through storage) vs. which can be encrypted at rest only. Design your system so encryption requirements drive architecture, not the other way around.</p>
+
+<p>Example: A messaging app encrypts content end-to-end so the platform itself can’t read messages. It does not encrypt metadata (who messaged whom, when) because the platform needs that to route messages. But metadata retention is tightly controlled—purged after 90 days.</p>
+
+<p><strong>Pattern 3: Privacy as Observability</strong></p>
+
+<p>Instead of trying to maintain privacy <em>despite</em> observability, build observability systems that are privacy-preserving by design.</p>
+
+<p>Example: Use event-streaming architectures where personal data is extracted and hashed at the event source. Telemetry and analytics receive only hashes and aggregates. If you ever need to investigate a specific user, you have an audit process that requires authorization and logging.</p>
+
+<h2 id="where-cissp-gets-this-right-and-where-it-doesnt">Where CISSP Gets This Right (and Where It Doesn’t)</h2>
+
+<p>The CISSP CBK teaches Privacy by Design as a governance principle—it’s tested in Domain 1 (Security and Risk Management) and Domain 2 (Asset Security). The exam expects you to understand:</p>
+
+<ul>
+  <li>Privacy regulations and their impact on architecture (GDPR, CCPA, etc.)</li>
+  <li>Privacy as an operational control, not just policy</li>
+  <li>The relationship between privacy and other security controls</li>
+  <li>Privacy trade-offs in cloud, third-party, and data-sharing scenarios</li>
+</ul>
+
+<p>Where the exam sometimes falls short: it focuses on <em>compliance</em> with privacy regulations more than the <em>engineering</em> of privacy-preserving systems. The CISSP candidate needs to know GDPR Article 25, but the exam rarely digs into homomorphic encryption or differential privacy.</p>
+
+<p><strong>The exam mindset:</strong> Privacy is a business risk that must be managed architecturally. You evaluate privacy requirements, design systems to meet them, and make trade-off decisions that align with the organization’s risk tolerance.</p>
+
+<p><strong>The practitioner mindset:</strong> Privacy-preserving technologies are evolving rapidly. Federated learning, differential privacy, and zero-knowledge proofs are moving from research into production. A modern security architect should understand not just the principles but the technical landscape.</p>
+
+<h2 id="bringing-it-together-privacy-by-design-as-competitive-advantage">Bringing It Together: Privacy by Design as Competitive Advantage</h2>
+
+<p>Organizations that get Privacy by Design right have:</p>
+
+<ul>
+  <li>Lower breach liability (less sensitive data means smaller blast radius)</li>
+  <li>Faster compliance onboarding (privacy-first architecture adapts more easily to new regulations)</li>
+  <li>Better customer trust (users understand and control their data)</li>
+  <li>Simpler audit (privacy controls are architectural, not procedural workarounds)</li>
+</ul>
+
+<p>It requires investment, architectural discipline, and organizational alignment. But it’s the difference between privacy as a cost center and privacy as part of a resilient, trustworthy system.</p>
+
+<p>For CISSP candidates: understand that Privacy by Design isn’t just a governance phrase. It’s about making privacy structural—embedded in how you design systems, store data, and think about risk. The exam tests this primarily through scenarios about GDPR, cloud data handling, and third-party risk. But the deeper understanding is architectural.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Privacy by Design transforms privacy from a bolt-on compliance requirement into an architectural principle. Learn how to structure systems where privacy limitations are structural, explore privacy-preserving technologies, and understand the real trade-offs that come with building privacy into your architecture from day one.</p>
+
+<p><strong>Keywords:</strong> Privacy by Design CISSP, Privacy-Preserving Technologies, Data Minimization Architecture, Differential Privacy Engineering, GDPR Article 25 Implementation</p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

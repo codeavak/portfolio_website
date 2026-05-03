@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="DLP coverage across data states">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7FAFC" />
+      <stop offset="100%" stop-color="#E6EEF5" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg2)" />
+
+  <text x="600" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" fill="#12355B">DLP Coverage by Data State</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#102A43">
+    <rect x="100" y="140" width="300" height="420" rx="18" fill="#D8EAF7" stroke="#2A6F97" stroke-width="3" />
+    <text x="250" y="190" text-anchor="middle" font-size="30" font-weight="700">At Rest</text>
+    <text x="250" y="240" text-anchor="middle" font-size="22">Discovery</text>
+    <text x="250" y="275" text-anchor="middle" font-size="22">Labeling</text>
+    <text x="250" y="310" text-anchor="middle" font-size="22">Access Boundaries</text>
+    <text x="250" y="345" text-anchor="middle" font-size="22">Repository Hygiene</text>
+
+    <rect x="450" y="140" width="300" height="420" rx="18" fill="#DDF7E9" stroke="#1B8A5A" stroke-width="3" />
+    <text x="600" y="190" text-anchor="middle" font-size="30" font-weight="700">In Motion</text>
+    <text x="600" y="240" text-anchor="middle" font-size="22">Email Controls</text>
+    <text x="600" y="275" text-anchor="middle" font-size="22">Web Upload Checks</text>
+    <text x="600" y="310" text-anchor="middle" font-size="22">API Egress Rules</text>
+    <text x="600" y="345" text-anchor="middle" font-size="22">Session Policies</text>
+
+    <rect x="800" y="140" width="300" height="420" rx="18" fill="#FFF2D9" stroke="#C97A00" stroke-width="3" />
+    <text x="950" y="190" text-anchor="middle" font-size="30" font-weight="700">In Use</text>
+    <text x="950" y="240" text-anchor="middle" font-size="22">Copy / Paste</text>
+    <text x="950" y="275" text-anchor="middle" font-size="22">Print / Export</text>
+    <text x="950" y="310" text-anchor="middle" font-size="22">Screenshot Signals</text>
+    <text x="950" y="345" text-anchor="middle" font-size="22">Endpoint Coaching</text>
+  </g>
+
+  <rect x="210" y="600" width="780" height="54" rx="27" fill="#12355B" />
+  <text x="600" y="636" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#FFFFFF">Shared Foundations: Classification, Ownership, Exceptions, Incident Triage</text>
+</svg>
