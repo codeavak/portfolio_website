@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="CISSP #50 Privacy by Design hero">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgGradient)"/>
+  <circle cx="800" cy="450" r="400" fill="url(#pulseGrad)" opacity="0.6"/>
+  <g opacity="0.8" filter="url(#glow)">
+    <circle cx="800" cy="450" r="340" fill="none" stroke="#3b82f6" stroke-width="3" opacity="0.9"/>
+    <circle cx="800" cy="450" r="260" fill="none" stroke="#8b5cf6" stroke-width="3" opacity="0.8"/>
+    <circle cx="800" cy="450" r="180" fill="none" stroke="#ec4899" stroke-width="3" opacity="0.7"/>
+    <circle cx="800" cy="450" r="100" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.6"/>
+  </g>
+  <circle cx="800" cy="450" r="85" fill="#f59e0b" opacity="0.2" filter="url(#glow)"/>
+  <circle cx="800" cy="450" r="85" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <text x="800" y="445" font-size="20" font-weight="700" fill="#fbbf24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Data</text>
+  <text x="800" y="472" font-size="20" font-weight="700" fill="#fbbf24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Minimization</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="940" y="260" width="220" height="50" rx="6" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="1"/>
+    <text x="1050" y="292" font-size="16" font-weight="600" fill="#fda4af" text-anchor="middle">Access Controls</text>
+    <rect x="1080" y="130" width="180" height="50" rx="6" fill="#8b5cf6" opacity="0.1" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="1170" y="162" font-size="16" font-weight="600" fill="#d8b4fe" text-anchor="middle">Encryption</text>
+    <rect x="880" y="40" width="280" height="50" rx="6" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="1"/>
+    <text x="1020" y="72" font-size="16" font-weight="600" fill="#93c5fd" text-anchor="middle">Audit &amp; Transparency</text>
+    <rect x="200" y="350" width="220" height="50" rx="6" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="1"/>
+    <text x="310" y="382" font-size="16" font-weight="600" fill="#fda4af" text-anchor="middle">User Control</text>
+  </g>
+  <text x="800" y="750" font-size="72" font-weight="700" fill="#e0e7ff" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" filter="url(#glow)">Privacy by Design</text>
+  <text x="800" y="825" font-size="32" font-weight="400" fill="#cbd5e1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Built into the architecture from day one</text>
+  <line x1="150" y1="750" x2="350" y2="750" stroke="#3b82f6" stroke-width="4" opacity="0.7"/>
+  <line x1="1250" y1="750" x2="1450" y2="750" stroke="#8b5cf6" stroke-width="4" opacity="0.7"/>
+  <circle cx="80" cy="80" r="15" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="1520" cy="820" r="15" fill="#8b5cf6" opacity="0.5"/>
+</svg>
