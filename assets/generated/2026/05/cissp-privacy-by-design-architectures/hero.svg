@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="CISSP #50 Privacy by Design hero">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgGradient)"/>
+  
+  <!-- Concentric circles representing Privacy by Design layers -->
+  <g opacity="0.3">
+    <circle cx="800" cy="450" r="320" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="800" cy="450" r="250" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="800" cy="450" r="180" fill="none" stroke="#ec4899" stroke-width="2"/>
+    <circle cx="800" cy="450" r="110" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  </g>
+  
+  <!-- Center core (Data Minimization) -->
+  <circle cx="800" cy="450" r="90" fill="#f59e0b" opacity="0.15"/>
+  <text x="800" y="445" font-size="18" font-weight="700" fill="#fbbf24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Data</text>
+  <text x="800" y="470" font-size="18" font-weight="700" fill="#fbbf24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Minimization</text>
+  
+  <!-- Layer 2 labels -->
+  <text x="1000" y="280" font-size="16" font-weight="600" fill="#ec4899" font-family="Segoe UI, Arial, sans-serif">Access Controls</text>
+  
+  <!-- Layer 3 labels -->
+  <text x="1100" y="160" font-size="16" font-weight="600" fill="#8b5cf6" font-family="Segoe UI, Arial, sans-serif">Encryption</text>
+  
+  <!-- Layer 4 labels (outer) -->
+  <text x="980" y="80" font-size="16" font-weight="600" fill="#3b82f6" font-family="Segoe UI, Arial, sans-serif">Audit & Transparency</text>
+  
+  <!-- Main title -->
+  <text x="800" y="750" font-size="66" font-weight="700" fill="#e0e7ff" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Privacy by Design</text>
+  <text x="800" y="820" font-size="28" font-weight="400" fill="#cbd5e1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Architecture From the Ground Up</text>
+  
+  <!-- Decorative accents -->
+  <line x1="200" y1="700" x2="400" y2="700" stroke="#3b82f6" stroke-width="3" opacity="0.6"/>
+  <line x1="1200" y1="700" x2="1400" y2="700" stroke="#8b5cf6" stroke-width="3" opacity="0.6"/>
+</svg>
