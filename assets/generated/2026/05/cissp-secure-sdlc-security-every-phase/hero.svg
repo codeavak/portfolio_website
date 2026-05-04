@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="Secure SDLC: Security integrated at every phase from requirements through maintenance">
+  <title>Secure SDLC: Security at Every Phase</title>
+
+  <!-- Background -->
+  <rect width="960" height="300" fill="#0f172a" rx="12"/>
+
+  <!-- Title -->
+  <text x="480" y="45" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" text-anchor="middle">Secure SDLC: Security at Every Phase</text>
+
+  <!-- Phase 1: Requirements -->
+  <rect x="20" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="80" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Requirements</text>
+  <text x="80" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Security reqs</text>
+  <text x="80" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Abuse cases</text>
+  <text x="80" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Data sensitivity</text>
+
+  <!-- Arrow 1 -->
+  <line x1="140" y1="115" x2="175" y2="115" stroke="#475569" stroke-width="2"/>
+  <polygon points="172,111 180,115 172,119" fill="#475569"/>
+
+  <!-- Phase 2: Design -->
+  <rect x="180" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="240" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Design</text>
+  <text x="240" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Threat modeling</text>
+  <text x="240" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Trust boundaries</text>
+  <text x="240" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Attack surface</text>
+
+  <!-- Arrow 2 -->
+  <line x1="300" y1="115" x2="335" y2="115" stroke="#475569" stroke-width="2"/>
+  <polygon points="332,111 340,115 332,119" fill="#475569"/>
+
+  <!-- Phase 3: Implement -->
+  <rect x="340" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="400" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Implement</text>
+  <text x="400" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Secure coding</text>
+  <text x="400" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">SAST</text>
+  <text x="400" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">SCA</text>
+
+  <!-- Arrow 3 -->
+  <line x1="460" y1="115" x2="495" y2="115" stroke="#475569" stroke-width="2"/>
+  <polygon points="492,111 500,115 492,119" fill="#475569"/>
+
+  <!-- Phase 4: Test -->
+  <rect x="500" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="560" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Test</text>
+  <text x="560" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">DAST</text>
+  <text x="560" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Penetration test</text>
+  <text x="560" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Sec regression</text>
+
+  <!-- Arrow 4 -->
+  <line x1="620" y1="115" x2="655" y2="115" stroke="#475569" stroke-width="2"/>
+  <polygon points="652,111 660,115 652,119" fill="#475569"/>
+
+  <!-- Phase 5: Deploy -->
+  <rect x="660" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="720" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Deploy</text>
+  <text x="720" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Secure config</text>
+  <text x="720" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Secrets mgmt</text>
+  <text x="720" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">IaC scanning</text>
+
+  <!-- Arrow 5 -->
+  <line x1="780" y1="115" x2="815" y2="115" stroke="#475569" stroke-width="2"/>
+  <polygon points="812,111 820,115 812,119" fill="#475569"/>
+
+  <!-- Phase 6: Maintain -->
+  <rect x="820" y="70" width="120" height="90" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="880" y="95" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">Maintain</text>
+  <text x="880" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Vuln mgmt</text>
+  <text x="880" y="128" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Patching</text>
+  <text x="880" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Monitoring</text>
+
+  <!-- Bottom banner -->
+  <rect x="20" y="185" width="920" height="46" rx="6" fill="#0e2a1e" stroke="#22c55e" stroke-width="1"/>
+  <text x="480" y="204" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#86efac" text-anchor="middle">SECURITY INTEGRATED THROUGHOUT - NOT BOLTED ON AT THE END</text>
+  <text x="480" y="222" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">CISSP Domain 8: Software Development Security</text>
+
+  <!-- Footer -->
+  <text x="480" y="262" font-family="system-ui, sans-serif" font-size="11" fill="#475569" text-anchor="middle">Security requirements found early cost far less to remediate than vulnerabilities found in production</text>
+  <text x="480" y="284" font-family="system-ui, sans-serif" font-size="10" fill="#334155" text-anchor="middle">CISSP Series #51</text>
+</svg>
