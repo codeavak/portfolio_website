@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" width="700" height="380" role="img" aria-label="Relative cost to fix security defects grows significantly in later SDLC phases">
+  <title>Relative Cost to Fix Security Defects by Phase Discovered</title>
+
+  <!-- Background -->
+  <rect width="700" height="380" fill="#0f172a" rx="12"/>
+
+  <!-- Title -->
+  <text x="350" y="38" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#f8fafc" text-anchor="middle">Cost to Fix Grows the Later You Find It</text>
+  <text x="350" y="58" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Relative effort to remediate a security defect, by phase discovered</text>
+
+  <!-- Y-axis -->
+  <line x1="95" y1="80" x2="95" y2="315" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Y-axis label -->
+  <text x="30" y="200" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,30,200)">Relative Fix Cost</text>
+
+  <!-- X-axis -->
+  <line x1="95" y1="315" x2="620" y2="315" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Bar 1: Requirements -->
+  <rect x="110" y="295" width="80" height="20" rx="4" fill="#22c55e"/>
+  <text x="150" y="290" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#86efac" text-anchor="middle">1x</text>
+  <text x="150" y="332" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Requirements</text>
+
+  <!-- Bar 2: Design -->
+  <rect x="210" y="270" width="80" height="45" rx="4" fill="#84cc16"/>
+  <text x="250" y="265" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#d9f99d" text-anchor="middle">~5x</text>
+  <text x="250" y="332" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Design</text>
+
+  <!-- Bar 3: Implementation -->
+  <rect x="310" y="225" width="80" height="90" rx="4" fill="#eab308"/>
+  <text x="350" y="220" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fef08a" text-anchor="middle">~10x</text>
+  <text x="350" y="332" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Implementation</text>
+
+  <!-- Bar 4: Testing -->
+  <rect x="410" y="160" width="80" height="155" rx="4" fill="#f97316"/>
+  <text x="450" y="155" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fed7aa" text-anchor="middle">~25x</text>
+  <text x="450" y="332" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Testing</text>
+
+  <!-- Bar 5: Production -->
+  <rect x="510" y="105" width="80" height="210" rx="4" fill="#ef4444"/>
+  <text x="550" y="100" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fecaca" text-anchor="middle">60x+</text>
+  <text x="550" y="332" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Production</text>
+
+  <!-- Trend line -->
+  <polyline points="150,295 250,270 350,225 450,160 550,105" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+
+  <!-- Footer notes -->
+  <text x="350" y="355" font-family="system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Values are illustrative - relative cost ratios vary, but the directional pattern is well established</text>
+  <text x="350" y="372" font-family="system-ui, sans-serif" font-size="10" fill="#334155" text-anchor="middle">CISSP Series #51 - Secure SDLC</text>
+</svg>

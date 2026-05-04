@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-03T04:03:25+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #50: Privacy by Design and Privacy-Preserving Architectures</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/" rel="alternate" type="text/html" title="CISSP #50: Privacy by Design and Privacy-Preserving Architectures" /><published>2026-05-02T13:20:00+00:00</published><updated>2026-05-02T13:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero-v2.svg" alt="CISSP #50 Privacy by Design and privacy-preserving architectures" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-04T09:13:11+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/" rel="alternate" type="text/html" title="CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing" /><published>2026-05-04T12:00:00+00:00</published><updated>2026-05-04T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" alt="CISSP #51 Secure SDLC: Security at every phase from requirements through maintenance" class="blog-hero" /></p>
+
+<p>Developers do not intend to ship vulnerabilities. They intend to ship features. Security enters the picture later — often much later — when a test team runs a scan, a penetration tester finds an injection flaw, or a customer’s security team sends an uncomfortable questionnaire.</p>
+
+<p>The Secure Software Development Lifecycle exists to change that structural problem. From the CISSP perspective, this is Domain 8 territory: Software Development Security. The core idea is straightforward. Security requirements, reviews, and controls belong in every phase of development — not as a final checkpoint that gates release.</p>
+
+<p>If you have followed this series through privacy by design, threat modeling, and defense in depth, the Secure SDLC is where those concepts land inside a working development process.</p>
+
+<h2 id="what-domain-8-expects-you-to-reason-about">What Domain 8 Expects You to Reason About</h2>
+
+<p>The CISSP exam is not asking you to recite a tool list. Domain 8 tests your ability to think about security at the organizational and process level. Where does security get embedded in the development lifecycle? Who owns it at each phase? What controls exist, and what happens when they are absent?</p>
+
+<p>You need to understand:</p>
+
+<ul>
+  <li>How security requirements connect to business risk</li>
+  <li>Why testing alone does not produce secure software</li>
+  <li>What controls belong at design, implementation, testing, and deployment</li>
+  <li>How software assurance differs from a penetration test</li>
+  <li>What maturity looks like versus just running a scanner</li>
+</ul>
+
+<p>The exam mindset: secure software is engineered from requirements onward, not inspected into existence at the end.</p>
+
+<h2 id="phase-1-requirements">Phase 1: Requirements</h2>
+
+<p>Security that is not required is optional. That is the practical problem with skipping security at requirements time.</p>
+
+<p>Functional requirements define what the system must do. Security requirements define what the system must not allow. Both belong in the same document, reviewed by the same stakeholders, before a single line of code is written.</p>
+
+<p>This means identifying data sensitivity early — what personal, financial, or operational data will this system handle? Classification at requirements time drives protection requirements throughout the lifecycle. It also means writing abuse cases alongside use cases. A login use case has a corresponding brute-force abuse case. An API endpoint has a corresponding parameter manipulation case. Regulatory and compliance requirements — GDPR, HIPAA, PCI-DSS — do not emerge during testing. They are constraints from day one.</p>
+
+<p>A security requirement captured at this phase costs a conversation. The same requirement discovered during a production penetration test can cost weeks of rework, customer communication, and potential regulatory attention.</p>
+
+<h2 id="phase-2-design">Phase 2: Design</h2>
+
+<p>Design is where security architecture becomes concrete.</p>
+
+<p>This is the phase for threat modeling. The questions here are structural: what are the trust boundaries, where is authentication enforced, how are sensitive data flows isolated, what does the attack surface look like? Design-phase security work surfaces issues while they are still architectural decisions rather than code changes.</p>
+
+<p>Key design-phase controls include trust boundary analysis — which components trust which other components, and on what basis — and privilege minimization: does every component request only the access it actually needs? Secure defaults also belong here. Are error states, unconfigured states, and edge cases fail-safe? What does the system do when a dependency is unavailable?</p>
+
+<p>Dependency choices made at design time — frameworks, libraries, external APIs — carry their own risk surfaces. Those choices are cheaper to revisit before implementation begins than after a product is in production.</p>
+
+<h2 id="phase-3-implementation">Phase 3: Implementation</h2>
+
+<p>This is where most developers spend most of their time, and where many vulnerabilities are introduced.</p>
+
+<p>Secure coding is not a style preference. It is the application of well-established knowledge about how software fails under adversarial conditions. OWASP maintains the most widely referenced taxonomy of web application vulnerabilities. Language-specific secure coding standards exist for C, C++, Java, .NET, Python, and others. Developers who understand common failure patterns write substantially different code than those who do not.</p>
+
+<p>Beyond developer knowledge, implementation-phase security controls include:</p>
+
+<p><strong>Static Application Security Testing (SAST)</strong> runs against source code without executing the application. It catches common patterns — injection sinks, hardcoded credentials, dangerous API usage, missing input validation. SAST can run in a local development environment or as a CI/CD pipeline gate. It produces false positives and requires tuning, but the feedback loop is fast enough to be useful during active development.</p>
+
+<p><strong>Software Composition Analysis (SCA)</strong> examines third-party dependencies for known vulnerabilities. When a developer adds a library, that library brings its entire dependency tree into the application. SCA tools cross-reference those dependencies against public vulnerability databases. This matters more than it once did: software supply chain attacks have made the dependency layer a primary attack vector, and a secure application can ship compromised components without any developer writing a vulnerable line.</p>
+
+<p><strong>Code review</strong> is a control, not just a quality activity. A peer reviewer with a security lens catches logic flaws, authorization gaps, and subtle trust assumptions that automated tools miss. It is also where separation of duties begins in development — the person who writes the code should not be the only person who reviews it.</p>
+
+<h2 id="phase-4-testing">Phase 4: Testing</h2>
+
+<p>Testing is where many organizations first encounter security — which is already late, but far better than finding vulnerabilities in production.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/inline-1.svg" alt="Chart showing relative cost to fix security defects grows significantly in later SDLC phases" class="blog-inline" /></p>
+
+<p><strong>Dynamic Application Security Testing (DAST)</strong> runs against a live application and exercises it like an attacker would. It finds vulnerabilities that require execution to surface — misconfigurations, authentication bypass issues, runtime injection points. DAST does not require access to source code, which makes it applicable to third-party and black-box components.</p>
+
+<p><strong>Penetration testing</strong> is a deeper, human-driven evaluation. A skilled tester explores the application and infrastructure for chains of vulnerabilities that automated tools miss — logical access control flaws, business logic abuse, privilege escalation paths. This is not a replacement for SAST and DAST; it is a complement that exercises judgment where tools cannot.</p>
+
+<p><strong>Security regression testing</strong> ensures that previously fixed vulnerabilities do not return as the codebase evolves. It belongs in the test suite alongside functional regression tests, treated as a permanent quality baseline rather than a one-time audit artifact.</p>
+
+<p>The exam distinguishes clearly between these types of testing. Knowing which technique is suited to which class of problem — and what each cannot find — is Domain 8 fundamentals.</p>
+
+<h2 id="phase-5-deployment">Phase 5: Deployment</h2>
+
+<p>A secure application can be deployed insecurely. Deployment is where security controls are often overlooked because the focus has shifted to availability and configuration correctness.</p>
+
+<p><strong>Secure configuration management</strong> applies at deployment time. Default credentials must be changed, unnecessary services disabled, and hardening applied. For many platforms, Center for Internet Security benchmarks provide a practical starting point.</p>
+
+<p><strong>Secrets management</strong> is a deployment-phase control with implementation roots. API keys, database passwords, and certificates must not live in source code, configuration files checked into version control, or environment variables visible to unauthorized parties. A dedicated secrets management service handles rotation and access control outside the application’s codebase.</p>
+
+<p><strong>Infrastructure as code scanning</strong> applies when infrastructure is defined programmatically. If a Terraform or CloudFormation template misconfigures a storage bucket or network rule, that misconfiguration can be caught before deployment rather than after.</p>
+
+<p><strong>Deployment approval controls</strong> bring separation of duties to operations. The developer who writes code should not have unilateral authority to deploy it to production. A second set of eyes — automated, human, or both — is a control, not bureaucracy.</p>
+
+<h2 id="phase-6-operations-and-maintenance">Phase 6: Operations and Maintenance</h2>
+
+<p>Secure SDLC does not end at deployment. Software runs in an environment that changes, and vulnerabilities are discovered in components that were considered secure when originally assessed.</p>
+
+<p>Maintenance-phase security includes monitoring for newly disclosed CVEs affecting dependencies and platform components, risk-based patch prioritization, application-level security monitoring integrated with broader detection infrastructure, and explicit end-of-life planning. Software components and platforms reach end of support. Continuing to run unsupported components is a risk decision that must be made explicitly, not by organizational inertia.</p>
+
+<p>From a CISSP perspective, operations-phase security closes the loop. The lifecycle is not a waterfall ending at deployment — it is continuous.</p>
+
+<h2 id="shift-left-the-principle-and-its-limits">Shift Left: The Principle and Its Limits</h2>
+
+<p>“Shift left” is the principle that security activities should move earlier in the SDLC, toward the left side of a development timeline. The directional logic is sound: remediating a security defect gets progressively more expensive the later it is discovered. A requirements-phase issue is a conversation. A production-phase issue involves incident response, customer notification, and in some cases regulatory scrutiny.</p>
+
+<p>Shift left does not mean handing all security responsibility to developers and eliminating security teams. It means security expertise must be available at every phase, automated controls must provide fast feedback where possible, and developers must have the tools and knowledge to avoid common mistakes. Security teams shift their focus toward building those capabilities rather than being the sole reviewers at the end.</p>
+
+<p>The exam tests whether you understand this tradeoff. Security shifted left is more cost-effective. Security concentrated only at testing or production is reactive.</p>
+
+<h2 id="exam-mindset-vs-real-practice">Exam Mindset vs. Real Practice</h2>
+
+<p>The CISSP exam frequently models the SDLC in a sequential, idealized form. Real development is messier. Agile sprints collapse phases. Continuous deployment means code moves to production multiple times a day. Some teams have no formal SDLC at all.</p>
+
+<p>The underlying principles apply regardless of methodology. In Agile development, security requirements belong in the backlog and sprint planning. Threat modeling happens at architecture boundaries and when significant features change. SAST runs on every pull request. Penetration tests happen on regular release cycles aligned to risk.</p>
+
+<p>The exam also consistently tests whether you recognize that security cannot be retrofitted cheaply. This is a thread that runs through multiple domains: defense in depth, privacy by design, secure design principles, and secure SDLC are all expressions of the same idea — build in, do not bolt on.</p>
+
+<h2 id="software-assurance-as-an-outcome">Software Assurance as an Outcome</h2>
+
+<p>Software assurance is the goal underneath all of this: building justified confidence that software behaves as intended and nothing else. It is not a tool you buy or a checklist you complete. It emerges from how systematically security is integrated into process and culture across every phase.</p>
+
+<p>Organizations with mature software assurance programs find fewer vulnerabilities in production, respond more efficiently when vulnerabilities are reported, and operate with a clearer picture of their own risk. They have processes for each phase rather than heroes who fix things at the end.</p>
+
+<p>From a CISSP perspective, that is what Domain 8 is pointing toward. Not the names of tools. The structure of a process that produces trustworthy software by design.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series. If Secure SDLC connects to your current work, a useful exercise is auditing your own pipeline: where are the security gates, and where are the gaps?</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> Secure SDLC integrates security requirements, code review, static and dynamic analysis, and deployment controls into every development phase. This CISSP Domain 8 guide explains what security work belongs at each stage and why testing alone is never enough.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+<ol>
+  <li>Secure software development lifecycle CISSP</li>
+  <li>CISSP Domain 8 software development security</li>
+  <li>SAST DAST software security testing</li>
+  <li>shift left security development</li>
+  <li>software assurance secure SDLC</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Secure SDLC" /><category term="CISSP" /><category term="Secure SDLC" /><category term="Software Development Security" /><category term="SAST" /><category term="DAST" /><category term="DevSecOps" /><category term="Domain 8" /><category term="Software Assurance" /><summary type="html"><![CDATA[Most teams treat security as a testing-phase concern. CISSP Domain 8 has a different view: secure software is engineered from requirements onward. This guide walks every SDLC phase and shows what security work belongs at each one.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #50: Privacy by Design and Privacy-Preserving Architectures</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/" rel="alternate" type="text/html" title="CISSP #50: Privacy by Design and Privacy-Preserving Architectures" /><published>2026-05-02T13:20:00+00:00</published><updated>2026-05-02T13:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-privacy-by-design-architectures/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-privacy-by-design-architectures/hero-v2.svg" alt="CISSP #50 Privacy by Design and privacy-preserving architectures" class="blog-hero" /></p>
 
 <p>I’m working through CISSP and writing these posts as a way to study and share what actually sticks. This post digs into Privacy by Design—a concept that separates experienced security architects from those who think privacy is something you bolt on once you’ve built the system.</p>
 
@@ -2175,161 +2306,4 @@ Signatures prove origin and integrity relative to trust anchors, not business su
 
 <p><strong>Meta description:</strong> A practical CISSP guide to the trusted computing base, security kernel, and reference monitor. Learn how they fit together, what the exam tests, and why these concepts still matter in modern systems.</p>
 
-<p><strong>SEO keywords:</strong> CISSP trusted computing base, security kernel reference monitor CISSP, CISSP Domain 3 TCB, reference monitor properties, trusted computing base security kernel</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="System Design" /><category term="CISSP" /><category term="Trusted Computing Base" /><category term="Security Kernel" /><category term="Reference Monitor" /><category term="Domain 3" /><summary type="html"><![CDATA[The trusted computing base is the part of a system you rely on for security. The CISSP exam expects you to understand how the TCB, security kernel, and reference monitor fit together and why they still matter.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #41: Security Models — Bell-LaPadula, Biba, and the Logic Behind Access Rules</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-models-bell-lapadula-biba/" rel="alternate" type="text/html" title="CISSP #41: Security Models — Bell-LaPadula, Biba, and the Logic Behind Access Rules" /><published>2026-04-20T14:30:00+00:00</published><updated>2026-04-20T14:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-models-bell-lapadula-biba</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-models-bell-lapadula-biba/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-models-bell-lapadula-biba/hero.svg" alt="CISSP #41 Security Models — Bell-LaPadula, Biba, and the Logic Behind Access Rules" class="blog-hero" /></p>
-
-<p>There is a section of the CISSP exam that trips up engineers more than almost anything else in Domain 3: formal security models.</p>
-
-<p>The names are memorable. The rules are easy to look up. But the exam does not test the rules — it tests your ability to reason about <em>why</em> they exist and <em>which one fits a given scenario</em>. That requires understanding what problem each model was designed to solve.</p>
-
-<h2 id="why-formal-models-exist">Why Formal Models Exist</h2>
-
-<p>Before there were security models, access control was ad hoc. Administrators granted permissions, policies were written in natural language, and there was no formal way to prove that a system could or could not leak sensitive data under a given set of rules.</p>
-
-<p>Formal security models emerged from government and military research in the 1970s and 1980s. The goal was to provide a mathematical framework for reasoning about information flow and access control — something that could be verified, not just described.</p>
-
-<p>These models are abstract. They do not describe code or product architecture. They describe <em>properties that a secure system must maintain</em>. Understanding them lets you evaluate whether a real system’s access policy is sound.</p>
-
-<h2 id="bell-lapadula-protecting-confidentiality">Bell-LaPadula: Protecting Confidentiality</h2>
-
-<p>Bell-LaPadula (BLP) is the oldest and most exam-prominent model. It was developed at MITRE in the 1970s under a U.S. Air Force contract, and it was designed to enforce multilevel security — the classification system used in government and military environments.</p>
-
-<p>The model operates on a simple premise: <strong>confidentiality is the primary concern</strong>. Data has classification levels (Unclassified, Confidential, Secret, Top Secret). Subjects (users, processes) have clearance levels. The model defines two key rules:</p>
-
-<p><strong>Simple Security Property (No Read Up)</strong>
-A subject cannot read data at a higher classification level than their clearance. A Secret-cleared user cannot read Top Secret data.</p>
-
-<p><strong>Star Property (No Write Down)</strong>
-A subject cannot write data to a lower classification level than their current working level. A Top Secret user cannot write notes into an Unclassified document. This prevents declassification through the back door.</p>
-
-<p>There is also a Discretionary Security Property — access must also be permitted by an access control matrix — but the two rules above are what the exam focuses on.</p>
-
-<p>The memory aid is clean: <strong>BLP = No Read Up, No Write Down</strong>. Confidentiality goes in one direction.</p>
-
-<h3 id="what-bell-lapadula-does-not-protect">What Bell-LaPadula Does Not Protect</h3>
-
-<p>BLP was designed for confidentiality. It says nothing about integrity. A Top Secret user under BLP can corrupt or modify Top Secret data freely, as long as they do not write it down. That was considered acceptable for the original threat model — the concern was information leakage upward in classification, not internal corruption.</p>
-
-<p>That gap is exactly what the next model addresses.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-models-bell-lapadula-biba/inline-1.svg" alt="Bell-LaPadula vs Biba: confidentiality and integrity rules compared" class="blog-inline" /></p>
-
-<h2 id="biba-protecting-integrity">Biba: Protecting Integrity</h2>
-
-<p>The Biba model inverts Bell-LaPadula. Instead of classification levels, it uses integrity levels. Instead of protecting confidentiality, it protects data integrity — ensuring that high-integrity data is not corrupted by low-integrity sources.</p>
-
-<p><strong>Simple Integrity Property (No Read Down)</strong>
-A subject cannot read data at a lower integrity level than their own. A high-integrity process should not ingest data from a low-integrity source that could corrupt its outputs.</p>
-
-<p><strong>Star Integrity Property (No Write Up)</strong>
-A subject cannot write to a higher integrity level than their own. A low-integrity process cannot modify high-integrity data.</p>
-
-<p>The memory aid: <strong>Biba = No Read Down, No Write Up</strong>. Integrity flows in one direction.</p>
-
-<p>Think of it in software terms: a background job that reads unvalidated external input is a low-integrity source. Biba says that job should not be able to write directly to the authoritative transaction database. If it does, you cannot trust the integrity of that database.</p>
-
-<h3 id="blp-and-biba-together">BLP and Biba Together</h3>
-
-<p>The two models are complementary and intentionally designed to work in opposite directions:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Bell-LaPadula (Confidentiality)</th>
-      <th>Biba (Integrity)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Read restriction</td>
-      <td>No Read Up</td>
-      <td>No Read Down</td>
-    </tr>
-    <tr>
-      <td>Write restriction</td>
-      <td>No Write Down</td>
-      <td>No Write Up</td>
-    </tr>
-    <tr>
-      <td>Primary concern</td>
-      <td>Information leakage</td>
-      <td>Data corruption</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>In practice, most real systems need both. Military systems implemented BLP for classification. Financial and healthcare systems are more naturally modeled with Biba — where authoritative records must not be corrupted by untrusted inputs.</p>
-
-<h2 id="clark-wilson-integrity-through-process">Clark-Wilson: Integrity Through Process</h2>
-
-<p>Clark-Wilson (1987) was developed specifically for commercial environments where Biba’s mathematical formalism was too rigid. It focuses on integrity too, but it takes a different approach — integrity through <em>controlled processes</em>, not just access rules.</p>
-
-<p>Two key concepts:</p>
-
-<p><strong>Constrained Data Items (CDIs)</strong>: data whose integrity must be protected — a transaction record, a financial balance, an audit log.</p>
-
-<p><strong>Unconstrained Data Items (UDIs)</strong>: data not yet in a protected state — raw input coming from an external source.</p>
-
-<p><strong>Transformation Procedures (TPs)</strong>: the only allowed operations on CDIs. TPs are formally validated procedures that ensure CDIs remain in a consistent, valid state after modification.</p>
-
-<p><strong>Integrity Verification Procedures (IVPs)</strong>: procedures that verify CDIs are in a valid state.</p>
-
-<p>The model also enforces <strong>separation of duties</strong> — no single subject can perform a complete sensitive transaction alone. This directly mirrors real-world requirements in financial systems (the four-eyes principle, dual approval for transfers) and healthcare (prescribing and dispensing roles are separated).</p>
-
-<p>Clark-Wilson is the model that software engineers working in regulated industries are most likely to recognize instinctively, even without knowing the name. If your system has: validated inputs, controlled write paths, transaction logs, and role-based access to operations — you are implementing Clark-Wilson concepts.</p>
-
-<h2 id="brewer-nash-the-chinese-wall">Brewer-Nash: The Chinese Wall</h2>
-
-<p>One additional model appears on the CISSP exam: <strong>Brewer-Nash</strong>, commonly called the Chinese Wall model. It was published in 1989 and designed for consulting and financial advisory environments where conflicts of interest must be prevented.</p>
-
-<p>The rule: a subject who has accessed data belonging to one company (or competitive class) cannot subsequently access data belonging to a competitor in the same class.</p>
-
-<p>Example: a consultant who reads confidential financial data from Company A cannot later access data from Company B if they are direct competitors. The “wall” grows dynamically as access occurs.</p>
-
-<p>This model is less about classification levels and more about dynamic conflict-of-interest tracking. It maps directly to legal and regulatory requirements in investment banking (information barriers, firewall compliance), consulting, and legal practice.</p>
-
-<h2 id="what-the-cissp-exam-actually-tests">What the CISSP Exam Actually Tests</h2>
-
-<p>The exam rarely asks you to recite the rules from memory. It presents scenarios and expects you to identify which model applies or which model is being violated.</p>
-
-<p>Common exam patterns:</p>
-
-<ul>
-  <li><strong>A process at a high classification level writes data to a low-classification file.</strong> → Bell-LaPadula violation (Star Property / No Write Down).</li>
-  <li><strong>A low-integrity external feed is writing directly to a production database.</strong> → Biba violation (Star Integrity / No Write Up).</li>
-  <li><strong>A financial system requires dual approval for large transactions and validates all input before committing.</strong> → Clark-Wilson concepts (TPs, separation of duties).</li>
-  <li><strong>An analyst who worked on a merger deal is now handling a competing firm’s data.</strong> → Brewer-Nash / Chinese Wall concern.</li>
-  <li><strong>A user with Top Secret clearance reads Unclassified data.</strong> → This is NOT a BLP violation. BLP allows reading <em>down</em>. The exam will test this.</li>
-</ul>
-
-<p>That last one is a common trap. Bell-LaPadula prevents reading <em>up</em>, not down. Reading down is allowed by design — the concern is leakage of classified information, not what you do with unclassified data.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-security-models-bell-lapadula-biba/inline-2.svg" alt="Security model selection guide: which model addresses which concern" class="blog-inline" /></p>
-
-<h2 id="the-engineering-relevance">The Engineering Relevance</h2>
-
-<p>These models are not just exam content. Software engineers who understand them build better-designed access control systems.</p>
-
-<p>A few practical connections:</p>
-
-<p><strong>BLP thinking</strong> shows up in data handling systems where you need to ensure that classified or sensitive data cannot be exported, desensitized, or written to lower-trust stores without a deliberate, audited process. If you work on data pipelines handling sensitive personal or financial records, you are dealing with the same problem BLP formalized.</p>
-
-<p><strong>Biba thinking</strong> applies anywhere you need to protect the integrity of authoritative data. APIs that accept external input and write to core records should have a formal validation and transformation step before ingestion — exactly what Biba’s model requires.</p>
-
-<p><strong>Clark-Wilson thinking</strong> matches naturally to systems with formal workflows, especially in regulated industries: all modifications go through validated transaction procedures, separation of duties for sensitive operations, and IVPs to confirm state validity. If you have built healthcare, finance, or compliance software, you have almost certainly implemented Clark-Wilson concepts without the label.</p>
-
-<p>The models give you vocabulary and reasoning frameworks. When you can say “this design has a Biba violation because untrusted input can write directly to a high-integrity record,” you are communicating with precision rather than intuition.</p>
-
-<hr />
-
-<p>Security architecture questions are some of the harder ones on the CISSP exam because they reward genuine understanding over memorization. The models are abstract by design — the point is to learn how to reason about trust, information flow, and access rules, not to memorize four bullet points.</p>
-
-<p>Once you understand what each model is protecting and why, the scenarios become much more approachable.</p>
-
-<p><em>This post is part of an ongoing CISSP study series. If you are working through the domains, the earlier posts on least privilege, defense in depth, and secure design principles pair well with this one.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to formal security models — Bell-LaPadula, Biba, Clark-Wilson, and Brewer-Nash. Understand what each model protects, the core access rules, and how the exam tests them.</p>
-
-<p><strong>SEO keywords:</strong> CISSP security models Bell-LaPadula Biba, Bell-LaPadula no read up no write down, Biba integrity model CISSP, Clark-Wilson model, CISSP Domain 3 formal security models</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Access Control" /><category term="CISSP" /><category term="Bell-LaPadula" /><category term="Biba" /><category term="Clark-Wilson" /><category term="Security Models" /><category term="Domain 3" /><summary type="html"><![CDATA[Security models give formal structure to access control policy. Bell-LaPadula, Biba, and Clark-Wilson each solve a different problem — and the CISSP exam expects you to know which one applies where.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-models-bell-lapadula-biba/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-security-models-bell-lapadula-biba/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><strong>SEO keywords:</strong> CISSP trusted computing base, security kernel reference monitor CISSP, CISSP Domain 3 TCB, reference monitor properties, trusted computing base security kernel</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="System Design" /><category term="CISSP" /><category term="Trusted Computing Base" /><category term="Security Kernel" /><category term="Reference Monitor" /><category term="Domain 3" /><summary type="html"><![CDATA[The trusted computing base is the part of a system you rely on for security. The CISSP exam expects you to understand how the TCB, security kernel, and reference monitor fit together and why they still matter.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
