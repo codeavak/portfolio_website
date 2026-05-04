@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="310" viewBox="0 0 760 310">
+  <defs>
+    <linearGradient id="tableBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="760" height="310" fill="url(#tableBg)" rx="6"/>
+  <text x="380" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#f1f5f9">CISSP Exam Framing: Vulnerability Categories</text>
+  <rect x="20" y="50" width="720" height="30" rx="3" fill="#1e3a5f"/>
+  <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#93c5fd">Category</text>
+  <text x="280" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#93c5fd">Root Cause</text>
+  <text x="470" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#93c5fd">Primary Control</text>
+  <text x="660" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#93c5fd">Exam Focus</text>
+  <line x1="20" y1="80" x2="740" y2="80" stroke="#334155" stroke-width="1"/>
+  <line x1="185" y1="50" x2="185" y2="300" stroke="#334155" stroke-width="0.8"/>
+  <line x1="375" y1="50" x2="375" y2="300" stroke="#334155" stroke-width="0.8"/>
+  <line x1="565" y1="50" x2="565" y2="300" stroke="#334155" stroke-width="0.8"/>
+  <rect x="20" y="80" width="720" height="44" fill="#0f172a"/>
+  <text x="100" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Memory Errors</text>
+  <text x="280" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">No bounds checking,</text>
+  <text x="280" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">manual memory mgmt</text>
+  <text x="470" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Input validation,</text>
+  <text x="470" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">safe APIs, ASLR/DEP</text>
+  <text x="660" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Recognition</text>
+  <text x="660" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">&amp; mitigation</text>
+  <line x1="20" y1="124" x2="740" y2="124" stroke="#334155" stroke-width="0.5"/>
+  <rect x="20" y="124" width="720" height="44" fill="#1a1400"/>
+  <text x="100" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Injection</text>
+  <text x="280" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Input interpreted</text>
+  <text x="280" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">as command</text>
+  <text x="470" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Parameterization,</text>
+  <text x="470" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">not sanitization</text>
+  <text x="660" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Why parameterization</text>
+  <text x="660" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">beats filtering</text>
+  <line x1="20" y1="168" x2="740" y2="168" stroke="#334155" stroke-width="0.5"/>
+  <rect x="20" y="168" width="720" height="44" fill="#001508"/>
+  <text x="100" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#34d399">Web (XSS/CSRF)</text>
+  <text x="280" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Missing output encoding,</text>
+  <text x="280" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">weak session controls</text>
+  <text x="470" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Output encoding,</text>
+  <text x="470" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">CSRF tokens, SameSite</text>
+  <text x="660" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">XSS vs CSRF</text>
+  <text x="660" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">distinction</text>
+  <line x1="20" y1="212" x2="740" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <rect x="20" y="212" width="720" height="44" fill="#100020"/>
+  <text x="100" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c084fc">Logic / TOC/TOU</text>
+  <text x="280" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Unsafe state assumptions</text>
+  <text x="280" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">between check &amp; use</text>
+  <text x="470" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Atomic operations,</text>
+  <text x="470" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">file descriptors, locking</text>
+  <text x="660" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">What TOC/TOU</text>
+  <text x="660" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">means in scenarios</text>
+  <line x1="20" y1="256" x2="740" y2="256" stroke="#334155" stroke-width="0.5"/>
+  <rect x="20" y="256" width="720" height="44" fill="#1a0000"/>
+  <text x="100" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f87171">Malicious Code</text>
+  <text x="280" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Supply chain, insider</text>
+  <text x="280" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">threat, absent review</text>
+  <text x="470" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Code review, signing,</text>
+  <text x="470" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">integrity verification</text>
+  <text x="660" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">Type classification</text>
+  <text x="660" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1">&amp; detection strategy</text>
+  <line x1="20" y1="300" x2="740" y2="300" stroke="#334155" stroke-width="0.5"/>
+</svg>

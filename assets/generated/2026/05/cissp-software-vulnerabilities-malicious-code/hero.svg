@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#heroBg)" />
+  <text x="400" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#f1f5f9">Software Vulnerabilities &amp; Malicious Code</text>
+  <text x="400" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#94a3b8">CISSP Domain 8 — Software Development Security</text>
+  <rect x="40" y="95" width="220" height="110" rx="8" fill="#0f2040" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="150" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#60a5fa">Memory Errors</text>
+  <line x1="65" y1="132" x2="235" y2="132" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="150" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Buffer overflow</text>
+  <text x="150" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Heap spray</text>
+  <text x="150" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Use-after-free</text>
+  <rect x="290" y="95" width="220" height="110" rx="8" fill="#1a1200" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="400" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#fbbf24">Injection Flaws</text>
+  <line x1="315" y1="132" x2="485" y2="132" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="400" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">SQL, OS command</text>
+  <text x="400" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">LDAP injection</text>
+  <text x="400" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">XML injection</text>
+  <rect x="540" y="95" width="220" height="110" rx="8" fill="#001a0f" stroke="#10b981" stroke-width="1.5"/>
+  <text x="650" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#34d399">Web Vulnerabilities</text>
+  <line x1="565" y1="132" x2="735" y2="132" stroke="#10b981" stroke-width="0.8"/>
+  <text x="650" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">XSS (reflected, stored)</text>
+  <text x="650" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">CSRF</text>
+  <text x="650" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Clickjacking</text>
+  <rect x="165" y="240" width="220" height="110" rx="8" fill="#150020" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="275" y="267" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#c084fc">Logic Flaws</text>
+  <line x1="190" y1="277" x2="360" y2="277" stroke="#a855f7" stroke-width="0.8"/>
+  <text x="275" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Race conditions</text>
+  <text x="275" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">TOC/TOU attacks</text>
+  <text x="275" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">State confusion</text>
+  <rect x="415" y="240" width="220" height="110" rx="8" fill="#1a0000" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="525" y="267" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#f87171">Malicious Code</text>
+  <line x1="440" y1="277" x2="610" y2="277" stroke="#ef4444" stroke-width="0.8"/>
+  <text x="525" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Backdoors, rootkits</text>
+  <text x="525" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Logic bombs</text>
+  <text x="525" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Trojan horses</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">CISSP #52 — Root cause understanding is the foundation of software assurance</text>
+</svg>

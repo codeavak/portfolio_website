@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-04T09:13:11+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/" rel="alternate" type="text/html" title="CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing" /><published>2026-05-04T12:00:00+00:00</published><updated>2026-05-04T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" alt="CISSP #51 Secure SDLC: Security at every phase from requirements through maintenance" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-04T09:20:14+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/" rel="alternate" type="text/html" title="CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize" /><published>2026-05-04T13:00:00+00:00</published><updated>2026-05-04T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" alt="CISSP #52: Software Vulnerabilities and Malicious Code — five categories with root causes and controls" class="blog-hero" /></p>
+
+<p>Every security incident eventually traces back to code that did something it should never have been allowed to do. A function read past the end of a buffer. A query accepted unescaped user input. A file was renamed between the time it was checked and the time it was used. A developer left a debugging backdoor in place and shipped it to production.</p>
+
+<p>Post #51 covered the Secure SDLC — how security belongs in every phase of development, from requirements through maintenance. This post goes one level deeper into the code itself. Before you can build software that resists attack, you have to understand the specific failure modes that attackers exploit.</p>
+
+<p>CISSP Domain 8 expects you to recognize the major vulnerability categories, understand their root causes, and reason about appropriate controls. The exam does not ask you to write exploit code. It asks you to think like someone responsible for a system’s security posture — and that means knowing what can go wrong, and why certain defenses work where others do not.</p>
+
+<h2 id="the-categories-domain-8-cares-about">The Categories Domain 8 Cares About</h2>
+
+<p>Domain 8 organizes software vulnerabilities into recognizable patterns. The specific exam objectives map to:</p>
+
+<ul>
+  <li>Memory management errors</li>
+  <li>Injection flaws</li>
+  <li>Web application vulnerabilities</li>
+  <li>Logic flaws, including race conditions</li>
+  <li>Malicious code</li>
+</ul>
+
+<p>Each category has a distinct root cause and a corresponding set of controls. Understanding the connection between root cause and control is what the exam is actually testing.</p>
+
+<h2 id="memory-management-errors">Memory Management Errors</h2>
+
+<p>Memory management vulnerabilities are among the oldest and most consequential class of software defects. The canonical example is the buffer overflow: a program writes data to a memory buffer without checking whether the data exceeds the buffer’s capacity, allowing an attacker to overwrite adjacent memory — including return addresses, function pointers, or other control data.</p>
+
+<p>The consequences range from application crash to arbitrary code execution. In languages like C and C++, developers manage memory manually. There is no automatic bounds checking. A single unchecked <code class="language-plaintext highlighter-rouge">strcpy</code> call is sufficient to introduce a critical vulnerability. Decades of security incidents — from early worm exploits to embedded system attacks — have root-caused to exactly this pattern.</p>
+
+<p><strong>Heap spraying</strong> is a related technique where an attacker fills large regions of heap memory with shellcode or exploit payloads, increasing the probability that a memory corruption error lands in attacker-controlled memory. <strong>Use-after-free</strong> vulnerabilities occur when a program continues to use a memory reference after the underlying memory has been freed, potentially pointing at attacker-controlled content by the time it is accessed.</p>
+
+<p><strong>What CISSP expects</strong>: Understand the root cause (absent bounds checking, manual memory management), the consequence (arbitrary code execution), and the primary control responses — input validation, safe API selection, use of memory-safe languages, and operating system mitigations like Address Space Layout Randomization (ASLR) and Data Execution Prevention (DEP/NX).</p>
+
+<h2 id="injection-flaws">Injection Flaws</h2>
+
+<p>Injection flaws share a common root cause: untrusted input is interpreted as a command rather than as data. The application fails to maintain a clear boundary between code and content.</p>
+
+<p>SQL injection is the most well-known example. A query constructed by concatenating user input directly into a SQL string can be manipulated to change the query’s structure entirely. The attacker’s input escapes the data context and enters the command context. The same structural problem applies to OS command injection (user input passed unsanitized to a shell), LDAP injection (user input embedded in directory queries), and XML injection (user input embedded in XML documents without proper encoding).</p>
+
+<p>The CISSP exam framing here is important. <strong>Parameterized queries and prepared statements</strong> are the correct control for SQL injection — not input sanitization. Sanitization attempts to enumerate and remove dangerous characters. Parameterization eliminates the structural problem: the query structure is fixed, and user input is always treated as data, never as command. The exam may test this distinction directly.</p>
+
+<p>Command injection is often more severe than SQL injection because the attacker gains access to the operating system’s command interpreter, not just the database. The control principle is the same: never pass untrusted input to an interpreter. When that is architecturally unavoidable, strict allowlist validation is the minimum acceptable control — not a blocklist.</p>
+
+<h2 id="web-application-vulnerabilities">Web Application Vulnerabilities</h2>
+
+<p>Web application vulnerabilities form a specific subcategory of injection, but they operate at the browser and session layer rather than the database or operating system layer.</p>
+
+<p><strong>Cross-site scripting (XSS)</strong> occurs when an application reflects or stores user-supplied content in a web page without proper output encoding. A malicious actor injects a script that executes in other users’ browsers, potentially stealing session tokens, redirecting navigation, or performing actions on behalf of the victim.</p>
+
+<p>There are two primary forms: <strong>reflected XSS</strong> (the payload is embedded in a URL and reflected immediately in the response) and <strong>stored XSS</strong> (the payload is persisted in the application’s data store and delivered to all users who view the affected content). Stored XSS is generally more dangerous because it does not require the victim to click a crafted link — the payload executes on normal navigation.</p>
+
+<p><strong>Cross-site request forgery (CSRF)</strong> is different in character. The attacker does not inject script. Instead, they trick an authenticated user’s browser into making unintended requests to a site where the user has an active session. The browser helpfully includes the user’s session cookies, so the server sees what appears to be a legitimate request from the authenticated user. The control is an unpredictable, per-request token — a CSRF token — that the attacker cannot know, combined with same-origin validation and the <code class="language-plaintext highlighter-rouge">SameSite</code> cookie attribute.</p>
+
+<p><strong>What CISSP expects</strong>: Know the difference between XSS (attacker injects script that runs in the victim’s browser) and CSRF (attacker tricks the victim’s browser into making a request on their behalf). Know the primary controls: output encoding for XSS, CSRF tokens and <code class="language-plaintext highlighter-rouge">SameSite</code> cookie attributes for CSRF.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/inline-1.svg" alt="CISSP exam framing: vulnerability categories, root causes, primary controls, and exam focus" class="blog-inline" /></p>
+
+<h2 id="logic-flaws-and-race-conditions">Logic Flaws and Race Conditions</h2>
+
+<p>Logic flaws are harder to categorize because they do not follow a single structural pattern. They represent errors in the application’s reasoning about state, time, or authorization — flaws that are correct in isolation but dangerous in combination.</p>
+
+<p><strong>Race conditions</strong> occur when a program’s behavior depends on the sequence or timing of events that are not properly controlled. The classic CISSP example is the <strong>Time-of-Check to Time-of-Use (TOC/TOU)</strong> vulnerability: a program checks a condition — is this file accessible, is this account balance sufficient, does this user have this permission — and then uses the result of that check some time later. If an attacker can change the checked resource in the window between check and use, the program acts on a false assumption.</p>
+
+<p>TOC/TOU vulnerabilities appear in file system operations, financial transaction logic, authentication flows, and anywhere shared mutable state can be modified by multiple actors concurrently. The architectural fix is atomicity: ensure that the check and the use are inseparable, or that the resource cannot be changed between them. Database transactions with appropriate isolation levels address this in data contexts. In file system operations, using file descriptors rather than file paths after a permission check reduces the exploitable window.</p>
+
+<p><strong>The exam mindset</strong>: Race conditions are not limited to systems programming. They appear in distributed systems, concurrent application logic, and any context where state can be modified between two operations. Recognizing the TOC/TOU pattern in a scenario description is the primary exam skill here.</p>
+
+<h2 id="malicious-code">Malicious Code</h2>
+
+<p>Malicious code is software intentionally designed to cause harm, enable unauthorized access, or both. CISSP Domain 8 distinguishes between types, and the exam expects you to recognize each.</p>
+
+<p><strong>Backdoors</strong> are unauthorized access mechanisms embedded in code — sometimes planted by attackers who have already compromised a system, sometimes introduced by developers during testing and never removed. The security controls are code review, change management, and binary integrity monitoring. Signed builds and reproducible build processes help establish that what is deployed matches what was reviewed.</p>
+
+<p><strong>Logic bombs</strong> are malicious code segments that execute when a specific condition is met — a particular date, the absence of a user account, a specific sequence of inputs. They are frequently planted by insiders and designed to cause damage after the attacker has left the organization. Detection requires code review, change control, and behavioral monitoring; a logic bomb may sit dormant in a codebase for months before triggering.</p>
+
+<p><strong>Trojan horses</strong> carry a hidden malicious payload alongside apparent legitimate functionality. The user installs what appears to be a useful application; they also install whatever the attacker embedded. The control response involves software provenance verification, supply chain controls, and code signing — treating all third-party software as untrusted until integrity is confirmed.</p>
+
+<p><strong>Rootkits</strong> are designed to conceal other malicious software or unauthorized access by modifying operating system behavior at a low level — potentially subverting the very tools used to detect them. Detection typically requires booting from trusted external media and scanning from a known-good environment, because the rootkit may have compromised the host’s inspection capabilities.</p>
+
+<p><strong>What CISSP expects</strong>: Understand the classification and characteristics of each type. Know that detection and response strategies differ from prevention strategies, and that supply chain integrity is a critical control — malicious code is increasingly introduced through dependencies and third-party components, not only through direct system compromise.</p>
+
+<h2 id="how-the-exam-tests-these-topics">How the Exam Tests These Topics</h2>
+
+<p>The CISSP exam is not a vocabulary test. Questions about software vulnerabilities are typically scenario-based. You will be asked to identify the vulnerability type in a described situation, select the most appropriate control from a set of options, or explain why one defense is preferable to another.</p>
+
+<p>Common patterns to expect:</p>
+
+<ul>
+  <li>A scenario describes input being reflected in a page without encoding — this is XSS, and the control is output encoding, not input filtering alone.</li>
+  <li>A scenario describes a query built from concatenated user input — this is injection, and parameterization is the correct control, not sanitization.</li>
+  <li>A scenario describes a file operation that reads permissions and then opens the file — TOC/TOU is the pattern, and the answer involves atomicity or descriptor-based access.</li>
+  <li>A scenario asks about code found in a production deployment that was not present in the approved design — this describes a backdoor, and the response involves integrity verification and code review processes.</li>
+</ul>
+
+<p>The exam rewards the ability to connect root cause to control, and to distinguish between controls that address symptoms versus controls that eliminate the structural problem.</p>
+
+<h2 id="the-engineering-perspective">The Engineering Perspective</h2>
+
+<p>These vulnerability categories are not exotic or rare. They recur across decades because the underlying structural problems — unvalidated input, manual memory management, race-prone state logic, absent integrity verification — are easy to introduce and require deliberate effort to prevent.</p>
+
+<p>The CISSP framework asks you to think about these problems at a category level: what class of flaw is this, what is its root cause, and what class of control addresses that root cause? That is also a useful way to think as an engineer. Not every code review surfaces a known CVE. But an engineer who recognizes injection patterns, thinks about memory safety tradeoffs in systems code, and considers TOC/TOU risks in concurrent logic is building something materially more defensible than one who does not.</p>
+
+<p>If you are following this series, you have been building toward this view steadily: security is an engineering property, not an audit result. Understanding vulnerability categories is the technical foundation of that stance.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 requires recognizing software vulnerability categories — buffer overflows, injection flaws, XSS, CSRF, race conditions, and malicious code. This post explains each root cause and the controls the exam expects you to apply.</em></p>
+
+<p><em>SEO keywords: CISSP software vulnerabilities, buffer overflow CISSP, injection flaws Domain 8, XSS CSRF CISSP exam, malicious code CISSP study</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Software Vulnerabilities" /><category term="Buffer Overflow" /><category term="Injection" /><category term="XSS" /><category term="CSRF" /><category term="Malicious Code" /><category term="Domain 8" /><category term="Application Security" /><summary type="html"><![CDATA[Every security incident traces back to code that did something it should never have been allowed to do. CISSP Domain 8 expects you to recognize the major vulnerability categories — and understand why certain defenses work where others fail.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/" rel="alternate" type="text/html" title="CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing" /><published>2026-05-04T12:00:00+00:00</published><updated>2026-05-04T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" alt="CISSP #51 Secure SDLC: Security at every phase from requirements through maintenance" class="blog-hero" /></p>
 
 <p>Developers do not intend to ship vulnerabilities. They intend to ship features. Security enters the picture later — often much later — when a test team runs a scan, a penetration tester finds an injection flaw, or a customer’s security team sends an uncomfortable questionnaire.</p>
 
@@ -2078,232 +2185,4 @@ Signatures prove origin and integrity relative to trust anchors, not business su
 
 <p><strong>Meta description:</strong> A practical CISSP guide to Common Criteria, Protection Profiles, Security Targets, and Evaluation Assurance Levels. Learn what the exam tests and why assurance is not a deployment guarantee.</p>
 
-<p><strong>SEO keywords:</strong> CISSP Common Criteria, Protection Profile Security Target CISSP, Evaluation Assurance Levels EAL CISSP, Common Criteria assurance, CISSP Domain 3 product evaluation</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Assurance" /><category term="CISSP" /><category term="Common Criteria" /><category term="Protection Profiles" /><category term="Security Assurance" /><category term="Domain 3" /><summary type="html"><![CDATA[Common Criteria gives a framework for evaluating security products, but evaluation is not the same thing as real-world safety. The CISSP exam expects you to understand what Common Criteria does, what a Protection Profile is, and where assurance stops.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #42: Trusted Computing Base, Security Kernels, and the Reference Monitor</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-trusted-computing-base-security-kernel-reference-monitor/" rel="alternate" type="text/html" title="CISSP #42: Trusted Computing Base, Security Kernels, and the Reference Monitor" /><published>2026-04-21T12:20:00+00:00</published><updated>2026-04-21T12:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-trusted-computing-base-security-kernel-reference-monitor</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-trusted-computing-base-security-kernel-reference-monitor/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" alt="CISSP #42 Trusted Computing Base, Security Kernels, and the Reference Monitor" class="blog-hero" /></p>
-
-<p>Some CISSP topics feel older than the tooling most engineers use every day.</p>
-
-<p>Trusted computing base. Security kernel. Reference monitor.</p>
-
-<p>They sound like textbook artifacts from an earlier era of operating systems and formal evaluation criteria. That is exactly why they get underestimated.</p>
-
-<p>But these ideas still matter because they answer a very practical question: <strong>what part of this system do we actually trust to enforce security?</strong></p>
-
-<p>If you cannot answer that clearly, the architecture is already weaker than it looks.</p>
-
-<h2 id="the-core-question-behind-the-tcb">The Core Question Behind the TCB</h2>
-
-<p>Every system has a security boundary somewhere. Some code makes access decisions. Some components enforce isolation. Some mechanisms protect memory, credentials, files, or processes from unauthorized use.</p>
-
-<p>The <strong>trusted computing base (TCB)</strong> is the collection of all hardware, firmware, and software components that are critical to enforcing the system’s security policy.</p>
-
-<p>That definition matters because it is narrower than “the whole environment” and broader than “just the OS.”</p>
-
-<p>If a component can break the security policy when it fails or is compromised, it is part of the TCB.</p>
-
-<p>Examples often include:</p>
-
-<ul>
-  <li>The operating system kernel</li>
-  <li>Memory protection mechanisms in hardware</li>
-  <li>Hypervisor controls in virtualized environments</li>
-  <li>Authentication and access control enforcement logic</li>
-  <li>Secure boot and firmware validation mechanisms</li>
-  <li>Key management and trusted execution components when they are responsible for enforcing policy</li>
-</ul>
-
-<p>The exam cares about this because security assurance depends on trust scope. A smaller TCB is generally better because there is less code and logic that must be correct for the system to remain secure.</p>
-
-<h2 id="why-smaller-is-better">Why Smaller Is Better</h2>
-
-<p>This is one of the most important architectural ideas in the whole topic.</p>
-
-<p>The larger the TCB, the more components must behave correctly, resist tampering, and interact safely. That increases complexity. And complexity is where assurance decays.</p>
-
-<p>If your security model depends on a vast amount of code, many services, and loosely understood dependencies, the practical truth is simple: you have more opportunities for failure than you can confidently reason about.</p>
-
-<p>This is why security-sensitive systems aim to minimize the amount of code and logic that truly sits inside the trust boundary.</p>
-
-<p>The principle shows up everywhere in modern engineering:</p>
-
-<ul>
-  <li>Small privileged services instead of broad root-level daemons</li>
-  <li>Hardware-backed key storage instead of application-managed secret handling</li>
-  <li>Hypervisors with a reduced attack surface instead of sprawling host access paths</li>
-  <li>Sandboxed workloads that limit the amount of trusted enforcement logic</li>
-</ul>
-
-<p>The terminology may be older, but the design instinct is current.</p>
-
-<h2 id="the-security-kernel">The Security Kernel</h2>
-
-<p>Inside the TCB sits a more specific concept: the <strong>security kernel</strong>.</p>
-
-<p>The security kernel is the central part of the TCB that actually enforces the system’s security policy. It is the mechanism that mediates access between subjects and objects according to defined rules.</p>
-
-<p>If the TCB is the whole trusted security-relevant foundation, the security kernel is the enforcement core within that foundation.</p>
-
-<p>In classic operating system architecture, the security kernel is typically associated with mechanisms that:</p>
-
-<ul>
-  <li>Check access permissions</li>
-  <li>Enforce process isolation</li>
-  <li>Protect memory boundaries</li>
-  <li>Control subject-object interactions</li>
-  <li>Ensure policy decisions are applied consistently</li>
-</ul>
-
-<p>This does not mean there is always a single code module literally named “security kernel.” The concept is logical, not purely structural. On the CISSP exam, treat it as the trusted enforcement mechanism at the heart of the system.</p>
-
-<h2 id="the-reference-monitor-concept">The Reference Monitor Concept</h2>
-
-<p>The <strong>reference monitor</strong> is the abstract model that explains how secure access mediation should work.</p>
-
-<p>It says that every subject’s access to every object must be checked by a mechanism that cannot be bypassed and cannot be tampered with.</p>
-
-<p>The reference monitor concept has three required properties:</p>
-
-<ol>
-  <li><strong>Tamperproof</strong>: The mechanism itself must be protected from unauthorized modification.</li>
-  <li><strong>Always invoked</strong>: Every access attempt must go through it. No bypass paths.</li>
-  <li><strong>Small enough to be tested and verified</strong>: The mechanism must be simple enough that its correctness can be validated.</li>
-</ol>
-
-<p>That third property connects directly to the earlier point about minimizing the TCB. Verification is not just a theoretical preference. It is an engineering constraint.</p>
-
-<p>If your enforcement mechanism is too large or too distributed to reason about, it is much harder to prove that access control is actually working the way you think it is.</p>
-
-<p>The security kernel is commonly described as the implementation of the reference monitor concept.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/inline-1.svg" alt="Relationship between the trusted computing base, security kernel, and reference monitor" class="blog-inline" /></p>
-
-<h2 id="how-the-pieces-fit-together">How the Pieces Fit Together</h2>
-
-<p>The relationship is easy to confuse until you reduce it to scope:</p>
-
-<ul>
-  <li><strong>Reference monitor</strong>: the abstract security idea</li>
-  <li><strong>Security kernel</strong>: the implementation of that idea</li>
-  <li><strong>Trusted computing base</strong>: the total set of trusted components that security depends on</li>
-</ul>
-
-<p>Put differently:</p>
-
-<p>The reference monitor is the principle. The security kernel is the enforcement engine. The TCB is the full trusted boundary around security-critical behavior.</p>
-
-<p>This matters on the exam because questions often test whether you can distinguish architecture concepts from implementation scope.</p>
-
-<p>If a scenario asks about the <em>part of the system relied upon to enforce security policy</em>, that is the <strong>TCB</strong>.</p>
-
-<p>If it asks about the <em>core mechanism that implements and enforces mediation</em>, that points to the <strong>security kernel</strong>.</p>
-
-<p>If it asks about the <em>properties required of access mediation</em>, that is the <strong>reference monitor concept</strong>.</p>
-
-<h2 id="what-the-exam-tests-versus-real-systems">What the Exam Tests Versus Real Systems</h2>
-
-<p>On the CISSP exam, these concepts are presented cleanly. In real systems, the boundaries are less neat.</p>
-
-<p>For example, in a cloud-native application stack:</p>
-
-<ul>
-  <li>The hypervisor may be part of the trust base.</li>
-  <li>The cloud provider’s identity and control plane mechanisms may be functionally security-critical.</li>
-  <li>The guest OS kernel enforces local isolation.</li>
-  <li>The application also performs authorization checks.</li>
-</ul>
-
-<p>That creates a layered trust picture, not one tidy kernel-centric diagram.</p>
-
-<p>The exam usually abstracts this complexity away and expects you to reason from the classic model. That is useful, but it is worth stating clearly: in production environments, trust is often distributed across layers and providers.</p>
-
-<p>The practical skill is recognizing which components are truly security-enforcing and therefore inside the trust boundary.</p>
-
-<h2 id="common-failure-modes">Common Failure Modes</h2>
-
-<p>This topic becomes more concrete when you think about how systems fail.</p>
-
-<h3 id="bypass-paths">Bypass Paths</h3>
-
-<p>If a management API, debug interface, or direct database path can circumvent normal authorization checks, then the reference monitor property of “always invoked” is broken.</p>
-
-<p>This is common in real systems. Teams build strong application-layer authorization, then leave a batch job, internal admin utility, or privileged integration with broad direct access. The control exists on paper but not universally in practice.</p>
-
-<h3 id="excessive-privilege-in-the-tcb">Excessive Privilege in the TCB</h3>
-
-<p>If too many services run with broad privileges, the practical TCB grows. That means more code is trusted than the architecture acknowledges.</p>
-
-<p>When engineers say “that service isn’t security-sensitive” but it runs with authority to modify policy, secrets, or protected data, it is already inside the trust base whether they intended it or not.</p>
-
-<h3 id="unverifiable-enforcement-logic">Unverifiable Enforcement Logic</h3>
-
-<p>If access control is scattered across many services with inconsistent rules, duplicated conditions, and hidden exceptions, the reference monitor may exist conceptually but not in a verifiable form.</p>
-
-<p>This is one reason centralized policy decision points, consistent authorization libraries, and narrow privileged services matter. They reduce drift between intended policy and actual enforcement.</p>
-
-<h2 id="why-this-still-matters-in-modern-architecture">Why This Still Matters in Modern Architecture</h2>
-
-<p>It is tempting to think of TCB and security kernels as legacy operating system content. That is too narrow.</p>
-
-<p>The underlying question is still current:</p>
-
-<p><strong>Which components must be trusted for this system’s security claims to hold?</strong></p>
-
-<p>That question applies directly to:</p>
-
-<ul>
-  <li>Container runtimes and orchestration platforms</li>
-  <li>Endpoint security agents</li>
-  <li>Hardware security modules and TPM-backed controls</li>
-  <li>Identity providers and policy engines</li>
-  <li>Confidential computing and trusted execution environments</li>
-  <li>Secure boot chains and firmware validation</li>
-</ul>
-
-<p>The names change. The trust problem does not.</p>
-
-<p>When a team adopts a new control plane, identity broker, workload isolation layer, or hardware-backed security feature, they are making TCB decisions whether they use that vocabulary or not.</p>
-
-<h2 id="what-a-strong-cissp-answer-sounds-like">What a Strong CISSP Answer Sounds Like</h2>
-
-<p>If you get a scenario question here, the best answer usually sounds like disciplined architecture reasoning, not memorized jargon.</p>
-
-<p>For example:</p>
-
-<ul>
-  <li>If the question asks how to increase assurance, reducing and simplifying the TCB is often the better answer.</li>
-  <li>If it asks what property prevents unauthorized access from skipping mediation, the answer points to the reference monitor being always invoked.</li>
-  <li>If it asks what enforces the access control policy at the core of a trusted system, the answer is the security kernel.</li>
-  <li>If it asks what entire set of trusted components security depends on, that is the TCB.</li>
-</ul>
-
-<p>The exam is testing whether you can see the difference between trust scope and enforcement mechanism.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/inline-2.svg" alt="Reference monitor properties and common system failure modes" class="blog-inline" /></p>
-
-<h2 id="a-useful-engineering-heuristic">A Useful Engineering Heuristic</h2>
-
-<p>When reviewing a design, ask four blunt questions:</p>
-
-<ol>
-  <li>What code or component actually makes the access decision?</li>
-  <li>Can any request reach the protected object without that check?</li>
-  <li>What privileged components could override or subvert the decision?</li>
-  <li>How much of this enforcement logic is small enough to be understood and tested?</li>
-</ol>
-
-<p>Those questions are more practical than the terminology alone, but they come straight from the same model.</p>
-
-<p>If the answers are vague, the trust boundary is probably too vague too.</p>
-
-<hr />
-
-<p>The CISSP includes topics like this because security architecture is not just about adding controls. It is about knowing where enforcement really lives and how much of the system must be trusted for those controls to mean anything.</p>
-
-<p>Trusted computing base, security kernel, and reference monitor are older terms for a problem that modern systems still have not escaped: deciding what must be trusted, minimizing it, and making sure the enforcement path cannot be bypassed.</p>
-
-<p><em>If you are working through Domain 3, this topic pairs naturally with the earlier posts on security models, least privilege, and secure-by-default design. Together they form a much more coherent picture than any one term does by itself.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to the trusted computing base, security kernel, and reference monitor. Learn how they fit together, what the exam tests, and why these concepts still matter in modern systems.</p>
-
-<p><strong>SEO keywords:</strong> CISSP trusted computing base, security kernel reference monitor CISSP, CISSP Domain 3 TCB, reference monitor properties, trusted computing base security kernel</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="System Design" /><category term="CISSP" /><category term="Trusted Computing Base" /><category term="Security Kernel" /><category term="Reference Monitor" /><category term="Domain 3" /><summary type="html"><![CDATA[The trusted computing base is the part of a system you rely on for security. The CISSP exam expects you to understand how the TCB, security kernel, and reference monitor fit together and why they still matter.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-trusted-computing-base-security-kernel-reference-monitor/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><strong>SEO keywords:</strong> CISSP Common Criteria, Protection Profile Security Target CISSP, Evaluation Assurance Levels EAL CISSP, Common Criteria assurance, CISSP Domain 3 product evaluation</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Assurance" /><category term="CISSP" /><category term="Common Criteria" /><category term="Protection Profiles" /><category term="Security Assurance" /><category term="Domain 3" /><summary type="html"><![CDATA[Common Criteria gives a framework for evaluating security products, but evaluation is not the same thing as real-world safety. The CISSP exam expects you to understand what Common Criteria does, what a Protection Profile is, and where assurance stops.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
