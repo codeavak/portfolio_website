@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-06T13:30:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Secure Code Review" />
+      
+        <meta property="article:tag" content="Code Review" />
+      
+        <meta property="article:tag" content="Software Assurance" />
+      
+        <meta property="article:tag" content="Application Security" />
+      
+        <meta property="article:tag" content="Domain 8" />
+      
+        <meta property="article:tag" content="Secure SDLC" />
+      
+        <meta property="article:tag" content="Peer Review" />
+      
+        <meta property="article:tag" content="SAST" />
+      
+    
+    <meta property="og:title" content="CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy" />
+    <meta property="og:description" content="Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy" />
+    <meta name="twitter:description" content="Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy",
+        "description": "Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-06T13:30:00+00:00",
+        "dateModified": "2026-05-06T13:30:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Software Development Security • Application Security</div>
+              
+              <time class="post-date" datetime="2026-05-06T13:30:00+00:00">May 6, 2026</time>
+              <h1 class="post-title">CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy</h1>
+              
+                <p class="post-dek">Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Secure Code Review</span>
+                  
+                    <span class="chip">Code Review</span>
+                  
+                    <span class="chip">Software Assurance</span>
+                  
+                    <span class="chip">Application Security</span>
+                  
+                    <span class="chip">Domain 8</span>
+                  
+                    <span class="chip">Secure SDLC</span>
+                  
+                    <span class="chip">Peer Review</span>
+                  
+                    <span class="chip">SAST</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" alt="CISSP #54 secure code review as a security control across code, logic, trust boundaries, and approval" class="blog-hero" /></p>
+
+<p>Security tooling keeps getting better.</p>
+
+<p>That is useful. It is also one reason teams sometimes start believing that manual code review is mostly a courtesy step between a green pipeline and a merge button.</p>
+
+<p>That belief is expensive.</p>
+
+<p>Secure code review is still one of the most practical controls in CISSP Domain 8 because many serious software flaws do not look unusual to an automated tool. They look reasonable until a reviewer asks the right question about trust, authorization, error handling, data flow, or business logic.</p>
+
+<p>Post #51 covered Secure SDLC. Post #52 covered software vulnerability categories. Post #53 moved outward into software supply chain security. The natural next step is the human control that sits between intent and release: code review as a security gate.</p>
+
+<p>This is where CISSP is often more realistic than teams give it credit for. The exam does not assume one scanner, one linter, or one policy engine can infer all of the context that matters. It expects you to recognize that secure software assurance still depends on humans reviewing code with a security mindset.</p>
+
+<h2 id="why-secure-code-review-still-matters">Why Secure Code Review Still Matters</h2>
+
+<p>Code review is easy to under-value because it happens inside a process people already associate with quality, collaboration, and style enforcement.</p>
+
+<p>From a security perspective, it serves a different purpose.</p>
+
+<p>A secure code review asks questions like:</p>
+
+<ul>
+  <li>Does this code enforce authorization at the real resource boundary?</li>
+  <li>Are trust assumptions explicit or merely inherited?</li>
+  <li>Could an attacker control this input, state transition, or downstream call?</li>
+  <li>Does the error path leak data, weaken enforcement, or skip auditability?</li>
+  <li>Does this change expand privilege or attack surface in ways the ticket never acknowledged?</li>
+</ul>
+
+<p>Those are not cosmetic concerns. They are security decisions hiding inside normal implementation work.</p>
+
+<p>OWASP’s Code Review Guide still makes a durable point here: scanners help, but manual review remains prominent in any SDLC that actually wants secure code in production. That statement has aged well because the hardest bugs are often contextual rather than syntactic.</p>
+
+<h2 id="what-human-review-catches-that-tools-commonly-miss">What Human Review Catches That Tools Commonly Miss</h2>
+
+<p>Automated analysis is excellent at pattern recognition.</p>
+
+<p>It is less reliable at interpreting intent.</p>
+
+<p>That gap matters because many important vulnerabilities are not just dangerous API calls. They are bad decisions spread across otherwise valid code.</p>
+
+<h3 id="authorization-drift">Authorization drift</h3>
+
+<p>One method checks role membership correctly. Another helper method in the same request path assumes the caller was already checked. A background job uses the same service layer without the original guard. Nothing here necessarily looks like a scanner finding. A reviewer following the trust boundary can see the gap.</p>
+
+<h3 id="business-logic-abuse">Business logic abuse</h3>
+
+<p>The application technically validates inputs and uses safe frameworks, but a workflow allows a user to cancel, refund, export, or elevate in an order the business never intended. Logic flaws often sit above the level where static tools are strongest.</p>
+
+<h3 id="trust-boundary-confusion">Trust-boundary confusion</h3>
+
+<p>Internal APIs, service-to-service calls, feature flags, support tooling, and queue consumers often inherit more trust than they should. Human reviewers are much better at asking whether “internal” quietly became a synonym for “safe.”</p>
+
+<h3 id="dangerous-exception-handling">Dangerous exception handling</h3>
+
+<p>A fallback path may disable validation for resiliency, return sensitive error context for troubleshooting, or skip logging to avoid noise. That can look harmless if you review only for success-path behavior.</p>
+
+<h3 id="security-debt-hidden-inside-refactors">Security debt hidden inside refactors</h3>
+
+<p>Refactors can change data flow, sequence, and privilege boundaries without adding any obviously unsafe line of code. A reviewer who understands the original control intent can catch that regression.</p>
+
+<p>This is why secure code review remains tied closely to software assurance. Assurance is not only about whether the code compiles and the tests pass. It is about whether the code still behaves within the intended security model after change.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/inline-1.svg" alt="Comparison of what automated tooling sees versus what secure code review adds" class="blog-inline" /></p>
+
+<h2 id="what-good-secure-code-review-looks-like">What Good Secure Code Review Looks Like</h2>
+
+<p>Weak review processes usually fail in one of two ways.</p>
+
+<p>Either they become style-only review, where naming and formatting receive more attention than trust and control behavior, or they become shallow approval theater, where the reviewer is mostly confirming that someone looked at the diff.</p>
+
+<p>A stronger model has a few traits.</p>
+
+<h3 id="review-against-security-intent-not-just-syntax">Review against security intent, not just syntax</h3>
+
+<p>The reviewer needs enough context to understand the security goal of the change. Is this endpoint supposed to enforce tenant isolation? Is this admin tool supposed to require stronger approval? Is this workflow touching regulated or high-sensitivity data?</p>
+
+<p>Without that context, review becomes line-by-line inspection without meaningful control evaluation.</p>
+
+<h3 id="focus-on-high-risk-paths-first">Focus on high-risk paths first</h3>
+
+<p>Not every code change deserves the same depth of review. Strong teams know where the review energy belongs:</p>
+
+<ul>
+  <li>authentication and session logic</li>
+  <li>authorization and entitlement decisions</li>
+  <li>secrets handling</li>
+  <li>data export or bulk access paths</li>
+  <li>admin functions and support tooling</li>
+  <li>payment, identity, and workflow state changes</li>
+  <li>infrastructure and deployment automation that affects trust</li>
+</ul>
+
+<p>That prioritization is consistent with CISSP thinking. Mature programs apply stronger scrutiny where business impact and attack potential are highest.</p>
+
+<h3 id="separate-authorship-from-approval">Separate authorship from approval</h3>
+
+<p>Code review is also where separation of duties shows up in software development. The person writing the code should not be the only person deciding whether it is safe to merge.</p>
+
+<p>This is not bureaucracy for its own sake. It is a simple way to reduce blind spots, overconfidence, and single-person control over sensitive changes.</p>
+
+<h3 id="use-tools-to-support-review-not-replace-it">Use tools to support review, not replace it</h3>
+
+<p>Static analysis, dependency scanning, and automated policy checks improve review quality when they narrow attention toward real risk. They become harmful when teams assume green tooling means the review is now optional.</p>
+
+<p>The strongest workflow is complementary:</p>
+
+<ul>
+  <li>tools catch common patterns fast</li>
+  <li>reviewers check context, logic, and trust assumptions</li>
+  <li>tests verify expected behavior</li>
+  <li>approvals reflect actual accountability</li>
+</ul>
+
+<h2 id="a-realistic-scenario-the-helpful-support-feature">A Realistic Scenario: The Helpful Support Feature</h2>
+
+<p>Imagine a team adds a support feature so internal agents can retrieve customer account summaries more quickly during calls.</p>
+
+<p>The implementation looks clean on first pass:</p>
+
+<ul>
+  <li>typed inputs</li>
+  <li>parameterized database access</li>
+  <li>no secrets in code</li>
+  <li>passing unit tests</li>
+</ul>
+
+<p>A scanner may find nothing serious.</p>
+
+<p>A security-minded reviewer asks different questions:</p>
+
+<ul>
+  <li>Can any support role use this endpoint, or only the narrowly approved subgroup?</li>
+  <li>Is access scoped to assigned accounts or any customer record?</li>
+  <li>Are exports possible from the same service path?</li>
+  <li>Is the access logged with enough detail to support accountability?</li>
+  <li>What prevents this internal endpoint from being reused by another service without the original control assumptions?</li>
+</ul>
+
+<p>That review may uncover the real problem: the code is technically clean but functionally over-authorized.</p>
+
+<p>This is a classic CISSP pattern. The strongest control is often the one that catches the risk before deployment, at the point where the logic can still be challenged cheaply.</p>
+
+<h2 id="where-secure-code-review-fits-in-domain-8">Where Secure Code Review Fits in Domain 8</h2>
+
+<p>Domain 8 is about Software Development Security, not just vulnerability tooling.</p>
+
+<p>That means the exam cares about how security is built into the development lifecycle. Secure code review fits because it helps verify that implementation still matches design intent, policy expectations, and trust assumptions.</p>
+
+<p>It sits between several neighboring concepts in the series:</p>
+
+<ul>
+  <li>Secure SDLC says security belongs throughout the lifecycle.</li>
+  <li>Vulnerability categories explain the classes of flaws attackers exploit.</li>
+  <li>Software supply chain security explains why trust in dependencies and build outputs matters.</li>
+  <li>Secure code review checks whether the actual change respects all of the above.</li>
+</ul>
+
+<p>This is one reason code review is so valuable. It is a convergence point. The reviewer is often the last practical checkpoint before merge where security intent, implementation detail, and operational reality can still be reconciled.</p>
+
+<h2 id="what-the-exam-is-likely-testing">What the Exam Is Likely Testing</h2>
+
+<p>For CISSP, secure code review questions are likely to reward the candidate who understands a few distinctions clearly.</p>
+
+<h3 id="code-review-is-not-the-same-as-automated-scanning">Code review is not the same as automated scanning</h3>
+
+<p>If one answer implies scanners replace reviewers completely, that is usually too shallow. The better answer recognizes that automated tooling and human review serve different purposes.</p>
+
+<h3 id="review-supports-software-assurance">Review supports software assurance</h3>
+
+<p>The exam may frame code review as a quality activity, but the stronger interpretation is that it is also a security and assurance activity. It helps catch flaws before release and enforces accountability around change.</p>
+
+<h3 id="separation-of-duties-matters">Separation of duties matters</h3>
+
+<p>If a scenario involves sensitive code changes being self-approved or merged without independent review, CISSP logic generally favors restoring approval discipline and peer review.</p>
+
+<h3 id="business-logic-and-authorization-are-high-value-review-targets">Business logic and authorization are high-value review targets</h3>
+
+<p>Many important defects are not memory corruption or obvious injection patterns. They are logic-level failures. A reviewer who follows the workflow and the trust model is often the strongest control available.</p>
+
+<h2 id="established-principles-vs-current-practice">Established Principles vs Current Practice</h2>
+
+<p>The established principles are stable:</p>
+
+<ul>
+  <li>manual review is still necessary</li>
+  <li>high-risk changes deserve deeper scrutiny</li>
+  <li>secure development depends on both preventive tooling and human judgment</li>
+  <li>independent review improves assurance and accountability</li>
+</ul>
+
+<p>What has changed is the operating environment.</p>
+
+<p>Modern teams merge faster, automate more, reuse more dependencies, and push changes through CI/CD at higher frequency. That makes disciplined review more important, not less. It also means review must be intentionally scoped, risk-based, and supported by tooling, because nobody can deeply inspect every line equally in a high-velocity environment.</p>
+
+<p>This is the same pattern that shows up across modern security practice. Automation scales the baseline. Human review protects the parts where context, trust, and business meaning still matter most.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/inline-2.svg" alt="Secure code review workflow showing tooling, reviewer questions, and merge decision as a security gate" class="blog-inline" /></p>
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>Secure code review is one of the simplest places to see whether a team treats security as a living engineering discipline or as a tool output.</p>
+
+<p>If review is little more than style feedback and quick approvals, the organization is depending on scanners and hope.</p>
+
+<p>If review asks whether trust boundaries still hold, whether authorization is genuinely enforced, whether error paths are safe, and whether the change quietly expands privilege, then the organization is doing something much more valuable. It is turning ordinary engineering process into a real security control.</p>
+
+<p>That is the memory hook worth carrying into the exam and into real work:</p>
+
+<p>Secure code review is not a courtesy step after the real security work is done. It is one of the places where the real security work becomes visible, challengeable, and accountable before release.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 treats secure code review as part of software assurance, not just development etiquette. Learn what human review catches that tools miss and why peer review remains a core security control.</em></p>
+
+<p><em>SEO keyword ideas: secure code review CISSP, code review security control, CISSP Domain 8 software assurance, peer review application security, secure SDLC code review</em></p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

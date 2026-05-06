@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-label="Secure code review as a security control between implementation and merge">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="360" rx="14" fill="url(#bg)"/>
+  <text x="480" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#f8fafc">Secure Code Review as a Security Control</text>
+  <text x="480" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#94a3b8">CISSP Domain 8 - Software assurance before merge</text>
+
+  <rect x="56" y="98" width="210" height="136" rx="12" fill="#13263f" stroke="#60a5fa" stroke-width="1.6"/>
+  <text x="161" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#bfdbfe">Implementation</text>
+  <text x="161" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dbeafe">Feature logic</text>
+  <text x="161" y="169" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dbeafe">Authorization checks</text>
+  <text x="161" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dbeafe">Error paths</text>
+  <text x="161" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dbeafe">Data flow</text>
+
+  <rect x="374" y="84" width="212" height="164" rx="12" fill="#10281e" stroke="#34d399" stroke-width="1.8"/>
+  <text x="480" y="114" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#86efac">Security Review Gate</text>
+  <text x="480" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">What changed?</text>
+  <text x="480" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">What trust assumptions moved?</text>
+  <text x="480" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">What can tools see?</text>
+  <text x="480" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">What only context reveals?</text>
+  <text x="480" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Who independently approves?</text>
+
+  <rect x="694" y="98" width="210" height="136" rx="12" fill="#2a1b10" stroke="#fb923c" stroke-width="1.6"/>
+  <text x="799" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#fdba74">Merge Decision</text>
+  <text x="799" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffedd5">Approve</text>
+  <text x="799" y="169" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffedd5">Request changes</text>
+  <text x="799" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffedd5">Escalate risk</text>
+  <text x="799" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffedd5">Preserve accountability</text>
+
+  <g stroke="#475569" stroke-width="2.5" fill="#475569">
+    <line x1="266" y1="166" x2="374" y2="166"/>
+    <polygon points="366,161 378,166 366,171"/>
+    <line x1="586" y1="166" x2="694" y2="166"/>
+    <polygon points="686,161 698,166 686,171"/>
+  </g>
+
+  <rect x="136" y="272" width="688" height="44" rx="10" fill="#0f1e33" stroke="#38bdf8" stroke-width="1"/>
+  <text x="480" y="299" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#bae6fd">Green tooling is useful. Secure review asks what the tools did not understand.</text>
+</svg>

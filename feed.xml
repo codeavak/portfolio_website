@@ -1,4 +1,661 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-04T09:20:14+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/" rel="alternate" type="text/html" title="CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize" /><published>2026-05-04T13:00:00+00:00</published><updated>2026-05-04T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" alt="CISSP #52: Software Vulnerabilities and Malicious Code — five categories with root causes and controls" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-06T17:30:48+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/" rel="alternate" type="text/html" title="CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy" /><published>2026-05-06T13:30:00+00:00</published><updated>2026-05-06T13:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" alt="CISSP #54 secure code review as a security control across code, logic, trust boundaries, and approval" class="blog-hero" /></p>
+
+<p>Security tooling keeps getting better.</p>
+
+<p>That is useful. It is also one reason teams sometimes start believing that manual code review is mostly a courtesy step between a green pipeline and a merge button.</p>
+
+<p>That belief is expensive.</p>
+
+<p>Secure code review is still one of the most practical controls in CISSP Domain 8 because many serious software flaws do not look unusual to an automated tool. They look reasonable until a reviewer asks the right question about trust, authorization, error handling, data flow, or business logic.</p>
+
+<p>Post #51 covered Secure SDLC. Post #52 covered software vulnerability categories. Post #53 moved outward into software supply chain security. The natural next step is the human control that sits between intent and release: code review as a security gate.</p>
+
+<p>This is where CISSP is often more realistic than teams give it credit for. The exam does not assume one scanner, one linter, or one policy engine can infer all of the context that matters. It expects you to recognize that secure software assurance still depends on humans reviewing code with a security mindset.</p>
+
+<h2 id="why-secure-code-review-still-matters">Why Secure Code Review Still Matters</h2>
+
+<p>Code review is easy to under-value because it happens inside a process people already associate with quality, collaboration, and style enforcement.</p>
+
+<p>From a security perspective, it serves a different purpose.</p>
+
+<p>A secure code review asks questions like:</p>
+
+<ul>
+  <li>Does this code enforce authorization at the real resource boundary?</li>
+  <li>Are trust assumptions explicit or merely inherited?</li>
+  <li>Could an attacker control this input, state transition, or downstream call?</li>
+  <li>Does the error path leak data, weaken enforcement, or skip auditability?</li>
+  <li>Does this change expand privilege or attack surface in ways the ticket never acknowledged?</li>
+</ul>
+
+<p>Those are not cosmetic concerns. They are security decisions hiding inside normal implementation work.</p>
+
+<p>OWASP’s Code Review Guide still makes a durable point here: scanners help, but manual review remains prominent in any SDLC that actually wants secure code in production. That statement has aged well because the hardest bugs are often contextual rather than syntactic.</p>
+
+<h2 id="what-human-review-catches-that-tools-commonly-miss">What Human Review Catches That Tools Commonly Miss</h2>
+
+<p>Automated analysis is excellent at pattern recognition.</p>
+
+<p>It is less reliable at interpreting intent.</p>
+
+<p>That gap matters because many important vulnerabilities are not just dangerous API calls. They are bad decisions spread across otherwise valid code.</p>
+
+<h3 id="authorization-drift">Authorization drift</h3>
+
+<p>One method checks role membership correctly. Another helper method in the same request path assumes the caller was already checked. A background job uses the same service layer without the original guard. Nothing here necessarily looks like a scanner finding. A reviewer following the trust boundary can see the gap.</p>
+
+<h3 id="business-logic-abuse">Business logic abuse</h3>
+
+<p>The application technically validates inputs and uses safe frameworks, but a workflow allows a user to cancel, refund, export, or elevate in an order the business never intended. Logic flaws often sit above the level where static tools are strongest.</p>
+
+<h3 id="trust-boundary-confusion">Trust-boundary confusion</h3>
+
+<p>Internal APIs, service-to-service calls, feature flags, support tooling, and queue consumers often inherit more trust than they should. Human reviewers are much better at asking whether “internal” quietly became a synonym for “safe.”</p>
+
+<h3 id="dangerous-exception-handling">Dangerous exception handling</h3>
+
+<p>A fallback path may disable validation for resiliency, return sensitive error context for troubleshooting, or skip logging to avoid noise. That can look harmless if you review only for success-path behavior.</p>
+
+<h3 id="security-debt-hidden-inside-refactors">Security debt hidden inside refactors</h3>
+
+<p>Refactors can change data flow, sequence, and privilege boundaries without adding any obviously unsafe line of code. A reviewer who understands the original control intent can catch that regression.</p>
+
+<p>This is why secure code review remains tied closely to software assurance. Assurance is not only about whether the code compiles and the tests pass. It is about whether the code still behaves within the intended security model after change.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/inline-1.svg" alt="Comparison of what automated tooling sees versus what secure code review adds" class="blog-inline" /></p>
+
+<h2 id="what-good-secure-code-review-looks-like">What Good Secure Code Review Looks Like</h2>
+
+<p>Weak review processes usually fail in one of two ways.</p>
+
+<p>Either they become style-only review, where naming and formatting receive more attention than trust and control behavior, or they become shallow approval theater, where the reviewer is mostly confirming that someone looked at the diff.</p>
+
+<p>A stronger model has a few traits.</p>
+
+<h3 id="review-against-security-intent-not-just-syntax">Review against security intent, not just syntax</h3>
+
+<p>The reviewer needs enough context to understand the security goal of the change. Is this endpoint supposed to enforce tenant isolation? Is this admin tool supposed to require stronger approval? Is this workflow touching regulated or high-sensitivity data?</p>
+
+<p>Without that context, review becomes line-by-line inspection without meaningful control evaluation.</p>
+
+<h3 id="focus-on-high-risk-paths-first">Focus on high-risk paths first</h3>
+
+<p>Not every code change deserves the same depth of review. Strong teams know where the review energy belongs:</p>
+
+<ul>
+  <li>authentication and session logic</li>
+  <li>authorization and entitlement decisions</li>
+  <li>secrets handling</li>
+  <li>data export or bulk access paths</li>
+  <li>admin functions and support tooling</li>
+  <li>payment, identity, and workflow state changes</li>
+  <li>infrastructure and deployment automation that affects trust</li>
+</ul>
+
+<p>That prioritization is consistent with CISSP thinking. Mature programs apply stronger scrutiny where business impact and attack potential are highest.</p>
+
+<h3 id="separate-authorship-from-approval">Separate authorship from approval</h3>
+
+<p>Code review is also where separation of duties shows up in software development. The person writing the code should not be the only person deciding whether it is safe to merge.</p>
+
+<p>This is not bureaucracy for its own sake. It is a simple way to reduce blind spots, overconfidence, and single-person control over sensitive changes.</p>
+
+<h3 id="use-tools-to-support-review-not-replace-it">Use tools to support review, not replace it</h3>
+
+<p>Static analysis, dependency scanning, and automated policy checks improve review quality when they narrow attention toward real risk. They become harmful when teams assume green tooling means the review is now optional.</p>
+
+<p>The strongest workflow is complementary:</p>
+
+<ul>
+  <li>tools catch common patterns fast</li>
+  <li>reviewers check context, logic, and trust assumptions</li>
+  <li>tests verify expected behavior</li>
+  <li>approvals reflect actual accountability</li>
+</ul>
+
+<h2 id="a-realistic-scenario-the-helpful-support-feature">A Realistic Scenario: The Helpful Support Feature</h2>
+
+<p>Imagine a team adds a support feature so internal agents can retrieve customer account summaries more quickly during calls.</p>
+
+<p>The implementation looks clean on first pass:</p>
+
+<ul>
+  <li>typed inputs</li>
+  <li>parameterized database access</li>
+  <li>no secrets in code</li>
+  <li>passing unit tests</li>
+</ul>
+
+<p>A scanner may find nothing serious.</p>
+
+<p>A security-minded reviewer asks different questions:</p>
+
+<ul>
+  <li>Can any support role use this endpoint, or only the narrowly approved subgroup?</li>
+  <li>Is access scoped to assigned accounts or any customer record?</li>
+  <li>Are exports possible from the same service path?</li>
+  <li>Is the access logged with enough detail to support accountability?</li>
+  <li>What prevents this internal endpoint from being reused by another service without the original control assumptions?</li>
+</ul>
+
+<p>That review may uncover the real problem: the code is technically clean but functionally over-authorized.</p>
+
+<p>This is a classic CISSP pattern. The strongest control is often the one that catches the risk before deployment, at the point where the logic can still be challenged cheaply.</p>
+
+<h2 id="where-secure-code-review-fits-in-domain-8">Where Secure Code Review Fits in Domain 8</h2>
+
+<p>Domain 8 is about Software Development Security, not just vulnerability tooling.</p>
+
+<p>That means the exam cares about how security is built into the development lifecycle. Secure code review fits because it helps verify that implementation still matches design intent, policy expectations, and trust assumptions.</p>
+
+<p>It sits between several neighboring concepts in the series:</p>
+
+<ul>
+  <li>Secure SDLC says security belongs throughout the lifecycle.</li>
+  <li>Vulnerability categories explain the classes of flaws attackers exploit.</li>
+  <li>Software supply chain security explains why trust in dependencies and build outputs matters.</li>
+  <li>Secure code review checks whether the actual change respects all of the above.</li>
+</ul>
+
+<p>This is one reason code review is so valuable. It is a convergence point. The reviewer is often the last practical checkpoint before merge where security intent, implementation detail, and operational reality can still be reconciled.</p>
+
+<h2 id="what-the-exam-is-likely-testing">What the Exam Is Likely Testing</h2>
+
+<p>For CISSP, secure code review questions are likely to reward the candidate who understands a few distinctions clearly.</p>
+
+<h3 id="code-review-is-not-the-same-as-automated-scanning">Code review is not the same as automated scanning</h3>
+
+<p>If one answer implies scanners replace reviewers completely, that is usually too shallow. The better answer recognizes that automated tooling and human review serve different purposes.</p>
+
+<h3 id="review-supports-software-assurance">Review supports software assurance</h3>
+
+<p>The exam may frame code review as a quality activity, but the stronger interpretation is that it is also a security and assurance activity. It helps catch flaws before release and enforces accountability around change.</p>
+
+<h3 id="separation-of-duties-matters">Separation of duties matters</h3>
+
+<p>If a scenario involves sensitive code changes being self-approved or merged without independent review, CISSP logic generally favors restoring approval discipline and peer review.</p>
+
+<h3 id="business-logic-and-authorization-are-high-value-review-targets">Business logic and authorization are high-value review targets</h3>
+
+<p>Many important defects are not memory corruption or obvious injection patterns. They are logic-level failures. A reviewer who follows the workflow and the trust model is often the strongest control available.</p>
+
+<h2 id="established-principles-vs-current-practice">Established Principles vs Current Practice</h2>
+
+<p>The established principles are stable:</p>
+
+<ul>
+  <li>manual review is still necessary</li>
+  <li>high-risk changes deserve deeper scrutiny</li>
+  <li>secure development depends on both preventive tooling and human judgment</li>
+  <li>independent review improves assurance and accountability</li>
+</ul>
+
+<p>What has changed is the operating environment.</p>
+
+<p>Modern teams merge faster, automate more, reuse more dependencies, and push changes through CI/CD at higher frequency. That makes disciplined review more important, not less. It also means review must be intentionally scoped, risk-based, and supported by tooling, because nobody can deeply inspect every line equally in a high-velocity environment.</p>
+
+<p>This is the same pattern that shows up across modern security practice. Automation scales the baseline. Human review protects the parts where context, trust, and business meaning still matter most.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/inline-2.svg" alt="Secure code review workflow showing tooling, reviewer questions, and merge decision as a security gate" class="blog-inline" /></p>
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>Secure code review is one of the simplest places to see whether a team treats security as a living engineering discipline or as a tool output.</p>
+
+<p>If review is little more than style feedback and quick approvals, the organization is depending on scanners and hope.</p>
+
+<p>If review asks whether trust boundaries still hold, whether authorization is genuinely enforced, whether error paths are safe, and whether the change quietly expands privilege, then the organization is doing something much more valuable. It is turning ordinary engineering process into a real security control.</p>
+
+<p>That is the memory hook worth carrying into the exam and into real work:</p>
+
+<p>Secure code review is not a courtesy step after the real security work is done. It is one of the places where the real security work becomes visible, challengeable, and accountable before release.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 treats secure code review as part of software assurance, not just development etiquette. Learn what human review catches that tools miss and why peer review remains a core security control.</em></p>
+
+<p><em>SEO keyword ideas: secure code review CISSP, code review security control, CISSP Domain 8 software assurance, peer review application security, secure SDLC code review</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Secure Code Review" /><category term="Code Review" /><category term="Software Assurance" /><category term="Application Security" /><category term="Domain 8" /><category term="Secure SDLC" /><category term="Peer Review" /><category term="SAST" /><summary type="html"><![CDATA[Automated scanning matters, but it does not replace human review. CISSP Domain 8 expects you to understand why secure code review catches authorization gaps, trust-boundary mistakes, and logic flaws that tools alone often miss.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #53: Software Supply Chain Security and SBOMs - Inventory Is Necessary, Not Sufficient</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-software-supply-chain-security-sboms/" rel="alternate" type="text/html" title="CISSP #53: Software Supply Chain Security and SBOMs - Inventory Is Necessary, Not Sufficient" /><published>2026-05-06T12:30:00+00:00</published><updated>2026-05-06T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-software-supply-chain-security-sboms</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-software-supply-chain-security-sboms/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" alt="CISSP #53: software supply chain security and SBOMs across dependencies, build, release, and operations" class="blog-hero" /></p>
+
+<p>The old mental model of software security was simple: review your code, test your application, patch your servers, and you are in reasonably good shape.</p>
+
+<p>That model is too narrow now.</p>
+
+<p>Most modern applications are assembled from open source libraries, package registries, build runners, container images, CI/CD systems, cloud services, code-signing workflows, and artifact repositories. In other words, the software you ship depends on far more than the code your team wrote directly.</p>
+
+<p>That is why software supply chain security matters so much in CISSP Domain 8. The exam is not trying to turn you into a build-system specialist. It is testing whether you understand a broader engineering reality: software can be compromised before it reaches production, and visibility into components is useful only when it feeds real integrity, review, and response controls.</p>
+
+<p>Post #51 covered Secure SDLC. Post #52 covered the vulnerability categories that show up in code. The next step is understanding the ecosystem around that code: how dependencies enter, how artifacts are built, how releases are trusted, and where an attacker can tamper with the path from source to production.</p>
+
+<h2 id="what-the-software-supply-chain-actually-includes">What the Software Supply Chain Actually Includes</h2>
+
+<p>When people hear “software supply chain,” they often think only about third-party packages. That is part of it, but it is not the whole picture.</p>
+
+<p>From a practical security perspective, the software supply chain includes:</p>
+
+<ul>
+  <li>source code repositories and branch protections</li>
+  <li>open source and commercial dependencies</li>
+  <li>package managers and registries</li>
+  <li>build scripts and CI/CD systems</li>
+  <li>build environments and runners</li>
+  <li>artifact repositories and container registries</li>
+  <li>signing keys, attestations, and release approval workflows</li>
+  <li>deployment mechanisms and update channels</li>
+</ul>
+
+<p>Every one of those steps can influence whether the final software is trustworthy.</p>
+
+<p>This is a useful CISSP pattern to remember: the attack surface is not limited to the application runtime. If a malicious dependency is introduced, a build pipeline is altered, a signing key is abused, or an update mechanism is compromised, the resulting software may be functionally correct and still be unsafe.</p>
+
+<h2 id="why-cissp-cares-about-this-topic">Why CISSP Cares About This Topic</h2>
+
+<p>The CISSP exam tends to reward answers that reduce organizational risk at the right control layer.</p>
+
+<p>For software supply chain questions, that usually means stepping back from one narrow technical flaw and asking bigger questions:</p>
+
+<ul>
+  <li>Do we know what components are in this product?</li>
+  <li>Do we trust where they came from?</li>
+  <li>Can we verify how the artifact was built and released?</li>
+  <li>Can we respond quickly when a dependency vulnerability is disclosed?</li>
+  <li>Are we relying on one weak approval, one unsigned artifact, or one opaque vendor assertion?</li>
+</ul>
+
+<p>That mindset aligns well with current NIST guidance. The Secure Software Development Framework (SSDF) treats software security as a lifecycle problem, not just a testing problem. NIST’s supply chain guidance under Executive Order 14028 pushed the same direction: organizations need stronger practices around provenance, integrity, and software component visibility.</p>
+
+<p>In exam terms, the strongest answer is rarely “just scan harder.” It is usually the one that improves trustworthy development, controlled release, and evidence-backed response.</p>
+
+<h2 id="what-an-sbom-is">What an SBOM Is</h2>
+
+<p>An SBOM, or Software Bill of Materials, is a structured inventory of the software components that make up a product.</p>
+
+<p>NTIA’s long-running software component transparency work describes it in plain terms: an SBOM is essentially an ingredient list for software. It tells you what components are present so you can reason about exposure, dependency risk, and operational response.</p>
+
+<p>That sounds simple, and it is simple in concept. The value comes from what the inventory enables.</p>
+
+<p>A useful SBOM helps teams:</p>
+
+<ul>
+  <li>identify whether a vulnerable library is present in a product</li>
+  <li>understand transitive dependencies, not just direct ones</li>
+  <li>support software acquisition and vendor review</li>
+  <li>accelerate incident response when new vulnerability disclosures appear</li>
+  <li>improve operational visibility across internally built and externally acquired software</li>
+</ul>
+
+<p>That is why SBOMs matter. They improve transparency.</p>
+
+<p>But transparency is not the same thing as trust.</p>
+
+<h2 id="what-sboms-do-not-solve-by-themselves">What SBOMs Do Not Solve by Themselves</h2>
+
+<p>This is the distinction the exam is likely to care about.</p>
+
+<p>An SBOM tells you what components are listed. It does not automatically prove:</p>
+
+<ul>
+  <li>that the software was built securely</li>
+  <li>that the listed components are complete and accurate</li>
+  <li>that the artifact has not been tampered with</li>
+  <li>that a disclosed CVE is actually exploitable in your environment</li>
+  <li>that the product is free of malicious code</li>
+</ul>
+
+<p>In other words, an SBOM is a visibility control, not a full integrity control.</p>
+
+<p>That is why treating SBOMs as a magic answer is a mistake. They are extremely useful, but they work best when connected to other controls: trusted build pipelines, code review, artifact signing, provenance evidence, dependency governance, vulnerability triage, and patch or replacement processes.</p>
+
+<p>This is where another useful concept enters the picture: VEX, or Vulnerability Exploitability eXchange. NTIA’s SBOM work highlighted VEX as a way for suppliers to clarify whether a known vulnerability actually affects a specific product. That matters because raw component inventory alone can create operational noise. Teams need a way to distinguish “component present” from “component present and meaningfully affected.”</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/inline-1.svg" alt="SBOM value flow from inventory to vulnerability response, with limits called out separately" class="blog-inline" /></p>
+
+<h2 id="a-practical-control-model-for-software-supply-chain-security">A Practical Control Model for Software Supply Chain Security</h2>
+
+<p>The easiest way to think about this topic is as four linked control objectives.</p>
+
+<h3 id="1-know-what-you-depend-on">1. Know what you depend on</h3>
+
+<p>This is where SBOMs, dependency inventories, and acquisition records matter.</p>
+
+<p>If a team cannot answer which libraries, containers, or vendor products are in use, then every new vulnerability disclosure becomes a manual discovery exercise. Response gets slow, inconsistent, and expensive.</p>
+
+<h3 id="2-control-how-software-enters-the-environment">2. Control how software enters the environment</h3>
+
+<p>Dependencies should not flow into production through convenience alone. Mature teams define approved sources, review policies, repository controls, and exceptions for higher-risk components.</p>
+
+<p>This applies both to open source packages and to commercial artifacts. The core question is the same: what trust decision allowed this component into the product?</p>
+
+<h3 id="3-protect-build-and-release-integrity">3. Protect build and release integrity</h3>
+
+<p>This is where many discussions become too dependency-centric. A perfectly legitimate dependency can still lead to an unsafe release if the build path is compromised.</p>
+
+<p>Important controls here include:</p>
+
+<ul>
+  <li>least privilege for build and release systems</li>
+  <li>separation of duties in approval workflows</li>
+  <li>protected branches and change review</li>
+  <li>hardened runners and controlled build environments</li>
+  <li>artifact signing and integrity verification</li>
+  <li>traceable provenance from source to released artifact</li>
+</ul>
+
+<p>The exam may not use every one of those terms explicitly, but the best-answer logic is stable: if the organization cannot trust how software was produced, it cannot fully trust what it deploys.</p>
+
+<h3 id="4-respond-when-new-information-arrives">4. Respond when new information arrives</h3>
+
+<p>Supply chain security is not complete when the product ships.</p>
+
+<p>New vulnerabilities, malicious package discoveries, upstream maintainer compromises, and vendor advisories all arrive after deployment. The organization needs a repeatable response loop:</p>
+
+<ul>
+  <li>identify affected products quickly</li>
+  <li>assess exploitability and business impact</li>
+  <li>prioritize remediation or compensating controls</li>
+  <li>document exceptions when immediate replacement is not possible</li>
+  <li>verify the updated product path is trustworthy again</li>
+</ul>
+
+<p>That is one reason SBOMs matter operationally. They reduce response latency. But again, they do not eliminate the need for judgment.</p>
+
+<h2 id="a-realistic-scenario-the-critical-cve-email">A Realistic Scenario: The Critical CVE Email</h2>
+
+<p>Imagine a security team receives notice that a widely used logging library has a severe newly disclosed vulnerability.</p>
+
+<p>In one organization, the response is chaotic.</p>
+
+<ul>
+  <li>Nobody knows which internal applications include the library.</li>
+  <li>Vendor owners are emailing suppliers manually.</li>
+  <li>Engineering is searching package files by hand.</li>
+  <li>Leadership wants an answer in two hours and cannot get one.</li>
+</ul>
+
+<p>In another organization, the response is calmer and faster.</p>
+
+<ul>
+  <li>Product teams can query current component inventories.</li>
+  <li>Acquired software is mapped to supplier contacts and support channels.</li>
+  <li>The security team can separate direct exposure from non-affected products.</li>
+  <li>Release teams know exactly which build pipelines and artifacts need replacement.</li>
+</ul>
+
+<p>The difference is not that one organization had a better slogan. It had better visibility and better control discipline.</p>
+
+<p>That is the heart of the CISSP lesson here. Good software supply chain security reduces uncertainty before the incident, not only during it.</p>
+
+<h2 id="what-the-exam-is-likely-testing">What the Exam Is Likely Testing</h2>
+
+<p>For CISSP, you should expect questions that distinguish between:</p>
+
+<ul>
+  <li>component visibility versus artifact integrity</li>
+  <li>supplier evidence versus customer verification</li>
+  <li>vulnerability presence versus exploitability</li>
+  <li>secure development practices versus secure acquisition practices</li>
+  <li>preventive controls versus response and monitoring controls</li>
+</ul>
+
+<p>Common best-answer patterns include:</p>
+
+<ul>
+  <li>favoring trustworthy, controlled acquisition and build practices over reactive scanning alone</li>
+  <li>choosing controls that improve integrity and traceability, not just convenience</li>
+  <li>recognizing that an SBOM supports vulnerability management but does not replace secure SDLC or release governance</li>
+  <li>understanding that signed, verified, and traceable artifacts provide stronger assurance than opaque build outputs</li>
+</ul>
+
+<p>If two answers both sound plausible, the stronger one is usually the one that addresses root trust and governance rather than just post-release visibility.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<p>The established principles are straightforward and durable:</p>
+
+<ul>
+  <li>know what components you use</li>
+  <li>control what enters the software baseline</li>
+  <li>protect integrity from source through release</li>
+  <li>maintain the ability to respond when upstream risk changes</li>
+</ul>
+
+<p>The more current direction is mostly about scale and expectation.</p>
+
+<p>Organizations now rely more heavily on open source ecosystems, package registries, CI/CD automation, containers, and vendor-delivered software than they did in older software models. That has increased the importance of software provenance, artifact signing, build integrity, and machine-readable component transparency. It has also made it less defensible to say “we did not know where that dependency came from” or “we could not tell which products were affected.”</p>
+
+<p>That is what makes this topic timely without making it trendy. The core security logic is old. The operational dependency on the broader software ecosystem is what keeps increasing.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/inline-2.svg" alt="Software supply chain verification stack from source control through signed release and operational response" class="blog-inline" /></p>
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>Software supply chain security is a good example of a broader CISSP theme: the most dangerous assumptions are often the invisible ones.</p>
+
+<p>It is easy to assume that a popular package is safe, that a build pipeline is trustworthy because it has always worked, or that a vendor-supplied artifact is fine because it came from an approved supplier. Mature security thinking asks for evidence at each step.</p>
+
+<p>That does not mean distrusting everything equally. It means designing a system where trust is explicit, reviewable, and operationally useful.</p>
+
+<p>If you are studying this topic, the memory hook worth keeping is simple:</p>
+
+<p>An SBOM helps you know what is in the software. It does not prove the software is safe. Real software supply chain security comes from combining that visibility with integrity controls, governed acquisition, and a response process that can act when the ecosystem changes.</p>
+
+<p>That is a strong exam answer, and it is also the more honest engineering answer.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 increasingly requires understanding software supply chain security, SBOMs, and release integrity. This post explains what SBOMs are good for, what they do not solve, and how secure build and acquisition practices reduce software risk.</em></p>
+
+<p><em>SEO keyword ideas: CISSP software supply chain security, SBOM CISSP Domain 8, software bill of materials security, software provenance and signing, secure software acquisition CISSP</em></p>
+
+<p>That is why this topic is important beyond current headlines. The control problem is architectural. Teams are no longer defending only the code they authored. They are defending the integrity of a chain of components and processes that produce deployable software.</p>
+
+<p>From a CISSP perspective, that means thinking beyond vulnerability scanning alone. The exam mindset is broader:</p>
+
+<ul>
+  <li>what components are inside the software?</li>
+  <li>where did they come from?</li>
+  <li>how is integrity established?</li>
+  <li>who is allowed to change or approve the build?</li>
+  <li>how quickly can the organization determine exposure when a component issue is disclosed?</li>
+</ul>
+
+<p>Those are governance, engineering, and operational questions at the same time.</p>
+
+<h2 id="why-cissp-cares-about-this">Why CISSP Cares About This</h2>
+
+<p>Domain 8 is ultimately about software assurance. That means confidence that software was developed, assembled, tested, and delivered in a way that reduces avoidable risk.</p>
+
+<p>Software supply chain security fits that goal cleanly because insecure dependencies and tampered build artifacts create failure modes that developers may not notice through normal feature work.</p>
+
+<p>The exam is not asking you to memorize current breach names or vendor programs. It is testing whether you understand a few durable truths:</p>
+
+<ul>
+  <li>reused components introduce inherited risk</li>
+  <li>build integrity matters as much as source integrity</li>
+  <li>provenance and accountability matter when software changes hands</li>
+  <li>visibility into composition is useful, but visibility is not the same as protection</li>
+</ul>
+
+<p>That last point is especially important for SBOM questions.</p>
+
+<h2 id="what-an-sbom-is-1">What an SBOM Is</h2>
+
+<p>An SBOM is a structured inventory of the components that make up a software product. NTIA’s plain-language framing is useful here: it is essentially an ingredient list for software.</p>
+
+<p>At minimum, an SBOM is meant to answer questions like:</p>
+
+<ul>
+  <li>what packages or components are included?</li>
+  <li>which versions are present?</li>
+  <li>how are components related or nested?</li>
+  <li>what product does this inventory describe?</li>
+</ul>
+
+<p>That matters because vulnerability response becomes much slower when teams cannot answer a basic question during an incident or advisory review: “Are we running the affected component anywhere?”</p>
+
+<p>An SBOM helps reduce that uncertainty.</p>
+
+<p>It can support:</p>
+
+<ul>
+  <li>faster impact analysis when a new vulnerability is disclosed</li>
+  <li>acquisition and vendor review conversations</li>
+  <li>dependency governance inside engineering teams</li>
+  <li>operational inventory quality for software already deployed</li>
+</ul>
+
+<p>NIST’s software supply chain guidance and NTIA’s SBOM work both reinforce the same practical idea: composition transparency is useful because you cannot manage component risk well if you do not know what is inside the product.</p>
+
+<h2 id="what-an-sbom-does-not-solve">What an SBOM Does Not Solve</h2>
+
+<p>This is the distinction that separates mature reasoning from checklist thinking.</p>
+
+<p>An SBOM does <strong>not</strong> prove:</p>
+
+<ul>
+  <li>that a component is free of vulnerabilities</li>
+  <li>that the component is currently exploitable in your environment</li>
+  <li>that the build pipeline was untampered</li>
+  <li>that the software was securely configured or securely deployed</li>
+  <li>that the listed components are the only ones that matter at runtime</li>
+</ul>
+
+<p>An SBOM is visibility. It is not assurance by itself.</p>
+
+<p>This is why teams get into trouble when they treat SBOM requests as compliance paperwork. Producing a machine-readable component list is useful. But if the organization does not validate artifact integrity, control build permissions, protect signing keys, and define a real vulnerability response workflow, then the SBOM becomes another artifact that creates the appearance of maturity without enough operational value behind it.</p>
+
+<p>That is also where related concepts like VEX become relevant in practice. A vulnerability may exist in a listed component, but that does not automatically mean the product is actually affected in the deployed context. Good programs distinguish component presence from actual product impact.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/inline-1.svg" alt="SBOM flow from components to product inventory to vulnerability analysis and response decisions" class="blog-inline" /></p>
+
+<h2 id="the-control-layers-that-actually-matter">The Control Layers That Actually Matter</h2>
+
+<p>If SBOMs are only one part of the answer, what else belongs in the model?</p>
+
+<h3 id="1-controlled-dependency-intake">1. Controlled dependency intake</h3>
+
+<p>Teams need to know which package sources are approved, how dependencies are reviewed, and how updates are introduced. Blindly pulling from public registries without policy, pinning, or provenance checks increases uncertainty quickly.</p>
+
+<h3 id="2-secure-build-pipelines">2. Secure build pipelines</h3>
+
+<p>The CI/CD path is part of the trusted computing path for software delivery. If unauthorized changes can be introduced in pipeline definitions, build agents, or secret storage, an attacker may alter outputs without touching the main source branch.</p>
+
+<h3 id="3-artifact-integrity-and-signing">3. Artifact integrity and signing</h3>
+
+<p>Organizations need a way to establish that the artifact being promoted or deployed is the artifact that was actually built and approved. Signing, checksums, attestations, and controlled promotion paths all support this.</p>
+
+<h3 id="4-vulnerability-response-discipline">4. Vulnerability response discipline</h3>
+
+<p>An SBOM is most useful when a new issue appears in a common component and the organization can quickly answer:</p>
+
+<ul>
+  <li>do we use it?</li>
+  <li>where?</li>
+  <li>which versions?</li>
+  <li>what systems are exposed?</li>
+  <li>what is the temporary and permanent remediation path?</li>
+</ul>
+
+<h3 id="5-procurement-and-supplier-evidence">5. Procurement and supplier evidence</h3>
+
+<p>For purchased software, software supply chain security is not limited to internal development. Buyers need composition visibility, update expectations, disclosure processes, and reasonable evidence that the supplier follows disciplined secure development practices.</p>
+
+<p>This is where NIST’s SSDF stays relevant. Its value is not limited to first-party development teams. It also provides a useful vocabulary for acquisition and supplier expectations.</p>
+
+<h2 id="a-realistic-scenario-the-urgent-advisory">A Realistic Scenario: The Urgent Advisory</h2>
+
+<p>Imagine a widely used serialization library receives a high-profile vulnerability disclosure on a Tuesday morning.</p>
+
+<p>Security leadership immediately asks three questions:</p>
+
+<ol>
+  <li>Do we use it?</li>
+  <li>Which products or services are affected?</li>
+  <li>How fast can we reduce risk?</li>
+</ol>
+
+<p>An immature organization struggles:</p>
+
+<ul>
+  <li>teams do not know all transitive dependencies</li>
+  <li>some applications were built from older pipeline templates with inconsistent inventory quality</li>
+  <li>container images include packages that are poorly documented</li>
+  <li>there is no central way to correlate a component to deployed workloads</li>
+</ul>
+
+<p>Even before remediation starts, the organization loses time.</p>
+
+<p>A more mature organization still has work to do, but it responds differently:</p>
+
+<ul>
+  <li>SBOM records identify which products contain the component</li>
+  <li>asset or deployment records map those products to running services</li>
+  <li>teams quickly separate internet-facing exposure from lower-risk internal usage</li>
+  <li>temporary compensating controls are considered where immediate patching is not possible</li>
+  <li>supplier follow-up begins for externally sourced software</li>
+</ul>
+
+<p>This is the real value proposition. The SBOM did not fix the vulnerability. It reduced decision latency.</p>
+
+<p>That is exactly the kind of distinction CISSP prefers: controls should help leadership and engineering make better risk decisions faster, not just generate more documentation.</p>
+
+<h2 id="what-the-exam-is-likely-testing-1">What the Exam Is Likely Testing</h2>
+
+<p>Software supply chain questions in CISSP are likely to reward the candidate who keeps a few boundaries clear.</p>
+
+<h3 id="sbom-is-an-inventory-control-not-a-complete-security-program">SBOM is an inventory control, not a complete security program</h3>
+
+<p>If one answer offers composition visibility and another implies that visibility alone prevents compromise, the stronger answer is the one that treats SBOM as one input to a broader assurance process.</p>
+
+<h3 id="provenance-and-integrity-matter">Provenance and integrity matter</h3>
+
+<p>If a question describes concern about unauthorized changes to delivered software, the answer is likely to involve controlled builds, artifact integrity verification, signing, and approval discipline, not only vulnerability scanning.</p>
+
+<h3 id="supplier-risk-is-still-organizational-risk">Supplier risk is still organizational risk</h3>
+
+<p>The exam often favors answers that restore accountable governance rather than pushing all responsibility onto the vendor. Even when software is purchased, the consuming organization still owns deployment decisions, acceptance criteria, and risk treatment.</p>
+
+<h3 id="response-speed-depends-on-software-visibility">Response speed depends on software visibility</h3>
+
+<p>If a scenario focuses on delayed impact analysis after a component advisory, the best answer is likely the one that improves software composition visibility and traceability.</p>
+
+<h2 id="the-engineers-view-why-this-topic-sticks">The Engineer’s View: Why This Topic Sticks</h2>
+
+<p>This topic tends to stick because it closes a gap many engineers have felt without naming clearly.</p>
+
+<p>Teams are often told to ship quickly, update dependencies regularly, automate everything, and rely on shared package ecosystems. All of that can be reasonable. But it means software trust is increasingly inherited and assembled, not simply authored.</p>
+
+<p>That changes what disciplined engineering looks like.</p>
+
+<p>It is no longer enough to say:</p>
+
+<ul>
+  <li>our code passed review</li>
+  <li>the build was green</li>
+  <li>the vulnerability scanner ran</li>
+</ul>
+
+<p>Those are useful signals. They are not the whole trust story.</p>
+
+<p>Mature engineering asks harder questions:</p>
+
+<ul>
+  <li>what exactly are we shipping?</li>
+  <li>how do we know it came from the expected path?</li>
+  <li>what would we do if a critical component issue lands this afternoon?</li>
+  <li>which parts of this process are trusted because they are controlled, and which are trusted only because nobody has tested the assumption yet?</li>
+</ul>
+
+<p>That is why software supply chain security belongs in the CISSP series. It is not hype. It is a modern expression of an old security principle: if you cannot establish what you depend on and whether it remained trustworthy, your assurance story is incomplete.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series. A useful follow-up exercise is simple: pick one production service and ask whether you can identify its components, verify its build path, and explain how you would assess exposure to a newly disclosed dependency vulnerability within an hour.</em></p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 increasingly requires software supply chain awareness. Learn what SBOMs are, what they do not solve alone, and how composition visibility, build integrity, and response discipline work together.</em></p>
+
+<p><em>SEO keyword ideas: software supply chain security CISSP, SBOM CISSP Domain 8, software bill of materials security, secure build pipeline integrity, dependency vulnerability response</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Software Supply Chain" /><category term="CISSP" /><category term="Software Supply Chain Security" /><category term="SBOM" /><category term="VEX" /><category term="SSDF" /><category term="Software Integrity" /><category term="Dependency Security" /><category term="Domain 8" /><category term="Secure Development" /><summary type="html"><![CDATA[Modern software is assembled from dependencies, build systems, repositories, and release pipelines that extend far beyond one engineering team. CISSP Domain 8 expects you to understand where software supply chain risk enters the picture, what SBOMs are good for, and why visibility alone does not create trust.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/" rel="alternate" type="text/html" title="CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize" /><published>2026-05-04T13:00:00+00:00</published><updated>2026-05-04T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" alt="CISSP #52: Software Vulnerabilities and Malicious Code — five categories with root causes and controls" class="blog-hero" /></p>
 
 <p>Every security incident eventually traces back to code that did something it should never have been allowed to do. A function read past the end of a buffer. A query accepted unescaped user input. A file was renamed between the time it was checked and the time it was used. A developer left a debugging backdoor in place and shipped it to production.</p>
 
@@ -1691,498 +2348,4 @@ n- forgotten object versions</li>
 
 <p><strong>Meta description:</strong> A practical CISSP guide to data in use protection and confidential computing. Learn how runtime trust differs from at-rest and in-transit security, and why attestation-driven policy matters.</p>
 
-<p><strong>SEO keywords:</strong> CISSP data in use protection, confidential computing CISSP, attestation security architecture, data lifecycle security CISSP, CISSP Domain 3 runtime trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Data Security" /><category term="CISSP" /><category term="Data in Use" /><category term="Confidential Computing" /><category term="Attestation" /><category term="Encryption" /><category term="Domain 3" /><summary type="html"><![CDATA[Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #44: Hardware Root of Trust, Secure Boot, and Why Startup Integrity Matters</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm/" rel="alternate" type="text/html" title="CISSP #44: Hardware Root of Trust, Secure Boot, and Why Startup Integrity Matters" /><published>2026-04-24T12:30:00+00:00</published><updated>2026-04-24T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-hardware-root-of-trust-secure-boot-tpm/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" alt="CISSP #44 Hardware Root of Trust, Secure Boot, and TPM-backed startup integrity" class="blog-hero" /></p>
-
-<p>Most security programs spend serious effort on identity, patching, endpoint controls, and network defense.</p>
-
-<p>All of that assumes one thing is already true:</p>
-
-<p>The platform actually started in a trustworthy state.</p>
-
-<p>If that assumption fails, many downstream controls can be bypassed, blinded, or quietly subverted before they even run. That is why hardware root of trust and boot integrity concepts matter in CISSP Domain 3, and why they matter even more in real environments where firmware and supply-chain threats are no longer edge cases.</p>
-
-<h2 id="the-trust-problem-at-startup">The Trust Problem at Startup</h2>
-
-<p>Security controls do not start all at once. Systems boot in sequence.</p>
-
-<p>Firmware initializes hardware. Bootloaders launch operating systems. Kernel-mode components initialize before user-mode defenses. Security software and monitoring agents come later.</p>
-
-<p>An attacker that can tamper with early boot components can often persist below the visibility of traditional endpoint controls. At that point, you are trying to enforce policy on top of a compromised foundation.</p>
-
-<p>This is the core reason startup integrity matters: if your initial trust anchor is weak, everything above it inherits that weakness.</p>
-
-<h2 id="what-hardware-root-of-trust-means">What “Hardware Root of Trust” Means</h2>
-
-<p>A <strong>hardware root of trust</strong> is a minimally trusted hardware-based component that provides a secure foundation for verifying platform integrity.</p>
-
-<p>In practice, it acts as a trust anchor that software components can rely on for operations such as:</p>
-
-<ul>
-  <li>secure key storage</li>
-  <li>platform identity and attestation</li>
-  <li>measurement recording</li>
-  <li>cryptographic verification of startup components</li>
-</ul>
-
-<p>For CISSP purposes, the key idea is architectural, not vendor-specific: you want trust anchored in hardware that is harder to tamper with than ordinary software.</p>
-
-<p>Without a root of trust, verification mechanisms can become circular. Software verifies software using software that may already be compromised.</p>
-
-<p>With a root of trust, you can at least establish a defensible starting point.</p>
-
-<h2 id="secure-boot-enforcing-integrity-at-launch">Secure Boot: Enforcing Integrity at Launch</h2>
-
-<p><strong>Secure Boot</strong> is an enforcement mechanism that ensures only trusted, signed boot components are executed during startup.</p>
-
-<p>At a high level:</p>
-
-<ol>
-  <li>Firmware checks the signature of the next boot component.</li>
-  <li>If valid and trusted, execution continues.</li>
-  <li>If invalid or untrusted, startup is blocked or moved to recovery policy.</li>
-</ol>
-
-<p>This is often described as a chain of trust. Each stage verifies the next before handing over control.</p>
-
-<p>Secure Boot is powerful because it converts integrity checking into a gate, not just an audit. If verification fails, code does not run.</p>
-
-<p>That is a fundamental difference from controls that only detect compromise after execution.</p>
-
-<h2 id="measured-boot-recording-integrity-for-later-decision-making">Measured Boot: Recording Integrity for Later Decision-Making</h2>
-
-<p>Secure Boot and measured boot are related but not identical.</p>
-
-<p><strong>Measured Boot</strong> records measurements (typically cryptographic hashes) of startup components into protected registers, usually in a TPM.</p>
-
-<p>Measured Boot is about evidence, not immediate execution blocking. It creates an integrity record that can be used later for:</p>
-
-<ul>
-  <li>local policy decisions</li>
-  <li>remote attestation</li>
-  <li>compliance and trust evaluation</li>
-</ul>
-
-<p>In simple terms:</p>
-
-<ul>
-  <li><strong>Secure Boot</strong> asks: “Should this component be allowed to run right now?”</li>
-  <li><strong>Measured Boot</strong> asks: “What exactly ran, and can I prove it?”</li>
-</ul>
-
-<p>Strong architectures often use both.</p>
-
-<h2 id="tpm-why-it-matters-in-this-model">TPM: Why It Matters in This Model</h2>
-
-<p>A <strong>Trusted Platform Module (TPM)</strong> is a hardware security component commonly used to store cryptographic material and integrity measurements in protected form.</p>
-
-<p>For CISSP-level understanding, TPM value typically appears in three areas:</p>
-
-<ul>
-  <li>protected key operations and storage</li>
-  <li>platform measurements (for measured boot and attestation)</li>
-  <li>supporting device identity and trust decisions</li>
-</ul>
-
-<p>TPM does not magically make a platform secure by itself. It enables higher-assurance trust workflows when integrated correctly with boot validation, operating system policy, and enterprise control planes.</p>
-
-<p>Think of TPM as an enabler for trustworthy evidence and key protection, not a standalone defense strategy.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/inline-1.svg" alt="Secure Boot and Measured Boot flow from firmware to OS with TPM measurements" class="blog-inline" /></p>
-
-<h2 id="what-the-cissp-exam-typically-tests">What the CISSP Exam Typically Tests</h2>
-
-<p>The exam usually focuses on reasoning rather than command-level implementation details.</p>
-
-<p>You are likely to see scenario questions around:</p>
-
-<ul>
-  <li>why trust anchored in hardware is preferable to software-only trust</li>
-  <li>what control prevents unsigned boot components from executing</li>
-  <li>how startup integrity evidence can be used in enterprise decisions</li>
-  <li>why attestation and measured startup state matter in modern architecture</li>
-</ul>
-
-<p>A typical exam-friendly interpretation:</p>
-
-<ul>
-  <li>If the requirement is “prevent unauthorized boot code from running,” Secure Boot is central.</li>
-  <li>If the requirement is “prove what booted and evaluate trust state,” measured boot and attestation concepts are central.</li>
-  <li>If the question asks for foundational trust component supporting these capabilities, hardware root of trust and TPM are the likely conceptual anchors.</li>
-</ul>
-
-<p>The best-answer mindset still applies: choose the control that addresses the earliest feasible point of compromise and provides business-relevant assurance.</p>
-
-<h2 id="real-world-failure-modes">Real-World Failure Modes</h2>
-
-<p>Understanding failure modes helps bridge exam theory and production reality.</p>
-
-<h3 id="1-misconfiguration-of-trust-policy">1. Misconfiguration of Trust Policy</h3>
-
-<p>Secure Boot enabled in name only can still fail operationally if trust stores, key management, and update policies are weak or inconsistent.</p>
-
-<p>Controls that look strong in architecture diagrams often degrade through emergency exceptions, unmanaged certificates, or poor lifecycle processes.</p>
-
-<h3 id="2-firmware-and-supply-chain-risk">2. Firmware and Supply-Chain Risk</h3>
-
-<p>If early firmware is malicious or compromised in update channels, downstream signed components can still execute in a compromised context.</p>
-
-<p>This is why firmware governance, update signing, and vendor trust management are operational requirements, not optional enhancements.</p>
-
-<h3 id="3-attestation-without-enforcement">3. Attestation Without Enforcement</h3>
-
-<p>Organizations may collect measurement evidence but fail to connect it to access policy. That turns attestation into observability without consequence.</p>
-
-<p>Evidence should influence decisions, such as device access tier, workload placement, or conditional access posture.</p>
-
-<h3 id="4-assuming-hardware-means-invulnerable">4. Assuming Hardware Means Invulnerable</h3>
-
-<p>Hardware roots raise assurance but do not eliminate risk. Side-channel issues, implementation flaws, key lifecycle mistakes, and policy misdesign still matter.</p>
-
-<p>The right framing is risk reduction with stronger trust foundations, not absolute immunity.</p>
-
-<h2 id="where-this-fits-in-modern-architecture">Where This Fits in Modern Architecture</h2>
-
-<p>These concepts are no longer niche. They are increasingly part of baseline enterprise architecture in:</p>
-
-<ul>
-  <li>endpoint management and conditional access</li>
-  <li>zero trust device posture evaluation</li>
-  <li>confidential computing and attested workloads</li>
-  <li>cloud and hybrid fleet integrity validation</li>
-  <li>regulated environments requiring stronger evidence of platform trust</li>
-</ul>
-
-<p>In cloud-heavy environments, the same architectural question appears in new form:</p>
-
-<p>“What evidence do I have that the compute environment is in an expected state before I trust workload secrets or sensitive operations to it?”</p>
-
-<p>That is still a root-of-trust question.</p>
-
-<h2 id="secure-boot-measured-boot-and-operations">Secure Boot, Measured Boot, and Operations</h2>
-
-<p>One of the most useful mental models for engineers is to map each mechanism to its operational role:</p>
-
-<ul>
-  <li><strong>Secure Boot</strong>: integrity enforcement at startup</li>
-  <li><strong>Measured Boot</strong>: integrity evidence collection</li>
-  <li><strong>TPM-backed attestation</strong>: trust communication</li>
-  <li><strong>Policy engine</strong>: decision and response</li>
-</ul>
-
-<p>When these are integrated, organizations can make better risk decisions such as:</p>
-
-<ul>
-  <li>restricting privileged access from devices with unexpected boot state</li>
-  <li>quarantining endpoints with failed integrity measurements</li>
-  <li>controlling secret release to workloads based on attestation posture</li>
-</ul>
-
-<p>That is where architecture becomes business control, not just technical purity.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/inline-2.svg" alt="Assurance boundaries: enforcement, evidence, and policy decisions in startup integrity" class="blog-inline" /></p>
-
-<h2 id="common-misunderstandings-to-avoid">Common Misunderstandings to Avoid</h2>
-
-<p>Three misconceptions show up often in both exam prep and implementation discussions.</p>
-
-<p><strong>“Secure Boot and measured boot are the same.”</strong>
-They are complementary but different. One enforces execution decisions; the other records state.</p>
-
-<p><strong>“TPM alone solves boot integrity.”</strong>
-TPM is part of a trust architecture. Without policy integration, lifecycle management, and operating controls, it cannot deliver full assurance value.</p>
-
-<p><strong>“If signed, it is safe.”</strong>
-Signatures prove origin and integrity relative to trust anchors, not business suitability. Trust decisions still require governance and key lifecycle discipline.</p>
-
-<h2 id="a-practical-cissp-oriented-heuristic">A Practical CISSP-Oriented Heuristic</h2>
-
-<p>When reviewing startup integrity in a scenario, ask:</p>
-
-<ol>
-  <li>What is the first trusted anchor?</li>
-  <li>What prevents unauthorized code from executing early?</li>
-  <li>What evidence proves what actually ran?</li>
-  <li>How is that evidence used in policy decisions?</li>
-  <li>What happens when expected integrity is missing?</li>
-</ol>
-
-<p>If a design cannot answer those five questions clearly, its startup trust story is probably weak.</p>
-
-<h2 id="why-this-topic-is-growing-in-importance">Why This Topic Is Growing in Importance</h2>
-
-<p>As attackers move lower in the stack and organizations rely more on remote, cloud, and hybrid control planes, startup trust is becoming a strategic control, not an implementation detail.</p>
-
-<p>Security leaders increasingly need confidence that endpoint, server, and workload platforms are trustworthy before granting access, releasing secrets, or processing sensitive data.</p>
-
-<p>That confidence has to come from defensible evidence and enforcement, not assumptions.</p>
-
-<p>Hardware root of trust, Secure Boot, and measured integrity mechanisms are how that confidence becomes technically credible.</p>
-
-<hr />
-
-<p>CISSP Domain 3 is full of concepts that sound abstract until you connect them to real control design. Startup integrity is one of the clearest examples: security is only as reliable as the trustworthiness of the platform enforcing it.</p>
-
-<p>If you can reason from root of trust to enforcement to attestation to policy, you are already thinking at the right level for both the exam and enterprise architecture.</p>
-
-<p><em>If you are following this CISSP series, this post pairs naturally with the prior entries on trusted computing base, reference monitor concepts, and assurance frameworks.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to hardware root of trust, Secure Boot, measured boot, and TPM-backed startup integrity. Learn what the exam tests and how these controls work in modern architectures.</p>
-
-<p><strong>SEO keywords:</strong> CISSP hardware root of trust, Secure Boot measured boot TPM CISSP, startup integrity security architecture, TPM attestation CISSP, CISSP Domain 3 platform trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Platform Security" /><category term="CISSP" /><category term="TPM" /><category term="Secure Boot" /><category term="Measured Boot" /><category term="Hardware Root of Trust" /><category term="Domain 3" /><summary type="html"><![CDATA[Software security controls assume the platform is trustworthy. Hardware root of trust, Secure Boot, and TPM-backed measurement are what make that trust defensible from the first instruction executed.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-hardware-root-of-trust-secure-boot-tpm/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/" rel="alternate" type="text/html" title="CISSP #43: Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" /><published>2026-04-21T14:20:00+00:00</published><updated>2026-04-21T14:20:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-common-criteria-protection-profiles-assurance/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" alt="CISSP #43 Common Criteria, Protection Profiles, and Why Assurance Is Not a Guarantee" class="blog-hero" /></p>
-
-<p>Security teams like products that come with evidence.</p>
-
-<p>Certifications. Validation reports. Evaluation claims. Assurance packages.</p>
-
-<p>That instinct is not wrong. If you are buying a security-relevant product, you want more than vendor marketing. You want some independent basis for believing the product does what it claims.</p>
-
-<p>But the CISSP exam is careful here for a reason: <strong>evaluation and assurance are not the same as a guarantee that a product is secure in your environment.</strong></p>
-
-<p>That distinction is where Common Criteria becomes useful.</p>
-
-<h2 id="what-common-criteria-is">What Common Criteria Is</h2>
-
-<p><strong>Common Criteria for Information Technology Security Evaluation</strong>, usually shortened to <strong>Common Criteria (CC)</strong>, is an international standard for evaluating the security properties of IT products and systems.</p>
-
-<p>It emerged as a successor to earlier national evaluation schemes, including the U.S. Trusted Computer System Evaluation Criteria (TCSEC, or the Orange Book), with the goal of creating a more widely accepted, internationally recognized evaluation framework.</p>
-
-<p>In practical terms, Common Criteria gives vendors and evaluators a structured way to describe:</p>
-
-<ul>
-  <li>what security problem a product is trying to solve</li>
-  <li>what security functions the product claims to provide</li>
-  <li>what environment and assumptions those claims depend on</li>
-  <li>how much confidence evaluators have in the development and testing evidence behind those claims</li>
-</ul>
-
-<p>That last point matters most. Common Criteria is fundamentally about <strong>assurance</strong>.</p>
-
-<p>It is not a guarantee that a firewall, operating system, smart card, or network device is “secure” in every deployment. It is a structured way of saying: this product was evaluated against defined requirements, under defined assumptions, with a defined level of rigor.</p>
-
-<h2 id="why-the-cissp-exam-cares">Why the CISSP Exam Cares</h2>
-
-<p>Common Criteria shows up in CISSP Domain 3 because it sits at the intersection of architecture, assurance, trusted systems, and product evaluation.</p>
-
-<p>The exam expects you to know the big ideas:</p>
-
-<ul>
-  <li>Common Criteria is a product evaluation framework.</li>
-  <li>It replaced older evaluation approaches like TCSEC in many contexts.</li>
-  <li>It uses <strong>Protection Profiles</strong> and <strong>Security Targets</strong> to define what is being evaluated.</li>
-  <li>It expresses assurance through <strong>Evaluation Assurance Levels (EALs)</strong>.</li>
-  <li>A higher evaluation level does not mean “more secure in every situation.”</li>
-</ul>
-
-<p>That last point is a common trap. The exam likes to test whether you understand the limits of certification-based confidence.</p>
-
-<h2 id="protection-profiles-the-requirement-baseline">Protection Profiles: The Requirement Baseline</h2>
-
-<p>One of the most important Common Criteria concepts is the <strong>Protection Profile (PP)</strong>.</p>
-
-<p>A Protection Profile is an implementation-independent set of security requirements for a category of products that are intended to meet similar security needs.</p>
-
-<p>That definition is dense, but the practical meaning is straightforward:</p>
-
-<p>A PP describes the kind of security behavior a class of products should provide before any one vendor product is selected.</p>
-
-<p>For example, an organization or standards body might define a Protection Profile for:</p>
-
-<ul>
-  <li>smart cards used in identity systems</li>
-  <li>firewalls used in enterprise networks</li>
-  <li>operating systems used in sensitive environments</li>
-  <li>secure network devices with specific access control and audit features</li>
-</ul>
-
-<p>The PP says, in effect: if a product wants to claim suitability for this use case, here are the security requirements it should satisfy.</p>
-
-<p>That makes Protection Profiles useful in procurement and evaluation because they shift the conversation away from vague claims and toward standardized expectations.</p>
-
-<h2 id="security-targets-the-product-specific-claim">Security Targets: The Product-Specific Claim</h2>
-
-<p>If the Protection Profile is the generalized requirement baseline, the <strong>Security Target (ST)</strong> is the vendor’s product-specific statement of what the actual product provides and what evaluation applies to it.</p>
-
-<p>The Security Target defines:</p>
-
-<ul>
-  <li>the product being evaluated</li>
-  <li>the security functions it claims to implement</li>
-  <li>the threats, assumptions, and environment considered in evaluation</li>
-  <li>the assurance requirements used for the evaluation</li>
-</ul>
-
-<p>This distinction matters on the exam:</p>
-
-<ul>
-  <li><strong>Protection Profile</strong> = broad, implementation-independent requirements for a product type</li>
-  <li><strong>Security Target</strong> = the specific evaluated product’s claim set</li>
-</ul>
-
-<p>If you remember only one contrast, remember that one.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/inline-1.svg" alt="Common Criteria structure showing Protection Profiles, Security Targets, and evaluated product assurance" class="blog-inline" /></p>
-
-<h2 id="evaluation-assurance-levels">Evaluation Assurance Levels</h2>
-
-<p>Common Criteria expresses assurance with <strong>Evaluation Assurance Levels</strong>, usually written as <strong>EAL1</strong> through <strong>EAL7</strong>.</p>
-
-<p>These levels describe the depth and rigor of the evaluation process.</p>
-
-<p>At a high level:</p>
-
-<ul>
-  <li><strong>EAL1</strong> is functionally tested.</li>
-  <li>Higher levels require progressively more design, testing, and verification evidence.</li>
-  <li><strong>EAL7</strong> represents formally verified, designed, and tested evaluation at the highest level of rigor.</li>
-</ul>
-
-<p>The important CISSP point is that EALs are <strong>not</strong> simple “security score” rankings.</p>
-
-<p>They do not mean:</p>
-
-<ul>
-  <li>EAL7 products are always safer for every organization.</li>
-  <li>EAL4 is automatically better than a lower-EAL product for your actual use case.</li>
-  <li>The evaluated configuration matches your production deployment.</li>
-</ul>
-
-<p>What they do mean is that the product was evaluated with a particular degree of assurance rigor against the stated target and assumptions.</p>
-
-<p>This is why many real-world certified products are evaluated at mid-range levels such as EAL2, EAL4, or similar profiles that are practical for commercial adoption. Very high assurance levels are expensive and specialized.</p>
-
-<h2 id="what-assurance-actually-means">What Assurance Actually Means</h2>
-
-<p>This is where the topic becomes useful rather than just testable.</p>
-
-<p>Assurance is confidence that security controls are correctly designed and implemented. It is about the strength of the evidence behind your trust.</p>
-
-<p>Common Criteria can raise confidence that:</p>
-
-<ul>
-  <li>the product’s security functions were described clearly</li>
-  <li>the design and testing process met specific rigor expectations</li>
-  <li>an independent evaluation process reviewed the evidence</li>
-</ul>
-
-<p>But Common Criteria does <strong>not</strong> guarantee that:</p>
-
-<ul>
-  <li>the product is configured securely in your environment</li>
-  <li>administrators deploy it correctly</li>
-  <li>the surrounding infrastructure is trustworthy</li>
-  <li>the vendor never ships a vulnerability later</li>
-  <li>the evaluated configuration matches how you actually use the product</li>
-</ul>
-
-<p>That distinction is central both to the exam and to real procurement.</p>
-
-<p>A certified product deployed badly is still a badly deployed product.</p>
-
-<h2 id="the-classic-mistake-treating-certification-as-immunity">The Classic Mistake: Treating Certification as Immunity</h2>
-
-<p>One of the most common management and procurement errors is assuming that certification closes the risk question.</p>
-
-<p>It does not.</p>
-
-<p>A firewall may be evaluated under a recognized Protection Profile and still be dangerous if:</p>
-
-<ul>
-  <li>management interfaces are exposed carelessly</li>
-  <li>rules are misconfigured</li>
-  <li>logging is disabled</li>
-  <li>firmware is not maintained</li>
-  <li>the real deployment enables features outside the evaluated configuration</li>
-</ul>
-
-<p>This is why the CISSP often frames assurance in business terms. Evaluation helps inform trust decisions. It does not replace secure implementation, operations, monitoring, or governance.</p>
-
-<p>Security professionals need to understand where independent evidence ends and operational responsibility begins.</p>
-
-<h2 id="common-criteria-versus-older-models">Common Criteria Versus Older Models</h2>
-
-<p>You do not usually need deep historical detail for the exam, but it helps to know the progression.</p>
-
-<p>The older U.S. TCSEC model, often called the <strong>Orange Book</strong>, focused heavily on confidentiality in trusted operating systems and multilevel security environments.</p>
-
-<p>Common Criteria broadened and modernized the evaluation model by:</p>
-
-<ul>
-  <li>supporting a wider set of product types</li>
-  <li>separating functional requirements from assurance requirements</li>
-  <li>introducing Protection Profiles and Security Targets</li>
-  <li>enabling international recognition across participating schemes</li>
-</ul>
-
-<p>In other words, Common Criteria is more flexible and more suitable for broader commercial and international use than the older tightly scoped trusted system criteria.</p>
-
-<p>That historical arc matters because many CISSP topics are easier to understand when you see them as moving from rigid trusted-system models toward more adaptable assurance frameworks.</p>
-
-<h2 id="what-the-exam-tests-in-scenario-form">What the Exam Tests in Scenario Form</h2>
-
-<p>The CISSP rarely rewards dumping definitions. It usually wants your judgment.</p>
-
-<p>Typical patterns include:</p>
-
-<ul>
-  <li>A procurement team wants a baseline set of security requirements for a class of products before choosing a vendor. The best answer points to a <strong>Protection Profile</strong>.</li>
-  <li>A question asks for the vendor-specific statement describing the exact evaluated product and its claims. That is the <strong>Security Target</strong>.</li>
-  <li>A scenario treats a high EAL as proof that a product is safe in any deployment. The right response is to challenge that assumption.</li>
-  <li>A question asks which framework supports structured international evaluation of product security functions and assurance. That points to <strong>Common Criteria</strong>.</li>
-</ul>
-
-<p>The exam mindset here is consistent: prefer answers that recognize scope, assumptions, and the limits of assurance claims.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/inline-2.svg" alt="Evaluation assurance is bounded by assumptions, configuration, and operational reality" class="blog-inline" /></p>
-
-<h2 id="why-this-still-matters-in-real-procurement">Why This Still Matters in Real Procurement</h2>
-
-<p>This is not just certification trivia.</p>
-
-<p>If you are choosing identity infrastructure, endpoint protection platforms, secure hardware, network devices, or operating systems for regulated environments, independent assurance evidence matters. It can reduce ambiguity and improve vendor comparison.</p>
-
-<p>But mature teams do not stop at the certification badge. They ask:</p>
-
-<ol>
-  <li>What exact configuration was evaluated?</li>
-  <li>Does that match our intended deployment?</li>
-  <li>What assumptions does the evaluation make about administrators, environment, or supporting controls?</li>
-  <li>What risks remain outside the evaluated scope?</li>
-  <li>What operational controls still have to be implemented locally?</li>
-</ol>
-
-<p>Those are architecture and governance questions, not just procurement questions.</p>
-
-<p>And that is why this topic belongs in the CISSP.</p>
-
-<h2 id="a-practical-way-to-remember-it">A Practical Way to Remember It</h2>
-
-<p>If you need a compact mental model:</p>
-
-<ul>
-  <li><strong>Common Criteria</strong> = the evaluation framework</li>
-  <li><strong>Protection Profile</strong> = the generic requirement baseline for a product type</li>
-  <li><strong>Security Target</strong> = the specific evaluated product claim</li>
-  <li><strong>EAL</strong> = how rigorously the assurance evidence was evaluated</li>
-</ul>
-
-<p>And the final discipline check:</p>
-
-<p><strong>Certification improves confidence. It does not remove responsibility.</strong></p>
-
-<p>That sentence will get you through both exam questions and real product review discussions.</p>
-
-<hr />
-
-<p>Common Criteria matters because it teaches a mature security habit: separate independent assurance evidence from wishful thinking. Strong security decisions require both evaluated products and sound deployment, governance, and operations.</p>
-
-<p>The CISSP is testing whether you understand that difference.</p>
-
-<p><em>If you are following the series through Domain 3, this topic fits directly after trusted systems, security models, and reference monitor concepts. Together they form the assurance side of architecture, not just the control side.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to Common Criteria, Protection Profiles, Security Targets, and Evaluation Assurance Levels. Learn what the exam tests and why assurance is not a deployment guarantee.</p>
-
-<p><strong>SEO keywords:</strong> CISSP Common Criteria, Protection Profile Security Target CISSP, Evaluation Assurance Levels EAL CISSP, Common Criteria assurance, CISSP Domain 3 product evaluation</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Assurance" /><category term="CISSP" /><category term="Common Criteria" /><category term="Protection Profiles" /><category term="Security Assurance" /><category term="Domain 3" /><summary type="html"><![CDATA[Common Criteria gives a framework for evaluating security products, but evaluation is not the same thing as real-world safety. The CISSP exam expects you to understand what Common Criteria does, what a Protection Profile is, and where assurance stops.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-common-criteria-protection-profiles-assurance/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><strong>SEO keywords:</strong> CISSP data in use protection, confidential computing CISSP, attestation security architecture, data lifecycle security CISSP, CISSP Domain 3 runtime trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Data Security" /><category term="CISSP" /><category term="Data in Use" /><category term="Confidential Computing" /><category term="Attestation" /><category term="Encryption" /><category term="Domain 3" /><summary type="html"><![CDATA[Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-label="Verification stack for software supply chain security">
+  <rect width="920" height="300" rx="12" fill="#0f172a"/>
+  <text x="460" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f8fafc">Verification Stack for Trustworthy Software Releases</text>
+
+  <rect x="36" y="70" width="170" height="54" rx="8" fill="#13263f" stroke="#60a5fa" stroke-width="1.4"/>
+  <text x="121" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#bfdbfe">1. Source Controls</text>
+  <text x="121" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dbeafe">Review, branch protection</text>
+
+  <rect x="222" y="70" width="170" height="54" rx="8" fill="#1f2937" stroke="#fbbf24" stroke-width="1.4"/>
+  <text x="307" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fde68a">2. Component Intake</text>
+  <text x="307" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f3f4f6">Approved sources, SBOM</text>
+
+  <rect x="408" y="70" width="170" height="54" rx="8" fill="#10281e" stroke="#34d399" stroke-width="1.4"/>
+  <text x="493" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#86efac">3. Build Integrity</text>
+  <text x="493" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dcfce7">Hardened runners, provenance</text>
+
+  <rect x="594" y="70" width="170" height="54" rx="8" fill="#2a1b10" stroke="#fb923c" stroke-width="1.4"/>
+  <text x="679" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fdba74">4. Signed Artifact</text>
+  <text x="679" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ffedd5">Integrity and release approval</text>
+
+  <rect x="408" y="170" width="170" height="54" rx="8" fill="#24132b" stroke="#c084fc" stroke-width="1.4"/>
+  <text x="493" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e9d5ff">5. Operational Context</text>
+  <text x="493" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f3e8ff">VEX, exploitability, impact</text>
+
+  <rect x="594" y="170" width="170" height="54" rx="8" fill="#311317" stroke="#f87171" stroke-width="1.4"/>
+  <text x="679" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fecaca">6. Response Decision</text>
+  <text x="679" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fee2e2">Patch, replace, compensate</text>
+
+  <g stroke="#475569" stroke-width="2" fill="#475569">
+    <line x1="206" y1="97" x2="222" y2="97"/>
+    <polygon points="216,92 226,97 216,102"/>
+    <line x1="392" y1="97" x2="408" y2="97"/>
+    <polygon points="402,92 412,97 402,102"/>
+    <line x1="578" y1="97" x2="594" y2="97"/>
+    <polygon points="588,92 598,97 588,102"/>
+    <line x1="679" y1="124" x2="679" y2="170"/>
+    <polygon points="674,162 679,172 684,162"/>
+    <line x1="578" y1="197" x2="594" y2="197"/>
+    <polygon points="588,192 598,197 588,202"/>
+  </g>
+
+  <text x="168" y="193" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">SBOM improves visibility here</text>
+  <text x="168" y="211" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">but trust still depends on</text>
+  <text x="168" y="229" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">integrity and response controls</text>
+
+  <text x="460" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Inventory without integrity is incomplete; integrity without response visibility is slow.</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Comparison of what SBOM helps with versus what requires additional controls">
+  <rect width="900" height="340" fill="#0f172a" rx="12"/>
+  <text x="450" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="700" fill="#f8fafc">SBOM Helps, But It Does Not Replace Assurance</text>
+
+  <rect x="48" y="76" width="364" height="214" rx="12" fill="#08261c" stroke="#34d399" stroke-width="1.6"/>
+  <text x="230" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#86efac">What SBOM Helps With</text>
+  <line x1="84" y1="118" x2="376" y2="118" stroke="#14532d" stroke-width="1"/>
+  <text x="86" y="146" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- Identify components and versions in a product</text>
+  <text x="86" y="174" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- Support faster impact analysis after disclosures</text>
+  <text x="86" y="202" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- Improve supplier and procurement conversations</text>
+  <text x="86" y="230" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- Strengthen dependency inventory governance</text>
+  <text x="86" y="258" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- Help correlate known components to running services</text>
+
+  <rect x="488" y="76" width="364" height="214" rx="12" fill="#2b1111" stroke="#f87171" stroke-width="1.6"/>
+  <text x="670" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fca5a5">What Still Needs Separate Controls</text>
+  <line x1="524" y1="118" x2="816" y2="118" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="526" y="146" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- Build pipeline integrity and access control</text>
+  <text x="526" y="174" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- Artifact signing, attestation, and promotion discipline</text>
+  <text x="526" y="202" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- Vulnerability exploitability and runtime context analysis</text>
+  <text x="526" y="230" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- Secure configuration and secure deployment practices</text>
+  <text x="526" y="258" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- Incident response and supplier escalation workflows</text>
+
+  <text x="450" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">CISSP #53 - Treat SBOM as an inventory control inside a broader trust and integrity model</text>
+</svg>
