@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-label="Secure code review workflow as a security gate">
+  <rect width="920" height="300" rx="12" fill="#0f172a"/>
+  <text x="460" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f8fafc">Secure Review Workflow as a Security Gate</text>
+
+  <rect x="34" y="86" width="160" height="64" rx="8" fill="#13263f" stroke="#60a5fa" stroke-width="1.4"/>
+  <text x="114" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#bfdbfe">1. Change Submitted</text>
+  <text x="114" y="129" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dbeafe">Diff, ticket, test context</text>
+
+  <rect x="216" y="86" width="160" height="64" rx="8" fill="#1f2937" stroke="#fbbf24" stroke-width="1.4"/>
+  <text x="296" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fde68a">2. Tool Baseline</text>
+  <text x="296" y="129" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f3f4f6">SAST, tests, dependency checks</text>
+
+  <rect x="398" y="72" width="200" height="92" rx="8" fill="#10281e" stroke="#34d399" stroke-width="1.6"/>
+  <text x="498" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#86efac">3. Reviewer Questions</text>
+  <text x="498" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dcfce7">Authorization?</text>
+  <text x="498" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dcfce7">Trust boundary moved?</text>
+  <text x="498" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#dcfce7">Privilege or data exposure changed?</text>
+
+  <rect x="620" y="86" width="130" height="64" rx="8" fill="#2a1b10" stroke="#fb923c" stroke-width="1.4"/>
+  <text x="685" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fdba74">4. Decision</text>
+  <text x="685" y="129" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ffedd5">Approve or revise</text>
+
+  <rect x="772" y="86" width="114" height="64" rx="8" fill="#24132b" stroke="#c084fc" stroke-width="1.4"/>
+  <text x="829" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#e9d5ff">5. Merge</text>
+  <text x="829" y="129" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f3e8ff">Accountable release</text>
+
+  <g stroke="#475569" stroke-width="2" fill="#475569">
+    <line x1="194" y1="118" x2="216" y2="118"/>
+    <polygon points="210,113 220,118 210,123"/>
+    <line x1="376" y1="118" x2="398" y2="118"/>
+    <polygon points="392,113 402,118 392,123"/>
+    <line x1="598" y1="118" x2="620" y2="118"/>
+    <polygon points="614,113 624,118 614,123"/>
+    <line x1="750" y1="118" x2="772" y2="118"/>
+    <polygon points="766,113 776,118 766,123"/>
+  </g>
+
+  <rect x="132" y="204" width="656" height="52" rx="10" fill="#0f1e33" stroke="#38bdf8" stroke-width="1"/>
+  <text x="460" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#bae6fd">The security value is not that someone clicked approve. The value is that risky assumptions were challenged before release.</text>
+  <text x="460" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7dd3fc">CISSP #54</text>
+</svg>
