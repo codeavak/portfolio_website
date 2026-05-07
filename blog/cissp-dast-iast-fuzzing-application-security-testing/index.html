@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-07T14:30:00+00:00" />
+    
+      
+        <meta property="article:tag" content="cissp" />
+      
+        <meta property="article:tag" content="dast" />
+      
+        <meta property="article:tag" content="iast" />
+      
+        <meta property="article:tag" content="fuzzing" />
+      
+        <meta property="article:tag" content="application-security" />
+      
+        <meta property="article:tag" content="security-testing" />
+      
+        <meta property="article:tag" content="domain8" />
+      
+        <meta property="article:tag" content="sdlc" />
+      
+    
+    <meta property="og:title" content="CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis" />
+    <meta property="og:description" content="Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis" />
+    <meta name="twitter:description" content="Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis",
+        "description": "Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-07T14:30:00+00:00",
+        "dateModified": "2026-05-07T14:30:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">cissp • security</div>
+              
+              <time class="post-date" datetime="2026-05-07T14:30:00+00:00">May 7, 2026</time>
+              <h1 class="post-title">CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis</h1>
+              
+                <p class="post-dek">Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">cissp</span>
+                  
+                    <span class="chip">dast</span>
+                  
+                    <span class="chip">iast</span>
+                  
+                    <span class="chip">fuzzing</span>
+                  
+                    <span class="chip">application-security</span>
+                  
+                    <span class="chip">security-testing</span>
+                  
+                    <span class="chip">domain8</span>
+                  
+                    <span class="chip">sdlc</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p>Static analysis has become a standard part of most modern CI pipelines. Linters run on commit. SAST tools flag risky patterns before the build finishes. That is meaningful progress.</p>
+
+<p>But static analysis only sees the code as text. It cannot observe what happens when the application is actually running — how it handles unexpected input, whether authentication logic can be bypassed, or whether a deployed API behaves the way the code suggests it should.</p>
+
+<p>DAST, IAST, and fuzzing address that gap. The CISSP exam tests these concepts directly, and understanding the distinction between them is more useful than memorizing definitions.</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" alt="DAST scanner probing a running web application from the outside" /></p>
+
+<hr />
+
+<h2 id="why-static-analysis-alone-is-not-enough">Why Static Analysis Alone Is Not Enough</h2>
+
+<p>SAST (Static Application Security Testing) operates on source code, bytecode, or binaries before execution. It is fast, integrates early in the SDLC, and catches a real class of vulnerabilities: hardcoded credentials, SQL string concatenation, dangerous function calls, and similar code-level patterns.</p>
+
+<p>What it cannot do is simulate a real attacker interacting with a running system. It has no visibility into how the application behaves at runtime, how session tokens are issued and validated, how business logic responds to unexpected sequences of requests, or what an endpoint actually returns when given malformed input.</p>
+
+<p>That is not a flaw in SAST. It is a boundary condition. The tools are doing what they are designed to do. The error is treating them as a complete testing program rather than one layer of it.</p>
+
+<hr />
+
+<h2 id="dast-testing-the-running-application-from-the-outside">DAST: Testing the Running Application from the Outside</h2>
+
+<p>Dynamic Application Security Testing operates against a running application. The tester — or the automated tool — sends HTTP requests, examines responses, and infers vulnerabilities from observable behavior. No source code access is required.</p>
+
+<p>This black-box perspective makes DAST uniquely capable of finding things that static analysis structurally cannot: authentication weaknesses, session management flaws, injection vulnerabilities that only manifest at runtime, security misconfigurations in the deployed environment, and issues introduced by the hosting infrastructure.</p>
+
+<p>DAST is most effective in staging and pre-production environments, after the application is fully assembled. Tools like OWASP ZAP and Burp Suite are widely used for this purpose.</p>
+
+<p>The limitation is the inverse of SAST’s strength. DAST has no visibility into internal code paths. It can only probe what is externally observable. Logic errors buried in server-side code that never surface through HTTP responses may be invisible to DAST entirely.</p>
+
+<hr />
+
+<h2 id="iast-instrumentation-from-the-inside">IAST: Instrumentation from the Inside</h2>
+
+<p>Interactive Application Security Testing takes a different approach. An agent is deployed inside the running application — typically as a library or framework plugin — and monitors the application from within as tests are executed against it.</p>
+
+<p>Because IAST has visibility into both the inbound requests and the internal code execution responding to them, it combines characteristics of SAST and DAST. It can observe which lines of code are executed in response to a particular input, trace tainted data flows from input through processing to output, and flag vulnerabilities with more context than either static or dynamic analysis alone.</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-1.svg" alt="Comparison of when SAST, DAST, and IAST run in the SDLC and what each observes" /></p>
+
+<p>The trade-off is complexity. IAST requires instrumentation that must be compatible with the application’s runtime and framework. It typically runs during integration testing rather than in production. Some implementations introduce performance overhead that makes them unsuitable for production environments without careful configuration.</p>
+
+<p>For the CISSP exam, the key distinction is that IAST requires an agent inside the running application and provides a hybrid perspective that neither SAST nor DAST can deliver independently.</p>
+
+<hr />
+
+<h2 id="fuzzing-probing-boundaries-with-unexpected-input">Fuzzing: Probing Boundaries with Unexpected Input</h2>
+
+<p>Fuzzing takes a fundamentally different approach from all three. Rather than analyzing code or sending well-formed requests, a fuzzer generates large volumes of unexpected, malformed, random, or boundary-condition input and observes whether the application crashes, hangs, leaks data, or behaves in ways it should not.</p>
+
+<p>The goal is not to confirm that expected inputs produce expected outputs. It is to discover what happens when the application encounters input it was not designed to handle gracefully.</p>
+
+<p>Modern coverage-guided fuzzers — like AFL and libFuzzer — use instrumentation to track which code paths an input exercises and bias subsequent input generation toward unexplored paths. This makes them substantially more effective than purely random fuzzing at finding edge cases in complex code.</p>
+
+<p>Fuzzing is particularly effective against file parsers, protocol implementations, serialization handlers, and APIs that process structured input. It excels at finding memory safety issues in native code: buffer overflows, use-after-free conditions, null pointer dereferences. In higher-level languages, it surfaces logic errors, unhandled exceptions, and input validation gaps.</p>
+
+<p>It is less suited to testing application-level business logic, authentication flows, or stateful multi-step workflows. Those require testers who understand the application’s intended behavior.</p>
+
+<hr />
+
+<h2 id="how-these-testing-methods-fit-together">How These Testing Methods Fit Together</h2>
+
+<p>A mature application security testing program is not a choice between these methods. It is a sequenced combination of them applied at appropriate stages.</p>
+
+<p>SAST belongs early — in the IDE, on commit, or in the CI build. It catches vulnerabilities before they travel any further down the pipeline.</p>
+
+<p>DAST belongs in staging and pre-production. Once the application is assembled and deployed in an environment that approximates production, DAST can probe it the way an external attacker would.</p>
+
+<p>IAST belongs during integration testing, where an instrumented application is exercised by automated test suites or manual exploratory testing. The agent adds observability without requiring a separate scanning phase.</p>
+
+<p>Fuzzing belongs wherever the application processes structured external input: APIs, file upload handlers, message parsers, serialization boundaries. It can run continuously in a dedicated fuzzing environment against interface targets.</p>
+
+<p>No single method finds everything. SAST misses runtime behavior. DAST misses internal logic. IAST requires compatible instrumentation. Fuzzing cannot test business logic. The question for any program is: what are we not testing, and what does that leave exposed?</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-2.svg" alt="Fuzzing pipeline showing input generation, target application, and anomaly detection" /></p>
+
+<hr />
+
+<h2 id="what-the-cissp-exam-is-likely-testing">What the CISSP Exam Is Likely Testing</h2>
+
+<p>The exam distinguishes clearly between SAST, DAST, IAST, and fuzzing. Expect questions that require you to identify which method applies to a given scenario.</p>
+
+<p>The key distinguishing facts:</p>
+
+<ul>
+  <li><strong>SAST</strong> operates on source code or binaries before execution. No running application required. Finds code-level patterns.</li>
+  <li><strong>DAST</strong> operates against a running application from the outside. No source code required. Finds runtime behavior vulnerabilities.</li>
+  <li><strong>IAST</strong> uses an agent inside the running application. Requires instrumentation. Combines internal code visibility with runtime behavior.</li>
+  <li><strong>Fuzzing</strong> sends unexpected or malformed input to find crashes and unexpected behavior. Effective against parsers, protocols, and input-handling code.</li>
+</ul>
+
+<p>DAST appears most frequently in exam questions. Know that it requires a running application, operates from the outside, and is appropriate for testing deployed systems rather than source code.</p>
+
+<p>Domain 8 situates these techniques within the secure SDLC. The exam may ask which technique is most appropriate at a given phase of development, or which method would identify a specific class of vulnerability.</p>
+
+<hr />
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>The engineers who benefit most from understanding these techniques are not the ones building a dedicated security testing team — they are the ones deciding what their CI/CD pipeline should do before code ships.</p>
+
+<p>Static analysis in the build pipeline is a reasonable floor. DAST in staging before any production deployment raises it meaningfully. Fuzzing against APIs and parsers finds the edge cases that neither method would surface.</p>
+
+<p>The broader discipline here is the same as defense in depth applied to testing: no single control is sufficient, no single method covers everything, and the gaps between methods are exactly where vulnerabilities tend to live.</p>
+
+<hr />
+
+<p><em>Meta description: DAST tests running applications from the outside. IAST instruments them from within. Fuzzing probes with unexpected input. This post explains how each works, when to use them, and what the CISSP exam tests on dynamic application security testing.</em></p>
+
+<p><em>SEO keywords: DAST vs SAST CISSP, dynamic application security testing, IAST instrumented testing, fuzzing security testing, CISSP Domain 8 application security testing</em></p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

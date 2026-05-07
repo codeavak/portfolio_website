@@ -1,31 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280" role="img" aria-label="SBOM value and limitations diagram">
-  <rect width="900" height="280" rx="12" fill="#0f172a"/>
-  <text x="450" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#f8fafc">What SBOMs Help With - And What They Do Not Prove</text>
-
-  <rect x="32" y="68" width="390" height="168" rx="10" fill="#0f2a1d" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="227" y="94" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#86efac">Useful SBOM Outcomes</text>
-  <line x1="64" y1="104" x2="390" y2="104" stroke="#22c55e" stroke-width="1"/>
-  <text x="227" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Identify affected products faster</text>
-  <text x="227" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Map direct and transitive components</text>
-  <text x="227" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Support vendor review and acquisition</text>
-  <text x="227" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Accelerate vulnerability response</text>
-  <text x="227" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7">Improve operational transparency</text>
-
-  <rect x="478" y="68" width="390" height="168" rx="10" fill="#311317" stroke="#f87171" stroke-width="1.5"/>
-  <text x="673" y="94" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#fca5a5">SBOM Limits</text>
-  <line x1="510" y1="104" x2="836" y2="104" stroke="#f87171" stroke-width="1"/>
-  <text x="673" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">Does not prove secure build integrity</text>
-  <text x="673" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">Does not guarantee completeness or accuracy</text>
-  <text x="673" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">Does not show exploitability by itself</text>
-  <text x="673" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">Does not detect malicious code alone</text>
-  <text x="673" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">Does not replace secure SDLC controls</text>
-
-  <line x1="422" y1="152" x2="478" y2="152" stroke="#64748b" stroke-width="2"/>
-  <polygon points="470,147 482,152 470,157" fill="#64748b"/>
-  <text x="450" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">Needed input, not complete answer</text>
-
-  <text x="450" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Best used with provenance, signing, governance, and vulnerability-response workflows</text>
-</svg><svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-label="SBOM operational flow from software components to exposure analysis and response">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-label="SBOM operational flow from software components to exposure analysis and response">
   <rect width="900" height="320" fill="#0f172a" rx="12"/>
   <text x="450" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="700" fill="#f8fafc">Where SBOM Actually Helps</text>
 

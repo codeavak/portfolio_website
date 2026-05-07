@@ -1,4 +1,307 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-06T17:30:48+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/" rel="alternate" type="text/html" title="CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy" /><published>2026-05-06T13:30:00+00:00</published><updated>2026-05-06T13:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" alt="CISSP #54 secure code review as a security control across code, logic, trust boundaries, and approval" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-07T19:43:55+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/" rel="alternate" type="text/html" title="CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis" /><published>2026-05-07T14:30:00+00:00</published><updated>2026-05-07T14:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/"><![CDATA[<p>Static analysis has become a standard part of most modern CI pipelines. Linters run on commit. SAST tools flag risky patterns before the build finishes. That is meaningful progress.</p>
+
+<p>But static analysis only sees the code as text. It cannot observe what happens when the application is actually running — how it handles unexpected input, whether authentication logic can be bypassed, or whether a deployed API behaves the way the code suggests it should.</p>
+
+<p>DAST, IAST, and fuzzing address that gap. The CISSP exam tests these concepts directly, and understanding the distinction between them is more useful than memorizing definitions.</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" alt="DAST scanner probing a running web application from the outside" /></p>
+
+<hr />
+
+<h2 id="why-static-analysis-alone-is-not-enough">Why Static Analysis Alone Is Not Enough</h2>
+
+<p>SAST (Static Application Security Testing) operates on source code, bytecode, or binaries before execution. It is fast, integrates early in the SDLC, and catches a real class of vulnerabilities: hardcoded credentials, SQL string concatenation, dangerous function calls, and similar code-level patterns.</p>
+
+<p>What it cannot do is simulate a real attacker interacting with a running system. It has no visibility into how the application behaves at runtime, how session tokens are issued and validated, how business logic responds to unexpected sequences of requests, or what an endpoint actually returns when given malformed input.</p>
+
+<p>That is not a flaw in SAST. It is a boundary condition. The tools are doing what they are designed to do. The error is treating them as a complete testing program rather than one layer of it.</p>
+
+<hr />
+
+<h2 id="dast-testing-the-running-application-from-the-outside">DAST: Testing the Running Application from the Outside</h2>
+
+<p>Dynamic Application Security Testing operates against a running application. The tester — or the automated tool — sends HTTP requests, examines responses, and infers vulnerabilities from observable behavior. No source code access is required.</p>
+
+<p>This black-box perspective makes DAST uniquely capable of finding things that static analysis structurally cannot: authentication weaknesses, session management flaws, injection vulnerabilities that only manifest at runtime, security misconfigurations in the deployed environment, and issues introduced by the hosting infrastructure.</p>
+
+<p>DAST is most effective in staging and pre-production environments, after the application is fully assembled. Tools like OWASP ZAP and Burp Suite are widely used for this purpose.</p>
+
+<p>The limitation is the inverse of SAST’s strength. DAST has no visibility into internal code paths. It can only probe what is externally observable. Logic errors buried in server-side code that never surface through HTTP responses may be invisible to DAST entirely.</p>
+
+<hr />
+
+<h2 id="iast-instrumentation-from-the-inside">IAST: Instrumentation from the Inside</h2>
+
+<p>Interactive Application Security Testing takes a different approach. An agent is deployed inside the running application — typically as a library or framework plugin — and monitors the application from within as tests are executed against it.</p>
+
+<p>Because IAST has visibility into both the inbound requests and the internal code execution responding to them, it combines characteristics of SAST and DAST. It can observe which lines of code are executed in response to a particular input, trace tainted data flows from input through processing to output, and flag vulnerabilities with more context than either static or dynamic analysis alone.</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-1.svg" alt="Comparison of when SAST, DAST, and IAST run in the SDLC and what each observes" /></p>
+
+<p>The trade-off is complexity. IAST requires instrumentation that must be compatible with the application’s runtime and framework. It typically runs during integration testing rather than in production. Some implementations introduce performance overhead that makes them unsuitable for production environments without careful configuration.</p>
+
+<p>For the CISSP exam, the key distinction is that IAST requires an agent inside the running application and provides a hybrid perspective that neither SAST nor DAST can deliver independently.</p>
+
+<hr />
+
+<h2 id="fuzzing-probing-boundaries-with-unexpected-input">Fuzzing: Probing Boundaries with Unexpected Input</h2>
+
+<p>Fuzzing takes a fundamentally different approach from all three. Rather than analyzing code or sending well-formed requests, a fuzzer generates large volumes of unexpected, malformed, random, or boundary-condition input and observes whether the application crashes, hangs, leaks data, or behaves in ways it should not.</p>
+
+<p>The goal is not to confirm that expected inputs produce expected outputs. It is to discover what happens when the application encounters input it was not designed to handle gracefully.</p>
+
+<p>Modern coverage-guided fuzzers — like AFL and libFuzzer — use instrumentation to track which code paths an input exercises and bias subsequent input generation toward unexplored paths. This makes them substantially more effective than purely random fuzzing at finding edge cases in complex code.</p>
+
+<p>Fuzzing is particularly effective against file parsers, protocol implementations, serialization handlers, and APIs that process structured input. It excels at finding memory safety issues in native code: buffer overflows, use-after-free conditions, null pointer dereferences. In higher-level languages, it surfaces logic errors, unhandled exceptions, and input validation gaps.</p>
+
+<p>It is less suited to testing application-level business logic, authentication flows, or stateful multi-step workflows. Those require testers who understand the application’s intended behavior.</p>
+
+<hr />
+
+<h2 id="how-these-testing-methods-fit-together">How These Testing Methods Fit Together</h2>
+
+<p>A mature application security testing program is not a choice between these methods. It is a sequenced combination of them applied at appropriate stages.</p>
+
+<p>SAST belongs early — in the IDE, on commit, or in the CI build. It catches vulnerabilities before they travel any further down the pipeline.</p>
+
+<p>DAST belongs in staging and pre-production. Once the application is assembled and deployed in an environment that approximates production, DAST can probe it the way an external attacker would.</p>
+
+<p>IAST belongs during integration testing, where an instrumented application is exercised by automated test suites or manual exploratory testing. The agent adds observability without requiring a separate scanning phase.</p>
+
+<p>Fuzzing belongs wherever the application processes structured external input: APIs, file upload handlers, message parsers, serialization boundaries. It can run continuously in a dedicated fuzzing environment against interface targets.</p>
+
+<p>No single method finds everything. SAST misses runtime behavior. DAST misses internal logic. IAST requires compatible instrumentation. Fuzzing cannot test business logic. The question for any program is: what are we not testing, and what does that leave exposed?</p>
+
+<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-2.svg" alt="Fuzzing pipeline showing input generation, target application, and anomaly detection" /></p>
+
+<hr />
+
+<h2 id="what-the-cissp-exam-is-likely-testing">What the CISSP Exam Is Likely Testing</h2>
+
+<p>The exam distinguishes clearly between SAST, DAST, IAST, and fuzzing. Expect questions that require you to identify which method applies to a given scenario.</p>
+
+<p>The key distinguishing facts:</p>
+
+<ul>
+  <li><strong>SAST</strong> operates on source code or binaries before execution. No running application required. Finds code-level patterns.</li>
+  <li><strong>DAST</strong> operates against a running application from the outside. No source code required. Finds runtime behavior vulnerabilities.</li>
+  <li><strong>IAST</strong> uses an agent inside the running application. Requires instrumentation. Combines internal code visibility with runtime behavior.</li>
+  <li><strong>Fuzzing</strong> sends unexpected or malformed input to find crashes and unexpected behavior. Effective against parsers, protocols, and input-handling code.</li>
+</ul>
+
+<p>DAST appears most frequently in exam questions. Know that it requires a running application, operates from the outside, and is appropriate for testing deployed systems rather than source code.</p>
+
+<p>Domain 8 situates these techniques within the secure SDLC. The exam may ask which technique is most appropriate at a given phase of development, or which method would identify a specific class of vulnerability.</p>
+
+<hr />
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>The engineers who benefit most from understanding these techniques are not the ones building a dedicated security testing team — they are the ones deciding what their CI/CD pipeline should do before code ships.</p>
+
+<p>Static analysis in the build pipeline is a reasonable floor. DAST in staging before any production deployment raises it meaningfully. Fuzzing against APIs and parsers finds the edge cases that neither method would surface.</p>
+
+<p>The broader discipline here is the same as defense in depth applied to testing: no single control is sufficient, no single method covers everything, and the gaps between methods are exactly where vulnerabilities tend to live.</p>
+
+<hr />
+
+<p><em>Meta description: DAST tests running applications from the outside. IAST instruments them from within. Fuzzing probes with unexpected input. This post explains how each works, when to use them, and what the CISSP exam tests on dynamic application security testing.</em></p>
+
+<p><em>SEO keywords: DAST vs SAST CISSP, dynamic application security testing, IAST instrumented testing, fuzzing security testing, CISSP Domain 8 application security testing</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="cissp" /><category term="security" /><category term="cissp" /><category term="dast" /><category term="iast" /><category term="fuzzing" /><category term="application-security" /><category term="security-testing" /><category term="domain8" /><category term="sdlc" /><summary type="html"><![CDATA[Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #55: Development, Test, and Production Must Stay Separate</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-separate-development-test-production-environments/" rel="alternate" type="text/html" title="CISSP #55: Development, Test, and Production Must Stay Separate" /><published>2026-05-07T12:30:00+00:00</published><updated>2026-05-07T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-separate-development-test-production-environments</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-separate-development-test-production-environments/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-separate-development-test-production-environments/hero.svg" alt="CISSP #55 development, test, staging, and production environment separation with data and trust boundaries" class="blog-hero" /></p>
+
+<p>One of the easiest ways to weaken software security is to blur the line between environments.</p>
+
+<p>Teams usually do it for practical reasons. A developer needs realistic data to reproduce a bug. A tester wants production-like access because a lower environment is incomplete. A support engineer needs to validate one fix quickly and asks for temporary credentials that somehow never expire.</p>
+
+<p>Each shortcut sounds manageable in isolation.</p>
+
+<p>Taken together, they create a system where development, testing, staging, and production stop being distinct security zones and start becoming one loosely controlled trust boundary.</p>
+
+<p>That is exactly the kind of thing CISSP Domain 8 expects you to recognize. Software Development Security is not only about how code is written. It is also about the conditions under which code is built, tested, approved, and exposed to real data and real operational risk.</p>
+
+<p>Post #51 covered Secure SDLC. Post #52 covered software vulnerabilities. Post #53 covered software supply chain trust. Post #54 covered secure code review. The next practical control is where changes are validated and what they are allowed to touch before release.</p>
+
+<h2 id="why-environment-separation-matters">Why Environment Separation Matters</h2>
+
+<p>At a high level, separate environments exist so different kinds of work can happen under different levels of risk.</p>
+
+<ul>
+  <li>development is where code changes fast</li>
+  <li>testing is where behavior is challenged</li>
+  <li>staging or pre-production is where release confidence is built</li>
+  <li>production is where confidentiality, integrity, availability, and accountability matter most</li>
+</ul>
+
+<p>Those environments may look similar technically, but they should not be equal from a trust perspective.</p>
+
+<p>That is the key CISSP idea.</p>
+
+<p>Production is not just another copy of the application. It is the environment that serves real users, processes real transactions, holds real operational value, and often connects to the most sensitive data and downstream systems. If lower environments inherit production-grade data, credentials, or connectivity without strong controls, the organization has effectively expanded the production attack surface.</p>
+
+<p>NIST’s Secure Software Development Framework fits this thinking well. The SSDF treats secure development as a lifecycle discipline with controlled practices around building, testing, and releasing software. OWASP ASVS is useful here too because it frames application security verification as a way to establish confidence, not just to run tests. Confidence drops quickly when the environment itself is poorly controlled.</p>
+
+<h2 id="what-separation-actually-means">What Separation Actually Means</h2>
+
+<p>Environment separation does not mean every environment must be physically isolated in an old-school sense.</p>
+
+<p>In modern engineering, separation is usually logical, administrative, and operational:</p>
+
+<ul>
+  <li>different credentials and roles</li>
+  <li>different network paths and service permissions</li>
+  <li>different data handling rules</li>
+  <li>different approval requirements</li>
+  <li>different monitoring expectations</li>
+  <li>different allowed actions for developers, testers, support staff, and automation</li>
+</ul>
+
+<p>This is why copying production access patterns into lower environments is dangerous. A team might keep different URLs and different servers, but if the same privileged accounts, secrets, datasets, and admin capabilities exist everywhere, the separation is mostly decorative.</p>
+
+<p>The exam is likely to reward that kind of reasoning. CISSP often prefers the answer that reduces systemic risk, not the one that merely preserves convenience.</p>
+
+<h2 id="the-quiet-failure-mode-production-data-in-lower-environments">The Quiet Failure Mode: Production Data in Lower Environments</h2>
+
+<p>This is one of the most common failures because it usually arrives disguised as realism.</p>
+
+<p>Someone says the test environment is not useful without real customer records, realistic edge cases, or full production transactions. That claim can be partially true. It is also where organizations make bad tradeoffs.</p>
+
+<p>Once production data is copied into non-production environments, several things tend to happen:</p>
+
+<ul>
+  <li>access expands to people who were never intended to handle that data</li>
+  <li>logging and monitoring are weaker than they are in production</li>
+  <li>retention becomes sloppy because the copy is seen as temporary</li>
+  <li>data masking is incomplete or bypassed for troubleshooting</li>
+  <li>backup, export, and local-download behaviors become harder to govern</li>
+</ul>
+
+<p>The technical environment may be called test or staging, but the confidentiality risk is now partly production-grade.</p>
+
+<p>That matters for both real practice and exam logic. A lower environment containing live or lightly sanitized production data should be treated as a materially higher-risk environment. The strongest answer is usually not “accept it because testing needs realism.” It is “reduce the need for live data, mask or tokenize aggressively, and tightly control any exception path.”</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-separate-development-test-production-environments/inline-1.svg" alt="Comparison of lower environments with safe synthetic data versus lower environments polluted with production data and production secrets" class="blog-inline" /></p>
+
+<h2 id="a-realistic-scenario-the-urgent-bug-reproduction-request">A Realistic Scenario: The Urgent Bug Reproduction Request</h2>
+
+<p>Imagine a payment-support team finds a defect that affects a small number of customers with unusual account histories.</p>
+
+<p>Engineering says the fastest way to reproduce the issue is to restore a recent production database backup into a lower environment. The request is framed as temporary. The team is under time pressure. Leadership wants a quick fix.</p>
+
+<p>A weak response is to approve the restore and promise to clean it up later.</p>
+
+<p>A stronger security response asks better questions:</p>
+
+<ul>
+  <li>Can the issue be reproduced with synthetic data or a narrow masked subset?</li>
+  <li>What exact fields are needed to test the defect?</li>
+  <li>Who will have access to the copied data?</li>
+  <li>Will the lower environment expose weaker logging, weaker MFA, or broader developer access?</li>
+  <li>How will the copied data be deleted, verified, and kept out of future backups?</li>
+  <li>Is there a safer way to isolate the failing transaction path without cloning the full dataset?</li>
+</ul>
+
+<p>That is the CISSP mindset. Do not solve the immediate technical problem by silently widening the security boundary.</p>
+
+<p>The best control is often the one that preserves debugging capability without normalizing sensitive data sprawl.</p>
+
+<h2 id="separation-of-duties-shows-up-here-too">Separation of Duties Shows Up Here Too</h2>
+
+<p>Environment separation is not just about servers and datasets. It is also about people and authority.</p>
+
+<p>If developers can change code, deploy it, read production data, modify staging baselines, and approve their own emergency exceptions, then the organization has removed several layers of assurance at once.</p>
+
+<p>That does not mean engineers should never get elevated access. Real incidents happen. Real troubleshooting happens. But mature programs make those actions explicit, time-bound, logged, and reviewable.</p>
+
+<p>This is where Domain 8 overlaps with broader CISSP themes:</p>
+
+<ul>
+  <li>least privilege</li>
+  <li>separation of duties</li>
+  <li>change control</li>
+  <li>accountability</li>
+  <li>secure handling of sensitive data</li>
+</ul>
+
+<p>Exam questions often package these together. A development-security scenario may really be testing whether you can see the governance failure underneath the technical detail.</p>
+
+<h2 id="what-good-environment-separation-looks-like">What Good Environment Separation Looks Like</h2>
+
+<p>Strong teams usually do a few things consistently.</p>
+
+<h3 id="they-keep-secrets-and-credentials-distinct">They keep secrets and credentials distinct</h3>
+
+<p>Development, test, staging, and production should not share the same privileged secrets, service principals, signing material, or database admin accounts. If one lower environment is compromised, the attacker should not inherit a clean path into production.</p>
+
+<h3 id="they-control-data-movement-deliberately">They control data movement deliberately</h3>
+
+<p>Production data does not flow into lower environments by default. If an exception is required, it is justified narrowly, sanitized as far as possible, approved explicitly, and removed on a known timeline.</p>
+
+<h3 id="they-preserve-release-confidence-without-cloning-production-risk">They preserve release confidence without cloning production risk</h3>
+
+<p>Environment parity matters for reliability, but parity should emphasize infrastructure behavior, configuration validation, and deployment consistency, not unrestricted reuse of live secrets and sensitive datasets.</p>
+
+<h3 id="they-make-production-access-harder-not-easier">They make production access harder, not easier</h3>
+
+<p>Production should have stronger approval gates, stronger auditability, and fewer people with broad rights. If the production environment is only slightly more controlled than staging, the organization is not getting much security value from the separation.</p>
+
+<h3 id="they-treat-support-and-troubleshooting-paths-as-security-sensitive">They treat support and troubleshooting paths as security-sensitive</h3>
+
+<p>Temporary access, debug tooling, data exports, and emergency changes are common places where separation erodes. These paths need controls because that is where good intentions often bypass normal discipline.</p>
+
+<h2 id="what-the-exam-is-likely-testing">What the Exam Is Likely Testing</h2>
+
+<p>For CISSP, expect the best answer to favor a controlled, risk-reducing approach over a convenience-first one.</p>
+
+<p>Common distinctions include:</p>
+
+<ul>
+  <li>environment similarity versus environment trust equivalence</li>
+  <li>realistic testing versus unnecessary exposure of production data</li>
+  <li>operational urgency versus controlled exception handling</li>
+  <li>developer productivity versus least privilege and accountability</li>
+  <li>pre-production validation versus production-level access reuse</li>
+</ul>
+
+<p>If an answer choice says to copy production data broadly into test so the team can move faster, that is usually a warning sign unless the scenario includes very strong compensating controls and a narrow business need.</p>
+
+<p>If another answer reduces exposure through masking, tokenization, synthetic test data, separate credentials, and stronger production gates, that is much closer to CISSP logic.</p>
+
+<h2 id="established-principles-vs-current-practice">Established Principles vs Current Practice</h2>
+
+<p>The established principles are old and still sound:</p>
+
+<ul>
+  <li>keep environments separate by trust level</li>
+  <li>limit who can access sensitive data and powerful functions</li>
+  <li>prevent lower environments from becoming shadow production</li>
+  <li>require approval and accountability for exception paths</li>
+</ul>
+
+<p>What has changed is how easy it is to blur those lines.</p>
+
+<p>Cloud snapshots, disposable environments, infrastructure-as-code, preview deployments, copied data stores, and shared platform tooling make lower environments more convenient than ever. That convenience is useful, but it also makes it easier to spread secrets, over-privileged service accounts, and real customer data further than intended.</p>
+
+<p>That is why the principle matters more now, not less. Modern delivery speed does not eliminate the need for boundaries. It increases the need to define them clearly and enforce them consistently.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-separate-development-test-production-environments/inline-2.svg" alt="Environment separation workflow showing development, test, staging, and production with distinct data and approval controls" class="blog-inline" /></p>
+
+<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
+
+<p>Environment separation is one of those controls that feels boring right up until an incident proves it was carrying much more security weight than people realized.</p>
+
+<p>If developers can pull live data into test, reuse production secrets in staging, or treat lower environments as convenient extensions of production, then the organization has weakened confidentiality, blurred accountability, and made mistakes cheaper to introduce but more expensive to contain.</p>
+
+<p>The memory hook for this topic is simple:</p>
+
+<p>development, test, staging, and production may support the same application lifecycle, but they should not carry the same trust, the same data sensitivity, or the same access model.</p>
+
+<p>That is good CISSP reasoning, and it is also just good engineering discipline.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 8 expects strong separation between development, test, staging, and production environments. Learn why production data in lower environments is risky and what good environment separation actually looks like.</em></p>
+
+<p><em>SEO keyword ideas: CISSP environment separation, development test production separation security, production data in test environment, CISSP Domain 8 software development security, secure SDLC environment controls</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="Secure SDLC" /><category term="Environment Separation" /><category term="Production Data" /><category term="Test Data" /><category term="Change Control" /><category term="Software Assurance" /><category term="Least Privilege" /><summary type="html"><![CDATA[CISSP Domain 8 expects you to understand why development, test, staging, and production environments need meaningful separation. The risk is not just bad code reaching prod. It is also production data, credentials, and trust paths leaking into places that were never meant to carry them.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-separate-development-test-production-environments/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-separate-development-test-production-environments/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/" rel="alternate" type="text/html" title="CISSP #54: Secure Code Review Is a Security Control, Not a Courtesy" /><published>2026-05-06T13:30:00+00:00</published><updated>2026-05-06T13:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-code-review-security-control/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-code-review-security-control/hero.svg" alt="CISSP #54 secure code review as a security control across code, logic, trust boundaries, and approval" class="blog-hero" /></p>
 
 <p>Security tooling keeps getting better.</p>
 
@@ -887,6 +1190,7 @@
 <p><strong>Meta description:</strong> Secure SDLC integrates security requirements, code review, static and dynamic analysis, and deployment controls into every development phase. This CISSP Domain 8 guide explains what security work belongs at each stage and why testing alone is never enough.</p>
 
 <p><strong>SEO keyword ideas:</strong></p>
+
 <ol>
   <li>Secure software development lifecycle CISSP</li>
   <li>CISSP Domain 8 software development security</li>
@@ -1838,514 +2142,4 @@ n- forgotten object versions</li>
 
 <p><strong>Meta description:</strong> A practical CISSP guide to data remanence and media sanitization. Learn clear vs purge vs destroy, media-aware method selection, and why disposal evidence is a core security control.</p>
 
-<p><strong>SEO keywords:</strong> CISSP data remanence, media sanitization CISSP, NIST 800-88 clear purge destroy, cryptographic erase security, CISSP secure disposal controls</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Data Security" /><category term="Operations" /><category term="CISSP" /><category term="Data Remanence" /><category term="Media Sanitization" /><category term="Cryptographic Erase" /><category term="NIST 800-88" /><category term="Domain 2" /><summary type="html"><![CDATA[Deleting a file is rarely the same as eliminating data. CISSP candidates need to understand data remanence risk and how to choose sanitization methods that match media type, sensitivity, and evidence requirements.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-remanence-media-sanitization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-remanence-media-sanitization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #46: Data Retention, Archival, and Secure Disposal</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-retention-archival-secure-disposal/" rel="alternate" type="text/html" title="CISSP #46: Data Retention, Archival, and Secure Disposal" /><published>2026-04-28T12:35:00+00:00</published><updated>2026-04-28T12:35:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-retention-archival-secure-disposal</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-retention-archival-secure-disposal/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-retention-archival-secure-disposal/hero.svg" alt="CISSP #46 Data Retention, Archival, and Secure Disposal" class="blog-hero" /></p>
-
-<p>Many organizations invest heavily in protecting active data and almost no energy in removing unnecessary data.</p>
-
-<p>That is a strategic mistake.</p>
-
-<p>From a CISSP perspective, data security is lifecycle security. If you keep sensitive data longer than business, legal, or operational needs require, you expand breach impact, regulatory exposure, and operational cost without improving value.</p>
-
-<p>Retention and disposal are not administrative chores. They are security controls.</p>
-
-<h2 id="why-data-lifecycle-discipline-matters">Why Data Lifecycle Discipline Matters</h2>
-
-<p>Security teams often focus on prevention and detection. Governance teams focus on policy and compliance. Storage teams focus on durability and recovery.</p>
-
-<p>Data lifecycle management sits across all three.</p>
-
-<p>A defensible lifecycle answers four questions clearly:</p>
-
-<ol>
-  <li>What data do we keep?</li>
-  <li>Why do we keep it?</li>
-  <li>For how long do we keep it?</li>
-  <li>How do we dispose of it when retention obligations end?</li>
-</ol>
-
-<p>If those answers are vague, data growth becomes unmanaged risk growth.</p>
-
-<h2 id="retention-is-a-risk-decision">Retention Is a Risk Decision</h2>
-
-<p>Retention periods should be based on legal, regulatory, contractual, and business requirements. Retention should not default to forever just because storage is cheap.</p>
-
-<p>This is a common misunderstanding.</p>
-
-<p>Storage cost is only one dimension. Long retention also increases:</p>
-
-<ul>
-  <li>breach blast radius</li>
-  <li>discovery and legal exposure</li>
-  <li>insider misuse opportunities</li>
-  <li>audit and governance complexity</li>
-  <li>migration and backup burden</li>
-</ul>
-
-<p>The CISSP exam often frames this in terms of balancing business needs and risk. The best answer is usually the one that minimizes unnecessary data while still meeting obligations.</p>
-
-<p>In practical terms, retention policy is a risk treatment choice.</p>
-
-<h2 id="distinguishing-operational-data-from-archive-data">Distinguishing Operational Data from Archive Data</h2>
-
-<p>Retention policy should separate active operational data from archive data.</p>
-
-<p>Operational data supports day-to-day business workflows and usually requires faster access and stricter change control.</p>
-
-<p>Archive data is retained for legal, compliance, historical, or contractual reasons and can often move to lower-cost, lower-performance storage with stronger immutability controls.</p>
-
-<p>The architecture implication is important:</p>
-
-<ul>
-  <li>operational stores prioritize availability and transactional integrity</li>
-  <li>archive stores prioritize retention fidelity, chain of custody, and controlled retrieval</li>
-</ul>
-
-<p>When organizations blur these, they either overpay to keep everything hot or weaken controls around long-term sensitive records.</p>
-
-<p>A mature design does both deliberately.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-retention-archival-secure-disposal/inline-1.svg" alt="Data lifecycle stages from creation to retention, archival, and secure disposal" class="blog-inline" /></p>
-
-<h2 id="archival-security-requirements">Archival Security Requirements</h2>
-
-<p>Archival storage is not a security downgrade zone. It has distinct security needs.</p>
-
-<p>Typical requirements include:</p>
-
-<ul>
-  <li>strong encryption and key lifecycle planning</li>
-  <li>immutable or write-once controls for regulated records</li>
-  <li>metadata integrity for retrieval accuracy</li>
-  <li>strict role-based retrieval workflows</li>
-  <li>logging and accountability for every access</li>
-  <li>clear legal hold support</li>
-</ul>
-
-<p>Legal hold is especially important. Disposal schedules must pause for records under investigation, litigation, or regulatory hold. Automated deletion without hold awareness creates legal and governance failure.</p>
-
-<p>For CISSP-style reasoning, this is a people, process, and technology problem. Policy defines when holds apply. Workflow enforces hold status. Technology must prevent accidental or unauthorized deletion while a hold is active.</p>
-
-<h2 id="secure-disposal-the-often-ignored-control">Secure Disposal: The Often-Ignored Control</h2>
-
-<p>Secure disposal is where many data programs fail silently.</p>
-
-<p>Deletion in an application interface does not always mean cryptographic or physical irrecoverability. Data may still exist in:</p>
-
-<ul>
-  <li>database snapshots</li>
-  <li>replication targets</li>
-  <li>backup media</li>
-  <li>log streams</li>
-  <li>cache layers</li>
-  <li>unmanaged exports</li>
-</ul>
-
-<p>A disposal program must define what “deleted” means for each storage type and ensure that meaning is technically and operationally true.</p>
-
-<p>Common disposal approaches include:</p>
-
-<ul>
-  <li>cryptographic erasure through key destruction where architecture supports it</li>
-  <li>secure overwrite for reusable media where applicable</li>
-  <li>physical destruction for end-of-life media based on classification and policy</li>
-  <li>certified destruction workflows for third-party handling</li>
-</ul>
-
-<p>The right method depends on medium, sensitivity, and legal constraints. The key is verification and auditability, not assumption.</p>
-
-<h2 id="retention-schedules-must-be-data-class-aware">Retention Schedules Must Be Data-Class Aware</h2>
-
-<p>One retention period for all data classes is usually a governance smell.</p>
-
-<p>High-sensitivity regulated records may require longer retention with strict controls. Low-value transactional traces may justify shorter windows. Intermediate classes often have role- and jurisdiction-specific rules.</p>
-
-<p>A practical approach maps retention schedules to data classification tiers and record types, then enforces those schedules via policy-backed automation.</p>
-
-<p>Manual retention handling does not scale and often becomes inconsistent over time.</p>
-
-<p>CISSP exam logic frequently favors classification-driven control selection for this reason.</p>
-
-<h2 id="the-exam-angle-best-answer-patterns">The Exam Angle: Best Answer Patterns</h2>
-
-<p>Typical CISSP scenario patterns in this area include:</p>
-
-<ul>
-  <li>policy that retains all data indefinitely “for future analytics”</li>
-  <li>disposal requested while legal hold is active</li>
-  <li>archival controls weaker than production controls</li>
-  <li>inability to prove what was deleted and when</li>
-  <li>retention schedule not tied to regulation or business purpose</li>
-</ul>
-
-<p>Best answers generally emphasize:</p>
-
-<ul>
-  <li>documented retention schedules aligned to obligations</li>
-  <li>classification-aware storage and handling</li>
-  <li>legal hold precedence over disposal workflows</li>
-  <li>auditable disposal evidence</li>
-  <li>minimization principles to reduce unnecessary exposure</li>
-</ul>
-
-<p>The exam is not looking for one storage product setting. It is testing governance quality and risk-based control design.</p>
-
-<h2 id="a-real-world-design-mistake">A Real-World Design Mistake</h2>
-
-<p>A common pattern in growing organizations:</p>
-
-<ul>
-  <li>data lake accumulates raw sensitive data</li>
-  <li>no clear retention tags exist</li>
-  <li>backups and replicas multiply quietly</li>
-  <li>business units export local copies for analysis</li>
-  <li>no disposal attestation exists beyond ad hoc scripts</li>
-</ul>
-
-<p>Everything appears functional until breach response or audit asks:</p>
-
-<ul>
-  <li>what exactly is retained?</li>
-  <li>where is it retained?</li>
-  <li>why is it retained?</li>
-  <li>can retention and deletion decisions be proven?</li>
-</ul>
-
-<p>If those answers require weeks of forensic reconstruction, lifecycle control was never truly in place.</p>
-
-<p>Security maturity is not having data. It is governing data deliberately.</p>
-
-<h2 id="controls-that-improve-lifecycle-security">Controls That Improve Lifecycle Security</h2>
-
-<p>Practical controls that consistently improve lifecycle outcomes:</p>
-
-<ul>
-  <li>retention tags at data creation time</li>
-  <li>policy-as-code enforcement for retention windows</li>
-  <li>archive-tier access workflows separated from production admins</li>
-  <li>legal hold service integrated with deletion pipeline</li>
-  <li>disposal attestations logged and reviewable</li>
-  <li>periodic retention drift audits across backups and replicas</li>
-</ul>
-
-<p>Each control is modest by itself. Together they create a reliable lifecycle governance system.</p>
-
-<p>This is where CISSP concepts become implementation strategy.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-retention-archival-secure-disposal/inline-2.svg" alt="Retention policy decision flow including legal hold checks and secure disposal execution" class="blog-inline" /></p>
-
-<h2 id="cloud-and-hybrid-considerations">Cloud and Hybrid Considerations</h2>
-
-<p>Cloud storage tiers make archival easier but can hide complexity.</p>
-
-<p>Teams must still account for:</p>
-
-<ul>
-  <li>cross-region replicas and jurisdiction rules</li>
-  <li>provider-managed snapshot behavior</li>
-  <li>key management ownership boundaries</li>
-  <li>third-party archive export controls</li>
-  <li>e-discovery retrieval capability under time pressure</li>
-</ul>
-
-<p>In hybrid environments, disposal consistency becomes harder because on-prem and cloud paths may use different tooling and operational ownership.</p>
-
-<p>A unified lifecycle policy model with environment-specific implementation is usually the most defensible design.</p>
-
-<h2 id="a-useful-governance-heuristic">A Useful Governance Heuristic</h2>
-
-<p>When reviewing retention and disposal posture, ask:</p>
-
-<ol>
-  <li>Can we justify retention duration per record class?</li>
-  <li>Can we pause disposal reliably under legal hold?</li>
-  <li>Can we prove disposal occurred across all copies?</li>
-  <li>Are archive controls at least as strong as data sensitivity requires?</li>
-  <li>Are retention decisions reducing risk over time or passively accumulating it?</li>
-</ol>
-
-<p>If any answer is unclear, lifecycle governance likely needs attention.</p>
-
-<h2 id="why-this-topic-is-increasingly-important">Why This Topic Is Increasingly Important</h2>
-
-<p>As organizations increase analytics, AI training pipelines, and long-horizon digital records, data volume growth outpaces governance maturity.</p>
-
-<p>The result is predictable: unnecessary retention of high-risk data and weak disposal assurance.</p>
-
-<p>Regulators, auditors, and breach investigators increasingly evaluate lifecycle controls, not just perimeter and access controls. Retention and disposal evidence are becoming first-class security artifacts.</p>
-
-<p>For CISSP candidates, the bigger lesson is simple: secure architecture includes data end-of-life, not just data access.</p>
-
-<hr />
-
-<p>CISSP Domain 2 and Domain 3 both reward candidates who understand that governance decisions shape technical risk. Retention, archival, and disposal are governance controls with direct security consequences.</p>
-
-<p>When organizations get this right, they reduce exposure, improve compliance posture, and make incident impact smaller by design.</p>
-
-<p>That is what disciplined security architecture looks like over time.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to data retention, archival, legal hold, and secure disposal. Learn how lifecycle governance reduces risk and why deletion controls are core security controls.</p>
-
-<p><strong>SEO keywords:</strong> CISSP data retention policy, secure data disposal CISSP, archival security controls, legal hold data governance, CISSP data lifecycle management</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Data Security" /><category term="Governance" /><category term="CISSP" /><category term="Data Lifecycle" /><category term="Retention" /><category term="Archival" /><category term="Secure Disposal" /><category term="Domain 2" /><summary type="html"><![CDATA[Strong security is not only about protecting data while it exists. It is also about deciding how long data should exist, where it should live over time, and how it is destroyed when it is no longer needed.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-retention-archival-secure-disposal/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-retention-archival-secure-disposal/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #45: Data in Use Protection and Confidential Computing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/" rel="alternate" type="text/html" title="CISSP #45: Data in Use Protection and Confidential Computing" /><published>2026-04-24T14:40:00+00:00</published><updated>2026-04-24T14:40:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-data-in-use-protection-confidential-computing/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" alt="CISSP #45 Data in Use Protection and Confidential Computing" class="blog-hero" /></p>
-
-<p>Most security discussions still organize data protection around two states:</p>
-
-<ul>
-  <li>data at rest</li>
-  <li>data in transit</li>
-</ul>
-
-<p>That framing is useful, but incomplete.</p>
-
-<p>The hardest state to protect is often <strong>data in use</strong>: the moment data is being processed in memory, where business value is created and where many traditional encryption assumptions stop helping.</p>
-
-<p>For CISSP candidates and working engineers, this is an important mindset shift. Encryption at rest and in transit can be strong and still leave critical trust gaps during execution.</p>
-
-<h2 id="the-third-state-of-data">The Third State of Data</h2>
-
-<p>CISSP Domain 3 and Domain 7 both push candidates to think in lifecycle terms. Data protection is not one control. It is coordinated protection across states.</p>
-
-<p>At a high level:</p>
-
-<ul>
-  <li><strong>Data at rest</strong> is protected by storage encryption, key management, and access controls.</li>
-  <li><strong>Data in transit</strong> is protected by protocol security (for example TLS), integrity checks, and endpoint authentication.</li>
-  <li><strong>Data in use</strong> is exposed to runtime context: process memory, CPU execution, privileged software layers, and sometimes co-tenancy risk.</li>
-</ul>
-
-<p>The third state matters because decryption has to happen somewhere for computation to occur. The question becomes: what do you trust while that computation runs?</p>
-
-<p>That question sits directly at the intersection of architecture, assurance, and risk management.</p>
-
-<h2 id="why-data-in-use-is-hard">Why Data in Use Is Hard</h2>
-
-<p>At rest and in transit protections are mostly boundary controls. They protect data before access and during movement.</p>
-
-<p>Data in use is different. Once data is loaded for processing, protection depends on runtime trust assumptions, including:</p>
-
-<ul>
-  <li>operating system integrity</li>
-  <li>hypervisor isolation</li>
-  <li>privileged admin access paths</li>
-  <li>process-level memory safety</li>
-  <li>debugger and dump controls</li>
-  <li>workload placement and tenancy context</li>
-</ul>
-
-<p>If any of these assumptions fail, encryption controls that looked excellent in policy may provide limited real protection at runtime.</p>
-
-<p>This is why mature architectures avoid treating encryption as a blanket answer. Encryption is essential, but trust during execution requires additional controls.</p>
-
-<h2 id="the-exam-perspective-people-process-technology-balance">The Exam Perspective: People, Process, Technology Balance</h2>
-
-<p>The CISSP exam often avoids purely technical answers when risk and governance are involved.</p>
-
-<p>If a scenario highlights sensitive processing risk in shared or semi-trusted environments, the best answer usually combines:</p>
-
-<ul>
-  <li>technical controls for runtime protection</li>
-  <li>policy constraints for privileged operations</li>
-  <li>monitoring and attestation evidence</li>
-  <li>risk-based decisions about where specific workloads may execute</li>
-</ul>
-
-<p>In other words, the exam mindset is not “pick one crypto feature.” It is “design the trust model end to end.”</p>
-
-<h2 id="confidential-computing-a-practical-response">Confidential Computing: A Practical Response</h2>
-
-<p><strong>Confidential computing</strong> is a design approach that aims to protect data in use by isolating workloads in hardware-backed trusted execution environments (TEEs), reducing exposure even from privileged platform layers.</p>
-
-<p>Different technologies implement this differently, but the architectural intent is consistent:</p>
-
-<ul>
-  <li>isolate sensitive computation</li>
-  <li>protect memory region boundaries</li>
-  <li>reduce reliance on broad host trust</li>
-  <li>provide attestation evidence about workload state</li>
-</ul>
-
-<p>From a CISSP viewpoint, this fits naturally with trusted computing base minimization and assurance concepts: shrink what must be trusted, verify what is running, and bind decisions to evidence.</p>
-
-<p>It is not a silver bullet, but it is a meaningful improvement over “trust everything below the application by default.”</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-1.svg" alt="Data security states and where confidential computing addresses data in use risk" class="blog-inline" /></p>
-
-<h2 id="attestation-and-trust-decisions">Attestation and Trust Decisions</h2>
-
-<p>A recurring theme in modern architecture is that trust should be evidence-driven.</p>
-
-<p>Attestation helps answer questions like:</p>
-
-<ul>
-  <li>Is this workload running in an expected protected environment?</li>
-  <li>Is the boot/runtime state aligned with policy?</li>
-  <li>Should secrets be released to this instance?</li>
-</ul>
-
-<p>In practical systems, attestation value appears when it is connected to policy outcomes:</p>
-
-<ul>
-  <li>release keys only to validated workloads</li>
-  <li>block sensitive operations when integrity evidence is missing</li>
-  <li>downgrade privileges when trust posture changes</li>
-</ul>
-
-<p>Without policy linkage, attestation can degrade into telemetry without control impact.</p>
-
-<p>The exam will often reward answers that convert evidence into enforceable decisions.</p>
-
-<h2 id="what-confidential-computing-does-not-solve">What Confidential Computing Does Not Solve</h2>
-
-<p>This is a critical nuance.</p>
-
-<p>Confidential computing improves protection of in-use data under specific threat assumptions, but it does not eliminate broader security responsibilities.</p>
-
-<p>It does not remove the need for:</p>
-
-<ul>
-  <li>secure coding and input validation</li>
-  <li>identity and authorization controls</li>
-  <li>key lifecycle governance</li>
-  <li>logging and monitoring discipline</li>
-  <li>patching and vulnerability management</li>
-  <li>legal and contractual controls for cloud/shared environments</li>
-</ul>
-
-<p>A workload can run inside a protected execution context and still produce insecure outcomes if application logic, access control, or business process design is weak.</p>
-
-<p>The CISSP best-answer logic consistently favors this kind of balanced thinking.</p>
-
-<h2 id="a-concrete-enterprise-scenario">A Concrete Enterprise Scenario</h2>
-
-<p>Consider a team processing highly sensitive financial analytics in a shared cloud environment.</p>
-
-<p>Traditional controls:</p>
-
-<ul>
-  <li>encrypt storage volumes</li>
-  <li>enforce TLS for service-to-service traffic</li>
-  <li>restrict IAM roles</li>
-</ul>
-
-<p>Those are necessary, but leadership still asks:</p>
-
-<p>“How do we reduce exposure while values are decrypted and processed?”</p>
-
-<p>A stronger architecture might add:</p>
-
-<ul>
-  <li>confidential-computing-capable workload placement</li>
-  <li>attestation-based secret release</li>
-  <li>restricted admin pathways for sensitive nodes</li>
-  <li>policy that blocks execution in non-attested runtime states</li>
-</ul>
-
-<p>This is not about chasing a trend. It is about reducing trust in broad infrastructure layers and making trust decisions explicit.</p>
-
-<h2 id="data-lifecycle-thinking-beyond-checklists">Data Lifecycle Thinking Beyond Checklists</h2>
-
-<p>Many teams can state controls by category. Fewer can show how controls compose across lifecycle transitions.</p>
-
-<p>A practical data-lifecycle view asks:</p>
-
-<ol>
-  <li>Where is data created?</li>
-  <li>Where is it transformed?</li>
-  <li>Where is it exposed in plaintext?</li>
-  <li>What trust assumptions exist at each stage?</li>
-  <li>Which assumptions are validated versus merely hoped for?</li>
-</ol>
-
-<p>Data in use becomes the most revealing stage because it forces trust assumptions into the open.</p>
-
-<p>This is one reason architects with strong CISSP-style reasoning are valuable. They move conversations from control inventory to trust design.</p>
-
-<h2 id="common-misunderstandings">Common Misunderstandings</h2>
-
-<p>Three misconceptions appear frequently.</p>
-
-<h3 id="we-use-tls-and-disk-encryption-so-we-are-covered">“We use TLS and disk encryption, so we are covered.”</h3>
-
-<p>Those controls protect two states. They do not fully address runtime memory exposure and privileged execution risk.</p>
-
-<h3 id="confidential-computing-means-we-can-ignore-host-security">“Confidential computing means we can ignore host security.”</h3>
-
-<p>No. It reduces some host-trust assumptions for specific workloads. It does not make surrounding platform security irrelevant.</p>
-
-<h3 id="attestation-equals-absolute-trust">“Attestation equals absolute trust.”</h3>
-
-<p>Attestation gives evidence under defined conditions. It must still be evaluated against policy, scope, freshness, and risk tolerance.</p>
-
-<h2 id="exam-relevant-comparisons">Exam-Relevant Comparisons</h2>
-
-<p>For CISSP question framing, the following distinctions are useful:</p>
-
-<ul>
-  <li>Encryption at rest protects stored data media state.</li>
-  <li>Encryption in transit protects communication channels.</li>
-  <li>Confidential computing targets runtime execution trust boundaries.</li>
-  <li>Attestation supports trust decisions using integrity evidence.</li>
-</ul>
-
-<p>If a scenario specifically calls out concern about privileged infrastructure visibility into active computation, answers focused only on transit/storage encryption are often incomplete.</p>
-
-<p>The better answer addresses runtime trust reduction and evidence-based control.</p>
-
-<h2 id="operational-considerations-before-adoption">Operational Considerations Before Adoption</h2>
-
-<p>When evaluating confidential computing capabilities, mature teams typically ask:</p>
-
-<ul>
-  <li>Which workloads actually require in-use protection beyond standard controls?</li>
-  <li>What threat model justifies the complexity?</li>
-  <li>How will attestation evidence be consumed in policy engines?</li>
-  <li>What performance and compatibility tradeoffs exist?</li>
-  <li>How do incident response and forensics workflows adapt?</li>
-</ul>
-
-<p>These are not blockers. They are architecture hygiene.</p>
-
-<p>Security controls are strongest when matched to explicit business risk and integrated into existing operational discipline.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/inline-2.svg" alt="Enforcement path linking attestation evidence to secret release and workload policy decisions" class="blog-inline" /></p>
-
-<h2 id="why-this-topic-is-increasingly-important">Why This Topic Is Increasingly Important</h2>
-
-<p>As AI workloads, analytics pipelines, and cross-organization processing increase, so does pressure to process sensitive data in external or shared environments.</p>
-
-<p>That changes the trust equation.</p>
-
-<p>Organizations need controls that let them compute on sensitive data while reducing reliance on broad administrator trust assumptions and improving evidence quality for governance and audit.</p>
-
-<p>Data in use protection and confidential computing are increasingly part of that answer.</p>
-
-<p>For CISSP learners, the bigger lesson is architectural: choose controls based on state-specific risk and verifiable trust, not generic “encrypted therefore safe” narratives.</p>
-
-<h2 id="a-practical-heuristic">A Practical Heuristic</h2>
-
-<p>When evaluating any architecture claiming strong data protection, ask:</p>
-
-<ol>
-  <li>How is data protected at rest?</li>
-  <li>How is data protected in transit?</li>
-  <li>What protects data while being processed?</li>
-  <li>What evidence proves runtime trust state?</li>
-  <li>How does policy respond when trust evidence is missing?</li>
-</ol>
-
-<p>If question 3 through 5 have weak answers, the architecture likely has a data-in-use blind spot.</p>
-
-<hr />
-
-<p>CISSP Domain 3 rewards candidates who can reason beyond control checklists. Data in use protection is one of the clearest places where that matters. Confidential computing and attestation are not universal answers, but they are strong tools when your threat model includes runtime trust concerns.</p>
-
-<p>The real skill is mapping protection controls to data state, validating assumptions, and turning trust evidence into enforceable decisions.</p>
-
-<p><em>If you are following this series, this post builds directly on the previous entries about root of trust, startup integrity, and assurance boundaries.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> A practical CISSP guide to data in use protection and confidential computing. Learn how runtime trust differs from at-rest and in-transit security, and why attestation-driven policy matters.</p>
-
-<p><strong>SEO keywords:</strong> CISSP data in use protection, confidential computing CISSP, attestation security architecture, data lifecycle security CISSP, CISSP Domain 3 runtime trust</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security Architecture" /><category term="Data Security" /><category term="CISSP" /><category term="Data in Use" /><category term="Confidential Computing" /><category term="Attestation" /><category term="Encryption" /><category term="Domain 3" /><summary type="html"><![CDATA[Encrypting data at rest and in transit is necessary, but not sufficient. Data in use remains one of the hardest trust problems in modern architectures, and confidential computing is one practical response.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-in-use-protection-confidential-computing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><strong>SEO keywords:</strong> CISSP data remanence, media sanitization CISSP, NIST 800-88 clear purge destroy, cryptographic erase security, CISSP secure disposal controls</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Data Security" /><category term="Operations" /><category term="CISSP" /><category term="Data Remanence" /><category term="Media Sanitization" /><category term="Cryptographic Erase" /><category term="NIST 800-88" /><category term="Domain 2" /><summary type="html"><![CDATA[Deleting a file is rarely the same as eliminating data. CISSP candidates need to understand data remanence risk and how to choose sanitization methods that match media type, sensitivity, and evidence requirements.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-remanence-media-sanitization/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/04/cissp-data-remanence-media-sanitization/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

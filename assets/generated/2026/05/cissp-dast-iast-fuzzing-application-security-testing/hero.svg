@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-label="DAST scanner probing a running web application from the outside">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1e2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a3048;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="scannerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e4d7a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#163a5f;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="appGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5c3a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#164530;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e05252"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4caf7d"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="450" y="42" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="bold" fill="#e0eaf5" text-anchor="middle">Dynamic Application Security Testing (DAST)</text>
+  <text x="450" y="66" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#8ab0cc" text-anchor="middle">Black-box testing against a live, running application</text>
+
+  <!-- DAST Scanner box (left) -->
+  <rect x="60" y="110" width="200" height="240" rx="10" ry="10" fill="url(#scannerGrad)" stroke="#2e7bbf" stroke-width="2"/>
+  <text x="160" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#7ec8e3" text-anchor="middle">DAST Scanner</text>
+  <line x1="80" y1="152" x2="240" y2="152" stroke="#2e7bbf" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Scanner items -->
+  <text x="90" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ Injection probes</text>
+  <text x="90" y="198" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ Auth bypass attempts</text>
+  <text x="90" y="221" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ Session token analysis</text>
+  <text x="90" y="244" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ Misconfig detection</text>
+  <text x="90" y="267" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ XSS / CSRF checks</text>
+  <text x="90" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#c5dff0">▸ Error response review</text>
+
+  <!-- No source code badge -->
+  <rect x="80" y="310" width="160" height="26" rx="5" fill="#1a3a58" stroke="#2e7bbf" stroke-width="1"/>
+  <text x="160" y="327" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#7ec8e3" text-anchor="middle">No source code required</text>
+
+  <!-- Arrow: attack probes going right -->
+  <line x1="262" y1="195" x2="420" y2="195" stroke="#e05252" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRed)"/>
+  <text x="341" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#e05252" text-anchor="middle">Malicious</text>
+  <text x="341" y="200" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#e05252" text-anchor="middle">requests</text>
+
+  <!-- Arrow: responses going left -->
+  <line x1="420" y1="230" x2="262" y2="230" stroke="#4caf7d" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowGreen)"/>
+  <text x="341" y="248" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#4caf7d" text-anchor="middle">Responses</text>
+  <text x="341" y="262" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#4caf7d" text-anchor="middle">analyzed</text>
+
+  <!-- Deployed Application box (center-right) -->
+  <rect x="422" y="110" width="220" height="240" rx="10" ry="10" fill="url(#appGrad)" stroke="#2e8b57" stroke-width="2"/>
+  <text x="532" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#7dd8a4" text-anchor="middle">Running Application</text>
+  <line x1="442" y1="152" x2="622" y2="152" stroke="#2e8b57" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- App layers -->
+  <rect x="452" y="165" width="180" height="32" rx="5" fill="#1c4a2e"/>
+  <text x="542" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7dd8a4" text-anchor="middle">Web / API Layer</text>
+
+  <rect x="452" y="207" width="180" height="32" rx="5" fill="#1c4a2e"/>
+  <text x="542" y="227" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7dd8a4" text-anchor="middle">Business Logic</text>
+
+  <rect x="452" y="249" width="180" height="32" rx="5" fill="#1c4a2e"/>
+  <text x="542" y="269" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7dd8a4" text-anchor="middle">Data Access Layer</text>
+
+  <rect x="452" y="291" width="180" height="32" rx="5" fill="#1c4a2e"/>
+  <text x="542" y="311" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#7dd8a4" text-anchor="middle">Database</text>
+
+  <!-- DAST limitation note -->
+  <rect x="422" y="358" width="220" height="36" rx="5" fill="#2a1a1a" stroke="#8b3333" stroke-width="1"/>
+  <text x="532" y="374" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#e07070" text-anchor="middle">DAST cannot see internal</text>
+  <text x="532" y="388" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#e07070" text-anchor="middle">code paths — only responses</text>
+
+  <!-- Findings box (right) -->
+  <rect x="680" y="110" width="180" height="240" rx="10" ry="10" fill="#1e1a0e" stroke="#c8a020" stroke-width="2"/>
+  <text x="770" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#f0c040" text-anchor="middle">Findings</text>
+  <line x1="698" y1="152" x2="842" y2="152" stroke="#c8a020" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <circle cx="702" cy="175" r="5" fill="#e05252"/>
+  <text x="714" y="179" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">SQL injection</text>
+
+  <circle cx="702" cy="200" r="5" fill="#e05252"/>
+  <text x="714" y="204" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">Broken auth</text>
+
+  <circle cx="702" cy="225" r="5" fill="#e09030"/>
+  <text x="714" y="229" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">CSRF exposure</text>
+
+  <circle cx="702" cy="250" r="5" fill="#e09030"/>
+  <text x="714" y="254" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">Insecure headers</text>
+
+  <circle cx="702" cy="275" r="5" fill="#c8c020"/>
+  <text x="714" y="279" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">Verbose errors</text>
+
+  <circle cx="702" cy="300" r="5" fill="#4caf7d"/>
+  <text x="714" y="304" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f0d0d0">TLS config issues</text>
+
+  <!-- Arrow from app to findings -->
+  <line x1="644" y1="230" x2="678" y2="230" stroke="#c8a020" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- Bottom note -->
+  <text x="450" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#6a8fa8" text-anchor="middle">DAST is most effective in staging environments before production deployment</text>
+  <text x="450" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#6a8fa8" text-anchor="middle">CISSP Domain 8 — Software Development Security</text>
+</svg>
