@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Safe lower environment model versus unsafe lower environment model with production data and secrets">
+  <rect width="900" height="340" rx="12" fill="#0f172a"/>
+  <text x="450" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="700" fill="#f8fafc">What Lower Environments Should and Should Not Inherit</text>
+
+  <rect x="42" y="76" width="372" height="220" rx="12" fill="#08261c" stroke="#34d399" stroke-width="1.6"/>
+  <text x="228" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#86efac">Safer Model</text>
+  <line x1="76" y1="118" x2="380" y2="118" stroke="#14532d" stroke-width="1"/>
+  <text x="80" y="148" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- synthetic or strongly masked data</text>
+  <text x="80" y="176" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- separate service accounts and secrets</text>
+  <text x="80" y="204" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- narrow access for developers and testers</text>
+  <text x="80" y="232" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- explicit approval for exceptional data use</text>
+  <text x="80" y="260" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5">- cleanup and retention rules that are enforced</text>
+
+  <rect x="486" y="76" width="372" height="220" rx="12" fill="#2b1111" stroke="#f87171" stroke-width="1.6"/>
+  <text x="672" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fca5a5">Risky Model</text>
+  <line x1="520" y1="118" x2="824" y2="118" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="524" y="148" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- restored production backups in test</text>
+  <text x="524" y="176" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- shared secrets or admin credentials</text>
+  <text x="524" y="204" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- broad engineer access for convenience</text>
+  <text x="524" y="232" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- weak logging and weak deletion discipline</text>
+  <text x="524" y="260" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2">- lower environment becomes shadow production</text>
+
+  <text x="450" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">The name of the environment matters less than the trust, data, and access model it actually carries.</text>
+</svg>

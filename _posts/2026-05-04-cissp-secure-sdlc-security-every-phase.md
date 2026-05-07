@@ -134,13 +134,14 @@ From a CISSP perspective, that is what Domain 8 is pointing toward. Not the name
 
 ---
 
-*Part of an ongoing CISSP study series. If Secure SDLC connects to your current work, a useful exercise is auditing your own pipeline: where are the security gates, and where are the gaps?*
+_Part of an ongoing CISSP study series. If Secure SDLC connects to your current work, a useful exercise is auditing your own pipeline: where are the security gates, and where are the gaps?_
 
 ---
 
 **Meta description:** Secure SDLC integrates security requirements, code review, static and dynamic analysis, and deployment controls into every development phase. This CISSP Domain 8 guide explains what security work belongs at each stage and why testing alone is never enough.
 
 **SEO keyword ideas:**
+
 1. Secure software development lifecycle CISSP
 2. CISSP Domain 8 software development security
 3. SAST DAST software security testing

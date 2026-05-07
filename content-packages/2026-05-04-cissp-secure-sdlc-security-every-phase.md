@@ -17,6 +17,7 @@ This post targets CISSP candidates studying Domain 8 (Software Development Secur
 **Core domain:** CISSP Domain 8 — Software Development Security
 
 **Key established principles used:**
+
 - Secure SDLC phases: requirements, design, implementation, testing, deployment, maintenance
 - Security requirements and abuse cases at requirements phase
 - Threat modeling at design phase (cross-references earlier post in series)
@@ -30,6 +31,7 @@ This post targets CISSP candidates studying Domain 8 (Software Development Secur
 - Software assurance as the outcome goal
 
 **Connections to prior posts in series:**
+
 - Threat modeling (post on 2026-04-17)
 - Privacy by Design (#50, 2026-05-02)
 - Defense in depth (#03 posts)
@@ -38,6 +40,7 @@ This post targets CISSP candidates studying Domain 8 (Software Development Secur
 - Least privilege and separation of duties (#03 posts)
 
 **Exam distinction highlighted:**
+
 - Exam models sequential SDLC; real practice is Agile/continuous
 - Security cannot be retrofitted cheaply — consistent CISSP theme across domains
 
@@ -45,10 +48,11 @@ This post targets CISSP candidates studying Domain 8 (Software Development Secur
 
 ## 3. Detailed Blog Post
 
-*(Full content in `_posts/2026-05-04-cissp-secure-sdlc-security-every-phase.md`)*
+_(Full content in `_posts/2026-05-04-cissp-secure-sdlc-security-every-phase.md`)_
 
 **Word count:** ~1,450 words
 **Structure:**
+
 - Hook: developers ship features, security comes last — structural problem
 - H2: What Domain 8 expects
 - H2: Phase 1 — Requirements (security reqs, abuse cases, data sensitivity)
@@ -63,6 +67,7 @@ This post targets CISSP candidates studying Domain 8 (Software Development Secur
 - Closing CTA, meta description, SEO keywords
 
 **Images:**
+
 - Hero: pipeline diagram of 6 SDLC phases with security activities at each
 - Inline-1: bar chart showing relative cost to fix security defects grows from requirements to production
 
