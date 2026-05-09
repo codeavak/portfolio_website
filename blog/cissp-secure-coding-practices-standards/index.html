@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-08T12:30:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Domain 8" />
+      
+        <meta property="article:tag" content="Secure Coding" />
+      
+        <meta property="article:tag" content="Input Validation" />
+      
+        <meta property="article:tag" content="Error Handling" />
+      
+        <meta property="article:tag" content="Output Encoding" />
+      
+        <meta property="article:tag" content="Authorization" />
+      
+        <meta property="article:tag" content="OWASP" />
+      
+        <meta property="article:tag" content="CWE" />
+      
+        <meta property="article:tag" content="CERT" />
+      
+        <meta property="article:tag" content="Software Assurance" />
+      
+    
+    <meta property="og:title" content="CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack" />
+    <meta property="og:description" content="Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack" />
+    <meta name="twitter:description" content="Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack",
+        "description": "Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-08T12:30:00+00:00",
+        "dateModified": "2026-05-08T12:30:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Software Development Security • Application Security</div>
+              
+              <time class="post-date" datetime="2026-05-08T12:30:00+00:00">May 8, 2026</time>
+              <h1 class="post-title">CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack</h1>
+              
+                <p class="post-dek">Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Domain 8</span>
+                  
+                    <span class="chip">Secure Coding</span>
+                  
+                    <span class="chip">Input Validation</span>
+                  
+                    <span class="chip">Error Handling</span>
+                  
+                    <span class="chip">Output Encoding</span>
+                  
+                    <span class="chip">Authorization</span>
+                  
+                    <span class="chip">OWASP</span>
+                  
+                    <span class="chip">CWE</span>
+                  
+                    <span class="chip">CERT</span>
+                  
+                    <span class="chip">Software Assurance</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" alt="CISSP #57 Secure Coding Practices and Standards: input validation, error handling, output encoding, authorization, and dependency management" class="blog-hero" /></p>
+
+<p>Every significant software vulnerability I have seen traces back to the same handful of patterns: untrusted input that was never validated, an error message that leaked internal architecture, an authorization check that was missing from one code path, a dependency that nobody kept updated, or credentials that appeared in a log.</p>
+
+<p>None of these are mysteries. None of them are subtle. They are predictable failures that happen when coding discipline is missing.</p>
+
+<p>Post #52 taught you what goes wrong: injection, buffer overflows, race conditions, and the other major vulnerability categories. This post is about the practices that prevent those failures before they reach production. Not as a testing gate. Not as a tool that runs in CI/CD. As the discipline that developers build into how they think about and write code.</p>
+
+<p>That is what CISSP Domain 8 means by secure coding practices. Not checklists. Not compliance theater. Discipline.</p>
+
+<h2 id="why-standards-exist">Why Standards Exist</h2>
+
+<p>The reason organizations like OWASP, CERT, and NIST created secure coding standards was not to make developers’ lives harder. It was because these organizations spent years studying what works.</p>
+
+<p>When thousands of incidents are analyzed, patterns emerge. Certain practices consistently prevent classes of vulnerabilities. Other approaches consistently fail. Standards codify what works so teams do not have to rediscover it the hard way.</p>
+
+<p>The CISSP exam expects you to understand standards not as restrictions, but as the distilled wisdom of people who have seen what happens when discipline is missing.</p>
+
+<h2 id="input-validation-whitelist-do-not-sanitize">Input Validation: Whitelist, Do Not Sanitize</h2>
+
+<p>Here is the most important thing about input validation: it is not about cleaning up input. It is about rejecting anything that does not fit your legitimate use case.</p>
+
+<p>Too many teams approach input validation as sanitization. They take user input and try to remove dangerous characters. They escape quotes before putting strings into SQL. They strip angle brackets from text that might go into HTML.</p>
+
+<p>Sanitization fails because the definition of “dangerous” is context-specific and incomplete. An attacker can find a path you did not think to block.</p>
+
+<p>Whitelisting is different. You define exactly what you expect: a phone number is 10 digits, a postal code matches a specific format, an email follows RFC standards. Anything that does not match gets rejected. Not modified. Not cleaned. Rejected.</p>
+
+<p>The difference is profound. With sanitization, you are trying to find and remove every possible attack vector. With whitelisting, you are saying “only these inputs are valid; everything else is invalid.”</p>
+
+<p><strong>The rule:</strong> Accept input in the format you expect. Reject everything else. Do not try to fix or clean invalid input.</p>
+
+<p>This applies at every layer. Client-side validation is user experience. Server-side validation is security.</p>
+
+<h2 id="error-handling-detailed-logs-generic-responses">Error Handling: Detailed Logs, Generic Responses</h2>
+
+<p>One of the easiest gifts developers give attackers is detailed error messages.</p>
+
+<p>A database error that reveals your schema. A stack trace that shows your application structure. A file path error that shows where your code lives. An authentication error that tells an attacker whether an account exists.</p>
+
+<p>Errors contain information. That information is useful for debugging. It is also useful for attacking.</p>
+
+<p>The practice is straightforward: log detailed errors internally where your team can see them and use them to fix bugs. Return generic errors to users.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Internal log (detailed, for your team)
+logger.error("SQL query failed", {
+  query: "SELECT * FROM users WHERE id = ?",
+  params: [userId],
+  error: err.message,
+  stack: err.stack,
+  timestamp: new Date().toISOString()
+});
+
+// User response (generic, no information leakage)
+return { error: "An error occurred. Please contact support." };
+</code></pre></div></div>
+
+<p>Do not put sensitive information in error messages: passwords, tokens, API keys, internal paths, SQL queries, version information. Do not show stack traces to users. Do not enumerate whether an account exists during login failures.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/inline-error-handling.svg" alt="Error handling diagram showing detailed internal logs transformed into generic user-facing error messages" class="blog-inline" /></p>
+
+<h2 id="output-encoding-context-matters">Output Encoding: Context Matters</h2>
+
+<p>Output encoding prevents injection attacks in specific contexts. But here is what trips up many developers: the encoding method depends on where the output is going.</p>
+
+<p>HTML encoding is not the same as JavaScript encoding, which is not the same as SQL encoding, which is not the same as URL encoding.</p>
+
+<p>If you output data into HTML and you only do JavaScript encoding, you are still vulnerable to HTML injection. If you output data into a SQL query and you only do HTML encoding, SQL injection still works. The attacker uses the context you put it in.</p>
+
+<p><strong>The practice:</strong> Use frameworks and templating libraries that apply the correct encoding automatically for the context. Do not manually escape or encode. Manual escaping is where mistakes happen.</p>
+
+<p>Most modern frameworks do this by default. If you are writing raw string concatenation, you are probably doing it wrong.</p>
+
+<h2 id="authorization-checks-belong-everywhere">Authorization Checks Belong Everywhere</h2>
+
+<p>Authorization is often treated as a page-level concern: if a user lands on the admin dashboard, they must be logged in and have the right role.</p>
+
+<p>That is not enough.</p>
+
+<p>Authorization checks belong on every operation. Every API endpoint. Every business function. Every data access. Not just on the pages you designed for normal users.</p>
+
+<p>Here is why: users do not always follow the paths you designed. Someone will call the API directly. Someone will modify a request parameter. Someone will try to access data that is not theirs.</p>
+
+<p>You cannot assume that just because a user passed authentication and made it to a page that they should be allowed to do everything on that page. You have to check.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Wrong: check role once on the page
+if (user.role !== 'admin') redirect('/');
+
+// Right: check permission on every operation
+function deleteUser(userId) {
+  if (!user.canDelete(userId)) throw new UnauthorizedError();
+  // ... perform deletion
+}
+
+function getUser(userId) {
+  if (!user.canView(userId)) throw new UnauthorizedError();
+  // ... return data
+}
+</code></pre></div></div>
+
+<p>Default to deny. Require explicit permission for each operation.</p>
+
+<h2 id="dependency-management-and-vulnerability-scanning">Dependency Management and Vulnerability Scanning</h2>
+
+<p>You own every dependency your code uses.</p>
+
+<p>That sounds harsh. It is not meant to be. It is meant to be clear: when you add a library to your project, you inherit its security risk. If that library has a vulnerability, your code has the vulnerability.</p>
+
+<p>The practice:</p>
+
+<ul>
+  <li>Know what you depend on (use a software bill of materials)</li>
+  <li>Keep dependencies current (not blindly, but regularly)</li>
+  <li>Scan for known vulnerabilities (tools like OWASP Dependency-Check, Snyk, GitHub Dependabot)</li>
+  <li>Understand transitive dependencies (dependencies of dependencies)</li>
+</ul>
+
+<p>Scanning is important, but it is not sufficient. A scan tells you that a known vulnerability exists. It does not tell you whether your code is actually affected. It does not tell you whether an update will break your application. You still have to make decisions.</p>
+
+<h2 id="secure-logging-what-to-log-what-to-hide">Secure Logging: What to Log, What to Hide</h2>
+
+<p>Logs are critical for debugging and incident response. They are also a frequent source of information leakage.</p>
+
+<p>Do not log:</p>
+
+<ul>
+  <li>Passwords or password reset tokens</li>
+  <li>API keys, encryption keys, or certificates</li>
+  <li>Personally identifiable information (PII) unless absolutely necessary for your use case</li>
+  <li>Credit card numbers or other sensitive financial data</li>
+  <li>Full session tokens or authentication credentials</li>
+</ul>
+
+<p>Do log:</p>
+
+<ul>
+  <li>Authentication attempts and outcomes</li>
+  <li>Authorization failures (who tried to access what they should not)</li>
+  <li>Data access (especially access to sensitive data)</li>
+  <li>Configuration changes</li>
+  <li>Security-relevant events (permission changes, role assignments, admin actions)</li>
+</ul>
+
+<p>Make your logs tamper-resistant. Attackers that break in often try to cover their tracks by deleting logs. Centralize logs so they cannot easily be modified on the system where the application runs.</p>
+
+<h2 id="the-exam-mindset">The Exam Mindset</h2>
+
+<p>Here is how the CISSP exam treats secure coding:</p>
+
+<p>It is not about memorizing OWASP Top 10. It is about reasoning: “If developers are not validating input, what classes of attack become possible? If error messages leak information, what advantage do attackers gain? If authorization is checked inconsistently, where is the gap?”</p>
+
+<p>The exam also distinguishes between what developers must control in code and what can be controlled elsewhere:</p>
+
+<ul>
+  <li>Input validation must happen in code (infrastructure cannot fix bad validation logic)</li>
+  <li>Authorization must be enforced in code (do not rely only on network security)</li>
+  <li>Logging must be designed in code</li>
+  <li>Dependency management is a development responsibility</li>
+  <li>Encryption and secure communication can involve both code and infrastructure</li>
+</ul>
+
+<p>Secure coding is not a tool. It is not a process phase. It is a discipline built into how developers think about every piece of code they write.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/inline-input-validation.svg" alt="Input validation as whitelist filtering: malicious input rejected, valid input accepted" class="blog-inline" /></p>
+
+<h2 id="from-theory-to-daily-practice">From Theory to Daily Practice</h2>
+
+<p>In real teams, secure coding happens when:</p>
+
+<ul>
+  <li>Developers understand <em>why</em> these practices prevent attack, not just that they are required</li>
+  <li>Code review includes security checks (not as a separate gate, but as part of normal review)</li>
+  <li>Standards like OWASP and CERT are treated as learning resources, not compliance documents</li>
+  <li>Teams have conversations about security tradeoffs, not just security checklists</li>
+  <li>Mistakes are treated as learning opportunities, not failures</li>
+</ul>
+
+<p>The CISSP is clear: software security is engineered in. It does not happen by accident. It happens because developers, architects, and security practitioners understand that every piece of code they write either resists attack or enables it.</p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP #57 explains secure coding practices and standards: input validation, error handling, output encoding, authorization, and dependency management as the daily discipline that prevents vulnerabilities before they reach production.</p>
+
+<p><strong>SEO keywords:</strong> CISSP secure coding Domain 8, input validation best practices, OWASP CWE secure coding standards, authorization and error handling, secure coding discipline, software development security</p>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

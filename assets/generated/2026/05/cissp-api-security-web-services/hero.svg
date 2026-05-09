@@ -1,0 +1,125 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8ecff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1a1a3d">
+    API Security: Six Essential Controls
+  </text>
+  
+  <!-- Central API box -->
+  <rect x="450" y="80" width="300" height="60" fill="#4a5fd9" stroke="#2d3fa3" stroke-width="2" rx="8"/>
+  <text x="600" y="117" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+    API Endpoint
+  </text>
+  
+  <!-- Control 1: Authentication -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="160" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="160" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="160" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Authentication</text>
+    <text x="160" y="310" font-size="11" text-anchor="middle" fill="#555">Verify who</text>
+  </g>
+  
+  <!-- Control 2: Authorization -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="360" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="360" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="360" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Authorization</text>
+    <text x="360" y="310" font-size="11" text-anchor="middle" fill="#555">Verify access</text>
+  </g>
+  
+  <!-- Control 3: Input Validation -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="560" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="560" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="560" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Input Validation</text>
+    <text x="560" y="310" font-size="11" text-anchor="middle" fill="#555">Verify params</text>
+  </g>
+  
+  <!-- Control 4: Rate Limiting -->
+  <g filter="url(#shadow)">
+    <rect x="680" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="760" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="760" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="760" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Rate Limiting</text>
+    <text x="760" y="310" font-size="11" text-anchor="middle" fill="#555">Prevent abuse</text>
+  </g>
+  
+  <!-- Control 5: Data Exposure Control -->
+  <g filter="url(#shadow)">
+    <rect x="880" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="960" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="960" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="960" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Data Exposure</text>
+    <text x="960" y="310" font-size="11" text-anchor="middle" fill="#555">Return only needed</text>
+  </g>
+  
+  <!-- Control 6: Error Handling & Monitoring -->
+  <g filter="url(#shadow)">
+    <rect x="1080" y="200" width="160" height="120" fill="#ffffff" stroke="#4a5fd9" stroke-width="2" rx="8"/>
+    <circle cx="1160" cy="230" r="20" fill="#4a5fd9"/>
+    <text x="1160" y="237" font-size="16" font-weight="bold" text-anchor="middle" fill="white">✓</text>
+    <text x="1160" y="290" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Monitoring</text>
+    <text x="1160" y="310" font-size="11" text-anchor="middle" fill="#555">Detect attacks</text>
+  </g>
+  
+  <!-- Arrows from controls to API -->
+  <path d="M 160 200 L 520 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 360 200 L 560 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 560 200 L 600 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 760 200 L 640 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 960 200 L 680 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M 1160 200 L 700 140" stroke="#4a5fd9" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  
+  <!-- Bottom section: Common vulnerabilities -->
+  <text x="600" y="420" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a3d">
+    Common API Vulnerabilities
+  </text>
+  
+  <!-- Vulnerability boxes -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="450" width="220" height="100" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="6"/>
+    <text x="210" y="475" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Broken Object-Level Auth</text>
+    <text x="210" y="495" font-size="10" text-anchor="middle" fill="#555">Accessing resources owned</text>
+    <text x="210" y="510" font-size="10" text-anchor="middle" fill="#555">by other users</text>
+    <text x="210" y="530" font-size="10" text-anchor="middle" fill="#555">GET /api/users/5/profile</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="370" y="450" width="220" height="100" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="6"/>
+    <text x="480" y="475" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Injection Attacks</text>
+    <text x="480" y="495" font-size="10" text-anchor="middle" fill="#555">Untrusted input in SQL,</text>
+    <text x="480" y="510" font-size="10" text-anchor="middle" fill="#555">XML, or command queries</text>
+    <text x="480" y="530" font-size="10" text-anchor="middle" fill="#555">?name='; DROP TABLE</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="640" y="450" width="220" height="100" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="6"/>
+    <text x="750" y="475" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a3d">Excessive Data Exposure</text>
+    <text x="750" y="495" font-size="10" text-anchor="middle" fill="#555">Returning more fields than</text>
+    <text x="750" y="510" font-size="10" text-anchor="middle" fill="#555">the consumer should see</text>
+    <text x="750" y="530" font-size="10" text-anchor="middle" fill="#555">password_hash, payment_token</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="910" y="450" width="220" height="100" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="6"/>
+    <text x="1020" y="475" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a3d">No Rate Limiting</text>
+    <text x="1020" y="495" font-size="10" text-anchor="middle" fill="#555">Attackers brute-force,</text>
+    <text x="1020" y="510" font-size="10" text-anchor="middle" fill="#555">enumerate, or exhaust</text>
+    <text x="1020" y="530" font-size="10" text-anchor="middle" fill="#555">10,000 requests/sec</text>
+  </g>
+</svg>
