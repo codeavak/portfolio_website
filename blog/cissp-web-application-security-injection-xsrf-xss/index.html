@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-10T12:30:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Domain 8" />
+      
+        <meta property="article:tag" content="Web Application Security" />
+      
+        <meta property="article:tag" content="XSS" />
+      
+        <meta property="article:tag" content="CSRF" />
+      
+        <meta property="article:tag" content="SQL Injection" />
+      
+        <meta property="article:tag" content="Command Injection" />
+      
+        <meta property="article:tag" content="Insecure Deserialization" />
+      
+        <meta property="article:tag" content="OWASP" />
+      
+        <meta property="article:tag" content="CWE" />
+      
+    
+    <meta property="og:title" content="CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data" />
+    <meta property="og:description" content="Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data" />
+    <meta name="twitter:description" content="Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data",
+        "description": "Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-10T12:30:00+00:00",
+        "dateModified": "2026-05-10T12:30:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Software Development Security • Application Security</div>
+              
+              <time class="post-date" datetime="2026-05-10T12:30:00+00:00">May 10, 2026</time>
+              <h1 class="post-title">CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data</h1>
+              
+                <p class="post-dek">Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Domain 8</span>
+                  
+                    <span class="chip">Web Application Security</span>
+                  
+                    <span class="chip">XSS</span>
+                  
+                    <span class="chip">CSRF</span>
+                  
+                    <span class="chip">SQL Injection</span>
+                  
+                    <span class="chip">Command Injection</span>
+                  
+                    <span class="chip">Insecure Deserialization</span>
+                  
+                    <span class="chip">OWASP</span>
+                  
+                    <span class="chip">CWE</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" alt="Web Application Security: the boundary between code and data, showing input validation, output encoding, and trust boundaries" class="blog-hero" /></p>
+
+<p>Post #57 taught you that secure coding is a discipline. Post #58 showed you why that discipline is non-negotiable in APIs. This post is about what happens when the boundary between code and data collapses in a web application—and why CISSP wants you to understand the pattern, not just memorize vulnerability names.</p>
+
+<p>The core concept is simple: code and data are different things. Code is executable. Data is not. But in web applications, attackers spend enormous energy trying to turn data into code.</p>
+
+<h2 id="the-pattern-confusion-of-code-and-data">The Pattern: Confusion of Code and Data</h2>
+
+<p>Every major web application vulnerability traces back to the same fundamental error: somewhere in the application, data was treated as code.</p>
+
+<p>Your application receives a user’s search term. It builds an SQL query by concatenating strings:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="nv">"SELECT * FROM users WHERE username = '"</span> <span class="o">+</span> <span class="n">userInput</span> <span class="o">+</span> <span class="nv">"'"</span>
+</code></pre></div></div>
+
+<p>The developer believed this code would only create data—a query string with a username embedded in it. But the attacker sent <code class="language-plaintext highlighter-rouge">admin' --</code> as the username. Suddenly, the string is no longer just data. It is code. The query became:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span> <span class="o">=</span> <span class="s1">'admin'</span> <span class="c1">--'</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">--</code> tells the database: treat the rest as a comment. The query now returns the admin account. The boundary collapsed.</p>
+
+<p>This is SQL injection. But it is not unique to databases.</p>
+
+<h2 id="sql-injection-and-command-injection-code-execution-through-data">SQL Injection and Command Injection: Code Execution Through Data</h2>
+
+<p>Injection attacks happen wherever the application builds code by concatenating untrusted data.</p>
+
+<p><strong>SQL Injection</strong> is the most famous case. The attacker embeds SQL syntax into input fields. If the application builds queries using string concatenation instead of parameterized queries, the attacker’s input becomes executable SQL.</p>
+
+<p><strong>Command Injection</strong> follows the same pattern. Your application builds a shell command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">convert image.png --output </span><span class="sh">"</span> <span class="o">+</span> <span class="n">userFilename</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The attacker provides a filename like <code class="language-plaintext highlighter-rouge">test.png; rm -rf /</code>. The application executes the conversion and then deletes the filesystem. Attackers turned data into shell commands.</p>
+
+<p><strong>LDAP Injection</strong>, <strong>XPath Injection</strong>, and others follow the same logic: anywhere the application builds code from concatenated data, an attacker can inject syntax that breaks out of the data context.</p>
+
+<p>CISSP’s lesson here is clear: parameterized queries, prepared statements, and safe APIs prevent injection because they keep code and data separate. The query structure is defined in code. The data goes into a different channel. An attacker cannot turn their input into executable code because it is never parsed as code.</p>
+
+<p>The control is not: <em>Check if the user’s input looks like SQL.</em> The control is: <em>Do not build code from data, ever.</em></p>
+
+<h2 id="cross-site-scripting-xss-executing-code-in-the-browser">Cross-Site Scripting (XSS): Executing Code in the Browser</h2>
+
+<p>Web applications do not just execute server-side code. They send code to the browser. HTML, JavaScript, CSS—all of it is code that runs on the user’s machine.</p>
+
+<p>Cross-Site Scripting (XSS) is what happens when an attacker injects malicious JavaScript into a page that the browser will execute.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/inline-xss.svg" alt="XSS flow: attacker injects script tag, server renders without encoding, browser executes malicious JavaScript" class="blog-hero" /></p>
+
+<p>A user writes a comment: <code class="language-plaintext highlighter-rouge">&lt;script&gt;alert('XSS')&lt;/script&gt;</code>. Your application stores that comment in the database and later displays it on the page. If the application sends it to the browser without encoding it, the browser parses the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag and executes the JavaScript. The attacker’s code runs in the context of the victim’s browser session.</p>
+
+<p>From there, the attacker can:</p>
+
+<ul>
+  <li>Steal the user’s session cookie.</li>
+  <li>Modify the page to trick the user into entering credentials.</li>
+  <li>Redirect to a phishing site.</li>
+  <li>Exfiltrate sensitive data visible in the page.</li>
+</ul>
+
+<p>There are three flavors of XSS:</p>
+
+<p><strong>Stored XSS</strong>: The attacker injects malicious code that is stored in your database and executed every time the page is viewed. This is the most severe because it affects all users.</p>
+
+<p><strong>Reflected XSS</strong>: The attacker crafts a malicious URL where the payload is in the query string. Your application reflects that parameter back in the response without encoding it. The victim clicks the link, and the attacker’s script runs. This requires social engineering but is still critical.</p>
+
+<p><strong>DOM-based XSS</strong>: Modern JavaScript frameworks manipulate the page using the Document Object Model (DOM). If the application writes user input directly to the DOM without encoding, XSS is possible even if the server never touches the data.</p>
+
+<p>The control is output encoding. Before sending any user-controlled data to the browser, encode it so the browser parses it as text, not code. <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> becomes <code class="language-plaintext highlighter-rouge">&amp;lt;script&amp;gt;</code>. The browser sees the angle brackets as literal characters, not markup.</p>
+
+<h2 id="csrf-making-the-browser-attack-itself">CSRF: Making the Browser Attack Itself</h2>
+
+<p>Cross-Site Request Forgery (CSRF) is a different kind of attack. The attacker does not inject code. Instead, the attacker tricks the browser into making a request on the attacker’s behalf.</p>
+
+<p>Here is the scenario:</p>
+
+<p>Your application has a <code class="language-plaintext highlighter-rouge">POST /transfer-money</code> endpoint. A user logs in, and the browser stores a session cookie. That cookie is automatically included in every request to your domain.</p>
+
+<p>The attacker creates a webpage and tricks the user into visiting it. On that page, the attacker includes an invisible form:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span>
+  <span class="na">action=</span><span class="s">"https://yourapp.com/transfer-money"</span>
+  <span class="na">method=</span><span class="s">"POST"</span>
+  <span class="na">style=</span><span class="s">"display:none;"</span>
+<span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"amount"</span> <span class="na">value=</span><span class="s">"10000"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"to-account"</span> <span class="na">value=</span><span class="s">"attacker-account"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">submit</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>When the user visits the attacker’s page, JavaScript automatically submits the form. The browser makes a POST request to your application and automatically includes the session cookie. Your application processes the request and transfers money to the attacker’s account.</p>
+
+<p>The user never intended this action. Their browser did it.</p>
+
+<p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/inline-csrf.svg" alt="CSRF flow: attacker trick user to visit malicious site, browser makes unwanted request to target site using victim's cookies" class="blog-hero" /></p>
+
+<p>The control is CSRF tokens. Before processing state-changing requests (POST, DELETE, PUT), your application requires the client to send a unique token that:</p>
+
+<ul>
+  <li>Is generated per-user per-session.</li>
+  <li>Is not stored in cookies (which the browser sends automatically).</li>
+  <li>Must be sent as a form field or header (which cross-origin requests cannot access).</li>
+</ul>
+
+<p>When the form is submitted, the browser includes the token. The attacker’s page cannot forge a valid token because the attacker cannot read tokens from your site (same-origin policy). So the transfer does not happen.</p>
+
+<p>The exam often tests the distinction: CSRF tokens protect against requests that come from a different domain. Session cookies alone do not. If your application accepts cross-origin requests without validating a CSRF token, the browser will send the cookie, and the attacker wins.</p>
+
+<h2 id="insecure-deserialization-data-that-executes">Insecure Deserialization: Data That Executes</h2>
+
+<p>Serialization is the process of converting an object into bytes so you can store it or send it over a network. Deserialization is the reverse: converting bytes back into an object.</p>
+
+<p>If your application deserializes untrusted data, the attacker can craft bytes that, when deserialized, execute arbitrary code. This is particularly dangerous in languages like Java and Python where serialization formats can include executable instructions.</p>
+
+<p>Example: A Java application deserializes a user-provided object:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ObjectInputStream</span> <span class="n">ois</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ObjectInputStream</span><span class="o">(</span><span class="n">userProvidedData</span><span class="o">);</span>
+<span class="nc">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span> <span class="c1">// Dangerous</span>
+</code></pre></div></div>
+
+<p>If the attacker creates a specially crafted serialized object, the <code class="language-plaintext highlighter-rouge">readObject()</code> method can trigger code execution. The attacker does not need to break into the application’s logic. The deserialization process itself becomes the attack vector.</p>
+
+<p>The control is simple: do not deserialize untrusted data. If you must deserialize, use safe libraries that explicitly allow only whitelisted types. Never use generic deserialization on untrusted input.</p>
+
+<h2 id="the-exam-perspective-why-cissp-asks-about-these">The Exam Perspective: Why CISSP Asks About These</h2>
+
+<p>On the CISSP exam, questions about web application security rarely ask: “What is XSS?” Instead, they ask situational questions like:</p>
+
+<p><em>Your development team stores user comments in the database and displays them on profile pages. A security review finds that comments are not being HTML-encoded before rendering. What is the primary risk?</em></p>
+
+<p>The answer is not just “XSS.” The answer is that user-controlled data is being rendered as code, creating a stored XSS vulnerability affecting all users who view the profile.</p>
+
+<p>Or:</p>
+
+<p><em>A microservice accepts JSON from external APIs. The team uses a standard JSON deserializer to convert the input into objects. A security team recommends using a JSON schema validator before deserialization. What is the primary concern being addressed?</em></p>
+
+<p>The answer is insecure deserialization. The control is input validation and schema enforcement, not just trusting that deserializing is safe.</p>
+
+<p>CISSP questions test whether you understand the control—not just the vulnerability name.</p>
+
+<h2 id="the-pattern-holds">The Pattern Holds</h2>
+
+<p>Look at the progression:</p>
+
+<ul>
+  <li><strong>Injection attacks</strong>: Code and data are confused because the application builds code from concatenated data.</li>
+  <li><strong>XSS</strong>: Code and data are confused in the browser because the application sends user data as markup or JavaScript.</li>
+  <li><strong>CSRF</strong>: The application trusts the browser to enforce same-origin policy and authenticate requests based only on cookies.</li>
+  <li><strong>Insecure Deserialization</strong>: Code and data are confused because the application deserializes untrusted bytes.</li>
+</ul>
+
+<p>Every single one traces back to the same principle: <em>Control where the boundary is between code and data, and control what gets executed.</em></p>
+
+<p>The secure coding practices from Post #57 are the controls:</p>
+
+<ul>
+  <li>Input validation: Know what you expect.</li>
+  <li>Output encoding: Ensure data stays data.</li>
+  <li>Parameterized queries: Keep code and data separate.</li>
+  <li>Secure deserialization: Do not execute untrusted input.</li>
+</ul>
+
+<p>The API security practices from Post #58 apply here too:</p>
+
+<ul>
+  <li>Authentication and authorization: Know who is making the request.</li>
+  <li>Logging and monitoring: Detect when the boundaries are breached.</li>
+  <li>Rate limiting: Prevent attackers from trying thousands of payloads.</li>
+</ul>
+
+<p>Web application security is not a separate domain. It is the discipline of secure coding applied to the web boundary—where user input becomes HTML, JavaScript, and database queries.</p>
+
+<p>On the CISSP exam, when you see a web application security question, ask yourself: <em>Where is the boundary between code and data, and is the application protecting it?</em></p>
+
+<hr />
+
+<p><em>Post 59 of 60 in my CISSP study series.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP #59 explains web application security: XSS, CSRF, SQL injection, command injection, and insecure deserialization as failures to maintain the boundary between code and data.</p>
+
+<p><strong>5 SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP web application security XSS CSRF injection</li>
+  <li>SQL injection and command injection prevention</li>
+  <li>Cross-site scripting and cross-site request forgery</li>
+  <li>Insecure deserialization vulnerability CISSP</li>
+  <li>Web application security controls OWASP CISSP Domain 8</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -11,12 +11,14 @@ CISSP Domain 8 expects you to understand that securing an API is not separate fr
 ## Research Summary
 
 **API Security Landscape**
+
 - APIs have become the primary interface for application interaction (internal, partner, public)
 - API attacks target authentication bypass, data exposure, injection, rate limiting failures, broken error handling
 - OWASP Top 10 for APIs (2023) identifies the most critical risks
 - CISSP Domain 8 treats APIs as a direct extension of application security
 
 **CISSP Coverage Areas**
+
 - Authentication and authorization specifically for API consumers
 - Rate limiting and abuse prevention
 - Input validation at API boundaries
@@ -27,6 +29,7 @@ CISSP Domain 8 expects you to understand that securing an API is not separate fr
 - Data classification and what should/should not be exposed
 
 **Key Distinction**
+
 - API security is not a separate practice; it is application security applied at the integration point
 - APIs inherit all the secure coding practices but add: consumer authentication, rate limiting, abuse detection, tight output control
 
@@ -40,7 +43,7 @@ CISSP Domain 8 expects you to understand that securing an API is not separate fr
 
 Every application has a network boundary. When that boundary is an API, it becomes a public invitation for testing.
 
-Not testing in the good sense. Testing in the sense of: *Here is a documented interface. Let me see what happens when I send it bad data. Let me see what happens when I do it a thousand times a second. Let me see what the error messages reveal.*
+Not testing in the good sense. Testing in the sense of: _Here is a documented interface. Let me see what happens when I send it bad data. Let me see what happens when I do it a thousand times a second. Let me see what the error messages reveal._
 
 APIs are where secure coding practices meet attackers directly. A field that accepts a phone number is now accepting a phone number from anyone with network access. Code that handles empty input is now handling empty input from adversaries. An error message that reveals your database schema is now visible to the internet.
 
@@ -50,8 +53,8 @@ Post #57 taught you input validation, error handling, and authorization logic. T
 
 Here is a distinction CISSP makes clear: authentication and authorization are not the same thing.
 
-Authentication answers: *Are you who you claim to be?*
-Authorization answers: *What are you allowed to do?*
+Authentication answers: _Are you who you claim to be?_
+Authorization answers: _What are you allowed to do?_
 
 APIs fail when either one is weak. But authentication failures in APIs are particularly costly because APIs are often the last gate before data.
 
@@ -59,6 +62,7 @@ APIs fail when either one is weak. But authentication failures in APIs are parti
 Many teams treat API keys as passwords with infinite lifetime. That is a mistake.
 
 An API key that:
+
 - Never expires makes compromise permanent
 - Is shared across multiple clients makes it impossible to revoke one without breaking others
 - Is stored in source code or configuration files leaks at scale
@@ -68,12 +72,14 @@ CISSP expects you to understand that API keys are credentials. They require the 
 
 **OAuth and Token-Based Auth**
 In contrast to static API keys, OAuth and bearer tokens add:
+
 - Token expiration (forcing regular refresh)
 - Scoped permissions (not all-or-nothing access)
 - The ability to revoke a token without invalidating all others
 - Support for refresh tokens (so access tokens can be short-lived)
 
 But tokens are only secure if:
+
 - They are short-lived (minutes to hours, not days)
 - The refresh token is protected as carefully as a password
 - The token is never transmitted over plain HTTP
@@ -159,12 +165,14 @@ APIs are fast. They are too fast. An attacker can make 10,000 requests per secon
 Rate limiting is not optional for public APIs. It is a security control.
 
 **Effective Rate Limiting**
+
 - Limits per authenticated user (if a user is abusing, cut them off)
 - Limits per IP address (catches unauthenticated scanning)
 - Limits per endpoint (testing passwords might be limited more tightly than fetching public data)
 - Graceful degradation (tell the client they have hit the limit and when they can try again)
 
 Without rate limiting, an attacker can:
+
 - Brute-force authentication tokens or API keys
 - Enumerate all user IDs by testing `/api/users/{id}` for IDs 1 through 1 million
 - Extract data from endpoints that return partial results by requesting millions of pages
@@ -212,18 +220,21 @@ The vulnerability is the same as in #57. The attack surface is just more visible
 You cannot secure what you do not observe.
 
 **What to Log**
+
 - Every authentication attempt (successful and failed)
 - Every authorization decision (especially failures)
 - Unusual patterns (a single user accessing thousands of records, an IP making requests at rates that suggest scanning)
 - Errors and exceptions (especially those that might indicate attack attempts)
 
 **What NOT to Log**
+
 - Authentication tokens or API keys (defeats the purpose of protecting them)
 - User passwords or sensitive data (creates a secondary exposure point)
 - Full request bodies if they contain secrets (use masking or sampling instead)
 
 **Detection Patterns**
 Legitimate API use follows patterns. Abusive use deviates:
+
 - A user who normally makes 100 requests per day suddenly makes 100,000
 - An API consumer requesting data for users outside their organization
 - Multiple failed authentication attempts followed by a successful one (credential guessing)
@@ -236,6 +247,7 @@ These patterns become your first line of defense because they often catch attack
 CISSP Domain 8 treats APIs not as a separate security problem but as an application security problem applied at a public interface.
 
 The principles are the same as post #57:
+
 - Input validation (verify every parameter)
 - Authorization (check every access)
 - Error handling (reveal nothing dangerous)
@@ -267,9 +279,10 @@ APIs are where secure coding practices meet the network. When they meet attacker
 
 The API is your application's front door. And just like a front door, it needs security.
 
-Post #57 covered secure coding practices: input validation, authorization, error handling. Those principles are critical in every part of your code. But they are *essential* at API boundaries, where code meets attackers directly.
+Post #57 covered secure coding practices: input validation, authorization, error handling. Those principles are critical in every part of your code. But they are _essential_ at API boundaries, where code meets attackers directly.
 
 Here's what breaks:
+
 - APIs that accept input without validation (injection attacks)
 - APIs that return more data than the consumer should see (data exposure)
 - APIs with weak authentication or missing authorization checks
@@ -291,6 +304,7 @@ The strongest teams treat every API endpoint as if a security auditor is testing
 ## Extra Content Assets
 
 ### Common API Vulnerabilities Quick Reference
+
 1. Broken Authentication – weak/missing API key/token management
 2. Broken Object-Level Authorization – accessing resources you do not own
 3. Excessive Data Exposure – returning more fields than necessary
@@ -301,6 +315,7 @@ The strongest teams treat every API endpoint as if a security auditor is testing
 8. Insufficient Logging and Monitoring – cannot detect attacks in progress
 
 ### API Security Checklist
+
 - [ ] Every parameter is validated (whitelist, not blacklist)
 - [ ] Authentication is required and tokens/keys are properly managed
 - [ ] Authorization is checked on every endpoint (not just at infrastructure level)
@@ -315,9 +330,11 @@ The strongest teams treat every API endpoint as if a security auditor is testing
 ---
 
 ## Meta Description (for blog post)
+
 "APIs are where secure coding practices meet attackers. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure as critical security controls—not as options."
 
 ## SEO Keywords
+
 1. API security best practices
 2. Web service security CISSP
 3. API authentication and authorization

@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f7fb"/>
+      <stop offset="100%" stop-color="#e8edf7"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fafc"/>
+    </linearGradient>
+    <linearGradient id="warn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe8d6"/>
+      <stop offset="100%" stop-color="#ffd3b3"/>
+    </linearGradient>
+    <linearGradient id="safe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ddf4e4"/>
+      <stop offset="100%" stop-color="#c8ecd4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <text x="600" y="68" text-anchor="middle" font-size="38" font-weight="700" fill="#1b2430">Session Management and Token Security</text>
+  <text x="600" y="103" text-anchor="middle" font-size="22" fill="#334155">The Attack Surface After Login</text>
+
+  <rect x="70" y="140" width="500" height="430" rx="16" fill="url(#card)" stroke="#93a4bd"/>
+  <text x="320" y="178" text-anchor="middle" font-size="24" font-weight="700" fill="#1e3a8a">Unsafe Session Design</text>
+
+  <rect x="100" y="205" width="440" height="74" rx="10" fill="url(#warn)" stroke="#d97706"/>
+  <text x="120" y="234" font-size="18" fill="#7c2d12">- Long-lived bearer tokens in browser storage</text>
+  <text x="120" y="259" font-size="18" fill="#7c2d12">- No rotation after privilege change</text>
+
+  <rect x="100" y="295" width="440" height="74" rx="10" fill="url(#warn)" stroke="#d97706"/>
+  <text x="120" y="324" font-size="18" fill="#7c2d12">- Cookies missing HttpOnly and SameSite</text>
+  <text x="120" y="349" font-size="18" fill="#7c2d12">- Session IDs reused across devices</text>
+
+  <rect x="100" y="385" width="440" height="74" rx="10" fill="url(#warn)" stroke="#d97706"/>
+  <text x="120" y="414" font-size="18" fill="#7c2d12">- No revocation on logout or incident</text>
+  <text x="120" y="439" font-size="18" fill="#7c2d12">- Weak detection of token replay</text>
+
+  <rect x="630" y="140" width="500" height="430" rx="16" fill="url(#card)" stroke="#93a4bd"/>
+  <text x="880" y="178" text-anchor="middle" font-size="24" font-weight="700" fill="#065f46">Defensible Session Design</text>
+
+  <rect x="660" y="205" width="440" height="74" rx="10" fill="url(#safe)" stroke="#15803d"/>
+  <text x="680" y="234" font-size="18" fill="#14532d">- Short access token lifetime</text>
+  <text x="680" y="259" font-size="18" fill="#14532d">- Refresh token rotation with replay checks</text>
+
+  <rect x="660" y="295" width="440" height="74" rx="10" fill="url(#safe)" stroke="#15803d"/>
+  <text x="680" y="324" font-size="18" fill="#14532d">- Secure cookie flags and CSRF defenses</text>
+  <text x="680" y="349" font-size="18" fill="#14532d">- Session ID regeneration at auth events</text>
+
+  <rect x="660" y="385" width="440" height="74" rx="10" fill="url(#safe)" stroke="#15803d"/>
+  <text x="680" y="414" font-size="18" fill="#14532d">- Central revocation and risk-based reauth</text>
+  <text x="680" y="439" font-size="18" fill="#14532d">- Audit trails for token issuance and use</text>
+
+  <line x1="580" y1="210" x2="620" y2="210" stroke="#64748b" stroke-width="3"/>
+  <line x1="580" y1="300" x2="620" y2="300" stroke="#64748b" stroke-width="3"/>
+  <line x1="580" y1="390" x2="620" y2="390" stroke="#64748b" stroke-width="3"/>
+</svg>

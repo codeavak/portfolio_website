@@ -163,6 +163,7 @@ Authorization answers: <em>What are you allowed to do?</em></p>
 <p>Many teams treat API keys as passwords with infinite lifetime. That is a mistake.</p>
 
 <p>An API key that:</p>
+
 <ul>
   <li>Never expires makes compromise permanent</li>
   <li>Is shared across multiple clients makes it impossible to revoke one without breaking others</li>
@@ -175,6 +176,7 @@ Authorization answers: <em>What are you allowed to do?</em></p>
 <h3 id="oauth-and-token-based-auth">OAuth and Token-Based Auth</h3>
 
 <p>In contrast to static API keys, OAuth and bearer tokens add:</p>
+
 <ul>
   <li>Token expiration (forcing regular refresh)</li>
   <li>Scoped permissions (not all-or-nothing access)</li>
@@ -183,6 +185,7 @@ Authorization answers: <em>What are you allowed to do?</em></p>
 </ul>
 
 <p>But tokens are only secure if:</p>
+
 <ul>
   <li>They are short-lived (minutes to hours, not days)</li>
   <li>The refresh token is protected as carefully as a password</li>
@@ -255,6 +258,7 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
 <p>Rate limiting is not optional for public APIs. It is a security control.</p>
 
 <p>Without rate limiting, an attacker can:</p>
+
 <ul>
   <li>Brute-force authentication tokens or API keys</li>
   <li>Enumerate all user IDs by testing <code class="language-plaintext highlighter-rouge">/api/users/{id}</code> for IDs 1 through 1 million</li>
@@ -263,6 +267,7 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
 </ul>
 
 <p>Effective rate limiting:</p>
+
 <ul>
   <li>Limits per authenticated user (if a user is abusing, cut them off)</li>
   <li>Limits per IP address (catches unauthenticated scanning)</li>
@@ -297,6 +302,7 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
 <p>You cannot secure what you do not observe.</p>
 
 <p>Log every authentication attempt (successful and failed), every authorization decision (especially failures), and unusual patterns:</p>
+
 <ul>
   <li>A single user accessing thousands of records</li>
   <li>An IP making requests at rates that suggest scanning</li>
@@ -313,6 +319,7 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
 <p>CISSP Domain 8 treats APIs not as a separate security problem but as an application security problem applied at a public interface.</p>
 
 <p>The principles are the same as post #57:</p>
+
 <ul>
   <li>Input validation (verify every parameter)</li>
   <li>Authorization (check every access)</li>
@@ -354,9 +361,11 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
 <hr />
 
 <h2 id="meta-description">Meta Description</h2>
+
 <p><em>APIs are where secure coding practices meet attackers. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure as critical security controls—not as options.</em></p>
 
 <h2 id="seo-keywords">SEO Keywords</h2>
+
 <ol>
   <li>API security best practices</li>
   <li>Web service security CISSP</li>
