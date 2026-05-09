@@ -13,6 +13,7 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 ## 2. Research Summary
 
 **DAST (Dynamic Application Security Testing)**
+
 - Tests a running application from the outside without requiring source code access
 - Black-box approach; simulates external attacker perspective
 - Finds: injection flaws, authentication/session weaknesses, runtime misconfigurations
@@ -21,6 +22,7 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 - Limitation: no visibility into internal code paths; can only observe HTTP-level behavior
 
 **IAST (Interactive Application Security Testing)**
+
 - Deploys an instrumentation agent inside the running application
 - Monitors code execution while the application is being tested
 - Combines SAST (internal code visibility) with DAST (runtime behavior)
@@ -29,6 +31,7 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 - Best used during integration testing
 
 **Fuzzing**
+
 - Generates unexpected, malformed, or boundary-condition inputs
 - Observes crashes, hangs, data leaks, and anomalous behavior
 - Coverage-guided fuzzing (AFL, libFuzzer) biases input toward unexplored code paths
@@ -37,6 +40,7 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 - Not suited for business logic or stateful multi-step workflow testing
 
 **CISSP Domain 8 Context**
+
 - All four methods (SAST, DAST, IAST, fuzzing) appear in Domain 8 (Software Development Security)
 - Exam typically tests: which method applies to a given scenario; what each method requires; what each method can and cannot find
 - DAST is the most exam-prominent of the dynamic methods
@@ -45,13 +49,14 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 
 ## 3. Detailed Blog Post
 
-*(Full post is in `_posts/2026-05-07-cissp-dast-iast-fuzzing-application-security-testing.md`)*
+_(Full post is in `_posts/2026-05-07-cissp-dast-iast-fuzzing-application-security-testing.md`)_
 
 **Title:** CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis
 
 **Word count:** ~1,450 words
 
 **Sections:**
+
 1. Opening hook — SAST's boundary condition
 2. Why Static Analysis Alone Is Not Enough
 3. DAST: Testing the Running Application from the Outside
@@ -62,6 +67,7 @@ The angle: static analysis is necessary but not sufficient. The post builds a co
 8. The Engineering Takeaway
 
 **Images:**
+
 - Hero: DAST scanner probing a running web application from the outside
 - Inline-1 (after IAST section): SAST/DAST/IAST comparison showing when each runs and what it observes
 - Inline-2 (after fuzzing integration section): Fuzzing pipeline diagram
@@ -95,6 +101,7 @@ What's your team's testing stack? Most I've seen still stop at static analysis.
 ## 5. Extra Content Assets
 
 **Social graphic text (for image card):**
+
 ```
 Testing method   |  Needs source code?  |  Needs running app?
 SAST             |  Yes                 |  No
@@ -108,6 +115,7 @@ Fuzzing          |  No                  |  Varies
 The most common mistake I see in security testing programs: treating DAST as "the security scan we run before go-live."
 
 DAST is valuable. But running it once, right before deployment, means:
+
 - Issues found at the worst possible time to fix them
 - No coverage of staging-only logic
 - No fuzzing of edge cases
@@ -118,6 +126,7 @@ The better model: each testing method has a home in the SDLC. SAST lives in the 
 The question is never "which one?" It's "which ones, and where?"
 
 **CISSP exam quick-reference:**
+
 - SAST = code review without running the app (pre-execution)
 - DAST = black-box testing against a live app (post-deployment)
 - IAST = agent inside the live app (hybrid; during integration testing)

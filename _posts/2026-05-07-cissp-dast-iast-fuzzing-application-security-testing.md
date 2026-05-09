@@ -3,7 +3,17 @@ layout: post
 title: "CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis"
 date: 2026-05-07 14:30:00 +0000
 categories: [cissp, security]
-tags: [cissp, dast, iast, fuzzing, application-security, security-testing, domain8, sdlc]
+tags:
+  [
+    cissp,
+    dast,
+    iast,
+    fuzzing,
+    application-security,
+    security-testing,
+    domain8,
+    sdlc,
+  ]
 excerpt: "Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference."
 image: /assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg
 ---
@@ -113,6 +123,6 @@ The broader discipline here is the same as defense in depth applied to testing: 
 
 ---
 
-*Meta description: DAST tests running applications from the outside. IAST instruments them from within. Fuzzing probes with unexpected input. This post explains how each works, when to use them, and what the CISSP exam tests on dynamic application security testing.*
+_Meta description: DAST tests running applications from the outside. IAST instruments them from within. Fuzzing probes with unexpected input. This post explains how each works, when to use them, and what the CISSP exam tests on dynamic application security testing._
 
-*SEO keywords: DAST vs SAST CISSP, dynamic application security testing, IAST instrumented testing, fuzzing security testing, CISSP Domain 8 application security testing*
+_SEO keywords: DAST vs SAST CISSP, dynamic application security testing, IAST instrumented testing, fuzzing security testing, CISSP Domain 8 application security testing_

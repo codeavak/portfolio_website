@@ -757,7 +757,8 @@ initBlogIndex();
 document.addEventListener("copy", function (event) {
   const selection = window.getSelection();
   if (selection.toString().length > 0) {
-    const attribution = "\n\nWritten by Johnny Avakian. Any republication without author's written permission is against the law.";
+    const attribution =
+      "\n\nWritten by Johnny Avakian. Any republication without author's written permission is against the law.";
     const clipboardData = event.clipboardData || window.clipboardData;
     const copiedText = selection.toString() + attribution;
     clipboardData.setData("text/plain", copiedText);

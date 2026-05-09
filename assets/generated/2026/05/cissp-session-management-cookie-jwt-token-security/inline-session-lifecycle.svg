@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#eef2f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="420" fill="url(#bg)"/>
+
+  <text x="500" y="42" text-anchor="middle" font-size="28" font-weight="700" fill="#111827">Secure Session Lifecycle</text>
+
+  <rect x="40" y="90" width="170" height="90" rx="12" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="125" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">Login</text>
+  <text x="125" y="150" text-anchor="middle" font-size="14" fill="#334155">MFA + context</text>
+
+  <rect x="230" y="90" width="170" height="90" rx="12" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="315" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Issue</text>
+  <text x="315" y="150" text-anchor="middle" font-size="14" fill="#334155">Short token TTL</text>
+
+  <rect x="420" y="90" width="170" height="90" rx="12" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="505" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#713f12">Refresh</text>
+  <text x="505" y="150" text-anchor="middle" font-size="14" fill="#334155">Rotate + detect replay</text>
+
+  <rect x="610" y="90" width="170" height="90" rx="12" fill="#e0e7ff" stroke="#4f46e5"/>
+  <text x="695" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#312e81">Authorize</text>
+  <text x="695" y="150" text-anchor="middle" font-size="14" fill="#334155">Evaluate scope + role</text>
+
+  <rect x="800" y="90" width="160" height="90" rx="12" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="880" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#7f1d1d">Revoke</text>
+  <text x="880" y="150" text-anchor="middle" font-size="14" fill="#334155">Logout or risk event</text>
+
+  <path d="M210 135 L230 135" stroke="#475569" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M400 135 L420 135" stroke="#475569" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M590 135 L610 135" stroke="#475569" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M780 135 L800 135" stroke="#475569" stroke-width="3" marker-end="url(#a)"/>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="230" width="880" height="150" rx="14" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="90" y="265" font-size="18" font-weight="700" fill="#0f172a">Control Points That CISSP Expects You to Recognize</text>
+  <text x="90" y="295" font-size="16" fill="#1f2937">1. Regenerate session identifiers after authentication and privilege elevation.</text>
+  <text x="90" y="322" font-size="16" fill="#1f2937">2. Bind tokens to expected context when possible and monitor for impossible travel or replay.</text>
+  <text x="90" y="349" font-size="16" fill="#1f2937">3. Ensure revocation propagates faster than token lifetime in high-risk systems.</text>
+</svg>
