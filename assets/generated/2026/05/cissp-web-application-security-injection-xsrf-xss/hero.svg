@@ -28,7 +28,7 @@
   
   <!-- HTML/JavaScript area -->
   <rect x="50" y="130" width="380" height="100" rx="6" fill="#ffffff" stroke="#1976d2" stroke-width="1.5" stroke-dasharray="4,4"/>
-  <text x="240" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">HTML & JavaScript</text>
+  <text x="240" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">HTML &amp; JavaScript</text>
   <text x="240" y="180" font-size="12" text-anchor="middle" fill="#424242">&lt;script&gt;, &lt;img&gt;, Event Handlers</text>
   <text x="240" y="200" font-size="12" text-anchor="middle" fill="#666">XSS: Unencoded User Data</text>
   
@@ -40,7 +40,7 @@
   
   <!-- Session & Cookies -->
   <rect x="50" y="350" width="380" height="100" rx="6" fill="#ffffff" stroke="#d32f2f" stroke-width="1.5"/>
-  <text x="240" y="375" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">Session & Cookies</text>
+  <text x="240" y="375" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">Session &amp; Cookies</text>
   <text x="240" y="398" font-size="12" text-anchor="middle" fill="#666">Auto-sent with every request</text>
   <text x="240" y="418" font-size="12" text-anchor="middle" fill="#666">CSRF: No token validation</text>
   
