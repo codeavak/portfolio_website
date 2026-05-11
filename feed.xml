@@ -1,4 +1,292 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-09T18:24:23+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #60: Session Management and Token Security - The Attack Surface After Login</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security/" rel="alternate" type="text/html" title="CISSP #60: Session Management and Token Security - The Attack Surface After Login" /><published>2026-05-11T12:30:00+00:00</published><updated>2026-05-11T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" alt="Session management and token security comparison between weak and defensible designs" class="blog-hero" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-11T10:56:46+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #62: Secure Network Components: Firewalls, WAFs, Proxies, IDS, IPS, and NAC</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-network-components/" rel="alternate" type="text/html" title="CISSP #62: Secure Network Components: Firewalls, WAFs, Proxies, IDS, IPS, and NAC" /><published>2026-05-13T12:00:00+00:00</published><updated>2026-05-13T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-network-components</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-network-components/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-secure-network-components/hero.svg" alt="Diagram showing layered network enforcement devices: NAC, Firewall, IDS/IPS, WAF, and Proxies along a traffic path" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Each device answers a different question. Selecting the wrong one for the wrong threat is one of the most common CISSP exam errors.</figcaption>
+</figure>
+
+<p>Post 61 covered network architecture — how you carve a network into zones, why trust must be explicit, and what the OSI model looks like when you read it as an attack surface. This post goes one level deeper: the actual enforcement devices that sit at those zone boundaries and make the architecture real.</p>
+
+<p>The CISSP exam does not just ask you to define these devices. It puts you in a scenario and asks which one you should deploy. Getting that right requires understanding not just what each device does — but what it cannot do, and why that distinction matters.</p>
+
+<h2 id="the-firewall-stack-four-types-four-threat-models">The Firewall Stack: Four Types, Four Threat Models</h2>
+
+<p>The word “firewall” covers four meaningfully different technologies. The exam expects you to tell them apart and to select the right one based on the threat being described.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-secure-network-components/inline-firewall-types.svg" alt="Comparison of packet-filter, stateful, application-layer, and next-gen firewall capabilities" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Each generation adds visibility. More visibility means better decisions — and more processing overhead.</figcaption>
+</figure>
+
+<p><strong>Packet-filter firewalls</strong> operate at Layer 3 and 4. They evaluate each packet in isolation: source IP, destination IP, port, protocol. That is the entire decision. They are fast and computationally inexpensive, which is why they still appear in high-throughput environments and as the first line in router ACLs. Their weakness is statelessness — a packet-filter has no memory of prior packets, which makes it blind to session-level manipulation. A well-crafted RST packet or a fragmented payload can pass through because no single packet triggers a rule.</p>
+
+<p><strong>Stateful inspection firewalls</strong> add a connection state table. They track whether traffic is part of an established session, whether the sequence makes sense, and whether a return packet was legitimately requested. This stops a wide range of session-hijacking and spoofed-packet attacks that bypass stateless filters. Stateful inspection is the baseline expectation for modern perimeter firewalls.</p>
+
+<p><strong>Application-layer firewalls</strong> (sometimes called proxy-based or circuit-level gateways, depending on depth) terminate the connection and re-establish it on the far side. Because they sit in the middle of the conversation, they can read the payload — not just the headers. They can validate that HTTP traffic actually looks like HTTP, that DNS requests are well-formed, or that FTP is being used in an expected way. The cost is latency and computational overhead.</p>
+
+<p><strong>Next-generation firewalls (NGFW)</strong> combine stateful inspection with application awareness, user identity (typically integrated with Active Directory), and a built-in IPS engine. An NGFW can enforce policy based on application type rather than port number — blocking Dropbox uploads while allowing HTTPS browsing on port 443, for instance. Many also support TLS inspection when configured with appropriate certificates.</p>
+
+<p>One important exam boundary: an NGFW is not a WAF. It operates at the network and transport layers with application awareness added on top. It does not deeply inspect HTTP request bodies for injection strings the way a WAF does. If the scenario involves web application attacks, a WAF is the correct device.</p>
+
+<h2 id="wafs-a-distinct-control-not-a-firewall-replacement">WAFs: A Distinct Control, Not a Firewall Replacement</h2>
+
+<p>A Web Application Firewall (WAF) is purpose-built for one job: protecting HTTP and HTTPS applications from application-layer attacks. It sits in front of a web application — either as a reverse proxy, an inline appliance, or a cloud-hosted service — and inspects every request and response at the HTTP level.</p>
+
+<p>Where a network firewall asks “should this packet be routed?”, a WAF asks “is this HTTP request malicious?”</p>
+
+<p>WAFs are configured to detect and block patterns associated with SQL injection, cross-site scripting, CSRF, path traversal, HTTP parameter tampering, and other OWASP Top 10 categories. They can enforce positive security models (only allow what is explicitly permitted) or negative models (block what is known bad). Cloud WAF services from major providers add threat intelligence feeds that update rule sets continuously.</p>
+
+<p>The exam signal here is specificity. If the scenario describes attacks against a web application — injection strings in query parameters, malicious JavaScript in form fields, unauthorized access to API endpoints — the answer is a WAF, not a firewall. A firewall will not stop SQLi. It cannot read the database query embedded in a POST request body.</p>
+
+<p>WAFs also have blind spots worth knowing. They require TLS termination to inspect HTTPS traffic. If you deploy a WAF but route encrypted traffic around it, you have a gap. And like any signature-based control, they can be evaded by encoding or obfuscating attack strings. WAFs are essential but not sufficient on their own.</p>
+
+<h2 id="proxies-forward-and-reverse-two-different-threat-directions">Proxies: Forward and Reverse, Two Different Threat Directions</h2>
+
+<p>A proxy terminates a connection and re-establishes it — the client talks to the proxy, and the proxy talks to the destination. This gives the proxy complete visibility into the traffic, regardless of what port it is on.</p>
+
+<p><strong>Forward proxies</strong> sit between internal users and the internet. The user’s browser sends all traffic to the proxy, which retrieves content on behalf of the user. Security use cases include outbound content filtering (blocking malicious sites, enforcing acceptable use policies), caching to reduce bandwidth, and TLS inspection of outbound encrypted traffic. The proxy is the only system in the organization that directly touches the external internet — all user traffic is mediated.</p>
+
+<p><strong>Reverse proxies</strong> sit in front of internal servers and handle inbound traffic from the internet. The external client talks to the reverse proxy; the proxy forwards requests to the real server. This hides the internal server’s identity and IP address, provides TLS termination (the proxy decrypts before passing to the backend), enables load balancing, and can add authentication or rate limiting before any request reaches the application. A WAF is frequently deployed as or behind a reverse proxy.</p>
+
+<p>From an exam perspective, forward proxies control outbound access from internal users. Reverse proxies control inbound access to internal services. Both are boundary enforcement mechanisms that provide visibility and policy control that a simple packet filter cannot.</p>
+
+<h2 id="ids-vs-ips-detection-vs-prevention-placement-vs-capability">IDS vs IPS: Detection vs Prevention, Placement vs Capability</h2>
+
+<p>These two get conflated, but the operational difference is significant — and the CISSP exam tests it directly.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-secure-network-components/inline-ids-ips-nac.svg" alt="IDS out-of-band versus IPS inline placement diagram, and NAC decision flow for device admission" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">IDS observes. IPS intercepts. NAC decides who gets on the network before a threat even arrives.</figcaption>
+</figure>
+
+<p>An <strong>Intrusion Detection System (IDS)</strong> is deployed out-of-band. It receives a copy of traffic — typically via a SPAN port on a switch — and analyzes it for suspicious patterns. When it detects something, it generates an alert. It does not sit in the traffic path, which means it cannot block anything. If an attack passes through, the IDS will log it and alert someone. The attack completes before any response is possible.</p>
+
+<p>An <strong>Intrusion Prevention System (IPS)</strong> is deployed inline. Traffic must pass through the IPS, which means the IPS can intercept and drop packets before they reach the destination. When the IPS detects a malicious pattern, it can block the connection, reset the session, or drop specific packets. The tradeoff is that an inline device creates a single point of failure — if the IPS goes down, traffic stops unless fail-open behavior is configured (which has its own risk profile).</p>
+
+<p>Both systems use two primary detection approaches:</p>
+
+<p><strong>Signature-based detection</strong> matches traffic against a library of known attack patterns. It has low false-positive rates because every alert corresponds to a known threat. The limitation is that it is blind to attacks that do not match any known signature — zero-days, custom exploit code, or novel attack patterns will pass through undetected.</p>
+
+<p><strong>Anomaly-based detection</strong> establishes a baseline of normal behavior and alerts when traffic deviates significantly. It can catch threats that signature systems miss, but it generates more false positives — especially in environments with variable or complex traffic patterns. Tuning anomaly thresholds is an operational discipline in itself.</p>
+
+<p>The exam often presents a scenario where the question is whether you need to stop an attack or observe it. If the requirement is active prevention, the answer is IPS. If the requirement is monitoring and alerting without disrupting traffic flow (common in environments where availability is critical), the answer is IDS.</p>
+
+<p>One more exam trap: an IDS cannot block or prevent anything. If a scenario describes a system that detected an intrusion, that is an IDS. If the scenario requires stopping the attack automatically, that requires an IPS.</p>
+
+<h2 id="nac-control-who-gets-on-the-network-at-all">NAC: Control Who Gets On the Network at All</h2>
+
+<p>Network Access Control is the device that asks the most fundamental question: should this endpoint be allowed on the network in the first place?</p>
+
+<p>A firewall controls traffic between zones. NAC controls admission to those zones. The distinction matters because a firewall assumes the endpoints making requests are at least present on the network. NAC decides whether to allow that presence at all.</p>
+
+<p>NAC operates using 802.1X as its primary authentication framework. When a device connects to a port — wired or wireless — the switch or access point triggers an authentication exchange. The device must present credentials (a certificate, username and password, or both) before it receives network access. A NAC server validates those credentials against a directory.</p>
+
+<p>Beyond authentication, NAC performs <strong>posture assessment</strong>: verifying that the device meets security requirements before granting access. Is antivirus installed and current? Is the OS patched to the required level? Is disk encryption enabled? A device that fails posture assessment can be quarantined to a restricted VLAN — where it may receive a remediation agent or simply be denied access — without ever touching the production network.</p>
+
+<p>This is the key differentiator from a firewall. A firewall does not know whether your laptop has up-to-date AV. NAC does. It also enables role-based access — a contractor’s device might be admitted to a guest VLAN while an authenticated corporate device gets full internal access.</p>
+
+<p>The CISSP exam signals NAC with specific scenarios: BYOD policies, unmanaged or guest devices, rogue endpoint detection, or requirements to enforce endpoint compliance before access. If the question involves controlling what connects to the network — not what traffic is allowed once something is connected — the answer is NAC.</p>
+
+<h2 id="exam-mindset-select-by-threat-not-by-definition">Exam Mindset: Select by Threat, Not by Definition</h2>
+
+<p>The practical skill the exam tests is the ability to match a security control to a specific threat in a specific scenario. Memorizing definitions is necessary but not sufficient.</p>
+
+<p>A useful mental model:</p>
+
+<ul>
+  <li>Threat is at the IP/port level and you need high-speed filtering → <strong>Packet-filter firewall</strong></li>
+  <li>Threat involves session manipulation, spoofed packets, or unsolicited inbound connections → <strong>Stateful firewall</strong></li>
+  <li>Threat is a web application attack (SQLi, XSS, CSRF, API abuse) → <strong>WAF</strong></li>
+  <li>Threat requires app-aware, user-aware, network-level policy enforcement → <strong>NGFW</strong></li>
+  <li>Requirement is passive monitoring and forensic visibility without disrupting traffic → <strong>IDS</strong></li>
+  <li>Requirement is active, automated blocking of known attack patterns → <strong>IPS</strong></li>
+  <li>Threat involves unmanaged or non-compliant endpoints connecting to the network → <strong>NAC</strong></li>
+  <li>Users are connecting to external sites and you need visibility and content control on outbound traffic → <strong>Forward proxy</strong></li>
+  <li>External users are reaching your internal services and you want to hide and protect those servers → <strong>Reverse proxy</strong></li>
+</ul>
+
+<p>The most common mistake on these questions is selecting the most powerful-sounding device rather than the most specific one. A WAF does not need to be backed by an NGFW to stop SQL injection — the WAF is the right answer, and adding an NGFW does not change the WAF requirement.</p>
+
+<h2 id="these-controls-are-complementary">These Controls Are Complementary</h2>
+
+<p>None of these devices is a substitute for another. A mature network deploys them as a system: NAC decides who gets on, the firewall controls where traffic can go, an IPS watches for attacks in-flight, a WAF protects web applications specifically, and proxies provide visibility and control over encrypted traffic in both directions.</p>
+
+<p>The CISSP exam occasionally tests whether you understand these boundaries — asking what a firewall cannot do, or why a WAF is needed even when an NGFW is present. The answer is always the same: each control has a defined scope, and no single device covers all of it.</p>
+
+<p>Understanding the scope of each control is what separates a security architect from someone who just knows what the acronyms stand for.</p>
+
+<hr />
+
+<p><em>Part of an ongoing series working through the CISSP Common Body of Knowledge. Post 61 covered network architecture and security zones. Post 63 will continue in Domain 4.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> A practical CISSP Domain 4 breakdown of firewalls, WAFs, proxies, IDS, IPS, and NAC — covering what each device does, what it cannot do, and how to select the right one on the exam.</p>
+
+<p><strong>SEO keywords:</strong> CISSP Domain 4 network security controls, firewall types CISSP exam, WAF vs firewall difference, IDS vs IPS CISSP, network access control NAC explained</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="Network Security" /><category term="Firewalls" /><category term="WAF" /><category term="IDS" /><category term="IPS" /><category term="NAC" /><category term="Proxy" /><category term="Network Controls" /><category term="Defense in Depth" /><category term="NGFW" /><summary type="html"><![CDATA[Post 61 mapped the zones. This post is about the devices that enforce them — and what each one actually does that the others don't. Firewalls, WAFs, proxies, IDS, IPS, and NAC each answer a different question about a different threat.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-network-components/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-network-components/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #61: Network Architecture Models and Security Zones</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-network-architecture-security-zones/" rel="alternate" type="text/html" title="CISSP #61: Network Architecture Models and Security Zones" /><published>2026-05-12T12:00:00+00:00</published><updated>2026-05-12T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-network-architecture-security-zones</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-network-architecture-security-zones/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-network-architecture-security-zones/hero.svg" alt="Network security zones diagram showing Internet, DMZ, Internal, Restricted, and Management zones with firewall-enforced boundaries" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Trust is explicit and bounded in a properly zoned network. Every boundary is a policy decision — not an assumption.</figcaption>
+</figure>
+
+<p>Most engineers know the OSI model as an interview warm-up. CISSP makes it operational.</p>
+
+<p>Domain 4 — Communication and Network Security — expects you to know not just what each layer does, but where things break and what you do about it. Layered onto that is the concept of security zones: the architectural expression of trust. When you design a network, you are not just routing traffic. You are deciding where trust begins and ends — and making that decision explicit.</p>
+
+<p>This post covers the OSI model through an attack lens, the rationale behind security zone design, how zone boundaries are enforced, and what the exam actually expects you to reason about.</p>
+
+<hr />
+
+<h2 id="the-osi-model-from-a-security-perspective">The OSI Model From a Security Perspective</h2>
+
+<p>Textbooks walk through OSI top to bottom. CISSP uses it differently — each layer is an attack surface, and each layer has a corresponding control set. The question is never “what does Layer 4 do?” It’s “what breaks at Layer 4 and what stops it?”</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-network-architecture-security-zones/inline-osi-attacks.svg" alt="OSI model layers annotated with common attacks at each layer and the primary controls that address them" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Attack surface and controls by layer. Most modern exploits target Layer 7, but lateral movement often exploits Layers 2 and 3.</figcaption>
+</figure>
+
+<h3 id="layer-7--application">Layer 7 — Application</h3>
+
+<p>This is where most modern attacks happen. SQL injection, XSS, CSRF, API abuse, credential stuffing, malware delivered over HTTP — the application layer is the primary battlefield. The control set is correspondingly broad: WAF, input validation, output encoding, rate limiting, TLS enforcement, secure session management. The exam frequently tests whether you can identify the appropriate control for an application-layer attack.</p>
+
+<h3 id="layer-6--presentation">Layer 6 — Presentation</h3>
+
+<p>Encoding, encryption, and data format translation. Attacks here include TLS stripping, SSL downgrade attacks, and malformed encoding crafted to bypass input parsers and reach the application in an unexpected state. Controls: enforce TLS 1.2 or higher, disable deprecated cipher suites, use certificate pinning in high-assurance contexts.</p>
+
+<h3 id="layer-5--session">Layer 5 — Session</h3>
+
+<p>Session establishment, management, and teardown. Session hijacking, replay attacks, and session fixation live here. Controls: strong session tokens with short expiry, TLS for session confidentiality, token binding where applicable.</p>
+
+<h3 id="layer-4--transport">Layer 4 — Transport</h3>
+
+<p>TCP and UDP. SYN floods exhaust connection state tables. Port scanning maps attack surface. TCP session hijacking exploits predictable sequence numbers. UDP amplification turns open resolvers into DDoS weapons. Stateful firewalls, SYN cookies, and port filtering are the primary controls at this layer.</p>
+
+<h3 id="layer-3--network">Layer 3 — Network</h3>
+
+<p>IP addressing and routing. IP spoofing allows source address falsification. ICMP-based attacks — ping floods, smurf attacks — consume bandwidth and processing. BGP route poisoning can redirect internet traffic at scale. Ingress and egress filtering (BCP38), RPKI for BGP, and explicit ACLs are the controls.</p>
+
+<h3 id="layer-2--data-link">Layer 2 — Data Link</h3>
+
+<p>Switching and MAC addressing. ARP spoofing poisons the ARP cache to redirect local traffic through an attacker’s host — a classic setup for man-in-the-middle. MAC flooding fills switch CAM tables, causing the switch to flood traffic as if it were a hub. VLAN hopping via double tagging allows a frame to traverse VLAN boundaries it should not reach. Controls: dynamic ARP inspection, 802.1X port authentication, port security, private VLANs.</p>
+
+<h3 id="layer-1--physical">Layer 1 — Physical</h3>
+
+<p>The wire itself. Wiretapping, signal interception, cable tapping, and physical insertion of rogue devices are Layer 1 threats. These require physical security controls: locked wiring closets, fiber optic cabling where interception risk is elevated, tamper detection, and cable management discipline.</p>
+
+<h3 id="the-tcpip-model">The TCP/IP Model</h3>
+
+<p>CISSP questions use both OSI and TCP/IP terminology. TCP/IP collapses the session, presentation, and application layers into a single Application layer, and the physical and data link layers into Network Access. The threat logic is the same — knowing which TCP/IP layer maps to which OSI layer is sufficient for exam purposes.</p>
+
+<hr />
+
+<h2 id="security-zones-the-architecture-of-trust">Security Zones: The Architecture of Trust</h2>
+
+<h3 id="what-is-a-security-zone">What Is a Security Zone?</h3>
+
+<p>A security zone is a logical grouping of network resources sharing a common trust level and a consistent policy boundary. The zone boundary is where security decisions happen — specifically, what traffic is allowed to cross, in which direction, and under what conditions.</p>
+
+<p>There is no canonical number of zones. The commonly used model covers five:</p>
+
+<ul>
+  <li><strong>Internet (Untrusted)</strong> — everything outside your control. No trust is assumed.</li>
+  <li><strong>DMZ (Demilitarized Zone)</strong> — systems that must be reachable from the internet but must not have direct access to the internal network: web servers, reverse proxies, email gateways, public-facing APIs, external DNS.</li>
+  <li><strong>Internal Network</strong> — trusted but not unrestricted. Standard user workstations, shared services, line-of-business applications.</li>
+  <li><strong>Restricted Zone</strong> — higher-assurance resources that require additional access control: databases containing sensitive data, financial systems, HR platforms, core application servers, PKI infrastructure.</li>
+  <li><strong>Management Zone</strong> — the out-of-band management plane. Firewalls, routers, switches, SIEM, privileged access workstations (PAWs), and jump servers. Completely separate from data-plane traffic.</li>
+</ul>
+
+<h3 id="why-zone-design-matters-for-cissp">Why Zone Design Matters for CISSP</h3>
+
+<p>The exam does not ask you to configure a firewall. It asks whether you understand the <em>rationale</em> behind zone design. The core idea is simple: <strong>trust is explicit and bounded, not inherited or assumed</strong>. Every zone boundary is a control point. Every crossing is a policy decision.</p>
+
+<p>The classic design failure is a DMZ that shares a single firewall with the internal network — one device, two interfaces, and a rule set that permits DMZ-to-internal connections. The exterior boundary is controlled. The interior boundary does not exist. When any DMZ host is compromised, the attacker is one firewall rule away from the internal network.</p>
+
+<p>Proper DMZ architecture uses two distinct firewall enforcement points:</p>
+
+<ol>
+  <li>Exterior firewall controls Internet-to-DMZ traffic</li>
+  <li>Interior firewall controls DMZ-to-Internal traffic</li>
+  <li>No direct path exists from the internet to the internal network</li>
+</ol>
+
+<p>The CISSP exam recognizes this as the dual-firewall screened-subnet architecture. It is the standard reference model for DMZ design.</p>
+
+<h3 id="trust-levels-and-default-posture">Trust Levels and Default Posture</h3>
+
+<p>Each zone boundary should have an explicit policy: what is allowed inbound, what is allowed outbound, what is denied by default, and what is logged. The CISSP default posture is <strong>deny-all, permit-by-exception</strong>. A zone that allows all traffic unless explicitly blocked is not a zone — it is a flat network with labels.</p>
+
+<hr />
+
+<h2 id="zone-transitions-how-boundaries-are-enforced">Zone Transitions: How Boundaries Are Enforced</h2>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-network-architecture-security-zones/inline-zone-transitions.svg" alt="Zone transition controls diagram showing what enforces each boundary: exterior firewall, interior firewall with IPS, and ACL/RBAC for restricted zones" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Each boundary requires a different enforcement mechanism. The interior firewall is often the more critical control — and the more frequently skipped one.</figcaption>
+</figure>
+
+<h3 id="firewalls">Firewalls</h3>
+
+<p>The primary enforcement mechanism at zone boundaries. Three types appear in CISSP questions:</p>
+
+<p><strong>Packet filtering</strong> inspects headers only — source IP, destination IP, port, protocol. Fast and scalable, but no session state. Cannot distinguish a legitimate response packet from an unsolicited one in the same flow.</p>
+
+<p><strong>Stateful inspection</strong> tracks session state. It knows whether a packet is part of an established, permitted connection. This stops a wide range of attacks that packet filters miss, including many SYN flood variants.</p>
+
+<p><strong>Application-layer gateway / next-generation firewall</strong> inspects content up to Layer 7. It can enforce application-layer policies, decrypt TLS for deep inspection, identify and block malware patterns in HTTP traffic, and apply identity-aware policy. This is the control for injection attacks transiting a zone boundary.</p>
+
+<p>The exam tests which firewall type is appropriate for which threat — not vendor configuration. A stateful firewall handles SYN floods better than a packet filter. A NGFW addresses application-layer attacks that a stateful firewall cannot inspect.</p>
+
+<h3 id="proxies">Proxies</h3>
+
+<p>Proxies enforce zone transitions by breaking the direct connection model entirely.</p>
+
+<p>A <strong>forward proxy</strong> receives requests from internal users, makes the actual request to the internet on their behalf, and returns the response. The internal host never establishes a direct IP connection to the external server. The proxy becomes an inspection point and an implicit zone enforcer.</p>
+
+<p>A <strong>reverse proxy</strong> does the opposite: it receives requests from the internet on behalf of internal servers. Public-facing traffic reaches the reverse proxy in the DMZ — never the application server itself.</p>
+
+<p>Both models introduce an inspection point, enforce zone separation, and provide logging at the boundary.</p>
+
+<h3 id="acls">ACLs</h3>
+
+<p>Router and switch ACLs operate at Layer 3 and Layer 4. They are coarse controls — permit or deny based on IP address, port, and protocol. They are not stateful, and they are not a substitute for firewall policy. But they are an important supplemental enforcement layer inside the network where full firewall deployment is not practical or necessary — particularly for internal-to-restricted zone separation.</p>
+
+<h3 id="nat-is-not-a-security-control">NAT Is Not a Security Control</h3>
+
+<p>NAT obscures internal IP addresses from external visibility, but that obscurity is not confidentiality and it is not access control. A compromised DMZ host can still reach internal resources if firewall rules permit it, regardless of NAT configuration. CISSP expects you to know this distinction: NAT is an addressing mechanism. Zone boundaries are enforced by policy, not address translation.</p>
+
+<hr />
+
+<h2 id="the-cissp-exam-mindset-trust-zones-are-business-decisions">The CISSP Exam Mindset: Trust Zones Are Business Decisions</h2>
+
+<p>The exam regularly constructs scenarios where the business context changes the correct answer. An architecture that looks technically sound might fail the question if it does not match the risk tolerance implied by the scenario.</p>
+
+<p>Common exam patterns on this topic:</p>
+
+<p><strong>A DMZ host can initiate connections to the internal database. What is the problem?</strong> — The interior firewall is absent, misconfigured, or its policy allows DMZ-originated traffic to reach the internal zone. This collapses the security benefit of the DMZ entirely.</p>
+
+<p><strong>Which firewall type should inspect HTTP traffic for injection patterns?</strong> — Application-layer firewall or next-generation firewall. Stateful inspection operates at Layer 4 and cannot interpret Layer 7 content.</p>
+
+<p><strong>Management traffic is traversing the production network. What is missing?</strong> — A dedicated out-of-band management zone. Management traffic for network devices should flow on a physically or logically separate channel, not alongside user data.</p>
+
+<p><strong>What does a jump server accomplish?</strong> — It centralizes privileged access to infrastructure, enforces authentication before any management plane activity, and provides a single auditable entry point. Every administrative session routes through it. That creates both a control and a record.</p>
+
+<p><strong>A question describes a “screened subnet.” What does that mean?</strong> — A screened subnet is another name for the dual-firewall DMZ architecture: a subnet between two firewalls where publicly accessible services are hosted, isolated from both the internet and the internal network.</p>
+
+<hr />
+
+<h2 id="what-this-means-in-practice">What This Means in Practice</h2>
+
+<p>If your work sits squarely in application development, network architecture can feel like someone else’s domain. But understanding zones changes the questions you ask when scoping a deployment.</p>
+
+<p>Where will this service live? What zone does it belong in based on its trust requirements and its exposure? What does it need to connect to? What should never be able to reach it directly? Does it belong in the DMZ because it faces the internet, or in the internal zone because it should only be called by other internal services?</p>
+
+<p>These are not architecture niceties. They are security requirements. Getting them wrong at design time is significantly harder to fix in production.</p>
+
+<p>Domain 4 is long. This is the starting point — the model that the rest of the domain hangs on. Everything else in network security: VPNs, wireless, protocols, cloud networking — maps back to this architecture and these trust decisions.</p>
+
+<hr />
+
+<p><em>Meta description: CISSP Domain 4 — network security zones, OSI attack layers, DMZ design, firewall types, and zone transition controls. Practical architecture coverage for both the exam and real system design.</em></p>
+
+<p><em>SEO keywords: CISSP Domain 4 network security, security zones DMZ design, OSI model attack layers, firewall types CISSP exam, network segmentation trust zones</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="Network Security" /><category term="OSI Model" /><category term="Security Zones" /><category term="DMZ" /><category term="Firewalls" /><category term="Network Segmentation" /><category term="Zero Trust" /><category term="Network Architecture" /><summary type="html"><![CDATA[Domain 4 starts with architecture, not protocols. Understanding where attacks live in the OSI stack and how security zones control trust transitions is foundational to both the CISSP exam and real network design.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-network-architecture-security-zones/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-network-architecture-security-zones/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #60: Session Management and Token Security - The Attack Surface After Login</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security/" rel="alternate" type="text/html" title="CISSP #60: Session Management and Token Security - The Attack Surface After Login" /><published>2026-05-11T12:30:00+00:00</published><updated>2026-05-11T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-session-management-cookie-jwt-token-security/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" alt="Session management and token security comparison between weak and defensible designs" class="blog-hero" /></p>
 
 <p>You can build a strong login flow and still lose the system ten minutes later.</p>
 
@@ -1857,243 +2145,4 @@ function getUser(userId) {
 
 <p><em>Meta description: CISSP Domain 8 increasingly requires software supply chain awareness. Learn what SBOMs are, what they do not solve alone, and how composition visibility, build integrity, and response discipline work together.</em></p>
 
-<p><em>SEO keyword ideas: software supply chain security CISSP, SBOM CISSP Domain 8, software bill of materials security, secure build pipeline integrity, dependency vulnerability response</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Software Supply Chain" /><category term="CISSP" /><category term="Software Supply Chain Security" /><category term="SBOM" /><category term="VEX" /><category term="SSDF" /><category term="Software Integrity" /><category term="Dependency Security" /><category term="Domain 8" /><category term="Secure Development" /><summary type="html"><![CDATA[Modern software is assembled from dependencies, build systems, repositories, and release pipelines that extend far beyond one engineering team. CISSP Domain 8 expects you to understand where software supply chain risk enters the picture, what SBOMs are good for, and why visibility alone does not create trust.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/" rel="alternate" type="text/html" title="CISSP #52: Software Vulnerabilities and Malicious Code — What the Exam Expects You to Recognize" /><published>2026-05-04T13:00:00+00:00</published><updated>2026-05-04T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-software-vulnerabilities-malicious-code/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" alt="CISSP #52: Software Vulnerabilities and Malicious Code — five categories with root causes and controls" class="blog-hero" /></p>
-
-<p>Every security incident eventually traces back to code that did something it should never have been allowed to do. A function read past the end of a buffer. A query accepted unescaped user input. A file was renamed between the time it was checked and the time it was used. A developer left a debugging backdoor in place and shipped it to production.</p>
-
-<p>Post #51 covered the Secure SDLC — how security belongs in every phase of development, from requirements through maintenance. This post goes one level deeper into the code itself. Before you can build software that resists attack, you have to understand the specific failure modes that attackers exploit.</p>
-
-<p>CISSP Domain 8 expects you to recognize the major vulnerability categories, understand their root causes, and reason about appropriate controls. The exam does not ask you to write exploit code. It asks you to think like someone responsible for a system’s security posture — and that means knowing what can go wrong, and why certain defenses work where others do not.</p>
-
-<h2 id="the-categories-domain-8-cares-about">The Categories Domain 8 Cares About</h2>
-
-<p>Domain 8 organizes software vulnerabilities into recognizable patterns. The specific exam objectives map to:</p>
-
-<ul>
-  <li>Memory management errors</li>
-  <li>Injection flaws</li>
-  <li>Web application vulnerabilities</li>
-  <li>Logic flaws, including race conditions</li>
-  <li>Malicious code</li>
-</ul>
-
-<p>Each category has a distinct root cause and a corresponding set of controls. Understanding the connection between root cause and control is what the exam is actually testing.</p>
-
-<h2 id="memory-management-errors">Memory Management Errors</h2>
-
-<p>Memory management vulnerabilities are among the oldest and most consequential class of software defects. The canonical example is the buffer overflow: a program writes data to a memory buffer without checking whether the data exceeds the buffer’s capacity, allowing an attacker to overwrite adjacent memory — including return addresses, function pointers, or other control data.</p>
-
-<p>The consequences range from application crash to arbitrary code execution. In languages like C and C++, developers manage memory manually. There is no automatic bounds checking. A single unchecked <code class="language-plaintext highlighter-rouge">strcpy</code> call is sufficient to introduce a critical vulnerability. Decades of security incidents — from early worm exploits to embedded system attacks — have root-caused to exactly this pattern.</p>
-
-<p><strong>Heap spraying</strong> is a related technique where an attacker fills large regions of heap memory with shellcode or exploit payloads, increasing the probability that a memory corruption error lands in attacker-controlled memory. <strong>Use-after-free</strong> vulnerabilities occur when a program continues to use a memory reference after the underlying memory has been freed, potentially pointing at attacker-controlled content by the time it is accessed.</p>
-
-<p><strong>What CISSP expects</strong>: Understand the root cause (absent bounds checking, manual memory management), the consequence (arbitrary code execution), and the primary control responses — input validation, safe API selection, use of memory-safe languages, and operating system mitigations like Address Space Layout Randomization (ASLR) and Data Execution Prevention (DEP/NX).</p>
-
-<h2 id="injection-flaws">Injection Flaws</h2>
-
-<p>Injection flaws share a common root cause: untrusted input is interpreted as a command rather than as data. The application fails to maintain a clear boundary between code and content.</p>
-
-<p>SQL injection is the most well-known example. A query constructed by concatenating user input directly into a SQL string can be manipulated to change the query’s structure entirely. The attacker’s input escapes the data context and enters the command context. The same structural problem applies to OS command injection (user input passed unsanitized to a shell), LDAP injection (user input embedded in directory queries), and XML injection (user input embedded in XML documents without proper encoding).</p>
-
-<p>The CISSP exam framing here is important. <strong>Parameterized queries and prepared statements</strong> are the correct control for SQL injection — not input sanitization. Sanitization attempts to enumerate and remove dangerous characters. Parameterization eliminates the structural problem: the query structure is fixed, and user input is always treated as data, never as command. The exam may test this distinction directly.</p>
-
-<p>Command injection is often more severe than SQL injection because the attacker gains access to the operating system’s command interpreter, not just the database. The control principle is the same: never pass untrusted input to an interpreter. When that is architecturally unavoidable, strict allowlist validation is the minimum acceptable control — not a blocklist.</p>
-
-<h2 id="web-application-vulnerabilities">Web Application Vulnerabilities</h2>
-
-<p>Web application vulnerabilities form a specific subcategory of injection, but they operate at the browser and session layer rather than the database or operating system layer.</p>
-
-<p><strong>Cross-site scripting (XSS)</strong> occurs when an application reflects or stores user-supplied content in a web page without proper output encoding. A malicious actor injects a script that executes in other users’ browsers, potentially stealing session tokens, redirecting navigation, or performing actions on behalf of the victim.</p>
-
-<p>There are two primary forms: <strong>reflected XSS</strong> (the payload is embedded in a URL and reflected immediately in the response) and <strong>stored XSS</strong> (the payload is persisted in the application’s data store and delivered to all users who view the affected content). Stored XSS is generally more dangerous because it does not require the victim to click a crafted link — the payload executes on normal navigation.</p>
-
-<p><strong>Cross-site request forgery (CSRF)</strong> is different in character. The attacker does not inject script. Instead, they trick an authenticated user’s browser into making unintended requests to a site where the user has an active session. The browser helpfully includes the user’s session cookies, so the server sees what appears to be a legitimate request from the authenticated user. The control is an unpredictable, per-request token — a CSRF token — that the attacker cannot know, combined with same-origin validation and the <code class="language-plaintext highlighter-rouge">SameSite</code> cookie attribute.</p>
-
-<p><strong>What CISSP expects</strong>: Know the difference between XSS (attacker injects script that runs in the victim’s browser) and CSRF (attacker tricks the victim’s browser into making a request on their behalf). Know the primary controls: output encoding for XSS, CSRF tokens and <code class="language-plaintext highlighter-rouge">SameSite</code> cookie attributes for CSRF.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/inline-1.svg" alt="CISSP exam framing: vulnerability categories, root causes, primary controls, and exam focus" class="blog-inline" /></p>
-
-<h2 id="logic-flaws-and-race-conditions">Logic Flaws and Race Conditions</h2>
-
-<p>Logic flaws are harder to categorize because they do not follow a single structural pattern. They represent errors in the application’s reasoning about state, time, or authorization — flaws that are correct in isolation but dangerous in combination.</p>
-
-<p><strong>Race conditions</strong> occur when a program’s behavior depends on the sequence or timing of events that are not properly controlled. The classic CISSP example is the <strong>Time-of-Check to Time-of-Use (TOC/TOU)</strong> vulnerability: a program checks a condition — is this file accessible, is this account balance sufficient, does this user have this permission — and then uses the result of that check some time later. If an attacker can change the checked resource in the window between check and use, the program acts on a false assumption.</p>
-
-<p>TOC/TOU vulnerabilities appear in file system operations, financial transaction logic, authentication flows, and anywhere shared mutable state can be modified by multiple actors concurrently. The architectural fix is atomicity: ensure that the check and the use are inseparable, or that the resource cannot be changed between them. Database transactions with appropriate isolation levels address this in data contexts. In file system operations, using file descriptors rather than file paths after a permission check reduces the exploitable window.</p>
-
-<p><strong>The exam mindset</strong>: Race conditions are not limited to systems programming. They appear in distributed systems, concurrent application logic, and any context where state can be modified between two operations. Recognizing the TOC/TOU pattern in a scenario description is the primary exam skill here.</p>
-
-<h2 id="malicious-code">Malicious Code</h2>
-
-<p>Malicious code is software intentionally designed to cause harm, enable unauthorized access, or both. CISSP Domain 8 distinguishes between types, and the exam expects you to recognize each.</p>
-
-<p><strong>Backdoors</strong> are unauthorized access mechanisms embedded in code — sometimes planted by attackers who have already compromised a system, sometimes introduced by developers during testing and never removed. The security controls are code review, change management, and binary integrity monitoring. Signed builds and reproducible build processes help establish that what is deployed matches what was reviewed.</p>
-
-<p><strong>Logic bombs</strong> are malicious code segments that execute when a specific condition is met — a particular date, the absence of a user account, a specific sequence of inputs. They are frequently planted by insiders and designed to cause damage after the attacker has left the organization. Detection requires code review, change control, and behavioral monitoring; a logic bomb may sit dormant in a codebase for months before triggering.</p>
-
-<p><strong>Trojan horses</strong> carry a hidden malicious payload alongside apparent legitimate functionality. The user installs what appears to be a useful application; they also install whatever the attacker embedded. The control response involves software provenance verification, supply chain controls, and code signing — treating all third-party software as untrusted until integrity is confirmed.</p>
-
-<p><strong>Rootkits</strong> are designed to conceal other malicious software or unauthorized access by modifying operating system behavior at a low level — potentially subverting the very tools used to detect them. Detection typically requires booting from trusted external media and scanning from a known-good environment, because the rootkit may have compromised the host’s inspection capabilities.</p>
-
-<p><strong>What CISSP expects</strong>: Understand the classification and characteristics of each type. Know that detection and response strategies differ from prevention strategies, and that supply chain integrity is a critical control — malicious code is increasingly introduced through dependencies and third-party components, not only through direct system compromise.</p>
-
-<h2 id="how-the-exam-tests-these-topics">How the Exam Tests These Topics</h2>
-
-<p>The CISSP exam is not a vocabulary test. Questions about software vulnerabilities are typically scenario-based. You will be asked to identify the vulnerability type in a described situation, select the most appropriate control from a set of options, or explain why one defense is preferable to another.</p>
-
-<p>Common patterns to expect:</p>
-
-<ul>
-  <li>A scenario describes input being reflected in a page without encoding — this is XSS, and the control is output encoding, not input filtering alone.</li>
-  <li>A scenario describes a query built from concatenated user input — this is injection, and parameterization is the correct control, not sanitization.</li>
-  <li>A scenario describes a file operation that reads permissions and then opens the file — TOC/TOU is the pattern, and the answer involves atomicity or descriptor-based access.</li>
-  <li>A scenario asks about code found in a production deployment that was not present in the approved design — this describes a backdoor, and the response involves integrity verification and code review processes.</li>
-</ul>
-
-<p>The exam rewards the ability to connect root cause to control, and to distinguish between controls that address symptoms versus controls that eliminate the structural problem.</p>
-
-<h2 id="the-engineering-perspective">The Engineering Perspective</h2>
-
-<p>These vulnerability categories are not exotic or rare. They recur across decades because the underlying structural problems — unvalidated input, manual memory management, race-prone state logic, absent integrity verification — are easy to introduce and require deliberate effort to prevent.</p>
-
-<p>The CISSP framework asks you to think about these problems at a category level: what class of flaw is this, what is its root cause, and what class of control addresses that root cause? That is also a useful way to think as an engineer. Not every code review surfaces a known CVE. But an engineer who recognizes injection patterns, thinks about memory safety tradeoffs in systems code, and considers TOC/TOU risks in concurrent logic is building something materially more defensible than one who does not.</p>
-
-<p>If you are following this series, you have been building toward this view steadily: security is an engineering property, not an audit result. Understanding vulnerability categories is the technical foundation of that stance.</p>
-
-<hr />
-
-<p><em>Meta description: CISSP Domain 8 requires recognizing software vulnerability categories — buffer overflows, injection flaws, XSS, CSRF, race conditions, and malicious code. This post explains each root cause and the controls the exam expects you to apply.</em></p>
-
-<p><em>SEO keywords: CISSP software vulnerabilities, buffer overflow CISSP, injection flaws Domain 8, XSS CSRF CISSP exam, malicious code CISSP study</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Software Vulnerabilities" /><category term="Buffer Overflow" /><category term="Injection" /><category term="XSS" /><category term="CSRF" /><category term="Malicious Code" /><category term="Domain 8" /><category term="Application Security" /><summary type="html"><![CDATA[Every security incident traces back to code that did something it should never have been allowed to do. CISSP Domain 8 expects you to recognize the major vulnerability categories — and understand why certain defenses work where others fail.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-vulnerabilities-malicious-code/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/" rel="alternate" type="text/html" title="CISSP #51: Secure SDLC — Security Belongs in Every Phase, Not Just Testing" /><published>2026-05-04T12:00:00+00:00</published><updated>2026-05-04T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-sdlc-security-every-phase/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" alt="CISSP #51 Secure SDLC: Security at every phase from requirements through maintenance" class="blog-hero" /></p>
-
-<p>Developers do not intend to ship vulnerabilities. They intend to ship features. Security enters the picture later — often much later — when a test team runs a scan, a penetration tester finds an injection flaw, or a customer’s security team sends an uncomfortable questionnaire.</p>
-
-<p>The Secure Software Development Lifecycle exists to change that structural problem. From the CISSP perspective, this is Domain 8 territory: Software Development Security. The core idea is straightforward. Security requirements, reviews, and controls belong in every phase of development — not as a final checkpoint that gates release.</p>
-
-<p>If you have followed this series through privacy by design, threat modeling, and defense in depth, the Secure SDLC is where those concepts land inside a working development process.</p>
-
-<h2 id="what-domain-8-expects-you-to-reason-about">What Domain 8 Expects You to Reason About</h2>
-
-<p>The CISSP exam is not asking you to recite a tool list. Domain 8 tests your ability to think about security at the organizational and process level. Where does security get embedded in the development lifecycle? Who owns it at each phase? What controls exist, and what happens when they are absent?</p>
-
-<p>You need to understand:</p>
-
-<ul>
-  <li>How security requirements connect to business risk</li>
-  <li>Why testing alone does not produce secure software</li>
-  <li>What controls belong at design, implementation, testing, and deployment</li>
-  <li>How software assurance differs from a penetration test</li>
-  <li>What maturity looks like versus just running a scanner</li>
-</ul>
-
-<p>The exam mindset: secure software is engineered from requirements onward, not inspected into existence at the end.</p>
-
-<h2 id="phase-1-requirements">Phase 1: Requirements</h2>
-
-<p>Security that is not required is optional. That is the practical problem with skipping security at requirements time.</p>
-
-<p>Functional requirements define what the system must do. Security requirements define what the system must not allow. Both belong in the same document, reviewed by the same stakeholders, before a single line of code is written.</p>
-
-<p>This means identifying data sensitivity early — what personal, financial, or operational data will this system handle? Classification at requirements time drives protection requirements throughout the lifecycle. It also means writing abuse cases alongside use cases. A login use case has a corresponding brute-force abuse case. An API endpoint has a corresponding parameter manipulation case. Regulatory and compliance requirements — GDPR, HIPAA, PCI-DSS — do not emerge during testing. They are constraints from day one.</p>
-
-<p>A security requirement captured at this phase costs a conversation. The same requirement discovered during a production penetration test can cost weeks of rework, customer communication, and potential regulatory attention.</p>
-
-<h2 id="phase-2-design">Phase 2: Design</h2>
-
-<p>Design is where security architecture becomes concrete.</p>
-
-<p>This is the phase for threat modeling. The questions here are structural: what are the trust boundaries, where is authentication enforced, how are sensitive data flows isolated, what does the attack surface look like? Design-phase security work surfaces issues while they are still architectural decisions rather than code changes.</p>
-
-<p>Key design-phase controls include trust boundary analysis — which components trust which other components, and on what basis — and privilege minimization: does every component request only the access it actually needs? Secure defaults also belong here. Are error states, unconfigured states, and edge cases fail-safe? What does the system do when a dependency is unavailable?</p>
-
-<p>Dependency choices made at design time — frameworks, libraries, external APIs — carry their own risk surfaces. Those choices are cheaper to revisit before implementation begins than after a product is in production.</p>
-
-<h2 id="phase-3-implementation">Phase 3: Implementation</h2>
-
-<p>This is where most developers spend most of their time, and where many vulnerabilities are introduced.</p>
-
-<p>Secure coding is not a style preference. It is the application of well-established knowledge about how software fails under adversarial conditions. OWASP maintains the most widely referenced taxonomy of web application vulnerabilities. Language-specific secure coding standards exist for C, C++, Java, .NET, Python, and others. Developers who understand common failure patterns write substantially different code than those who do not.</p>
-
-<p>Beyond developer knowledge, implementation-phase security controls include:</p>
-
-<p><strong>Static Application Security Testing (SAST)</strong> runs against source code without executing the application. It catches common patterns — injection sinks, hardcoded credentials, dangerous API usage, missing input validation. SAST can run in a local development environment or as a CI/CD pipeline gate. It produces false positives and requires tuning, but the feedback loop is fast enough to be useful during active development.</p>
-
-<p><strong>Software Composition Analysis (SCA)</strong> examines third-party dependencies for known vulnerabilities. When a developer adds a library, that library brings its entire dependency tree into the application. SCA tools cross-reference those dependencies against public vulnerability databases. This matters more than it once did: software supply chain attacks have made the dependency layer a primary attack vector, and a secure application can ship compromised components without any developer writing a vulnerable line.</p>
-
-<p><strong>Code review</strong> is a control, not just a quality activity. A peer reviewer with a security lens catches logic flaws, authorization gaps, and subtle trust assumptions that automated tools miss. It is also where separation of duties begins in development — the person who writes the code should not be the only person who reviews it.</p>
-
-<h2 id="phase-4-testing">Phase 4: Testing</h2>
-
-<p>Testing is where many organizations first encounter security — which is already late, but far better than finding vulnerabilities in production.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/inline-1.svg" alt="Chart showing relative cost to fix security defects grows significantly in later SDLC phases" class="blog-inline" /></p>
-
-<p><strong>Dynamic Application Security Testing (DAST)</strong> runs against a live application and exercises it like an attacker would. It finds vulnerabilities that require execution to surface — misconfigurations, authentication bypass issues, runtime injection points. DAST does not require access to source code, which makes it applicable to third-party and black-box components.</p>
-
-<p><strong>Penetration testing</strong> is a deeper, human-driven evaluation. A skilled tester explores the application and infrastructure for chains of vulnerabilities that automated tools miss — logical access control flaws, business logic abuse, privilege escalation paths. This is not a replacement for SAST and DAST; it is a complement that exercises judgment where tools cannot.</p>
-
-<p><strong>Security regression testing</strong> ensures that previously fixed vulnerabilities do not return as the codebase evolves. It belongs in the test suite alongside functional regression tests, treated as a permanent quality baseline rather than a one-time audit artifact.</p>
-
-<p>The exam distinguishes clearly between these types of testing. Knowing which technique is suited to which class of problem — and what each cannot find — is Domain 8 fundamentals.</p>
-
-<h2 id="phase-5-deployment">Phase 5: Deployment</h2>
-
-<p>A secure application can be deployed insecurely. Deployment is where security controls are often overlooked because the focus has shifted to availability and configuration correctness.</p>
-
-<p><strong>Secure configuration management</strong> applies at deployment time. Default credentials must be changed, unnecessary services disabled, and hardening applied. For many platforms, Center for Internet Security benchmarks provide a practical starting point.</p>
-
-<p><strong>Secrets management</strong> is a deployment-phase control with implementation roots. API keys, database passwords, and certificates must not live in source code, configuration files checked into version control, or environment variables visible to unauthorized parties. A dedicated secrets management service handles rotation and access control outside the application’s codebase.</p>
-
-<p><strong>Infrastructure as code scanning</strong> applies when infrastructure is defined programmatically. If a Terraform or CloudFormation template misconfigures a storage bucket or network rule, that misconfiguration can be caught before deployment rather than after.</p>
-
-<p><strong>Deployment approval controls</strong> bring separation of duties to operations. The developer who writes code should not have unilateral authority to deploy it to production. A second set of eyes — automated, human, or both — is a control, not bureaucracy.</p>
-
-<h2 id="phase-6-operations-and-maintenance">Phase 6: Operations and Maintenance</h2>
-
-<p>Secure SDLC does not end at deployment. Software runs in an environment that changes, and vulnerabilities are discovered in components that were considered secure when originally assessed.</p>
-
-<p>Maintenance-phase security includes monitoring for newly disclosed CVEs affecting dependencies and platform components, risk-based patch prioritization, application-level security monitoring integrated with broader detection infrastructure, and explicit end-of-life planning. Software components and platforms reach end of support. Continuing to run unsupported components is a risk decision that must be made explicitly, not by organizational inertia.</p>
-
-<p>From a CISSP perspective, operations-phase security closes the loop. The lifecycle is not a waterfall ending at deployment — it is continuous.</p>
-
-<h2 id="shift-left-the-principle-and-its-limits">Shift Left: The Principle and Its Limits</h2>
-
-<p>“Shift left” is the principle that security activities should move earlier in the SDLC, toward the left side of a development timeline. The directional logic is sound: remediating a security defect gets progressively more expensive the later it is discovered. A requirements-phase issue is a conversation. A production-phase issue involves incident response, customer notification, and in some cases regulatory scrutiny.</p>
-
-<p>Shift left does not mean handing all security responsibility to developers and eliminating security teams. It means security expertise must be available at every phase, automated controls must provide fast feedback where possible, and developers must have the tools and knowledge to avoid common mistakes. Security teams shift their focus toward building those capabilities rather than being the sole reviewers at the end.</p>
-
-<p>The exam tests whether you understand this tradeoff. Security shifted left is more cost-effective. Security concentrated only at testing or production is reactive.</p>
-
-<h2 id="exam-mindset-vs-real-practice">Exam Mindset vs. Real Practice</h2>
-
-<p>The CISSP exam frequently models the SDLC in a sequential, idealized form. Real development is messier. Agile sprints collapse phases. Continuous deployment means code moves to production multiple times a day. Some teams have no formal SDLC at all.</p>
-
-<p>The underlying principles apply regardless of methodology. In Agile development, security requirements belong in the backlog and sprint planning. Threat modeling happens at architecture boundaries and when significant features change. SAST runs on every pull request. Penetration tests happen on regular release cycles aligned to risk.</p>
-
-<p>The exam also consistently tests whether you recognize that security cannot be retrofitted cheaply. This is a thread that runs through multiple domains: defense in depth, privacy by design, secure design principles, and secure SDLC are all expressions of the same idea — build in, do not bolt on.</p>
-
-<h2 id="software-assurance-as-an-outcome">Software Assurance as an Outcome</h2>
-
-<p>Software assurance is the goal underneath all of this: building justified confidence that software behaves as intended and nothing else. It is not a tool you buy or a checklist you complete. It emerges from how systematically security is integrated into process and culture across every phase.</p>
-
-<p>Organizations with mature software assurance programs find fewer vulnerabilities in production, respond more efficiently when vulnerabilities are reported, and operate with a clearer picture of their own risk. They have processes for each phase rather than heroes who fix things at the end.</p>
-
-<p>From a CISSP perspective, that is what Domain 8 is pointing toward. Not the names of tools. The structure of a process that produces trustworthy software by design.</p>
-
-<hr />
-
-<p><em>Part of an ongoing CISSP study series. If Secure SDLC connects to your current work, a useful exercise is auditing your own pipeline: where are the security gates, and where are the gaps?</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> Secure SDLC integrates security requirements, code review, static and dynamic analysis, and deployment controls into every development phase. This CISSP Domain 8 guide explains what security work belongs at each stage and why testing alone is never enough.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>Secure software development lifecycle CISSP</li>
-  <li>CISSP Domain 8 software development security</li>
-  <li>SAST DAST software security testing</li>
-  <li>shift left security development</li>
-  <li>software assurance secure SDLC</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Secure SDLC" /><category term="CISSP" /><category term="Secure SDLC" /><category term="Software Development Security" /><category term="SAST" /><category term="DAST" /><category term="DevSecOps" /><category term="Domain 8" /><category term="Software Assurance" /><summary type="html"><![CDATA[Most teams treat security as a testing-phase concern. CISSP Domain 8 has a different view: secure software is engineered from requirements onward. This guide walks every SDLC phase and shows what security work belongs at each one.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-sdlc-security-every-phase/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><em>SEO keyword ideas: software supply chain security CISSP, SBOM CISSP Domain 8, software bill of materials security, secure build pipeline integrity, dependency vulnerability response</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Software Supply Chain" /><category term="CISSP" /><category term="Software Supply Chain Security" /><category term="SBOM" /><category term="VEX" /><category term="SSDF" /><category term="Software Integrity" /><category term="Dependency Security" /><category term="Domain 8" /><category term="Secure Development" /><summary type="html"><![CDATA[Modern software is assembled from dependencies, build systems, repositories, and release pipelines that extend far beyond one engineering team. CISSP Domain 8 expects you to understand where software supply chain risk enters the picture, what SBOMs are good for, and why visibility alone does not create trust.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-software-supply-chain-security-sboms/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
