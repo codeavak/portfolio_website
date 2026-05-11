@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgosi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="820" height="560" fill="url(#bgosi)" rx="14"/>
+  <text x="410" y="36" text-anchor="middle" fill="#f1f5f9" font-size="16" font-weight="700">OSI Model — Where Attacks Live</text>
+  <text x="410" y="54" text-anchor="middle" fill="#64748b" font-size="11">CISSP Domain 4 frames each layer as an attack surface, not just a protocol spec.</text>
+
+  <!-- Column headers -->
+  <text x="60" y="82" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Layer</text>
+  <text x="155" y="82" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Name</text>
+  <text x="330" y="82" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Common Attacks</text>
+  <text x="620" y="82" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Primary Controls</text>
+
+  <!-- Layer rows — ordered 7 to 1 top-down -->
+
+  <!-- L7 Application -->
+  <rect x="18" y="92" width="784" height="52" rx="5" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="60" y="122" text-anchor="middle" fill="#93c5fd" font-size="18" font-weight="700">7</text>
+  <text x="155" y="113" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600">Application</text>
+  <text x="155" y="130" text-anchor="middle" fill="#64748b" font-size="9">HTTP, DNS, SMTP…</text>
+  <text x="330" y="113" text-anchor="middle" fill="#fca5a5" font-size="10">SQL injection · XSS · CSRF · API abuse</text>
+  <text x="330" y="130" text-anchor="middle" fill="#fca5a5" font-size="10">credential stuffing · malware delivery</text>
+  <text x="620" y="113" text-anchor="middle" fill="#86efac" font-size="10">WAF · input validation · output encoding</text>
+  <text x="620" y="130" text-anchor="middle" fill="#86efac" font-size="10">rate limiting · TLS enforcement</text>
+
+  <!-- L6 Presentation -->
+  <rect x="18" y="150" width="784" height="52" rx="5" fill="#1a2a3f" stroke="#6366f1" stroke-width="1"/>
+  <text x="60" y="180" text-anchor="middle" fill="#a5b4fc" font-size="18" font-weight="700">6</text>
+  <text x="155" y="171" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="600">Presentation</text>
+  <text x="155" y="188" text-anchor="middle" fill="#64748b" font-size="9">TLS, encoding, format</text>
+  <text x="330" y="171" text-anchor="middle" fill="#fca5a5" font-size="10">TLS stripping · SSL downgrade · cipher abuse</text>
+  <text x="330" y="188" text-anchor="middle" fill="#fca5a5" font-size="10">malformed encoding to bypass parsers</text>
+  <text x="620" y="171" text-anchor="middle" fill="#86efac" font-size="10">Enforce TLS 1.2+ · cert pinning</text>
+  <text x="620" y="188" text-anchor="middle" fill="#86efac" font-size="10">disable weak cipher suites</text>
+
+  <!-- L5 Session -->
+  <rect x="18" y="208" width="784" height="52" rx="5" fill="#1a1f3f" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="60" y="238" text-anchor="middle" fill="#c4b5fd" font-size="18" font-weight="700">5</text>
+  <text x="155" y="229" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600">Session</text>
+  <text x="155" y="246" text-anchor="middle" fill="#64748b" font-size="9">Session setup, teardown</text>
+  <text x="330" y="229" text-anchor="middle" fill="#fca5a5" font-size="10">Session hijacking · replay attacks</text>
+  <text x="330" y="246" text-anchor="middle" fill="#fca5a5" font-size="10">session fixation</text>
+  <text x="620" y="229" text-anchor="middle" fill="#86efac" font-size="10">Strong session tokens · short expiry</text>
+  <text x="620" y="246" text-anchor="middle" fill="#86efac" font-size="10">TLS · token binding</text>
+
+  <!-- L4 Transport -->
+  <rect x="18" y="266" width="784" height="52" rx="5" fill="#1a2f1a" stroke="#22c55e" stroke-width="1"/>
+  <text x="60" y="296" text-anchor="middle" fill="#86efac" font-size="18" font-weight="700">4</text>
+  <text x="155" y="287" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600">Transport</text>
+  <text x="155" y="304" text-anchor="middle" fill="#64748b" font-size="9">TCP · UDP</text>
+  <text x="330" y="287" text-anchor="middle" fill="#fca5a5" font-size="10">SYN flood · port scanning</text>
+  <text x="330" y="304" text-anchor="middle" fill="#fca5a5" font-size="10">TCP session hijacking · UDP amplification</text>
+  <text x="620" y="287" text-anchor="middle" fill="#86efac" font-size="10">Stateful firewall · SYN cookies</text>
+  <text x="620" y="304" text-anchor="middle" fill="#86efac" font-size="10">port filtering · rate limiting</text>
+
+  <!-- L3 Network -->
+  <rect x="18" y="324" width="784" height="52" rx="5" fill="#2a2a10" stroke="#eab308" stroke-width="1"/>
+  <text x="60" y="354" text-anchor="middle" fill="#fde047" font-size="18" font-weight="700">3</text>
+  <text x="155" y="345" text-anchor="middle" fill="#fde047" font-size="12" font-weight="600">Network</text>
+  <text x="155" y="362" text-anchor="middle" fill="#64748b" font-size="9">IP routing · ICMP</text>
+  <text x="330" y="345" text-anchor="middle" fill="#fca5a5" font-size="10">IP spoofing · ICMP attacks · smurf</text>
+  <text x="330" y="362" text-anchor="middle" fill="#fca5a5" font-size="10">BGP / RIP route poisoning</text>
+  <text x="620" y="345" text-anchor="middle" fill="#86efac" font-size="10">Ingress/egress filtering (BCP38)</text>
+  <text x="620" y="362" text-anchor="middle" fill="#86efac" font-size="10">RPKI · ACLs · router hardening</text>
+
+  <!-- L2 Data Link -->
+  <rect x="18" y="382" width="784" height="52" rx="5" fill="#2a1a10" stroke="#f97316" stroke-width="1"/>
+  <text x="60" y="412" text-anchor="middle" fill="#fed7aa" font-size="18" font-weight="700">2</text>
+  <text x="155" y="403" text-anchor="middle" fill="#fed7aa" font-size="12" font-weight="600">Data Link</text>
+  <text x="155" y="420" text-anchor="middle" fill="#64748b" font-size="9">Ethernet · MAC · VLANs</text>
+  <text x="330" y="403" text-anchor="middle" fill="#fca5a5" font-size="10">ARP spoofing · MAC flooding</text>
+  <text x="330" y="420" text-anchor="middle" fill="#fca5a5" font-size="10">VLAN hopping (double tagging)</text>
+  <text x="620" y="403" text-anchor="middle" fill="#86efac" font-size="10">Dynamic ARP inspection · 802.1X</text>
+  <text x="620" y="420" text-anchor="middle" fill="#86efac" font-size="10">port security · private VLANs</text>
+
+  <!-- L1 Physical -->
+  <rect x="18" y="440" width="784" height="52" rx="5" fill="#2a1010" stroke="#ef4444" stroke-width="1"/>
+  <text x="60" y="470" text-anchor="middle" fill="#fca5a5" font-size="18" font-weight="700">1</text>
+  <text x="155" y="461" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">Physical</text>
+  <text x="155" y="478" text-anchor="middle" fill="#64748b" font-size="9">Cables · hardware · signals</text>
+  <text x="330" y="461" text-anchor="middle" fill="#fca5a5" font-size="10">Wiretapping · signal interception</text>
+  <text x="330" y="478" text-anchor="middle" fill="#fca5a5" font-size="10">device insertion · jamming</text>
+  <text x="620" y="461" text-anchor="middle" fill="#86efac" font-size="10">Physical access controls · fiber links</text>
+  <text x="620" y="478" text-anchor="middle" fill="#86efac" font-size="10">locked wiring closets · tamper detection</text>
+
+  <!-- Dividers -->
+  <line x1="100" y1="92" x2="100" y2="492" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="210" y1="92" x2="210" y2="492" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="472" y1="92" x2="472" y2="492" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Note -->
+  <text x="410" y="525" text-anchor="middle" fill="#334155" font-size="10">CISSP exam: questions are situational — "which layer does this attack target?" or "which control addresses this threat?"</text>
+  <text x="410" y="542" text-anchor="middle" fill="#334155" font-size="10">TCP/IP model collapses layers 5–7 into Application and layers 1–2 into Network Access — the threat logic maps directly.</text>
+</svg>
