@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">mTLS and certificate pinning control decisions</title>
+  <desc id="desc">Decision matrix for when to use server-only TLS, mTLS, and certificate pinning with operational risk notes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="760" fill="url(#bg)"/>
+
+  <text x="60" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="42" fill="#7c2d12" font-weight="700">Control Selection Matrix: Server TLS, mTLS, and Pinning</text>
+
+  <rect x="60" y="120" width="1280" height="76" rx="10" ry="10" fill="#7c2d12"/>
+  <text x="90" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#fffbeb" font-weight="700">Scenario</text>
+  <text x="520" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#fffbeb" font-weight="700">Primary control</text>
+  <text x="910" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#fffbeb" font-weight="700">Operational caution</text>
+
+  <rect x="60" y="196" width="1280" height="98" fill="#fff" stroke="#fdba74"/>
+  <text x="90" y="236" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Public web app, broad consumer devices</text>
+  <text x="520" y="236" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Server-auth TLS + strong cert lifecycle</text>
+  <text x="910" y="236" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Do not force client cert UX on consumers</text>
+  <text x="910" y="268" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7c2d12">Use MFA and app-layer controls instead</text>
+
+  <rect x="60" y="294" width="1280" height="110" fill="#fff" stroke="#fdba74"/>
+  <text x="90" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Service-to-service traffic in one org boundary</text>
+  <text x="520" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">mTLS with automated issuance/rotation</text>
+  <text x="910" y="338" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Plan cert renewal and trust distribution</text>
+  <text x="910" y="370" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7c2d12">Identity outages can become availability outages</text>
+
+  <rect x="60" y="404" width="1280" height="110" fill="#fff" stroke="#fdba74"/>
+  <text x="90" y="448" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">High-assurance managed mobile client + API</text>
+  <text x="520" y="448" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Selective SPKI pinning + backup pins</text>
+  <text x="910" y="448" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Broken pin sets can create total lockout</text>
+  <text x="910" y="480" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7c2d12">Require safe rollback and key agility</text>
+
+  <rect x="60" y="514" width="1280" height="120" fill="#fff" stroke="#fdba74"/>
+  <text x="90" y="558" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Enterprise network with TLS inspection proxy</text>
+  <text x="520" y="558" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Server TLS + explicit inspection governance</text>
+  <text x="910" y="558" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#431407">Pinning often breaks interception workflows</text>
+  <text x="910" y="590" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7c2d12">Match control to legal and business policy</text>
+
+  <text x="60" y="706" font-family="Segoe UI, Arial, sans-serif" font-size="27" fill="#9a3412" font-weight="700">CISSP decision rule: choose the control that reduces mission risk without creating fragile operations.</text>
+</svg>

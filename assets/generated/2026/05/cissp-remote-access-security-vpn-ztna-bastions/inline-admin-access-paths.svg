@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Privileged remote administration path with bastion and management plane isolation</title>
+  <desc id="desc">Diagram showing why administrative access should traverse a hardened jump host and isolated management network, with MFA and session controls.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#ecfeff" />
+    </linearGradient>
+    <style>
+      .h1 { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #052e2b; }
+      .h2 { font: 700 23px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #1f2937; }
+      .tag { font: 700 16px 'Segoe UI', Tahoma, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="620" fill="url(#bg3)" />
+  <text x="40" y="58" class="h1">Privileged Access Path Design</text>
+
+  <rect x="50" y="110" width="280" height="140" rx="14" fill="#ffffff" stroke="#14b8a6" stroke-width="3" />
+  <text x="72" y="152" class="h2">Privileged Access</text>
+  <text x="72" y="180" class="h2">Workstation</text>
+  <text x="72" y="212" class="b">Dedicated admin endpoint</text>
+
+  <rect x="430" y="110" width="320" height="140" rx="14" fill="#ffffff" stroke="#0d9488" stroke-width="3" />
+  <text x="452" y="152" class="h2">Bastion / Jump Host</text>
+  <text x="452" y="184" class="b">MFA enforcement</text>
+  <text x="452" y="212" class="b">Session recording and command control</text>
+
+  <rect x="860" y="80" width="290" height="200" rx="14" fill="#ffffff" stroke="#0f766e" stroke-width="3" />
+  <text x="882" y="122" class="h2">Management Plane</text>
+  <text x="882" y="154" class="b">Domain controllers</text>
+  <text x="882" y="182" class="b">Network controllers</text>
+  <text x="882" y="210" class="b">Cloud control APIs</text>
+  <text x="882" y="238" class="b">Hypervisors</text>
+
+  <path d="M330 180 L430 180" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow2)" />
+  <path d="M750 180 L860 180" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow2)" />
+
+  <rect x="50" y="310" width="1100" height="260" rx="16" fill="#ffffff" stroke="#5eead4" stroke-width="2" />
+  <text x="78" y="352" class="h2">Control Decisions and Tradeoffs</text>
+  <text x="78" y="388" class="b">- Isolate management plane from general user VPN access.</text>
+  <text x="78" y="418" class="b">- Require phishing-resistant MFA for administrative sessions.</text>
+  <text x="78" y="448" class="b">- Apply device posture checks before granting privileged routes.</text>
+  <text x="78" y="478" class="b">- Disable split tunneling for admin sessions unless a defined exception exists.</text>
+  <text x="78" y="508" class="b">- Prefer just-in-time access and full session logging for accountability.</text>
+
+  <rect x="820" y="22" width="330" height="42" rx="8" fill="#0f766e" />
+  <text x="838" y="49" class="tag">CISSP lens: protect highest-value control paths first</text>
+
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e" />
+    </marker>
+  </defs>
+</svg>
