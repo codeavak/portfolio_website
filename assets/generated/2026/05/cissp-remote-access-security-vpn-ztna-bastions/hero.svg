@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">Remote Access Security Control Map</title>
+  <desc id="desc">A conceptual diagram showing workforce access through VPN and ZTNA, privileged access through bastion hosts, and isolated management plane controls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#eef4ff" />
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <style>
+      .title { font: 700 44px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 23px 'Segoe UI', Tahoma, sans-serif; fill: #1e293b; }
+      .zone-title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .box-title { font: 700 24px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .body { font: 500 20px 'Segoe UI', Tahoma, sans-serif; fill: #1f2937; }
+      .small { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #334155; }
+      .chip { font: 700 16px 'Segoe UI', Tahoma, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg)" />
+  <rect x="0" y="0" width="1400" height="92" fill="url(#header)" />
+  <text x="52" y="58" class="chip">CISSP Domain 4</text>
+
+  <text x="52" y="150" class="title">Remote Access Security</text>
+  <text x="52" y="190" class="subtitle">VPN, ZTNA, Bastions, and Administrative Access Paths</text>
+
+  <rect x="52" y="230" width="1288" height="230" rx="18" fill="#e0ecff" stroke="#93c5fd" stroke-width="2" />
+  <text x="74" y="270" class="zone-title">User Access Plane</text>
+
+  <rect x="90" y="300" width="280" height="130" rx="14" fill="#ffffff" stroke="#60a5fa" stroke-width="2" />
+  <text x="114" y="340" class="box-title">Remote User</text>
+  <text x="114" y="372" class="small">MFA + Device Posture</text>
+
+  <rect x="450" y="300" width="300" height="130" rx="14" fill="#ffffff" stroke="#3b82f6" stroke-width="2" />
+  <text x="474" y="340" class="box-title">VPN Gateway</text>
+  <text x="474" y="372" class="small">Encrypted Tunnel</text>
+  <text x="474" y="398" class="small">Network-Level Access</text>
+
+  <rect x="840" y="300" width="300" height="130" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+  <text x="864" y="340" class="box-title">ZTNA Broker</text>
+  <text x="864" y="372" class="small">Per-App Access Decision</text>
+  <text x="864" y="398" class="small">Continuous Verification</text>
+
+  <path d="M370 365 L450 365" stroke="#1d4ed8" stroke-width="6" marker-end="url(#arrow)" />
+  <path d="M750 365 L840 365" stroke="#1d4ed8" stroke-width="6" marker-end="url(#arrow)" />
+
+  <rect x="52" y="490" width="1288" height="250" rx="18" fill="#eefdf8" stroke="#5eead4" stroke-width="2" />
+  <text x="74" y="530" class="zone-title">Privileged and Management Plane</text>
+
+  <rect x="90" y="560" width="300" height="140" rx="14" fill="#ffffff" stroke="#14b8a6" stroke-width="2" />
+  <text x="114" y="600" class="box-title">Admin Workstation</text>
+  <text x="114" y="632" class="small">Dedicated PAW</text>
+  <text x="114" y="658" class="small">No General Browsing</text>
+
+  <rect x="470" y="560" width="300" height="140" rx="14" fill="#ffffff" stroke="#0d9488" stroke-width="2" />
+  <text x="494" y="600" class="box-title">Bastion Host</text>
+  <text x="494" y="632" class="small">Session Recording</text>
+  <text x="494" y="658" class="small">Protocol Filtering</text>
+
+  <rect x="850" y="560" width="420" height="140" rx="14" fill="#ffffff" stroke="#0f766e" stroke-width="2" />
+  <text x="874" y="600" class="box-title">Critical Management Endpoints</text>
+  <text x="874" y="632" class="small">Hypervisors, Network Devices, Cloud Control Plane</text>
+  <text x="874" y="658" class="small">Isolated from User VPN Segment</text>
+
+  <path d="M390 625 L470 625" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow)" />
+  <path d="M770 625 L850 625" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow)" />
+
+  <rect x="1090" y="120" width="250" height="92" rx="12" fill="#f59e0b" />
+  <text x="1110" y="155" class="chip">Exam Lens</text>
+  <text x="1110" y="183" class="chip">Control by Risk Context</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d4ed8" />
+    </marker>
+  </defs>
+</svg>

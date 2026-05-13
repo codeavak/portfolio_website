@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #64: Remote Access Security: VPN, ZTNA, Bastions, and Administrative Access Paths | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Remote access is one of the highest-value attack paths in modern environments. This CISSP Domain 4 guide compares VPN, ZTNA, and bastion patterns and shows how to choose controls based on risk context, not buzzwords." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-remote-access-security-vpn-ztna-bastions/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-14T12:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Domain 4" />
+      
+        <meta property="article:tag" content="Remote Access" />
+      
+        <meta property="article:tag" content="VPN" />
+      
+        <meta property="article:tag" content="ZTNA" />
+      
+        <meta property="article:tag" content="Bastion Host" />
+      
+        <meta property="article:tag" content="Jump Box" />
+      
+        <meta property="article:tag" content="MFA" />
+      
+        <meta property="article:tag" content="Device Posture" />
+      
+        <meta property="article:tag" content="Split Tunneling" />
+      
+        <meta property="article:tag" content="Administrative Access" />
+      
+        <meta property="article:tag" content="Risk-Based Security" />
+      
+    
+    <meta property="og:title" content="CISSP #64: Remote Access Security: VPN, ZTNA, Bastions, and Administrative Access Paths" />
+    <meta property="og:description" content="Remote access is one of the highest-value attack paths in modern environments. This CISSP Domain 4 guide compares VPN, ZTNA, and bastion patterns and shows how to choose controls based on risk context, not buzzwords." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-remote-access-security-vpn-ztna-bastions/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #64: Remote Access Security: VPN, ZTNA, Bastions, and Administrative Access Paths" />
+    <meta name="twitter:description" content="Remote access is one of the highest-value attack paths in modern environments. This CISSP Domain 4 guide compares VPN, ZTNA, and bastion patterns and shows how to choose controls based on risk context, not buzzwords." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #64: Remote Access Security: VPN, ZTNA, Bastions, and Administrative Access Paths",
+        "description": "Remote access is one of the highest-value attack paths in modern environments. This CISSP Domain 4 guide compares VPN, ZTNA, and bastion patterns and shows how to choose controls based on risk context, not buzzwords.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-14T12:00:00+00:00",
+        "dateModified": "2026-05-14T12:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-remote-access-security-vpn-ztna-bastions/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Network Security • Security Architecture</div>
+              
+              <time class="post-date" datetime="2026-05-14T12:00:00+00:00">May 14, 2026</time>
+              <h1 class="post-title">CISSP #64: Remote Access Security: VPN, ZTNA, Bastions, and Administrative Access Paths</h1>
+              
+                <p class="post-dek">Remote access is one of the highest-value attack paths in modern environments. This CISSP Domain 4 guide compares VPN, ZTNA, and bastion patterns and shows how to choose controls based on risk context, not buzzwords.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Domain 4</span>
+                  
+                    <span class="chip">Remote Access</span>
+                  
+                    <span class="chip">VPN</span>
+                  
+                    <span class="chip">ZTNA</span>
+                  
+                    <span class="chip">Bastion Host</span>
+                  
+                    <span class="chip">Jump Box</span>
+                  
+                    <span class="chip">MFA</span>
+                  
+                    <span class="chip">Device Posture</span>
+                  
+                    <span class="chip">Split Tunneling</span>
+                  
+                    <span class="chip">Administrative Access</span>
+                  
+                    <span class="chip">Risk-Based Security</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/hero.svg" alt="Diagram showing remote user access via VPN and ZTNA, and privileged admin access through a bastion host into an isolated management plane" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, remote access controls should be selected by trust boundary and business risk, not by whichever architecture label is currently popular.</figcaption>
+</figure>
+
+<p>Post 63 focused on secure communication channels and trust establishment. The next Domain 4 question is what happens when those secure channels are opened for remote users and administrators.</p>
+
+<p>Remote access is a high-value attack surface because it sits at the intersection of identity, network trust, device health, and administrative privilege. If attackers gain a valid remote foothold, they often bypass many of the controls that were designed to stop unauthenticated internet traffic.</p>
+
+<p>For CISSP, this area is less about memorizing acronyms and more about selecting the right control for the specific risk context. VPN, ZTNA, bastions, MFA, posture checks, and split-tunnel policy all matter, but they do not solve the same problem.</p>
+
+<h2 id="why-remote-access-is-a-prime-target">Why Remote Access Is a Prime Target</h2>
+
+<p>Remote access pathways are attractive for a simple reason: they are legitimate business pathways into internal resources.</p>
+
+<p>An attacker does not need to exploit a public-facing application if they can:</p>
+
+<ul>
+  <li>Steal credentials and sign in through approved remote channels</li>
+  <li>Compromise an endpoint that already has remote access rights</li>
+  <li>Abuse weak recovery flows around MFA enrollment</li>
+  <li>Pivot from broad remote network access toward sensitive systems</li>
+</ul>
+
+<p>From a security architecture perspective, remote access often compresses multiple trust decisions into one event: user identity verification, endpoint trust, channel security, and authorization scope. If any one of those is weak, the entire access decision can be wrong.</p>
+
+<p>From a CISSP best-answer perspective, this is where you think in layers:</p>
+
+<ol>
+  <li>Who is requesting access?</li>
+  <li>What device state are they in?</li>
+  <li>What resource should they reach?</li>
+  <li>What is the minimum scope and duration needed?</li>
+  <li>How is the session monitored and contained?</li>
+</ol>
+
+<p>That layered framing helps you avoid common exam mistakes like choosing a network control to solve an identity problem, or choosing an identity control while ignoring management-plane exposure.</p>
+
+<h2 id="traditional-vpn-strong-foundation-real-limits">Traditional VPN: Strong Foundation, Real Limits</h2>
+
+<p>Virtual Private Networks remain foundational in enterprise remote access. A properly configured VPN gives confidentiality and integrity for traffic over untrusted networks, and it provides a familiar operational model for IT teams.</p>
+
+<p>Common strengths include:</p>
+
+<ul>
+  <li>Mature protocol and client support across platforms</li>
+  <li>Centralized policy enforcement at VPN gateways</li>
+  <li>Practical support for legacy applications that assume network-level reachability</li>
+  <li>Consistent encrypted tunnel behavior for users on hostile networks</li>
+</ul>
+
+<p>But VPN has structural limits that matter in both operations and exam scenarios.</p>
+
+<p>A traditional full-tunnel VPN often grants users broad network-level access after successful authentication. Even with ACLs, many organizations end up with wider-than-intended reach because legacy dependencies are hard to untangle. If an endpoint is compromised after tunnel establishment, lateral movement risk increases.</p>
+
+<p>Split tunneling introduces another tradeoff. It can improve performance and reduce concentrator load by sending internet-bound traffic directly out of the endpoint, but it can also reduce centralized visibility and increase policy inconsistency. In some cases, split tunneling can become a bridge between untrusted networks and internal trust zones if endpoint hardening is weak.</p>
+
+<p>The CISSP lens is not “VPN is bad” or “VPN is obsolete.” The right interpretation is:</p>
+
+<ul>
+  <li>VPN is valid and often necessary.</li>
+  <li>Its risk profile must be reduced through segmentation, strong authentication, endpoint controls, and careful route policy.</li>
+  <li>Broad network access for high-risk users or unmanaged devices is usually the wrong design target.</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/inline-vpn-vs-ztna-decision.svg" alt="Side-by-side comparison of VPN and ZTNA strengths, limits, and best-fit contexts" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">VPN and ZTNA are not mutually exclusive. In most mature programs, they coexist with different access intents.</figcaption>
+</figure>
+
+<h2 id="ztna-principles-and-where-it-fits">ZTNA Principles and Where It Fits</h2>
+
+<p>Zero Trust Network Access changes the default question from “can this user join the network?” to “can this identity access this specific application under current conditions?”</p>
+
+<p>Core ZTNA-aligned principles include:</p>
+
+<ul>
+  <li>Explicit verification of user identity and device context</li>
+  <li>Least-privilege, per-application access instead of broad subnet access</li>
+  <li>Continuous policy evaluation during the session, not just at login</li>
+  <li>Reduced exposure of internal network topology to remote clients</li>
+</ul>
+
+<p>Where ZTNA tends to fit well:</p>
+
+<ul>
+  <li>Cloud and SaaS-heavy environments with application-centric workflows</li>
+  <li>Organizations that can integrate identity providers, conditional access, and endpoint posture signals</li>
+  <li>Programs trying to reduce lateral movement opportunities from remote endpoints</li>
+</ul>
+
+<p>Where ZTNA can be harder:</p>
+
+<ul>
+  <li>Legacy protocols and systems that assume flat network access</li>
+  <li>Environments with inconsistent identity governance or unmanaged endpoints</li>
+  <li>Organizations early in policy maturity that cannot yet maintain granular access rules reliably</li>
+</ul>
+
+<p>The exam-relevant point is that ZTNA is a design pattern aligned to zero trust principles, not an automatic replacement for every VPN use case. A hybrid model is often the most realistic architecture: retain VPN for specific legacy dependencies while moving user populations and applications toward per-app access policies.</p>
+
+<h2 id="bastion-hosts-and-jump-boxes-for-privileged-access">Bastion Hosts and Jump Boxes for Privileged Access</h2>
+
+<p>User remote access and administrative remote access should not be treated as equivalent trust events.</p>
+
+<p>Administrative paths are higher risk because they target control planes: domain controllers, hypervisors, cloud administration interfaces, network infrastructure, and security tooling. A compromise there can have enterprise-wide impact.</p>
+
+<p>Bastion hosts (jump boxes) are a practical way to contain this risk. A bastion pattern introduces a controlled chokepoint for privileged sessions:</p>
+
+<ul>
+  <li>Admins authenticate into a hardened intermediary first</li>
+  <li>Access to downstream management systems is mediated and logged</li>
+  <li>Session recording and command controls can be enforced</li>
+  <li>Direct internet-to-management-plane exposure is reduced or eliminated</li>
+</ul>
+
+<p>A strong bastion design usually pairs with:</p>
+
+<ul>
+  <li>Dedicated privileged access workstations</li>
+  <li>Phishing-resistant MFA for privileged sessions</li>
+  <li>Just-in-time elevation and time-bounded entitlements</li>
+  <li>Full session accountability for forensic and governance needs</li>
+</ul>
+
+<p>The CISSP best answer often favors this separation. If a scenario asks how to reduce risk of compromised admin credentials or remote management abuse, the better answer is rarely “just strengthen VPN auth” by itself. It is usually to isolate and mediate privileged pathways through dedicated controls.</p>
+
+<h2 id="split-tunneling-and-management-plane-isolation-real-tradeoffs">Split Tunneling and Management Plane Isolation: Real Tradeoffs</h2>
+
+<p>Split tunneling is often framed as either “efficient” or “insecure.” In practice, it is a policy decision with different risk outcomes for different user groups.</p>
+
+<p>For general workforce use, controlled split tunneling may be acceptable when:</p>
+
+<ul>
+  <li>Endpoint detection and response is strong</li>
+  <li>DNS and web controls are consistent on and off tunnel</li>
+  <li>Sensitive applications are still gated by strong identity and device posture checks</li>
+</ul>
+
+<p>For privileged administration, the tolerance should be much lower. Administrative sessions should generally avoid split-tunnel behavior because the consequence of compromise is significantly higher.</p>
+
+<p>Management plane isolation follows the same risk logic. Critical administrative endpoints should sit on isolated networks that are not reachable through broad user remote-access segments. If the same remote path reaches both normal business applications and management interfaces, blast radius grows.</p>
+
+<p>CISSP-style reasoning here is straightforward:</p>
+
+<ul>
+  <li>Higher impact assets require narrower access paths.</li>
+  <li>Narrower access paths require stronger authentication, device assurance, and monitoring.</li>
+  <li>Convenience-based exceptions should be rare, documented, and compensating controls should be explicit.</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-remote-access-security-vpn-ztna-bastions/inline-admin-access-paths.svg" alt="Diagram of privileged access workstation connecting through bastion host into isolated management plane with MFA and session controls" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Administrative paths should be deliberately constrained. The goal is not convenience parity with standard user access.</figcaption>
+</figure>
+
+<h2 id="mfa-and-device-posture-in-access-decisions">MFA and Device Posture in Access Decisions</h2>
+
+<p>MFA is essential in remote access, but the exam will often test whether you understand that MFA alone is not complete risk reduction.</p>
+
+<p>If an attacker can hijack a session after MFA or compromise an enrolled endpoint, identity assurance weakens quickly. That is why modern remote access decisions increasingly combine:</p>
+
+<ul>
+  <li>User authentication strength (for example, phishing-resistant methods)</li>
+  <li>Device posture (patch level, disk encryption, endpoint protection state)</li>
+  <li>Contextual risk (location, impossible travel, unusual behavior)</li>
+  <li>Session controls (re-authentication triggers, timeout, continuous monitoring)</li>
+</ul>
+
+<p>Device posture checks are especially important when deciding between broad network access and per-application access. A non-compliant or unknown device should never receive the same path as a managed and healthy corporate endpoint.</p>
+
+<p>For CISSP questions, look for wording cues:</p>
+
+<ul>
+  <li>If the prompt emphasizes credential theft, strong MFA and conditional access are likely central.</li>
+  <li>If the prompt emphasizes compromised endpoints, posture checks and segmentation become primary.</li>
+  <li>If the prompt emphasizes privileged systems, bastion and management isolation should dominate the answer.</li>
+</ul>
+
+<h2 id="cissp-best-answer-control-selection-by-risk-context">CISSP Best-Answer Control Selection by Risk Context</h2>
+
+<p>The most reliable exam strategy is to identify the primary risk and then choose the control that directly constrains that risk with least privilege and operational realism.</p>
+
+<p>Use this quick mapping:</p>
+
+<ul>
+  <li>Legacy internal application requires network-level reach from managed workforce endpoints: VPN can be appropriate, with segmentation and MFA.</li>
+  <li>Modern application portfolio with strong identity integration and need to reduce lateral movement: ZTNA-style per-app access is usually stronger.</li>
+  <li>Third-party administrator needs time-bounded privileged maintenance on critical systems: bastion-mediated access with session recording is best.</li>
+  <li>Executive request for better remote performance through split tunneling: acceptable only after confirming endpoint, DNS, and policy controls are equivalent off tunnel.</li>
+  <li>Incident pattern shows phishing-led credential abuse of remote access: prioritize phishing-resistant MFA, conditional access, and reduction of broad network entitlements.</li>
+</ul>
+
+<p>Exam trap to avoid: selecting the most fashionable architecture name rather than the control that best addresses the described risk.</p>
+
+<p>In CISSP, the best answer is usually the one that improves security outcomes while preserving business function and governance accountability.</p>
+
+<h2 id="practical-baseline-you-can-use-immediately">Practical Baseline You Can Use Immediately</h2>
+
+<p>If you are evaluating your current remote access program, this baseline is a practical starting point:</p>
+
+<ol>
+  <li>Separate user access paths from privileged administrative paths.</li>
+  <li>Require strong MFA for all remote access, with highest assurance for admin flows.</li>
+  <li>Enforce device posture before granting meaningful access.</li>
+  <li>Minimize default network-level reach; prefer per-application policies where feasible.</li>
+  <li>Isolate management plane resources from general remote segments.</li>
+  <li>Treat split tunneling as a risk exception process, not a default convenience setting.</li>
+  <li>Capture remote session telemetry with enough fidelity for incident response.</li>
+</ol>
+
+<p>This is where Domain 4 becomes practical architecture work. Remote access design is not about picking one product category. It is about shaping trust paths so compromise is harder, blast radius is smaller, and response is faster when things go wrong.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 63 covered secure communication channels (TLS, PKI, mTLS, and pinning). Post 65 will continue Domain 4 with wireless network security and control selection.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 practical guide to remote access security: VPN vs ZTNA, bastion hosts for admin access, split tunneling and management plane isolation tradeoffs, and risk-based control selection.</p>
+
+<p><strong>SEO keywords:</strong></p>
+
+<ol>
+  <li>CISSP Domain 4 remote access security</li>
+  <li>VPN vs ZTNA CISSP best answer</li>
+  <li>bastion host jump box privileged access</li>
+  <li>split tunneling security tradeoffs</li>
+  <li>MFA and device posture remote access</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

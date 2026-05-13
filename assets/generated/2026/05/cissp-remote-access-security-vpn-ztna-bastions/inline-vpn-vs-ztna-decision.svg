@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">VPN versus ZTNA control selection matrix</title>
+  <desc id="desc">Comparison chart showing where VPN and ZTNA fit based on trust model, access granularity, and operational tradeoffs.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#eef2ff" />
+    </linearGradient>
+    <style>
+      .h1 { font: 700 36px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .h2 { font: 700 24px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .b { font: 500 19px 'Segoe UI', Tahoma, sans-serif; fill: #1f2937; }
+      .s { font: 600 17px 'Segoe UI', Tahoma, sans-serif; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="620" fill="url(#bg2)" />
+  <text x="40" y="58" class="h1">When to Use VPN vs ZTNA</text>
+
+  <rect x="40" y="95" width="540" height="490" rx="16" fill="#ffffff" stroke="#3b82f6" stroke-width="3" />
+  <text x="64" y="135" class="h2">Traditional VPN</text>
+  <text x="64" y="170" class="s">Strengths</text>
+  <text x="64" y="202" class="b">- Broad network reach for legacy applications</text>
+  <text x="64" y="232" class="b">- Mature ecosystem and operational familiarity</text>
+  <text x="64" y="262" class="b">- Strong encryption for transport confidentiality</text>
+  <text x="64" y="304" class="s">Limits</text>
+  <text x="64" y="336" class="b">- Often grants subnet-level access after connect</text>
+  <text x="64" y="366" class="b">- Lateral movement risk if endpoint is compromised</text>
+  <text x="64" y="396" class="b">- Split-tunnel decisions can weaken visibility</text>
+  <text x="64" y="438" class="s">Best Fit</text>
+  <text x="64" y="470" class="b">- Transitional architectures and controlled user groups</text>
+  <text x="64" y="500" class="b">- Hybrid with strict segmentation and MFA</text>
+
+  <rect x="620" y="95" width="540" height="490" rx="16" fill="#ffffff" stroke="#0ea5e9" stroke-width="3" />
+  <text x="644" y="135" class="h2">ZTNA</text>
+  <text x="644" y="170" class="s">Principles</text>
+  <text x="644" y="202" class="b">- Verify identity, device, and context continuously</text>
+  <text x="644" y="232" class="b">- Grant per-application, least-privilege access</text>
+  <text x="644" y="262" class="b">- Hide internal network from direct user reach</text>
+  <text x="644" y="304" class="s">Tradeoffs</text>
+  <text x="644" y="336" class="b">- Requires identity and policy maturity</text>
+  <text x="644" y="366" class="b">- Legacy protocols may still need VPN paths</text>
+  <text x="644" y="396" class="b">- Rollout complexity across mixed environments</text>
+  <text x="644" y="438" class="s">Best Fit</text>
+  <text x="644" y="470" class="b">- Cloud-first and app-centric access models</text>
+  <text x="644" y="500" class="b">- Risk-based conditional access programs</text>
+
+  <rect x="390" y="20" width="430" height="52" rx="10" fill="#f59e0b" />
+  <text x="412" y="53" style="font:700 20px 'Segoe UI', Tahoma, sans-serif; fill:#ffffff;">CISSP Best Answer: match control to risk and context</text>
+</svg>
