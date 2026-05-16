@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">Wireless Security Architecture: WPA3, Enterprise Auth, and Rogue AP Defense</title>
+  <desc id="desc">A layered enterprise wireless security diagram showing managed APs, 802.1X with certificate authentication, segmented VLANs, guest isolation, and rogue AP monitoring.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f3b57"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 40px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 500 20px 'Segoe UI', Tahoma, sans-serif; fill: #dbeafe; }
+      .t { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 17px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .line { stroke: #93c5fd; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg)"/>
+  <circle cx="1180" cy="140" r="220" fill="#38bdf8" opacity="0.12"/>
+  <circle cx="180" cy="700" r="260" fill="#f59e0b" opacity="0.08"/>
+
+  <text x="70" y="90" class="h">CISSP #65: Wireless Security Control Strategy</text>
+  <text x="70" y="130" class="s">WPA3 improvements, enterprise authentication, segmentation, and rogue AP risk decisions</text>
+
+  <rect x="70" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.5"/>
+  <text x="95" y="235" class="t">Wireless Clients</text>
+  <text x="95" y="270" class="b">Managed laptops</text>
+  <text x="95" y="300" class="b">Corporate mobiles</text>
+  <text x="95" y="330" class="b">BYOD / guest devices</text>
+  <text x="95" y="365" class="k">Control: device trust tiers</text>
+
+  <rect x="420" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#34d399" stroke-opacity="0.6"/>
+  <text x="445" y="235" class="t">WPA3 Access Layer</text>
+  <text x="445" y="270" class="b">SAE for personal SSIDs</text>
+  <text x="445" y="300" class="b">PMF reduces deauth abuse</text>
+  <text x="445" y="330" class="b">Stronger handshake resistance</text>
+  <text x="445" y="365" class="k">Control: secure association</text>
+
+  <rect x="770" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#f59e0b" stroke-opacity="0.7"/>
+  <text x="795" y="235" class="t">Enterprise Authentication</text>
+  <text x="795" y="270" class="b">802.1X + EAP-TLS</text>
+  <text x="795" y="300" class="b">RADIUS + certificate trust</text>
+  <text x="795" y="330" class="b">Per-user/per-device identity</text>
+  <text x="795" y="365" class="k">Control: strong authN + authZ</text>
+
+  <rect x="1120" y="190" rx="18" ry="18" width="220" height="200" fill="url(#card)" stroke="#fb7185" stroke-opacity="0.75"/>
+  <text x="1143" y="235" class="t">Rogue AP Defense</text>
+  <text x="1143" y="270" class="b">WIDS/WIPS</text>
+  <text x="1143" y="300" class="b">Evil twin detection</text>
+  <text x="1143" y="330" class="b">Hunt + response playbook</text>
+  <text x="1143" y="365" class="k">Control: monitoring + IR</text>
+
+  <rect x="190" y="480" rx="18" ry="18" width="430" height="200" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.65"/>
+  <text x="220" y="525" class="t">Segmentation Decisions</text>
+  <text x="220" y="560" class="b">Corporate WLAN -> internal VLAN with ACLs</text>
+  <text x="220" y="590" class="b">IoT/OT WLAN -> restricted enclave</text>
+  <text x="220" y="620" class="b">No direct path to management plane</text>
+  <text x="220" y="655" class="k">Control: minimize blast radius</text>
+
+  <rect x="700" y="480" rx="18" ry="18" width="520" height="200" fill="url(#card)" stroke="#22d3ee" stroke-opacity="0.65"/>
+  <text x="730" y="525" class="t">Guest Isolation and Business Context</text>
+  <text x="730" y="560" class="b">Guest SSID internet-only, client isolation enabled</text>
+  <text x="730" y="590" class="b">Captive portal and rate limits for abuse reduction</text>
+  <text x="730" y="620" class="b">Exam best answer: choose control by risk tolerance</text>
+  <text x="730" y="655" class="k">Control: security aligned to mission</text>
+
+  <path d="M 370 290 L 420 290" class="line"/>
+  <path d="M 720 290 L 770 290" class="line"/>
+  <path d="M 1070 290 L 1120 290" class="line"/>
+  <path d="M 920 390 L 920 470" class="line"/>
+  <path d="M 520 390 L 420 470" class="line"/>
+
+  <rect x="70" y="720" width="1260" height="46" rx="10" ry="10" fill="#0f172a" fill-opacity="0.55" stroke="#93c5fd" stroke-opacity="0.35"/>
+  <text x="92" y="750" class="b">Best-answer mindset: start with business need, map trust boundary, then choose controls that reduce risk without breaking operations.</text>
+</svg>
