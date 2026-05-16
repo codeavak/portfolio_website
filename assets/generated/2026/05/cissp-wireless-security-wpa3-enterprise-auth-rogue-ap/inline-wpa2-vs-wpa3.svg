@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">WPA2 versus WPA3 Practical Security Differences</title>
+  <desc id="desc">Comparison panel highlighting practical security differences between WPA2 and WPA3, including handshake protection, PMF, and brute-force resistance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .s { font: 600 20px 'Segoe UI', Tahoma, sans-serif; fill: #334155; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #1e293b; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">WPA2 vs WPA3: What Changes in Practice</text>
+
+  <rect x="60" y="110" width="520" height="460" rx="16" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+  <text x="90" y="160" class="s">WPA2 (Legacy Baseline)</text>
+  <text x="90" y="210" class="b">• PSK model vulnerable to offline cracking after handshake capture</text>
+  <text x="90" y="250" class="b">• PMF optional in many deployments</text>
+  <text x="90" y="290" class="b">• Shared secret creates lateral trust between devices</text>
+  <text x="90" y="330" class="b">• Strong only when passwords are long and unique</text>
+  <text x="90" y="370" class="b">• Upgrade inertia keeps weaker configurations alive</text>
+  <text x="90" y="440" class="k">Operational risk: weak passphrases and mixed-mode drift</text>
+
+  <rect x="620" y="110" width="520" height="460" rx="16" fill="#fff" stroke="#22c55e" stroke-width="2"/>
+  <text x="650" y="160" class="s">WPA3 (Current Preferred)</text>
+  <text x="650" y="210" class="b">• SAE improves resistance to offline dictionary attacks</text>
+  <text x="650" y="250" class="b">• PMF required in WPA3-certified operation</text>
+  <text x="650" y="290" class="b">• Better resilience to deauthentication abuse patterns</text>
+  <text x="650" y="330" class="b">• Enterprise mode aligns with strong 802.1X identity controls</text>
+  <text x="650" y="370" class="b">• Strongest when paired with certificate lifecycle discipline</text>
+  <text x="650" y="440" class="k">Operational win: stronger defaults with less user dependency</text>
+
+  <line x1="600" y1="130" x2="600" y2="560" stroke="#94a3b8" stroke-dasharray="8 8"/>
+  <text x="460" y="610" class="b">CISSP lens: choose migration pace by asset criticality, compatibility constraints, and threat exposure.</text>
+</svg>

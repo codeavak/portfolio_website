@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Wireless Controls and Rogue AP Risk Flow</title>
+  <desc id="desc">Diagram of enterprise wireless architecture with 802.1X EAP-TLS, RADIUS policy, segmented VLANs, guest isolation, and rogue AP detection workflow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 32px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 600 20px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .b { font: 500 17px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .k { font: 700 17px 'Segoe UI', Tahoma, sans-serif; fill: #fef3c7; }
+      .arrow { stroke: #7dd3fc; stroke-width: 3; fill: none; marker-end: url(#arr); }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7dd3fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <text x="50" y="60" class="h">Enterprise Wireless: Identity, Segmentation, and Rogue AP Response</text>
+
+  <rect x="50" y="110" width="260" height="170" rx="14" fill="#1e293b" stroke="#60a5fa"/>
+  <text x="70" y="150" class="s">Client Device</text>
+  <text x="70" y="185" class="b">Supplicant starts</text>
+  <text x="70" y="215" class="b">802.1X exchange</text>
+  <text x="70" y="245" class="k">EAP-TLS cert proof</text>
+
+  <rect x="360" y="110" width="260" height="170" rx="14" fill="#1e293b" stroke="#34d399"/>
+  <text x="380" y="150" class="s">Access Point / WLC</text>
+  <text x="380" y="185" class="b">Authenticator role</text>
+  <text x="380" y="215" class="b">Enforces WPA3-Ent</text>
+  <text x="380" y="245" class="k">PMF and policy tags</text>
+
+  <rect x="670" y="110" width="260" height="170" rx="14" fill="#1e293b" stroke="#f59e0b"/>
+  <text x="690" y="150" class="s">RADIUS / PKI</text>
+  <text x="690" y="185" class="b">Validates cert chain</text>
+  <text x="690" y="215" class="b">Applies role policy</text>
+  <text x="690" y="245" class="k">Returns VLAN/ACL</text>
+
+  <rect x="950" y="110" width="210" height="170" rx="14" fill="#1e293b" stroke="#f97316"/>
+  <text x="970" y="150" class="s">Network Core</text>
+  <text x="970" y="185" class="b">Corp VLAN</text>
+  <text x="970" y="215" class="b">IoT VLAN</text>
+  <text x="970" y="245" class="b">Guest Internet only</text>
+
+  <rect x="50" y="360" width="520" height="250" rx="14" fill="#172554" fill-opacity="0.55" stroke="#60a5fa"/>
+  <text x="75" y="400" class="s">Segmentation Controls</text>
+  <text x="75" y="435" class="b">• Separate SSIDs mapped to distinct trust zones</text>
+  <text x="75" y="470" class="b">• Guest isolation blocks east-west client traffic</text>
+  <text x="75" y="505" class="b">• ACLs restrict wireless-to-core lateral movement</text>
+  <text x="75" y="540" class="b">• Admin plane accessible only from hardened path</text>
+  <text x="75" y="575" class="k">Business context sets strictness level</text>
+
+  <rect x="620" y="360" width="540" height="250" rx="14" fill="#3f1d2e" fill-opacity="0.5" stroke="#fb7185"/>
+  <text x="645" y="400" class="s">Rogue AP / Evil Twin Risk Workflow</text>
+  <text x="645" y="435" class="b">1. WIDS detects unknown BSSID near corporate SSID</text>
+  <text x="645" y="470" class="b">2. Correlate RF + switch port inventory + location data</text>
+  <text x="645" y="505" class="b">3. Contain: deauth policy (where legal), disable wired uplink</text>
+  <text x="645" y="540" class="b">4. Investigate and update wireless allow/deny baselines</text>
+  <text x="645" y="575" class="k">Goal: detect fast, contain safely, preserve evidence</text>
+
+  <path d="M 310 195 L 360 195" class="arrow"/>
+  <path d="M 620 195 L 670 195" class="arrow"/>
+  <path d="M 930 195 L 950 195" class="arrow"/>
+  <path d="M 1060 280 L 1060 350" class="arrow"/>
+
+  <text x="50" y="650" class="b">CISSP best-answer pattern: strongest control is the one that matches assurance needs and operational reality.</text>
+</svg>
