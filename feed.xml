@@ -1,4 +1,411 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-16T04:04:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #65: Wireless Security: WPA3, Enterprise Authentication, and Rogue AP Risk</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/" rel="alternate" type="text/html" title="CISSP #65: Wireless Security: WPA3, Enterprise Authentication, and Rogue AP Risk" /><published>2026-05-15T12:00:00+00:00</published><updated>2026-05-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-19T04:57:39+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #67: DNS Security Is Integrity at the Start of Every Connection</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/" rel="alternate" type="text/html" title="CISSP #67: DNS Security Is Integrity at the Start of Every Connection" /><published>2026-05-18T13:00:00+00:00</published><updated>2026-05-18T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/hero.svg" alt="DNS security architecture with authoritative governance, DNSSEC chain of trust, resolver hardening, and incident response" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, DNS security is a business resilience decision because it determines where users and systems are sent before any application control is evaluated.</figcaption>
+</figure>
+
+<p>Post 66 focused on email trust architecture. The next Domain 4 step is the protocol layer most teams only notice when it fails: DNS.</p>
+
+<p>DNS is frequently treated like neutral plumbing, but from a security perspective it is a control plane. It decides where traffic goes. If DNS integrity is compromised, users can be redirected to attacker-controlled systems even when your application stack itself is well engineered.</p>
+
+<p>For CISSP preparation, the key is not memorizing only record types. The key is understanding how to protect resolution integrity, preserve availability, and operate safely when key infrastructure fails under pressure.</p>
+
+<h2 id="why-dns-is-a-high-impact-security-surface">Why DNS Is a High-Impact Security Surface</h2>
+
+<p>DNS sits at the beginning of most digital transactions:</p>
+
+<ul>
+  <li>User authentication flows</li>
+  <li>API-to-API service calls</li>
+  <li>SaaS integrations</li>
+  <li>Email delivery paths</li>
+  <li>Certificate issuance and validation ecosystems</li>
+</ul>
+
+<p>When DNS is wrong, everything downstream can be wrong.</p>
+
+<p>Common risk themes include:</p>
+
+<ul>
+  <li>Cache poisoning attempts against recursive resolvers</li>
+  <li>Unauthorized zone changes or domain hijacking</li>
+  <li>Misconfiguration during key rollovers or delegation updates</li>
+  <li>Amplification and availability attacks targeting DNS services</li>
+</ul>
+
+<p>The CISSP mindset here is risk-first: you protect confidentiality and integrity, but you also preserve business continuity. DNS controls that are cryptographically correct but operationally brittle still create enterprise risk.</p>
+
+<h2 id="dnssec-what-it-solves-and-what-it-does-not">DNSSEC: What It Solves and What It Does Not</h2>
+
+<p>DNSSEC adds data-origin authentication and integrity to DNS responses through signatures and a chain of trust from parent to child zones.</p>
+
+<p>That matters because it helps resolvers detect tampered responses.</p>
+
+<p>What DNSSEC strengthens:</p>
+
+<ul>
+  <li>Authenticity of signed DNS data</li>
+  <li>Resistance to certain spoofing and cache poisoning patterns</li>
+  <li>Confidence that responses were validated, not merely received</li>
+</ul>
+
+<p>What DNSSEC does not solve by itself:</p>
+
+<ul>
+  <li>It does not encrypt DNS queries by default</li>
+  <li>It does not stop all denial-of-service conditions</li>
+  <li>It does not replace registrar and account security discipline</li>
+  <li>It does not eliminate operational mistakes in key management</li>
+</ul>
+
+<p>This distinction often appears in exam questions. Strong answers avoid absolutist statements like “DNSSEC solves DNS attacks.” Better answers recognize control scope and layering.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/inline-dnssec-chain-of-trust.svg" alt="DNSSEC chain of trust flow from root trust anchor through TLD and domain validation outcomes" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">DNSSEC improves integrity assurance, but operational maturity determines whether validation failures become controlled events or outages.</figcaption>
+</figure>
+
+<h2 id="cache-poisoning-and-resolver-security-in-practice">Cache Poisoning and Resolver Security in Practice</h2>
+
+<p>Even with modern protections, recursive resolvers remain high-value targets because poisoning success can redirect large user populations quickly.</p>
+
+<p>Practical resolver-side controls include:</p>
+
+<ul>
+  <li>Strict recursion policies to prevent open resolver abuse</li>
+  <li>Source port and query randomization protections</li>
+  <li>DNSSEC validation enabled with monitoring for bogus responses</li>
+  <li>Rate limiting and anomaly detection at resolver and edge layers</li>
+  <li>Segmentation and hardening for resolver infrastructure</li>
+</ul>
+
+<p>The goal is not one magic setting. The goal is reducing attacker success probability while improving your ability to detect and contain anomalies early.</p>
+
+<p>CISSP best-answer patterns usually reward layered protections that combine preventive and detective controls.</p>
+
+<h2 id="domain-hijacking-risk-governance-is-a-security-control">Domain Hijacking Risk: Governance Is a Security Control</h2>
+
+<p>Many DNS compromises are not protocol exploits. They are account or process failures.</p>
+
+<p>Typical weak points:</p>
+
+<ul>
+  <li>Registrar accounts protected by weak authentication or poor recovery controls</li>
+  <li>Excessive admin privileges for zone editing</li>
+  <li>No dual control for critical record or nameserver changes</li>
+  <li>Unrehearsed escalation paths when suspicious changes are detected</li>
+</ul>
+
+<p>Treat registrar and DNS provider governance as part of your security architecture, not as administrative overhead.</p>
+
+<p>Strong governance baseline:</p>
+
+<ol>
+  <li>Enforce strong MFA and least privilege on registrar and DNS admin roles.</li>
+  <li>Use approval workflows for high-risk DNS changes.</li>
+  <li>Maintain audited change history and rapid rollback plans.</li>
+  <li>Predefine emergency contacts with registrar and DNS providers.</li>
+  <li>Integrate DNS change events into security monitoring.</li>
+</ol>
+
+<p>In CISSP terms, this is classic people-process-technology balance.</p>
+
+<h2 id="availability-matters-dns-is-also-a-resilience-problem">Availability Matters: DNS Is Also a Resilience Problem</h2>
+
+<p>Security decisions that ignore availability are incomplete.</p>
+
+<p>If validation is misconfigured, key rollovers are mishandled, or resolver dependencies fail, real users experience downtime even when no attacker is present.</p>
+
+<p>That is why architecture decisions should include:</p>
+
+<ul>
+  <li>Redundant authoritative DNS providers or resilient service design</li>
+  <li>Thoughtful TTL strategy to balance agility and stability</li>
+  <li>Staged deployment and verification for key/delegation changes</li>
+  <li>Clear rollback paths for failed updates</li>
+  <li>Operational runbooks that include business stakeholder communication</li>
+</ul>
+
+<p>CISSP questions frequently test this tradeoff. The strongest answer often preserves security objectives while minimizing avoidable service disruption.</p>
+
+<h2 id="incident-response-for-dns-events">Incident Response for DNS Events</h2>
+
+<p>DNS incidents move quickly and affect many systems at once. Response must be predesigned.</p>
+
+<p>A practical playbook includes four phases:</p>
+
+<ol>
+  <li>Detect and classify: identify suspicious resolver behavior, record changes, and resolution anomalies.</li>
+  <li>Contain and stabilize: stop further risky changes, secure identities, and protect critical domains.</li>
+  <li>Coordinate externally: engage registrar, provider, legal, and communications on verified channels.</li>
+  <li>Recover and improve: restore trusted state, verify user-facing resolution, then harden controls.</li>
+</ol>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/inline-dns-operations-playbook.svg" alt="DNS incident response playbook phases from detection and containment to registrar coordination and recovery" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">DNS incident response is fastest when ownership, escalation channels, and rollback decisions are prepared before the event.</figcaption>
+</figure>
+
+<p>The most common operational failure is not missing telemetry. It is unclear ownership during the first hour.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>DNS is foundational infrastructure and a high-value target.</li>
+  <li>Integrity controls must be paired with availability controls.</li>
+  <li>Defense in depth requires protocol protections plus governance.</li>
+  <li>Least privilege and change control reduce domain abuse risk.</li>
+</ul>
+
+<h3 id="recent-developments-that-influence-design-decisions">Recent developments that influence design decisions</h3>
+
+<ul>
+  <li>DNSSEC support is more accessible through major managed DNS platforms, making deployment barriers lower than in earlier years.</li>
+  <li>Security teams increasingly treat DNS telemetry as a threat-detection signal, not only as network operations data.</li>
+  <li>Encrypted DNS transport options and resolver policy controls are more common in enterprise architectures, though they do not replace integrity controls like DNSSEC.</li>
+</ul>
+
+<p>A practical takeaway for both exam and real-world design: modern tooling helps, but control ownership and operational discipline still determine outcomes.</p>
+
+<h2 id="cissp-best-answer-mindset-for-dns-questions">CISSP Best-Answer Mindset for DNS Questions</h2>
+
+<p>When multiple options appear technically valid, prefer the one that:</p>
+
+<ol>
+  <li>Protects resolution integrity and service availability together.</li>
+  <li>Uses layered controls across authoritative DNS, resolver security, and governance.</li>
+  <li>Includes monitoring and tested response, not only configuration changes.</li>
+  <li>Accounts for business impact and operational feasibility.</li>
+</ol>
+
+<p>Common pattern examples:</p>
+
+<ul>
+  <li>If the scenario emphasizes spoofed responses, choose authenticated resolution with validation and monitoring rather than logging-only controls.</li>
+  <li>If the scenario involves domain takeover risk, strengthen registrar governance and change control, not only protocol configuration.</li>
+  <li>If the scenario involves critical services, prioritize resilient DNS architecture and rehearsed recovery paths.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>If you are turning this into action, a strong baseline is:</p>
+
+<ol>
+  <li>Classify critical domains and assign named ownership.</li>
+  <li>Enforce registrar and DNS admin least privilege with strong MFA.</li>
+  <li>Deploy DNSSEC where feasible and verify validation paths.</li>
+  <li>Harden recursive resolvers and restrict recursion exposure.</li>
+  <li>Monitor DNS change events and validation failures with alerting.</li>
+  <li>Rehearse DNS incident playbooks with security and operations teams.</li>
+</ol>
+
+<p>That combination improves both CISSP judgment and production resilience.</p>
+
+<p>DNS security is not a checkbox on network diagrams. It is integrity at the start of every connection.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 66 covered email trust architecture with SPF, DKIM, and DMARC. Post 67 continues Domain 4 by focusing on DNS integrity, DNSSEC operations, and resolver security.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 guide to DNS security: DNSSEC chain of trust, resolver hardening, cache poisoning defenses, domain governance, and incident response for resilient name resolution.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP DNS security DNSSEC guide</li>
+  <li>DNSSEC chain of trust explained</li>
+  <li>cache poisoning and resolver hardening</li>
+  <li>domain hijacking prevention controls</li>
+  <li>CISSP Domain 4 network security concepts</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="DNS Security" /><category term="DNSSEC" /><category term="Cache Poisoning" /><category term="Resolver Security" /><category term="Domain Hijacking" /><category term="Registrar Security" /><category term="Availability" /><category term="Incident Response" /><category term="Zero Trust" /><summary type="html"><![CDATA[DNS is not background plumbing. This CISSP Domain 4 guide explains how DNSSEC, resolver hardening, domain governance, and incident playbooks work together to protect service integrity and availability.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #66: Email Security Is a Trust Architecture, Not a Spam Setting</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-email-security-spf-dkim-dmarc-bec/" rel="alternate" type="text/html" title="CISSP #66: Email Security Is a Trust Architecture, Not a Spam Setting" /><published>2026-05-18T12:00:00+00:00</published><updated>2026-05-18T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-email-security-spf-dkim-dmarc-bec</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-email-security-spf-dkim-dmarc-bec/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-email-security-spf-dkim-dmarc-bec/hero.svg" alt="Email security architecture showing sender inventory, SPF DKIM DMARC controls, receiver validation, and business email compromise process safeguards" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">For CISSP scenarios, email security is strongest when technical authentication and business process controls are designed as one system.</figcaption>
+</figure>
+
+<p>Post 65 focused on wireless trust boundaries. This next Domain 4 step is just as operationally important: email trust boundaries.</p>
+
+<p>Email is still one of the most abused entry points in modern organizations. Not because teams do not care, but because email security spans many owners: DNS, identity, messaging, endpoint, legal, finance, and incident response. If those functions are disconnected, attackers find the seams.</p>
+
+<p>For CISSP, this topic is not about memorizing acronyms in isolation. The exam expects you to think like a risk-minded security leader: use technical controls to verify identity, then add process controls to stop high-impact fraud when technical controls are bypassed.</p>
+
+<h2 id="why-email-security-fails-even-in-mature-environments">Why Email Security Fails Even in Mature Environments</h2>
+
+<p>Most failures are not from one missing product. They come from architecture gaps:</p>
+
+<ul>
+  <li>Unclear ownership of sending domains and third-party mail platforms</li>
+  <li>Incomplete SPF and DKIM coverage across all legitimate senders</li>
+  <li>DMARC set to monitoring forever with no policy progression plan</li>
+  <li>Overconfidence in filtering while high-risk business workflows remain weak</li>
+  <li>Weak reporting loop, where telemetry exists but no team drives remediation</li>
+</ul>
+
+<p>That is why CISSP framing matters here. The best control is rarely one tool. The best control is a governed system with clear ownership and enforceable operating decisions.</p>
+
+<h2 id="spf-dkim-and-dmarc-what-each-control-actually-does">SPF, DKIM, and DMARC: What Each Control Actually Does</h2>
+
+<p>A practical way to remember this:</p>
+
+<ul>
+  <li>SPF says which systems are allowed to send for a domain.</li>
+  <li>DKIM proves a message was signed by a domain and that signed content has not been altered in transit.</li>
+  <li>DMARC tells receivers how to treat mail when SPF and/or DKIM do not align with the visible From domain.</li>
+</ul>
+
+<p>DMARC is where policy and accountability become real. It turns authentication signals into an explicit disposition strategy: monitor, quarantine, or reject.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-email-security-spf-dkim-dmarc-bec/inline-authentication-flow.svg" alt="Flow diagram showing sender domain, SPF check, DKIM check, and DMARC alignment outcomes for pass and fail decisions" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">SPF and DKIM are authentication signals. DMARC is the policy layer that turns signal quality into operational action.</figcaption>
+</figure>
+
+<p>The common mistake is assuming SPF or DKIM alone solves spoofing risk. They do not. Without alignment and policy enforcement, attackers can still exploit weakly protected sender identity surfaces.</p>
+
+<h2 id="dmarc-maturity-from-visibility-to-enforcement">DMARC Maturity: From Visibility to Enforcement</h2>
+
+<p>For most organizations, DMARC rollout is a maturity journey, not a switch:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">p=none</code>: collect reports, inventory legitimate senders, and fix authentication gaps.</li>
+  <li><code class="language-plaintext highlighter-rouge">p=quarantine</code>: progressively isolate failing messages while validating business impact.</li>
+  <li><code class="language-plaintext highlighter-rouge">p=reject</code>: block unauthenticated impersonation attempts for protected domains.</li>
+</ol>
+
+<p>The technical sequence is simple. The operational sequence is harder.</p>
+
+<p>You need domain ownership clarity, third-party sender governance, and a change process for new mail systems. Otherwise teams regress into exceptions, and policy confidence erodes.</p>
+
+<p>A strong CISSP-style answer usually prefers controlled progression with measurable reporting over instant hard enforcement without sender inventory.</p>
+
+<h2 id="alignment-matters-more-than-checkbox-compliance">Alignment Matters More Than Checkbox Compliance</h2>
+
+<p>The exam frequently tests this subtlety: passing SPF or DKIM is not enough if alignment to the visible From domain fails.</p>
+
+<p>Why this matters:</p>
+
+<ul>
+  <li>End users and business systems reason about the visible sender identity.</li>
+  <li>Attackers abuse mismatches between technical sender paths and displayed sender branding.</li>
+  <li>Alignment helps receivers make consistent anti-spoofing decisions.</li>
+</ul>
+
+<p>In practice, many delivery problems and security blind spots come from fragmented sending estates: marketing tools, ticketing systems, HR platforms, and custom app mailers all behaving differently. Security and platform teams need one authoritative sender inventory and one authentication standard.</p>
+
+<h2 id="business-email-compromise-is-a-process-problem-too">Business Email Compromise Is a Process Problem Too</h2>
+
+<p>Authentication controls reduce spoofing, but BEC often succeeds through social engineering and workflow weaknesses even when the message looks plausible.</p>
+
+<p>This is where many technical programs stall: they invest in filtering but underinvest in financial process controls.</p>
+
+<p>High-value safeguards include:</p>
+
+<ul>
+  <li>Dual approval for payment, payroll, or vendor bank detail changes</li>
+  <li>Out-of-band verification for urgent transfer requests</li>
+  <li>Segregation of duties for approval and release authority</li>
+  <li>Explicit exception handling for executives and travel scenarios</li>
+  <li>Fast escalation path between security operations and finance leadership</li>
+</ul>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-email-security-spf-dkim-dmarc-bec/inline-bec-controls.svg" alt="Layered business email compromise control model across identity trust, workflow approvals, monitoring, and incident response" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The strongest BEC defense combines technical sender trust controls with disciplined financial workflows and tested response playbooks.</figcaption>
+</figure>
+
+<p>For CISSP best-answer logic, this is important: if the question involves fraud impact or executive impersonation, the strongest option often combines email technical controls and business process verification.</p>
+
+<h2 id="operational-controls-that-keep-email-security-durable">Operational Controls That Keep Email Security Durable</h2>
+
+<p>A solid program includes routine operations, not one-time setup:</p>
+
+<ul>
+  <li>Maintain sending-domain inventory and accountable owners</li>
+  <li>Review SPF records for stale or over-broad includes</li>
+  <li>Rotate DKIM keys on a defined lifecycle</li>
+  <li>Monitor DMARC aggregate data and drive corrective action ownership</li>
+  <li>Track new SaaS sender onboarding through a security gate</li>
+  <li>Simulate and review BEC playbooks with finance and legal teams</li>
+</ul>
+
+<p>CISSP repeatedly reinforces this point: governance and repeatable operations are security controls.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Email is an untrusted transport and requires sender authentication controls.</li>
+  <li>Defense in depth applies: authentication, filtering, user behavior, and response all matter.</li>
+  <li>Least privilege and separation of duties reduce financial fraud impact.</li>
+  <li>Security outcomes degrade when control ownership is unclear.</li>
+</ul>
+
+<h3 id="recent-developments-that-affect-design-decisions">Recent developments that affect design decisions</h3>
+
+<ul>
+  <li>Major mailbox providers increased enforcement expectations for high-volume senders, including stronger authentication and stricter hygiene requirements.</li>
+  <li>DMARC adoption has expanded beyond large brands, making sender-authentication posture more visible to customers and partners.</li>
+  <li>One-click unsubscribe and sender hygiene requirements have become practical deliverability and trust factors for many organizations.</li>
+</ul>
+
+<p>A good exam and real-world takeaway: recent changes raise the baseline, but core principles remain unchanged. Good governance and control integration still determine outcomes.</p>
+
+<h2 id="cissp-best-answer-mindset-for-email-security-questions">CISSP Best-Answer Mindset for Email Security Questions</h2>
+
+<p>When two answers sound technically correct, prefer the one that:</p>
+
+<ol>
+  <li>Protects business outcomes, not just inbox metrics.</li>
+  <li>Uses layered controls across people, process, and technology.</li>
+  <li>Reduces spoofing and fraud risk while preserving operational continuity.</li>
+  <li>Includes monitoring and continuous improvement, not static deployment.</li>
+</ol>
+
+<p>Common pattern examples:</p>
+
+<ul>
+  <li>If a company has many third-party senders and frequent authentication failures, report-first maturity with strict remediation ownership is better than unmanaged hard cutover.</li>
+  <li>If executive impersonation causes payment fraud attempts, technical email controls must be paired with verified financial approval workflows.</li>
+  <li>If sender identity is fragmented across teams, governance and inventory are prerequisite controls, not paperwork.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-apply-this-quarter">Practical Baseline You Can Apply This Quarter</h2>
+
+<p>If you are translating this topic into action, this baseline is realistic:</p>
+
+<ol>
+  <li>Build and maintain a complete sender inventory for each business domain.</li>
+  <li>Enforce SPF and DKIM standards for all approved senders.</li>
+  <li>Move DMARC from monitoring to quarantine to reject with explicit readiness gates.</li>
+  <li>Establish BEC-resistant finance workflows with out-of-band verification.</li>
+  <li>Create a joint security-finance-legal response path for high-risk email events.</li>
+  <li>Review telemetry monthly and tie findings to named remediation owners.</li>
+</ol>
+
+<p>That sequence improves both exam judgment and operational resilience.</p>
+
+<p>Email security is not a spam setting. It is trust architecture plus business discipline.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 65 covered wireless security and enterprise authentication tradeoffs. Post 66 continues Domain 4 with sender identity assurance and anti-BEC control design.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 practical guide to email security architecture: SPF, DKIM, DMARC alignment, phased enforcement, and business email compromise controls across technology and process.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP email security SPF DKIM DMARC</li>
+  <li>DMARC alignment and policy rollout guide</li>
+  <li>business email compromise control framework</li>
+  <li>CISSP Domain 4 communication and network security</li>
+  <li>email sender authentication best practices</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="Email Security" /><category term="SPF" /><category term="DKIM" /><category term="DMARC" /><category term="BEC" /><category term="Phishing" /><category term="Secure Email Gateway" /><category term="DNS" /><category term="Incident Response" /><category term="Governance" /><summary type="html"><![CDATA[Email security is not one control and not only a mail-team problem. This CISSP Domain 4 guide explains how SPF, DKIM, DMARC, identity operations, and business process controls work together to reduce spoofing and business email compromise risk.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-email-security-spf-dkim-dmarc-bec/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-email-security-spf-dkim-dmarc-bec/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #65: Wireless Security: WPA3, Enterprise Authentication, and Rogue AP Risk</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/" rel="alternate" type="text/html" title="CISSP #65: Wireless Security: WPA3, Enterprise Authentication, and Rogue AP Risk" /><published>2026-05-15T12:00:00+00:00</published><updated>2026-05-15T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/"><![CDATA[<figure>
   <img src="/portfolio_website/assets/generated/2026/05/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/hero.svg" alt="Wireless security architecture showing WPA3 controls, 802.1X enterprise authentication, segmentation, guest isolation, and rogue AP detection workflow" style="width:100%;border-radius:8px;" />
   <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">For CISSP wireless questions, the right answer is usually the control set that best matches business risk tolerance and operational constraints, not the newest acronym.</figcaption>
 </figure>
@@ -1751,296 +2158,4 @@ GET /api/users/6/profile → if not authorized, returns user 6's data anyway
   <li>API authentication and authorization</li>
   <li>Rate limiting and abuse prevention</li>
   <li>API data exposure risks</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="API Security" /><category term="Web Services" /><category term="Authentication" /><category term="Authorization" /><category term="Rate Limiting" /><category term="Data Exposure" /><category term="Input Validation" /><category term="Injection Attacks" /><summary type="html"><![CDATA[APIs are where secure coding practices meet attackers directly. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure—not as separate concerns, but as direct extensions of the secure coding discipline you bring to every line of code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards/" rel="alternate" type="text/html" title="CISSP #57: Secure Coding Practices and Standards — Code That Resists Attack" /><published>2026-05-08T12:30:00+00:00</published><updated>2026-05-08T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-secure-coding-practices-standards/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" alt="CISSP #57 Secure Coding Practices and Standards: input validation, error handling, output encoding, authorization, and dependency management" class="blog-hero" /></p>
-
-<p>Every significant software vulnerability I have seen traces back to the same handful of patterns: untrusted input that was never validated, an error message that leaked internal architecture, an authorization check that was missing from one code path, a dependency that nobody kept updated, or credentials that appeared in a log.</p>
-
-<p>None of these are mysteries. None of them are subtle. They are predictable failures that happen when coding discipline is missing.</p>
-
-<p>Post #52 taught you what goes wrong: injection, buffer overflows, race conditions, and the other major vulnerability categories. This post is about the practices that prevent those failures before they reach production. Not as a testing gate. Not as a tool that runs in CI/CD. As the discipline that developers build into how they think about and write code.</p>
-
-<p>That is what CISSP Domain 8 means by secure coding practices. Not checklists. Not compliance theater. Discipline.</p>
-
-<h2 id="why-standards-exist">Why Standards Exist</h2>
-
-<p>The reason organizations like OWASP, CERT, and NIST created secure coding standards was not to make developers’ lives harder. It was because these organizations spent years studying what works.</p>
-
-<p>When thousands of incidents are analyzed, patterns emerge. Certain practices consistently prevent classes of vulnerabilities. Other approaches consistently fail. Standards codify what works so teams do not have to rediscover it the hard way.</p>
-
-<p>The CISSP exam expects you to understand standards not as restrictions, but as the distilled wisdom of people who have seen what happens when discipline is missing.</p>
-
-<h2 id="input-validation-whitelist-do-not-sanitize">Input Validation: Whitelist, Do Not Sanitize</h2>
-
-<p>Here is the most important thing about input validation: it is not about cleaning up input. It is about rejecting anything that does not fit your legitimate use case.</p>
-
-<p>Too many teams approach input validation as sanitization. They take user input and try to remove dangerous characters. They escape quotes before putting strings into SQL. They strip angle brackets from text that might go into HTML.</p>
-
-<p>Sanitization fails because the definition of “dangerous” is context-specific and incomplete. An attacker can find a path you did not think to block.</p>
-
-<p>Whitelisting is different. You define exactly what you expect: a phone number is 10 digits, a postal code matches a specific format, an email follows RFC standards. Anything that does not match gets rejected. Not modified. Not cleaned. Rejected.</p>
-
-<p>The difference is profound. With sanitization, you are trying to find and remove every possible attack vector. With whitelisting, you are saying “only these inputs are valid; everything else is invalid.”</p>
-
-<p><strong>The rule:</strong> Accept input in the format you expect. Reject everything else. Do not try to fix or clean invalid input.</p>
-
-<p>This applies at every layer. Client-side validation is user experience. Server-side validation is security.</p>
-
-<h2 id="error-handling-detailed-logs-generic-responses">Error Handling: Detailed Logs, Generic Responses</h2>
-
-<p>One of the easiest gifts developers give attackers is detailed error messages.</p>
-
-<p>A database error that reveals your schema. A stack trace that shows your application structure. A file path error that shows where your code lives. An authentication error that tells an attacker whether an account exists.</p>
-
-<p>Errors contain information. That information is useful for debugging. It is also useful for attacking.</p>
-
-<p>The practice is straightforward: log detailed errors internally where your team can see them and use them to fix bugs. Return generic errors to users.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Internal log (detailed, for your team)
-logger.error("SQL query failed", {
-  query: "SELECT * FROM users WHERE id = ?",
-  params: [userId],
-  error: err.message,
-  stack: err.stack,
-  timestamp: new Date().toISOString()
-});
-
-// User response (generic, no information leakage)
-return { error: "An error occurred. Please contact support." };
-</code></pre></div></div>
-
-<p>Do not put sensitive information in error messages: passwords, tokens, API keys, internal paths, SQL queries, version information. Do not show stack traces to users. Do not enumerate whether an account exists during login failures.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/inline-error-handling.svg" alt="Error handling diagram showing detailed internal logs transformed into generic user-facing error messages" class="blog-inline" /></p>
-
-<h2 id="output-encoding-context-matters">Output Encoding: Context Matters</h2>
-
-<p>Output encoding prevents injection attacks in specific contexts. But here is what trips up many developers: the encoding method depends on where the output is going.</p>
-
-<p>HTML encoding is not the same as JavaScript encoding, which is not the same as SQL encoding, which is not the same as URL encoding.</p>
-
-<p>If you output data into HTML and you only do JavaScript encoding, you are still vulnerable to HTML injection. If you output data into a SQL query and you only do HTML encoding, SQL injection still works. The attacker uses the context you put it in.</p>
-
-<p><strong>The practice:</strong> Use frameworks and templating libraries that apply the correct encoding automatically for the context. Do not manually escape or encode. Manual escaping is where mistakes happen.</p>
-
-<p>Most modern frameworks do this by default. If you are writing raw string concatenation, you are probably doing it wrong.</p>
-
-<h2 id="authorization-checks-belong-everywhere">Authorization Checks Belong Everywhere</h2>
-
-<p>Authorization is often treated as a page-level concern: if a user lands on the admin dashboard, they must be logged in and have the right role.</p>
-
-<p>That is not enough.</p>
-
-<p>Authorization checks belong on every operation. Every API endpoint. Every business function. Every data access. Not just on the pages you designed for normal users.</p>
-
-<p>Here is why: users do not always follow the paths you designed. Someone will call the API directly. Someone will modify a request parameter. Someone will try to access data that is not theirs.</p>
-
-<p>You cannot assume that just because a user passed authentication and made it to a page that they should be allowed to do everything on that page. You have to check.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Wrong: check role once on the page
-if (user.role !== 'admin') redirect('/');
-
-// Right: check permission on every operation
-function deleteUser(userId) {
-  if (!user.canDelete(userId)) throw new UnauthorizedError();
-  // ... perform deletion
-}
-
-function getUser(userId) {
-  if (!user.canView(userId)) throw new UnauthorizedError();
-  // ... return data
-}
-</code></pre></div></div>
-
-<p>Default to deny. Require explicit permission for each operation.</p>
-
-<h2 id="dependency-management-and-vulnerability-scanning">Dependency Management and Vulnerability Scanning</h2>
-
-<p>You own every dependency your code uses.</p>
-
-<p>That sounds harsh. It is not meant to be. It is meant to be clear: when you add a library to your project, you inherit its security risk. If that library has a vulnerability, your code has the vulnerability.</p>
-
-<p>The practice:</p>
-
-<ul>
-  <li>Know what you depend on (use a software bill of materials)</li>
-  <li>Keep dependencies current (not blindly, but regularly)</li>
-  <li>Scan for known vulnerabilities (tools like OWASP Dependency-Check, Snyk, GitHub Dependabot)</li>
-  <li>Understand transitive dependencies (dependencies of dependencies)</li>
-</ul>
-
-<p>Scanning is important, but it is not sufficient. A scan tells you that a known vulnerability exists. It does not tell you whether your code is actually affected. It does not tell you whether an update will break your application. You still have to make decisions.</p>
-
-<h2 id="secure-logging-what-to-log-what-to-hide">Secure Logging: What to Log, What to Hide</h2>
-
-<p>Logs are critical for debugging and incident response. They are also a frequent source of information leakage.</p>
-
-<p>Do not log:</p>
-
-<ul>
-  <li>Passwords or password reset tokens</li>
-  <li>API keys, encryption keys, or certificates</li>
-  <li>Personally identifiable information (PII) unless absolutely necessary for your use case</li>
-  <li>Credit card numbers or other sensitive financial data</li>
-  <li>Full session tokens or authentication credentials</li>
-</ul>
-
-<p>Do log:</p>
-
-<ul>
-  <li>Authentication attempts and outcomes</li>
-  <li>Authorization failures (who tried to access what they should not)</li>
-  <li>Data access (especially access to sensitive data)</li>
-  <li>Configuration changes</li>
-  <li>Security-relevant events (permission changes, role assignments, admin actions)</li>
-</ul>
-
-<p>Make your logs tamper-resistant. Attackers that break in often try to cover their tracks by deleting logs. Centralize logs so they cannot easily be modified on the system where the application runs.</p>
-
-<h2 id="the-exam-mindset">The Exam Mindset</h2>
-
-<p>Here is how the CISSP exam treats secure coding:</p>
-
-<p>It is not about memorizing OWASP Top 10. It is about reasoning: “If developers are not validating input, what classes of attack become possible? If error messages leak information, what advantage do attackers gain? If authorization is checked inconsistently, where is the gap?”</p>
-
-<p>The exam also distinguishes between what developers must control in code and what can be controlled elsewhere:</p>
-
-<ul>
-  <li>Input validation must happen in code (infrastructure cannot fix bad validation logic)</li>
-  <li>Authorization must be enforced in code (do not rely only on network security)</li>
-  <li>Logging must be designed in code</li>
-  <li>Dependency management is a development responsibility</li>
-  <li>Encryption and secure communication can involve both code and infrastructure</li>
-</ul>
-
-<p>Secure coding is not a tool. It is not a process phase. It is a discipline built into how developers think about every piece of code they write.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/inline-input-validation.svg" alt="Input validation as whitelist filtering: malicious input rejected, valid input accepted" class="blog-inline" /></p>
-
-<h2 id="from-theory-to-daily-practice">From Theory to Daily Practice</h2>
-
-<p>In real teams, secure coding happens when:</p>
-
-<ul>
-  <li>Developers understand <em>why</em> these practices prevent attack, not just that they are required</li>
-  <li>Code review includes security checks (not as a separate gate, but as part of normal review)</li>
-  <li>Standards like OWASP and CERT are treated as learning resources, not compliance documents</li>
-  <li>Teams have conversations about security tradeoffs, not just security checklists</li>
-  <li>Mistakes are treated as learning opportunities, not failures</li>
-</ul>
-
-<p>The CISSP is clear: software security is engineered in. It does not happen by accident. It happens because developers, architects, and security practitioners understand that every piece of code they write either resists attack or enables it.</p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP #57 explains secure coding practices and standards: input validation, error handling, output encoding, authorization, and dependency management as the daily discipline that prevents vulnerabilities before they reach production.</p>
-
-<p><strong>SEO keywords:</strong> CISSP secure coding Domain 8, input validation best practices, OWASP CWE secure coding standards, authorization and error handling, secure coding discipline, software development security</p>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="Secure Coding" /><category term="Input Validation" /><category term="Error Handling" /><category term="Output Encoding" /><category term="Authorization" /><category term="OWASP" /><category term="CWE" /><category term="CERT" /><category term="Software Assurance" /><summary type="html"><![CDATA[Most vulnerabilities follow predictable patterns: missing input validation, poor error handling, authorization checks that slip through. CISSP Domain 8 expects you to understand secure coding practices not as nice-to-haves, but as the daily discipline that prevents attack.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-secure-coding-practices-standards/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/" rel="alternate" type="text/html" title="CISSP #56: DAST, IAST, and Fuzzing - Application Security Testing Beyond Static Analysis" /><published>2026-05-07T14:30:00+00:00</published><updated>2026-05-07T14:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-dast-iast-fuzzing-application-security-testing/"><![CDATA[<p>Static analysis has become a standard part of most modern CI pipelines. Linters run on commit. SAST tools flag risky patterns before the build finishes. That is meaningful progress.</p>
-
-<p>But static analysis only sees the code as text. It cannot observe what happens when the application is actually running — how it handles unexpected input, whether authentication logic can be bypassed, or whether a deployed API behaves the way the code suggests it should.</p>
-
-<p>DAST, IAST, and fuzzing address that gap. The CISSP exam tests these concepts directly, and understanding the distinction between them is more useful than memorizing definitions.</p>
-
-<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" alt="DAST scanner probing a running web application from the outside" /></p>
-
-<hr />
-
-<h2 id="why-static-analysis-alone-is-not-enough">Why Static Analysis Alone Is Not Enough</h2>
-
-<p>SAST (Static Application Security Testing) operates on source code, bytecode, or binaries before execution. It is fast, integrates early in the SDLC, and catches a real class of vulnerabilities: hardcoded credentials, SQL string concatenation, dangerous function calls, and similar code-level patterns.</p>
-
-<p>What it cannot do is simulate a real attacker interacting with a running system. It has no visibility into how the application behaves at runtime, how session tokens are issued and validated, how business logic responds to unexpected sequences of requests, or what an endpoint actually returns when given malformed input.</p>
-
-<p>That is not a flaw in SAST. It is a boundary condition. The tools are doing what they are designed to do. The error is treating them as a complete testing program rather than one layer of it.</p>
-
-<hr />
-
-<h2 id="dast-testing-the-running-application-from-the-outside">DAST: Testing the Running Application from the Outside</h2>
-
-<p>Dynamic Application Security Testing operates against a running application. The tester — or the automated tool — sends HTTP requests, examines responses, and infers vulnerabilities from observable behavior. No source code access is required.</p>
-
-<p>This black-box perspective makes DAST uniquely capable of finding things that static analysis structurally cannot: authentication weaknesses, session management flaws, injection vulnerabilities that only manifest at runtime, security misconfigurations in the deployed environment, and issues introduced by the hosting infrastructure.</p>
-
-<p>DAST is most effective in staging and pre-production environments, after the application is fully assembled. Tools like OWASP ZAP and Burp Suite are widely used for this purpose.</p>
-
-<p>The limitation is the inverse of SAST’s strength. DAST has no visibility into internal code paths. It can only probe what is externally observable. Logic errors buried in server-side code that never surface through HTTP responses may be invisible to DAST entirely.</p>
-
-<hr />
-
-<h2 id="iast-instrumentation-from-the-inside">IAST: Instrumentation from the Inside</h2>
-
-<p>Interactive Application Security Testing takes a different approach. An agent is deployed inside the running application — typically as a library or framework plugin — and monitors the application from within as tests are executed against it.</p>
-
-<p>Because IAST has visibility into both the inbound requests and the internal code execution responding to them, it combines characteristics of SAST and DAST. It can observe which lines of code are executed in response to a particular input, trace tainted data flows from input through processing to output, and flag vulnerabilities with more context than either static or dynamic analysis alone.</p>
-
-<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-1.svg" alt="Comparison of when SAST, DAST, and IAST run in the SDLC and what each observes" /></p>
-
-<p>The trade-off is complexity. IAST requires instrumentation that must be compatible with the application’s runtime and framework. It typically runs during integration testing rather than in production. Some implementations introduce performance overhead that makes them unsuitable for production environments without careful configuration.</p>
-
-<p>For the CISSP exam, the key distinction is that IAST requires an agent inside the running application and provides a hybrid perspective that neither SAST nor DAST can deliver independently.</p>
-
-<hr />
-
-<h2 id="fuzzing-probing-boundaries-with-unexpected-input">Fuzzing: Probing Boundaries with Unexpected Input</h2>
-
-<p>Fuzzing takes a fundamentally different approach from all three. Rather than analyzing code or sending well-formed requests, a fuzzer generates large volumes of unexpected, malformed, random, or boundary-condition input and observes whether the application crashes, hangs, leaks data, or behaves in ways it should not.</p>
-
-<p>The goal is not to confirm that expected inputs produce expected outputs. It is to discover what happens when the application encounters input it was not designed to handle gracefully.</p>
-
-<p>Modern coverage-guided fuzzers — like AFL and libFuzzer — use instrumentation to track which code paths an input exercises and bias subsequent input generation toward unexplored paths. This makes them substantially more effective than purely random fuzzing at finding edge cases in complex code.</p>
-
-<p>Fuzzing is particularly effective against file parsers, protocol implementations, serialization handlers, and APIs that process structured input. It excels at finding memory safety issues in native code: buffer overflows, use-after-free conditions, null pointer dereferences. In higher-level languages, it surfaces logic errors, unhandled exceptions, and input validation gaps.</p>
-
-<p>It is less suited to testing application-level business logic, authentication flows, or stateful multi-step workflows. Those require testers who understand the application’s intended behavior.</p>
-
-<hr />
-
-<h2 id="how-these-testing-methods-fit-together">How These Testing Methods Fit Together</h2>
-
-<p>A mature application security testing program is not a choice between these methods. It is a sequenced combination of them applied at appropriate stages.</p>
-
-<p>SAST belongs early — in the IDE, on commit, or in the CI build. It catches vulnerabilities before they travel any further down the pipeline.</p>
-
-<p>DAST belongs in staging and pre-production. Once the application is assembled and deployed in an environment that approximates production, DAST can probe it the way an external attacker would.</p>
-
-<p>IAST belongs during integration testing, where an instrumented application is exercised by automated test suites or manual exploratory testing. The agent adds observability without requiring a separate scanning phase.</p>
-
-<p>Fuzzing belongs wherever the application processes structured external input: APIs, file upload handlers, message parsers, serialization boundaries. It can run continuously in a dedicated fuzzing environment against interface targets.</p>
-
-<p>No single method finds everything. SAST misses runtime behavior. DAST misses internal logic. IAST requires compatible instrumentation. Fuzzing cannot test business logic. The question for any program is: what are we not testing, and what does that leave exposed?</p>
-
-<p><img src="/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/inline-2.svg" alt="Fuzzing pipeline showing input generation, target application, and anomaly detection" /></p>
-
-<hr />
-
-<h2 id="what-the-cissp-exam-is-likely-testing">What the CISSP Exam Is Likely Testing</h2>
-
-<p>The exam distinguishes clearly between SAST, DAST, IAST, and fuzzing. Expect questions that require you to identify which method applies to a given scenario.</p>
-
-<p>The key distinguishing facts:</p>
-
-<ul>
-  <li><strong>SAST</strong> operates on source code or binaries before execution. No running application required. Finds code-level patterns.</li>
-  <li><strong>DAST</strong> operates against a running application from the outside. No source code required. Finds runtime behavior vulnerabilities.</li>
-  <li><strong>IAST</strong> uses an agent inside the running application. Requires instrumentation. Combines internal code visibility with runtime behavior.</li>
-  <li><strong>Fuzzing</strong> sends unexpected or malformed input to find crashes and unexpected behavior. Effective against parsers, protocols, and input-handling code.</li>
-</ul>
-
-<p>DAST appears most frequently in exam questions. Know that it requires a running application, operates from the outside, and is appropriate for testing deployed systems rather than source code.</p>
-
-<p>Domain 8 situates these techniques within the secure SDLC. The exam may ask which technique is most appropriate at a given phase of development, or which method would identify a specific class of vulnerability.</p>
-
-<hr />
-
-<h2 id="the-engineering-takeaway">The Engineering Takeaway</h2>
-
-<p>The engineers who benefit most from understanding these techniques are not the ones building a dedicated security testing team — they are the ones deciding what their CI/CD pipeline should do before code ships.</p>
-
-<p>Static analysis in the build pipeline is a reasonable floor. DAST in staging before any production deployment raises it meaningfully. Fuzzing against APIs and parsers finds the edge cases that neither method would surface.</p>
-
-<p>The broader discipline here is the same as defense in depth applied to testing: no single control is sufficient, no single method covers everything, and the gaps between methods are exactly where vulnerabilities tend to live.</p>
-
-<hr />
-
-<p><em>Meta description: DAST tests running applications from the outside. IAST instruments them from within. Fuzzing probes with unexpected input. This post explains how each works, when to use them, and what the CISSP exam tests on dynamic application security testing.</em></p>
-
-<p><em>SEO keywords: DAST vs SAST CISSP, dynamic application security testing, IAST instrumented testing, fuzzing security testing, CISSP Domain 8 application security testing</em></p>]]></content><author><name>Johnny Avakian</name></author><category term="cissp" /><category term="security" /><category term="cissp" /><category term="dast" /><category term="iast" /><category term="fuzzing" /><category term="application-security" /><category term="security-testing" /><category term="domain8" /><category term="sdlc" /><summary type="html"><![CDATA[Static analysis catches code patterns. It cannot test what happens when the application is actually running. DAST, IAST, and fuzzing fill that gap — and the CISSP exam expects you to know the difference.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-dast-iast-fuzzing-application-security-testing/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="API Security" /><category term="Web Services" /><category term="Authentication" /><category term="Authorization" /><category term="Rate Limiting" /><category term="Data Exposure" /><category term="Input Validation" /><category term="Injection Attacks" /><summary type="html"><![CDATA[APIs are where secure coding practices meet attackers directly. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure—not as separate concerns, but as direct extensions of the secure coding discipline you bring to every line of code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

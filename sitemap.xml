@@ -5,46 +5,56 @@
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/blog/</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/robots.txt</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/sitemap.xml</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/assets/main.css</loc>
-        <lastmod>2026-05-16T04:04:00+00:00</lastmod>
+        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
       </url>
     
   
 
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/</loc>
+      <lastmod>2026-05-18T13:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/cissp-email-security-spf-dkim-dmarc-bec/</loc>
+      <lastmod>2026-05-18T12:00:00+00:00</lastmod>
+    </url>
   
     <url>
       <loc>https://codeavak.github.io/portfolio_website/blog/cissp-wireless-security-wpa3-enterprise-auth-rogue-ap/</loc>
