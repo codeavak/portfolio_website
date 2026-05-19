@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">DNS Security Architecture with DNSSEC, Resolver Hardening, and Monitoring</title>
+  <desc id="desc">A layered DNS security diagram showing authoritative DNS governance, DNSSEC signing, resolver protections, and incident response controls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a1226"/>
+      <stop offset="100%" stop-color="#0f4a5d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 40px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 500 20px 'Segoe UI', Tahoma, sans-serif; fill: #dbeafe; }
+      .t { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 17px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .line { stroke: #93c5fd; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg)"/>
+  <circle cx="1180" cy="120" r="230" fill="#22d3ee" opacity="0.12"/>
+  <circle cx="170" cy="710" r="255" fill="#f59e0b" opacity="0.09"/>
+
+  <text x="70" y="90" class="h">CISSP #67: DNS Security Is Security-Plane Integrity</text>
+  <text x="70" y="130" class="s">Authoritative governance, DNSSEC validation, resolver hardening, and incident readiness</text>
+
+  <rect x="70" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.55"/>
+  <text x="95" y="235" class="t">Authoritative DNS</text>
+  <text x="95" y="270" class="b">Zone ownership model</text>
+  <text x="95" y="300" class="b">Registrar and registry controls</text>
+  <text x="95" y="330" class="b">Change and delegation governance</text>
+  <text x="95" y="365" class="k">Control: integrity at source</text>
+
+  <rect x="410" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#34d399" stroke-opacity="0.6"/>
+  <text x="435" y="235" class="t">DNSSEC Chain of Trust</text>
+  <text x="435" y="270" class="b">Zone signing and DS records</text>
+  <text x="435" y="300" class="b">KSK/ZSK lifecycle discipline</text>
+  <text x="435" y="330" class="b">Validation-aware operations</text>
+  <text x="435" y="365" class="k">Control: authenticated answers</text>
+
+  <rect x="750" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#f59e0b" stroke-opacity="0.72"/>
+  <text x="775" y="235" class="t">Resolver Hardening</text>
+  <text x="775" y="270" class="b">Recursion policy boundaries</text>
+  <text x="775" y="300" class="b">Cache poisoning resistance</text>
+  <text x="775" y="330" class="b">Rate limiting and telemetry</text>
+  <text x="775" y="365" class="k">Control: trusted resolution</text>
+
+  <rect x="1090" y="190" rx="18" ry="18" width="250" height="200" fill="url(#card)" stroke="#fb7185" stroke-opacity="0.75"/>
+  <text x="1115" y="235" class="t">Incident Response</text>
+  <text x="1115" y="270" class="b">Domain hijack playbooks</text>
+  <text x="1115" y="300" class="b">Registrar escalation path</text>
+  <text x="1115" y="330" class="b">TTL and rollback strategy</text>
+  <text x="1115" y="365" class="k">Control: fast recovery</text>
+
+  <rect x="200" y="480" rx="18" ry="18" width="440" height="200" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.65"/>
+  <text x="230" y="525" class="t">Monitoring and Assurance</text>
+  <text x="230" y="560" class="b">Validation-failure alerting</text>
+  <text x="230" y="590" class="b">NXDOMAIN and anomaly baselines</text>
+  <text x="230" y="620" class="b">Audit trails for DNS changes</text>
+  <text x="230" y="655" class="k">Control: continuous verification</text>
+
+  <rect x="690" y="480" rx="18" ry="18" width="530" height="200" fill="url(#card)" stroke="#22d3ee" stroke-opacity="0.65"/>
+  <text x="720" y="525" class="t">CISSP Best-Answer Framing</text>
+  <text x="720" y="560" class="b">Choose controls that protect availability, integrity, and business continuity</text>
+  <text x="720" y="590" class="b">Treat DNS as mission-critical infrastructure, not background plumbing</text>
+  <text x="720" y="620" class="b">Combine design controls with tested operational response</text>
+  <text x="720" y="655" class="k">Control: risk-based architecture decisions</text>
+
+  <path d="M 370 290 L 410 290" class="line"/>
+  <path d="M 710 290 L 750 290" class="line"/>
+  <path d="M 1050 290 L 1090 290" class="line"/>
+  <path d="M 900 390 L 900 470" class="line"/>
+  <path d="M 560 390 L 430 470" class="line"/>
+
+  <rect x="70" y="720" width="1260" height="46" rx="10" ry="10" fill="#0f172a" fill-opacity="0.55" stroke="#93c5fd" stroke-opacity="0.35"/>
+  <text x="92" y="750" class="b">Best-answer mindset: protect DNS integrity, enforce validation, and prepare operationally for domain abuse and resolution failures.</text>
+</svg>

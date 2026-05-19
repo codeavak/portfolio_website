@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Email Authentication Flow: SPF, DKIM, and DMARC Alignment</title>
+  <desc id="desc">A flow diagram showing how SPF and DKIM checks feed DMARC alignment and policy action decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .s { font: 600 20px 'Segoe UI', Tahoma, sans-serif; fill: #334155; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #1e293b; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .a { stroke: #0ea5e9; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">SPF + DKIM + DMARC: How the Decision Actually Works</text>
+
+  <rect x="70" y="120" width="250" height="120" rx="14" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="95" y="165" class="s">Sender Domain</text>
+  <text x="95" y="200" class="b">Authorized platform sends email</text>
+
+  <rect x="370" y="120" width="250" height="120" rx="14" fill="#ffffff" stroke="#22c55e" stroke-width="2"/>
+  <text x="395" y="165" class="s">SPF Check</text>
+  <text x="395" y="200" class="b">IP/domain authorization signal</text>
+
+  <rect x="670" y="120" width="250" height="120" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <text x="695" y="165" class="s">DKIM Check</text>
+  <text x="695" y="200" class="b">Signature and integrity signal</text>
+
+  <rect x="970" y="120" width="170" height="120" rx="14" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+  <text x="995" y="165" class="s">DMARC</text>
+  <text x="995" y="200" class="b">Alignment test</text>
+
+  <path d="M 320 180 L 370 180" class="a"/>
+  <path d="M 620 180 L 670 180" class="a"/>
+  <path d="M 920 180 L 970 180" class="a"/>
+
+  <rect x="120" y="310" width="440" height="250" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="150" y="355" class="s">If Alignment Passes</text>
+  <text x="150" y="395" class="b">- Receiver treats sender identity as authenticated</text>
+  <text x="150" y="430" class="b">- Policy and reputation checks continue</text>
+  <text x="150" y="465" class="b">- DMARC reports still feed monitoring</text>
+  <text x="150" y="515" class="k">Outcome: trusted delivery path</text>
+
+  <rect x="640" y="310" width="440" height="250" rx="16" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+  <text x="670" y="355" class="s">If Alignment Fails</text>
+  <text x="670" y="395" class="b">- p=none: monitor only</text>
+  <text x="670" y="430" class="b">- p=quarantine: send to spam or high-risk handling</text>
+  <text x="670" y="465" class="b">- p=reject: block during SMTP transaction</text>
+  <text x="670" y="515" class="k">Outcome: policy-driven anti-spoofing enforcement</text>
+
+  <path d="M 1040 240 L 340 310" class="a"/>
+  <path d="M 1060 240 L 860 310" class="a"/>
+
+  <text x="250" y="610" class="b">CISSP lens: authentication methods are signals; DMARC is the policy layer that turns those signals into action.</text>
+</svg>

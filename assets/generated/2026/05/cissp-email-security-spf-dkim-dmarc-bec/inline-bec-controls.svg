@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Business Email Compromise Control Stack</title>
+  <desc id="desc">A practical control stack for reducing business email compromise risk across identity, workflow, monitoring, and response.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">BEC Defense Is a Process Stack, Not an Email Filter</text>
+
+  <rect x="80" y="120" width="1040" height="90" rx="14" fill="#1d4ed8" fill-opacity="0.35" stroke="#60a5fa"/>
+  <text x="110" y="175" class="s">1. Identity Trust Layer</text>
+  <text x="430" y="175" class="b">SPF, DKIM, DMARC alignment and strong mailbox authentication</text>
+
+  <rect x="80" y="230" width="1040" height="90" rx="14" fill="#0f766e" fill-opacity="0.35" stroke="#2dd4bf"/>
+  <text x="110" y="285" class="s">2. Payment and Change Workflow Layer</text>
+  <text x="490" y="285" class="b">Dual approval, callback verification, and no single-person release authority</text>
+
+  <rect x="80" y="340" width="1040" height="90" rx="14" fill="#92400e" fill-opacity="0.35" stroke="#f59e0b"/>
+  <text x="110" y="395" class="s">3. Detection and Monitoring Layer</text>
+  <text x="450" y="395" class="b">Anomaly detection, executive impersonation rules, and user reporting channel</text>
+
+  <rect x="80" y="450" width="1040" height="90" rx="14" fill="#7f1d1d" fill-opacity="0.35" stroke="#fb7185"/>
+  <text x="110" y="505" class="s">4. Response and Recovery Layer</text>
+  <text x="430" y="505" class="b">Immediate containment, legal-finance coordination, and lessons-learned updates</text>
+
+  <text x="190" y="600" class="k">CISSP mindset: strongest answer combines technical controls with financial process controls and tested incident response.</text>
+</svg>
