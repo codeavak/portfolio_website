@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">DDoS Resilience Architecture with Anycast, Scrubbing, and Layered Controls</title>
+  <desc id="desc">A layered defense diagram for DDoS resilience showing upstream protections, scrubbing paths, application safeguards, and incident operations.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1224"/>
+      <stop offset="100%" stop-color="#15465d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 40px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 500 20px 'Segoe UI', Tahoma, sans-serif; fill: #dbeafe; }
+      .t { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 17px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .line { stroke: #93c5fd; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg)"/>
+  <circle cx="1180" cy="130" r="220" fill="#22d3ee" opacity="0.12"/>
+  <circle cx="180" cy="700" r="260" fill="#f59e0b" opacity="0.09"/>
+
+  <text x="70" y="90" class="h">CISSP #69: DDoS Resilience Is Architecture, Not a Widget</text>
+  <text x="70" y="130" class="s">Anycast distribution, upstream scrubbing, app-layer controls, and rehearsed incident response</text>
+
+  <rect x="70" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.55"/>
+  <text x="95" y="235" class="t">Traffic Flood Sources</text>
+  <text x="95" y="270" class="b">Volumetric network floods</text>
+  <text x="95" y="300" class="b">Protocol abuse patterns</text>
+  <text x="95" y="330" class="b">App-layer request storms</text>
+  <text x="95" y="365" class="k">Risk: saturation and instability</text>
+
+  <rect x="410" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#34d399" stroke-opacity="0.6"/>
+  <text x="435" y="235" class="t">Edge and Upstream Controls</text>
+  <text x="435" y="270" class="b">Anycast traffic spreading</text>
+  <text x="435" y="300" class="b">Scrubbing center diversion</text>
+  <text x="435" y="330" class="b">Provider coordination hooks</text>
+  <text x="435" y="365" class="k">Control: absorb and filter</text>
+
+  <rect x="750" y="190" rx="18" ry="18" width="300" height="200" fill="url(#card)" stroke="#f59e0b" stroke-opacity="0.72"/>
+  <text x="775" y="235" class="t">Application Protection</text>
+  <text x="775" y="270" class="b">Rate limiting and quotas</text>
+  <text x="775" y="300" class="b">WAF/bot mitigation rules</text>
+  <text x="775" y="330" class="b">Graceful degradation modes</text>
+  <text x="775" y="365" class="k">Control: preserve core function</text>
+
+  <rect x="1090" y="190" rx="18" ry="18" width="250" height="200" fill="url(#card)" stroke="#fb7185" stroke-opacity="0.75"/>
+  <text x="1115" y="235" class="t">IR and Communications</text>
+  <text x="1115" y="270" class="b">Runbooks and activation</text>
+  <text x="1115" y="300" class="b">Stakeholder updates</text>
+  <text x="1115" y="330" class="b">Post-incident hardening</text>
+  <text x="1115" y="365" class="k">Control: fast containment</text>
+
+  <rect x="200" y="480" rx="18" ry="18" width="440" height="200" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.65"/>
+  <text x="230" y="525" class="t">Monitoring and Thresholds</text>
+  <text x="230" y="560" class="b">Traffic baseline anomaly alerts</text>
+  <text x="230" y="590" class="b">SLO impact and latency tracking</text>
+  <text x="230" y="620" class="b">Automated protection triggers</text>
+  <text x="230" y="655" class="k">Control: early response signal</text>
+
+  <rect x="690" y="480" rx="18" ry="18" width="530" height="200" fill="url(#card)" stroke="#22d3ee" stroke-opacity="0.65"/>
+  <text x="720" y="525" class="t">CISSP Best-Answer Framing</text>
+  <text x="720" y="560" class="b">Choose layered controls that protect availability under stress</text>
+  <text x="720" y="590" class="b">Balance prevention, detection, and recovery capacity</text>
+  <text x="720" y="620" class="b">Architect for resilience, not perfect blocking</text>
+  <text x="720" y="655" class="k">Control: mission continuity</text>
+
+  <path d="M 370 290 L 410 290" class="line"/>
+  <path d="M 710 290 L 750 290" class="line"/>
+  <path d="M 1050 290 L 1090 290" class="line"/>
+  <path d="M 900 390 L 900 470" class="line"/>
+  <path d="M 560 390 L 430 470" class="line"/>
+
+  <rect x="70" y="720" width="1260" height="46" rx="10" ry="10" fill="#0f172a" fill-opacity="0.55" stroke="#93c5fd" stroke-opacity="0.35"/>
+  <text x="92" y="750" class="b">Best-answer mindset: build capacity and control layers so attacks become manageable degradation events, not business-stopping outages.</text>
+</svg>

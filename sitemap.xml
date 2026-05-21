@@ -5,46 +5,56 @@
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/games/johnnys-chronicles/</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/blog/</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/robots.txt</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/sitemap.xml</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
     
       <url>
         <loc>https://codeavak.github.io/portfolio_website/assets/main.css</loc>
-        <lastmod>2026-05-19T04:57:39+00:00</lastmod>
+        <lastmod>2026-05-21T04:45:40+00:00</lastmod>
       </url>
     
   
 
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/</loc>
+      <lastmod>2026-05-20T13:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security/</loc>
+      <lastmod>2026-05-20T12:00:00+00:00</lastmod>
+    </url>
   
     <url>
       <loc>https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/</loc>

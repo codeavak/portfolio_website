@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Route Hijack Flow and Control Interruption Points</title>
+  <desc id="desc">Flow diagram showing how a hijacked prefix propagates and where RPKI and policy controls can break the attack path.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .s { font: 600 20px 'Segoe UI', Tahoma, sans-serif; fill: #334155; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #1e293b; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #0f172a; }
+      .a { stroke: #0ea5e9; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">Route Hijack Sequence and Defensive Breakpoints</text>
+
+  <rect x="80" y="120" width="230" height="120" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="105" y="165" class="s">Legitimate Prefix</text>
+  <text x="105" y="200" class="b">AS advertises owned route</text>
+
+  <rect x="350" y="120" width="230" height="120" rx="14" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+  <text x="375" y="165" class="s">Rogue Advertisement</text>
+  <text x="375" y="200" class="b">Competing origin appears</text>
+
+  <rect x="620" y="120" width="230" height="120" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <text x="645" y="165" class="s">Propagation Pressure</text>
+  <text x="645" y="200" class="b">Peers accept and spread path</text>
+
+  <rect x="890" y="120" width="230" height="120" rx="14" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="915" y="165" class="s">Control Interruption</text>
+  <text x="915" y="200" class="b">RPKI and policy block</text>
+
+  <path d="M 310 180 L 350 180" class="a"/>
+  <path d="M 580 180 L 620 180" class="a"/>
+  <path d="M 850 180 L 890 180" class="a"/>
+
+  <rect x="120" y="300" width="430" height="240" rx="16" fill="#ffffff" stroke="#22c55e" stroke-width="2"/>
+  <text x="150" y="345" class="s">Defensive Conditions Present</text>
+  <text x="150" y="385" class="b">- Valid ROA and origin validation active</text>
+  <text x="150" y="420" class="b">- Prefix filters reject unauthorized announcements</text>
+  <text x="150" y="455" class="b">- Monitoring triggers fast escalation</text>
+  <text x="150" y="505" class="k">Outcome: hijack impact constrained</text>
+
+  <rect x="650" y="300" width="430" height="240" rx="16" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+  <text x="680" y="345" class="s">Defensive Conditions Missing</text>
+  <text x="680" y="385" class="b">- Weak or absent route validation</text>
+  <text x="680" y="420" class="b">- Traffic follows malicious or unstable path</text>
+  <text x="680" y="455" class="b">- Outage, interception, or latency spike risk</text>
+  <text x="680" y="505" class="k">Outcome: broad service disruption</text>
+
+  <path d="M 1010 240 L 340 300" class="a"/>
+  <path d="M 1030 240 L 860 300" class="a"/>
+
+  <text x="240" y="605" class="b">CISSP lens: strongest answer combines preventive routing controls with detection and coordinated recovery.</text>
+</svg>

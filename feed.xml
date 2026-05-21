@@ -1,4 +1,398 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-19T04:57:39+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #67: DNS Security Is Integrity at the Start of Every Connection</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/" rel="alternate" type="text/html" title="CISSP #67: DNS Security Is Integrity at the Start of Every Connection" /><published>2026-05-18T13:00:00+00:00</published><updated>2026-05-18T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-21T04:45:40+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/" rel="alternate" type="text/html" title="CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature" /><published>2026-05-20T13:00:00+00:00</published><updated>2026-05-20T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" alt="DDoS resilience architecture with anycast distribution, upstream scrubbing, application-layer controls, and incident response workflow" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, availability is a core security objective. DDoS resilience is strongest when technical and operational controls are designed as one system.</figcaption>
+</figure>
+
+<p>Post 68 focused on internet routing trust. The next Domain 4 step is a reliability and security intersection every public-facing platform eventually confronts: DDoS pressure.</p>
+
+<p>The common failure pattern is treating DDoS as a one-time procurement problem. Teams buy a tool, enable a default policy, and assume the risk is solved. Then a real attack arrives with mixed traffic patterns, business-critical endpoints under stress, and unclear incident ownership.</p>
+
+<p>For CISSP preparation, this topic is less about naming attack families and more about selecting controls that preserve mission-critical service under adverse conditions.</p>
+
+<h2 id="ddos-is-an-availability-and-business-risk-problem">DDoS Is an Availability and Business Risk Problem</h2>
+
+<p>DDoS attacks are often categorized technically, but their real impact is business disruption.</p>
+
+<p>Typical consequences include:</p>
+
+<ul>
+  <li>Customer-facing downtime</li>
+  <li>Severe latency and transaction failure</li>
+  <li>Operational overload across SRE, support, and security teams</li>
+  <li>Revenue and trust erosion during prolonged incidents</li>
+</ul>
+
+<p>The exam mindset here is straightforward: if the scenario is about continuity under hostile conditions, prioritize layered resilience controls over absolute-prevention language.</p>
+
+<h2 id="attack-classes-and-why-one-control-is-never-enough">Attack Classes and Why One Control Is Never Enough</h2>
+
+<p>Different DDoS classes stress different parts of your architecture:</p>
+
+<ul>
+  <li>Volumetric attacks saturate network links and upstream capacity.</li>
+  <li>Protocol attacks exploit transport-layer behavior to exhaust state.</li>
+  <li>Application-layer floods consume compute and request-processing budget.</li>
+</ul>
+
+<p>A single control may reduce one class and fail on another.</p>
+
+<p>That is why mature programs use defense-in-depth at multiple layers: upstream network defenses, edge filtering, application safeguards, and operational response orchestration.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-attack-vs-defense.svg" alt="Comparison of unprepared DDoS response versus layered resilient architecture with scrubbing and application controls" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The difference between outage and survivable degradation is usually architectural layering and readiness, not intent.</figcaption>
+</figure>
+
+<h2 id="anycast-and-upstream-scrubbing-absorb-before-you-collapse">Anycast and Upstream Scrubbing: Absorb Before You Collapse</h2>
+
+<p>For internet-facing services, upstream capacity and traffic distribution strategy are decisive.</p>
+
+<h3 id="anycast-distribution">Anycast distribution</h3>
+
+<p>Anycast allows the same service IP to be announced from multiple locations, spreading load and reducing concentration on one edge.</p>
+
+<h3 id="scrubbing-integration">Scrubbing integration</h3>
+
+<p>Scrubbing providers or upstream mitigation paths help remove hostile traffic before it reaches constrained infrastructure.</p>
+
+<p>These controls are powerful but not self-sufficient. You need tested activation criteria, routing coordination, and clear provider escalation paths.</p>
+
+<p>CISSP best-answer logic generally favors solutions that reduce blast radius before internal systems saturate.</p>
+
+<h2 id="application-layer-resilience-controls">Application-Layer Resilience Controls</h2>
+
+<p>Even when upstream controls perform well, app-layer floods can still degrade core workflows.</p>
+
+<p>High-value controls include:</p>
+
+<ul>
+  <li>Endpoint-aware rate limits</li>
+  <li>Quotas by identity or client class where appropriate</li>
+  <li>Bot mitigation rules tuned for business-critical paths</li>
+  <li>Caching and queueing strategies for burst tolerance</li>
+  <li>Graceful degradation modes for non-critical features</li>
+</ul>
+
+<p>The principle is service prioritization. During stress, preserve what the business cannot lose first.</p>
+
+<h2 id="monitoring-and-detection-trigger-early-not-perfectly">Monitoring and Detection: Trigger Early, Not Perfectly</h2>
+
+<p>Detection should be fast enough to activate mitigation before user impact compounds.</p>
+
+<p>Useful signal categories:</p>
+
+<ul>
+  <li>Rapid traffic-volume and request-rate anomalies</li>
+  <li>Error-rate and latency divergence on critical endpoints</li>
+  <li>Regional path behavior changes</li>
+  <li>Load balancer and queue saturation indicators</li>
+</ul>
+
+<p>Do not wait for complete certainty. Incident workflows should support rapid initial mitigation with progressive refinement as evidence improves.</p>
+
+<h2 id="incident-response-for-ddos-events">Incident Response for DDoS Events</h2>
+
+<p>Technical controls fail without operational execution.</p>
+
+<p>A practical four-step model:</p>
+
+<ol>
+  <li>Detect and triage attack shape and business impact.</li>
+  <li>Activate mitigation layers (scrubbing, edge policy, rate adjustments).</li>
+  <li>Coordinate across providers and internal stakeholders with clear cadence.</li>
+  <li>Recover, then harden controls and thresholds based on lessons learned.</li>
+</ol>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-operations-playbook.svg" alt="DDoS response operations playbook covering detection, mitigation activation, communication, and recovery" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">DDoS events are coordination problems as much as traffic problems. Rehearsed operations often determine whether impact is minutes or hours.</figcaption>
+</figure>
+
+<p>For CISSP scenarios, if a question includes customer-impact pressure and time-critical decisions, the best answer usually combines technical mitigation and communication/process discipline.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Availability is a core security objective.</li>
+  <li>Defense in depth is required across network and application layers.</li>
+  <li>Incident response readiness is part of preventive security strategy.</li>
+  <li>Business-priority service protection beats uniform treatment under attack.</li>
+</ul>
+
+<h3 id="recent-developments-that-influence-decisions">Recent developments that influence decisions</h3>
+
+<ul>
+  <li>Cloud edge services and provider mitigation capabilities are more accessible, lowering adoption barriers for upstream protection.</li>
+  <li>Automated mitigation triggers are more common, but still require careful threshold design to avoid self-inflicted disruption.</li>
+  <li>Organizations increasingly integrate DDoS testing and game-day drills into reliability and security programs.</li>
+</ul>
+
+<p>The practical takeaway: technology is improving, but resilience still depends on architecture choices and disciplined operations.</p>
+
+<h2 id="cissp-best-answer-mindset-for-ddos-questions">CISSP Best-Answer Mindset for DDoS Questions</h2>
+
+<p>When multiple options sound valid, prefer the one that:</p>
+
+<ol>
+  <li>Preserves mission-critical availability under sustained attack.</li>
+  <li>Uses layered controls across network edge, application behavior, and operations.</li>
+  <li>Includes detection and response workflow, not only blocking technology.</li>
+  <li>Accounts for provider dependencies and communication readiness.</li>
+</ol>
+
+<p>Common pattern examples:</p>
+
+<ul>
+  <li>If the scenario is volumetric saturation, upstream distribution and scrubbing are generally stronger than app-only controls.</li>
+  <li>If the scenario is application exhaustion, endpoint-aware rate controls and prioritization are critical.</li>
+  <li>If the scenario is prolonged incident impact, response coordination and runbook maturity become central controls.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>A realistic starting baseline:</p>
+
+<ol>
+  <li>Classify critical services and define degraded-mode priorities.</li>
+  <li>Establish upstream mitigation paths and tested activation criteria.</li>
+  <li>Implement app-level rate and quota controls on critical endpoints.</li>
+  <li>Instrument latency/error/saturation alerts with actionable thresholds.</li>
+  <li>Run DDoS response drills across security, SRE, and communications teams.</li>
+  <li>Update playbooks after every significant event or simulation.</li>
+</ol>
+
+<p>That is how DDoS defense becomes resilience engineering instead of reactive firefighting.</p>
+
+<p>DDoS resilience is not a single feature. It is architecture plus operations under pressure.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 68 covered BGP route-integrity and routing security controls. Post 69 continues Domain 4 with DDoS resilience and layered availability defense.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 guide to DDoS resilience: anycast distribution, scrubbing integration, app-layer rate controls, monitoring triggers, and incident response for service continuity.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP DDoS resilience architecture</li>
+  <li>anycast scrubbing and rate limiting strategy</li>
+  <li>application-layer DDoS mitigation controls</li>
+  <li>DDoS incident response playbook</li>
+  <li>CISSP Domain 4 availability security</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="DDoS" /><category term="Availability" /><category term="Anycast" /><category term="Scrubbing" /><category term="Rate Limiting" /><category term="WAF" /><category term="Incident Response" /><category term="Resilience Engineering" /><category term="Business Continuity" /><summary type="html"><![CDATA[DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #68: BGP Security and Route Integrity in a Hijack-Prone Internet</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security/" rel="alternate" type="text/html" title="CISSP #68: BGP Security and Route Integrity in a Hijack-Prone Internet" /><published>2026-05-20T12:00:00+00:00</published><updated>2026-05-20T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" alt="BGP route security architecture with RPKI origin validation, route filtering, monitoring, and incident response controls" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">For CISSP scenarios, BGP security is not a router-only concern. It is a business continuity control because internet path trust directly affects availability and data exposure risk.</figcaption>
+</figure>
+
+<p>Post 67 focused on DNS integrity. This next Domain 4 step moves one layer out: internet routing trust.</p>
+
+<p>BGP was designed for inter-domain reachability, not strong built-in trust. That design tradeoff is still with us. The internet works because autonomous systems cooperate, but that cooperation also creates abuse and error opportunities: route hijacks, route leaks, traffic blackholing, and unintended traffic detours.</p>
+
+<p>For CISSP preparation, this topic is not about memorizing BGP attribute trivia. The exam mindset is risk-based: understand where trust is weak, choose layered controls, and protect business outcomes when upstream path integrity is threatened.</p>
+
+<h2 id="why-bgp-security-is-a-business-risk-not-a-niche-network-detail">Why BGP Security Is a Business Risk, Not a Niche Network Detail</h2>
+
+<p>A routing incident can look like an application outage, a latency crisis, or a selective region failure. Security teams sometimes notice it late because symptoms appear in customer-facing systems first.</p>
+
+<p>High-impact consequences include:</p>
+
+<ul>
+  <li>Service unavailability from unreachable prefixes</li>
+  <li>Traffic detours through unstable or untrusted paths</li>
+  <li>Intermittent packet loss that breaks authentication and API workflows</li>
+  <li>Reputation and revenue damage when customer journeys fail</li>
+</ul>
+
+<p>The core CISSP insight is simple: path integrity is a security and resilience concern. If you cannot trust how traffic reaches your systems, your downstream controls are under pressure before they even execute.</p>
+
+<h2 id="route-hijacks-vs-route-leaks">Route Hijacks vs Route Leaks</h2>
+
+<p>These are often discussed together, but they are not identical.</p>
+
+<h3 id="route-hijack">Route hijack</h3>
+
+<p>A network advertises IP space it is not authorized to originate. Whether malicious or accidental, downstream networks may prefer or accept the advertisement, redirecting traffic.</p>
+
+<h3 id="route-leak">Route leak</h3>
+
+<p>A network announces routes beyond intended policy boundaries, often violating peering assumptions and causing unexpected path propagation.</p>
+
+<p>Both can disrupt services. Both can create security exposure. Both require technical and operational controls.</p>
+
+<p>For CISSP best-answer logic, distinguish technical mechanism from business impact. The strongest answer usually ties route behavior to availability, integrity, and risk treatment.</p>
+
+<h2 id="rpki-and-roa-practical-origin-validation">RPKI and ROA: Practical Origin Validation</h2>
+
+<p>RPKI (Resource Public Key Infrastructure) and ROAs (Route Origin Authorizations) help verify whether a specific autonomous system is authorized to originate a prefix.</p>
+
+<p>This does not solve every routing problem, but it materially improves origin trust.</p>
+
+<p>Typical validation states:</p>
+
+<ul>
+  <li>Valid: origin matches published authorization</li>
+  <li>Invalid: origin conflicts with published authorization</li>
+  <li>Not Found: no authorization data available</li>
+</ul>
+
+<p>RPKI is best understood as a trust-quality upgrade, not a universal shield.</p>
+
+<p>It helps prevent or reduce some hijack scenarios, but it does not, by itself, detect every policy leak or path manipulation pattern. You still need filtering and monitoring discipline.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/inline-route-hijack-flow.svg" alt="Flow diagram of legitimate and rogue route announcements with control interruption points using RPKI and route policy filtering" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">RPKI strengthens origin authenticity, but meaningful protection still depends on policy enforcement and timely operational response.</figcaption>
+</figure>
+
+<h2 id="routing-hygiene-controls-beyond-rpki">Routing Hygiene Controls Beyond RPKI</h2>
+
+<p>A mature routing security posture is layered.</p>
+
+<p>Key controls include:</p>
+
+<ul>
+  <li>Prefix filters aligned to expected peer advertisements</li>
+  <li>Maximum-prefix limits to contain runaway or erroneous announcements</li>
+  <li>AS-path and community policy checks where operationally justified</li>
+  <li>Clear route acceptance policies per peer type (transit, customer, peer)</li>
+  <li>Controlled change windows for high-risk routing modifications</li>
+</ul>
+
+<p>These are operational controls, not just router commands.</p>
+
+<p>CISSP frequently rewards this perspective: preventive control plus governance process plus monitoring feedback loop.</p>
+
+<h2 id="monitoring-for-route-anomalies">Monitoring for Route Anomalies</h2>
+
+<p>You cannot respond to what you cannot see.</p>
+
+<p>Useful detection signals:</p>
+
+<ul>
+  <li>Sudden origin-AS change for your critical prefixes</li>
+  <li>Unexpected path-length or geography shifts</li>
+  <li>Abrupt visibility drops for customer-facing networks</li>
+  <li>Concurrent performance degradation aligned to route changes</li>
+</ul>
+
+<p>The objective is early anomaly recognition with actionable triage, not just dashboards.</p>
+
+<p>Strong teams predefine what “normal” path behavior looks like for critical prefixes and set alert thresholds around deviation.</p>
+
+<h2 id="incident-response-for-routing-events">Incident Response for Routing Events</h2>
+
+<p>Routing incidents spread quickly and cross organizational boundaries. Internal response speed is important, but external coordination readiness is often the deciding factor.</p>
+
+<p>A practical response model:</p>
+
+<ol>
+  <li>Detect and validate anomaly signal.</li>
+  <li>Contain locally with emergency filters and route policy controls.</li>
+  <li>Escalate to providers and internet exchange partners through pre-agreed contacts.</li>
+  <li>Restore expected routing and verify end-user reachability.</li>
+  <li>Conduct post-incident review and harden policy/ROA coverage.</li>
+</ol>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/inline-routing-operations-playbook.svg" alt="BGP incident response playbook from detection and containment through provider coordination and hardening" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The first hour of a route incident is an operations and coordination test as much as a technical troubleshooting exercise.</figcaption>
+</figure>
+
+<p>For exam framing, if a scenario highlights real-time impact, the best answer usually includes both technical mitigation and stakeholder/provider coordination.</p>
+
+<h2 id="internet-routing-as-supply-chain-security">Internet Routing as Supply Chain Security</h2>
+
+<p>Many organizations focus on internal controls but underweight dependency risk in external routing ecosystems.</p>
+
+<p>Questions worth asking:</p>
+
+<ul>
+  <li>Which external providers materially affect your path integrity?</li>
+  <li>Which prefixes are business-critical and require tighter controls?</li>
+  <li>Do you have tested escalation channels with upstream partners?</li>
+  <li>Are routing controls reviewed after mergers, migrations, or major peering changes?</li>
+</ul>
+
+<p>This is consistent with broader CISSP governance thinking: critical risk often sits at organizational boundaries.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>BGP is trust-heavy by design and requires compensating controls.</li>
+  <li>Layered defensive controls outperform single-mechanism dependency.</li>
+  <li>Availability and integrity outcomes should guide routing decisions.</li>
+  <li>Governance and change discipline are part of security architecture.</li>
+</ul>
+
+<h3 id="recent-developments-that-influence-design-decisions">Recent developments that influence design decisions</h3>
+
+<ul>
+  <li>RPKI adoption and route-origin validation support are broader than in earlier years, making baseline controls more practical.</li>
+  <li>Operator communities have improved visibility tooling and shared practices around route anomaly detection.</li>
+  <li>Routing security expectations are increasingly discussed alongside broader infrastructure and supply-chain resilience programs.</li>
+</ul>
+
+<p>The practical takeaway: modern controls are improving, but consistent operational hygiene still determines whether incidents become short disruptions or major business events.</p>
+
+<h2 id="cissp-best-answer-mindset-for-bgp-questions">CISSP Best-Answer Mindset for BGP Questions</h2>
+
+<p>When multiple options look plausible, prefer the answer that:</p>
+
+<ol>
+  <li>Reduces route-integrity risk with layered controls.</li>
+  <li>Protects availability and customer impact, not just protocol correctness.</li>
+  <li>Includes monitoring plus tested incident workflow.</li>
+  <li>Accounts for inter-organizational coordination requirements.</li>
+</ol>
+
+<p>Common pattern examples:</p>
+
+<ul>
+  <li>If a question centers on unauthorized prefix origin, origin validation and strict route policy controls are typically stronger than detection-only approaches.</li>
+  <li>If a question centers on widespread outage risk, choose controls that combine preventive filtering and fast provider escalation.</li>
+  <li>If a question centers on strategic architecture, treat routing dependencies as part of supply-chain risk, not external noise.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>If you want a disciplined starting point:</p>
+
+<ol>
+  <li>Inventory business-critical prefixes and dependency paths.</li>
+  <li>Publish and maintain ROAs for owned space where appropriate.</li>
+  <li>Enforce route acceptance and max-prefix controls per peer class.</li>
+  <li>Baseline expected route visibility and path patterns.</li>
+  <li>Build and test routing incident escalation runbooks with providers.</li>
+  <li>Review controls after major network or provider topology changes.</li>
+</ol>
+
+<p>That is what turns routing security from theory into resilience.</p>
+
+<p>BGP security is not just for network specialists. It is trust architecture at internet scale.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 67 covered DNS integrity and DNSSEC operations. Post 68 continues Domain 4 with internet routing trust, route hijack risk, and layered BGP security controls.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 practical guide to BGP security: route hijacks, route leaks, RPKI and ROA origin validation, routing hygiene controls, and incident response for internet path resilience.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP BGP security route hijacking</li>
+  <li>RPKI and ROA origin validation guide</li>
+  <li>route leak detection and response</li>
+  <li>internet routing security best practices</li>
+  <li>CISSP Domain 4 network trust controls</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="BGP Security" /><category term="Route Hijacking" /><category term="Route Leaks" /><category term="RPKI" /><category term="ROA" /><category term="Internet Routing" /><category term="Network Resilience" /><category term="Incident Response" /><category term="Supply Chain Security" /><summary type="html"><![CDATA[BGP is a trust protocol with real business risk. This CISSP Domain 4 guide explains route hijacking, route leaks, RPKI origin validation, filtering strategy, and operational response for resilient internet path security.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #67: DNS Security Is Integrity at the Start of Every Connection</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/" rel="alternate" type="text/html" title="CISSP #67: DNS Security Is Integrity at the Start of Every Connection" /><published>2026-05-18T13:00:00+00:00</published><updated>2026-05-18T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-dns-security-dnssec-cache-poisoning/"><![CDATA[<figure>
   <img src="/portfolio_website/assets/generated/2026/05/cissp-dns-security-dnssec-cache-poisoning/hero.svg" alt="DNS security architecture with authoritative governance, DNSSEC chain of trust, resolver hardening, and incident response" style="width:100%;border-radius:8px;" />
   <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, DNS security is a business resilience decision because it determines where users and systems are sent before any application control is evaluated.</figcaption>
 </figure>
@@ -1729,433 +2123,4 @@ Session management answers, “How long, where, and under what conditions should
   <li>cookie security HttpOnly Secure SameSite</li>
   <li>refresh token rotation replay detection</li>
   <li>post-authentication security controls</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="Session Management" /><category term="Token Security" /><category term="JWT" /><category term="Cookies" /><category term="Access Control" /><category term="CSRF" /><category term="Authentication" /><summary type="html"><![CDATA[Many teams secure login and still lose control after authentication. CISSP Domain 8 expects you to understand session management, cookie hardening, token lifecycles, and revocation as core application security controls.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss/" rel="alternate" type="text/html" title="CISSP #59: Web Application Security — XSS, CSRF, Injection, and the Boundary Between Code and User Data" /><published>2026-05-10T12:30:00+00:00</published><updated>2026-05-10T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-web-application-security-injection-xsrf-xss/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" alt="Web Application Security: the boundary between code and data, showing input validation, output encoding, and trust boundaries" class="blog-hero" /></p>
-
-<p>Post #57 taught you that secure coding is a discipline. Post #58 showed you why that discipline is non-negotiable in APIs. This post is about what happens when the boundary between code and data collapses in a web application—and why CISSP wants you to understand the pattern, not just memorize vulnerability names.</p>
-
-<p>The core concept is simple: code and data are different things. Code is executable. Data is not. But in web applications, attackers spend enormous energy trying to turn data into code.</p>
-
-<h2 id="the-pattern-confusion-of-code-and-data">The Pattern: Confusion of Code and Data</h2>
-
-<p>Every major web application vulnerability traces back to the same fundamental error: somewhere in the application, data was treated as code.</p>
-
-<p>Your application receives a user’s search term. It builds an SQL query by concatenating strings:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="nv">"SELECT * FROM users WHERE username = '"</span> <span class="o">+</span> <span class="n">userInput</span> <span class="o">+</span> <span class="nv">"'"</span>
-</code></pre></div></div>
-
-<p>The developer believed this code would only create data—a query string with a username embedded in it. But the attacker sent <code class="language-plaintext highlighter-rouge">admin' --</code> as the username. Suddenly, the string is no longer just data. It is code. The query became:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span> <span class="o">=</span> <span class="s1">'admin'</span> <span class="c1">--'</span>
-</code></pre></div></div>
-
-<p>The <code class="language-plaintext highlighter-rouge">--</code> tells the database: treat the rest as a comment. The query now returns the admin account. The boundary collapsed.</p>
-
-<p>This is SQL injection. But it is not unique to databases.</p>
-
-<h2 id="sql-injection-and-command-injection-code-execution-through-data">SQL Injection and Command Injection: Code Execution Through Data</h2>
-
-<p>Injection attacks happen wherever the application builds code by concatenating untrusted data.</p>
-
-<p><strong>SQL Injection</strong> is the most famous case. The attacker embeds SQL syntax into input fields. If the application builds queries using string concatenation instead of parameterized queries, the attacker’s input becomes executable SQL.</p>
-
-<p><strong>Command Injection</strong> follows the same pattern. Your application builds a shell command:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">convert image.png --output </span><span class="sh">"</span> <span class="o">+</span> <span class="n">userFilename</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>The attacker provides a filename like <code class="language-plaintext highlighter-rouge">test.png; rm -rf /</code>. The application executes the conversion and then deletes the filesystem. Attackers turned data into shell commands.</p>
-
-<p><strong>LDAP Injection</strong>, <strong>XPath Injection</strong>, and others follow the same logic: anywhere the application builds code from concatenated data, an attacker can inject syntax that breaks out of the data context.</p>
-
-<p>CISSP’s lesson here is clear: parameterized queries, prepared statements, and safe APIs prevent injection because they keep code and data separate. The query structure is defined in code. The data goes into a different channel. An attacker cannot turn their input into executable code because it is never parsed as code.</p>
-
-<p>The control is not: <em>Check if the user’s input looks like SQL.</em> The control is: <em>Do not build code from data, ever.</em></p>
-
-<h2 id="cross-site-scripting-xss-executing-code-in-the-browser">Cross-Site Scripting (XSS): Executing Code in the Browser</h2>
-
-<p>Web applications do not just execute server-side code. They send code to the browser. HTML, JavaScript, CSS—all of it is code that runs on the user’s machine.</p>
-
-<p>Cross-Site Scripting (XSS) is what happens when an attacker injects malicious JavaScript into a page that the browser will execute.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/inline-xss.svg" alt="XSS flow: attacker injects script tag, server renders without encoding, browser executes malicious JavaScript" class="blog-hero" /></p>
-
-<p>A user writes a comment: <code class="language-plaintext highlighter-rouge">&lt;script&gt;alert('XSS')&lt;/script&gt;</code>. Your application stores that comment in the database and later displays it on the page. If the application sends it to the browser without encoding it, the browser parses the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag and executes the JavaScript. The attacker’s code runs in the context of the victim’s browser session.</p>
-
-<p>From there, the attacker can:</p>
-
-<ul>
-  <li>Steal the user’s session cookie.</li>
-  <li>Modify the page to trick the user into entering credentials.</li>
-  <li>Redirect to a phishing site.</li>
-  <li>Exfiltrate sensitive data visible in the page.</li>
-</ul>
-
-<p>There are three flavors of XSS:</p>
-
-<p><strong>Stored XSS</strong>: The attacker injects malicious code that is stored in your database and executed every time the page is viewed. This is the most severe because it affects all users.</p>
-
-<p><strong>Reflected XSS</strong>: The attacker crafts a malicious URL where the payload is in the query string. Your application reflects that parameter back in the response without encoding it. The victim clicks the link, and the attacker’s script runs. This requires social engineering but is still critical.</p>
-
-<p><strong>DOM-based XSS</strong>: Modern JavaScript frameworks manipulate the page using the Document Object Model (DOM). If the application writes user input directly to the DOM without encoding, XSS is possible even if the server never touches the data.</p>
-
-<p>The control is output encoding. Before sending any user-controlled data to the browser, encode it so the browser parses it as text, not code. <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> becomes <code class="language-plaintext highlighter-rouge">&amp;lt;script&amp;gt;</code>. The browser sees the angle brackets as literal characters, not markup.</p>
-
-<h2 id="csrf-making-the-browser-attack-itself">CSRF: Making the Browser Attack Itself</h2>
-
-<p>Cross-Site Request Forgery (CSRF) is a different kind of attack. The attacker does not inject code. Instead, the attacker tricks the browser into making a request on the attacker’s behalf.</p>
-
-<p>Here is the scenario:</p>
-
-<p>Your application has a <code class="language-plaintext highlighter-rouge">POST /transfer-money</code> endpoint. A user logs in, and the browser stores a session cookie. That cookie is automatically included in every request to your domain.</p>
-
-<p>The attacker creates a webpage and tricks the user into visiting it. On that page, the attacker includes an invisible form:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span>
-  <span class="na">action=</span><span class="s">"https://yourapp.com/transfer-money"</span>
-  <span class="na">method=</span><span class="s">"POST"</span>
-  <span class="na">style=</span><span class="s">"display:none;"</span>
-<span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"amount"</span> <span class="na">value=</span><span class="s">"10000"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"to-account"</span> <span class="na">value=</span><span class="s">"attacker-account"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">submit</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div>
-
-<p>When the user visits the attacker’s page, JavaScript automatically submits the form. The browser makes a POST request to your application and automatically includes the session cookie. Your application processes the request and transfers money to the attacker’s account.</p>
-
-<p>The user never intended this action. Their browser did it.</p>
-
-<p><img src="/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/inline-csrf.svg" alt="CSRF flow: attacker trick user to visit malicious site, browser makes unwanted request to target site using victim's cookies" class="blog-hero" /></p>
-
-<p>The control is CSRF tokens. Before processing state-changing requests (POST, DELETE, PUT), your application requires the client to send a unique token that:</p>
-
-<ul>
-  <li>Is generated per-user per-session.</li>
-  <li>Is not stored in cookies (which the browser sends automatically).</li>
-  <li>Must be sent as a form field or header (which cross-origin requests cannot access).</li>
-</ul>
-
-<p>When the form is submitted, the browser includes the token. The attacker’s page cannot forge a valid token because the attacker cannot read tokens from your site (same-origin policy). So the transfer does not happen.</p>
-
-<p>The exam often tests the distinction: CSRF tokens protect against requests that come from a different domain. Session cookies alone do not. If your application accepts cross-origin requests without validating a CSRF token, the browser will send the cookie, and the attacker wins.</p>
-
-<h2 id="insecure-deserialization-data-that-executes">Insecure Deserialization: Data That Executes</h2>
-
-<p>Serialization is the process of converting an object into bytes so you can store it or send it over a network. Deserialization is the reverse: converting bytes back into an object.</p>
-
-<p>If your application deserializes untrusted data, the attacker can craft bytes that, when deserialized, execute arbitrary code. This is particularly dangerous in languages like Java and Python where serialization formats can include executable instructions.</p>
-
-<p>Example: A Java application deserializes a user-provided object:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ObjectInputStream</span> <span class="n">ois</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ObjectInputStream</span><span class="o">(</span><span class="n">userProvidedData</span><span class="o">);</span>
-<span class="nc">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span> <span class="c1">// Dangerous</span>
-</code></pre></div></div>
-
-<p>If the attacker creates a specially crafted serialized object, the <code class="language-plaintext highlighter-rouge">readObject()</code> method can trigger code execution. The attacker does not need to break into the application’s logic. The deserialization process itself becomes the attack vector.</p>
-
-<p>The control is simple: do not deserialize untrusted data. If you must deserialize, use safe libraries that explicitly allow only whitelisted types. Never use generic deserialization on untrusted input.</p>
-
-<h2 id="the-exam-perspective-why-cissp-asks-about-these">The Exam Perspective: Why CISSP Asks About These</h2>
-
-<p>On the CISSP exam, questions about web application security rarely ask: “What is XSS?” Instead, they ask situational questions like:</p>
-
-<p><em>Your development team stores user comments in the database and displays them on profile pages. A security review finds that comments are not being HTML-encoded before rendering. What is the primary risk?</em></p>
-
-<p>The answer is not just “XSS.” The answer is that user-controlled data is being rendered as code, creating a stored XSS vulnerability affecting all users who view the profile.</p>
-
-<p>Or:</p>
-
-<p><em>A microservice accepts JSON from external APIs. The team uses a standard JSON deserializer to convert the input into objects. A security team recommends using a JSON schema validator before deserialization. What is the primary concern being addressed?</em></p>
-
-<p>The answer is insecure deserialization. The control is input validation and schema enforcement, not just trusting that deserializing is safe.</p>
-
-<p>CISSP questions test whether you understand the control—not just the vulnerability name.</p>
-
-<h2 id="the-pattern-holds">The Pattern Holds</h2>
-
-<p>Look at the progression:</p>
-
-<ul>
-  <li><strong>Injection attacks</strong>: Code and data are confused because the application builds code from concatenated data.</li>
-  <li><strong>XSS</strong>: Code and data are confused in the browser because the application sends user data as markup or JavaScript.</li>
-  <li><strong>CSRF</strong>: The application trusts the browser to enforce same-origin policy and authenticate requests based only on cookies.</li>
-  <li><strong>Insecure Deserialization</strong>: Code and data are confused because the application deserializes untrusted bytes.</li>
-</ul>
-
-<p>Every single one traces back to the same principle: <em>Control where the boundary is between code and data, and control what gets executed.</em></p>
-
-<p>The secure coding practices from Post #57 are the controls:</p>
-
-<ul>
-  <li>Input validation: Know what you expect.</li>
-  <li>Output encoding: Ensure data stays data.</li>
-  <li>Parameterized queries: Keep code and data separate.</li>
-  <li>Secure deserialization: Do not execute untrusted input.</li>
-</ul>
-
-<p>The API security practices from Post #58 apply here too:</p>
-
-<ul>
-  <li>Authentication and authorization: Know who is making the request.</li>
-  <li>Logging and monitoring: Detect when the boundaries are breached.</li>
-  <li>Rate limiting: Prevent attackers from trying thousands of payloads.</li>
-</ul>
-
-<p>Web application security is not a separate domain. It is the discipline of secure coding applied to the web boundary—where user input becomes HTML, JavaScript, and database queries.</p>
-
-<p>On the CISSP exam, when you see a web application security question, ask yourself: <em>Where is the boundary between code and data, and is the application protecting it?</em></p>
-
-<hr />
-
-<p><em>Post 59 of 60 in my CISSP study series.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP #59 explains web application security: XSS, CSRF, SQL injection, command injection, and insecure deserialization as failures to maintain the boundary between code and data.</p>
-
-<p><strong>5 SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP web application security XSS CSRF injection</li>
-  <li>SQL injection and command injection prevention</li>
-  <li>Cross-site scripting and cross-site request forgery</li>
-  <li>Insecure deserialization vulnerability CISSP</li>
-  <li>Web application security controls OWASP CISSP Domain 8</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="Web Application Security" /><category term="XSS" /><category term="CSRF" /><category term="SQL Injection" /><category term="Command Injection" /><category term="Insecure Deserialization" /><category term="OWASP" /><category term="CWE" /><summary type="html"><![CDATA[Web applications are where the boundary between code and user data breaks down. XSS, CSRF, injection attacks, and insecure deserialization are not separate vulnerabilities—they are what happens when input and output validation slip. CISSP Domain 8 expects you to see the pattern, not memorize the exploits.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-web-application-security-injection-xsrf-xss/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #58: API Security and Web Service Security — Where Your Code Meets Attackers</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-api-security-web-services/" rel="alternate" type="text/html" title="CISSP #58: API Security and Web Service Security — Where Your Code Meets Attackers" /><published>2026-05-09T12:30:00+00:00</published><updated>2026-05-09T12:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-api-security-web-services</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-api-security-web-services/"><![CDATA[<p><img src="/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" alt="API Security: authentication, authorization, rate limiting, input validation, error handling, and monitoring" class="blog-hero" /></p>
-
-<p>Every application has a network boundary. When that boundary is an API, it becomes a public invitation for testing.</p>
-
-<p>Not testing in the good sense. Testing in the sense of: <em>Here is a documented interface. Let me see what happens when I send it bad data. Let me see what happens when I do it a thousand times a second. Let me see what the error messages reveal.</em></p>
-
-<p>APIs are where secure coding practices meet attackers directly. A field that accepts a phone number is now accepting a phone number from anyone with network access. Code that handles empty input is now handling empty input from adversaries. An error message that reveals your database schema is now visible to the internet.</p>
-
-<p>Post #57 taught you input validation, error handling, and authorization logic. This post shows why those practices are non-negotiable in APIs and what breaks when they slip.</p>
-
-<h2 id="authentication-you-cannot-authorize-without-it">Authentication: You Cannot Authorize Without It</h2>
-
-<p>Here is a distinction CISSP makes clear: authentication and authorization are not the same thing.</p>
-
-<p>Authentication answers: <em>Are you who you claim to be?</em>
-Authorization answers: <em>What are you allowed to do?</em></p>
-
-<p>APIs fail when either one is weak. But authentication failures in APIs are particularly costly because APIs are often the last gate before data.</p>
-
-<h3 id="api-key-mismanagement">API Key Mismanagement</h3>
-
-<p>Many teams treat API keys as passwords with infinite lifetime. That is a mistake.</p>
-
-<p>An API key that:</p>
-
-<ul>
-  <li>Never expires makes compromise permanent</li>
-  <li>Is shared across multiple clients makes it impossible to revoke one without breaking others</li>
-  <li>Is stored in source code or configuration files leaks at scale</li>
-  <li>Is logged in error messages or monitoring means every log server becomes a secret store</li>
-</ul>
-
-<p>CISSP expects you to understand that API keys are credentials. They require the same lifecycle management, rotation, and protection as passwords.</p>
-
-<h3 id="oauth-and-token-based-auth">OAuth and Token-Based Auth</h3>
-
-<p>In contrast to static API keys, OAuth and bearer tokens add:</p>
-
-<ul>
-  <li>Token expiration (forcing regular refresh)</li>
-  <li>Scoped permissions (not all-or-nothing access)</li>
-  <li>The ability to revoke a token without invalidating all others</li>
-  <li>Support for refresh tokens (so access tokens can be short-lived)</li>
-</ul>
-
-<p>But tokens are only secure if:</p>
-
-<ul>
-  <li>They are short-lived (minutes to hours, not days)</li>
-  <li>The refresh token is protected as carefully as a password</li>
-  <li>The token is never transmitted over plain HTTP</li>
-  <li>The client does not store the token in browser localStorage (vulnerable to XSS)</li>
-</ul>
-
-<h2 id="authorization-not-missing-not-broken">Authorization: Not Missing, Not Broken</h2>
-
-<p>Once you know who the API consumer is, the next question is: what can they do?</p>
-
-<p>The authorization failures in APIs follow the same patterns as in applications, but they are exposed more visibly:</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/inline-authorization.svg" alt="Broken object-level authorization: checking the user exists, but not that they own the resource being accessed." />
-  <figcaption>Missing authorization check: the user is authenticated, but can they access this resource?</figcaption>
-</figure>
-
-<h3 id="broken-object-level-authorization">Broken Object-Level Authorization</h3>
-
-<p>An API endpoint might be <code class="language-plaintext highlighter-rouge">/api/users/{id}/profile</code>. A common mistake: trusting that the <code class="language-plaintext highlighter-rouge">id</code> parameter is the intended user.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/users/5/profile → returns user 5's data
-GET /api/users/6/profile → if not authorized, returns user 6's data anyway
-</code></pre></div></div>
-
-<p>This is trivial for an attacker to exploit. Change the ID in the URL and see what data is accessible.</p>
-
-<p>CISSP calls this broken access control. The fix: every API endpoint must validate that the authenticated user has permission to access the specific resource, regardless of what the parameter claims.</p>
-
-<h3 id="default-deny">Default Deny</h3>
-
-<p>The CISSP principle of least privilege applies directly: if authorization is not explicitly granted, it should be denied.</p>
-
-<p>Do not ask: “Is the user authorized?” Ask: “Has this user been explicitly authorized for this action?” If the answer is not a clear yes, the answer is no.</p>
-
-<h2 id="data-exposure-what-should-and-should-not-be-returned">Data Exposure: What Should and Should Not Be Returned</h2>
-
-<p>APIs are excellent at returning data. That is their purpose. But they are often too excellent at it.</p>
-
-<p>An API endpoint returns user data:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-0123"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"password_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bcrypt$..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"internal_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INT-98765"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"credit_card_last_four"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4111"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"payment_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe_pm_..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"admin_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angry customer, high risk"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>How much of that should be exposed to the API consumer?</p>
-
-<p>CISSP calls this data classification in action. The application should return only what the consumer is authorized to see and what they actually need. Not everything the database contains.</p>
-
-<p>And errors matter. An API that says <code class="language-plaintext highlighter-rouge">"SQL syntax error near 'users' table"</code> reveals your database schema. An API that says <code class="language-plaintext highlighter-rouge">"Invalid request parameters"</code> tells the client nothing useful and an attacker nothing either.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/inline-rate-limiting.svg" alt="Rate limiting: tracking requests per user and per IP, refusing service when limits are exceeded." />
-  <figcaption>Rate limiting is a security control. Without it, attackers can brute force, enumerate, or exhaust your infrastructure.</figcaption>
-</figure>
-
-<h2 id="rate-limiting-preventing-abuse-at-scale">Rate Limiting: Preventing Abuse at Scale</h2>
-
-<p>APIs are fast. They are too fast. An attacker can make 10,000 requests per second to your authentication endpoint testing passwords, or to your data endpoint enumerating user IDs.</p>
-
-<p>Rate limiting is not optional for public APIs. It is a security control.</p>
-
-<p>Without rate limiting, an attacker can:</p>
-
-<ul>
-  <li>Brute-force authentication tokens or API keys</li>
-  <li>Enumerate all user IDs by testing <code class="language-plaintext highlighter-rouge">/api/users/{id}</code> for IDs 1 through 1 million</li>
-  <li>Extract data from endpoints that return partial results by requesting millions of pages</li>
-  <li>Exhaust your infrastructure in a denial-of-service attack</li>
-</ul>
-
-<p>Effective rate limiting:</p>
-
-<ul>
-  <li>Limits per authenticated user (if a user is abusing, cut them off)</li>
-  <li>Limits per IP address (catches unauthenticated scanning)</li>
-  <li>Limits per endpoint (testing passwords might be limited more tightly than fetching public data)</li>
-  <li>Gracefully degrades (tell the client they have hit the limit and when they can try again)</li>
-</ul>
-
-<p>Rate limiting makes these attacks so expensive that they are not worth the attacker’s time.</p>
-
-<h2 id="input-validation-at-api-boundaries">Input Validation at API Boundaries</h2>
-
-<p>Post #57 covered input validation as a practice. In APIs, it is non-negotiable.</p>
-
-<p>Every parameter—whether in the URL, query string, request body, or headers—is untrusted input. If your code trusts it, you have a vulnerability.</p>
-
-<p>An API that accepts a search parameter and inserts it directly into SQL:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /api/users?name='; DROP TABLE users; --
-</code></pre></div></div>
-
-<p>Becomes:</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">users</span><span class="p">;</span> <span class="c1">--</span>
-</code></pre></div></div>
-
-<p>Parameterized queries prevent this. So do input validation (whitelist what characters are allowed in a name) and output encoding (escape special characters before inserting into queries).</p>
-
-<p>The vulnerability is the same as in #57. The attack surface is just more visible because the API is public.</p>
-
-<h2 id="monitoring-apis-detection-is-your-defense">Monitoring APIs: Detection Is Your Defense</h2>
-
-<p>You cannot secure what you do not observe.</p>
-
-<p>Log every authentication attempt (successful and failed), every authorization decision (especially failures), and unusual patterns:</p>
-
-<ul>
-  <li>A single user accessing thousands of records</li>
-  <li>An IP making requests at rates that suggest scanning</li>
-  <li>Multiple failed authentication attempts followed by a successful one (credential guessing)</li>
-  <li>Rate of errors suddenly spiking (indicates either an attack or a bug)</li>
-</ul>
-
-<p>These patterns become your first line of defense because they often catch attacks before damage is done.</p>
-
-<p>But do not log secrets. Never log API keys, tokens, passwords, or sensitive data. That creates a secondary exposure point where every log server becomes a potential attack target.</p>
-
-<h2 id="the-cissp-perspective">The CISSP Perspective</h2>
-
-<p>CISSP Domain 8 treats APIs not as a separate security problem but as an application security problem applied at a public interface.</p>
-
-<p>The principles are the same as post #57:</p>
-
-<ul>
-  <li>Input validation (verify every parameter)</li>
-  <li>Authorization (check every access)</li>
-  <li>Error handling (reveal nothing dangerous)</li>
-  <li>Logging (know what happened)</li>
-</ul>
-
-<p>The stakes are higher because APIs are network-facing. The attacker is not a disgruntled insider with console access. The attacker is anyone on the internet testing your boundaries.</p>
-
-<p>The discipline required is identical. The consequences of skipping it are visible faster.</p>
-
-<hr />
-
-<h3 id="key-takeaways">Key Takeaways</h3>
-
-<ol>
-  <li>
-    <p><strong>Authentication is necessary but not sufficient.</strong> Prove who you are, then prove you are authorized for what you are asking.</p>
-  </li>
-  <li>
-    <p><strong>Rate limiting is a security control.</strong> Without it, an attacker can test passwords at scale, enumerate data, or exhaust your infrastructure.</p>
-  </li>
-  <li>
-    <p><strong>Every parameter is untrusted.</strong> Validate at the boundary. Do not trust the client.</p>
-  </li>
-  <li>
-    <p><strong>Return only what is necessary.</strong> Do not expose internal IDs, configuration data, or sensitive fields just because the database has them.</p>
-  </li>
-  <li>
-    <p><strong>Monitor for patterns.</strong> Legitimate API use is predictable. Abnormal patterns are your early warning system.</p>
-  </li>
-  <li>
-    <p><strong>Errors are secrets.</strong> Reveal nothing about your architecture, database, or infrastructure in error messages.</p>
-  </li>
-</ol>
-
-<p>APIs are where secure coding practices meet the network. When they meet attackers, the cost of shortcuts becomes clear. CISSP expects you to treat API security not as an afterthought, but as a direct application of secure development principles.</p>
-
-<hr />
-
-<h2 id="meta-description">Meta Description</h2>
-
-<p><em>APIs are where secure coding practices meet attackers. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure as critical security controls—not as options.</em></p>
-
-<h2 id="seo-keywords">SEO Keywords</h2>
-
-<ol>
-  <li>API security best practices</li>
-  <li>Web service security CISSP</li>
-  <li>API authentication and authorization</li>
-  <li>Rate limiting and abuse prevention</li>
-  <li>API data exposure risks</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="API Security" /><category term="Web Services" /><category term="Authentication" /><category term="Authorization" /><category term="Rate Limiting" /><category term="Data Exposure" /><category term="Input Validation" /><category term="Injection Attacks" /><summary type="html"><![CDATA[APIs are where secure coding practices meet attackers directly. CISSP Domain 8 expects you to understand authentication, authorization, rate limiting, and data exposure—not as separate concerns, but as direct extensions of the secure coding discipline you bring to every line of code.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-api-security-web-services/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Software Development Security" /><category term="Application Security" /><category term="CISSP" /><category term="Domain 8" /><category term="Session Management" /><category term="Token Security" /><category term="JWT" /><category term="Cookies" /><category term="Access Control" /><category term="CSRF" /><category term="Authentication" /><summary type="html"><![CDATA[Many teams secure login and still lose control after authentication. CISSP Domain 8 expects you to understand session management, cookie hardening, token lifecycles, and revocation as core application security controls.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-session-management-cookie-jwt-token-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

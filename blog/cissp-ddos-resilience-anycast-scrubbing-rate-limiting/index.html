@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature | Johnny Avakian Portfolio</title>
+    <meta name="description" content="DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-20T13:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Domain 4" />
+      
+        <meta property="article:tag" content="DDoS" />
+      
+        <meta property="article:tag" content="Availability" />
+      
+        <meta property="article:tag" content="Anycast" />
+      
+        <meta property="article:tag" content="Scrubbing" />
+      
+        <meta property="article:tag" content="Rate Limiting" />
+      
+        <meta property="article:tag" content="WAF" />
+      
+        <meta property="article:tag" content="Incident Response" />
+      
+        <meta property="article:tag" content="Resilience Engineering" />
+      
+        <meta property="article:tag" content="Business Continuity" />
+      
+    
+    <meta property="og:title" content="CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature" />
+    <meta property="og:description" content="DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature" />
+    <meta name="twitter:description" content="DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature",
+        "description": "DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-20T13:00:00+00:00",
+        "dateModified": "2026-05-20T13:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Network Security • Security Architecture</div>
+              
+              <time class="post-date" datetime="2026-05-20T13:00:00+00:00">May 20, 2026</time>
+              <h1 class="post-title">CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature</h1>
+              
+                <p class="post-dek">DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Domain 4</span>
+                  
+                    <span class="chip">DDoS</span>
+                  
+                    <span class="chip">Availability</span>
+                  
+                    <span class="chip">Anycast</span>
+                  
+                    <span class="chip">Scrubbing</span>
+                  
+                    <span class="chip">Rate Limiting</span>
+                  
+                    <span class="chip">WAF</span>
+                  
+                    <span class="chip">Incident Response</span>
+                  
+                    <span class="chip">Resilience Engineering</span>
+                  
+                    <span class="chip">Business Continuity</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" alt="DDoS resilience architecture with anycast distribution, upstream scrubbing, application-layer controls, and incident response workflow" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, availability is a core security objective. DDoS resilience is strongest when technical and operational controls are designed as one system.</figcaption>
+</figure>
+
+<p>Post 68 focused on internet routing trust. The next Domain 4 step is a reliability and security intersection every public-facing platform eventually confronts: DDoS pressure.</p>
+
+<p>The common failure pattern is treating DDoS as a one-time procurement problem. Teams buy a tool, enable a default policy, and assume the risk is solved. Then a real attack arrives with mixed traffic patterns, business-critical endpoints under stress, and unclear incident ownership.</p>
+
+<p>For CISSP preparation, this topic is less about naming attack families and more about selecting controls that preserve mission-critical service under adverse conditions.</p>
+
+<h2 id="ddos-is-an-availability-and-business-risk-problem">DDoS Is an Availability and Business Risk Problem</h2>
+
+<p>DDoS attacks are often categorized technically, but their real impact is business disruption.</p>
+
+<p>Typical consequences include:</p>
+
+<ul>
+  <li>Customer-facing downtime</li>
+  <li>Severe latency and transaction failure</li>
+  <li>Operational overload across SRE, support, and security teams</li>
+  <li>Revenue and trust erosion during prolonged incidents</li>
+</ul>
+
+<p>The exam mindset here is straightforward: if the scenario is about continuity under hostile conditions, prioritize layered resilience controls over absolute-prevention language.</p>
+
+<h2 id="attack-classes-and-why-one-control-is-never-enough">Attack Classes and Why One Control Is Never Enough</h2>
+
+<p>Different DDoS classes stress different parts of your architecture:</p>
+
+<ul>
+  <li>Volumetric attacks saturate network links and upstream capacity.</li>
+  <li>Protocol attacks exploit transport-layer behavior to exhaust state.</li>
+  <li>Application-layer floods consume compute and request-processing budget.</li>
+</ul>
+
+<p>A single control may reduce one class and fail on another.</p>
+
+<p>That is why mature programs use defense-in-depth at multiple layers: upstream network defenses, edge filtering, application safeguards, and operational response orchestration.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-attack-vs-defense.svg" alt="Comparison of unprepared DDoS response versus layered resilient architecture with scrubbing and application controls" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The difference between outage and survivable degradation is usually architectural layering and readiness, not intent.</figcaption>
+</figure>
+
+<h2 id="anycast-and-upstream-scrubbing-absorb-before-you-collapse">Anycast and Upstream Scrubbing: Absorb Before You Collapse</h2>
+
+<p>For internet-facing services, upstream capacity and traffic distribution strategy are decisive.</p>
+
+<h3 id="anycast-distribution">Anycast distribution</h3>
+
+<p>Anycast allows the same service IP to be announced from multiple locations, spreading load and reducing concentration on one edge.</p>
+
+<h3 id="scrubbing-integration">Scrubbing integration</h3>
+
+<p>Scrubbing providers or upstream mitigation paths help remove hostile traffic before it reaches constrained infrastructure.</p>
+
+<p>These controls are powerful but not self-sufficient. You need tested activation criteria, routing coordination, and clear provider escalation paths.</p>
+
+<p>CISSP best-answer logic generally favors solutions that reduce blast radius before internal systems saturate.</p>
+
+<h2 id="application-layer-resilience-controls">Application-Layer Resilience Controls</h2>
+
+<p>Even when upstream controls perform well, app-layer floods can still degrade core workflows.</p>
+
+<p>High-value controls include:</p>
+
+<ul>
+  <li>Endpoint-aware rate limits</li>
+  <li>Quotas by identity or client class where appropriate</li>
+  <li>Bot mitigation rules tuned for business-critical paths</li>
+  <li>Caching and queueing strategies for burst tolerance</li>
+  <li>Graceful degradation modes for non-critical features</li>
+</ul>
+
+<p>The principle is service prioritization. During stress, preserve what the business cannot lose first.</p>
+
+<h2 id="monitoring-and-detection-trigger-early-not-perfectly">Monitoring and Detection: Trigger Early, Not Perfectly</h2>
+
+<p>Detection should be fast enough to activate mitigation before user impact compounds.</p>
+
+<p>Useful signal categories:</p>
+
+<ul>
+  <li>Rapid traffic-volume and request-rate anomalies</li>
+  <li>Error-rate and latency divergence on critical endpoints</li>
+  <li>Regional path behavior changes</li>
+  <li>Load balancer and queue saturation indicators</li>
+</ul>
+
+<p>Do not wait for complete certainty. Incident workflows should support rapid initial mitigation with progressive refinement as evidence improves.</p>
+
+<h2 id="incident-response-for-ddos-events">Incident Response for DDoS Events</h2>
+
+<p>Technical controls fail without operational execution.</p>
+
+<p>A practical four-step model:</p>
+
+<ol>
+  <li>Detect and triage attack shape and business impact.</li>
+  <li>Activate mitigation layers (scrubbing, edge policy, rate adjustments).</li>
+  <li>Coordinate across providers and internal stakeholders with clear cadence.</li>
+  <li>Recover, then harden controls and thresholds based on lessons learned.</li>
+</ol>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-operations-playbook.svg" alt="DDoS response operations playbook covering detection, mitigation activation, communication, and recovery" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">DDoS events are coordination problems as much as traffic problems. Rehearsed operations often determine whether impact is minutes or hours.</figcaption>
+</figure>
+
+<p>For CISSP scenarios, if a question includes customer-impact pressure and time-critical decisions, the best answer usually combines technical mitigation and communication/process discipline.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Availability is a core security objective.</li>
+  <li>Defense in depth is required across network and application layers.</li>
+  <li>Incident response readiness is part of preventive security strategy.</li>
+  <li>Business-priority service protection beats uniform treatment under attack.</li>
+</ul>
+
+<h3 id="recent-developments-that-influence-decisions">Recent developments that influence decisions</h3>
+
+<ul>
+  <li>Cloud edge services and provider mitigation capabilities are more accessible, lowering adoption barriers for upstream protection.</li>
+  <li>Automated mitigation triggers are more common, but still require careful threshold design to avoid self-inflicted disruption.</li>
+  <li>Organizations increasingly integrate DDoS testing and game-day drills into reliability and security programs.</li>
+</ul>
+
+<p>The practical takeaway: technology is improving, but resilience still depends on architecture choices and disciplined operations.</p>
+
+<h2 id="cissp-best-answer-mindset-for-ddos-questions">CISSP Best-Answer Mindset for DDoS Questions</h2>
+
+<p>When multiple options sound valid, prefer the one that:</p>
+
+<ol>
+  <li>Preserves mission-critical availability under sustained attack.</li>
+  <li>Uses layered controls across network edge, application behavior, and operations.</li>
+  <li>Includes detection and response workflow, not only blocking technology.</li>
+  <li>Accounts for provider dependencies and communication readiness.</li>
+</ol>
+
+<p>Common pattern examples:</p>
+
+<ul>
+  <li>If the scenario is volumetric saturation, upstream distribution and scrubbing are generally stronger than app-only controls.</li>
+  <li>If the scenario is application exhaustion, endpoint-aware rate controls and prioritization are critical.</li>
+  <li>If the scenario is prolonged incident impact, response coordination and runbook maturity become central controls.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>A realistic starting baseline:</p>
+
+<ol>
+  <li>Classify critical services and define degraded-mode priorities.</li>
+  <li>Establish upstream mitigation paths and tested activation criteria.</li>
+  <li>Implement app-level rate and quota controls on critical endpoints.</li>
+  <li>Instrument latency/error/saturation alerts with actionable thresholds.</li>
+  <li>Run DDoS response drills across security, SRE, and communications teams.</li>
+  <li>Update playbooks after every significant event or simulation.</li>
+</ol>
+
+<p>That is how DDoS defense becomes resilience engineering instead of reactive firefighting.</p>
+
+<p>DDoS resilience is not a single feature. It is architecture plus operations under pressure.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 68 covered BGP route-integrity and routing security controls. Post 69 continues Domain 4 with DDoS resilience and layered availability defense.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 4 guide to DDoS resilience: anycast distribution, scrubbing integration, app-layer rate controls, monitoring triggers, and incident response for service continuity.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP DDoS resilience architecture</li>
+  <li>anycast scrubbing and rate limiting strategy</li>
+  <li>application-layer DDoS mitigation controls</li>
+  <li>DDoS incident response playbook</li>
+  <li>CISSP Domain 4 availability security</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>

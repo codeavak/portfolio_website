@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Routing Security Operations Playbook</title>
+  <desc id="desc">Operational playbook for BGP security incidents from detection through containment and recovery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">BGP Incident Response: Routing Operations Stack</text>
+
+  <rect x="80" y="120" width="1040" height="90" rx="14" fill="#1d4ed8" fill-opacity="0.35" stroke="#60a5fa"/>
+  <text x="110" y="175" class="s">1. Detect and Validate</text>
+  <text x="420" y="175" class="b">Alert on path anomalies, prefix conflicts, and unexplained origin changes</text>
+
+  <rect x="80" y="230" width="1040" height="90" rx="14" fill="#0f766e" fill-opacity="0.35" stroke="#2dd4bf"/>
+  <text x="110" y="285" class="s">2. Contain and Filter</text>
+  <text x="420" y="285" class="b">Apply emergency route filters, withdraw bad routes, enforce max-prefix controls</text>
+
+  <rect x="80" y="340" width="1040" height="90" rx="14" fill="#92400e" fill-opacity="0.35" stroke="#f59e0b"/>
+  <text x="110" y="395" class="s">3. Coordinate Providers</text>
+  <text x="430" y="395" class="b">Engage upstreams, IX peers, and network partners on pre-defined escalation paths</text>
+
+  <rect x="80" y="450" width="1040" height="90" rx="14" fill="#7f1d1d" fill-opacity="0.35" stroke="#fb7185"/>
+  <text x="110" y="505" class="s">4. Recover and Harden</text>
+  <text x="430" y="505" class="b">Restore expected advertisements, verify reachability, improve ROA and policy hygiene</text>
+
+  <text x="165" y="600" class="k">CISSP mindset: best routing defense combines preventive controls, external coordination readiness, and post-incident hardening.</text>
+</svg>

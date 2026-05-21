@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">DDoS Incident Operations Playbook</title>
+  <desc id="desc">Operational sequence for DDoS events covering detection, mitigation activation, stakeholder coordination, and hardening.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <style>
+      .h { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+      .s { font: 600 22px 'Segoe UI', Tahoma, sans-serif; fill: #e2e8f0; }
+      .b { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #f8fafc; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <text x="60" y="70" class="h">DDoS Response: Security and Ops Coordination Stack</text>
+
+  <rect x="80" y="120" width="1040" height="90" rx="14" fill="#1d4ed8" fill-opacity="0.35" stroke="#60a5fa"/>
+  <text x="110" y="175" class="s">1. Detect and Triage</text>
+  <text x="410" y="175" class="b">Confirm attack class, affected surfaces, and user-impact severity</text>
+
+  <rect x="80" y="230" width="1040" height="90" rx="14" fill="#0f766e" fill-opacity="0.35" stroke="#2dd4bf"/>
+  <text x="110" y="285" class="s">2. Activate Mitigation</text>
+  <text x="430" y="285" class="b">Enable scrubbing, tighten rate limits, and apply emergency edge policies</text>
+
+  <rect x="80" y="340" width="1040" height="90" rx="14" fill="#92400e" fill-opacity="0.35" stroke="#f59e0b"/>
+  <text x="110" y="395" class="s">3. Coordinate and Communicate</text>
+  <text x="500" y="395" class="b">Sync providers, SRE, support, and leadership on clear status cadence</text>
+
+  <rect x="80" y="450" width="1040" height="90" rx="14" fill="#7f1d1d" fill-opacity="0.35" stroke="#fb7185"/>
+  <text x="110" y="505" class="s">4. Recover and Improve</text>
+  <text x="430" y="505" class="b">Return to normal posture, analyze gaps, and raise resilience baseline</text>
+
+  <text x="180" y="600" class="k">CISSP mindset: strongest DDoS defense combines technical mitigation capacity with rehearsed operational response.</text>
+</svg>
