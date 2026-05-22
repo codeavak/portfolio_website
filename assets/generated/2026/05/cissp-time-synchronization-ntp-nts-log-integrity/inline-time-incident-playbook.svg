@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Time Integrity Incident Playbook</title>
+  <desc id="desc">Flowchart of incident response stages for time drift and synchronization integrity failures.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bg3)"/>
+  <text x="70" y="80" fill="#eef2ff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Time Integrity Incident Playbook</text>
+  <text x="70" y="120" fill="#c7d2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">From drift detection to restored forensic confidence</text>
+
+  <rect x="90" y="180" width="240" height="130" rx="16" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+  <text x="118" y="235" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">1. Detect</text>
+  <text x="118" y="268" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Offset alerts</text>
+
+  <rect x="390" y="180" width="240" height="130" rx="16" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="418" y="235" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">2. Scope</text>
+  <text x="418" y="268" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="20">Impacted systems</text>
+
+  <rect x="690" y="180" width="240" height="130" rx="16" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="718" y="235" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">3. Contain</text>
+  <text x="718" y="268" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Trust boundaries</text>
+
+  <rect x="990" y="180" width="300" height="130" rx="16" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="1018" y="235" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">4. Re-synchronize</text>
+  <text x="1018" y="268" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Identity and SIEM first</text>
+
+  <line x1="330" y1="245" x2="390" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+  <line x1="630" y1="245" x2="690" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+  <line x1="930" y1="245" x2="990" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+
+  <rect x="90" y="370" width="1200" height="310" rx="16" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <text x="120" y="425" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Cross-Team Tasks</text>
+
+  <text x="130" y="485" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security: validate anomaly source and preserve evidence quality</text>
+  <text x="130" y="530" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Infrastructure: stabilize authoritative servers and source paths</text>
+  <text x="130" y="575" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Identity: verify Kerberos and token acceptance windows</text>
+  <text x="130" y="620" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">SOC: rebuild timeline confidence and annotate affected period</text>
+
+  <text x="820" y="485" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Recovery criteria:</text>
+  <text x="820" y="530" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Offset within policy bounds</text>
+  <text x="820" y="570" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Authentication stable</text>
+  <text x="820" y="610" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Forensic sequencing restored</text>
+</svg>
