@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 71 Management Plane Security</title>
+  <desc id="desc">Management plane security architecture with bastion access, SNMPv3, centralized AAA, and monitored automation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="70" y="82" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #71: Secure the Management Plane</text>
+  <text x="70" y="122" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">SNMPv3, centralized AAA, out-of-band access, and automation guardrails</text>
+
+  <rect x="70" y="180" width="430" height="210" rx="16" fill="url(#card)" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="235" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Admin Entry Layer</text>
+  <text x="100" y="278" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Privileged workstation</text>
+  <text x="100" y="313" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">MFA + jump host</text>
+  <text x="100" y="348" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Source allowlists</text>
+
+  <rect x="585" y="180" width="430" height="210" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="615" y="235" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Management Network</text>
+  <text x="615" y="278" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">SNMPv3 only</text>
+  <text x="615" y="313" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">SSH and API controls</text>
+  <text x="615" y="348" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Segmented OOB paths</text>
+
+  <rect x="1100" y="180" width="430" height="210" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1130" y="235" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Control and Audit</text>
+  <text x="1130" y="278" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">TACACS+ or RADIUS</text>
+  <text x="1130" y="313" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Role-based commands</text>
+  <text x="1130" y="348" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Session accounting</text>
+
+  <line x1="500" y1="285" x2="585" y2="285" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr)"/>
+  <line x1="1015" y1="285" x2="1100" y2="285" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr)"/>
+
+  <rect x="70" y="460" width="1460" height="350" rx="16" fill="#0b1220" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="520" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">Operational Guardrails</text>
+
+  <circle cx="140" cy="585" r="16" fill="#38bdf8"/>
+  <text x="175" y="593" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Signed configuration pipelines and peer approval for high-risk changes</text>
+
+  <circle cx="140" cy="645" r="16" fill="#38bdf8"/>
+  <text x="175" y="653" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Drift detection on routers, firewalls, switches, and load balancers</text>
+
+  <circle cx="140" cy="705" r="16" fill="#38bdf8"/>
+  <text x="175" y="713" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Playbooks for privileged compromise and trusted state restoration</text>
+
+  <text x="1030" y="585" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security outcome:</text>
+  <text x="1030" y="625" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Lower blast radius</text>
+  <text x="1030" y="660" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Higher accountability</text>
+  <text x="1030" y="695" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Faster incident containment</text>
+</svg>

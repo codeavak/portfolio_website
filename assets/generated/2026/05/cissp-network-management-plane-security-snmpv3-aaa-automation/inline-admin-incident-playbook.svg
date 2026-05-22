@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Management Plane Incident Response Playbook</title>
+  <desc id="desc">Workflow for handling suspected compromise of privileged network administration channels.</desc>
+  <defs>
+    <linearGradient id="bgp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrp" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bgp)"/>
+  <text x="60" y="78" fill="#eef2ff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Management Plane Incident Playbook</text>
+  <text x="60" y="116" fill="#c7d2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Recover trusted administrative control before normal operations resume</text>
+
+  <rect x="80" y="180" width="240" height="130" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+  <text x="108" y="235" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">1. Detect</text>
+  <text x="108" y="268" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Suspicious admin event</text>
+
+  <rect x="360" y="180" width="240" height="130" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="388" y="235" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">2. Contain</text>
+  <text x="388" y="268" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="20">Freeze access paths</text>
+
+  <rect x="640" y="180" width="240" height="130" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="668" y="235" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">3. Verify</text>
+  <text x="668" y="268" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Known-good configs</text>
+
+  <rect x="920" y="180" width="240" height="130" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="948" y="235" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">4. Restore</text>
+  <text x="948" y="268" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Trusted admin path</text>
+
+  <rect x="1200" y="180" width="150" height="130" rx="14" fill="#7f1d1d" stroke="#fca5a5" stroke-width="2"/>
+  <text x="1215" y="235" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">5. Learn</text>
+  <text x="1215" y="268" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="18">Harden policy</text>
+
+  <line x1="320" y1="245" x2="360" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arrp)"/>
+  <line x1="600" y1="245" x2="640" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arrp)"/>
+  <line x1="880" y1="245" x2="920" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arrp)"/>
+  <line x1="1160" y1="245" x2="1200" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arrp)"/>
+
+  <rect x="80" y="370" width="1270" height="330" rx="14" fill="#0b1220" stroke="#64748b" stroke-width="2"/>
+  <text x="110" y="425" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Cross-Team Execution</text>
+
+  <text x="120" y="485" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security: classify compromise scope and preserve evidentiary logs</text>
+  <text x="120" y="532" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Network Ops: reapply approved configs and enforce protocol restrictions</text>
+  <text x="120" y="579" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">IAM: rotate credentials and tighten role permissions</text>
+  <text x="120" y="626" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">SOC: validate telemetry integrity and watch for recurrence patterns</text>
+
+  <text x="900" y="485" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Recovery checks:</text>
+  <text x="900" y="525" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Authorized path only</text>
+  <text x="900" y="560" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Config baseline restored</text>
+  <text x="900" y="595" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Logging trustworthy</text>
+  <text x="900" y="630" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Runbook improved</text>
+</svg>
