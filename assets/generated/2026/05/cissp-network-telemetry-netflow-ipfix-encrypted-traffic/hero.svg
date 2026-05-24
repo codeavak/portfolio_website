@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 72 Network Telemetry Security</title>
+  <desc id="desc">Flow telemetry architecture with NetFlow and IPFIX exporters, collectors, SIEM analytics, and incident response loop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#1c2541"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7dd3fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="70" y="88" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #72: Network Telemetry as Security Control</text>
+  <text x="70" y="130" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">NetFlow and IPFIX for encrypted-era detection and response</text>
+
+  <rect x="70" y="190" width="430" height="210" rx="16" fill="url(#panel)" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="246" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Exporters</text>
+  <text x="100" y="286" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Routers and firewalls</text>
+  <text x="100" y="320" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Cloud flow logs</text>
+  <text x="100" y="354" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">East-west segment taps</text>
+
+  <rect x="585" y="190" width="430" height="210" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="615" y="246" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Collectors</text>
+  <text x="615" y="286" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Field normalization</text>
+  <text x="615" y="320" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Retention policy</text>
+  <text x="615" y="354" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Data quality checks</text>
+
+  <rect x="1100" y="190" width="430" height="210" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1130" y="246" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Security Analytics</text>
+  <text x="1130" y="286" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Beaconing detection</text>
+  <text x="1130" y="320" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Lateral movement mapping</text>
+  <text x="1130" y="354" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Containment validation</text>
+
+  <line x1="500" y1="292" x2="585" y2="292" stroke="#7dd3fc" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1015" y1="292" x2="1100" y2="292" stroke="#7dd3fc" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="470" width="1460" height="330" rx="16" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="530" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">Operational Security Loop</text>
+
+  <circle cx="140" cy="600" r="16" fill="#38bdf8"/>
+  <text x="175" y="608" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Detection engineering tied to incident use cases</text>
+
+  <circle cx="140" cy="660" r="16" fill="#38bdf8"/>
+  <text x="175" y="668" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">SOC triage with communication-path evidence</text>
+
+  <circle cx="140" cy="720" r="16" fill="#38bdf8"/>
+  <text x="175" y="728" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Post-incident tuning for coverage and false-positive control</text>
+
+  <text x="980" y="600" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Outcome:</text>
+  <text x="980" y="640" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Faster detection</text>
+  <text x="980" y="675" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Better scope accuracy</text>
+  <text x="980" y="710" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Higher recovery confidence</text>
+</svg>

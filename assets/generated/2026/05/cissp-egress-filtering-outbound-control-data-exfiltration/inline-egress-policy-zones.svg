@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Egress Policy Zones</title>
+  <desc id="desc">Trust-zone egress architecture with workload-based policies, DNS control, and proxy-mediated outbound access.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Egress Policy by Trust Zone</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">Outbound rules should follow workload role and business requirement</text>
+
+  <rect x="60" y="170" width="360" height="170" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="85" y="225" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">App and User Zones</text>
+  <text x="85" y="265" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">No direct external DNS</text>
+  <text x="85" y="298" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Segment-specific allowlists</text>
+
+  <rect x="520" y="170" width="360" height="170" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="545" y="225" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Egress Control Zone</text>
+  <text x="545" y="265" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">DNS resolver policy</text>
+  <text x="545" y="298" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Proxy destination filters</text>
+
+  <rect x="980" y="170" width="360" height="170" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="1005" y="225" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">External Destinations</text>
+  <text x="1005" y="265" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Approved service classes</text>
+  <text x="1005" y="298" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Denied unknown targets</text>
+
+  <line x1="420" y1="255" x2="520" y2="255" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr2)"/>
+  <line x1="880" y1="255" x2="980" y2="255" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr2)"/>
+
+  <rect x="60" y="390" width="1280" height="320" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="90" y="445" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Governance Controls</text>
+
+  <text x="100" y="500" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">1. Define outbound baseline by asset tier and business function</text>
+  <text x="100" y="548" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">2. Enforce DNS and proxy mediation for controlled internet access</text>
+  <text x="100" y="596" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">3. Time-box and approve exceptions with clear ownership</text>
+  <text x="100" y="644" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">4. Alert on policy drift and new outbound destination patterns</text>
+
+  <text x="860" y="500" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Outcome:</text>
+  <text x="860" y="538" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Reduced exfiltration opportunities</text>
+  <text x="860" y="574" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Consistent hybrid governance</text>
+  <text x="860" y="610" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Improved SOC triage quality</text>
+</svg>
