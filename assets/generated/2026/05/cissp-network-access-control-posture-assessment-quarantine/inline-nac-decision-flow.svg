@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">NAC Decision Flow</title>
+  <desc id="desc">Decision flow for network access control from identity and posture checks to full access, restricted access, or quarantine.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">NAC Access Decision Flow</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">Identity and posture should drive admission, not only network location</text>
+
+  <rect x="70" y="190" width="300" height="130" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="95" y="245" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">1. Authenticate</text>
+  <text x="95" y="278" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="20">User and device identity</text>
+
+  <rect x="430" y="190" width="300" height="130" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="455" y="245" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">2. Evaluate</text>
+  <text x="455" y="278" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Posture and risk score</text>
+
+  <rect x="790" y="190" width="520" height="130" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="815" y="245" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">3. Enforce</text>
+  <text x="815" y="278" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Map to full, restricted, or quarantine access</text>
+
+  <line x1="370" y1="255" x2="430" y2="255" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr2)"/>
+  <line x1="730" y1="255" x2="790" y2="255" stroke="#93c5fd" stroke-width="5" marker-end="url(#arr2)"/>
+
+  <rect x="70" y="390" width="400" height="290" rx="14" fill="#14532d" stroke="#4ade80" stroke-width="2"/>
+  <text x="95" y="445" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Full Access</text>
+  <text x="95" y="490" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Compliant managed device</text>
+  <text x="95" y="525" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Known user context</text>
+  <text x="95" y="560" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Authorized segment only</text>
+
+  <rect x="500" y="390" width="400" height="290" rx="14" fill="#92400e" stroke="#fbbf24" stroke-width="2"/>
+  <text x="525" y="445" fill="#fffbeb" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Restricted Access</text>
+  <text x="525" y="490" fill="#fffbeb" font-family="Segoe UI, Arial, sans-serif" font-size="22">Unknown device attributes</text>
+  <text x="525" y="525" fill="#fffbeb" font-family="Segoe UI, Arial, sans-serif" font-size="22">Allow patch/update services</text>
+  <text x="525" y="560" fill="#fffbeb" font-family="Segoe UI, Arial, sans-serif" font-size="22">Block sensitive apps and data</text>
+
+  <rect x="930" y="390" width="400" height="290" rx="14" fill="#7f1d1d" stroke="#fca5a5" stroke-width="2"/>
+  <text x="955" y="445" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Quarantine Zone</text>
+  <text x="955" y="490" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">Failed critical posture checks</text>
+  <text x="955" y="525" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">Only remediation endpoints</text>
+  <text x="955" y="560" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">SOC and ticketing escalation</text>
+</svg>
