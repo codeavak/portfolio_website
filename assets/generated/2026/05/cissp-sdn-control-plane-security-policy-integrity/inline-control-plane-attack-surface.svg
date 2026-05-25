@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">SDN Control Plane Attack Surface</title>
+  <desc id="desc">Diagram showing SDN northbound API, controller cluster, and southbound channels with major attack surfaces and hardening controls.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">SDN Control Plane Attack Surface</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">Protect APIs, controller trust boundaries, and southbound channel integrity</text>
+
+  <rect x="80" y="170" width="380" height="180" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="105" y="225" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="600">Northbound API</text>
+  <text x="105" y="266" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Risk: weak auth or over-privileged tokens</text>
+  <text x="105" y="300" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Control: MFA, RBAC, scoped automation identities</text>
+
+  <rect x="510" y="170" width="380" height="180" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="535" y="225" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="600">Controller Cluster</text>
+  <text x="535" y="266" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Risk: policy tampering or node compromise</text>
+  <text x="535" y="300" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Control: hardening, signing, quorum integrity</text>
+
+  <rect x="940" y="170" width="380" height="180" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="965" y="225" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="600">Southbound Channels</text>
+  <text x="965" y="266" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Risk: spoofed device or channel hijack</text>
+  <text x="965" y="300" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Control: mTLS, cert rotation, allowlists</text>
+
+  <rect x="80" y="390" width="1240" height="310" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="110" y="445" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Operational Guardrails</text>
+
+  <text x="120" y="500" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">1. Separate policy authoring roles from approval and deployment roles</text>
+  <text x="120" y="548" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">2. Test segmentation policy in pre-production before production rollout</text>
+  <text x="120" y="596" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">3. Alert on unauthorized policy changes and controller configuration drift</text>
+  <text x="120" y="644" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">4. Keep rollback paths ready for faulty policy pushes</text>
+</svg>

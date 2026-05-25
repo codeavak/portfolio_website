@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 75 SDN Control Plane Security</title>
+  <desc id="desc">Software-defined network architecture showing secured control plane, policy integrity checks, and segmented data plane enforcement.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="70" y="84" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #75: SDN Control Plane Security and Policy Integrity</text>
+  <text x="70" y="126" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">If controllers are weak, segmentation rules become suggestions instead of boundaries</text>
+
+  <rect x="70" y="190" width="430" height="220" rx="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="248" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="600">Northbound Plane</text>
+  <text x="100" y="290" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">API and policy intent</text>
+  <text x="100" y="324" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Strong auth and RBAC</text>
+  <text x="100" y="358" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Change approval workflow</text>
+
+  <rect x="585" y="190" width="430" height="220" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="615" y="248" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="600">SDN Controllers</text>
+  <text x="615" y="290" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Policy computation and signing</text>
+  <text x="615" y="324" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Cluster hardening</text>
+  <text x="615" y="358" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Audit and rollback safety</text>
+
+  <rect x="1100" y="190" width="430" height="220" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1130" y="248" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="600">Data Plane</text>
+  <text x="1130" y="290" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Switch and host enforcement</text>
+  <text x="1130" y="324" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Microsegmentation rules</text>
+  <text x="1130" y="358" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Drift detection telemetry</text>
+
+  <line x1="500" y1="300" x2="585" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1015" y1="300" x2="1100" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="470" width="1460" height="330" rx="16" fill="#0b1324" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="530" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">Policy Integrity Lifecycle</text>
+
+  <circle cx="140" cy="598" r="16" fill="#38bdf8"/>
+  <text x="175" y="606" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Validate policy intent before deployment</text>
+
+  <circle cx="140" cy="660" r="16" fill="#38bdf8"/>
+  <text x="175" y="668" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Enforce signed rule updates through trusted controller paths</text>
+
+  <circle cx="140" cy="722" r="16" fill="#38bdf8"/>
+  <text x="175" y="730" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Detect and remediate policy drift continuously</text>
+
+  <text x="960" y="598" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security outcome:</text>
+  <text x="960" y="636" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Consistent segmentation enforcement</text>
+  <text x="960" y="670" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Lower lateral movement risk</text>
+  <text x="960" y="704" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Faster containment during incidents</text>
+</svg>
