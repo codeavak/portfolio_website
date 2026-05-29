@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Overlay Network Trust Boundaries</title>
+  <desc id="desc">Diagram showing overlay controllers, tenant overlays, policy gateways, and underlay transport trust boundaries.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Overlay Trust Boundaries</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">Virtual segmentation still depends on trustworthy mappings, gateways, and transport paths</text>
+
+  <rect x="70" y="170" width="300" height="150" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="95" y="225" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Controllers</text>
+  <text x="95" y="266" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="21">Tenant mapping and policy intent</text>
+
+  <rect x="430" y="170" width="300" height="150" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="455" y="225" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Overlay Gateways</text>
+  <text x="455" y="266" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="21">Encapsulation and policy enforcement</text>
+
+  <rect x="790" y="170" width="300" height="150" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="815" y="225" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Shared Underlay</text>
+  <text x="815" y="266" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="21">Transport reachability and device trust</text>
+
+  <rect x="1150" y="170" width="190" height="150" rx="14" fill="#5b21b6" stroke="#c4b5fd" stroke-width="2"/>
+  <text x="1175" y="225" fill="#ede9fe" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Tenants</text>
+  <text x="1175" y="266" fill="#ede9fe" font-family="Segoe UI, Arial, sans-serif" font-size="21">Isolated overlays</text>
+
+  <rect x="70" y="390" width="1270" height="310" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="100" y="445" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Failure Modes to Watch</text>
+  <text x="110" y="500" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">1. Route leaks or bad tenant-to-segment mappings break isolation silently</text>
+  <text x="110" y="548" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">2. Shared gateways become transitive trust points without strict policy controls</text>
+  <text x="110" y="596" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">3. Manual underlay changes can invalidate overlay security assumptions</text>
+  <text x="110" y="644" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">4. Visibility gaps make tenant bleed harder to detect during incidents</text>
+</svg>

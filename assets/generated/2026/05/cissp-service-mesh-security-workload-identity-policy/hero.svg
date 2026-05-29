@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 77 Service Mesh Security and Workload Identity</title>
+  <desc id="desc">Service mesh security architecture showing workload identities, mutual TLS between services, policy enforcement, and telemetry for east-west traffic.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="70" y="84" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #77: Service Mesh Security Depends on Identity and Policy Integrity</text>
+  <text x="70" y="126" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">mTLS helps, but east-west trust still fails when workload identity and authorization drift</text>
+
+  <rect x="70" y="190" width="400" height="220" rx="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="248" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Workload Identity</text>
+  <text x="100" y="290" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Service-to-service trust</text>
+  <text x="100" y="324" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Certificate issuance and rotation</text>
+  <text x="100" y="358" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Strong service ownership</text>
+
+  <rect x="600" y="190" width="400" height="220" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="630" y="248" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Mesh Policy</text>
+  <text x="630" y="290" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Allow only approved service paths</text>
+  <text x="630" y="324" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Authorization and rate controls</text>
+  <text x="630" y="358" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Explicit deny by default</text>
+
+  <rect x="1130" y="190" width="400" height="220" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1160" y="248" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Telemetry and Response</text>
+  <text x="1160" y="290" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">East-west flow visibility</text>
+  <text x="1160" y="324" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Denied request monitoring</text>
+  <text x="1160" y="358" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Rollback and containment</text>
+
+  <line x1="470" y1="300" x2="600" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="300" x2="1130" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="470" width="1460" height="330" rx="16" fill="#0b1324" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="530" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">East-West Trust Lifecycle</text>
+
+  <circle cx="140" cy="598" r="16" fill="#38bdf8"/>
+  <text x="175" y="606" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Issue short-lived identities to workloads and rotate automatically</text>
+
+  <circle cx="140" cy="660" r="16" fill="#38bdf8"/>
+  <text x="175" y="668" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Authorize service paths explicitly and review policy exceptions</text>
+
+  <circle cx="140" cy="722" r="16" fill="#38bdf8"/>
+  <text x="175" y="730" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Use telemetry to detect drift, abuse, and containment gaps</text>
+
+  <text x="980" y="598" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security outcome:</text>
+  <text x="980" y="636" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Stronger east-west trust boundaries</text>
+  <text x="980" y="670" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Lower lateral movement opportunity</text>
+  <text x="980" y="704" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Faster investigation and rollback</text>
+</svg>
