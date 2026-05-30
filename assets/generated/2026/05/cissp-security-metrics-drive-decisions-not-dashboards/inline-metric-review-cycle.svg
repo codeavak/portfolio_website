@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Security Metric Review Cycle</title>
+  <desc id="desc">Workflow for defining a metric, validating data quality, reviewing trends, assigning action, and retiring low-value measures.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="780" fill="url(#bg3)"/>
+  <text x="60" y="78" fill="#eef2ff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Metric Review Cycle</text>
+  <text x="60" y="116" fill="#c7d2fe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Useful security metrics are designed, reviewed, acted on, and retired when they stop serving decisions</text>
+
+  <rect x="80" y="180" width="250" height="130" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+  <text x="108" y="235" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">1. Define</text>
+  <text x="108" y="268" fill="#e0e7ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Decision and owner first</text>
+
+  <rect x="370" y="180" width="250" height="130" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="398" y="235" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">2. Validate</text>
+  <text x="398" y="268" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="20">Data quality and threshold logic</text>
+
+  <rect x="660" y="180" width="250" height="130" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="688" y="235" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">3. Review</text>
+  <text x="688" y="268" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Trend, exception, business impact</text>
+
+  <rect x="950" y="180" width="250" height="130" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="978" y="235" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">4. Act</text>
+  <text x="978" y="268" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="20">Escalate, remediate, retire</text>
+
+  <line x1="330" y1="245" x2="370" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+  <line x1="620" y1="245" x2="660" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+  <line x1="910" y1="245" x2="950" y2="245" stroke="#a5b4fc" stroke-width="5" marker-end="url(#arr3)"/>
+
+  <rect x="80" y="370" width="1260" height="320" rx="14" fill="#0b1220" stroke="#64748b" stroke-width="2"/>
+  <text x="110" y="425" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Common Failure Modes</text>
+  <text x="120" y="485" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Metrics without owners become reporting noise</text>
+  <text x="120" y="532" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Counts without asset criticality distort priority</text>
+  <text x="120" y="579" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Dashboards without thresholds fail to trigger meaningful decisions</text>
+  <text x="120" y="626" fill="#bfdbfe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Old metrics linger long after they stop improving governance</text>
+</svg>
