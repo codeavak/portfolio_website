@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 78 Kerberos Delegation and Trust Boundaries</title>
+  <desc id="desc">Kerberos delegation architecture showing user authentication, service tickets, constrained delegation, and reduced trust boundaries between services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="70" y="84" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience</text>
+  <text x="70" y="126" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">Delegation can preserve user context across services, but over-broad trust turns one service into many</text>
+
+  <rect x="70" y="190" width="380" height="220" rx="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="248" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">User and TGT</text>
+  <text x="100" y="290" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Initial authentication</text>
+  <text x="100" y="324" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Identity proven once</text>
+  <text x="100" y="358" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Ticket-granting context</text>
+
+  <rect x="610" y="190" width="380" height="220" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="640" y="248" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Front-End Service</text>
+  <text x="640" y="290" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Receives user service ticket</text>
+  <text x="640" y="324" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Delegation policy enforced</text>
+  <text x="640" y="358" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Constrained back-end access</text>
+
+  <rect x="1150" y="190" width="380" height="220" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1180" y="248" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Back-End Services</text>
+  <text x="1180" y="290" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Only approved SPNs</text>
+  <text x="1180" y="324" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Least-privilege service trust</text>
+  <text x="1180" y="358" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Audit and detection paths</text>
+
+  <line x1="450" y1="300" x2="610" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="990" y1="300" x2="1150" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="470" width="1460" height="330" rx="16" fill="#0b1220" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="530" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">Delegation Integrity Loop</text>
+  <circle cx="140" cy="598" r="16" fill="#38bdf8"/>
+  <text x="175" y="606" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Restrict which services may delegate and to which SPNs</text>
+  <circle cx="140" cy="660" r="16" fill="#38bdf8"/>
+  <text x="175" y="668" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Monitor service account changes, ticket abuse, and unusual service hops</text>
+  <circle cx="140" cy="722" r="16" fill="#38bdf8"/>
+  <text x="175" y="730" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Review delegation paths like privileged trust relationships, not app plumbing</text>
+  <text x="980" y="598" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security outcome:</text>
+  <text x="980" y="636" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Preserved user context</text>
+  <text x="980" y="670" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Reduced lateral trust expansion</text>
+  <text x="980" y="704" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Clearer service-account governance</text>
+</svg>

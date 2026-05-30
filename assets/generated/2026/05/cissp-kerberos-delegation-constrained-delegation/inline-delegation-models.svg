@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Delegation Models Comparison</title>
+  <desc id="desc">Comparison of unconstrained delegation, constrained delegation, and resource-based constrained delegation with trust scope differences.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Delegation Models</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">The security difference is not convenience. It is how much downstream trust one service can assume</text>
+
+  <rect x="70" y="170" width="380" height="210" rx="14" fill="#7f1d1d" stroke="#fca5a5" stroke-width="2"/>
+  <text x="95" y="225" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Unconstrained</text>
+  <text x="95" y="266" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">Broad service trust</text>
+  <text x="95" y="301" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">Higher blast radius</text>
+  <text x="95" y="336" fill="#fee2e2" font-family="Segoe UI, Arial, sans-serif" font-size="22">Rarely best choice</text>
+
+  <rect x="510" y="170" width="380" height="210" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="535" y="225" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Constrained</text>
+  <text x="535" y="266" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Approved SPNs only</text>
+  <text x="535" y="301" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Narrower trust path</text>
+  <text x="535" y="336" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Better enterprise baseline</text>
+
+  <rect x="950" y="170" width="380" height="210" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="975" y="225" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Resource-Based</text>
+  <text x="975" y="266" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Back-end controls trust</text>
+  <text x="975" y="301" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Useful in modern service ownership</text>
+  <text x="975" y="336" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Still requires governance</text>
+
+  <rect x="70" y="430" width="1260" height="270" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="100" y="485" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Operational Questions</text>
+  <text x="110" y="540" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">1. Which service accounts can impersonate users to downstream services?</text>
+  <text x="110" y="588" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">2. Are delegation entries reviewed like privileged access, not just app config?</text>
+  <text x="110" y="636" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">3. Can the organization detect unusual service-ticket use or delegation expansion?</text>
+</svg>

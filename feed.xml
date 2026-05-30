@@ -1,4 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-29T11:24:42+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #77: Service Mesh Security Is Identity and Policy, Not Just mTLS</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy/" rel="alternate" type="text/html" title="CISSP #77: Service Mesh Security Is Identity and Policy, Not Just mTLS" /><published>2026-05-29T14:30:00+00:00</published><updated>2026-05-29T14:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy/"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-30T06:31:23+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/" rel="alternate" type="text/html" title="CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience" /><published>2026-05-29T16:00:00+00:00</published><updated>2026-05-29T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" alt="Kerberos delegation architecture showing user authentication, front-end service, constrained delegation policy, and approved back-end services" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Delegation keeps user context across services, but every allowed downstream hop is also a trust decision with security consequences.</figcaption>
+</figure>
+
+<p>The recent posts have been concentrated in Domain 4 because they were following one connected communication-and-network-security arc. Post 78 intentionally breaks that sequence and moves into CISSP Domain 5, where identity architecture raises a similar but distinct question: when one service is allowed to act on behalf of a user, how much trust has the organization really granted?</p>
+
+<p>Kerberos delegation exists for legitimate reasons. Multi-tier applications often need a front-end service to access a back-end database or API while preserving the original user context. The problem is not delegation itself. The problem is treating delegation as plumbing instead of a privileged trust path.</p>
+
+<p>For CISSP preparation, this topic is not about memorizing every Active Directory flag. It is about understanding trust scope. Which service may delegate, to which downstream services, under which constraints, and with what monitoring? Those are the decisions that separate useful identity architecture from avoidable blast radius.</p>
+
+<h2 id="why-delegation-matters-for-security">Why Delegation Matters for Security</h2>
+
+<p>When a user authenticates once and a front-end service needs to access a downstream service on that user’s behalf, delegation can preserve accountability and simplify application design.</p>
+
+<p>That value is real.</p>
+
+<p>So is the risk.</p>
+
+<p>Common problems include:</p>
+
+<ul>
+  <li>Services trusted to delegate far more broadly than required</li>
+  <li>Service accounts with excessive privilege or poor lifecycle governance</li>
+  <li>Weak review of service principal name mappings and delegation settings</li>
+  <li>Limited visibility into unusual service-to-service impersonation paths</li>
+</ul>
+
+<p>CISSP best-answer logic favors controls that preserve required business function while narrowing transitive trust as much as possible.</p>
+
+<h2 id="unconstrained-delegation-is-broad-trust-by-another-name">Unconstrained Delegation Is Broad Trust by Another Name</h2>
+
+<p>Unconstrained delegation allows a service to reuse a user’s Kerberos context broadly to other services.</p>
+
+<p>That may be convenient. It also expands risk significantly.</p>
+
+<p>If a service configured for unconstrained delegation is compromised, the attacker may gain access to valuable downstream trust relationships that were never intended to be part of the same exposure surface.</p>
+
+<p>This is why unconstrained delegation is usually the weaker design choice in exam questions and in practice.</p>
+
+<p>The stronger model is almost always narrower.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/inline-delegation-models.svg" alt="Comparison of unconstrained delegation, constrained delegation, and resource-based constrained delegation with different trust scopes" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The difference between delegation models is not administrative detail. It is how much downstream trust a compromised service can inherit.</figcaption>
+</figure>
+
+<h2 id="constrained-delegation-aligns-better-with-least-privilege">Constrained Delegation Aligns Better With Least Privilege</h2>
+
+<p>Constrained delegation limits where a service may act on a user’s behalf. Instead of broad downstream reach, the allowed targets are explicitly defined.</p>
+
+<p>That is much closer to sound security architecture.</p>
+
+<p>Benefits include:</p>
+
+<ul>
+  <li>Reduced blast radius if the front-end service is compromised</li>
+  <li>Clearer mapping between business need and technical trust</li>
+  <li>Easier review of which downstream services are genuinely required</li>
+  <li>Better exam alignment with least privilege and need-to-know thinking</li>
+</ul>
+
+<p>This does not eliminate risk. It makes trust more deliberate and more reviewable.</p>
+
+<h2 id="resource-based-constrained-delegation-changes-who-controls-trust">Resource-Based Constrained Delegation Changes Who Controls Trust</h2>
+
+<p>Resource-based constrained delegation goes a step further by allowing the back-end resource to control which front-end services may delegate to it.</p>
+
+<p>That can fit modern ownership models better, especially in environments where service teams manage their own resources.</p>
+
+<p>But the same principle still applies: delegated trust should be explicit, narrow, and governed like privileged access.</p>
+
+<p>The wrong lesson here is “resource-based” means “safe by default.”</p>
+
+<p>The right lesson is that control placement changes, but governance requirements remain.</p>
+
+<h2 id="service-accounts-are-part-of-the-risk-story">Service Accounts Are Part of the Risk Story</h2>
+
+<p>Delegation settings do not exist in isolation. They are tied to accounts, SPNs, lifecycle practices, and operational monitoring.</p>
+
+<p>That means strong Kerberos delegation hygiene usually includes:</p>
+
+<ul>
+  <li>Named ownership for service accounts and application identities</li>
+  <li>Tight scoping of SPNs and approved downstream services</li>
+  <li>Strong credential hygiene and rotation practices</li>
+  <li>Review of account changes, privilege changes, and delegation changes together</li>
+</ul>
+
+<p>If service accounts are poorly governed, even well-designed delegation models become harder to trust.</p>
+
+<h2 id="detection-and-monitoring-for-delegation-abuse">Detection and Monitoring for Delegation Abuse</h2>
+
+<p>Delegation problems often stay quiet until something unusual happens downstream.</p>
+
+<p>Useful detection angles include:</p>
+
+<ul>
+  <li>Unexpected service-ticket requests to high-value SPNs</li>
+  <li>New or changed delegation settings on sensitive accounts</li>
+  <li>Unusual service hop patterns that do not match normal application flows</li>
+  <li>Authentication anomalies tied to service accounts with delegation rights</li>
+</ul>
+
+<p>The practical goal is not to log everything indiscriminately. It is to make delegated trust paths observable enough that misuse is detectable.</p>
+
+<h2 id="incident-response-for-suspected-delegation-misuse">Incident Response for Suspected Delegation Misuse</h2>
+
+<p>When teams suspect delegation abuse, speed matters because a compromised service may inherit access beyond its own local boundary.</p>
+
+<p>A practical response sequence:</p>
+
+<ol>
+  <li>Identify the service account, SPNs, and downstream paths involved.</li>
+  <li>Verify whether the issue is misconfiguration, over-broad trust, or compromise.</li>
+  <li>Narrow or disable affected delegation settings.</li>
+  <li>Rotate associated service account credentials if trust is in doubt.</li>
+  <li>Re-test required application paths with approved constrained settings.</li>
+  <li>Review why the original delegation scope was allowed in the first place.</li>
+</ol>
+
+<p>For CISSP scenarios, strong answers combine immediate containment with longer-term trust reduction.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/inline-delegation-abuse-response.svg" alt="Workflow for detecting suspicious Kerberos delegation, verifying misuse, constraining affected trust, and recovering safely" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The best delegation response paths reduce trust surgically first, then restore needed application behavior through reapproved settings.</figcaption>
+</figure>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Least privilege should apply to delegated service trust, not only direct user permissions.</li>
+  <li>Authentication and downstream authorization are separate design questions.</li>
+  <li>Service accounts and machine identities require ownership and review.</li>
+  <li>Delegation settings should be treated as high-value trust relationships.</li>
+</ul>
+
+<h3 id="recent-developments-influencing-implementation">Recent developments influencing implementation</h3>
+
+<ul>
+  <li>Modern multi-tier and hybrid application architectures increase pressure to preserve user context across services.</li>
+  <li>Resource-based delegation models better match distributed ownership in some environments.</li>
+  <li>Identity threat detection has improved visibility into unusual service-account behavior.</li>
+  <li>Organizations are treating machine identities and delegated trust more like privileged access than background infrastructure.</li>
+</ul>
+
+<p>The practical takeaway: the protocol is mature, but the operational importance of delegated trust has only grown.</p>
+
+<h2 id="cissp-best-answer-mindset-for-delegation-questions">CISSP Best-Answer Mindset for Delegation Questions</h2>
+
+<p>When answer options appear similar, prioritize the one that:</p>
+
+<ol>
+  <li>Reduces delegation scope to only required downstream services.</li>
+  <li>Treats service trust as a privileged relationship that needs review.</li>
+  <li>Preserves accountability without granting unnecessary transitive access.</li>
+  <li>Connects service-account governance to delegation settings.</li>
+  <li>Supports monitoring and targeted rollback when trust is abused.</li>
+</ol>
+
+<p>Pattern examples:</p>
+
+<ul>
+  <li>If a scenario compares broad delegation to restricted delegation, favor the narrower model aligned to business need.</li>
+  <li>If a front-end service only needs one back-end service, choose explicit constrained trust rather than broad downstream impersonation.</li>
+  <li>If a service account is highly privileged, prioritize reducing both account privilege and delegation scope together.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>A realistic baseline:</p>
+
+<ol>
+  <li>Inventory services and accounts configured for delegation.</li>
+  <li>Eliminate unconstrained delegation where business requirements do not demand it.</li>
+  <li>Prefer constrained or resource-based constrained delegation for defined service paths.</li>
+  <li>Review SPN mappings, service-account ownership, and credential lifecycle together.</li>
+  <li>Alert on delegation changes and unusual downstream ticket use.</li>
+  <li>Rehearse delegation rollback for critical applications before incidents occur.</li>
+</ol>
+
+<p>Kerberos delegation is not just an application convenience. It is an identity trust boundary that deserves the same scrutiny as any other privileged access path.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Posts 73 through 77 followed a Domain 4 network-security arc. Post 78 deliberately shifts into Domain 5 with delegated service trust, Kerberos architecture, and least-privilege identity design.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 5 guide to Kerberos delegation: unconstrained vs constrained delegation, service-account trust, SPN governance, and incident response for delegation abuse.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP Kerberos delegation explained</li>
+  <li>constrained delegation vs unconstrained delegation</li>
+  <li>service account trust and SPN security</li>
+  <li>resource based constrained delegation security</li>
+  <li>CISSP Domain 5 identity architecture</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Identity and Access Management" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 5" /><category term="Kerberos" /><category term="Delegation" /><category term="Constrained Delegation" /><category term="Resource Based Constrained Delegation" /><category term="Service Accounts" /><category term="Least Privilege" /><category term="Identity Security" /><category term="Incident Response" /><category term="Security Architecture" /><summary type="html"><![CDATA[Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #77: Service Mesh Security Is Identity and Policy, Not Just mTLS</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy/" rel="alternate" type="text/html" title="CISSP #77: Service Mesh Security Is Identity and Policy, Not Just mTLS" /><published>2026-05-29T14:30:00+00:00</published><updated>2026-05-29T14:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-service-mesh-security-workload-identity-policy/"><![CDATA[<figure>
   <img src="/portfolio_website/assets/generated/2026/05/cissp-service-mesh-security-workload-identity-policy/hero.svg" alt="Service mesh security architecture with workload identities, mTLS between services, explicit mesh policy, and telemetry for east-west traffic" style="width:100%;border-radius:8px;" />
   <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Encrypting east-west traffic is useful, but the real security question is which services should trust and reach each other at all.</figcaption>
 </figure>
@@ -1840,213 +2041,4 @@
   <li>application-layer DDoS mitigation controls</li>
   <li>DDoS incident response playbook</li>
   <li>CISSP Domain 4 availability security</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="DDoS" /><category term="Availability" /><category term="Anycast" /><category term="Scrubbing" /><category term="Rate Limiting" /><category term="WAF" /><category term="Incident Response" /><category term="Resilience Engineering" /><category term="Business Continuity" /><summary type="html"><![CDATA[DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #68: BGP Security and Route Integrity in a Hijack-Prone Internet</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security/" rel="alternate" type="text/html" title="CISSP #68: BGP Security and Route Integrity in a Hijack-Prone Internet" /><published>2026-05-20T12:00:00+00:00</published><updated>2026-05-20T12:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-bgp-route-hijacking-rpki-routing-security/"><![CDATA[<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" alt="BGP route security architecture with RPKI origin validation, route filtering, monitoring, and incident response controls" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">For CISSP scenarios, BGP security is not a router-only concern. It is a business continuity control because internet path trust directly affects availability and data exposure risk.</figcaption>
-</figure>
-
-<p>Post 67 focused on DNS integrity. This next Domain 4 step moves one layer out: internet routing trust.</p>
-
-<p>BGP was designed for inter-domain reachability, not strong built-in trust. That design tradeoff is still with us. The internet works because autonomous systems cooperate, but that cooperation also creates abuse and error opportunities: route hijacks, route leaks, traffic blackholing, and unintended traffic detours.</p>
-
-<p>For CISSP preparation, this topic is not about memorizing BGP attribute trivia. The exam mindset is risk-based: understand where trust is weak, choose layered controls, and protect business outcomes when upstream path integrity is threatened.</p>
-
-<h2 id="why-bgp-security-is-a-business-risk-not-a-niche-network-detail">Why BGP Security Is a Business Risk, Not a Niche Network Detail</h2>
-
-<p>A routing incident can look like an application outage, a latency crisis, or a selective region failure. Security teams sometimes notice it late because symptoms appear in customer-facing systems first.</p>
-
-<p>High-impact consequences include:</p>
-
-<ul>
-  <li>Service unavailability from unreachable prefixes</li>
-  <li>Traffic detours through unstable or untrusted paths</li>
-  <li>Intermittent packet loss that breaks authentication and API workflows</li>
-  <li>Reputation and revenue damage when customer journeys fail</li>
-</ul>
-
-<p>The core CISSP insight is simple: path integrity is a security and resilience concern. If you cannot trust how traffic reaches your systems, your downstream controls are under pressure before they even execute.</p>
-
-<h2 id="route-hijacks-vs-route-leaks">Route Hijacks vs Route Leaks</h2>
-
-<p>These are often discussed together, but they are not identical.</p>
-
-<h3 id="route-hijack">Route hijack</h3>
-
-<p>A network advertises IP space it is not authorized to originate. Whether malicious or accidental, downstream networks may prefer or accept the advertisement, redirecting traffic.</p>
-
-<h3 id="route-leak">Route leak</h3>
-
-<p>A network announces routes beyond intended policy boundaries, often violating peering assumptions and causing unexpected path propagation.</p>
-
-<p>Both can disrupt services. Both can create security exposure. Both require technical and operational controls.</p>
-
-<p>For CISSP best-answer logic, distinguish technical mechanism from business impact. The strongest answer usually ties route behavior to availability, integrity, and risk treatment.</p>
-
-<h2 id="rpki-and-roa-practical-origin-validation">RPKI and ROA: Practical Origin Validation</h2>
-
-<p>RPKI (Resource Public Key Infrastructure) and ROAs (Route Origin Authorizations) help verify whether a specific autonomous system is authorized to originate a prefix.</p>
-
-<p>This does not solve every routing problem, but it materially improves origin trust.</p>
-
-<p>Typical validation states:</p>
-
-<ul>
-  <li>Valid: origin matches published authorization</li>
-  <li>Invalid: origin conflicts with published authorization</li>
-  <li>Not Found: no authorization data available</li>
-</ul>
-
-<p>RPKI is best understood as a trust-quality upgrade, not a universal shield.</p>
-
-<p>It helps prevent or reduce some hijack scenarios, but it does not, by itself, detect every policy leak or path manipulation pattern. You still need filtering and monitoring discipline.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/inline-route-hijack-flow.svg" alt="Flow diagram of legitimate and rogue route announcements with control interruption points using RPKI and route policy filtering" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">RPKI strengthens origin authenticity, but meaningful protection still depends on policy enforcement and timely operational response.</figcaption>
-</figure>
-
-<h2 id="routing-hygiene-controls-beyond-rpki">Routing Hygiene Controls Beyond RPKI</h2>
-
-<p>A mature routing security posture is layered.</p>
-
-<p>Key controls include:</p>
-
-<ul>
-  <li>Prefix filters aligned to expected peer advertisements</li>
-  <li>Maximum-prefix limits to contain runaway or erroneous announcements</li>
-  <li>AS-path and community policy checks where operationally justified</li>
-  <li>Clear route acceptance policies per peer type (transit, customer, peer)</li>
-  <li>Controlled change windows for high-risk routing modifications</li>
-</ul>
-
-<p>These are operational controls, not just router commands.</p>
-
-<p>CISSP frequently rewards this perspective: preventive control plus governance process plus monitoring feedback loop.</p>
-
-<h2 id="monitoring-for-route-anomalies">Monitoring for Route Anomalies</h2>
-
-<p>You cannot respond to what you cannot see.</p>
-
-<p>Useful detection signals:</p>
-
-<ul>
-  <li>Sudden origin-AS change for your critical prefixes</li>
-  <li>Unexpected path-length or geography shifts</li>
-  <li>Abrupt visibility drops for customer-facing networks</li>
-  <li>Concurrent performance degradation aligned to route changes</li>
-</ul>
-
-<p>The objective is early anomaly recognition with actionable triage, not just dashboards.</p>
-
-<p>Strong teams predefine what “normal” path behavior looks like for critical prefixes and set alert thresholds around deviation.</p>
-
-<h2 id="incident-response-for-routing-events">Incident Response for Routing Events</h2>
-
-<p>Routing incidents spread quickly and cross organizational boundaries. Internal response speed is important, but external coordination readiness is often the deciding factor.</p>
-
-<p>A practical response model:</p>
-
-<ol>
-  <li>Detect and validate anomaly signal.</li>
-  <li>Contain locally with emergency filters and route policy controls.</li>
-  <li>Escalate to providers and internet exchange partners through pre-agreed contacts.</li>
-  <li>Restore expected routing and verify end-user reachability.</li>
-  <li>Conduct post-incident review and harden policy/ROA coverage.</li>
-</ol>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/inline-routing-operations-playbook.svg" alt="BGP incident response playbook from detection and containment through provider coordination and hardening" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The first hour of a route incident is an operations and coordination test as much as a technical troubleshooting exercise.</figcaption>
-</figure>
-
-<p>For exam framing, if a scenario highlights real-time impact, the best answer usually includes both technical mitigation and stakeholder/provider coordination.</p>
-
-<h2 id="internet-routing-as-supply-chain-security">Internet Routing as Supply Chain Security</h2>
-
-<p>Many organizations focus on internal controls but underweight dependency risk in external routing ecosystems.</p>
-
-<p>Questions worth asking:</p>
-
-<ul>
-  <li>Which external providers materially affect your path integrity?</li>
-  <li>Which prefixes are business-critical and require tighter controls?</li>
-  <li>Do you have tested escalation channels with upstream partners?</li>
-  <li>Are routing controls reviewed after mergers, migrations, or major peering changes?</li>
-</ul>
-
-<p>This is consistent with broader CISSP governance thinking: critical risk often sits at organizational boundaries.</p>
-
-<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
-
-<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
-
-<ul>
-  <li>BGP is trust-heavy by design and requires compensating controls.</li>
-  <li>Layered defensive controls outperform single-mechanism dependency.</li>
-  <li>Availability and integrity outcomes should guide routing decisions.</li>
-  <li>Governance and change discipline are part of security architecture.</li>
-</ul>
-
-<h3 id="recent-developments-that-influence-design-decisions">Recent developments that influence design decisions</h3>
-
-<ul>
-  <li>RPKI adoption and route-origin validation support are broader than in earlier years, making baseline controls more practical.</li>
-  <li>Operator communities have improved visibility tooling and shared practices around route anomaly detection.</li>
-  <li>Routing security expectations are increasingly discussed alongside broader infrastructure and supply-chain resilience programs.</li>
-</ul>
-
-<p>The practical takeaway: modern controls are improving, but consistent operational hygiene still determines whether incidents become short disruptions or major business events.</p>
-
-<h2 id="cissp-best-answer-mindset-for-bgp-questions">CISSP Best-Answer Mindset for BGP Questions</h2>
-
-<p>When multiple options look plausible, prefer the answer that:</p>
-
-<ol>
-  <li>Reduces route-integrity risk with layered controls.</li>
-  <li>Protects availability and customer impact, not just protocol correctness.</li>
-  <li>Includes monitoring plus tested incident workflow.</li>
-  <li>Accounts for inter-organizational coordination requirements.</li>
-</ol>
-
-<p>Common pattern examples:</p>
-
-<ul>
-  <li>If a question centers on unauthorized prefix origin, origin validation and strict route policy controls are typically stronger than detection-only approaches.</li>
-  <li>If a question centers on widespread outage risk, choose controls that combine preventive filtering and fast provider escalation.</li>
-  <li>If a question centers on strategic architecture, treat routing dependencies as part of supply-chain risk, not external noise.</li>
-</ul>
-
-<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
-
-<p>If you want a disciplined starting point:</p>
-
-<ol>
-  <li>Inventory business-critical prefixes and dependency paths.</li>
-  <li>Publish and maintain ROAs for owned space where appropriate.</li>
-  <li>Enforce route acceptance and max-prefix controls per peer class.</li>
-  <li>Baseline expected route visibility and path patterns.</li>
-  <li>Build and test routing incident escalation runbooks with providers.</li>
-  <li>Review controls after major network or provider topology changes.</li>
-</ol>
-
-<p>That is what turns routing security from theory into resilience.</p>
-
-<p>BGP security is not just for network specialists. It is trust architecture at internet scale.</p>
-
-<hr />
-
-<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 67 covered DNS integrity and DNSSEC operations. Post 68 continues Domain 4 with internet routing trust, route hijack risk, and layered BGP security controls.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP Domain 4 practical guide to BGP security: route hijacks, route leaks, RPKI and ROA origin validation, routing hygiene controls, and incident response for internet path resilience.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP BGP security route hijacking</li>
-  <li>RPKI and ROA origin validation guide</li>
-  <li>route leak detection and response</li>
-  <li>internet routing security best practices</li>
-  <li>CISSP Domain 4 network trust controls</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="BGP Security" /><category term="Route Hijacking" /><category term="Route Leaks" /><category term="RPKI" /><category term="ROA" /><category term="Internet Routing" /><category term="Network Resilience" /><category term="Incident Response" /><category term="Supply Chain Security" /><summary type="html"><![CDATA[BGP is a trust protocol with real business risk. This CISSP Domain 4 guide explains route hijacking, route leaks, RPKI origin validation, filtering strategy, and operational response for resilient internet path security.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-bgp-route-hijacking-rpki-routing-security/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="DDoS" /><category term="Availability" /><category term="Anycast" /><category term="Scrubbing" /><category term="Rate Limiting" /><category term="WAF" /><category term="Incident Response" /><category term="Resilience Engineering" /><category term="Business Continuity" /><summary type="html"><![CDATA[DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

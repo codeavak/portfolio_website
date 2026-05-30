@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    
+    
+    
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience | Johnny Avakian Portfolio</title>
+    <meta name="description" content="Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-29T16:00:00+00:00" />
+    
+      
+        <meta property="article:tag" content="CISSP" />
+      
+        <meta property="article:tag" content="Domain 5" />
+      
+        <meta property="article:tag" content="Kerberos" />
+      
+        <meta property="article:tag" content="Delegation" />
+      
+        <meta property="article:tag" content="Constrained Delegation" />
+      
+        <meta property="article:tag" content="Resource Based Constrained Delegation" />
+      
+        <meta property="article:tag" content="Service Accounts" />
+      
+        <meta property="article:tag" content="Least Privilege" />
+      
+        <meta property="article:tag" content="Identity Security" />
+      
+        <meta property="article:tag" content="Incident Response" />
+      
+        <meta property="article:tag" content="Security Architecture" />
+      
+    
+    <meta property="og:title" content="CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience" />
+    <meta property="og:description" content="Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response." />
+    <meta property="og:url" content="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/" />
+    <meta property="og:site_name" content="Johnny Avakian Portfolio" />
+    
+      <meta property="og:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience" />
+    <meta name="twitter:description" content="Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response." />
+    
+      <meta name="twitter:image" content="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience",
+        "description": "Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response.",
+        "author": {
+          "@type": "Person",
+          "name": "Johnny Avakian"
+        },
+        "datePublished": "2026-05-29T16:00:00+00:00",
+        "dateModified": "2026-05-29T16:00:00+00:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/"
+        }
+        ,
+        "image": ["https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg"]
+        
+      }
+    </script>
+
+    <link rel="stylesheet" href="/portfolio_website/styles.css" />
+    <link rel="icon" href="/portfolio_website/favicon.ico" />
+    <script src="/portfolio_website/script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+    <div class="page">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/portfolio_website/" class="brand">Johnny Avakian · Senior Software Engineer</a>
+          <nav>
+            <a href="/portfolio_website/blog/">Blog</a> · <a href="/portfolio_website/">Portfolio</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+              <span id="themeIcon">☾</span>
+              <span id="themeLabel">Dark mode</span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-shell">
+        <section class="post-hero">
+          <div class="container post-hero-grid">
+            <div class="post-hero-copy">
+              
+                <div class="eyebrow">CISSP • Identity and Access Management • Security Architecture</div>
+              
+              <time class="post-date" datetime="2026-05-29T16:00:00+00:00">May 29, 2026</time>
+              <h1 class="post-title">CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience</h1>
+              
+                <p class="post-dek">Kerberos delegation can preserve user context across applications, but it also expands service trust if handled poorly. This CISSP Domain 5 guide explains unconstrained vs constrained delegation, service-account risk, and practical abuse response.</p>
+              
+              
+                <div class="post-tag-row">
+                  
+                    <span class="chip">CISSP</span>
+                  
+                    <span class="chip">Domain 5</span>
+                  
+                    <span class="chip">Kerberos</span>
+                  
+                    <span class="chip">Delegation</span>
+                  
+                    <span class="chip">Constrained Delegation</span>
+                  
+                    <span class="chip">Resource Based Constrained Delegation</span>
+                  
+                    <span class="chip">Service Accounts</span>
+                  
+                    <span class="chip">Least Privilege</span>
+                  
+                    <span class="chip">Identity Security</span>
+                  
+                    <span class="chip">Incident Response</span>
+                  
+                    <span class="chip">Security Architecture</span>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <article class="post-body">
+            <figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" alt="Kerberos delegation architecture showing user authentication, front-end service, constrained delegation policy, and approved back-end services" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Delegation keeps user context across services, but every allowed downstream hop is also a trust decision with security consequences.</figcaption>
+</figure>
+
+<p>The recent posts have been concentrated in Domain 4 because they were following one connected communication-and-network-security arc. Post 78 intentionally breaks that sequence and moves into CISSP Domain 5, where identity architecture raises a similar but distinct question: when one service is allowed to act on behalf of a user, how much trust has the organization really granted?</p>
+
+<p>Kerberos delegation exists for legitimate reasons. Multi-tier applications often need a front-end service to access a back-end database or API while preserving the original user context. The problem is not delegation itself. The problem is treating delegation as plumbing instead of a privileged trust path.</p>
+
+<p>For CISSP preparation, this topic is not about memorizing every Active Directory flag. It is about understanding trust scope. Which service may delegate, to which downstream services, under which constraints, and with what monitoring? Those are the decisions that separate useful identity architecture from avoidable blast radius.</p>
+
+<h2 id="why-delegation-matters-for-security">Why Delegation Matters for Security</h2>
+
+<p>When a user authenticates once and a front-end service needs to access a downstream service on that user’s behalf, delegation can preserve accountability and simplify application design.</p>
+
+<p>That value is real.</p>
+
+<p>So is the risk.</p>
+
+<p>Common problems include:</p>
+
+<ul>
+  <li>Services trusted to delegate far more broadly than required</li>
+  <li>Service accounts with excessive privilege or poor lifecycle governance</li>
+  <li>Weak review of service principal name mappings and delegation settings</li>
+  <li>Limited visibility into unusual service-to-service impersonation paths</li>
+</ul>
+
+<p>CISSP best-answer logic favors controls that preserve required business function while narrowing transitive trust as much as possible.</p>
+
+<h2 id="unconstrained-delegation-is-broad-trust-by-another-name">Unconstrained Delegation Is Broad Trust by Another Name</h2>
+
+<p>Unconstrained delegation allows a service to reuse a user’s Kerberos context broadly to other services.</p>
+
+<p>That may be convenient. It also expands risk significantly.</p>
+
+<p>If a service configured for unconstrained delegation is compromised, the attacker may gain access to valuable downstream trust relationships that were never intended to be part of the same exposure surface.</p>
+
+<p>This is why unconstrained delegation is usually the weaker design choice in exam questions and in practice.</p>
+
+<p>The stronger model is almost always narrower.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/inline-delegation-models.svg" alt="Comparison of unconstrained delegation, constrained delegation, and resource-based constrained delegation with different trust scopes" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The difference between delegation models is not administrative detail. It is how much downstream trust a compromised service can inherit.</figcaption>
+</figure>
+
+<h2 id="constrained-delegation-aligns-better-with-least-privilege">Constrained Delegation Aligns Better With Least Privilege</h2>
+
+<p>Constrained delegation limits where a service may act on a user’s behalf. Instead of broad downstream reach, the allowed targets are explicitly defined.</p>
+
+<p>That is much closer to sound security architecture.</p>
+
+<p>Benefits include:</p>
+
+<ul>
+  <li>Reduced blast radius if the front-end service is compromised</li>
+  <li>Clearer mapping between business need and technical trust</li>
+  <li>Easier review of which downstream services are genuinely required</li>
+  <li>Better exam alignment with least privilege and need-to-know thinking</li>
+</ul>
+
+<p>This does not eliminate risk. It makes trust more deliberate and more reviewable.</p>
+
+<h2 id="resource-based-constrained-delegation-changes-who-controls-trust">Resource-Based Constrained Delegation Changes Who Controls Trust</h2>
+
+<p>Resource-based constrained delegation goes a step further by allowing the back-end resource to control which front-end services may delegate to it.</p>
+
+<p>That can fit modern ownership models better, especially in environments where service teams manage their own resources.</p>
+
+<p>But the same principle still applies: delegated trust should be explicit, narrow, and governed like privileged access.</p>
+
+<p>The wrong lesson here is “resource-based” means “safe by default.”</p>
+
+<p>The right lesson is that control placement changes, but governance requirements remain.</p>
+
+<h2 id="service-accounts-are-part-of-the-risk-story">Service Accounts Are Part of the Risk Story</h2>
+
+<p>Delegation settings do not exist in isolation. They are tied to accounts, SPNs, lifecycle practices, and operational monitoring.</p>
+
+<p>That means strong Kerberos delegation hygiene usually includes:</p>
+
+<ul>
+  <li>Named ownership for service accounts and application identities</li>
+  <li>Tight scoping of SPNs and approved downstream services</li>
+  <li>Strong credential hygiene and rotation practices</li>
+  <li>Review of account changes, privilege changes, and delegation changes together</li>
+</ul>
+
+<p>If service accounts are poorly governed, even well-designed delegation models become harder to trust.</p>
+
+<h2 id="detection-and-monitoring-for-delegation-abuse">Detection and Monitoring for Delegation Abuse</h2>
+
+<p>Delegation problems often stay quiet until something unusual happens downstream.</p>
+
+<p>Useful detection angles include:</p>
+
+<ul>
+  <li>Unexpected service-ticket requests to high-value SPNs</li>
+  <li>New or changed delegation settings on sensitive accounts</li>
+  <li>Unusual service hop patterns that do not match normal application flows</li>
+  <li>Authentication anomalies tied to service accounts with delegation rights</li>
+</ul>
+
+<p>The practical goal is not to log everything indiscriminately. It is to make delegated trust paths observable enough that misuse is detectable.</p>
+
+<h2 id="incident-response-for-suspected-delegation-misuse">Incident Response for Suspected Delegation Misuse</h2>
+
+<p>When teams suspect delegation abuse, speed matters because a compromised service may inherit access beyond its own local boundary.</p>
+
+<p>A practical response sequence:</p>
+
+<ol>
+  <li>Identify the service account, SPNs, and downstream paths involved.</li>
+  <li>Verify whether the issue is misconfiguration, over-broad trust, or compromise.</li>
+  <li>Narrow or disable affected delegation settings.</li>
+  <li>Rotate associated service account credentials if trust is in doubt.</li>
+  <li>Re-test required application paths with approved constrained settings.</li>
+  <li>Review why the original delegation scope was allowed in the first place.</li>
+</ol>
+
+<p>For CISSP scenarios, strong answers combine immediate containment with longer-term trust reduction.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/inline-delegation-abuse-response.svg" alt="Workflow for detecting suspicious Kerberos delegation, verifying misuse, constraining affected trust, and recovering safely" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The best delegation response paths reduce trust surgically first, then restore needed application behavior through reapproved settings.</figcaption>
+</figure>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Least privilege should apply to delegated service trust, not only direct user permissions.</li>
+  <li>Authentication and downstream authorization are separate design questions.</li>
+  <li>Service accounts and machine identities require ownership and review.</li>
+  <li>Delegation settings should be treated as high-value trust relationships.</li>
+</ul>
+
+<h3 id="recent-developments-influencing-implementation">Recent developments influencing implementation</h3>
+
+<ul>
+  <li>Modern multi-tier and hybrid application architectures increase pressure to preserve user context across services.</li>
+  <li>Resource-based delegation models better match distributed ownership in some environments.</li>
+  <li>Identity threat detection has improved visibility into unusual service-account behavior.</li>
+  <li>Organizations are treating machine identities and delegated trust more like privileged access than background infrastructure.</li>
+</ul>
+
+<p>The practical takeaway: the protocol is mature, but the operational importance of delegated trust has only grown.</p>
+
+<h2 id="cissp-best-answer-mindset-for-delegation-questions">CISSP Best-Answer Mindset for Delegation Questions</h2>
+
+<p>When answer options appear similar, prioritize the one that:</p>
+
+<ol>
+  <li>Reduces delegation scope to only required downstream services.</li>
+  <li>Treats service trust as a privileged relationship that needs review.</li>
+  <li>Preserves accountability without granting unnecessary transitive access.</li>
+  <li>Connects service-account governance to delegation settings.</li>
+  <li>Supports monitoring and targeted rollback when trust is abused.</li>
+</ol>
+
+<p>Pattern examples:</p>
+
+<ul>
+  <li>If a scenario compares broad delegation to restricted delegation, favor the narrower model aligned to business need.</li>
+  <li>If a front-end service only needs one back-end service, choose explicit constrained trust rather than broad downstream impersonation.</li>
+  <li>If a service account is highly privileged, prioritize reducing both account privilege and delegation scope together.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>A realistic baseline:</p>
+
+<ol>
+  <li>Inventory services and accounts configured for delegation.</li>
+  <li>Eliminate unconstrained delegation where business requirements do not demand it.</li>
+  <li>Prefer constrained or resource-based constrained delegation for defined service paths.</li>
+  <li>Review SPN mappings, service-account ownership, and credential lifecycle together.</li>
+  <li>Alert on delegation changes and unusual downstream ticket use.</li>
+  <li>Rehearse delegation rollback for critical applications before incidents occur.</li>
+</ol>
+
+<p>Kerberos delegation is not just an application convenience. It is an identity trust boundary that deserves the same scrutiny as any other privileged access path.</p>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Posts 73 through 77 followed a Domain 4 network-security arc. Post 78 deliberately shifts into Domain 5 with delegated service trust, Kerberos architecture, and least-privilege identity design.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 5 guide to Kerberos delegation: unconstrained vs constrained delegation, service-account trust, SPN governance, and incident response for delegation abuse.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP Kerberos delegation explained</li>
+  <li>constrained delegation vs unconstrained delegation</li>
+  <li>service account trust and SPN security</li>
+  <li>resource based constrained delegation security</li>
+  <li>CISSP Domain 5 identity architecture</li>
+</ol>
+
+          </article>
+        </section>
+
+        
+          <section class="container comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <p class="comments-note">Powered by GitHub Issues via Utterances.</p>
+            <div id="commentsContainer"></div>
+            <script>
+              (function () {
+                var container = document.getElementById('commentsContainer');
+                if (!container) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'codeavak/portfolio_website');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'blog-comment');
+                script.setAttribute('theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'github-light' : 'github-dark');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.async = true;
+                container.appendChild(script);
+              })();
+            </script>
+          </section>
+        
+      </main>
+
+      <footer class="container blog-footer">
+        <p>© 2026 Johnny Avakian</p>
+      </footer>
+    </div>
+  </body>
+</html>
