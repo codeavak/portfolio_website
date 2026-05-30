@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CISSP 79 Security Metrics Drive Decisions</title>
+  <desc id="desc">Security metrics architecture showing governance objectives, operational measures, risk indicators, and leadership decisions connected by feedback loops.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="70" y="84" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CISSP #79: Security Metrics Should Drive Decisions, Not Dashboard Theater</text>
+  <text x="70" y="126" fill="#93c5fd" font-family="Segoe UI, Arial, sans-serif" font-size="26">Counts alone do not prove control effectiveness; useful metrics connect risk, action, and accountable decisions</text>
+
+  <rect x="70" y="190" width="400" height="220" rx="16" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <text x="100" y="248" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Risk Objectives</text>
+  <text x="100" y="290" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">What decision needs support?</text>
+  <text x="100" y="324" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">What control outcome matters?</text>
+  <text x="100" y="358" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="24">Who owns remediation?</text>
+
+  <rect x="600" y="190" width="400" height="220" rx="16" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="630" y="248" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Metrics and Signals</text>
+  <text x="630" y="290" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Leading and lagging indicators</text>
+  <text x="630" y="324" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Trend and threshold logic</text>
+  <text x="630" y="358" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="24">Context with asset criticality</text>
+
+  <rect x="1130" y="190" width="400" height="220" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+  <text x="1160" y="248" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Leadership Action</text>
+  <text x="1160" y="290" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Escalate, fund, accept, or change</text>
+  <text x="1160" y="324" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Review control effectiveness</text>
+  <text x="1160" y="358" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="24">Measure outcome after action</text>
+
+  <line x1="470" y1="300" x2="600" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="300" x2="1130" y2="300" stroke="#93c5fd" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="470" width="1460" height="330" rx="16" fill="#0b1324" stroke="#334155" stroke-width="2"/>
+  <text x="105" y="530" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600">Measurement Discipline Loop</text>
+  <circle cx="140" cy="598" r="16" fill="#38bdf8"/>
+  <text x="175" y="606" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Retire vanity metrics that do not change decisions or priorities</text>
+  <circle cx="140" cy="660" r="16" fill="#38bdf8"/>
+  <text x="175" y="668" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Tie thresholds and trends to named owners and remediation windows</text>
+  <circle cx="140" cy="722" r="16" fill="#38bdf8"/>
+  <text x="175" y="730" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Review whether actions actually improved risk and resilience</text>
+  <text x="980" y="598" fill="#bbf7d0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Security outcome:</text>
+  <text x="980" y="636" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Higher-quality governance decisions</text>
+  <text x="980" y="670" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">More accountable remediation</text>
+  <text x="980" y="704" fill="#dcfce7" font-family="Segoe UI, Arial, sans-serif" font-size="22">Lower dashboard noise</text>
+</svg>

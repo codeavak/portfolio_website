@@ -1,4 +1,243 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-30T06:31:23+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/" rel="alternate" type="text/html" title="CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience" /><published>2026-05-29T16:00:00+00:00</published><updated>2026-05-29T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://codeavak.github.io/portfolio_website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://codeavak.github.io/portfolio_website/" rel="alternate" type="text/html" /><updated>2026-05-30T06:34:22+00:00</updated><id>https://codeavak.github.io/portfolio_website/feed.xml</id><title type="html">Johnny Avakian Portfolio</title><subtitle>Senior Software Engineer portfolio and technical blog.</subtitle><author><name>Johnny Avakian</name></author><entry><title type="html">CISSP #79: Security Metrics Should Drive Decisions, Not Dashboard Theater</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-security-metrics-drive-decisions-not-dashboards/" rel="alternate" type="text/html" title="CISSP #79: Security Metrics Should Drive Decisions, Not Dashboard Theater" /><published>2026-05-29T17:30:00+00:00</published><updated>2026-05-29T17:30:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-security-metrics-drive-decisions-not-dashboards</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-security-metrics-drive-decisions-not-dashboards/"><![CDATA[<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-security-metrics-drive-decisions-not-dashboards/hero.svg" alt="Security metrics model connecting risk objectives, meaningful signals, and leadership decisions through a governance feedback loop" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Security metrics only matter if they change what the organization funds, fixes, escalates, or accepts.</figcaption>
+</figure>
+
+<p>Post 78 shifted the series out of the recent Domain 4 run and into Domain 5 identity architecture. Post 79 continues that diversification by moving into CISSP Domain 1, where governance and risk management become more practical when measurement quality is taken seriously.</p>
+
+<p>Most organizations have security dashboards. Far fewer have security metrics that consistently improve decision quality. It is easy to count tickets, findings, alerts, and training completions. It is harder to show whether those numbers actually prove control effectiveness, support risk decisions, or help leadership choose where to act next.</p>
+
+<p>For CISSP preparation, this topic is not about memorizing acronyms such as KPI and KRI in isolation. It is about understanding a governance principle: the purpose of security measurement is not reporting volume. It is to support accountable action.</p>
+
+<h2 id="why-security-metrics-matter">Why Security Metrics Matter</h2>
+
+<p>A mature security program needs evidence, not intuition alone.</p>
+
+<p>Leadership eventually has to decide:</p>
+
+<ul>
+  <li>Which risks need investment now</li>
+  <li>Which control gaps are actually material</li>
+  <li>Which trends justify escalation</li>
+  <li>Which issues are improving, stagnating, or worsening</li>
+</ul>
+
+<p>Without usable metrics, those decisions become louder, slower, and more political.</p>
+
+<p>CISSP best-answer reasoning here is straightforward: strong governance depends on measurement that supports risk-informed decisions, not just activity summaries.</p>
+
+<h2 id="activity-is-not-the-same-as-effectiveness">Activity Is Not the Same as Effectiveness</h2>
+
+<p>A common mistake is confusing work performed with risk reduced.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li>Number of vulnerability scans run</li>
+  <li>Number of tickets closed</li>
+  <li>Number of alerts reviewed</li>
+  <li>Percentage of employees who completed awareness training</li>
+</ul>
+
+<p>These can be useful operational statistics. They do not automatically prove the underlying control is working.</p>
+
+<p>That distinction matters. Teams can close tickets quickly while leaving high-risk assets exposed. Training completion can be high while phishing reporting remains weak. Alert volumes can drop because telemetry quality degraded rather than because risk improved.</p>
+
+<p>Useful measurement asks a harder question: what outcome changed?</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-security-metrics-drive-decisions-not-dashboards/inline-metric-types.svg" alt="Comparison of activity metrics, control effectiveness metrics, and risk indicators with different decision value" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">A mature program separates workload numbers from control-effectiveness evidence and risk indicators. They serve different decisions and should not be mixed carelessly.</figcaption>
+</figure>
+
+<h2 id="three-categories-of-metrics-worth-separating">Three Categories of Metrics Worth Separating</h2>
+
+<p>A practical model is to separate metrics into three categories.</p>
+
+<h3 id="activity-metrics">Activity metrics</h3>
+
+<p>These show what teams are doing.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>vulnerabilities triaged per week</li>
+  <li>phishing reports processed</li>
+  <li>access reviews completed</li>
+</ul>
+
+<p>They help with staffing, throughput, and operational visibility.</p>
+
+<h3 id="control-effectiveness-metrics">Control effectiveness metrics</h3>
+
+<p>These show whether a safeguard is operating as intended.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>percentage of critical patches applied within policy SLA</li>
+  <li>percentage of privileged accounts covered by MFA</li>
+  <li>percentage of high-risk vendors with current reassessment evidence</li>
+</ul>
+
+<p>These are stronger signals for management review because they speak to control execution quality.</p>
+
+<h3 id="risk-indicators">Risk indicators</h3>
+
+<p>These help leaders understand exposure trend and materiality.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>critical assets with unresolved internet-exposed findings</li>
+  <li>repeat high-risk exceptions past expiry date</li>
+  <li>third-party dependencies lacking required control evidence</li>
+</ul>
+
+<p>These are often the most valuable metrics for governance because they connect directly to risk posture and prioritization.</p>
+
+<h2 id="good-metrics-start-with-a-decision-question">Good Metrics Start With a Decision Question</h2>
+
+<p>A metric should exist because someone needs to decide something.</p>
+
+<p>Useful starting questions include:</p>
+
+<ul>
+  <li>What decision will this metric influence?</li>
+  <li>Who owns action if the trend worsens?</li>
+  <li>What threshold should trigger escalation?</li>
+  <li>What business context makes the metric more or less important?</li>
+</ul>
+
+<p>If a team cannot answer those questions, the metric may be decorative rather than useful.</p>
+
+<p>For CISSP scenarios, the stronger governance answer is usually not “collect more metrics.” It is “collect the metrics that support accountable risk decisions.”</p>
+
+<h2 id="context-matters-more-than-raw-counts">Context Matters More Than Raw Counts</h2>
+
+<p>Security numbers without context are easy to misread.</p>
+
+<p>For example, “50 critical vulnerabilities” means very different things depending on:</p>
+
+<ul>
+  <li>whether they affect internet-facing systems</li>
+  <li>whether compensating controls exist</li>
+  <li>whether exposure is growing or shrinking</li>
+  <li>whether asset owners are remediating on time</li>
+</ul>
+
+<p>That is why trend, asset criticality, and ownership matter. A smaller number of unaddressed exposures on crown-jewel systems may be more important than a larger number on low-value assets.</p>
+
+<h2 id="metrics-need-owners-thresholds-and-review-cadence">Metrics Need Owners, Thresholds, and Review Cadence</h2>
+
+<p>A useful metric should have:</p>
+
+<ul>
+  <li>a named owner</li>
+  <li>clear definition and data source</li>
+  <li>review cadence</li>
+  <li>threshold or expected range</li>
+  <li>predefined action when conditions are met</li>
+</ul>
+
+<p>Without those elements, the number may still appear on a dashboard, but it is unlikely to drive consistent behavior.</p>
+
+<p>This is where governance becomes visible. Metrics are not just security-team artifacts. They are management mechanisms.</p>
+
+<h2 id="retire-vanity-metrics-aggressively">Retire Vanity Metrics Aggressively</h2>
+
+<p>Many dashboards get worse over time because new measures are added and old ones are never removed.</p>
+
+<p>Signs of a vanity metric include:</p>
+
+<ul>
+  <li>no one takes action when it changes</li>
+  <li>the number looks impressive but says little about risk</li>
+  <li>the underlying definition changes frequently</li>
+  <li>it cannot be tied to asset criticality, ownership, or trend</li>
+</ul>
+
+<p>Retiring low-value metrics is part of program maturity, not a loss of visibility.</p>
+
+<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
+
+<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
+
+<ul>
+  <li>Security governance depends on measurable evidence.</li>
+  <li>Metrics should support decisions, accountability, and continuous improvement.</li>
+  <li>Control effectiveness matters more than raw reporting volume.</li>
+  <li>Risk context and ownership determine whether a metric is useful.</li>
+</ul>
+
+<h3 id="recent-developments-influencing-implementation">Recent developments influencing implementation</h3>
+
+<ul>
+  <li>Board and executive expectations for cyber reporting have increased.</li>
+  <li>Regulatory and customer scrutiny now often expects clearer governance evidence.</li>
+  <li>Security tooling produces more telemetry, increasing the risk of measurement noise.</li>
+  <li>Mature programs are putting more emphasis on trend, exposure context, and remediation ownership rather than dashboard volume.</li>
+</ul>
+
+<p>The practical takeaway: modern platforms make it easier to generate numbers, but the hard part is still deciding which numbers deserve leadership attention.</p>
+
+<h2 id="cissp-best-answer-mindset-for-metrics-questions">CISSP Best-Answer Mindset for Metrics Questions</h2>
+
+<p>When answer options look similar, prioritize the one that:</p>
+
+<ol>
+  <li>Links measurement to risk decisions and management action.</li>
+  <li>Distinguishes activity from control effectiveness.</li>
+  <li>Includes ownership, thresholds, and review discipline.</li>
+  <li>Uses context and trend instead of raw counts alone.</li>
+  <li>Improves governance rather than reporting optics.</li>
+</ol>
+
+<p>Pattern examples:</p>
+
+<ul>
+  <li>If a scenario highlights executive confusion, favor metrics tied to business impact and control status rather than tool activity volume.</li>
+  <li>If dashboards are crowded, prioritize measures that support escalation and remediation decisions.</li>
+  <li>If a program claims maturity with many reports but weak outcomes, focus on control-effectiveness metrics and accountable follow-up.</li>
+</ul>
+
+<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
+
+<p>A realistic baseline:</p>
+
+<ol>
+  <li>List the top decisions security leadership needs to make each month.</li>
+  <li>Map each decision to a small set of metrics with named owners.</li>
+  <li>Separate activity, control-effectiveness, and risk-indicator measures.</li>
+  <li>Add asset criticality, trend, and exception context to high-value metrics.</li>
+  <li>Define thresholds that trigger escalation or remediation review.</li>
+  <li>Retire metrics that no longer influence action.</li>
+</ol>
+
+<p>A security dashboard is easy to build. A security measurement system that reliably improves decisions is much harder, and much more valuable.</p>
+
+<figure>
+  <img src="/portfolio_website/assets/generated/2026/05/cissp-security-metrics-drive-decisions-not-dashboards/inline-metric-review-cycle.svg" alt="Metric review cycle showing definition, data validation, trend review, action assignment, and retirement of low-value measures" style="width:100%;border-radius:8px;" />
+  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Good metrics are managed like controls: defined clearly, reviewed regularly, and changed when they stop producing value.</figcaption>
+</figure>
+
+<hr />
+
+<p><em>Part of an ongoing CISSP study series focused on practical security architecture and governance decisions. Post 78 moved into Domain 5 with Kerberos delegation and trust scope. Post 79 continues diversification with a Domain 1 focus on governance metrics, control effectiveness, and risk-informed measurement.</em></p>
+
+<hr />
+
+<p><strong>Meta description:</strong> CISSP Domain 1 guide to security metrics: how to measure control effectiveness, avoid vanity dashboards, tie metrics to risk decisions, and improve accountability in security governance.</p>
+
+<p><strong>SEO keyword ideas:</strong></p>
+
+<ol>
+  <li>CISSP security metrics explained</li>
+  <li>control effectiveness metrics cybersecurity</li>
+  <li>KPI vs KRI security governance</li>
+  <li>security dashboard vanity metrics</li>
+  <li>CISSP Domain 1 governance metrics</li>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Security and Risk Management" /><category term="Governance" /><category term="CISSP" /><category term="Domain 1" /><category term="Security Metrics" /><category term="Governance" /><category term="Risk Management" /><category term="Control Effectiveness" /><category term="KPI" /><category term="KRI" /><category term="Security Leadership" /><category term="Continuous Improvement" /><category term="Security Program" /><summary type="html"><![CDATA[A dashboard full of numbers does not prove a mature security program. This CISSP Domain 1 guide explains how to choose security metrics that support decisions, show control effectiveness, and improve accountability instead of creating vanity reporting.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-security-metrics-drive-decisions-not-dashboards/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-security-metrics-drive-decisions-not-dashboards/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/" rel="alternate" type="text/html" title="CISSP #78: Kerberos Delegation Is a Trust Boundary, Not an SSO Convenience" /><published>2026-05-29T16:00:00+00:00</published><updated>2026-05-29T16:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-kerberos-delegation-constrained-delegation/"><![CDATA[<figure>
   <img src="/portfolio_website/assets/generated/2026/05/cissp-kerberos-delegation-constrained-delegation/hero.svg" alt="Kerberos delegation architecture showing user authentication, front-end service, constrained delegation policy, and approved back-end services" style="width:100%;border-radius:8px;" />
   <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">Delegation keeps user context across services, but every allowed downstream hop is also a trust decision with security consequences.</figcaption>
 </figure>
@@ -1856,189 +2095,4 @@
   <li>NTP architecture and trust boundaries</li>
   <li>time drift incident response playbook</li>
   <li>CISSP Domain 4 network security controls</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Operations" /><category term="CISSP" /><category term="Domain 4" /><category term="NTP" /><category term="NTS" /><category term="Time Synchronization" /><category term="Log Integrity" /><category term="Kerberos" /><category term="Certificate Validation" /><category term="Incident Response" /><category term="Forensics" /><category term="Monitoring" /><summary type="html"><![CDATA[Time is a security dependency, not a background utility. This CISSP Domain 4 guide explains how NTP design, NTS adoption, stratum trust, and operational controls protect authentication, logs, and incident response quality.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-time-synchronization-ntp-nts-log-integrity/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-time-synchronization-ntp-nts-log-integrity/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature</title><link href="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/" rel="alternate" type="text/html" title="CISSP #69: DDoS Resilience Is Architecture, Not a Blocking Feature" /><published>2026-05-20T13:00:00+00:00</published><updated>2026-05-20T13:00:00+00:00</updated><id>https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting</id><content type="html" xml:base="https://codeavak.github.io/portfolio_website/blog/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/"><![CDATA[<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" alt="DDoS resilience architecture with anycast distribution, upstream scrubbing, application-layer controls, and incident response workflow" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">In CISSP scenarios, availability is a core security objective. DDoS resilience is strongest when technical and operational controls are designed as one system.</figcaption>
-</figure>
-
-<p>Post 68 focused on internet routing trust. The next Domain 4 step is a reliability and security intersection every public-facing platform eventually confronts: DDoS pressure.</p>
-
-<p>The common failure pattern is treating DDoS as a one-time procurement problem. Teams buy a tool, enable a default policy, and assume the risk is solved. Then a real attack arrives with mixed traffic patterns, business-critical endpoints under stress, and unclear incident ownership.</p>
-
-<p>For CISSP preparation, this topic is less about naming attack families and more about selecting controls that preserve mission-critical service under adverse conditions.</p>
-
-<h2 id="ddos-is-an-availability-and-business-risk-problem">DDoS Is an Availability and Business Risk Problem</h2>
-
-<p>DDoS attacks are often categorized technically, but their real impact is business disruption.</p>
-
-<p>Typical consequences include:</p>
-
-<ul>
-  <li>Customer-facing downtime</li>
-  <li>Severe latency and transaction failure</li>
-  <li>Operational overload across SRE, support, and security teams</li>
-  <li>Revenue and trust erosion during prolonged incidents</li>
-</ul>
-
-<p>The exam mindset here is straightforward: if the scenario is about continuity under hostile conditions, prioritize layered resilience controls over absolute-prevention language.</p>
-
-<h2 id="attack-classes-and-why-one-control-is-never-enough">Attack Classes and Why One Control Is Never Enough</h2>
-
-<p>Different DDoS classes stress different parts of your architecture:</p>
-
-<ul>
-  <li>Volumetric attacks saturate network links and upstream capacity.</li>
-  <li>Protocol attacks exploit transport-layer behavior to exhaust state.</li>
-  <li>Application-layer floods consume compute and request-processing budget.</li>
-</ul>
-
-<p>A single control may reduce one class and fail on another.</p>
-
-<p>That is why mature programs use defense-in-depth at multiple layers: upstream network defenses, edge filtering, application safeguards, and operational response orchestration.</p>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-attack-vs-defense.svg" alt="Comparison of unprepared DDoS response versus layered resilient architecture with scrubbing and application controls" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">The difference between outage and survivable degradation is usually architectural layering and readiness, not intent.</figcaption>
-</figure>
-
-<h2 id="anycast-and-upstream-scrubbing-absorb-before-you-collapse">Anycast and Upstream Scrubbing: Absorb Before You Collapse</h2>
-
-<p>For internet-facing services, upstream capacity and traffic distribution strategy are decisive.</p>
-
-<h3 id="anycast-distribution">Anycast distribution</h3>
-
-<p>Anycast allows the same service IP to be announced from multiple locations, spreading load and reducing concentration on one edge.</p>
-
-<h3 id="scrubbing-integration">Scrubbing integration</h3>
-
-<p>Scrubbing providers or upstream mitigation paths help remove hostile traffic before it reaches constrained infrastructure.</p>
-
-<p>These controls are powerful but not self-sufficient. You need tested activation criteria, routing coordination, and clear provider escalation paths.</p>
-
-<p>CISSP best-answer logic generally favors solutions that reduce blast radius before internal systems saturate.</p>
-
-<h2 id="application-layer-resilience-controls">Application-Layer Resilience Controls</h2>
-
-<p>Even when upstream controls perform well, app-layer floods can still degrade core workflows.</p>
-
-<p>High-value controls include:</p>
-
-<ul>
-  <li>Endpoint-aware rate limits</li>
-  <li>Quotas by identity or client class where appropriate</li>
-  <li>Bot mitigation rules tuned for business-critical paths</li>
-  <li>Caching and queueing strategies for burst tolerance</li>
-  <li>Graceful degradation modes for non-critical features</li>
-</ul>
-
-<p>The principle is service prioritization. During stress, preserve what the business cannot lose first.</p>
-
-<h2 id="monitoring-and-detection-trigger-early-not-perfectly">Monitoring and Detection: Trigger Early, Not Perfectly</h2>
-
-<p>Detection should be fast enough to activate mitigation before user impact compounds.</p>
-
-<p>Useful signal categories:</p>
-
-<ul>
-  <li>Rapid traffic-volume and request-rate anomalies</li>
-  <li>Error-rate and latency divergence on critical endpoints</li>
-  <li>Regional path behavior changes</li>
-  <li>Load balancer and queue saturation indicators</li>
-</ul>
-
-<p>Do not wait for complete certainty. Incident workflows should support rapid initial mitigation with progressive refinement as evidence improves.</p>
-
-<h2 id="incident-response-for-ddos-events">Incident Response for DDoS Events</h2>
-
-<p>Technical controls fail without operational execution.</p>
-
-<p>A practical four-step model:</p>
-
-<ol>
-  <li>Detect and triage attack shape and business impact.</li>
-  <li>Activate mitigation layers (scrubbing, edge policy, rate adjustments).</li>
-  <li>Coordinate across providers and internal stakeholders with clear cadence.</li>
-  <li>Recover, then harden controls and thresholds based on lessons learned.</li>
-</ol>
-
-<figure>
-  <img src="/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/inline-ddos-operations-playbook.svg" alt="DDoS response operations playbook covering detection, mitigation activation, communication, and recovery" style="width:100%;border-radius:8px;" />
-  <figcaption style="font-size:0.85em;color:#64748b;margin-top:0.5em;">DDoS events are coordination problems as much as traffic problems. Rehearsed operations often determine whether impact is minutes or hours.</figcaption>
-</figure>
-
-<p>For CISSP scenarios, if a question includes customer-impact pressure and time-critical decisions, the best answer usually combines technical mitigation and communication/process discipline.</p>
-
-<h2 id="established-principles-vs-recent-developments">Established Principles vs Recent Developments</h2>
-
-<h3 id="established-principles-that-still-matter">Established principles that still matter</h3>
-
-<ul>
-  <li>Availability is a core security objective.</li>
-  <li>Defense in depth is required across network and application layers.</li>
-  <li>Incident response readiness is part of preventive security strategy.</li>
-  <li>Business-priority service protection beats uniform treatment under attack.</li>
-</ul>
-
-<h3 id="recent-developments-that-influence-decisions">Recent developments that influence decisions</h3>
-
-<ul>
-  <li>Cloud edge services and provider mitigation capabilities are more accessible, lowering adoption barriers for upstream protection.</li>
-  <li>Automated mitigation triggers are more common, but still require careful threshold design to avoid self-inflicted disruption.</li>
-  <li>Organizations increasingly integrate DDoS testing and game-day drills into reliability and security programs.</li>
-</ul>
-
-<p>The practical takeaway: technology is improving, but resilience still depends on architecture choices and disciplined operations.</p>
-
-<h2 id="cissp-best-answer-mindset-for-ddos-questions">CISSP Best-Answer Mindset for DDoS Questions</h2>
-
-<p>When multiple options sound valid, prefer the one that:</p>
-
-<ol>
-  <li>Preserves mission-critical availability under sustained attack.</li>
-  <li>Uses layered controls across network edge, application behavior, and operations.</li>
-  <li>Includes detection and response workflow, not only blocking technology.</li>
-  <li>Accounts for provider dependencies and communication readiness.</li>
-</ol>
-
-<p>Common pattern examples:</p>
-
-<ul>
-  <li>If the scenario is volumetric saturation, upstream distribution and scrubbing are generally stronger than app-only controls.</li>
-  <li>If the scenario is application exhaustion, endpoint-aware rate controls and prioritization are critical.</li>
-  <li>If the scenario is prolonged incident impact, response coordination and runbook maturity become central controls.</li>
-</ul>
-
-<h2 id="practical-baseline-you-can-implement">Practical Baseline You Can Implement</h2>
-
-<p>A realistic starting baseline:</p>
-
-<ol>
-  <li>Classify critical services and define degraded-mode priorities.</li>
-  <li>Establish upstream mitigation paths and tested activation criteria.</li>
-  <li>Implement app-level rate and quota controls on critical endpoints.</li>
-  <li>Instrument latency/error/saturation alerts with actionable thresholds.</li>
-  <li>Run DDoS response drills across security, SRE, and communications teams.</li>
-  <li>Update playbooks after every significant event or simulation.</li>
-</ol>
-
-<p>That is how DDoS defense becomes resilience engineering instead of reactive firefighting.</p>
-
-<p>DDoS resilience is not a single feature. It is architecture plus operations under pressure.</p>
-
-<hr />
-
-<p><em>Part of an ongoing CISSP study series focused on practical security architecture decisions. Post 68 covered BGP route-integrity and routing security controls. Post 69 continues Domain 4 with DDoS resilience and layered availability defense.</em></p>
-
-<hr />
-
-<p><strong>Meta description:</strong> CISSP Domain 4 guide to DDoS resilience: anycast distribution, scrubbing integration, app-layer rate controls, monitoring triggers, and incident response for service continuity.</p>
-
-<p><strong>SEO keyword ideas:</strong></p>
-
-<ol>
-  <li>CISSP DDoS resilience architecture</li>
-  <li>anycast scrubbing and rate limiting strategy</li>
-  <li>application-layer DDoS mitigation controls</li>
-  <li>DDoS incident response playbook</li>
-  <li>CISSP Domain 4 availability security</li>
-</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Architecture" /><category term="CISSP" /><category term="Domain 4" /><category term="DDoS" /><category term="Availability" /><category term="Anycast" /><category term="Scrubbing" /><category term="Rate Limiting" /><category term="WAF" /><category term="Incident Response" /><category term="Resilience Engineering" /><category term="Business Continuity" /><summary type="html"><![CDATA[DDoS defense is not one product decision. This CISSP Domain 4 guide explains anycast, scrubbing, rate controls, and operational playbooks that preserve service continuity during attack pressure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-ddos-resilience-anycast-scrubbing-rate-limiting/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ol>]]></content><author><name>Johnny Avakian</name></author><category term="CISSP" /><category term="Network Security" /><category term="Security Operations" /><category term="CISSP" /><category term="Domain 4" /><category term="NTP" /><category term="NTS" /><category term="Time Synchronization" /><category term="Log Integrity" /><category term="Kerberos" /><category term="Certificate Validation" /><category term="Incident Response" /><category term="Forensics" /><category term="Monitoring" /><summary type="html"><![CDATA[Time is a security dependency, not a background utility. This CISSP Domain 4 guide explains how NTP design, NTS adoption, stratum trust, and operational controls protect authentication, logs, and incident response quality.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-time-synchronization-ntp-nts-log-integrity/hero.svg" /><media:content medium="image" url="https://codeavak.github.io/portfolio_website/assets/generated/2026/05/cissp-time-synchronization-ntp-nts-log-integrity/hero.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

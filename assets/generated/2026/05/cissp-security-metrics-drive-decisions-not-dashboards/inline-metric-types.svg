@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Security Metric Types</title>
+  <desc id="desc">Diagram comparing activity metrics, control effectiveness metrics, and risk indicators with examples and decision value.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="780" fill="url(#bg2)"/>
+  <text x="60" y="72" fill="#f9fafb" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700">Metric Types That Matter</text>
+  <text x="60" y="110" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="23">Not all security numbers answer the same question or deserve the same executive attention</text>
+
+  <rect x="70" y="170" width="380" height="230" rx="14" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2"/>
+  <text x="95" y="225" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Activity Metrics</text>
+  <text x="95" y="266" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Examples: scans run, tickets closed</text>
+  <text x="95" y="301" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Useful for workload visibility</text>
+  <text x="95" y="336" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="22">Weak proof of risk reduction alone</text>
+
+  <rect x="510" y="170" width="380" height="230" rx="14" fill="#065f46" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="535" y="225" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Control Metrics</text>
+  <text x="535" y="266" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Examples: patch SLA attainment</text>
+  <text x="535" y="301" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Shows control execution quality</text>
+  <text x="535" y="336" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Stronger basis for management action</text>
+
+  <rect x="950" y="170" width="380" height="230" rx="14" fill="#7c2d12" stroke="#fdba74" stroke-width="2"/>
+  <text x="975" y="225" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Risk Indicators</text>
+  <text x="975" y="266" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Examples: critical asset exposure trend</text>
+  <text x="975" y="301" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Supports funding and escalation decisions</text>
+  <text x="975" y="336" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="22">Best when linked to business context</text>
+
+  <rect x="70" y="450" width="1260" height="250" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="100" y="505" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Executive Test</text>
+  <text x="110" y="560" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">1. Does this metric change priority, investment, or risk acceptance?</text>
+  <text x="110" y="608" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">2. Can an accountable owner act on it within a defined time window?</text>
+  <text x="110" y="656" fill="#bae6fd" font-family="Segoe UI, Arial, sans-serif" font-size="24">3. Does it show trend and control outcome, not just raw count?</text>
+</svg>
