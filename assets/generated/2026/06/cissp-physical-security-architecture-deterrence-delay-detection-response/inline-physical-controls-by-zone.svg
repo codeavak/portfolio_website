@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Physical Security Controls by Zone</title>
+  <desc id="desc">Table-style diagram mapping site, building, and interior zones to deterrent, delay, detect, and response controls.</desc>
+  <rect width="1400" height="820" fill="#f6fbff"/>
+  <text x="70" y="78" fill="#13344a" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Map Controls to Physical Zones</text>
+
+  <rect x="70" y="120" width="1260" height="72" fill="#13344a" rx="8"/>
+  <text x="105" y="166" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Zone</text>
+  <text x="330" y="166" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Deterrence / Delay</text>
+  <text x="760" y="166" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Detection / Response</text>
+
+  <rect x="70" y="202" width="1260" height="170" fill="#dff6eb"/>
+  <rect x="70" y="382" width="1260" height="170" fill="#fff3d6"/>
+  <rect x="70" y="562" width="1260" height="170" fill="#ffe0e6"/>
+
+  <text x="105" y="254" fill="#0a3d27" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Site Perimeter</text>
+  <text x="330" y="254" fill="#0a3d27" font-family="Segoe UI, Arial, sans-serif" font-size="26">Fencing, bollards, setback distance, lighting</text>
+  <text x="760" y="254" fill="#0a3d27" font-family="Segoe UI, Arial, sans-serif" font-size="26">CCTV analytics, patrol routes, alarm dispatch</text>
+  <text x="330" y="304" fill="#0a3d27" font-family="Segoe UI, Arial, sans-serif" font-size="24">Vehicle control points and guarded entry lanes</text>
+  <text x="760" y="304" fill="#0a3d27" font-family="Segoe UI, Arial, sans-serif" font-size="24">Incident triage with pre-defined escalation</text>
+
+  <text x="105" y="434" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Building Edge</text>
+  <text x="330" y="434" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="26">Controlled entrances, mantraps, visitor desk</text>
+  <text x="760" y="434" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="26">Badge anomalies, anti-tailgating alerts, guard response</text>
+  <text x="330" y="484" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="24">Delivery screening and temporary badge policies</text>
+  <text x="760" y="484" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="24">Camera + access-log correlation for investigations</text>
+
+  <text x="105" y="614" fill="#7f1d2f" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Interior Secure Zones</text>
+  <text x="330" y="614" fill="#7f1d2f" font-family="Segoe UI, Arial, sans-serif" font-size="26">Two-factor physical access, locked racks, cages</text>
+  <text x="760" y="614" fill="#7f1d2f" font-family="Segoe UI, Arial, sans-serif" font-size="26">Real-time tamper alarms and mandatory escort rules</text>
+  <text x="330" y="664" fill="#7f1d2f" font-family="Segoe UI, Arial, sans-serif" font-size="24">Separation of duties for critical rooms</text>
+  <text x="760" y="664" fill="#7f1d2f" font-family="Segoe UI, Arial, sans-serif" font-size="24">Post-incident evidence retention and review</text>
+</svg>

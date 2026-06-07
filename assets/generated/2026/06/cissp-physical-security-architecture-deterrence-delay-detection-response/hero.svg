@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Physical Security Architecture in Concentric Protection Rings</title>
+  <desc id="desc">Diagram showing site perimeter, building perimeter, secure interior zones, and response loop across deterrence, delay, detection, and response.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1d2a"/>
+      <stop offset="100%" stop-color="#163a52"/>
+    </linearGradient>
+    <linearGradient id="ring1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#76c893"/>
+      <stop offset="100%" stop-color="#52b69a"/>
+    </linearGradient>
+    <linearGradient id="ring2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#f4a261"/>
+    </linearGradient>
+    <linearGradient id="ring3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef476f"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="80" y="95" fill="#eaf4ff" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">
+    CISSP #80: Physical Security Architecture
+  </text>
+  <text x="80" y="145" fill="#cfe3f7" font-family="Segoe UI, Arial, sans-serif" font-size="30">
+    Deterrence, Delay, Detection, and Response as One System
+  </text>
+
+  <g transform="translate(820,480)">
+    <circle r="320" fill="none" stroke="url(#ring1)" stroke-width="40" opacity="0.95"/>
+    <circle r="230" fill="none" stroke="url(#ring2)" stroke-width="36" opacity="0.95"/>
+    <circle r="145" fill="none" stroke="url(#ring3)" stroke-width="34" opacity="0.95"/>
+    <circle r="70" fill="#102a3a" stroke="#9dd9ff" stroke-width="3"/>
+
+    <text x="0" y="-300" text-anchor="middle" fill="#d8f3dc" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Site Perimeter</text>
+    <text x="0" y="-212" text-anchor="middle" fill="#ffe8a1" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Building Perimeter</text>
+    <text x="0" y="-132" text-anchor="middle" fill="#ffd6de" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Interior Secure Zones</text>
+    <text x="0" y="8" text-anchor="middle" fill="#d7f0ff" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Critical Assets</text>
+
+    <path d="M -365 -40 C -405 -120 -390 -220 -332 -285" fill="none" stroke="#c7f9cc" stroke-width="6" marker-end="url(#a1)"/>
+    <path d="M -330 110 C -365 40 -350 -45 -300 -110" fill="none" stroke="#ffe8a1" stroke-width="6" marker-end="url(#a1)"/>
+    <path d="M -220 200 C -260 170 -278 115 -260 62" fill="none" stroke="#ffd6de" stroke-width="6" marker-end="url(#a1)"/>
+
+    <text x="-495" y="-42" fill="#c7f9cc" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Deterrence</text>
+    <text x="-484" y="113" fill="#ffe8a1" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Delay</text>
+    <text x="-455" y="202" fill="#ffd6de" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Detection</text>
+  </g>
+
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dff3ff"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(1210,180)">
+    <rect x="0" y="0" width="320" height="250" rx="16" fill="#0f2535" stroke="#88c0e6" stroke-width="2"/>
+    <text x="24" y="44" fill="#e9f5ff" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Control Layers</text>
+    <text x="24" y="86" fill="#c7f9cc" font-family="Segoe UI, Arial, sans-serif" font-size="22">1. Landscape and lighting</text>
+    <text x="24" y="122" fill="#ffe8a1" font-family="Segoe UI, Arial, sans-serif" font-size="22">2. Fencing and barriers</text>
+    <text x="24" y="158" fill="#ffd6de" font-family="Segoe UI, Arial, sans-serif" font-size="22">3. Access control and logging</text>
+    <text x="24" y="194" fill="#cde7ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">4. Guard and incident playbooks</text>
+  </g>
+</svg>

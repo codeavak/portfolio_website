@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">Remediation SLA and Verification Loop</title>
+  <desc id="desc">Workflow from finding validation to owner assignment, remediation SLA tracking, and re-test verification.</desc>
+  <rect width="1400" height="860" fill="#f7fafc"/>
+  <text x="60" y="82" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Exposure Remediation Loop</text>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="90" y="160" width="260" height="110" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="118" y="222" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">1. Validate</text>
+
+  <rect x="400" y="160" width="260" height="110" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="428" y="222" fill="#14532d" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">2. Assign Owner</text>
+
+  <rect x="710" y="160" width="260" height="110" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="738" y="222" fill="#78350f" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">3. Set SLA</text>
+
+  <rect x="1020" y="160" width="260" height="110" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1048" y="222" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">4. Remediate</text>
+
+  <rect x="400" y="430" width="260" height="110" rx="14" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <text x="428" y="492" fill="#4c1d95" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">5. Re-Test</text>
+
+  <rect x="740" y="430" width="320" height="110" rx="14" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="770" y="492" fill="#155e75" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">6. Close + Trend</text>
+
+  <line x1="350" y1="215" x2="400" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+  <line x1="660" y1="215" x2="710" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+  <line x1="970" y1="215" x2="1020" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+  <line x1="1140" y1="270" x2="930" y2="430" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+  <line x1="740" y1="485" x2="660" y2="485" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+  <path d="M 400 485 C 230 485 190 345 220 270" fill="none" stroke="#334155" stroke-width="4" marker-end="url(#ar)"/>
+
+  <text x="90" y="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">SLA Example</text>
+  <text x="90" y="744" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="24">Critical: 24 hours | High: 7 days | Medium: 30 days | Low: scheduled risk acceptance</text>
+</svg>
