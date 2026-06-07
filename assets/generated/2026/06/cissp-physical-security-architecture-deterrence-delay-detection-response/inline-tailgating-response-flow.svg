@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">Tailgating Detection and Response Workflow</title>
+  <desc id="desc">Flowchart for how organizations should detect, verify, contain, and review physical access tailgating incidents.</desc>
+  <rect width="1400" height="860" fill="#f7fafc"/>
+  <text x="70" y="84" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Tailgating Incident Workflow</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 Z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect x="90" y="150" width="300" height="120" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="120" y="202" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">1. Detect Event</text>
+  <text x="120" y="240" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="22">Door held open / dual entry</text>
+
+  <rect x="550" y="150" width="300" height="120" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="580" y="202" fill="#14532d" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">2. Verify</text>
+  <text x="580" y="240" fill="#14532d" font-family="Segoe UI, Arial, sans-serif" font-size="22">Camera + badge event check</text>
+
+  <rect x="1010" y="150" width="300" height="120" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1040" y="202" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">3. Contain</text>
+  <text x="1040" y="240" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="22">Guard intercept + escort</text>
+
+  <rect x="330" y="420" width="300" height="120" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="472" fill="#78350f" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">4. Assess Impact</text>
+  <text x="360" y="510" fill="#78350f" font-family="Segoe UI, Arial, sans-serif" font-size="22">Was restricted area reached?</text>
+
+  <rect x="770" y="420" width="300" height="120" rx="14" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <text x="800" y="472" fill="#4c1d95" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">5. Improve</text>
+  <text x="800" y="510" fill="#4c1d95" font-family="Segoe UI, Arial, sans-serif" font-size="22">Tune controls + retrain staff</text>
+
+  <line x1="390" y1="210" x2="550" y2="210" stroke="#374151" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="850" y1="210" x2="1010" y2="210" stroke="#374151" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1140" y1="270" x2="920" y2="420" stroke="#374151" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="770" y1="480" x2="630" y2="480" stroke="#374151" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="330" y1="480" x2="190" y2="270" stroke="#374151" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text x="90" y="720" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Operational Principle</text>
+  <text x="90" y="760" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="25">Detection is valuable only when response ownership and evidence handling are defined in advance.</text>
+</svg>

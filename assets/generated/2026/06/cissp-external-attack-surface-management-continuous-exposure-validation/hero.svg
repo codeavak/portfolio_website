@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">External Attack Surface Management Lifecycle</title>
+  <desc id="desc">Diagram showing internet-facing asset discovery, exposure validation, risk prioritization, and remediation loop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1d3557"/>
+    </linearGradient>
+    <linearGradient id="n1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="100%" stop-color="#4895ef"/>
+    </linearGradient>
+    <linearGradient id="n2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#80ed99"/>
+      <stop offset="100%" stop-color="#57cc99"/>
+    </linearGradient>
+    <linearGradient id="n3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#f4a261"/>
+    </linearGradient>
+    <linearGradient id="n4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef476f"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#cfe8ff"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <text x="90" y="92" fill="#e8f2ff" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">CISSP #81: External Attack Surface Management</text>
+  <text x="90" y="142" fill="#cfe0f4" font-family="Segoe UI, Arial, sans-serif" font-size="30">Continuous discovery, validation, ownership, and remediation</text>
+
+  <rect x="130" y="250" width="300" height="140" rx="14" fill="url(#n1)"/>
+  <text x="165" y="314" fill="#0b1d2a" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Discover</text>
+  <text x="165" y="354" fill="#0b1d2a" font-family="Segoe UI, Arial, sans-serif" font-size="24">Domains, IPs, services</text>
+
+  <rect x="490" y="250" width="300" height="140" rx="14" fill="url(#n2)"/>
+  <text x="525" y="314" fill="#0e2a1f" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Validate</text>
+  <text x="525" y="354" fill="#0e2a1f" font-family="Segoe UI, Arial, sans-serif" font-size="24">True exposure and impact</text>
+
+  <rect x="850" y="250" width="300" height="140" rx="14" fill="url(#n3)"/>
+  <text x="885" y="314" fill="#382204" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Prioritize</text>
+  <text x="885" y="354" fill="#382204" font-family="Segoe UI, Arial, sans-serif" font-size="24">Criticality and exploitability</text>
+
+  <rect x="1210" y="250" width="300" height="140" rx="14" fill="url(#n4)"/>
+  <text x="1245" y="314" fill="#3e0d16" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Remediate</text>
+  <text x="1245" y="354" fill="#3e0d16" font-family="Segoe UI, Arial, sans-serif" font-size="24">Fix, retire, or isolate</text>
+
+  <line x1="430" y1="320" x2="490" y2="320" stroke="#d8ecff" stroke-width="5" marker-end="url(#arr)"/>
+  <line x1="790" y1="320" x2="850" y2="320" stroke="#d8ecff" stroke-width="5" marker-end="url(#arr)"/>
+  <line x1="1150" y1="320" x2="1210" y2="320" stroke="#d8ecff" stroke-width="5" marker-end="url(#arr)"/>
+
+  <path d="M 1360 430 C 1350 580 300 580 290 430" fill="none" stroke="#bcdcff" stroke-width="6" marker-end="url(#arr)"/>
+  <text x="690" y="620" fill="#d8eaff" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Continuous Loop, Not Quarterly Snapshot</text>
+
+  <rect x="110" y="690" width="1380" height="120" rx="14" fill="#12263a" stroke="#7fb3d5" stroke-width="2"/>
+  <text x="150" y="746" fill="#e7f3ff" font-family="Segoe UI, Arial, sans-serif" font-size="28">Key outcome: unknown internet-facing assets become known, owned, and risk-ranked before attackers find them.</text>
+</svg>

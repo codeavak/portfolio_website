@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Exposure Validation Matrix</title>
+  <desc id="desc">Matrix comparing internet-facing assets by ownership confidence, business criticality, and exposure severity.</desc>
+  <rect width="1400" height="840" fill="#f8fbff"/>
+  <text x="60" y="78" fill="#102a43" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Exposure Validation Matrix</text>
+
+  <rect x="60" y="120" width="1280" height="84" rx="8" fill="#102a43"/>
+  <text x="95" y="173" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Asset Type</text>
+  <text x="390" y="173" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Ownership</text>
+  <text x="620" y="173" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Criticality</text>
+  <text x="860" y="173" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Exposure</text>
+  <text x="1090" y="173" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Action</text>
+
+  <rect x="60" y="214" width="1280" height="110" fill="#d8f3dc"/>
+  <rect x="60" y="324" width="1280" height="110" fill="#fff3cd"/>
+  <rect x="60" y="434" width="1280" height="110" fill="#ffe5ec"/>
+  <rect x="60" y="544" width="1280" height="110" fill="#e0ecff"/>
+
+  <text x="95" y="280" fill="#0f5132" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Customer Portal</text>
+  <text x="390" y="280" fill="#0f5132" font-family="Segoe UI, Arial, sans-serif" font-size="25">Named owner</text>
+  <text x="620" y="280" fill="#0f5132" font-family="Segoe UI, Arial, sans-serif" font-size="25">High</text>
+  <text x="860" y="280" fill="#0f5132" font-family="Segoe UI, Arial, sans-serif" font-size="25">Auth misconfig</text>
+  <text x="1090" y="280" fill="#0f5132" font-family="Segoe UI, Arial, sans-serif" font-size="25">Immediate fix</text>
+
+  <text x="95" y="390" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Legacy Admin Host</text>
+  <text x="390" y="390" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">Unclear</text>
+  <text x="620" y="390" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">High</text>
+  <text x="860" y="390" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">RDP open</text>
+  <text x="1090" y="390" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">Isolate + assign owner</text>
+
+  <text x="95" y="500" fill="#8a1c3a" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Forgotten Test API</text>
+  <text x="390" y="500" fill="#8a1c3a" font-family="Segoe UI, Arial, sans-serif" font-size="25">Unknown</text>
+  <text x="620" y="500" fill="#8a1c3a" font-family="Segoe UI, Arial, sans-serif" font-size="25">Medium</text>
+  <text x="860" y="500" fill="#8a1c3a" font-family="Segoe UI, Arial, sans-serif" font-size="25">No auth</text>
+  <text x="1090" y="500" fill="#8a1c3a" font-family="Segoe UI, Arial, sans-serif" font-size="25">Retire endpoint</text>
+
+  <text x="95" y="610" fill="#163a72" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Marketing Microsite</text>
+  <text x="390" y="610" fill="#163a72" font-family="Segoe UI, Arial, sans-serif" font-size="25">Business owner</text>
+  <text x="620" y="610" fill="#163a72" font-family="Segoe UI, Arial, sans-serif" font-size="25">Low</text>
+  <text x="860" y="610" fill="#163a72" font-family="Segoe UI, Arial, sans-serif" font-size="25">Outdated TLS</text>
+  <text x="1090" y="610" fill="#163a72" font-family="Segoe UI, Arial, sans-serif" font-size="25">Scheduled update</text>
+
+  <text x="60" y="742" fill="#334e68" font-family="Segoe UI, Arial, sans-serif" font-size="25">Prioritize findings by exploitability plus business impact, not scanner severity alone.</text>
+</svg>
