@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="t d">
+  <title id="t">Coverage Model by Risk Tier</title>
+  <desc id="d">Matrix showing test frequency and sample depth based on asset criticality and control type.</desc>
+  <rect width="1400" height="840" fill="#f8fbff"/>
+  <text x="60" y="78" fill="#102a43" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Risk-Based Control Testing Coverage Model</text>
+
+  <rect x="60" y="120" width="1280" height="82" rx="8" fill="#102a43"/>
+  <text x="95" y="172" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Risk Tier</text>
+  <text x="360" y="172" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Coverage Target</text>
+  <text x="710" y="172" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Sampling Approach</text>
+  <text x="1080" y="172" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">Test Cadence</text>
+
+  <rect x="60" y="214" width="1280" height="130" fill="#ffe5e5"/>
+  <rect x="60" y="344" width="1280" height="130" fill="#fff3cd"/>
+  <rect x="60" y="474" width="1280" height="130" fill="#e3f2fd"/>
+  <rect x="60" y="604" width="1280" height="130" fill="#e8f5e9"/>
+
+  <text x="95" y="288" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">Critical</text>
+  <text x="360" y="288" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="25">All in-scope control paths</text>
+  <text x="710" y="288" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="25">Stratified + scenario-based</text>
+  <text x="1080" y="288" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="25">Continuous / Weekly</text>
+
+  <text x="95" y="418" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">High</text>
+  <text x="360" y="418" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">Core controls + exceptions</text>
+  <text x="710" y="418" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">Targeted random sampling</text>
+  <text x="1080" y="418" fill="#7a4e00" font-family="Segoe UI, Arial, sans-serif" font-size="25">Bi-weekly / Monthly</text>
+
+  <text x="95" y="548" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">Medium</text>
+  <text x="360" y="548" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif" font-size="25">Representative paths</text>
+  <text x="710" y="548" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif" font-size="25">Risk-weighted random subset</text>
+  <text x="1080" y="548" fill="#0c4a6e" font-family="Segoe UI, Arial, sans-serif" font-size="25">Monthly / Quarterly</text>
+
+  <text x="95" y="678" fill="#1b5e20" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">Low</text>
+  <text x="360" y="678" fill="#1b5e20" font-family="Segoe UI, Arial, sans-serif" font-size="25">Baseline control check</text>
+  <text x="710" y="678" fill="#1b5e20" font-family="Segoe UI, Arial, sans-serif" font-size="25">Simple random sample</text>
+  <text x="1080" y="678" fill="#1b5e20" font-family="Segoe UI, Arial, sans-serif" font-size="25">Quarterly / Semiannual</text>
+
+  <text x="60" y="790" fill="#334e68" font-family="Segoe UI, Arial, sans-serif" font-size="24">Coverage should follow business impact, not equal sample size across unequal risk.</text>
+</svg>
