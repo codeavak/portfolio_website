@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="t d">
+  <title id="t">Control Testing Feedback Loop</title>
+  <desc id="d">Workflow for test planning, execution, bias detection, corrective action, and retesting.</desc>
+  <rect width="1400" height="860" fill="#f7fafc"/>
+  <text x="60" y="82" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Assurance Feedback Loop</text>
+
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="90" y="160" width="250" height="110" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="116" y="223" fill="#1e3a8a" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">1. Plan Scope</text>
+
+  <rect x="390" y="160" width="250" height="110" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="416" y="223" fill="#14532d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">2. Run Tests</text>
+
+  <rect x="690" y="160" width="280" height="110" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="716" y="223" fill="#78350f" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">3. Detect Bias</text>
+
+  <rect x="1020" y="160" width="290" height="110" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1048" y="223" fill="#7f1d1d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">4. Correct Model</text>
+
+  <rect x="430" y="430" width="250" height="110" rx="14" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <text x="456" y="493" fill="#4c1d95" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">5. Re-Test</text>
+
+  <rect x="760" y="430" width="340" height="110" rx="14" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="788" y="493" fill="#155e75" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">6. Report Trend Risk</text>
+
+  <line x1="340" y1="215" x2="390" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="640" y1="215" x2="690" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="970" y1="215" x2="1020" y2="215" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="1110" y1="270" x2="920" y2="430" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="760" y1="485" x2="680" y2="485" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M 430 485 C 250 485 180 340 210 270" fill="none" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+
+  <text x="90" y="700" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">Bias Checks</text>
+  <text x="90" y="742" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="24">Include edge cases, exceptions, privileged paths, after-hours changes, and third-party dependencies.</text>
+</svg>
